@@ -1,0 +1,27 @@
+{
+  "name": "root",
+  "private": true,
+  "description": "Open Digital Education Frontend Library with ReactJS",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bump": "yarn lerna version",
+    "clean": "yarn lerna clean && rm -rf node_modules",
+    "bootstrap": "yarn lerna bootstrap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opendigitaleducation/ode-react-ui.git"
+  },
+  "author": "Open Digital Education",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/opendigitaleducation/ode-react-ui/issues"
+  },
+  "homepage": "https://github.com/opendigitaleducation/ode-react-ui#readme",
+  "devDependencies": {
+    "lerna": "^5.5.1",
+    "nx": "^14.7.6"
+  }
+}
