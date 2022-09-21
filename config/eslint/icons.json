@@ -1,0 +1,6 @@
+{
+  "extends": ["./.eslintrc.json"],
+  "rules": {
+    "import/newline-after-import": "off"
+  }
+}

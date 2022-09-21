@@ -1,14 +1,12 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "npmClient": "yarn",
   "useNx": true,
   "useWorkspaces": true,
   "version": "independent",
   "command": {
     "version": {
       "allowBranch": "main",
-      "conventionalCommits": true,
-      "ignoreChanges": ["*.md", ".spec.ts", ".stories.tsx"]
+      "conventionalCommits": true
     }
   }
 }
