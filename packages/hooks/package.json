@@ -1,0 +1,62 @@
+{
+  "name": "@ode-react-ui/hooks",
+  "version": "0.0.1",
+  "private": false,
+  "description": "@ode-react-ui react hooks library",
+  "keywords": [
+    "react",
+    "frontend",
+    "hooks",
+    "ui"
+  ],
+  "homepage": "https://github.com/opendigitaleducation/ode-react-ui/tree/main/packages/hooks#readme",
+  "bugs": {
+    "url": "https://github.com/opendigitaleducation/ode-react-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opendigitaleducation/ode-react-ui.git"
+  },
+  "license": "GPL-3.0",
+  "author": "Open Digital Education",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "yarn prebuild && tsc --noEmit && vite build --config ../../config/vite/vite.config.ts",
+    "lint": "eslint -c ../../config/eslint/.eslintrc.json .",
+    "lint:fix": "eslint --fix .",
+    "prettier": "concurrently \"yarn:prettier:*\"",
+    "prettier:check": "npx prettier --config ../../config/prettier.config.js --check .",
+    "prettier:write": "npx prettier --config ../../config/prettier.config.js --write ."
+  },
+  "dependencies": {
+    "clsx": "1.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@ode-react-ui/config": "*",
+    "@storybook/react": "^6.5.10",
+    "@types/node": "^18.7.18",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "concurrently": "7.4.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
