@@ -26,14 +26,10 @@ Many tools are already configured like:
 
 ### Install
 
-Install the project locally by running one of this 2 commands:
+Install the project locally:
 
 ```bash
 yarn install
-```
-
-```bash
-yarn bootstrap
 ```
 
 ### Lint

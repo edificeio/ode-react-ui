@@ -14,25 +14,10 @@
   "author": "Open Digital Education",
   "workspaces": [
     "config",
+    "storybook",
     "packages/*"
   ],
   "scripts": {
-<<<<<<< HEAD
-    "bootstrap": "npx lerna bootstrap",
-    "build": "npx lerna run build",
-    "build:advanced": "npx lerna run build --scope=@ode-react-ui/advanced",
-    "build:core": "npx lerna run build --scope=@ode-react-ui/core",
-    "build:hooks": "npx lerna run build --scope=@ode-react-ui/hooks",
-    "build:icons": "npx lerna run build --scope=@ode-react-ui/icons",
-    "build:storybook": "npx lerna run build-storybook --scope=@ode-react-ui/storybook",
-    "bump": "npx lerna version",
-    "clean": "npx lerna clean && rm -rf node_modules",
-    "graph": "npx nx graph",
-    "lint": "npx lerna run lint",
-    "lint:fix": "npx lerna run lint:fix",
-    "prettier": "npx lerna run prettier",
-    "storybook": "npx lerna run storybook --scope=@ode-react-ui/storybook"
-=======
     "bootstrap": "yarn lerna bootstrap",
     "build": "yarn lerna run build",
     "build:advanced": "yarn lerna run build --scope=@ode-react-ui/advanced",
@@ -47,10 +32,15 @@
     "lint:fix": "yarn lerna run lint:fix",
     "prettier": "yarn lerna run prettier",
     "storybook": "yarn lerna run storybook --scope=@ode-react-ui/storybook"
->>>>>>> bb31e04 (chore(deps): upgrade deps with yarn)
   },
   "devDependencies": {
     "lerna": "5.5.2",
     "nx": "14.7.5"
+  },
+  "resolutions": {
+    "**/remark-parse/trim": "0.0.3",
+    "**/watchpack-chokidar2/chokidar": "3.5.1",
+    "**/default-browser-id/meow": "8.0.0",
+    "**/fast-glob/glob-parent": "5.1.2"
   }
 }
