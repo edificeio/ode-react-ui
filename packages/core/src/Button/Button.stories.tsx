@@ -1,9 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { withCssResources } from "@storybook/addon-cssresources";
 
 import { Button } from "./Button";
-
-//import "../../../../node_modules/ode-bootstrap-neo/dist/skins/default/theme.css";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -13,8 +10,6 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
   },
-  parameters: {},
-  decorators: [withCssResources],
 } as ComponentMeta<typeof Button>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
