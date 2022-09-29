@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "bootstrap": "yarn lerna bootstrap",
-    "build": "yarn lerna run build",
+    "build": "yarn lerna run build --ignore=@starter/storybook",
     "build:advanced": "yarn lerna run build --scope=@ode-react-ui/advanced",
     "build:core": "yarn lerna run build --scope=@ode-react-ui/core",
     "build:hooks": "yarn lerna run build --scope=@ode-react-ui/hooks",
@@ -30,7 +30,7 @@
     "graph": "yarn nx graph",
     "lint": "yarn lerna run lint",
     "lint:fix": "yarn lerna run lint:fix",
-    "prettier": "yarn lerna run prettier",
+    "pretty": "yarn lerna run prettier",
     "storybook": "yarn lerna run storybook --scope=@ode-react-ui/storybook"
   },
   "devDependencies": {

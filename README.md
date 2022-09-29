@@ -45,7 +45,7 @@ yarn lint
 > Prettier all packages from root folder
 
 ```bash
-yarn prettier
+yarn pretty
 ```
 
 ## Build

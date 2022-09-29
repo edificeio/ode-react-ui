@@ -33,7 +33,7 @@ If `yarn lint` shows issues, run this command to fix them.
 ### Prettier
 
 ```bash
-yarn prettier
+yarn pretty
 ```
 
 This command starts `prettier:check` + `prettier:write` using Prettier configuration file from [Config](../../config/README.md).

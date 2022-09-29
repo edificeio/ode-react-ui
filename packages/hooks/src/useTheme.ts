@@ -7,10 +7,10 @@ export default function useTheme(theme: any) {
       Object.keys(theme).map((key) => {
         return document.documentElement.style.setProperty(
           `--${key}`,
-          theme[key]
+          theme[key],
         );
       });
     },
-    [theme] // Only call again if theme object reference changes
+    [theme], // Only call again if theme object reference changes
   );
 }

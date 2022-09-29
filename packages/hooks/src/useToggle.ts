@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 // Hook
 // Parameter is the boolean, with default "false" value
 export default function useToggle(
-  initialState: boolean = false
+  initialState: boolean = false,
 ): [boolean, any] {
   // Initialize the state
   const [state, setState] = useState<boolean>(initialState);
@@ -10,7 +10,7 @@ export default function useToggle(
   // This function change the boolean value to it's opposite value
   const toggle = useCallback(
     (): void => setState((prevState: any) => !prevState),
-    []
+    [],
   );
   return [state, toggle];
 }

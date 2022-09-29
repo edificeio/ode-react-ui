@@ -66,6 +66,7 @@
     "public",
     "dist",
     "storybook-static",
-    "vite.config.ts"
+    "vite.config.ts",
+    "*.stories.tsx"
   ]
 }
