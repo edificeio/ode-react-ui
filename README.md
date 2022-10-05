@@ -6,11 +6,11 @@ Open Digital Education Frontend Library with ReactJS
 
 Ode React UI is a Monorepo containing:
 
-- [Config](./config/README.md): Shared configuration by all packages
-- [Core](./packages/core/README.md): React Core Components
-- [Icons](./packages/icons/README.md): React Icons Components Library
-- [Hooks](./packages/hooks/README.md): React Hooks Library
-- [Advanced](./packages/advanced/README.md): Advanced or Complex Components (e.g: TreeView, Rich Editor, ...)
+- [Config](./config/README.md): Shared configuration by all libs
+- [Core](./libs/core/README.md): Core Components Library (e.g: Button, Header, ...)
+- [Icons](./libs/icons/README.md): Icons Library
+- [Hooks](./libs/hooks/README.md): Hooks Library
+- [Advanced](./libs/advanced/README.md): Advanced Components Library (e.g: TreeView, Rich Editor, ...)
 
 Many tools are already configured like:
 
@@ -21,6 +21,7 @@ Many tools are already configured like:
 - [Prettier](https://prettier.io)
 - [Husky](https://github.com/typicode/husky)
 - [Lerna](https://lerna.js.org/docs/getting-started)
+- [Storybook](https://storybook.js.org/)
 
 ## Getting Started
 
@@ -29,12 +30,12 @@ Many tools are already configured like:
 Install the project locally:
 
 ```bash
-yarn install
+yarn
 ```
 
 ### Lint
 
-> Lint all packages from root folder
+> Lint all libs from root folder
 
 ```bash
 yarn lint
@@ -42,18 +43,34 @@ yarn lint
 
 ### Prettier
 
-> Prettier all packages from root folder
+> Prettier all libs from root folder
 
 ```bash
 yarn pretty
 ```
 
-## Build
+### Clean
 
-> Build all packages from root folder
+> Clean all node_modules symlink + node_modules + yarn.lock
+
+```bash
+yarn clean
+```
+
+### Build
+
+> Build all libs from root folder
 
 ```bash
 yarn build
+```
+
+## Storybook
+
+> Start Storybook on port 6006
+
+```bash
+yarn storybook
 ```
 
 ## Lerna

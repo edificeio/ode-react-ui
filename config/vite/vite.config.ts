@@ -1,8 +1,17 @@
-import { defineConfig } from "vite"
-import react from "@vitejs/plugin-react"
-import dts from "vite-plugin-dts"
+import { defineConfig } from "vite";
+import path from "path";
+import react from "@vitejs/plugin-react";
+import dts from "vite-plugin-dts";
 
 export default defineConfig({
+  /* resolve: {
+    alias: [
+      {
+        find: "test/icons",
+        replacement: path.resolve(__dirname, "./src"),
+      },
+    ],
+  }, */
   build: {
     lib: {
       entry: "src/index.ts",
@@ -25,4 +34,4 @@ export default defineConfig({
       outputDir: "dist",
     }),
   ],
-})
+});

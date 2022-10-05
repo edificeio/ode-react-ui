@@ -1,0 +1,19 @@
+{
+  "name": "@ode-react-ui/prettier-config-custom",
+  "version": "1.0.0",
+  "main": "prettier.config.js",
+  "private": true,
+  "description": "prettier custom config",
+  "homepage": "https://github.com/opendigitaleducation/ode-react-ui/tree/main/config#readme",
+  "bugs": {
+    "url": "https://github.com/opendigitaleducation/ode-react-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opendigitaleducation/ode-react-ui.git"
+  },
+  "author": "Open Digital Education",
+  "devDependencies": {
+    "prettier": "2.7.1"
+  }
+}

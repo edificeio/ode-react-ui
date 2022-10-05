@@ -13,9 +13,9 @@
   "license": "GPL-3.0",
   "author": "Open Digital Education",
   "workspaces": [
-    "config",
-    "storybook",
-    "packages/*"
+    "config/*",
+    "docs/*",
+    "libs/*"
   ],
   "scripts": {
     "bootstrap": "yarn lerna bootstrap",
@@ -30,17 +30,18 @@
     "graph": "yarn nx graph",
     "lint": "yarn lerna run lint",
     "lint:fix": "yarn lerna run lint:fix",
-    "pretty": "yarn lerna run prettier",
+    "pretty": "yarn lerna run pretty",
     "storybook": "yarn lerna run storybook --scope=@ode-react-ui/storybook"
   },
   "devDependencies": {
-    "lerna": "5.5.2",
-    "nx": "14.7.5"
+    "lerna": "5.6.1",
+    "nx": "14.8.3"
   },
   "resolutions": {
     "**/remark-parse/trim": "0.0.3",
     "**/watchpack-chokidar2/chokidar": "3.5.1",
     "**/default-browser-id/meow": "8.0.0",
-    "**/fast-glob/glob-parent": "5.1.2"
+    "**/fast-glob/glob-parent": "5.1.2",
+    "**/nx/axios": "0.21.2"
   }
 }

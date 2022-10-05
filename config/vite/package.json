@@ -1,0 +1,20 @@
+{
+  "name": "@ode-react-ui/vite-custom-config",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TypeScript Custom Config",
+  "homepage": "https://github.com/opendigitaleducation/ode-react-ui/tree/main/config#readme",
+  "bugs": {
+    "url": "https://github.com/opendigitaleducation/ode-react-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opendigitaleducation/ode-react-ui.git"
+  },
+  "author": "Open Digital Education",
+  "devDependencies": {
+    "@vitejs/plugin-react": "2.1.0",
+    "vite": "3.1.3",
+    "vite-plugin-dts": "1.5.0"
+  }
+}

@@ -1,14 +1,13 @@
-# @ode-react-ui/config
+# Open Digital Education Shared Configuration
 
-Shared config between packages
+Shared config between libs
 
 - [Eslint Configuration](https://eslint.org/)
-  - `base.js` is the main configuration file for Eslint
-  - `eslint.js` is used by all packages except `@ode-react-ui/icons`
-  - `eslint.icons.js` is used only by `@ode-react-ui/icons` due to separate rules
+  - `index.js` is the main configuration file for Eslint
+  - `icons.js` is used only by `@ode-react-ui/icons` due to separate rules
 - [Prettier Configuration](https://prettier.io/)
-  - `.prettierrc.json` is the main configuration file for Prettier
+  - `prettier.config.js` is the main configuration file for Prettier
 - [TypeScript Configuration](https://www.typescriptlang.org/)
-  - `base.json` is the main configuration file for TypeScript
+  - `tsconfig.json` is the main configuration file for TypeScript
 - [Vite Configuration](https://vitejs.dev/)
-  - `vite.config.ts` is the main file used by all lib packages except storybook
+  - `vite.config.ts` is the main file used by all librairies except storybook
