@@ -36,10 +36,10 @@
     "build": "yarn icons && vite build --config ../../config/vite/vite.config.ts",
     "icons": "npx @svgr/cli assets --config-file ./svgr.config.cjs",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "pretty": "concurrently \"yarn:pretty:*\"",
-    "pretty:check": "yarn prettier --check .",
-    "pretty:write": "yarn prettier --write ."
+    "fix": "eslint --fix .",
+    "format": "concurrently \"yarn:format:*\"",
+    "format:check": "yarn prettier --check .",
+    "format:write": "yarn prettier --write ."
   },
   "prettier": "@ode-react-ui/prettier-config-custom",
   "dependencies": {
@@ -47,14 +47,14 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@ode-react-ui/eslint-config-custom": "*",
+    "@ode-react-ui/prettier-config-custom": "*",
+    "@ode-react-ui/typescript-config-custom": "*",
     "@svgr/cli": "^6.4.0",
     "@types/node": "^18.7.16",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
-    "concurrently": "7.4.0",
-    "@ode-react-ui/eslint-config-custom": "*",
-    "@ode-react-ui/prettier-config-custom": "*",
-    "@ode-react-ui/typescript-config-custom": "*"
+    "concurrently": "7.4.0"
   },
   "peerDependencies": {
     "react": "18.2.0",

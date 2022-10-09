@@ -24,7 +24,7 @@ yarn lint
 Use Eslint configuration file from `config` workspace to check all files inside `src` folder.
 
 ```bash
-yarn lint:fix
+yarn fix
 ```
 
 If `yarn lint` shows issues, run this command to fix them.
