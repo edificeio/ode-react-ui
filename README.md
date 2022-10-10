@@ -23,7 +23,11 @@ Many tools are already configured like:
 - [Lerna](https://lerna.js.org/docs/getting-started)
 - [Storybook](https://storybook.js.org/)
 
+---
+
 ## Getting Started
+
+> ⚠️ Before starting any development, please read the [CONTRIBUTION](./CONTRIBUTING.md) GUIDE.
 
 ### Install
 
@@ -65,6 +69,18 @@ yarn clean
 yarn build
 ```
 
+### Pre-commit
+
+> Lint + format all files from libs
+
+When committing, husky handles `pre-commit`
+
+```bash
+yarn pre-commit
+```
+
+---
+
 ## Storybook
 
 > Start Storybook on port 6006
@@ -73,14 +89,23 @@ yarn build
 yarn storybook
 ```
 
-## Turborepo
+---
 
-[Turborepo](https://turborepo.org/)
+## [Turborepo](https://turborepo.org/)
 
-### Github Actions
+### Cache
 
-[Github Actions](https://turborepo.org/docs/ci/github-actions)
-[Versioning and Publishing](https://turborepo.org/docs/handbook/publishing-packages/versioning-and-publishing)
+Turborepo will cache `build`, `lint`, `fix` and `format` results. So if no changes is detected and you run one command again, Turborepo will read from the cache and only apply the task on new changes.
+
+### Versioning and Publishing
+
+- [Versioning and Publishing](https://turborepo.org/docs/handbook/publishing-packages/versioning-and-publishing)
+
+## Github Actions
+
+- [Github Actions](https://turborepo.org/docs/ci/github-actions)
+
+---
 
 ## License
 

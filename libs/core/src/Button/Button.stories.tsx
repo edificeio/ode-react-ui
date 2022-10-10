@@ -2,6 +2,8 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { Button } from "./Button";
 
+import { withCssResources } from "@storybook/addon-cssresources";
+
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Components/Core/Button",
@@ -10,6 +12,7 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
   },
+  decorators: [withCssResources],
 } as ComponentMeta<typeof Button>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

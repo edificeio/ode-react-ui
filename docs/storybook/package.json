@@ -22,12 +22,11 @@
   "scripts": {
     "build-storybook": "build-storybook -o dist/storybook",
     "preview": "start-storybook --docs --no-manager-cache",
-    "storybook": "start-storybook -p 6006"
+    "dev": "start-storybook -p 6006"
   },
   "dependencies": {
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "@ode-react-ui/icons": "*"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.19.0",
