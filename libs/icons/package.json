@@ -50,10 +50,10 @@
     "@ode-react-ui/eslint-config-custom": "*",
     "@ode-react-ui/prettier-config-custom": "*",
     "@ode-react-ui/typescript-config-custom": "*",
-    "@svgr/cli": "^6.4.0",
-    "@types/node": "^18.7.16",
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
+    "@svgr/cli": "6.4.0",
+    "@types/node": "18.7.16",
+    "@types/react": "18.0.17",
+    "@types/react-dom": "18.0.6",
     "concurrently": "7.4.0"
   },
   "peerDependencies": {

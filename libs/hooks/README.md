@@ -32,10 +32,10 @@ If `yarn lint` shows issues, run this command to fix them.
 ### Prettier
 
 ```bash
-yarn pretty
+yarn format
 ```
 
-This command starts `prettier:check` + `prettier:write` using Prettier configuration file from `config` workspace.
+This command starts `format:check` + `format:write` using Prettier configuration file from `config` workspace.
 
 ## Structure
 

@@ -46,7 +46,7 @@ yarn lint
 > Prettier all libs from root folder
 
 ```bash
-yarn pretty
+yarn format
 ```
 
 ### Clean
@@ -73,30 +73,15 @@ yarn build
 yarn storybook
 ```
 
-## Lerna
+## Turborepo
 
-[Lerna Documentation](https://lerna.js.org/docs/features/run-tasks)
+[Turborepo](https://turborepo.org/)
 
-- To add a new dependency to a package, use `lerna add` to do so:
+### Github Actions
 
-[@lerna/add](https://github.com/lerna/lerna/tree/main/commands/add#readme)
+[Github Actions](https://turborepo.org/docs/ci/github-actions)
+[Versioning and Publishing](https://turborepo.org/docs/handbook/publishing-packages/versioning-and-publishing)
 
-```bash
-yarn lerna add <dep> --dev --exact
-```
+## License
 
-- If you want start a command (`build`, `lint`, ...) for a specific package from root folder, add `--scope` option:
-
-[--scope](https://lerna.js.org/docs/features/run-tasks#run-a-single-task)
-
-```bash
-yarn <command> --scope=@ode-react-ui/core
-```
-
-## NX
-
-[Cache Tasks](https://lerna.js.org/docs/features/cache-tasks)
-
-If any command (`build`, `lint`, ...) was successful, NX will cache the result and not retry the task if no change has occurred. See [nx.json](./nx.json)
-
-> Nx read the output from the cache instead of running the command for 1 out of 2 tasks.
+This project is licensed under the AGPL-3.0 license.

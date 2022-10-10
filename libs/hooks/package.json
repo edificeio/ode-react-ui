@@ -52,9 +52,9 @@
     "@ode-react-ui/eslint-config-custom": "*",
     "@ode-react-ui/prettier-config-custom": "*",
     "@ode-react-ui/typescript-config-custom": "*",
-    "@types/node": "^18.7.18",
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
+    "@types/node": "18.7.18",
+    "@types/react": "18.0.17",
+    "@types/react-dom": "18.0.6",
     "concurrently": "7.4.0"
   },
   "peerDependencies": {
