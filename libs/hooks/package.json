@@ -36,11 +36,11 @@
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "yarn prebuild && tsc --noEmit && vite build --config ../../config/vite/vite.config.ts",
-    "lint": "eslint .",
     "fix": "eslint --fix .",
     "format": "concurrently \"yarn:format:*\"",
     "format:check": "yarn prettier --check .",
-    "format:write": "yarn prettier --write ."
+    "format:write": "yarn prettier --write .",
+    "lint": "eslint ."
   },
   "prettier": "@ode-react-ui/prettier-config-custom",
   "dependencies": {
