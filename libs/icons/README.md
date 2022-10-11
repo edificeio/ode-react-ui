@@ -4,13 +4,18 @@ Open Digital Education React Icons Components Library
 
 ## Getting Started
 
+Use Vite [Library mode](https://vitejs.dev/guide/build.html#library-mode) configuration files from [Config](../../config/README.md) to build the library.
+
+### First
+
+- Add a new `*.svg` to assets
+- Name of `*.svg` file should be in camelCase (e.g: `addUser`)
+
 ### Build
 
 ```bash
 yarn build
 ```
-
-Use Vite [Library mode](https://vitejs.dev/guide/build.html#library-mode) configuration files from [Config](../../config/README.md) to build the library.
 
 - Create all React Icons Components based on `*.svg` files inside `assets` folder and import them all inside `index.tsx` file
 - Generate a `dist` folder with `index` files (ESM + CJS)
