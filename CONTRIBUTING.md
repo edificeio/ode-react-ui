@@ -55,12 +55,12 @@ We already have an `update/docs` branch to work on `Storybook`
 - Before starting any development, please rebase the main branch.
 - Checkout to your own development branch if different from information above.
 - Rebase this branch with main branch.
-- Add your changes without committing.
+- Start developing!
 - Then, read CHANGESET section.
 
 ## Changeset
 
-- Before committing your changes, please run `yarn changeset`
+- Before adding your changes, please run `yarn changeset`
 
 ![changeset](./.changeset/changed_package.png "Changeset")
 
