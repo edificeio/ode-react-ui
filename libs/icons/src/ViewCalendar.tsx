@@ -4,14 +4,14 @@ interface SVGRProps {
   titleId?: string;
 }
 
-const SvgArrowRight = ({
+const SvgViewCalendar = ({
   title,
   titleId,
   ...props
 }: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
-    width="1em"
-    height="1em"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -23,10 +23,10 @@ const SvgArrowRight = ({
     <path
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M7.871 19.988a1.5 1.5 0 0 1 .141-2.117L14.722 12l-6.71-5.871A1.5 1.5 0 0 1 9.988 3.87l8 7a1.5 1.5 0 0 1 0 2.258l-8 7a1.5 1.5 0 0 1-2.117-.141Z"
+      d="M4 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v3H4V5Zm9 5h7v4h-7v-4Zm-2 4v-4H4v4h7Zm-7 2h7v4H5a1 1 0 0 1-1-1v-3Zm-2-1V5a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-4Zm18 1v3a1 1 0 0 1-1 1h-6v-4h7Z"
       fill="currentColor"
     />
   </svg>
 );
 
-export default SvgArrowRight;
+export default SvgViewCalendar;

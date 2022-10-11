@@ -34,12 +34,12 @@
   ],
   "scripts": {
     "build": "yarn icons && vite build --config ../../config/vite/vite.config.ts",
-    "icons": "npx @svgr/cli assets --config-file ./svgr.config.cjs",
-    "lint": "eslint .",
     "fix": "eslint --fix .",
     "format": "concurrently \"yarn:format:*\"",
     "format:check": "yarn prettier --check .",
-    "format:write": "yarn prettier --write ."
+    "format:write": "yarn prettier --write .",
+    "icons": "npx @svgr/cli assets --config-file ./svgr.config.cjs",
+    "lint": "eslint ."
   },
   "prettier": "@ode-react-ui/prettier-config-custom",
   "dependencies": {

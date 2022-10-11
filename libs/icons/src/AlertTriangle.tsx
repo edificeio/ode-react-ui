@@ -10,8 +10,8 @@ const SvgAlertTriangle = ({
   ...props
 }: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
-    width="1em"
-    height="1em"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +29,7 @@ const SvgAlertTriangle = ({
     <path
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M10.248 2.111c.76-1.381 2.745-1.381 3.505 0l9.308 16.925C23.794 20.37 22.83 22 21.31 22H2.69C1.171 22 .206 20.37.94 19.036l9.309-16.925Zm11.06 17.89L12 3.074 2.691 20H21.31Z"
+      d="M10.248 2.111c.76-1.381 2.745-1.381 3.505 0l9.308 16.925C23.794 20.37 22.83 22 21.31 22H2.69C1.171 22 .206 20.369.94 19.036l9.309-16.925ZM21.308 20 12 3.075 2.691 20H21.31Z"
       fill="currentColor"
     />
   </svg>
