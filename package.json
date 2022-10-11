@@ -32,7 +32,8 @@
     "format": "turbo run format",
     "storybook": "turbo run storybook --filter=@ode-react-ui/storybook",
     "pre-commit": "yarn lint && yarn format",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "dev-storybook": "turbo run dev-storybook --filter=@ode-react-ui/storybook"
   },
   "resolutions": {
     "**/default-browser-id/meow": "8.0.0",
