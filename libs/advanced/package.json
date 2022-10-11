@@ -35,19 +35,19 @@
   ],
   "scripts": {
     "build": "tsc --noEmit && vite build --config ../../config/vite/vite.config.ts",
-    "lint": "eslint .",
     "fix": "eslint --fix .",
     "format": "concurrently \"yarn:format:*\"",
     "format:check": "npx prettier --check .",
-    "format:write": "npx prettier --write ."
+    "format:write": "npx prettier --write .",
+    "lint": "eslint ."
   },
   "prettier": "@ode-react-ui/prettier-config-custom",
   "dependencies": {
+    "@ode-react-ui/core": "*",
+    "@ode-react-ui/icons": "*",
     "clsx": "1.2.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "@ode-react-ui/core": "*",
-    "@ode-react-ui/icons": "*"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@emotion/react": "11.10.4",

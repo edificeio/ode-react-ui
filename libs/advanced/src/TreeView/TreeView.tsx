@@ -8,7 +8,7 @@
 
 import TreeItem from "@mui/lab/TreeItem";
 import TreeView from "@mui/lab/TreeView";
-import { ArrowRight, ArrowDown } from "@ode-react-ui/icons";
+import { RafterRight, RafterDown } from "@ode-react-ui/icons";
 
 import { RenderTree } from "./TreeViewProps";
 
@@ -27,9 +27,9 @@ export default function RichObjectTreeView({ data }: any) {
   return (
     <TreeView
       aria-label="rich object"
-      defaultCollapseIcon={<ArrowDown />}
+      defaultCollapseIcon={<RafterDown />}
       defaultExpanded={["root"]}
-      defaultExpandIcon={<ArrowRight />}
+      defaultExpandIcon={<RafterRight />}
       sx={{ height: 500, flexGrow: 1, maxWidth: 400, overflowY: "auto" }}
     >
       {renderTree(data)}
