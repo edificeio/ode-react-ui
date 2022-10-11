@@ -4,14 +4,14 @@ interface SVGRProps {
   titleId?: string;
 }
 
-const SvgArrowUp = ({
+const SvgRadioSelected = ({
   title,
   titleId,
   ...props
 }: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
-    width="1em"
-    height="1em"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -23,10 +23,11 @@ const SvgArrowUp = ({
     <path
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M19.988 17.129a1.5 1.5 0 0 1-2.117-.141L12 10.278l-5.871 6.71a1.5 1.5 0 0 1-2.258-1.976l7-8a1.5 1.5 0 0 1 2.258 0l7 8a1.5 1.5 0 0 1-.141 2.117Z"
+      d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 2c6.075 0 11-4.925 11-11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11Z"
       fill="currentColor"
     />
+    <circle cx={12} cy={12} r={6.636} fill="currentColor" />
   </svg>
 );
 
-export default SvgArrowUp;
+export default SvgRadioSelected;

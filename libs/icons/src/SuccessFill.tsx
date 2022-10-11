@@ -4,14 +4,14 @@ interface SVGRProps {
   titleId?: string;
 }
 
-const SvgArrowDown = ({
+const SvgSuccessFill = ({
   title,
   titleId,
   ...props
 }: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
-    width="1em"
-    height="1em"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -23,10 +23,10 @@ const SvgArrowDown = ({
     <path
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M4.012 6.871a1.5 1.5 0 0 1 2.117.141L12 13.722l5.871-6.71a1.5 1.5 0 1 1 2.258 1.976l-7 8a1.5 1.5 0 0 1-2.258 0l-7-8a1.5 1.5 0 0 1 .141-2.117Z"
+      d="M12 23c6.075 0 11-4.925 11-11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11Zm4.808-13.41a1 1 0 1 0-1.616-1.18l-3.61 4.951-1.806-2.222a1 1 0 0 0-1.552 1.26l2.625 3.232a1 1 0 0 0 1.584-.042l4.375-6Z"
       fill="currentColor"
     />
   </svg>
 );
 
-export default SvgArrowDown;
+export default SvgSuccessFill;

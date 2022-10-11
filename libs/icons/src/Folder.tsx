@@ -10,8 +10,8 @@ const SvgFolder = ({
   ...props
 }: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
-    width="1em"
-    height="1em"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,9 @@ const SvgFolder = ({
   >
     {title ? <title id={titleId}>{title}</title> : null}
     <path
-      d="M12.303 7.374h-1a1 1 0 0 0 1 1v-1ZM3 6.057C3 6.025 3.025 6 3.057 6V4C1.92 4 1 4.92 1 6.057h2Zm0 1.317V6.057H1v1.317h2Zm0 0H1h2Zm0 11.714V7.374H1v11.714h2Zm0 0H1a2 2 0 0 0 2 2v-2Zm18 0H3v2h18v-2Zm0 0v2a2 2 0 0 0 2-2h-2Zm0-10.714v10.714h2V8.374h-2Zm0 0h2a2 2 0 0 0-2-2v2Zm-8.697 0H21v-2h-8.697v2ZM9.929 6c.76 0 1.374.615 1.374 1.374h2A3.374 3.374 0 0 0 9.929 4v2ZM3.057 6h6.872V4H3.057v2Z"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M3.057 5.5A.057.057 0 0 0 3 5.557v13.03h18V7.875h-8.697a1 1 0 0 1-1-1c0-.759-.615-1.374-1.374-1.374H3.057ZM1 5.557C1 4.42 1.92 3.5 3.057 3.5h6.872c1.515 0 2.797.999 3.223 2.374H21a2 2 0 0 1 2 2v10.714a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V5.557Z"
       fill="currentColor"
     />
   </svg>

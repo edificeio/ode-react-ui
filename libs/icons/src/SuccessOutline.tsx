@@ -4,14 +4,14 @@ interface SVGRProps {
   titleId?: string;
 }
 
-const SvgSuccess = ({
+const SvgSuccessOutline = ({
   title,
   titleId,
   ...props
 }: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
-    width="1em"
-    height="1em"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -35,4 +35,4 @@ const SvgSuccess = ({
   </svg>
 );
 
-export default SvgSuccess;
+export default SvgSuccessOutline;
