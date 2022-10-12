@@ -37,7 +37,9 @@
   },
   "resolutions": {
     "**/default-browser-id/meow": "8.0.0",
+    "**/@changesets/cli/meow": "8.0.0",
     "**/fast-glob/glob-parent": "5.1.2",
+    "**/chokidar/glob-parent": "5.1.2",
     "**/nx/axios": "0.21.2",
     "**/remark-parse/trim": "0.0.3",
     "**/watchpack-chokidar2/chokidar": "3.5.1"
