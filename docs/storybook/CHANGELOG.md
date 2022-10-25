@@ -1,5 +1,11 @@
 # @ode-react-ui/storybook
 
+## 1.0.2
+
+### Patch Changes
+
+- [#10](https://github.com/opendigitaleducation/ode-react-ui/pull/10) [`865b679`](https://github.com/opendigitaleducation/ode-react-ui/commit/865b679ef265a2cecfdd6d78bf13020701cfcd6f) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update config and add assets to switch theme
+
 ## 1.0.1
 
 ### Patch Changes
