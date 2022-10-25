@@ -4,6 +4,9 @@ import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 
 export default defineConfig({
+  esbuild: {
+    minifyIdentifiers: false,
+  },
   build: {
     lib: {
       entry: "src/index.ts",
