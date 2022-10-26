@@ -33,7 +33,7 @@
     "lint": "turbo run lint",
     "pre-commit": "yarn lint && yarn format",
     "prepare": "husky install",
-    "publish-packages": "turbo run build lint && changeset version && changeset publish",
+    "publish-packages": "changeset version && changeset publish",
     "playground": "turbo run dev --filter=@ode-react-ui/storybook"
   },
   "resolutions": {

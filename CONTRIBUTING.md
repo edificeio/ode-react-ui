@@ -72,6 +72,8 @@ We already have an `update/docs` branch to work on `Storybook`
 
 ![minor bump](./.changeset/minor_bump.png "Bump")
 
+- When questioning about bump other packages, please, enter No.
+
 - Add a summary about your work.
 - Say `Yes` to next prompt.
 - Add changeset to your tracked files.

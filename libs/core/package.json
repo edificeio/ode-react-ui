@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/core",
-  "version": "2.1.0",
+  "version": "1.0.0",
   "private": false,
   "description": "@ode-react-ui react core components",
   "keywords": [
@@ -64,5 +64,8 @@
     "@ode-react-ui/icons": "*",
     "react": "18.2.0",
     "react-dom": "18.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
