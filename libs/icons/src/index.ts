@@ -38,6 +38,7 @@ export { default as Image } from "./Image";
 export { default as Inbox } from "./Inbox";
 export { default as InfoCircle } from "./InfoCircle";
 export { default as ListOrder } from "./ListOrder";
+export { default as Loading } from "./Loading";
 export { default as Lock } from "./Lock";
 export { default as Mail } from "./Mail";
 export { default as MessageInfo } from "./MessageInfo";
