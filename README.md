@@ -20,22 +20,24 @@ Many tools are already configured like:
 - [Eslint](https://eslint.org)
 - [Prettier](https://prettier.io)
 - [Husky](https://github.com/typicode/husky)
-- [Lerna](https://lerna.js.org/docs/getting-started)
+- [Turborepo](https://turborepo.org/)
 - [Storybook](https://storybook.js.org/)
 
 ---
 
 ## Getting Started
 
-> ⚠️ Before starting any development, please read the [CONTRIBUTION](./CONTRIBUTING.md) GUIDE.
-
 ### Install
 
-Install the project locally:
+> ⚠️ Before starting any development, please read the [CONTRIBUTION](./CONTRIBUTING.md) GUIDE.
 
 ```bash
 yarn
 ```
+
+## Dev
+
+Any available commands during your development.
 
 ### Lint
 
@@ -86,7 +88,13 @@ yarn pre-commit
 > Start Storybook on port 6006
 
 ```bash
-yarn storybook
+yarn dev-storybook
+```
+
+> If you want to work inside a React Application, start the playground.
+
+```bash
+yarn playground
 ```
 
 ---
