@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/vite-custom-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "TypeScript Custom Config",
   "homepage": "https://github.com/opendigitaleducation/ode-react-ui/tree/main/config#readme",
