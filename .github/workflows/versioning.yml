@@ -1,4 +1,4 @@
-name: Versioning
+name: Build, Versioning & Release
 
 on:
   push:
@@ -29,7 +29,11 @@ jobs:
       - name: Build Storybook
         run: yarn build:storybook
 
-      - name: Create Release Pull Request
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
         uses: changesets/action@v1
+        with:
+          publish: yarn publish-packages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

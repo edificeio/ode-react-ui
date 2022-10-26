@@ -1,19 +1,15 @@
 # @ode-react-ui/core
 
-## 2.1.0
+## 1.0.0
 
 ### Minor Changes
 
 - [#16](https://github.com/opendigitaleducation/ode-react-ui/pull/16) [`ed65f15`](https://github.com/opendigitaleducation/ode-react-ui/commit/ed65f15fb37f8c09993e77b1c9c6ae43d9fc1ee5) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add new component Button, TypeScript Props and Stories
 
-## 2.0.0
-
 ### Patch Changes
 
 - Updated dependencies [[`95c66f6`](https://github.com/opendigitaleducation/ode-react-ui/commit/95c66f6eacfddf592382bee0dab6dcebd40af0bd)]:
   - @ode-react-ui/icons@0.2.0
-
-## 1.0.0
 
 ### Patch Changes
 
