@@ -1,22 +1,56 @@
-export interface ButtonProps {
+import { ReactNode } from "react";
+
+export type ButtonTypes = "button" | "submit" | "reset";
+export type ButtonColors = "primary" | "secondary" | "tertiary" | "danger";
+export type ButtonVariants = "filled" | "outline" | "ghost";
+export type LoadingPosition = "left" | "right" | undefined;
+
+export type LoadingButtonProps = JSX.Element | undefined;
+
+export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   /**
-   * Is this the principal call to action on the page?
+   * `button`, `submit` or `reset`
    */
-  primary?: boolean;
+  type: ButtonTypes;
   /**
-   * What background color to use
+   * `primary`, `secondary`, `tertiary` or `danger`
    */
-  backgroundColor?: string;
+  color: ButtonColors;
   /**
-   * How large should the button be?
+   * `filled`, `outline` or `ghost`
    */
-  size?: "small" | "medium" | "large";
+  variant: ButtonVariants;
   /**
-   * Button contents
+   * Does it has a text ?
    */
-  label: string;
+  children: string;
   /**
-   * Optional click handler
+   * Display Icon Component to the left
    */
-  onClick?: () => void;
+  leftIcon?: ReactNode;
+  /**
+   * Display Icon Component to the right
+   */
+  rightIcon?: ReactNode;
+  /**
+   * Is it loading ?
+   */
+  loading?: boolean;
+  /**
+   * Override Loading Icon
+   */
+  loadingIcon?: LoadingButtonProps;
+  /**
+   * Loading Icon Position
+   * `left`, `right`
+   */
+  loadingPosition?: LoadingPosition;
+  /**
+   * Disabled status
+   */
+  disabled?: boolean;
+  /**
+   * When using Icon Button
+   */
+  ariaLabel?: string;
 }
