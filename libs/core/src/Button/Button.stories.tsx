@@ -28,6 +28,16 @@ export default {
       options: ["button", "submit", "reset"],
       control: { type: "select" },
     },
+    loadingPosition: {
+      options: ["left", "right"],
+      control: { type: "inline-radio" },
+    },
+  },
+  args: {
+    ariaLabel: "",
+    color: "primary",
+    variant: "filled",
+    disabled: false,
   },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   decorators: [withCssResources],
