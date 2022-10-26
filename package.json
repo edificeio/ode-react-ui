@@ -18,22 +18,23 @@
     "libs/*"
   ],
   "scripts": {
-    "clean:lib": "rm -rf libs/**/node_modules && rm -rf libs/**/dist",
-    "clean:config": "rm -rf config/**/node_modules",
-    "clean:docs": "rm -rf docs/**/node_modules && rm -rf docs/**/dist",
-    "build": "turbo run build --filter=!@starter/storybook",
     "build:advanced": "turbo run build --filter=@ode-react-ui/advanced",
     "build:core": "turbo run build --filter=@ode-react-ui/core",
     "build:hooks": "turbo run build --filter=@ode-react-ui/hooks",
     "build:icons": "turbo run build --filter=@ode-react-ui/icons",
     "build:storybook": "turbo run build-storybook --filter=@ode-react-ui/storybook",
-    "lint": "turbo run lint",
+    "build": "turbo run build --filter=!@starter/storybook",
+    "clean:config": "rm -rf config/**/node_modules",
+    "clean:docs": "rm -rf docs/**/node_modules && rm -rf docs/**/dist",
+    "clean:lib": "rm -rf libs/**/node_modules && rm -rf libs/**/dist",
+    "dev-storybook": "turbo run dev-storybook --filter=@ode-react-ui/storybook",
     "fix": "turbo run fix",
     "format": "turbo run format",
-    "storybook": "turbo run storybook --filter=@ode-react-ui/storybook",
+    "lint": "turbo run lint",
     "pre-commit": "yarn lint && yarn format",
     "prepare": "husky install",
-    "dev-storybook": "turbo run dev-storybook --filter=@ode-react-ui/storybook"
+    "publish-packages": "turbo run build lint && changeset version && changeset publish",
+    "playground": "turbo run dev --filter=@ode-react-ui/storybook"
   },
   "resolutions": {
     "**/default-browser-id/meow": "8.0.0",
