@@ -1,18 +1,14 @@
 # @ode-react-ui/icons
 
-## 0.2.0
+## 1.0.0
 
 ### Minor Changes
 
 - [#14](https://github.com/opendigitaleducation/ode-react-ui/pull/14) [`95c66f6`](https://github.com/opendigitaleducation/ode-react-ui/commit/95c66f6eacfddf592382bee0dab6dcebd40af0bd) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add new icon to icons package, loading icon is added
 
-## 0.1.1
-
 ### Patch Changes
 
 - [#5](https://github.com/opendigitaleducation/ode-react-ui/pull/5) [`a7a81ff`](https://github.com/opendigitaleducation/ode-react-ui/commit/a7a81ff8bc62860aad64847f29bf77e16db048b9) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update readme file
-
-## 0.1.0
 
 ### Minor Changes
 

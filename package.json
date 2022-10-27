@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/opendigitaleducation/ode-react-ui.git"
   },
-  "license": "GPL-3.0",
+  "license": "AGPL-3.0",
   "author": "Open Digital Education",
   "workspaces": [
     "config/*",

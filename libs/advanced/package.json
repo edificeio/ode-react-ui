@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/advanced",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "private": false,
   "description": "@ode-react-ui react advanced components",
   "keywords": [
@@ -17,7 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/opendigitaleducation/ode-react-ui.git"
   },
-  "license": "GPL-3.0",
+  "license": "AGPL-3.0",
   "author": "Open Digital Education",
   "sideEffects": false,
   "type": "module",

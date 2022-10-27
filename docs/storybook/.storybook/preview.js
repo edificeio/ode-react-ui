@@ -11,12 +11,12 @@ export const parameters = {
       {
         id: "one",
         title: "Thème ONE",
-        url: "assets/themes/ode-bootstrap-one.css",
+        url: "themes/ode-bootstrap-one.css",
       },
       {
         id: "neo",
         title: "Thème NEO",
-        url: "assets/themes/ode-bootstrap-neo.css",
+        url: "themes/ode-bootstrap-neo.css",
       },
     ],
   },
