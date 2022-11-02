@@ -1,5 +1,14 @@
 # @ode-react-ui/core
 
+## 1.0.1
+
+### Patch Changes
+
+- [`4ddaa90`](https://github.com/opendigitaleducation/ode-react-ui/commit/4ddaa9063609db7e7e14d0b9868f231d25a766a9) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update field license
+
+- Updated dependencies [[`4ddaa90`](https://github.com/opendigitaleducation/ode-react-ui/commit/4ddaa9063609db7e7e14d0b9868f231d25a766a9)]:
+  - @ode-react-ui/hooks@1.0.1
+
 ## 1.0.0
 
 ### Minor Changes
