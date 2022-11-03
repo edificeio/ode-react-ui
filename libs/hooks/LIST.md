@@ -3,5 +3,5 @@
 | Hooks Name      |     | Development Storybook |
 | --------------- | :-: | :-------------------: |
 | useClickOutside | ✅  |                       |
-| useTheme        | ✅  |          ✅           |
+| useTheme        | ✅  |                       |
 | useToggle       | ✅  |                       |

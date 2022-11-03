@@ -2,6 +2,9 @@
 
 Open Digital Education React Icons Components Library
 
+![npm](https://badgen.net/npm/v/@ode-react-ui/icons)
+![bundlephobia](https://badgen.net/bundlephobia/minzip/@ode-react-ui/icons)
+
 ## Getting Started
 
 Use Vite [Library mode](https://vitejs.dev/guide/build.html#library-mode) configuration files from [Config](../../config/README.md) to build the library.

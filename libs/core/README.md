@@ -2,6 +2,9 @@
 
 Open Digital Education React Core Components
 
+![npm](https://badgen.net/npm/v/@ode-react-ui/core)
+![bundlephobia](https://badgen.net/bundlephobia/minzip/@ode-react-ui/core)
+
 ## Getting Started
 
 We follow [WAI ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/) rules and [Bootstrap 5](https://getbootstrap.com/docs/5.0/components/accordion/) guidelines when making our components

@@ -35,6 +35,12 @@ Many tools are already configured like:
 yarn
 ```
 
+> Then, you need to build at least once every lib to use them
+
+```bash
+yarn build
+```
+
 ## Dev
 
 Any available commands during your development.
@@ -69,16 +75,6 @@ yarn clean
 
 ```bash
 yarn build
-```
-
-### Pre-commit
-
-> Lint + format all files from libs
-
-When committing, husky handles `pre-commit`
-
-```bash
-yarn pre-commit
 ```
 
 ---

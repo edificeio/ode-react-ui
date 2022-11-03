@@ -2,4 +2,4 @@
 
 | Component Name | Figma | Development | A11y check | Storybook |
 | -------------- | :---: | :---------: | :--------: | :-------: |
-| TreeView       |  ✅   |     ✅      |            |    ✅     |
+| TreeView       |  ✅   |             |            |           |

@@ -1,5 +1,8 @@
 # Open Digital Education React Advanced Components
 
+![npm](https://badgen.net/npm/v/@ode-react-ui/advanced)
+![bundlephobia](https://badgen.net/bundlephobia/minzip/@ode-react-ui/advanced)
+
 ## Getting Started
 
 ### Build

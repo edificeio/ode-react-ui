@@ -3,7 +3,6 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-
 const SvgQuestion = ({
   title,
   titleId,
@@ -15,7 +14,6 @@ const SvgQuestion = ({
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    role="img"
     aria-labelledby={titleId}
     {...props}
   >
@@ -35,5 +33,4 @@ const SvgQuestion = ({
     <path d="M13.325 17.167a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" fill="currentColor" />
   </svg>
 );
-
 export default SvgQuestion;

@@ -2,6 +2,9 @@
 
 Open Digital Education React Core Components
 
+![npm](https://badgen.net/npm/v/@ode-react-ui/hooks)
+![bundlephobia](https://badgen.net/bundlephobia/minzip/@ode-react-ui/hooks)
+
 ## Getting Started
 
 ### Build

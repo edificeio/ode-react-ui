@@ -3,7 +3,6 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-
 const SvgSee = ({
   title,
   titleId,
@@ -15,7 +14,6 @@ const SvgSee = ({
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    role="img"
     aria-labelledby={titleId}
     {...props}
   >
@@ -34,5 +32,4 @@ const SvgSee = ({
     />
   </svg>
 );
-
 export default SvgSee;

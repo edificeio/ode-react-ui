@@ -3,7 +3,6 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-
 const SvgRadioSelected = ({
   title,
   titleId,
@@ -15,7 +14,6 @@ const SvgRadioSelected = ({
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    role="img"
     aria-labelledby={titleId}
     {...props}
   >
@@ -29,5 +27,4 @@ const SvgRadioSelected = ({
     <circle cx={12} cy={12} r={6.636} fill="currentColor" />
   </svg>
 );
-
 export default SvgRadioSelected;
