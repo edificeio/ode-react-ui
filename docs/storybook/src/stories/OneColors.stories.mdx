@@ -1,0 +1,261 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Design Tokens/One Colors" />
+
+<style>
+    {`
+        * {box-sizing: border-box;}
+        .h2, .h3 {margin-top: 50px;border-bottom: 0;}
+        .flex {display: flex;gap: 24px;flex-wrap: wrap;justify-content: flex-start;}
+        .ctn-card {box-shadow: 0px 2px 6px 0px #00000026;border-radius: 8px;}
+        .name-color {font-weight: bold;}
+        .name-color, .hexa-color, .variable {margin: 0;}
+        .background-color {height: 100px;width: 160px;border-radius: 8px 8px 0 0;}
+        .description-color {padding: 16px;width: 160px;height: 102px;border-radius: 0 0 8px 8px;background: #FFFFFF;box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);}
+
+        .purple {background-color: #A348C0;}
+        .purple-900 {background-color: #812E9C;}
+        .purple-200 {background-color: #C79ED5;}
+        .purple-100 {background-color: #FAEBFF;}
+
+        .blue {background-color: #46AFE6;}
+        .blue-900 {background-color: #1E8EC9;}
+        .blue-200 {background-color: #B2DAEF;}
+        .blue-100 {background-color: #E4F4FF;}
+
+        .green {background-color: #5AC235;}
+        .green-900 {background-color: #569E1B;}
+        .green-200 {background-color: #C3E5A5;}
+        .green-100 {background-color: #E7F6E0;}
+
+        .yellow {background-color: #F1CA00;}
+        .yellow-900 {background-color: #DFBC09;}
+        .yellow-200 {background-color: #FAEA9C;}
+        .yellow-100 {background-color: #FFFAE3;}
+
+        .red {background-color: #FF3A55;}
+        .red-900 {background-color: #E31E39;}
+        .red-200 {background-color: #FFB6C0;}
+        .red-100 {background-color: #FFE8EA;}
+
+        .orange {background-color: #FF8D2E;}
+        .orange-900 {background-color: #F17A17;}
+        .orange-200 {background-color: #FFCBA0;}
+        .orange-100 {background-color: #FFEFE3;}
+    `}
+</style>
+
+<div className="ctn">
+  <h2 className="h2">One Complementary colors</h2>
+  <h3 className="h3">Default</h3>
+  <p className="title">Complementary colors are use for graphic elements, illustrations, days of the week representation elements, calendar and some specifique titles</p>
+  <div className="flex">
+    <div className="ctn-card">
+      <div className="background-color purple"></div>
+      <div className="description-color">
+        <p className="name-color">Purple</p>
+        <p className="hexa-color">#A348C0</p>
+        <p className="variable">$purple</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color blue"></div>
+      <div className="description-color">
+        <p className="name-color">Blue</p>
+        <p className="hexa-color">#46AFE6</p>
+        <p className="variable">$blue</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color green"></div>
+      <div className="description-color">
+        <p className="name-color">Green</p>
+        <p className="hexa-color">#5AC235</p>
+        <p className="variable">$green</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color yellow"></div>
+      <div className="description-color">
+        <p className="name-color">Yellow</p>
+        <p className="hexa-color">#F1CA00</p>
+        <p className="variable">$yellow</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color red"></div>
+      <div className="description-color">
+        <p className="name-color">Red</p>
+        <p className="hexa-color">#FF3A55</p>
+        <p className="variable">$red</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color orange"></div>
+      <div className="description-color">
+        <p className="name-color">Orange</p>
+        <p className="hexa-color">#FF8D2E</p>
+        <p className="variable">$orange</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 className="h3">Dark</h3>
+  <p className="title">Can be used for hover effects, graphic elements and illustrations.</p>
+  <div className="flex">
+    <div className="ctn-card">
+      <div className="background-color purple-900"></div>
+      <div className="description-color">
+        <p className="name-color">Purple</p>
+        <p className="hexa-color">#812E9C</p>
+        <p className="variable">$purple-900</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color blue-900"></div>
+      <div className="description-color">
+        <p className="name-color">Blue</p>
+        <p className="hexa-color">#1E8EC9</p>
+        <p className="variable">$blue-900</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color green-900"></div>
+      <div className="description-color">
+        <p className="name-color">Green</p>
+        <p className="hexa-color">#569E1B</p>
+        <p className="variable">$green-900</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color yellow-900"></div>
+      <div className="description-color">
+        <p className="name-color">Yellow</p>
+        <p className="hexa-color">#DFBC09</p>
+        <p className="variable">$yellow-900</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color red-900"></div>
+      <div className="description-color">
+        <p className="name-color">Red</p>
+        <p className="hexa-color">#E31E39</p>
+        <p className="variable">$red-900</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color orange-900"></div>
+      <div className="description-color">
+        <p className="name-color">Orange</p>
+        <p className="hexa-color">#F17A17</p>
+        <p className="variable">$orange-900</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 className="h3">Light</h3>
+  <p className="title">Can be used for hover effects, graphic elements and illustrations.</p>
+  <div className="flex">
+    <div className="ctn-card">
+      <div className="background-color purple-200"></div>
+      <div className="description-color">
+        <p className="name-color">Purple</p>
+        <p className="hexa-color">#C79ED5</p>
+        <p className="variable">$purple-200</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color blue-200"></div>
+      <div className="description-color">
+        <p className="name-color">Blue</p>
+        <p className="hexa-color">#B2DAEF</p>
+        <p className="variable">$blue-200</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color green-200"></div>
+      <div className="description-color">
+        <p className="name-color">Green</p>
+        <p className="hexa-color">#C3E5A5</p>
+        <p className="variable">$green-200</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color yellow-200"></div>
+      <div className="description-color">
+        <p className="name-color">Yellow</p>
+        <p className="hexa-color">#FAEA9C</p>
+        <p className="variable">$yellow-200</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color red-200"></div>
+      <div className="description-color">
+        <p className="name-color">Red</p>
+        <p className="hexa-color">#FFB6C0</p>
+        <p className="variable">$red-200</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color orange-200"></div>
+      <div className="description-color">
+        <p className="name-color">Orange</p>
+        <p className="hexa-color">#FFCBA0</p>
+        <p className="variable">$orange-200</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 className="h3">Pale</h3>
+  <p className="title">Can be used for hover effects, graphic elements and illustrations.</p>
+  <div className="flex">
+    <div className="ctn-card">
+      <div className="background-color purple-100"></div>
+      <div className="description-color">
+        <p className="name-color">Purple</p>
+        <p className="hexa-color">#FAEBFF</p>
+        <p className="variable">$purple-100</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color blue-100"></div>
+      <div className="description-color">
+        <p className="name-color">Blue</p>
+        <p className="hexa-color">#E4F4FF</p>
+        <p className="variable">$blue-100</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color green-100"></div>
+      <div className="description-color">
+        <p className="name-color">Green</p>
+        <p className="hexa-color">#E7F6E0</p>
+        <p className="variable">$green-100</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color yellow-100"></div>
+      <div className="description-color">
+        <p className="name-color">Yellow</p>
+        <p className="hexa-color">#FFFAE3</p>
+        <p className="variable">$yellow-100</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color red-100"></div>
+      <div className="description-color">
+        <p className="name-color">Red</p>
+        <p className="hexa-color">#FFE8EA</p>
+        <p className="variable">$red-100</p>
+      </div>
+    </div>
+    <div className="ctn-card">
+      <div className="background-color orange-100"></div>
+      <div className="description-color">
+        <p className="name-color">Orange</p>
+        <p className="hexa-color">#FFEFE3</p>
+        <p className="variable">$orange-100</p>
+      </div>
+    </div>
+  </div>
+</div>
