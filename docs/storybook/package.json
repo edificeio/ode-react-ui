@@ -21,7 +21,7 @@
   "author": "Open Digital Education",
   "scripts": {
     "dev": "vite dev",
-    "build-storybook": "build-storybook -o dist/storybook",
+    "build-storybook": "build-storybook -o dist/",
     "dev-storybook": "start-storybook -p 6006",
     "preview": "start-storybook --docs --no-manager-cache"
   },
