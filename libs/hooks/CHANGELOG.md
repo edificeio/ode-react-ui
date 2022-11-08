@@ -1,5 +1,11 @@
 # @ode-react-ui/hooks
 
+## 1.0.1
+
+### Patch Changes
+
+- [`62c2d46`](https://github.com/opendigitaleducation/ode-react-ui/commit/62c2d464277857a879ff5f066b0368253f280e67) Thanks [@ccreusat](https://github.com/ccreusat)! - update bundle size and add skypack package check
+
 ## 0.0.3
 
 ### Patch Changes
