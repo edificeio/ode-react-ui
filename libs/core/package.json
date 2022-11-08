@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/core",
-  "version": "0.1.0",
+  "version": "1.0.2",
   "private": false,
   "description": "@ode-react-ui react core components",
   "keywords": [
@@ -44,16 +44,16 @@
   "prettier": "@ode-react-ui/prettier-config-custom",
   "devDependencies": {
     "@ode-react-ui/eslint-config-custom": "*",
+    "@ode-react-ui/hooks": "*",
+    "@ode-react-ui/icons": "*",
     "@ode-react-ui/prettier-config-custom": "*",
     "@ode-react-ui/typescript-config-custom": "*",
     "@storybook/react": "6.5.12",
     "@types/node": "18.7.23",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
-    "concurrently": "7.5.0",
-    "@ode-react-ui/hooks": "*",
-    "@ode-react-ui/icons": "*",
     "clsx": "1.2.1",
+    "concurrently": "7.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

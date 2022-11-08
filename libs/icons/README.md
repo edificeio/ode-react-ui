@@ -1,9 +1,7 @@
-# @ode-react-ui/icons
+# Open Digital Education React Icons Library
 
-Open Digital Education React Icons Components Library
-
-![npm](https://badgen.net/npm/v/@ode-react-ui/icons)
-![bundlephobia](https://badgen.net/bundlephobia/minzip/@ode-react-ui/icons)
+![npm](https://img.shields.io/npm/v/@ode-react-ui/icons?style=flat-square)
+![bundlephobia](https://img.shields.io/bundlephobia/min/@ode-react-ui/icons?style=flat-square)
 
 ## Getting Started
 

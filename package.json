@@ -18,12 +18,16 @@
     "libs/*"
   ],
   "scripts": {
+    "build": "turbo run build --filter=!@starter/storybook",
     "build:advanced": "turbo run build --filter=@ode-react-ui/advanced",
     "build:core": "turbo run build --filter=@ode-react-ui/core",
     "build:hooks": "turbo run build --filter=@ode-react-ui/hooks",
     "build:icons": "turbo run build --filter=@ode-react-ui/icons",
     "build:storybook": "turbo run build-storybook --filter=@ode-react-ui/storybook",
-    "build": "turbo run build --filter=!@starter/storybook",
+    "check:advanced": "yarn run package-check --cwd=libs/advanced",
+    "check:core": "yarn run package-check --cwd=libs/core",
+    "check:hooks": "yarn run package-check --cwd=libs/hooks",
+    "check:icons": "yarn run package-check --cwd=libs/icons",
     "clean:config": "rm -rf config/**/node_modules",
     "clean:docs": "rm -rf docs/**/node_modules && rm -rf docs/**/dist",
     "clean:lib": "rm -rf libs/**/node_modules && rm -rf libs/**/dist",
@@ -31,26 +35,27 @@
     "fix": "turbo run fix",
     "format": "turbo run format",
     "lint": "turbo run lint",
+    "playground": "turbo run dev --filter=@ode-react-ui/storybook",
     "pre-commit": "yarn lint && yarn format",
     "prepare": "husky install",
-    "publish-packages": "changeset version && changeset publish",
-    "playground": "turbo run dev --filter=@ode-react-ui/storybook"
+    "publish-packages": "changeset version && changeset publish"
   },
   "resolutions": {
-    "**/default-browser-id/meow": "8.0.0",
     "**/@changesets/cli/meow": "8.0.0",
-    "**/fast-glob/glob-parent": "5.1.2",
     "**/chokidar/glob-parent": "5.1.2",
+    "**/default-browser-id/meow": "8.0.0",
+    "**/fast-glob/glob-parent": "5.1.2",
     "**/nx/axios": "0.21.2",
     "**/remark-parse/trim": "0.0.3",
     "**/watchpack-chokidar2/chokidar": "3.5.1"
   },
-  "devDependencies": {
-    "husky": "8.0.1",
-    "turbo": "1.6.3"
-  },
   "dependencies": {
     "@changesets/changelog-github": "0.4.7",
     "@changesets/cli": "2.25.2"
+  },
+  "devDependencies": {
+    "@skypack/package-check": "^0.2.2",
+    "husky": "8.0.1",
+    "turbo": "1.6.3"
   }
 }

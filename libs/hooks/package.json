@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/hooks",
-  "version": "0.0.3",
+  "version": "1.0.2",
   "private": false,
   "description": "@ode-react-ui react hooks library",
   "keywords": [
@@ -55,8 +55,8 @@
     "@types/node": "18.7.18",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
-    "concurrently": "7.5.0",
     "clsx": "1.2.1",
+    "concurrently": "7.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

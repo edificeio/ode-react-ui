@@ -1,7 +1,7 @@
 # Open Digital Education React Advanced Components
 
-![npm](https://badgen.net/npm/v/@ode-react-ui/advanced)
-![bundlephobia](https://badgen.net/bundlephobia/minzip/@ode-react-ui/advanced)
+![npm](https://img.shields.io/npm/v/@ode-react-ui/advanced?style=flat-square)
+![bundlephobia](https://img.shields.io/bundlephobia/min/@ode-react-ui/advanced?style=flat-square)
 
 ## Getting Started
 

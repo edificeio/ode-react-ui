@@ -1,9 +1,7 @@
-# @ode-react-ui/core
+# Open Digital Education React Core Components
 
-Open Digital Education React Core Components
-
-![npm](https://badgen.net/npm/v/@ode-react-ui/core)
-![bundlephobia](https://badgen.net/bundlephobia/minzip/@ode-react-ui/core)
+![npm](https://img.shields.io/npm/v/@ode-react-ui/core?style=flat-square)
+![bundlephobia](https://img.shields.io/bundlephobia/min/@ode-react-ui/core?style=flat-square)
 
 ## Getting Started
 
