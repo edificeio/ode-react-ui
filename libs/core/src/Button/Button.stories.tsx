@@ -212,7 +212,7 @@ LoadingWithCustomIcon.parameters = {
 
 export const ButtonGroupWithSecondaryAction = (args: any) => {
   return (
-    <div className="d-flex align-items-center gap-3">
+    <div className="d-flex align-items-center gap-8">
       <Button {...args} color="secondary" variant="outline">
         Cancel
       </Button>
@@ -234,7 +234,7 @@ ButtonGroupWithSecondaryAction.parameters = {
 
 export const ButtonGroupWithIcon = (args: any) => {
   return (
-    <div className="d-flex align-items-center gap-3">
+    <div className="d-flex align-items-center gap-8">
       <Button {...args} color="primary" variant="filled">
         Button
       </Button>
@@ -260,7 +260,7 @@ ButtonGroupWithIcon.parameters = {
 
 /* export const ButtonGroupWithSecondaryAction = (args: any) => {
   return (
-    <div className="d-flex align-items-center gap-3">
+    <div className="d-flex align-items-center gap-8">
       <Button
         {...args}
         color="primary"
@@ -287,7 +287,7 @@ ButtonGroupWithIcon.parameters = {
 
 export const ButtonGroupWithThirdAction = (args: any) => {
   return (
-    <div className="d-flex align-items-center gap-3">
+    <div className="d-flex align-items-center gap-8">
       <Button
         {...args}
         color="primary"
