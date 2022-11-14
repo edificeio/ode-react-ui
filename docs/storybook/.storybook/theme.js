@@ -8,4 +8,5 @@ export default create({
   brandUrl: "",
   brandImage: "/logo.png",
   brandTarget: "_self",
+  fontBase: '"Roboto", sans-serif',
 });

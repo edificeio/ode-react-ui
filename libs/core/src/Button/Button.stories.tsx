@@ -9,8 +9,6 @@ import {
   RafterRight,
 } from "@ode-react-ui/icons";
 
-import { withCssResources } from "@storybook/addon-cssresources";
-
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Components/Core/Buttons/Button",
@@ -40,7 +38,6 @@ export default {
     disabled: false,
   },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  decorators: [withCssResources],
 } as ComponentMeta<typeof Button>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
@@ -223,15 +220,6 @@ export const ButtonGroupWithSecondaryAction = (args: any) => {
   );
 };
 
-ButtonGroupWithSecondaryAction.parameters = {
-  docs: {
-    description: {
-      story:
-        "When more than one buttons, primary action is always on the right side. Then secondary action on its left.",
-    },
-  },
-};
-
 export const ButtonGroupWithIcon = (args: any) => {
   return (
     <div className="d-flex align-items-center gap-8">
@@ -258,32 +246,14 @@ ButtonGroupWithIcon.parameters = {
   },
 };
 
-/* export const ButtonGroupWithSecondaryAction = (args: any) => {
-  return (
-    <div className="d-flex align-items-center gap-8">
-      <Button
-        {...args}
-        color="primary"
-        variant="ghost"
-        leftIcon={<RafterLeft />}
-        rightIcon={<RafterRight />}
-      >
-        Button
-      </Button>
-      <Button
-        {...args}
-        color="primary"
-        variant="filled"
-        leftIcon={<RafterLeft />}
-        rightIcon={<RafterRight />}
-      >
-        Button
-      </Button>
-    </div>
-  );
+ButtonGroupWithSecondaryAction.parameters = {
+  docs: {
+    description: {
+      story:
+        "When more than one buttons, primary action is always on the right side. Then secondary action on its left.",
+    },
+  },
 };
-
- */
 
 export const ButtonGroupWithThirdAction = (args: any) => {
   return (

@@ -1,3 +1,5 @@
+import "../public/assets/main.css";
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -6,18 +8,11 @@ export const parameters = {
       date: /Date$/,
     },
   },
-  stylesheetToggle: {
-    stylesheets: [
-      {
-        id: "one",
-        title: "Thème ONE",
-        url: "themes/ode-bootstrap-one.css",
-      },
-      {
-        id: "neo",
-        title: "Thème NEO",
-        url: "themes/ode-bootstrap-neo.css",
-      },
-    ],
+  options: {
+    storySort: {
+      method: "alphabetical",
+      order: [],
+      locales: "",
+    },
   },
 };
