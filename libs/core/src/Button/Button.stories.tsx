@@ -11,7 +11,7 @@ import {
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Core/Buttons/Button",
+  title: "Components/Core/Button",
   component: Button,
   argTypes: {
     color: {
@@ -135,15 +135,15 @@ WithBothIcon.args = {
   rightIcon: <RafterRight title="Chevron Right" />,
 };
 
-export const Loading = Template.bind({});
-Loading.args = {
+export const LoadingButton = Template.bind({});
+LoadingButton.args = {
   ariaLabel: "Loading",
   color: "primary",
   variant: "filled",
   type: "button",
   loading: true,
 };
-Loading.parameters = {
+LoadingButton.parameters = {
   docs: {
     description: {
       story:
@@ -152,15 +152,15 @@ Loading.parameters = {
   },
 };
 
-export const LoadingWithText = Template.bind({});
-LoadingWithText.args = {
+export const LoadingButtonWithText = Template.bind({});
+LoadingButtonWithText.args = {
   color: "primary",
   variant: "filled",
   children: "Loading...",
   type: "button",
   loading: true,
 };
-LoadingWithText.parameters = {
+LoadingButtonWithText.parameters = {
   docs: {
     description: {
       story:
@@ -169,8 +169,8 @@ LoadingWithText.parameters = {
   },
 };
 
-export const LoadingRightWithText = Template.bind({});
-LoadingRightWithText.args = {
+export const LoadingButtonRightWithText = Template.bind({});
+LoadingButtonRightWithText.args = {
   color: "primary",
   variant: "filled",
   children: "Loading...",
@@ -179,7 +179,7 @@ LoadingRightWithText.args = {
   loadingPosition: "right",
 };
 
-LoadingRightWithText.parameters = {
+LoadingButtonRightWithText.parameters = {
   docs: {
     description: {
       story:
@@ -188,8 +188,8 @@ LoadingRightWithText.parameters = {
   },
 };
 
-export const LoadingWithCustomIcon = Template.bind({});
-LoadingWithCustomIcon.args = {
+export const LoadingButtonWithCustomIcon = Template.bind({});
+LoadingButtonWithCustomIcon.args = {
   ariaLabel: "Loading",
   color: "primary",
   variant: "filled",
@@ -198,7 +198,7 @@ LoadingWithCustomIcon.args = {
   loadingIcon: <Hourglass title="Loading" />,
 };
 
-LoadingWithCustomIcon.parameters = {
+LoadingButtonWithCustomIcon.parameters = {
   docs: {
     description: {
       story:
@@ -218,6 +218,15 @@ export const ButtonGroupWithSecondaryAction = (args: any) => {
       </Button>
     </div>
   );
+};
+
+ButtonGroupWithSecondaryAction.parameters = {
+  docs: {
+    description: {
+      story:
+        "When more than one buttons, primary action is always on the right side. Then secondary action on its left.",
+    },
+  },
 };
 
 export const ButtonGroupWithIcon = (args: any) => {
@@ -242,15 +251,6 @@ ButtonGroupWithIcon.parameters = {
     description: {
       story:
         "Pictograms buttons are standing by themselfs, if put with text buttons, always put them on the right. In this case, they are advanced options of the primary action button.",
-    },
-  },
-};
-
-ButtonGroupWithSecondaryAction.parameters = {
-  docs: {
-    description: {
-      story:
-        "When more than one buttons, primary action is always on the right side. Then secondary action on its left.",
     },
   },
 };
