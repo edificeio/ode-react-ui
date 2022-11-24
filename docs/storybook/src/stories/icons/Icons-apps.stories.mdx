@@ -1,0 +1,87 @@
+import { Meta, Story } from "@storybook/addon-docs";
+import { Icons } from "../../components/Icons";
+
+import * as apps from "@ode-react-ui/icons/apps";
+
+<Meta title="Icons/Apps and Connectors" />
+
+# Getting Started
+
+To use this set of icons, import `@ode-react-ui/icons/apps` into your code:
+
+- namespace import `import * as icons from "@ode-react-ui/icons/apps";`
+- named import `import { AddUser, AlertCircle, Check } from "@ode-react-ui/icons/apps;"`
+
+Best practice: Named import is the best approach to import icons.
+
+## Using `useIconContext`
+
+You can use this "custom hook" to load all apps and connectors icons when necessary.
+
+```
+import { useIconContext } from "@ode-react-ui/core";
+
+const mockedApp = {
+    address: "/blog",
+    icon: "blog-large",
+    name: "Blog",
+    ...
+};
+
+<AppTitle
+    appName={mockedApp.name}
+    appCode={getIconCode(mockedApp)}
+    AppIcon={useIconContext(mockedApp)}
+/>
+```
+
+## Other usage
+
+If you use namespace import, then you can use any icon as follows:
+
+```jsx
+import * as icons from "@ode-react-ui/icons/apps";
+
+// Getting one icon
+function MyComponent() {
+  const namespacedIcons = { ...icons };
+  const Workspace = namespacedIcons["Workspace"];
+
+  return (
+    <button>
+      <Workspace /> Go to Workspace
+    </button>
+  );
+}
+
+// If you need to map some icons
+function MyComponent() {
+  const namespacedIcons = { ...icons };
+  {
+    Object.keys(namespacedIcons).map((item, index) => {
+      let Icon = namespacedIcons[item];
+      return <Icon />;
+    });
+  }
+}
+```
+
+If you use named import, then you can use any icon as follows:
+
+```jsx
+import { Workspace } from "@ode-react-ui/icons/apps";
+
+function MyComponent() {
+  return (
+    <button>
+      <Workspace /> Add a new user
+    </button>
+  );
+}
+```
+
+## Apps and Connectors Icons Set
+
+This set includes 121 icons.
+
+<Icons icons={apps} />
