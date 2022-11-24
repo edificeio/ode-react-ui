@@ -1,13 +1,14 @@
 import { ReactNode } from "react";
 
+import { LoadingIcon, LoadingPosition } from "../Loading/LoadingProps";
+
+export type ButtonRef = HTMLButtonElement;
+
 export type ButtonTypes = "button" | "submit" | "reset";
 export type ButtonColors = "primary" | "secondary" | "tertiary" | "danger";
 export type ButtonVariants = "filled" | "outline" | "ghost";
-export type LoadingPosition = "left" | "right" | undefined;
 
-export type LoadingButtonProps = JSX.Element | undefined;
-
-export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ComponentPropsWithRef<"button"> {
   /**
    * `button`, `submit` or `reset`
    */
@@ -39,7 +40,7 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   /**
    * Override Loading Icon
    */
-  loadingIcon?: LoadingButtonProps;
+  loadingIcon?: LoadingIcon;
   /**
    * Loading Icon Position
    * `left`, `right`

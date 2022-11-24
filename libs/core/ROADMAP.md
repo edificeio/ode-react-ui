@@ -2,8 +2,7 @@
 
 | Component Name | Figma | Development | A11y check | Storybook |
 | -------------- | :---: | :---------: | :--------: | :-------: |
-| AppTitle       |  ✅   |             |            |           |
+| AppTitle       |  ✅   |     ✅      |     ✅     |    ✅     |
 | Button         |  ✅   |     ✅      |     ✅     |    ✅     |
-| Card           |  ✅   |             |            |           |
-| EmptyScreen    |  ✅   |             |            |           |
-| Form           |  ✅   |             |            |           |
+| IconContext    |  ✅   |     ✅      |     ✅     |    ✅     |
+| Loading        |  ✅   |     ✅      |     ✅     |    ✅     |
