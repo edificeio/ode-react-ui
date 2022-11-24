@@ -64,7 +64,7 @@
   "peerDependencies": {
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "ode-ts-client": "latest"
+    "ode-ts-client": "feat-explorer"
   },
   "publishConfig": {
     "access": "public"
