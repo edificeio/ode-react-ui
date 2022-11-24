@@ -71,5 +71,7 @@ module.exports = {
     "tsconfig.json",
     ".eslintrc",
     ".eslintrc.cjs",
+    "svgr.config.cjs",
+    "apps.d.ts",
   ],
 };
