@@ -1,69 +1,219 @@
 # Icons List
 
-| Component Name  | Source | Component | Storybook |
-| --------------- | :----: | :-------: | :-------: |
-| AddUser         |   ✅   |    ✅     |           |
-| AlertTriangle   |   ✅   |    ✅     |           |
-| AlertCircle     |   ✅   |    ✅     |           |
-| Answer          |   ✅   |    ✅     |           |
-| Application     |   ✅   |    ✅     |           |
-| Attachment      |   ✅   |    ✅     |           |
-| Audio           |   ✅   |    ✅     |           |
-| Block           |   ✅   |    ✅     |           |
-| BurgerMenu      |   ✅   |    ✅     |           |
-| Calendar        |   ✅   |    ✅     |           |
-| CalendarLight   |   ✅   |    ✅     |           |
-| Camera          |   ✅   |    ✅     |           |
-| Check           |   ✅   |    ✅     |           |
-| CheckList       |   ✅   |    ✅     |           |
-| Clock           |   ✅   |    ✅     |           |
-| Close           |   ✅   |    ✅     |           |
-| CloseFullScreen |   ✅   |    ✅     |           |
-| Copy            |   ✅   |    ✅     |           |
-| Cut             |   ✅   |    ✅     |           |
-| Delete          |   ✅   |    ✅     |           |
-| DepositeInbox   |   ✅   |    ✅     |           |
-| Download        |   ✅   |    ✅     |           |
-| Edit            |   ✅   |    ✅     |           |
-| Error           |   ✅   |    ✅     |           |
-| ExternalLink    |   ✅   |    ✅     |           |
-| Filter          |   ✅   |    ✅     |           |
-| Flag            |   ✅   |    ✅     |           |
-| Folder          |   ✅   |    ✅     |           |
-| FullScreen      |   ✅   |    ✅     |           |
-| Home            |   ✅   |    ✅     |           |
-| HourGlass       |   ✅   |    ✅     |           |
-| Image           |   ✅   |    ✅     |           |
-| Inbox           |   ✅   |    ✅     |           |
-| InfoCircle      |   ✅   |    ✅     |           |
-| ListOrder       |   ✅   |    ✅     |           |
-| Lock            |   ✅   |    ✅     |           |
-| MessageInfo     |   ✅   |    ✅     |           |
-| Mic             |   ✅   |    ✅     |           |
-| Minus           |   ✅   |    ✅     |           |
-| Move            |   ✅   |    ✅     |           |
-| Options         |   ✅   |    ✅     |           |
-| Pause           |   ✅   |    ✅     |           |
-| Play            |   ✅   |    ✅     |           |
-| Plus            |   ✅   |    ✅     |           |
-| Print           |   ✅   |    ✅     |           |
-| Question        |   ✅   |    ✅     |           |
-| RecordVideo     |   ✅   |    ✅     |           |
-| RecordVoice     |   ✅   |    ✅     |           |
-| Redo            |   ✅   |    ✅     |           |
-| Refresh         |   ✅   |    ✅     |           |
-| Save            |   ✅   |    ✅     |           |
-| Search          |   ✅   |    ✅     |           |
-| See             |   ✅   |    ✅     |           |
-| Send            |   ✅   |    ✅     |           |
-| Settings        |   ✅   |    ✅     |           |
-| Success         |   ✅   |    ✅     |           |
-| TextPage        |   ✅   |    ✅     |           |
-| Tool            |   ✅   |    ✅     |           |
-| TrendingUp      |   ✅   |    ✅     |           |
-| Upload          |   ✅   |    ✅     |           |
-| User            |   ✅   |    ✅     |           |
-| Users           |   ✅   |    ✅     |           |
-| UserSearch      |   ✅   |    ✅     |           |
-| Video           |   ✅   |    ✅     |           |
-| Write           |   ✅   |    ✅     |           |
+## Common Icons
+
+| Component Name          | Source | Component | Storybook |
+| ----------------------- | :----: | :-------: | :-------: |
+| AddUser                 |   ✅   |    ✅     |    ✅     |
+| AlertCircle             |   ✅   |    ✅     |    ✅     |
+| AlertTriangle           |   ✅   |    ✅     |    ✅     |
+| Answer                  |   ✅   |    ✅     |    ✅     |
+| Applications            |   ✅   |    ✅     |    ✅     |
+| ArrowDown               |   ✅   |    ✅     |    ✅     |
+| ArrowLeft               |   ✅   |    ✅     |    ✅     |
+| ArrowRight              |   ✅   |    ✅     |    ✅     |
+| ArrowUp                 |   ✅   |    ✅     |    ✅     |
+| Attachment              |   ✅   |    ✅     |    ✅     |
+| Audio                   |   ✅   |    ✅     |    ✅     |
+| Block                   |   ✅   |    ✅     |    ✅     |
+| BurgerMenu              |   ✅   |    ✅     |    ✅     |
+| Calendar                |   ✅   |    ✅     |    ✅     |
+| CalendarLight           |   ✅   |    ✅     |    ✅     |
+| Camera                  |   ✅   |    ✅     |    ✅     |
+| Check                   |   ✅   |    ✅     |    ✅     |
+| CheckboxEmpty           |   ✅   |    ✅     |    ✅     |
+| CheckboxEmptyHover      |   ✅   |    ✅     |    ✅     |
+| CheckboxSelected        |   ✅   |    ✅     |    ✅     |
+| CheckboxSelectedHover   |   ✅   |    ✅     |    ✅     |
+| CheckboxUnselected      |   ✅   |    ✅     |    ✅     |
+| CheckboxUnselectedHover |   ✅   |    ✅     |    ✅     |
+| CheckList               |   ✅   |    ✅     |    ✅     |
+| Clock                   |   ✅   |    ✅     |    ✅     |
+| Close                   |   ✅   |    ✅     |    ✅     |
+| CloseFullScreen         |   ✅   |    ✅     |    ✅     |
+| Copy                    |   ✅   |    ✅     |    ✅     |
+| Cut                     |   ✅   |    ✅     |    ✅     |
+| Delete                  |   ✅   |    ✅     |    ✅     |
+| DepositeInbox           |   ✅   |    ✅     |    ✅     |
+| Download                |   ✅   |    ✅     |    ✅     |
+| Edit                    |   ✅   |    ✅     |    ✅     |
+| Error                   |   ✅   |    ✅     |    ✅     |
+| ExternalLink            |   ✅   |    ✅     |    ✅     |
+| Filter                  |   ✅   |    ✅     |    ✅     |
+| Flag                    |   ✅   |    ✅     |    ✅     |
+| Folder                  |   ✅   |    ✅     |    ✅     |
+| FullScreen              |   ✅   |    ✅     |    ✅     |
+| Globe                   |   ✅   |    ✅     |    ✅     |
+| Hide                    |   ✅   |    ✅     |    ✅     |
+| Home                    |   ✅   |    ✅     |    ✅     |
+| HourGlass               |   ✅   |    ✅     |    ✅     |
+| Image                   |   ✅   |    ✅     |    ✅     |
+| Inbox                   |   ✅   |    ✅     |    ✅     |
+| InfoCircle              |   ✅   |    ✅     |    ✅     |
+| ListOrder               |   ✅   |    ✅     |    ✅     |
+| Loader                  |   ✅   |    ✅     |    ✅     |
+| Loading                 |   ✅   |    ✅     |    ✅     |
+| Lock                    |   ✅   |    ✅     |    ✅     |
+| Mail                    |   ✅   |    ✅     |    ✅     |
+| MessageInfo             |   ✅   |    ✅     |    ✅     |
+| Mic                     |   ✅   |    ✅     |    ✅     |
+| Minus                   |   ✅   |    ✅     |    ✅     |
+| Move                    |   ✅   |    ✅     |    ✅     |
+| Options                 |   ✅   |    ✅     |    ✅     |
+| Pause                   |   ✅   |    ✅     |    ✅     |
+| PinOff                  |   ✅   |    ✅     |    ✅     |
+| PinOn                   |   ✅   |    ✅     |    ✅     |
+| Placeholder             |   ✅   |    ✅     |    ✅     |
+| Play                    |   ✅   |    ✅     |    ✅     |
+| Plus                    |   ✅   |    ✅     |    ✅     |
+| Print                   |   ✅   |    ✅     |    ✅     |
+| Question                |   ✅   |    ✅     |    ✅     |
+| RadioEmpty              |   ✅   |    ✅     |    ✅     |
+| RadioSelected           |   ✅   |    ✅     |    ✅     |
+| RafterDown              |   ✅   |    ✅     |    ✅     |
+| RafterLeft              |   ✅   |    ✅     |    ✅     |
+| RafterRight             |   ✅   |    ✅     |    ✅     |
+| RafterUp                |   ✅   |    ✅     |    ✅     |
+| RecordVoice             |   ✅   |    ✅     |    ✅     |
+| Redo                    |   ✅   |    ✅     |    ✅     |
+| Refresh                 |   ✅   |    ✅     |    ✅     |
+| Save                    |   ✅   |    ✅     |    ✅     |
+| Search                  |   ✅   |    ✅     |    ✅     |
+| See                     |   ✅   |    ✅     |    ✅     |
+| Send                    |   ✅   |    ✅     |    ✅     |
+| Settings                |   ✅   |    ✅     |    ✅     |
+| SortAscendingLetters    |   ✅   |    ✅     |    ✅     |
+| SortDescending          |   ✅   |    ✅     |    ✅     |
+| SortDescendingLetters   |   ✅   |    ✅     |    ✅     |
+| SortTime                |   ✅   |    ✅     |    ✅     |
+| SuccessFill             |   ✅   |    ✅     |    ✅     |
+| SuccessOutline          |   ✅   |    ✅     |    ✅     |
+| TextPage                |   ✅   |    ✅     |    ✅     |
+| Tool                    |   ✅   |    ✅     |    ✅     |
+| TrendingUp              |   ✅   |    ✅     |    ✅     |
+| Upload                  |   ✅   |    ✅     |    ✅     |
+| User                    |   ✅   |    ✅     |    ✅     |
+| UserSearch              |   ✅   |    ✅     |    ✅     |
+| Users                   |   ✅   |    ✅     |    ✅     |
+| Video                   |   ✅   |    ✅     |    ✅     |
+| ViewCalendar            |   ✅   |    ✅     |    ✅     |
+| ViewList                |   ✅   |    ✅     |    ✅     |
+| Write                   |   ✅   |    ✅     |    ✅     |
+
+# Apps and Connectors
+
+| Component Name             | Source | Component | Storybook |
+| -------------------------- | :----: | :-------: | :-------: |
+| Account                    |   ✅   |    ✅     |    ✅     |
+| Actualites                 |   ✅   |    ✅     |    ✅     |
+| Admin                      |   ✅   |    ✅     |    ✅     |
+| AdminPortal                |   ✅   |    ✅     |    ✅     |
+| AdmissionPostBac           |   ✅   |    ✅     |    ✅     |
+| Agenda                     |   ✅   |    ✅     |    ✅     |
+| Archive                    |   ✅   |    ✅     |    ✅     |
+| Assistance                 |   ✅   |    ✅     |    ✅     |
+| Assr                       |   ✅   |    ✅     |    ✅     |
+| Award                      |   ✅   |    ✅     |    ✅     |
+| Banquessavoir              |   ✅   |    ✅     |    ✅     |
+| Bcdi                       |   ✅   |    ✅     |    ✅     |
+| Biblionisep                |   ✅   |    ✅     |    ✅     |
+| Blog                       |   ✅   |    ✅     |    ✅     |
+| BookmarkEmpty              |   ✅   |    ✅     |    ✅     |
+| CahierDeTexte              |   ✅   |    ✅     |    ✅     |
+| CahierTextes               |   ✅   |    ✅     |    ✅     |
+| Calendar                   |   ✅   |    ✅     |    ✅     |
+| CanalNumerique             |   ✅   |    ✅     |    ✅     |
+| Ccn                        |   ✅   |    ✅     |    ✅     |
+| Cerise                     |   ✅   |    ✅     |    ✅     |
+| Cervoprint                 |   ✅   |    ✅     |    ✅     |
+| Charlemagne                |   ✅   |    ✅     |    ✅     |
+| Charte                     |   ✅   |    ✅     |    ✅     |
+| Chat                       |   ✅   |    ✅     |    ✅     |
+| Cidj                       |   ✅   |    ✅     |    ✅     |
+| Cns                        |   ✅   |    ✅     |    ✅     |
+| CollaborativeWall          |   ✅   |    ✅     |    ✅     |
+| Community                  |   ✅   |    ✅     |    ✅     |
+| Competences                |   ✅   |    ✅     |    ✅     |
+| ConnecteurGenerique1       |   ✅   |    ✅     |    ✅     |
+| ConnecteurGenerique2       |   ✅   |    ✅     |    ✅     |
+| Conversation               |   ✅   |    ✅     |    ✅     |
+| Directory                  |   ✅   |    ✅     |    ✅     |
+| Educagri                   |   ✅   |    ✅     |    ✅     |
+| Edumedia                   |   ✅   |    ✅     |    ✅     |
+| Edumoov                    |   ✅   |    ✅     |    ✅     |
+| Edutheque                  |   ✅   |    ✅     |    ✅     |
+| Electron                   |   ✅   |    ✅     |    ✅     |
+| Elyceepicardie             |   ✅   |    ✅     |    ✅     |
+| Esidoc                     |   ✅   |    ✅     |    ✅     |
+| Europress                  |   ✅   |    ✅     |    ✅     |
+| Exercizer                  |   ✅   |    ✅     |    ✅     |
+| Forms                      |   ✅   |    ✅     |    ✅     |
+| Forum                      |   ✅   |    ✅     |    ✅     |
+| Gepi                       |   ✅   |    ✅     |    ✅     |
+| Glpi                       |   ✅   |    ✅     |    ✅     |
+| Hiboutheque                |   ✅   |    ✅     |    ✅     |
+| Itopstore                  |   ✅   |    ✅     |    ✅     |
+| Kne                        |   ✅   |    ✅     |    ✅     |
+| LeSiteTv                   |   ✅   |    ✅     |    ✅     |
+| Lemonde                    |   ✅   |    ✅     |    ✅     |
+| Lesechos                   |   ✅   |    ✅     |    ✅     |
+| Library                    |   ✅   |    ✅     |    ✅     |
+| Lsu                        |   ✅   |    ✅     |    ✅     |
+| Madmgaz                    |   ✅   |    ✅     |    ✅     |
+| Matholycee                 |   ✅   |    ✅     |    ✅     |
+| Maxicours                  |   ✅   |    ✅     |    ✅     |
+| Mediacentre                |   ✅   |    ✅     |    ✅     |
+| Mindmap                    |   ✅   |    ✅     |    ✅     |
+| Monorientationenligne      |   ✅   |    ✅     |    ✅     |
+| Monstageenligne            |   ✅   |    ✅     |    ✅     |
+| Moodle                     |   ✅   |    ✅     |    ✅     |
+| Museefrancaisphoto         |   ✅   |    ✅     |    ✅     |
+| MyNetwork                  |   ✅   |    ✅     |    ✅     |
+| Netvibes                   |   ✅   |    ✅     |    ✅     |
+| Note                       |   ✅   |    ✅     |    ✅     |
+| Notebook                   |   ✅   |    ✅     |    ✅     |
+| Notes                      |   ✅   |    ✅     |    ✅     |
+| Onisep                     |   ✅   |    ✅     |    ✅     |
+| Onisep2                    |   ✅   |    ✅     |    ✅     |
+| Pad                        |   ✅   |    ✅     |    ✅     |
+| Pages                      |   ✅   |    ✅     |    ✅     |
+| Parametrage                |   ✅   |    ✅     |    ✅     |
+| Parametrages               |   ✅   |    ✅     |    ✅     |
+| Paraschool                 |   ✅   |    ✅     |    ✅     |
+| Parcours                   |   ✅   |    ✅     |    ✅     |
+| Pearltrees                 |   ✅   |    ✅     |    ✅     |
+| PicardieCursus             |   ✅   |    ✅     |    ✅     |
+| Placeholder                |   ✅   |    ✅     |    ✅     |
+| Poll                       |   ✅   |    ✅     |    ✅     |
+| Presences                  |   ✅   |    ✅     |    ✅     |
+| Proeps                     |   ✅   |    ✅     |    ✅     |
+| Pronote                    |   ✅   |    ✅     |    ✅     |
+| Public                     |   ✅   |    ✅     |    ✅     |
+| Qwant                      |   ✅   |    ✅     |    ✅     |
+| QwantJunior                |   ✅   |    ✅     |    ✅     |
+| Rack                       |   ✅   |    ✅     |    ✅     |
+| Rbs                        |   ✅   |    ✅     |    ✅     |
+| ResidenceArtiste           |   ✅   |    ✅     |    ✅     |
+| Ressourcesdepartementale91 |   ✅   |    ✅     |    ✅     |
+| Sacoche                    |   ✅   |    ✅     |    ✅     |
+| Schoolbook                 |   ✅   |    ✅     |    ✅     |
+| Searchengine               |   ✅   |    ✅     |    ✅     |
+| SettingsClass              |   ✅   |    ✅     |    ✅     |
+| Sharebigfiles              |   ✅   |    ✅     |    ✅     |
+| Statistics                 |   ✅   |    ✅     |    ✅     |
+| Stats                      |   ✅   |    ✅     |    ✅     |
+| Suitcase                   |   ✅   |    ✅     |    ✅     |
+| Support                    |   ✅   |    ✅     |    ✅     |
+| Timeline                   |   ✅   |    ✅     |    ✅     |
+| Timelinegenerator          |   ✅   |    ✅     |    ✅     |
+| Turboself                  |   ✅   |    ✅     |    ✅     |
+| Universalis                |   ✅   |    ✅     |    ✅     |
+| Unstagepourtous            |   ✅   |    ✅     |    ✅     |
+| Userbook                   |   ✅   |    ✅     |    ✅     |
+| Video                      |   ✅   |    ✅     |    ✅     |
+| VieScolaire                |   ✅   |    ✅     |    ✅     |
+| Visioconf                  |   ✅   |    ✅     |    ✅     |
+| Webclasseur                |   ✅   |    ✅     |    ✅     |
+| Website                    |   ✅   |    ✅     |    ✅     |
+| Wiki                       |   ✅   |    ✅     |    ✅     |
+| Workspace                  |   ✅   |    ✅     |    ✅     |

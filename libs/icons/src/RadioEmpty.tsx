@@ -21,7 +21,7 @@ const SvgRadioEmpty = ({
     <path
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 2c6.075 0 11-4.925 11-11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11Z"
+      d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm0 2c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z"
       fill="currentColor"
     />
   </svg>

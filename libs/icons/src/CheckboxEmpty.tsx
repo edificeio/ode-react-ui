@@ -22,7 +22,7 @@ const SvgCheckboxEmpty = ({
       fillRule="evenodd"
       clipRule="evenodd"
       d="M18.5 5.5h-13v13h13v-13Zm-13-2a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-13a2 2 0 0 0-2-2h-13Z"
-      fill="currentColor"
+      fill="#909090"
     />
   </svg>
 );
