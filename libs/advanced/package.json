@@ -34,7 +34,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc --noEmit && vite build --config ../../config/vite/vite.config.ts",
+    "build": "vite build --config ../../config/vite/vite.config.ts",
     "fix": "eslint --fix .",
     "format": "concurrently \"yarn:format:*\"",
     "format:check": "npx prettier --check .",
