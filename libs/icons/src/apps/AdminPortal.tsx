@@ -13,6 +13,7 @@ const SvgAdminPortal = ({
     viewBox="0 0 26 24"
     width="24"
     height="24"
+    aria-hidden="true"
     aria-labelledby={titleId}
     {...props}
   >

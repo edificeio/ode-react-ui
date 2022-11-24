@@ -13,6 +13,7 @@ const SvgBlog = ({
     viewBox="0 0 29 24"
     width="24"
     height="24"
+    aria-hidden="true"
     aria-labelledby={titleId}
     {...props}
   >
