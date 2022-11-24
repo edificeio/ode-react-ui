@@ -13,6 +13,7 @@ const SvgAgenda = ({
     viewBox="0 0 21 24"
     width="24"
     height="24"
+    aria-hidden="true"
     aria-labelledby={titleId}
     {...props}
   >

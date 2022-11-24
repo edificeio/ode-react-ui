@@ -55,7 +55,7 @@ export const ApplicationExampleWithImage = () => {
   // For example
   const mockedApp = {
     address: "/form",
-    icon: "",
+    icon: "https://ent.l-educdenormandie.fr/formulaire/public/img/logo.svg",
     name: "Formulaire",
     scope: [],
     display: false,
