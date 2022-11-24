@@ -13,11 +13,12 @@ export default defineConfig({
       fileName: (format) => (format === "es" ? "index.mjs" : "index.cjs"),
     },
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: ["react", "react-dom", "ode-ts-client", "@ode-react-ui/icons"],
       output: {
         globals: {
           react: "React",
           "react-dom": "ReactDom",
+          "ode-ts-client": "OdeTsClient",
         },
       },
     },
@@ -27,7 +28,7 @@ export default defineConfig({
       jsxRuntime: "classic",
     }),
     dts({
-      insertTypesEntry: true,
+      insertTypesEntry: false,
       outputDir: "dist",
     }),
   ],

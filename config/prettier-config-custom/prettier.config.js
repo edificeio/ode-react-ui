@@ -7,4 +7,5 @@ module.exports = {
   useTabs: false,
   endOfLine: "auto",
   arrowParens: "always",
+  quoteProps: "consistent",
 };
