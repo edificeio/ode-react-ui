@@ -1,5 +1,11 @@
 # @ode-react-ui/icons
 
+## 1.0.3
+
+### Patch Changes
+
+- [#25](https://github.com/opendigitaleducation/ode-react-ui/pull/25) [`cd25b79`](https://github.com/opendigitaleducation/ode-react-ui/commit/cd25b79336a1cf6484d836bd3828fc627f0ed8be) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add apps and connectors icons, refacto icons svg
+
 ## 1.0.2
 
 ### Patch Changes

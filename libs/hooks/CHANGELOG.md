@@ -1,5 +1,11 @@
 # @ode-react-ui/hooks
 
+## 1.0.3
+
+### Patch Changes
+
+- [#25](https://github.com/opendigitaleducation/ode-react-ui/pull/25) [`c6d2468`](https://github.com/opendigitaleducation/ode-react-ui/commit/c6d24682bad46f41969f6c6ba10555d9faa5a072) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add new hooks from ode-ngjs-front
+
 ## 1.0.2
 
 ### Patch Changes
