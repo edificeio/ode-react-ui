@@ -22,24 +22,30 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./apps": {
+      "types": "./dist/apps.d.ts",
+      "import": "./dist/apps.js",
       "require": "./dist/index.cjs"
     }
   },
   "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "*.d.ts"
   ],
   "scripts": {
-    "build": "yarn icons && vite build --config ../../config/vite/vite.config.ts",
+    "build": "yarn prebuild && vite build",
     "fix": "eslint --fix .",
-    "format": "concurrently \"yarn:format:*\"",
     "format:check": "yarn prettier --check .",
     "format:write": "yarn prettier --write .",
-    "icons": "npx @svgr/cli assets --config-file ./svgr.config.cjs",
-    "lint": "eslint ."
+    "format": "concurrently \"yarn:format:*\"",
+    "lint": "eslint .",
+    "prebuild": "npx @svgr/cli assets --config-file ./svgr.config.cjs"
   },
   "prettier": "@ode-react-ui/prettier-config-custom",
   "devDependencies": {
@@ -50,9 +56,12 @@
     "@types/node": "18.7.16",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
+    "@vitejs/plugin-react": "2.2.0",
     "concurrently": "7.5.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "vite": "3.2.2",
+    "vite-plugin-dts": "1.6.6"
   },
   "peerDependencies": {
     "react": "18.2.0",
