@@ -3,7 +3,7 @@ export function Card(props: {
   style?: {
     [item: string]: string;
   };
-  children: string;
+  children: React.ReactNode;
 }) {
   const { className, style, children } = props;
 
