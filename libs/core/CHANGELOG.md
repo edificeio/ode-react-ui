@@ -1,5 +1,15 @@
 # @ode-react-ui/core
 
+## 1.0.3
+
+### Patch Changes
+
+- [#25](https://github.com/opendigitaleducation/ode-react-ui/pull/25) [`d2c2c69`](https://github.com/opendigitaleducation/ode-react-ui/commit/d2c2c690cf217fcafa6d82d295d1b74841fce6af) Thanks [@clementcreusat](https://github.com/clementcreusat)! - refacto component and add AppTitle component
+
+- Updated dependencies [[`cd25b79`](https://github.com/opendigitaleducation/ode-react-ui/commit/cd25b79336a1cf6484d836bd3828fc627f0ed8be), [`c6d2468`](https://github.com/opendigitaleducation/ode-react-ui/commit/c6d24682bad46f41969f6c6ba10555d9faa5a072)]:
+  - @ode-react-ui/icons@1.0.3
+  - @ode-react-ui/hooks@1.0.3
+
 ## 1.0.2
 
 ### Patch Changes
