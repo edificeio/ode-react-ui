@@ -44,8 +44,6 @@
   "prettier": "@ode-react-ui/prettier-config-custom",
   "devDependencies": {
     "@emotion/react": "11.10.5",
-    "@mui/lab": "5.0.0-alpha.106",
-    "@mui/material": "5.10.12",
     "@ode-react-ui/core": "*",
     "@ode-react-ui/eslint-config-custom": "*",
     "@ode-react-ui/icons": "*",
