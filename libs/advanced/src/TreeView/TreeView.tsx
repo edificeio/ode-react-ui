@@ -2,37 +2,41 @@
  * TreeView Component
  *
  * @see Docs     Storybook Link
- * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/libs/advanced/src/TreeView/TreeView.tsx
+ * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/libs/advanced/src/TreeViewCustom/TreeViewCustom.tsx
  * @see WAI-ARIA https://www.w3.org/WAI/ARIA/apg/patterns/treeview/
  */
+import { useState } from "react";
 
-import TreeItem from "@mui/lab/TreeItem";
-import TreeView from "@mui/lab/TreeView";
-import { RafterRight, RafterDown } from "@ode-react-ui/icons";
+import { TreeItem } from "./TreeItem";
+import { TreeNode } from "./TreeNode";
 
-import { RenderTree } from "./TreeViewProps";
+export const TreeView = ({ data }: any) => {
+  const [selectedItem, setSelectedItem] = useState<string>("");
 
-/**
- * TreeView component for file system navigation
- */
-export default function RichObjectTreeView({ data }: any) {
-  const renderTree = (nodes: RenderTree) => (
-    <TreeItem key={nodes.id} nodeId={nodes.id} label={nodes.name}>
-      {Array.isArray(nodes.children)
-        ? nodes.children.map((node) => renderTree(node))
+  const handleSelected = (selectedNodeId: string) => {
+    setSelectedItem(selectedNodeId);
+  };
+
+  const renderTree = (node: TreeNode) => (
+    <TreeItem
+      key={node.id}
+      nodeId={node.id}
+      label={node.name}
+      section={node.section}
+      selected={selectedItem === node.id}
+      select={handleSelected}
+    >
+      {Array.isArray(node.children)
+        ? node.children.map((item) => renderTree(item))
         : null}
     </TreeItem>
   );
 
   return (
-    <TreeView
-      aria-label="rich object"
-      defaultCollapseIcon={<RafterDown />}
-      defaultExpanded={["root"]}
-      defaultExpandIcon={<RafterRight />}
-      sx={{ height: 500, flexGrow: 1, maxWidth: 400, overflowY: "auto" }}
-    >
+    <div id="treeview" className="treeview">
       {renderTree(data)}
-    </TreeView>
+    </div>
   );
-}
+};
+
+export default TreeView;

@@ -1,7 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-
-import { default as TreeView } from "./TreeView";
-import { RenderTree } from "./TreeViewProps";
+import { TreeNode } from "./TreeNode";
+import { TreeView } from "./TreeView";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -13,23 +12,72 @@ export default {
   },
 } as ComponentMeta<typeof TreeView>;
 
-const data: RenderTree = {
+const data: TreeNode = {
   id: "root",
-  name: "Parent",
+  name: "Section Element",
+  section: true,
   children: [
     {
       id: "1",
-      name: "Child - 1",
-    },
-    {
-      id: "3",
-      name: "Child - 3",
+      name: "level 1 arborescence tree",
       children: [
         {
           id: "4",
-          name: "Child - 4",
+          name: "level 2 arborescence tree",
+          children: [
+            {
+              id: "8",
+              name: "level 3 arborescence tree",
+              children: [
+                {
+                  id: "12",
+                  name: "level 4 arborescence tree",
+                },
+                {
+                  id: "13",
+                  name: "level 4 arborescence tree",
+                },
+              ],
+            },
+            {
+              id: "9",
+              name: "level 3 arborescence tree",
+            },
+          ],
+        },
+        {
+          id: "5",
+          name: "level 2 arborescence tree",
+          children: [
+            {
+              id: "10",
+              name: "level 3 arborescence tree",
+            },
+            {
+              id: "11",
+              name: "level 3 arborescence tree",
+            },
+          ],
         },
       ],
+    },
+    {
+      id: "2",
+      name: "level 1 arborescence tree",
+      children: [
+        {
+          id: "6",
+          name: "level 2 arborescence tree",
+        },
+        {
+          id: "7",
+          name: "level 2 arborescence tree",
+        },
+      ],
+    },
+    {
+      id: "3",
+      name: "level 1 arborescence tree",
     },
   ],
 };
