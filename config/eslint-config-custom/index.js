@@ -73,5 +73,6 @@ module.exports = {
     ".eslintrc.cjs",
     "svgr.config.cjs",
     "apps.d.ts",
+    "nav.d.ts",
   ],
 };
