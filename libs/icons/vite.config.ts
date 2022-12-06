@@ -11,7 +11,7 @@ export default defineConfig({
     lib: {
       entry: {
         index: resolve(__dirname, "src/index.ts"),
-        apps: resolve(__dirname, "src/apps/index.ts"),
+        nav: resolve(__dirname, "src/nav/index.ts")
       },
       formats: ["es", "cjs"],
     },

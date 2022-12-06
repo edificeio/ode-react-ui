@@ -3,7 +3,7 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-const SvgHome = ({
+const SvgProfile = ({
   title,
   titleId,
   ...props
@@ -22,9 +22,9 @@ const SvgHome = ({
     <path
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M12.614.21a1 1 0 0 0-1.228 0l-9 7A1 1 0 0 0 2 8v11a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V8a1 1 0 0 0-.386-.79l-9-7ZM16 20h3a1 1 0 0 0 1-1V8.49l-8-6.223-8 6.222V19a1 1 0 0 0 1 1h3v-9a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v9Zm-6 0v-8h4v8h-4Z"
+      d="M22.308 18.368A13.406 13.406 0 0 1 12.154 23 13.406 13.406 0 0 1 2 18.368c1.528-2.63 7.136-3.927 10.154-3.927s8.625 1.296 10.154 3.927ZM6.91 6.41c.004 2.948 2.348 5.335 5.243 5.33h.008c2.895-.004 5.239-2.39 5.235-5.338C17.397 3.45 15.053 1 12.154 1 9.255 1 6.91 3.45 6.91 6.402v.008Z"
       fill="currentColor"
     />
   </svg>
 );
-export default SvgHome;
+export default SvgProfile;

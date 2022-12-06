@@ -25,10 +25,9 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./apps": {
-      "types": "./dist/apps.d.ts",
-      "import": "./dist/apps.js",
-      "require": "./dist/index.cjs"
+    "./nav": {
+      "import": "./dist/nav.js",
+      "require": "./dist/nav.cjs"
     }
   },
   "main": "dist/index.cjs",

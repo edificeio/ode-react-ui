@@ -217,3 +217,21 @@
 | Website                    |   ✅   |    ✅     |    ✅     |
 | Wiki                       |   ✅   |    ✅     |    ✅     |
 | Workspace                  |   ✅   |    ✅     |    ✅     |
+
+# Nav Icons
+
+| Component Name | Source | Component | Storybook |
+| -------------- | :----: | :-------: | :-------: |
+| Applications   |   ✅   |    ✅     |    ✅     |
+| Disconnect     |   ✅   |    ✅     |    ✅     |
+| Home           |   ✅   |    ✅     |    ✅     |
+| MyApps         |   ✅   |    ✅     |    ✅     |
+| NeoAssistance  |   ✅   |    ✅     |    ✅     |
+| NeoMessaging   |   ✅   |    ✅     |    ✅     |
+| NeoProfile     |   ✅   |    ✅     |    ✅     |
+| NewsRelease    |   ✅   |    ✅     |    ✅     |
+| OneAssistance  |   ✅   |    ✅     |    ✅     |
+| OneProfile     |   ✅   |    ✅     |    ✅     |
+| Profile        |   ✅   |    ✅     |    ✅     |
+| Search         |   ✅   |    ✅     |    ✅     |
+| Userbook       |   ✅   |    ✅     |    ✅     |
