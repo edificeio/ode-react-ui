@@ -2,7 +2,7 @@
 /**
  * Button  Component
  *
- * @see Docs     https://ode-react-ui.vercel.app/?path=/story/components-core-button--base
+ * @see Docs     https://ode-react-ui.vercel.app/?path=/docs/components-core-button--base
  * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/libs/core/src/Button/Button.tsx
  * @see WAI-ARIA https://www.w3.org/WAI/ARIA/apg/patterns/button/
  */
@@ -10,7 +10,7 @@ import { forwardRef } from "react";
 
 import clsx from "clsx";
 
-import { Loading } from "../Loading/Loading";
+import Loading from "../Loading/Loading";
 import { ButtonProps, ButtonRef } from "./ButtonProps";
 
 /**
@@ -31,7 +31,7 @@ const Button = forwardRef<ButtonRef, ButtonProps>((props: ButtonProps, ref) => {
     ...restProps
   } = props;
 
-  const cx = clsx("btn", {
+  const classes = clsx("btn", {
     "btn-icon": !children,
     [`btn-filled btn-${color}`]: variant === "filled",
     [`btn-${variant}-${color}`]: variant === "outline" || variant === "ghost",
@@ -39,7 +39,7 @@ const Button = forwardRef<ButtonRef, ButtonProps>((props: ButtonProps, ref) => {
   });
 
   return (
-    <button ref={ref} className={cx} aria-label={ariaLabel} {...restProps}>
+    <button ref={ref} className={classes} aria-label={ariaLabel} {...restProps}>
       {loading ? (
         <Loading
           loading
