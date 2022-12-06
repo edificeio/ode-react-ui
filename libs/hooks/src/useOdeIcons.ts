@@ -1,9 +1,5 @@
-import React from "react";
-
-// @ts-ignore
-import { IWebApp, IWidget, WidgetName } from "ode-ts-client";
-
-import { useOdeFactory } from "./useOdeFactory";
+import useOdeFactory from "./useOdeFactory";
+import { IWebApp, IWidget, WidgetName } from "./utils/useOdeTsClient";
 
 export type AppCode = string | null;
 
@@ -18,7 +14,7 @@ export interface UseAppIconsProps {
   defaultIcon?: string;
 }
 
-export const useOdeIcons = () => {
+export default function useOdeIcons() {
   const { conf } = useOdeFactory();
   /**
    * Map between widget name and its icon name
@@ -47,7 +43,8 @@ export const useOdeIcons = () => {
    * @param app
    */
   function getIconCode(app: IWebApp): string {
-    let appCode = app.icon.trim().toLowerCase() || "";
+    const { icon } = app;
+    let appCode = icon.trim().toLowerCase() || "";
     if (appCode && appCode.length > 0) {
       if (appCode.endsWith("-large")) appCode = appCode.replace("-large", "");
     } else {
@@ -94,7 +91,36 @@ export const useOdeIcons = () => {
     return appCode;
   }
 
-  function getIconComponent(app: IWebApp, icons: any): React.ElementType {
+  function isIconUrl(icon: string): string | boolean {
+    return (
+      icon &&
+      (icon.startsWith("/") ||
+        icon.startsWith("http://") ||
+        icon.startsWith("https://"))
+    );
+  }
+
+  /**
+   *
+   * @param app
+   * @return the CSS class used to style icons
+   */
+  function getIconClass(app: IWebApp): string {
+    const appCode = getIconCode(app);
+    if (appCode) return `color-app-${appCode}`;
+    return `color-app-default`;
+  }
+
+  /**
+   *
+   * @param widget
+   * @return the CSS class of a widget
+   */
+  function getWidgetIconClass(widget: IWidget): string {
+    return iconOfWidget[widget.platformConf.name];
+  }
+
+  /* function getIconComponent(app: IWebApp, icons: any): React.ElementType {
     const appCode = getIconCode(app);
     const nameToPascalCase = (str: string | any) =>
       str
@@ -109,33 +135,12 @@ export const useOdeIcons = () => {
     const icon = nameToPascalCase(appCode);
 
     return icons[icon as keyof typeof icons];
-  }
-
-  /**
-   *
-   * @param app
-   * @return the CSS class used to style icons
-   */
-  function getIconClass(app: IWebApp): string {
-    const appCode = getIconCode(app);
-    return `color-app-${appCode}`;
-  }
-
-  /**
-   *
-   * @param widget
-   * @return the CSS class of a widget
-   */
-  function getWidgetIconClass(widget: IWidget): string {
-    return iconOfWidget[widget.platformConf.name];
-  }
+  } */
 
   return {
     getIconClass,
     getIconCode,
-    getIconComponent,
     getWidgetIconClass,
+    isIconUrl,
   };
-};
-
-export default useOdeIcons;
+}

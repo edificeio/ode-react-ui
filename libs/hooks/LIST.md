@@ -3,8 +3,8 @@
 | Hooks Name      | Development | Storybook |
 | --------------- | :---------: | :-------: |
 | useClickOutside |     ✅      |           |
-| useTheme        |     ✅      |           |
 | useToggle       |     ✅      |           |
 | useOdeFactory   |     ✅      |           |
 | useThemeHelper  |     ✅      |           |
 | useOdeIcons     |     ✅      |           |
+| useTitle        |     ✅      |           |
