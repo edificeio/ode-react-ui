@@ -120,23 +120,6 @@ export default function useOdeIcons() {
     return iconOfWidget[widget.platformConf.name];
   }
 
-  /* function getIconComponent(app: IWebApp, icons: any): React.ElementType {
-    const appCode = getIconCode(app);
-    const nameToPascalCase = (str: string | any) =>
-      str
-        .match(
-          /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g,
-        )
-        .map(
-          (x: string) => x.charAt(0).toUpperCase() + x.slice(1).toLowerCase(),
-        )
-        .join("");
-
-    const icon = nameToPascalCase(appCode);
-
-    return icons[icon as keyof typeof icons];
-  } */
-
   return {
     getIconClass,
     getIconCode,

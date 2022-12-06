@@ -18,9 +18,8 @@ import {
   Home,
   NeoMessaging,
   MyApps,
-  NeoAssistance,
+  NeoAssistance as Assistance,
   NewRelease,
-  OneAssistance,
   OneMessaging,
   OneProfile,
   Profile,
@@ -81,7 +80,7 @@ const Header = ({ is1d = false }: HeaderProps) => {
               </li>
               <li className="nav-item">
                 <a href="/" className="nav-link">
-                  <OneAssistance className="icon help" />
+                  <Assistance className="icon help" />
                   <span className="visually-hidden">Assistance</span>
                 </a>
               </li>
@@ -169,7 +168,7 @@ const Header = ({ is1d = false }: HeaderProps) => {
                 <NeoMessaging color="#fff" />
               </NavLink>
               <NavLink link="/" translate="Assistance">
-                <NeoAssistance color="#fff" />
+                <Assistance color="#fff" />
               </NavLink>
               <div className="dropdown">
                 <button

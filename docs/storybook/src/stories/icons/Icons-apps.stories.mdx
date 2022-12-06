@@ -1,81 +1,39 @@
 import { Meta, Story } from "@storybook/addon-docs";
-import { Icons } from "../../components/Icons";
-
-import * as apps from "@ode-react-ui/icons/apps";
+import { SvgIcon } from "../../components/SvgIcon";
 
 <Meta title="Icons/Apps and Connectors" />
 
-# Getting Started
+# Apps and Connectors Icons
 
-To use this set of icons, import `@ode-react-ui/icons/apps` into your code:
+This set of icons uses a SVG Sprite and should already be included in `ode-react-boilerplate` inside `public` folder.
 
-- namespace import `import * as icons from "@ode-react-ui/icons/apps";`
-- named import `import { AddUser, AlertCircle, Check } from "@ode-react-ui/icons/apps;"`
+## Usage
 
-Best practice: Named import is the best approach to import icons.
-
-## Using `useIconContext`
-
-You can use this "custom hook" to load all apps and connectors icons when necessary.
-
-```
-import { useIconContext } from "@ode-react-ui/core";
-
-const mockedApp = {
-    address: "/blog",
-    icon: "blog-large",
-    name: "Blog",
-    ...
-};
-
-<AppTitle
-    appName={mockedApp.name}
-    appCode={getIconCode(mockedApp)}
-    AppIcon={useIconContext(mockedApp)}
-/>
-```
-
-## Other usage
-
-If you use namespace import, then you can use any icon as follows:
+Use this set of icons with the `AppCard` Component.
 
 ```jsx
-import * as icons from "@ode-react-ui/icons/apps";
+import { Icon } from "@ode-react-ui/core";
 
-// Getting one icon
-function MyComponent() {
-  const namespacedIcons = { ...icons };
-  const Workspace = namespacedIcons["Workspace"];
+export default function App() {
+  // AppCard has its own context to pass "app" information to AppIcon
 
   return (
-    <button>
-      <Workspace /> Go to Workspace
-    </button>
-  );
-}
-
-// If you need to map some icons
-function MyComponent() {
-  const namespacedIcons = { ...icons };
-  {
-    Object.keys(namespacedIcons).map((item, index) => {
-      let Icon = namespacedIcons[item];
-      return <Icon />;
-    });
-  }
-}
-```
-
-If you use named import, then you can use any icon as follows:
-
-```jsx
-import { Workspace } from "@ode-react-ui/icons/apps";
-
-function MyComponent() {
-  return (
-    <button>
-      <Workspace /> Add a new user
-    </button>
+    <AppCard
+      app={{
+        address: "/blog",
+        icon: "blog-large",
+        name: "Blog",
+        scope: [],
+        display: false,
+        displayName: "",
+        isExternal: false,
+      }}
+      isHeading
+      headingStyle="h3"
+      as="h1"
+    >
+      <AppCard.Icon size="48" />
+    </AppCard>
   );
 }
 ```
@@ -84,4 +42,5 @@ function MyComponent() {
 
 This set includes 121 icons.
 
-<Icons icons={apps} />
+<SvgIcon color="blue" />
+```

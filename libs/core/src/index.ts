@@ -4,4 +4,3 @@ export * from "./Button";
 export * from "./Header";
 export * from "./Heading";
 export * from "./Loading";
-export * from "./Logo";

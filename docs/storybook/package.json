@@ -20,15 +20,17 @@
   "license": "AGPL-3.0",
   "author": "Open Digital Education",
   "scripts": {
+    "build": "vite build",
     "dev": "vite dev",
+    "vite:preview": "vite preview",
     "build-storybook": "build-storybook -o dist/",
     "dev-storybook": "start-storybook -p 6006",
     "preview": "start-storybook --docs --no-manager-cache"
   },
   "prettier": "@ode-react-ui/prettier-config-custom",
   "dependencies": {
-    "react": "17.0.0",
-    "react-dom": "17.0.0"
+    "react": "18.0.0",
+    "react-dom": "18.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.19.6",
@@ -41,8 +43,8 @@
     "@storybook/builder-vite": "0.2.2",
     "@storybook/react": "6.5.13",
     "@storybook/testing-library": "0.0.13",
-    "@types/react": "17.0.0",
-    "@types/react-dom": "17.0.0",
+    "@types/react": "18.0.0",
+    "@types/react-dom": "18.0.0",
     "@vitejs/plugin-react": "2.1.0",
     "babel-loader": "8.2.5",
     "sass": "^1.55.0",

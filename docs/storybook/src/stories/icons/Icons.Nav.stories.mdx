@@ -1,0 +1,30 @@
+import { Meta, Story } from "@storybook/addon-docs";
+import { Icons } from "../../components/Icons";
+
+import * as icons from "@ode-react-ui/icons/nav";
+
+<Meta title="Icons/Nav Icons" />
+
+# Navbars Icons
+
+To use this set of icons, import `@ode-react-ui/icons/nav` into your code:
+
+- named import `import { NeoAssistance, Search, MyApps } from "@ode-react-ui/icons/nav;"`
+
+## Usage
+
+Then you can use any icon as follows:
+
+```jsx
+function MyComponent() {
+  return (
+    <nav>
+      <MyApps />
+    </nav>
+  );
+}
+```
+
+## Icons
+
+<Icons icons={icons} />

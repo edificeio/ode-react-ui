@@ -10,11 +10,31 @@ export default {
     level: "h1",
     headingStyle: "h3",
     isHeading: true,
+    as: "div",
   },
   // @ts-ignore
 } as ComponentMeta<typeof AppCard>;
 
-export const Base = () => {
+const Template: ComponentStory<typeof AppCard> = (args) => (
+  <AppCard {...args}>
+    <AppCard.Icon size="40" />
+  </AppCard>
+);
+
+export const Base = Template.bind({});
+Base.args = {
+  app: {
+    address: "/blog",
+    icon: "",
+    name: "",
+    scope: [],
+    display: false,
+    displayName: "",
+    isExternal: false,
+  },
+};
+
+/* export const Base = () => {
   // For example only
   const mockedApp = {
     address: "/blog",
@@ -39,7 +59,7 @@ Base.parameters = {
         "If no icon or name are found, we display a placeholder with a default title",
     },
   },
-};
+}; */
 
 export const OnlyTitle = () => {
   // For example only
@@ -177,7 +197,7 @@ export const IconCustomSize = () => {
   };
 
   return (
-    <AppCard app={mockedApp}>
+    <AppCard app={mockedApp} isHeading level="h1" headingStyle="h3">
       <AppCard.Icon size="24" />
     </AppCard>
   );
@@ -208,7 +228,7 @@ export const UseAsALink = () => {
       headingStyle="h3"
       level="h1"
       as="a"
-      href={mockedApp.address}
+      href="/"
     >
       <AppCard.Icon size="40" />
     </AppCard>
