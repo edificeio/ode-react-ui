@@ -1,5 +1,11 @@
 # @ode-react-ui/advanced
 
+## 1.0.5
+
+### Patch Changes
+
+- [#29](https://github.com/opendigitaleducation/ode-react-ui/pull/29) [`9d49464`](https://github.com/opendigitaleducation/ode-react-ui/commit/9d4946401ebc7218d0b22f50c8adb617fca05386) Thanks [@david-cc](https://github.com/david-cc)! - feat(advanced): #WB2-131, add treeview component
+
 ## 1.0.2
 
 ### Patch Changes
