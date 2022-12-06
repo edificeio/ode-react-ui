@@ -3,7 +3,7 @@
 We are following [Semantic Versioning](https://semver.org/) and [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). <br/>
 When contributing to this repository, please follow the steps below.
 
-### Semantic Versioning Reminder
+## Semantic Versioning Reminder
 
 > PATCH: refactor, internal or non-breaking change which fixes an issue
 >
@@ -11,7 +11,7 @@ When contributing to this repository, please follow the steps below.
 >
 > MAJOR: fix or feature that would cause existing functionality to not work as expected
 
-### Conventional Commits Reminder
+## Conventional Commits Reminder
 
 Always try to add the library you've been working on between `()`
 

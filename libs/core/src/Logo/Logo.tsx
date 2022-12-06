@@ -1,10 +1,6 @@
 import clsx from "clsx";
 
-interface LogoProps {
-  url: string;
-  is1d?: boolean;
-  translate?: string;
-}
+import { LogoProps } from "./LogoProps";
 
 export default function Logo({
   url,

@@ -1,15 +1,14 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 import { HeadingProps } from "../Heading/HeadingProps";
-import { MergeElementProps } from "../utils/merge-element";
+import {
+  PolymorphicComponentPropWithRef,
+  PolymorphicRef,
+} from "../utils/create-polymorphic-component";
 
 type AppHeadingProps = Pick<HeadingProps, "level" | "headingStyle">;
 
-export type AppCardProps<P extends React.ElementType = "div"> = {
-  /**
-   * Polymorphic Component
-   */
-  as?: P;
+export type BaseProps = {
   /**
    * Pass all information about an app
    */
@@ -26,4 +25,18 @@ export type AppCardProps<P extends React.ElementType = "div"> = {
    * Title, Card Component, ...
    */
   variant?: string;
-} & MergeElementProps<P, AppHeadingProps>;
+} & AppHeadingProps;
+
+export type AppCardProps<T extends React.ElementType> =
+  PolymorphicComponentPropWithRef<T, BaseProps>;
+
+const defaultElement = "div";
+export type DefaultElementType = typeof defaultElement;
+
+export type AppCardRef<T extends React.ElementType> = PolymorphicRef<T>;
+
+export type PolymorphicAppCard = <
+  T extends React.ElementType = DefaultElementType,
+>(
+  props: AppCardProps<T>,
+) => React.ReactElement | null;
