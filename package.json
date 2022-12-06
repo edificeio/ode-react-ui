@@ -18,7 +18,7 @@
     "libs/*"
   ],
   "scripts": {
-    "build": "turbo run build --filter=!@starter/storybook",
+    "build": "turbo run build --filter=!@ode-react-ui/storybook",
     "build:advanced": "turbo run build --filter=@ode-react-ui/advanced",
     "build:core": "turbo run build --filter=@ode-react-ui/core",
     "build:hooks": "turbo run build --filter=@ode-react-ui/hooks",

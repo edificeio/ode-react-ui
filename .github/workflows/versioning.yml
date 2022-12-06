@@ -29,8 +29,8 @@ jobs:
       - name: Build Storybook
         run: yarn build:storybook
 
-      - name: Set deployment token
-        run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+      - name: Write NPM_TOKEN
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
