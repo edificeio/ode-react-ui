@@ -1,2 +1,2 @@
 /* eslint-disable import/prefer-default-export */
-export { useIconContext } from "./IconContext";
+export { default as AppCard } from "./AppCard";

@@ -2,7 +2,10 @@
 
 | Component Name | Figma | Development | A11y check | Storybook |
 | -------------- | :---: | :---------: | :--------: | :-------: |
-| AppTitle       |  ✅   |     ✅      |     ✅     |    ✅     |
+| AppCard        |  ✅   |     ✅      |     ✅     |    ✅     |
 | Button         |  ✅   |     ✅      |     ✅     |    ✅     |
-| IconContext    |  ✅   |     ✅      |     ✅     |    ✅     |
 | Loading        |  ✅   |     ✅      |     ✅     |    ✅     |
+| Header         |  ✅   |     ✅      |     ✅     |    ✅     |
+| Headings       |  ✅   |     ✅      |     ✅     |    ✅     |
+| Loading        |  ✅   |     ✅      |     ✅     |    ✅     |
+| Logo           |  ✅   |     ✅      |     ✅     |    ✅     |

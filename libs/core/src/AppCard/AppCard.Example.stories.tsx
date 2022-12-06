@@ -1,744 +1,581 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { AppTitle } from "../index";
-
-import * as hooks from "@ode-react-ui/hooks";
-import { useIconContext } from "../IconContext";
+import { AppCard } from "../index";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Core/AppTitle",
-  component: AppTitle,
+  title: "Examples/AppCard",
+  component: AppCard,
+  args: {
+    as: "h1",
+    headingStyle: "h3",
+    isHeading: true,
+  },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-} as ComponentMeta<typeof AppTitle>;
+} as ComponentMeta<typeof AppCard>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof AppTitle> = (args) => (
-  <AppTitle {...args} />
+const Template: ComponentStory<typeof AppCard> = (args) => (
+  <AppCard {...args}>
+    <AppCard.Icon size="32" />
+  </AppCard>
 );
-
-export const ApplicationExample = () => {
-  const { getIconCode } = hooks.useOdeIcons();
-
-  // For example
-  const mockedApp = {
-    address: "/blog",
-    icon: "blog-large",
-    name: "Blog",
-    scope: [],
-    display: false,
-    displayName: "",
-    isExternal: false,
-  };
-
-  const { name } = mockedApp;
-
-  /**
-   * We pass the name of the app
-   * We get the app code for styling purpose
-   * We use a custom hook to get an app icon
-   */
-  return (
-    <div>
-      <AppTitle
-        name={name}
-        code={getIconCode(mockedApp)}
-        icon={useIconContext(mockedApp)}
-      />
-    </div>
-  );
-};
-
-export const ApplicationExampleWithImage = () => {
-  const { getIconCode } = hooks.useOdeIcons();
-
-  // For example
-  const mockedApp = {
-    address: "/form",
-    icon: "https://ent.l-educdenormandie.fr/formulaire/public/img/logo.svg",
-    name: "Formulaire",
-    scope: [],
-    display: false,
-    displayName: "",
-    isExternal: false,
-  };
-
-  const { name } = mockedApp;
-
-  /**
-   * We pass the name of the app
-   * We get the app code for styling purpose
-   * We use a custom hook to get an app icon
-   */
-  return (
-    <div>
-      <AppTitle
-        name={name}
-        code={getIconCode(mockedApp)}
-        icon={useIconContext(mockedApp)}
-      />
-    </div>
-  );
-};
-ApplicationExampleWithImage.parameters = {
-  docs: {
-    description: {
-      story: "When an url is added instead of an app code, we return an image",
-    },
-  },
-};
-
-export const ApplicationEmpty = Template.bind({});
-ApplicationEmpty.parameters = {
-  docs: {
-    description: {
-      story:
-        "If no application is found or an error occured, we should load en empty component",
-    },
-  },
-};
 
 export const ApplicationAccount = Template.bind({});
 ApplicationAccount.args = {
-  code: "account",
-  name: "Mon Compte",
-  icon: useIconContext({
+  app: {
     icon: "account",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Account",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationActualites = Template.bind({});
 ApplicationActualites.args = {
-  code: "actualites",
-  name: "Actualites",
-  icon: useIconContext({
+  app: {
     icon: "actualites",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Actualites",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationAdmin = Template.bind({});
 ApplicationAdmin.args = {
-  code: "admin",
-  name: "Console d'administration",
-  icon: useIconContext({
+  app: {
     icon: "admin",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Admin",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationAdminPortal = Template.bind({});
 ApplicationAdminPortal.args = {
-  code: "admin",
-  name: "Admin",
-  icon: useIconContext({
+  app: {
     icon: "admin-portal",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Admin Portal",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationArchive = Template.bind({});
 ApplicationArchive.args = {
-  code: "archive",
-  name: "Archive",
-  icon: useIconContext({
+  app: {
     icon: "archive",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Archive",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationBlog = Template.bind({});
 ApplicationBlog.args = {
-  code: "blog",
-  name: "Blog",
-  icon: useIconContext({
+  app: {
     icon: "blog",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Blog",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationCahierDeTexte = Template.bind({});
 ApplicationCahierDeTexte.args = {
-  code: "cahier-de-texte",
-  name: "Cahier de textes",
-  icon: useIconContext({
+  app: {
     icon: "cahier-de-texte",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Cahier de texte",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationCahierTexte = Template.bind({});
 ApplicationCahierTexte.args = {
-  code: "cahier-textes",
-  name: "Cahier textes",
-  icon: useIconContext({
+  app: {
     icon: "cahier-textes",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Cahier textes",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationCalendar = Template.bind({});
 ApplicationCalendar.args = {
-  code: "calendar",
-  name: "Calendar",
-  icon: useIconContext({
+  app: {
     icon: "calendar",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Calendar",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationCns = Template.bind({});
 ApplicationCns.args = {
-  code: "cns",
-  name: "CNS",
-  icon: useIconContext({
+  app: {
     icon: "cns",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Cns",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationCanalNumerique = Template.bind({});
 ApplicationCanalNumerique.args = {
-  code: "canal-numerique",
-  name: "Canal Numérique",
-  icon: useIconContext({
+  app: {
     icon: "canal-numerique",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Canal numérique",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationCollaborativeEditor = Template.bind({});
 ApplicationCollaborativeEditor.args = {
-  code: "pad",
-  name: "Pad",
-  icon: useIconContext({
+  app: {
     icon: "pad",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Pad",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationCollaborativeWall = Template.bind({});
 ApplicationCollaborativeWall.args = {
-  code: "collaborative-wall",
-  name: "Mur Collaboratif",
-  icon: useIconContext({
+  app: {
     icon: "collaborative-wall",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Collaborative Wall",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationCommunity = Template.bind({});
 ApplicationCommunity.args = {
-  code: "community",
-  name: "Communautés",
-  icon: useIconContext({
+  app: {
     icon: "community",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Community",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationCompetences = Template.bind({});
 ApplicationCompetences.args = {
-  code: "competences",
-  name: "Compétences",
-  icon: useIconContext({
+  app: {
     icon: "competences",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Competences",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationConversation = Template.bind({});
 ApplicationConversation.args = {
-  code: "conversation",
-  name: "Messagerie",
-  icon: useIconContext({
+  app: {
     icon: "conversation",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Conversation",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationDirectory = Template.bind({});
 ApplicationDirectory.args = {
-  code: "directory",
-  name: "Directory",
-  icon: useIconContext({
+  app: {
     icon: "directory",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Directory",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationExercizer = Template.bind({});
 ApplicationExercizer.args = {
-  code: "exercizer",
-  name: "Exercizer",
-  icon: useIconContext({
+  app: {
     icon: "exercizer",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Exercizer",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationFormulaire = Template.bind({});
 ApplicationFormulaire.args = {
-  code: "forms",
-  name: "Formulaire",
-  icon: useIconContext({
+  app: {
     icon: "forms",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Form",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationForum = Template.bind({});
 ApplicationForum.args = {
-  code: "forum",
-  name: "Forum",
-  icon: useIconContext({
+  app: {
     icon: "forum",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Forum",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationLibrary = Template.bind({});
 ApplicationLibrary.args = {
-  code: "library",
-  name: "Library",
-  icon: useIconContext({
+  app: {
     icon: "library",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Library",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationMindmap = Template.bind({});
 ApplicationMindmap.args = {
-  code: "mindmap",
-  name: "Carte mentale",
-  icon: useIconContext({
+  app: {
     icon: "mindmap",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Mindmap",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationNotes = Template.bind({});
 ApplicationNotes.args = {
-  code: "notes",
-  name: "Notes",
-  icon: useIconContext({
+  app: {
     icon: "notes",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Notes",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationPoll = Template.bind({});
 ApplicationPoll.args = {
-  code: "poll",
-  name: "Sondage",
-  icon: useIconContext({
+  app: {
     icon: "poll",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Poll",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationPresences = Template.bind({});
 ApplicationPresences.args = {
-  code: "presences",
-  name: "Présences",
-  icon: useIconContext({
+  app: {
     icon: "presences",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Presences",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationQwant = Template.bind({});
 ApplicationQwant.args = {
-  code: "poll",
-  name: "Sondage",
-  icon: useIconContext({
-    icon: "poll",
+  app: {
+    icon: "qwant",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Qwant",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationRack = Template.bind({});
 ApplicationRack.args = {
-  code: "rack",
-  name: "Casier",
-  icon: useIconContext({
+  app: {
     icon: "rack",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Rack",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationRbs = Template.bind({});
 ApplicationRbs.args = {
-  code: "rbs",
-  name: "Réservation de ressources",
-  icon: useIconContext({
+  app: {
     icon: "rbs",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Rbs",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationSchoolbook = Template.bind({});
 ApplicationSchoolbook.args = {
-  code: "schoolbook",
-  name: "Carnet de liaison",
-  icon: useIconContext({
+  app: {
     icon: "schoolbook",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Schoolbook",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationScrapbook = Template.bind({});
 ApplicationScrapbook.args = {
-  code: "scrapbook",
-  name: "Scrapbook",
-  icon: useIconContext({
+  app: {
     icon: "scrapbook",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Scrapbook",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationSettingsClass = Template.bind({});
 ApplicationSettingsClass.args = {
-  code: "settings-class",
-  name: "Paramétrage de la classe",
-  icon: useIconContext({
+  app: {
     icon: "settings-class",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Settings Class",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationSharebigfiles = Template.bind({});
 ApplicationSharebigfiles.args = {
-  code: "sharebigfiles",
-  name: "Sharebigfiles",
-  icon: useIconContext({
+  app: {
     icon: "sharebigfiles",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Sharebigfiles",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationStatistics = Template.bind({});
 ApplicationStatistics.args = {
-  code: "statistics",
-  name: "Statistics",
-  icon: useIconContext({
+  app: {
     icon: "statistics",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Statistics",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationStats = Template.bind({});
 ApplicationStats.args = {
-  code: "stats",
-  name: "Stats",
-  icon: useIconContext({
+  app: {
     icon: "stats",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Stats",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationSupport = Template.bind({});
 ApplicationSupport.args = {
-  code: "support",
-  name: "Support",
-  icon: useIconContext({
+  app: {
     icon: "support",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Support",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationTimeline = Template.bind({});
 ApplicationTimeline.args = {
-  code: "timeline",
-  name: "Signalements",
-  icon: useIconContext({
+  app: {
     icon: "timeline",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Timeline",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationTimelineGenerator = Template.bind({});
 ApplicationTimelineGenerator.args = {
-  code: "timelinegenerator",
-  name: "Frise Chronologique",
-  icon: useIconContext({
+  app: {
     icon: "timelinegenerator",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Timeline Generator",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationUserbook = Template.bind({});
 ApplicationUserbook.args = {
-  code: "userbook",
-  name: "Userbook",
-  icon: useIconContext({
+  app: {
     icon: "userbook",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Userbook",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationVideo = Template.bind({});
 ApplicationVideo.args = {
-  code: "video",
-  name: "Video",
-  icon: useIconContext({
+  app: {
     icon: "video",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Video",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationVisioconf = Template.bind({});
 ApplicationVisioconf.args = {
-  code: "visioconf",
-  name: "Visioconf",
-  icon: useIconContext({
+  app: {
     icon: "visioconf",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Visioconf",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationWebWebsite = Template.bind({});
 ApplicationWebWebsite.args = {
-  code: "website",
-  name: "Website",
-  icon: useIconContext({
+  app: {
     icon: "website",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Website",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationWiki = Template.bind({});
 ApplicationWiki.args = {
-  code: "wiki",
-  name: "Wiki",
-  icon: useIconContext({
+  app: {
     icon: "wiki",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Wiki",
     scope: [],
-  }),
+  },
 };
 
 export const ApplicationWorkspace = Template.bind({});
 ApplicationWorkspace.args = {
-  code: "workspace",
-  name: "Workspace",
-  icon: useIconContext({
+  app: {
     icon: "workspace",
     address: "",
     display: false,
     displayName: "",
     isExternal: false,
-    name: "",
+    name: "Workspace",
     scope: [],
-  }),
+  },
 };

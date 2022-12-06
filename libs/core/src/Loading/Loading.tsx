@@ -14,10 +14,10 @@ import clsx from "clsx";
 import { LoadingProps } from "./LoadingProps";
 
 /**
- * Inform user about loading
+ * Inform user about loading status
  */
 
-export const Loading = forwardRef<HTMLDivElement, LoadingProps>(
+const Loading = forwardRef<HTMLDivElement, LoadingProps>(
   (props: LoadingProps, ref): JSX.Element => {
     const {
       loading,
@@ -38,12 +38,12 @@ export const Loading = forwardRef<HTMLDivElement, LoadingProps>(
       return icon;
     };
 
-    const cx = clsx("loading", {
+    const classes = clsx("loading", {
       "is-loading": loading,
     });
 
     return (
-      <div className={cx} role="status" ref={ref}>
+      <div className={classes} role="status" ref={ref}>
         {(!loadingPosition || loadingPosition === "left") && getLoadingIcon()}
         {children}
         {loadingPosition === "right" && getLoadingIcon()}
