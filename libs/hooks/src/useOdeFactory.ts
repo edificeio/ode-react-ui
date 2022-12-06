@@ -4,10 +4,9 @@ import {
   NotifyFrameworkFactory,
   SessionFrameworkFactory,
   TransportFrameworkFactory,
-  // @ts-ignore
-} from "ode-ts-client";
+} from "./utils/useOdeTsClient";
 
-export const useOdeFactory = () => {
+export default function useOdeFactory() {
   /** Short for accessing to the global ConfigurationFramework.  */
   function conf() {
     return ConfigurationFrameworkFactory.instance();
@@ -36,6 +35,4 @@ export const useOdeFactory = () => {
     http,
     session,
   };
-};
-
-export default useOdeFactory;
+}

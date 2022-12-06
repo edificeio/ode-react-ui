@@ -1,8 +1,6 @@
-import { useOdeFactory } from "./useOdeFactory";
+import useOdeFactory from "./useOdeFactory";
 
-// import { conf } from "../utils";
-
-export const useThemeHelper = () => {
+export default function useThemeHelper() {
   const { conf } = useOdeFactory();
 
   /**
@@ -88,56 +86,4 @@ export const useThemeHelper = () => {
     loadThemeJs,
     removeThemeJS,
   };
-};
-
-export default useThemeHelper;
-
-// export class ThemeHelperService {
-//     static $inject =["odeNgHelperService"];
-//     }
-
-//     /** Apply a theme from its URL */
-//     async applyStyle( stylePath:string ) {
-//         if( stylePath && stylePath.length > 0 && stylePath.lastIndexOf('/', stylePath.length-1) !== stylePath.length-1 )
-//             stylePath += "/";
-//         stylePath = `${stylePath}theme.css?version=${this.platform.deploymentTag}`;
-//         if($('#theme').length === 0) {
-//             const style = angular.element(
-//                 `<link rel="stylesheet"
-//                     type="text/css"
-//                     href="${stylePath}"
-//                     id="theme"
-//                     crossorigin="anonymous" />`
-//             );
-//             var favicon = angular.element(
-//                 `<link rel="icon" href="${this.platform.theme.basePath}img/illustrations/favicon.ico" />`
-//             );
-//             style.on('load', e => {
-//                 $('body').show();
-//             });
-//             $('head')
-//                 .append(style)
-//                 .append(favicon);
-//             setTimeout(function () {
-//                 $('body').show();
-//             }, 300);
-//         }
-//         else {
-//             $('#theme').attr('href', stylePath);
-//         }
-//     }
-
-//     /** @return list of available derived themes (skins) for the user. */
-//     listThemes():Promise<IThemeDesc[]> {
-//         return this.platform.theme.listThemes();
-//     }
-
-//     /** Apply a derived theme (skin) and save it as prefered, then update the data in cache. */
-//     async setTheme( theme:IThemeDesc ) {
-//         let stylePath = await this.getBootstrapThemePath();
-//         this.applyStyle( `${stylePath}/skins/${theme._id}` );
-//         this.platform.theme.setDefaultTheme( theme );
-//     }
-
-//
-// }
+}
