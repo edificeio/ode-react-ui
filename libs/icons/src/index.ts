@@ -39,7 +39,6 @@ export { default as Folder } from "./Folder";
 export { default as FullScreen } from "./FullScreen";
 export { default as Globe } from "./Globe";
 export { default as Hide } from "./Hide";
-export { default as Home } from "./Home";
 export { default as Hourglass } from "./Hourglass";
 export { default as Image } from "./Image";
 export { default as Inbox } from "./Inbox";

@@ -5,6 +5,7 @@ module.exports = {
   titleProp: "true",
   replaceAttrValues: {
     "#4A4A4A": "currentColor",
+    "#4a4a4a": "currentColor",
   },
   svgProps: { "aria-hidden": "true" },
   icon: "24",

@@ -3,14 +3,13 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-const SvgSearch = ({
+const SvgUserbook = ({
   title,
   titleId,
   ...props
 }: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    fill="none"
     viewBox="0 0 24 24"
     width="24"
     height="24"
@@ -20,11 +19,9 @@ const SvgSearch = ({
   >
     {title ? <title id={titleId}>{title}</title> : null}
     <path
+      d="M0 24.58V.53h24.05v4.28h-2.62V7.1h2.62v4.28h-2.62v2.35h2.62V18h-2.62v2.3h2.62v4.29H0zm4.64-6.85h12.12V14l-4.5-2.67q.9-.46 1.4-1.3t.53-1.85q0-1.4-1.01-2.43T10.7 4.72 8.25 5.75 7.24 8.18q0 1.03.53 1.85t1.4 1.3L4.63 14v3.73z"
       fill="currentColor"
-      fillRule="evenodd"
-      d="M4 10a7 7 0 1 1 14 0 7 7 0 0 1-14 0Zm7-9a9 9 0 1 0 5.7 15.96 1 1 0 0 0 .24.4l4.35 4.35a1 1 0 0 0 1.42-1.42l-4.35-4.35a1 1 0 0 0-.4-.24A9 9 0 0 0 11 1Z"
-      clipRule="evenodd"
     />
   </svg>
 );
-export default SvgSearch;
+export default SvgUserbook;

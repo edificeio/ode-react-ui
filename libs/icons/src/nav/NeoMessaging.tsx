@@ -3,28 +3,26 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-const SvgSearch = ({
+const SvgNeoMessaging = ({
   title,
   titleId,
   ...props
 }: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
     width="24"
     height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
     aria-labelledby={titleId}
     {...props}
   >
     {title ? <title id={titleId}>{title}</title> : null}
     <path
+      d="m.5 21.257 7.46-8.216 4.052 2.403 4.052-2.403 7.46 8.216H.5Zm0-2.738V8.573l5.848 3.531L.5 18.52Zm0-12.084V3.048h23.023v3.387l-11.511 6.847L.5 6.435Zm17.176 5.67 5.848-3.532v9.946l-5.848-6.415Z"
       fill="currentColor"
-      fillRule="evenodd"
-      d="M4 10a7 7 0 1 1 14 0 7 7 0 0 1-14 0Zm7-9a9 9 0 1 0 5.7 15.96 1 1 0 0 0 .24.4l4.35 4.35a1 1 0 0 0 1.42-1.42l-4.35-4.35a1 1 0 0 0-.4-.24A9 9 0 0 0 11 1Z"
-      clipRule="evenodd"
     />
   </svg>
 );
-export default SvgSearch;
+export default SvgNeoMessaging;
