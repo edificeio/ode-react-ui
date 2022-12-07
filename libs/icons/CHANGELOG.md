@@ -1,5 +1,11 @@
 # @ode-react-ui/icons
 
+## 1.0.6
+
+### Patch Changes
+
+- [#31](https://github.com/opendigitaleducation/ode-react-ui/pull/31) [`45d8b42`](https://github.com/opendigitaleducation/ode-react-ui/commit/45d8b421d7931b60f4d3a06a38c4a636862f2e9e) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update libs icons
+
 ## 1.0.4
 
 ### Patch Changes
