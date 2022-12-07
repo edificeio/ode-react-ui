@@ -1,5 +1,11 @@
 # @ode-react-ui/hooks
 
+## 1.0.6
+
+### Patch Changes
+
+- [#31](https://github.com/opendigitaleducation/ode-react-ui/pull/31) [`230b11b`](https://github.com/opendigitaleducation/ode-react-ui/commit/230b11bf6384713d145c5505e66b8e051e359fc2) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update hooks libs, refacto hooks
+
 ## 1.0.3
 
 ### Patch Changes

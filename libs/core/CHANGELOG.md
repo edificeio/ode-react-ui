@@ -1,5 +1,15 @@
 # @ode-react-ui/core
 
+## 1.0.6
+
+### Patch Changes
+
+- [#31](https://github.com/opendigitaleducation/ode-react-ui/pull/31) [`54e2f95`](https://github.com/opendigitaleducation/ode-react-ui/commit/54e2f95f544cadb03c0560ab136d3854d3c791c4) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update appcard component and add header component
+
+- Updated dependencies [[`45d8b42`](https://github.com/opendigitaleducation/ode-react-ui/commit/45d8b421d7931b60f4d3a06a38c4a636862f2e9e), [`230b11b`](https://github.com/opendigitaleducation/ode-react-ui/commit/230b11bf6384713d145c5505e66b8e051e359fc2)]:
+  - @ode-react-ui/icons@1.0.6
+  - @ode-react-ui/hooks@1.0.6
+
 ## 1.0.4
 
 ### Patch Changes
