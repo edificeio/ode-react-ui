@@ -1,0 +1,71 @@
+{
+  "name": "@ode-react-ui/hooks",
+  "version": "1.0.6",
+  "private": false,
+  "description": "@ode-react-ui react hooks library",
+  "keywords": [
+    "react",
+    "frontend",
+    "hooks",
+    "ui"
+  ],
+  "homepage": "https://github.com/opendigitaleducation/ode-react-ui/tree/main/packages/hooks#readme",
+  "bugs": {
+    "url": "https://github.com/opendigitaleducation/ode-react-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opendigitaleducation/ode-react-ui.git"
+  },
+  "license": "AGPL-3.0",
+  "author": "Open Digital Education",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "yarn run prebuild && vite build",
+    "fix": "eslint --fix \"**/*.{ts,tsx}\"",
+    "format": "concurrently \"yarn:format:*\"",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "lint": "eslint \"**/*.{ts,tsx}\""
+  },
+  "dependencies": {
+    "clsx": "1.2.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.7.18",
+    "@types/react": "18.0.17",
+    "@types/react-dom": "18.0.6",
+    "@vitejs/plugin-react": "2.2.0",
+    "clsx": "1.2.1",
+    "concurrently": "7.5.0",
+    "ode-ts-client": "feat-explorer",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "vite": "3.2.2",
+    "vite-plugin-dts": "1.6.6"
+  },
+  "peerDependencies": {
+    "ode-ts-client": "feat-explorer",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

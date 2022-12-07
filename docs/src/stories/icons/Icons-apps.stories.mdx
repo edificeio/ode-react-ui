@@ -1,0 +1,45 @@
+import { Meta, Story } from "@storybook/addon-docs";
+import { SvgIcon } from "../../components/SvgIcon";
+
+<Meta title="Icons/Apps and Connectors" />
+
+# Apps and Connectors Icons
+
+This set of icons uses a SVG Sprite and should already be included in `ode-react-boilerplate` inside `public` folder.
+
+## Usage
+
+Use this set of icons with the `AppCard` Component.
+
+```jsx
+import { Icon } from "@ode-react-ui/core";
+
+export default function App() {
+  // AppCard has its own context to pass "app" information to AppIcon
+
+  return (
+    <AppCard
+      app={{
+        address: "/blog",
+        icon: "blog-large",
+        name: "Blog",
+        scope: [],
+        display: false,
+        displayName: "",
+        isExternal: false,
+      }}
+      isHeading
+      headingStyle="h3"
+      as="h1"
+    >
+      <AppCard.Icon size="48" />
+    </AppCard>
+  );
+}
+```
+
+## Apps and Connectors Icons Set
+
+This set includes 121 icons.
+
+<SvgIcon />

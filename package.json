@@ -13,24 +13,17 @@
   "license": "AGPL-3.0",
   "author": "Open Digital Education",
   "workspaces": [
-    "config/*",
-    "docs/*",
-    "libs/*"
+    "docs",
+    "packages/*"
   ],
   "scripts": {
     "build": "turbo run build --filter=!@ode-react-ui/storybook",
-    "build:advanced": "turbo run build --filter=@ode-react-ui/advanced",
-    "build:core": "turbo run build --filter=@ode-react-ui/core",
-    "build:hooks": "turbo run build --filter=@ode-react-ui/hooks",
-    "build:icons": "turbo run build --filter=@ode-react-ui/icons",
     "build:storybook": "turbo run build-storybook --filter=@ode-react-ui/storybook",
-    "check:advanced": "yarn run package-check --cwd=libs/advanced",
-    "check:core": "yarn run package-check --cwd=libs/core",
-    "check:hooks": "yarn run package-check --cwd=libs/hooks",
-    "check:icons": "yarn run package-check --cwd=libs/icons",
-    "clean:config": "rm -rf config/**/node_modules",
-    "clean:docs": "rm -rf docs/**/node_modules && rm -rf docs/**/dist",
-    "clean:lib": "rm -rf libs/**/node_modules && rm -rf libs/**/dist",
+    "check:advanced": "package-check --cwd=packages/advanced",
+    "check:core": "package-check --cwd=packages/core",
+    "check:hooks": "package-check --cwd=packages/hooks",
+    "check:icons": "package-check --cwd=packages/icons",
+    "clean": "rm -rf */**/node_modules && rm -rf node_modules && rm -f yarn.lock",
     "dev-storybook": "turbo run dev-storybook --filter=@ode-react-ui/storybook",
     "fix": "turbo run fix",
     "format": "turbo run format",
@@ -40,22 +33,29 @@
     "prepare": "husky install",
     "publish-packages": "changeset version && changeset publish"
   },
-  "resolutions": {
-    "**/@changesets/cli/meow": "8.0.0",
-    "**/chokidar/glob-parent": "5.1.2",
-    "**/default-browser-id/meow": "8.0.0",
-    "**/fast-glob/glob-parent": "5.1.2",
-    "**/nx/axios": "0.21.2",
-    "**/remark-parse/trim": "0.0.3",
-    "**/watchpack-chokidar2/chokidar": "3.5.1"
-  },
   "dependencies": {
     "@changesets/changelog-github": "0.4.7",
     "@changesets/cli": "2.25.2"
   },
   "devDependencies": {
-    "@skypack/package-check": "^0.2.2",
-    "husky": "8.0.1",
-    "turbo": "1.6.3"
+    "@skypack/package-check": "0.2.2",
+    "@typescript-eslint/eslint-plugin": "5.45.1",
+    "@typescript-eslint/parser": "5.45.1",
+    "eslint": "8.29.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-config-standard-with-typescript": "23.0.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-n": "15.6.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-react": "7.31.11",
+    "husky": "8.0.0",
+    "prettier": "2.8.1",
+    "turbo": "latest",
+    "typescript": "4.8.3"
+  },
+  "packageManager": "yarn@1.22.19",
+  "engines": {
+    "node": ">=16.0.0"
   }
 }

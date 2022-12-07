@@ -1,0 +1,53 @@
+{
+  "name": "@ode-react-ui/storybook",
+  "version": "1.0.4",
+  "private": true,
+  "description": "Open Digital Education Storybook Documentation",
+  "keywords": [
+    "storybook",
+    "react",
+    "docs",
+    "components"
+  ],
+  "homepage": "https://github.com/opendigitaleducation/ode-react-ui/tree/main/docs/storybook#readme",
+  "bugs": {
+    "url": "https://github.com/opendigitaleducation/ode-react-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opendigitaleducation/ode-react-ui.git"
+  },
+  "license": "AGPL-3.0",
+  "author": "Open Digital Education",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite dev",
+    "vite:preview": "vite preview",
+    "build-storybook": "build-storybook --docs -o dist/",
+    "dev-storybook": "start-storybook -p 6006",
+    "preview": "start-storybook --docs --no-manager-cache"
+  },
+  "dependencies": {
+    "react": "18.0.0",
+    "react-dom": "18.0.0"
+  },
+  "devDependencies": {
+    "@ode-react-ui/icons": "*",
+    "@babel/core": "7.20.5",
+    "@storybook/addon-a11y": "6.5.13",
+    "@storybook/addon-actions": "6.5.13",
+    "@storybook/addon-essentials": "6.5.13",
+    "@storybook/addon-interactions": "6.5.13",
+    "@storybook/addon-links": "6.5.13",
+    "@storybook/builder-vite": "0.2.2",
+    "@storybook/cli": "6.5.13",
+    "@storybook/react": "6.5.13",
+    "@storybook/testing-library": "0.0.13",
+    "@types/react": "18.0.0",
+    "@types/react-dom": "18.0.0",
+    "@vitejs/plugin-react": "2.1.0",
+    "babel-loader": "8.2.5",
+    "typescript": "4.8.4",
+    "vite": "3.2.2"
+  }
+}

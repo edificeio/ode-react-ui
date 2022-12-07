@@ -6,11 +6,11 @@ Open Digital Education Frontend Library with ReactJS
 
 Ode React UI is a Monorepo containing:
 
-- [Config](./config/README.md): Shared configuration by all libs
-- [Core](./libs/core/README.md): Core Components Library (e.g: Button, Header, ...)
-- [Icons](./libs/icons/README.md): Icons Library
-- [Hooks](./libs/hooks/README.md): Hooks Library
-- [Advanced](./libs/advanced/README.md): Advanced Components Library (e.g: TreeView, Rich Editor, ...)
+- [Advanced](./packages/advanced/README.md): Advanced Components Library (TreeView, Rich Editor, ...)
+- [Core](./packages/core/README.md): Core Components Library (Button, Header, ...)
+- [Hooks](./packages/hooks/README.md): Hooks Library
+- [Icons](./packages/icons/README.md): Icons Library
+- [Storybook](./apps/docs/README.md): Storybook documentation
 
 Many tools are already configured like:
 
@@ -32,7 +32,7 @@ Many tools are already configured like:
 > ⚠️ Before starting any development, please read the [CONTRIBUTION](./CONTRIBUTING.md) GUIDE.
 
 ```bash
-yarn
+yarn i
 ```
 
 > Then, you need to build at least once every lib to use them
@@ -63,7 +63,7 @@ yarn format
 
 ### Clean
 
-> Clean all node_modules symlink + node_modules + yarn.lock
+> Clean all node_modules and lock file.
 
 ```bash
 yarn clean
