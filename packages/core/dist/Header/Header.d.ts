@@ -9,5 +9,8 @@
 interface HeaderProps {
     is1d?: boolean;
 }
+/**
+ * Header Component
+ */
 declare const Header: ({ is1d }: HeaderProps) => JSX.Element;
 export default Header;

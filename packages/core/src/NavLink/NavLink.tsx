@@ -11,8 +11,9 @@ export default function NavLink({
 }: NavLinkProps<string>) {
   const classes = clsx(className, {
     "nav-link": !button,
-    "button": button,
+    button,
   });
+
   return (
     <a href={link} className={classes}>
       {children}

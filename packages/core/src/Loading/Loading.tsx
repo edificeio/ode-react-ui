@@ -1,4 +1,3 @@
-/* eslint-disable react/button-has-type */
 /**
  * Loading  Component
  *
@@ -6,7 +5,7 @@
  * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/Loading/Loading.tsx
  */
 
-import { forwardRef } from "react";
+import { forwardRef, Ref } from "react";
 
 import { Loader } from "@ode-react-ui/icons";
 import clsx from "clsx";
@@ -17,8 +16,8 @@ import { LoadingProps } from "./LoadingProps";
  * Inform user about loading status
  */
 
-const Loading = forwardRef<HTMLDivElement, LoadingProps>(
-  (props: LoadingProps, ref): JSX.Element => {
+const Loading = forwardRef(
+  (props: LoadingProps, ref: Ref<HTMLDivElement>): JSX.Element => {
     const {
       loading,
       loadingIcon,

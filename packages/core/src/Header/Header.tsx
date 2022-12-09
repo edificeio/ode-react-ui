@@ -34,6 +34,10 @@ interface HeaderProps {
   is1d?: boolean;
 }
 
+/**
+ * Header Component
+ */
+
 const Header = ({ is1d = false }: HeaderProps): JSX.Element => {
   const welcomeUser = "Bonjour Support ONE, bienvenue !";
   const unreadNotification = 2;

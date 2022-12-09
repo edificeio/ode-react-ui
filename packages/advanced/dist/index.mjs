@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef } from "react";
 import { RafterRight, RafterDown, Folder } from "@ode-react-ui/icons";
 const TreeItem = (props) => {
   const { nodeId, label, children, section, selected, select } = props, [expanded, setExpanded] = useState(!1), handleInteraction = (event) => {
@@ -16,23 +16,29 @@ const TreeItem = (props) => {
     Array.isArray(children) && /* @__PURE__ */ React.createElement("ul", { role: "group" }, children)
   ));
   return section ? /* @__PURE__ */ React.createElement("ul", { role: "tree" }, renderItem()) : renderItem();
-}, TreeView = ({ data }) => {
-  const [selectedItem, setSelectedItem] = useState(""), handleSelected = (selectedNodeId) => {
-    setSelectedItem(selectedNodeId);
-  }, renderTree = (node) => /* @__PURE__ */ React.createElement(
-    TreeItem,
-    {
-      key: node.id,
-      nodeId: node.id,
-      label: node.name,
-      section: node.section,
-      selected: selectedItem === node.id,
-      select: handleSelected
-    },
-    Array.isArray(node.children) ? node.children.map((item) => renderTree(item)) : null
-  );
-  return /* @__PURE__ */ React.createElement("div", { id: "treeview", className: "treeview" }, renderTree(data));
-}, TreeView$1 = TreeView;
+};
+TreeItem.displayName = "TreeItem";
+const TreeView = forwardRef(
+  ({ data }, ref) => {
+    const [selectedItem, setSelectedItem] = useState(""), handleSelected = (selectedNodeId) => {
+      setSelectedItem(selectedNodeId);
+    }, renderTree = (node) => /* @__PURE__ */ React.createElement(
+      TreeItem,
+      {
+        key: node.id,
+        nodeId: node.id,
+        label: node.name,
+        section: node.section,
+        selected: selectedItem === node.id,
+        select: handleSelected
+      },
+      Array.isArray(node.children) ? node.children.map((item) => renderTree(item)) : null
+    );
+    return /* @__PURE__ */ React.createElement("div", { id: "treeview", ref, className: "treeview" }, renderTree(data));
+  }
+);
+TreeView.displayName = "TreeView";
+const TreeView$1 = TreeView;
 export {
   TreeView$1 as TreeView
 };

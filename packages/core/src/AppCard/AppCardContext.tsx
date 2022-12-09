@@ -6,7 +6,11 @@ interface AppCardContextProps {
   code: string;
 }
 
-export const AppCardContext = createContext<AppCardContextProps | null>(null!);
+export const AppCardContext = createContext<AppCardContextProps | null>({
+  icon: "",
+  displayName: "Application",
+  code: "placeholder",
+});
 
 export default function useAppCardContext() {
   const context = useContext(AppCardContext);

@@ -4,7 +4,7 @@ import { AppCard } from "../index";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Core/App Card",
+  title: "Components/Core/AppCard",
   component: AppCard,
   args: {
     level: "h1",
@@ -12,7 +12,6 @@ export default {
     isHeading: true,
     as: "div",
   },
-  // @ts-ignore
 } as ComponentMeta<typeof AppCard>;
 
 const Template: ComponentStory<typeof AppCard> = (args) => (
@@ -21,7 +20,7 @@ const Template: ComponentStory<typeof AppCard> = (args) => (
   </AppCard>
 );
 
-/* export const Base = Template.bind({});
+export const Base = Template.bind({});
 Base.args = {
   app: {
     address: "/blog",
@@ -31,33 +30,6 @@ Base.args = {
     display: false,
     displayName: "",
     isExternal: false,
-  },
-}; */
-
-export const Base = () => {
-  // For example only
-  const mockedApp = {
-    address: "/blog",
-    icon: "",
-    name: "",
-    scope: [],
-    display: false,
-    displayName: "",
-    isExternal: false,
-  };
-
-  return (
-    <AppCard app={mockedApp} isHeading headingStyle="h3" level="h1">
-      <AppCard.Icon size="40" />
-    </AppCard>
-  );
-};
-Base.parameters = {
-  docs: {
-    description: {
-      story:
-        "If no icon or name are found, we display a placeholder with a default title",
-    },
   },
 };
 
