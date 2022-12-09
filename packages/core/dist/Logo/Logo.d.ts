@@ -1,2 +1,3 @@
 import { LogoProps } from "./LogoProps";
-export default function Logo({ url, is1d, translate, }: LogoProps): JSX.Element;
+declare const Logo: import("react").ForwardRefExoticComponent<LogoProps & import("react").RefAttributes<HTMLAnchorElement>>;
+export default Logo;

@@ -1,3 +1,9 @@
+export interface TreeViewProps {
+    /**
+     * TreeNode
+     */
+    data: TreeNode;
+}
 export interface TreeNode {
     /**
      * @param id : node's id

@@ -5,7 +5,7 @@
  * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/Button/Button.tsx
  * @see WAI-ARIA https://www.w3.org/WAI/ARIA/apg/patterns/button/
  */
-import { forwardRef } from "react";
+import { forwardRef, Ref } from "react";
 
 import clsx from "clsx";
 
@@ -16,7 +16,7 @@ import { ButtonProps, ButtonRef } from "./ButtonProps";
  * Primary UI component for user interaction
  */
 
-const Button = forwardRef<ButtonRef, ButtonProps>((props: ButtonProps, ref) => {
+const Button = forwardRef((props: ButtonProps, ref: Ref<ButtonRef>) => {
   const {
     color = "primary",
     children,

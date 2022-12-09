@@ -49,4 +49,6 @@ export const TreeItem = (props: TreeItemProps) => {
   return section ? <ul role="tree">{renderItem()}</ul> : renderItem();
 };
 
+TreeItem.displayName = "TreeItem";
+
 export default TreeItem;

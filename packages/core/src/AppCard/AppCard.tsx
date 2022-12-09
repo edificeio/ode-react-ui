@@ -1,7 +1,7 @@
 /**
  * AppCard Component
  *
- * @see Docs     https://ode-react-ui.vercel.app/?path=/docs/components-core-app-card--base
+ * @see Docs     https://ode-react-ui.vercel.app/?path=/docs/components-core-appcard--base
  * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/AppCard/AppCard.tsx
  */
 
@@ -21,7 +21,7 @@ import {
 } from "./AppCardProps";
 
 /**
- * AppCard shows icon and name of application
+ * AppCard Component displays icon and name of application
  */
 
 const Root: PolymorphicAppCard = forwardRef(
@@ -53,7 +53,7 @@ const Root: PolymorphicAppCard = forwardRef(
     const value = useMemo(
       () => ({
         icon: app.icon,
-        displayName: app.icon,
+        displayName: app.name,
         code: getIconCode(app),
       }),
       [],
@@ -80,6 +80,7 @@ const AppCard = Object.assign({}, Root, {
   Icon: AppIcon,
 });
 
-// AppCard.displayName = "AppCard";
+// @ts-expect-error
+AppCard.displayName = "AppCard";
 
 export default AppCard;

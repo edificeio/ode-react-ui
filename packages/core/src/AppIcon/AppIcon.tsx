@@ -7,12 +7,12 @@ import { AppIconProps } from "./AppIconProps";
 /**
  * Icon Component used to display the icon of an application
  */
-export default function AppIcon({
+const AppIcon = ({
   title,
   size = "24",
   color = "currentColor",
   ...props
-}: AppIconProps) {
+}: AppIconProps) => {
   const { isIconUrl } = useOdeIcons();
   const { code, displayName, icon } = useAppCardContext();
 
@@ -36,4 +36,8 @@ export default function AppIcon({
       <use xlinkHref={`apps.svg#${code || "placeholder"}`} />
     </svg>
   );
-}
+};
+
+AppIcon.displayName = "AppCard.Icon";
+
+export default AppIcon;

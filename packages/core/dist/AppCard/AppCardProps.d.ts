@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { HeadingProps } from "../Heading/HeadingProps";
-import { PolymorphicComponentPropWithRef, PolymorphicRef } from "../utils/create-polymorphic-component";
+import { PolymorphicComponentPropsWithRef, PolymorphicRef } from "../utils/create-polymorphic-component";
 declare type AppHeadingProps = Pick<HeadingProps, "level" | "headingStyle">;
 export declare type BaseProps = {
     /**
@@ -20,7 +20,7 @@ export declare type BaseProps = {
      */
     variant?: string;
 } & AppHeadingProps;
-export declare type AppCardProps<T extends React.ElementType> = PolymorphicComponentPropWithRef<T, BaseProps>;
+export declare type AppCardProps<T extends React.ElementType> = PolymorphicComponentPropsWithRef<T, BaseProps>;
 declare const defaultElement = "div";
 export declare type DefaultElementType = typeof defaultElement;
 export declare type AppCardRef<T extends React.ElementType> = PolymorphicRef<T>;

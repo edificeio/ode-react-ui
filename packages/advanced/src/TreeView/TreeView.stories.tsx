@@ -1,15 +1,12 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { TreeNode } from "./TreeNode";
-import { TreeView } from "./TreeView";
+import React from "react";
+import TreeView from "./TreeView";
+import { TreeNode } from "./TreeViewProps";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Components/Advanced/TreeView",
   component: TreeView,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
 } as ComponentMeta<typeof TreeView>;
 
 const data: TreeNode = {
@@ -84,7 +81,10 @@ const data: TreeNode = {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof TreeView> = (args) => (
-  <TreeView data={data} />
+  <TreeView {...args} />
 );
 
-export const Primary = Template.bind({});
+export const Base = Template.bind({});
+Base.args = {
+  data,
+};
