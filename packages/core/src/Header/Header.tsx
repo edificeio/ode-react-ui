@@ -7,9 +7,9 @@
  * @see WAI-ARIA https://www.w3.org/WAI/tutorials/menus/structure/
  */
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
-import { useTitle } from "@ode-react-ui/hooks";
+import { useOnClickOutside, useTitle } from "@ode-react-ui/hooks";
 import { RafterDown } from "@ode-react-ui/icons";
 import {
   Search,
@@ -54,6 +54,9 @@ const Header = ({ is1d = false }: HeaderProps): JSX.Element => {
     "no-1d": !is1d,
   });
 
+  const collapseRef = useRef(null);
+  useOnClickOutside(collapseRef, () => setIsCollapsed(true));
+
   return (
     <header className={classes}>
       {is1d ? (
@@ -96,6 +99,7 @@ const Header = ({ is1d = false }: HeaderProps): JSX.Element => {
               </li>
               <li className="nav-item d-md-none">
                 <button
+                  ref={collapseRef}
                   className="nav-link btn btn-naked"
                   type="button"
                   aria-controls="navbarCollapsed"
@@ -176,7 +180,8 @@ const Header = ({ is1d = false }: HeaderProps): JSX.Element => {
               </NavLink>
               <div className="dropdown">
                 <button
-                  className="btn btn-naked d-md-none"
+                  ref={collapseRef}
+                  className="nav-link btn btn-naked d-md-none"
                   type="button"
                   aria-controls="dropdown-navbar"
                   aria-expanded={!isCollapsed}

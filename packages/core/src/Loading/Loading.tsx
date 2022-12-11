@@ -19,7 +19,7 @@ import { LoadingProps } from "./LoadingProps";
 const Loading = forwardRef(
   (props: LoadingProps, ref: Ref<HTMLDivElement>): JSX.Element => {
     const {
-      loading,
+      isLoading,
       loadingIcon,
       loadingPosition = "left",
       children,
@@ -38,7 +38,7 @@ const Loading = forwardRef(
     };
 
     const classes = clsx("loading", {
-      "is-loading": loading,
+      "is-loading": isLoading,
     });
 
     return (

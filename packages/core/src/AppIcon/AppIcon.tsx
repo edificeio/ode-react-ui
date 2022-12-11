@@ -1,7 +1,7 @@
 import { useOdeIcons } from "@ode-react-ui/hooks";
 import clsx from "clsx";
 
-import useAppCardContext from "../AppCard/AppCardContext";
+import useAppCard from "../AppCard/AppCardContext";
 import { AppIconProps } from "./AppIconProps";
 
 /**
@@ -14,7 +14,7 @@ const AppIcon = ({
   ...props
 }: AppIconProps) => {
   const { isIconUrl } = useOdeIcons();
-  const { code, displayName, icon } = useAppCardContext();
+  const { code, displayName, icon } = useAppCard();
 
   const classes = clsx("icon", code || "");
 

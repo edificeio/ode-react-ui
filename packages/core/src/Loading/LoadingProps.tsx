@@ -7,7 +7,7 @@ export interface LoadingProps {
   /**
    * Is it loading ?
    */
-  loading: boolean;
+  isLoading: boolean;
   /**
    * Override default loading icon
    */

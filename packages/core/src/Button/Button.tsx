@@ -16,47 +16,55 @@ import { ButtonProps, ButtonRef } from "./ButtonProps";
  * Primary UI component for user interaction
  */
 
-const Button = forwardRef((props: ButtonProps, ref: Ref<ButtonRef>) => {
-  const {
-    color = "primary",
-    children,
-    loading = false,
-    loadingIcon,
-    loadingPosition,
-    leftIcon,
-    rightIcon,
-    variant = "filled",
-    ariaLabel,
-    ...restProps
-  } = props;
+const Button = forwardRef(
+  (
+    {
+      color = "primary",
+      children,
+      isLoading,
+      loadingIcon,
+      loadingPosition,
+      leftIcon,
+      rightIcon,
+      className,
+      variant = "filled",
+      ...restProps
+    }: ButtonProps,
+    ref: Ref<ButtonRef>,
+  ) => {
+    const classes = clsx(
+      "btn",
+      {
+        [`btn-filled btn-${color}`]: variant === "filled",
+        [`btn-${variant}-${color}`]:
+          variant === "outline" || variant === "ghost",
+        "btn-icon": !children,
+        "btn-loading": isLoading,
+      },
+      className,
+    );
 
-  const classes = clsx("btn", {
-    "btn-icon": !children,
-    [`btn-filled btn-${color}`]: variant === "filled",
-    [`btn-${variant}-${color}`]: variant === "outline" || variant === "ghost",
-    "btn-loading": loading,
-  });
-
-  return (
-    <button ref={ref} className={classes} aria-label={ariaLabel} {...restProps}>
-      {loading ? (
-        <Loading
-          loading
-          loadingIcon={loadingIcon}
-          loadingPosition={loadingPosition}
-        >
-          {children}
-        </Loading>
-      ) : (
-        <span>
-          {leftIcon}
-          {children}
-          {rightIcon}
-        </span>
-      )}
-    </button>
-  );
-});
+    return (
+      <button ref={ref} className={classes} {...restProps}>
+        {isLoading ? (
+          <Loading
+            isLoading
+            loadingIcon={loadingIcon}
+            loadingPosition={loadingPosition}
+          >
+            {children}
+          </Loading>
+        ) : (
+          <span>
+            {leftIcon}
+            {children}
+            {rightIcon}
+          </span>
+        )}
+      </button>
+    );
+  },
+);
 
 Button.displayName = "Button";
 
