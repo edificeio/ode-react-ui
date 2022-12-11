@@ -5,3 +5,4 @@ export * from "./Header";
 export * from "./Heading";
 export * from "./Form";
 export * from "./Loading";
+export * from "./Modal";
