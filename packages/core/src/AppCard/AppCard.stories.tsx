@@ -6,6 +6,14 @@ import { AppCard } from "../index";
 export default {
   title: "Components/Core/AppCard",
   component: AppCard,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "AppCard component displays the icon and the name of an application.",
+      },
+    },
+  },
   args: {
     level: "h1",
     headingStyle: "h3",

@@ -12,7 +12,7 @@ import clsx from "clsx";
 
 import AppIcon from "../AppIcon/AppIcon";
 import { Heading } from "../Heading";
-import { AppCardContext } from "./AppCardContext";
+import { Context } from "./AppCardContext";
 import {
   AppCardProps,
   AppCardRef,
@@ -62,7 +62,7 @@ const Root: PolymorphicAppCard = forwardRef(
     const Component = as || "div";
 
     return (
-      <AppCardContext.Provider value={value}>
+      <Context.Provider value={value}>
         <Component ref={ref} className={classes} {...restProps}>
           {children}
           {isHeading ? (
@@ -71,7 +71,7 @@ const Root: PolymorphicAppCard = forwardRef(
             <p>{displayName}</p>
           )}
         </Component>
-      </AppCardContext.Provider>
+      </Context.Provider>
     );
   },
 );

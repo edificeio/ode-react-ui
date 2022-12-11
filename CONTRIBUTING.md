@@ -35,14 +35,7 @@ git commit -m "chore(dep): updating eslint configuration"
 
 ## Branches
 
-We already have `fix` and `feat` branches created to work on `libs` packages:
-
-- `fix/advanced` or `feat/advanced`
-- `fix/core` or `feat/core`
-- `fix/hooks` or `feat/hooks`
-- `fix/icons` or `feat/icons`
-
-We already have an `update/docs` branch to work on `Storybook`
+We already have a `dev` branch created to work on packages.
 
 ---
 
@@ -52,10 +45,10 @@ We already have an `update/docs` branch to work on `Storybook`
 
 ## Dev
 
-- Before starting any development, please rebase the main branch.
+- Before starting any development, please rebase the `dev` branch.
 - Checkout to your own development branch if different from information above.
-- Rebase this branch with main branch.
-- Start developing!
+- Rebase this branch with `dev` branch.
+- Start developing.
 - Then, read CHANGESET section.
 
 ## Changeset
@@ -82,7 +75,7 @@ We already have an `update/docs` branch to work on `Storybook`
 ## Pull Request
 
 - After pushing your work, create a Pull Request
-- Select `main` branch as base branch.
+- Select `dev` branch as base branch.
 - Add a clear title if your commit message is not there.
 - Leave a comment if desired
 - Create your Pull Request and then fill the checkboxes of the PR Template
