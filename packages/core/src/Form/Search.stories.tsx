@@ -1,6 +1,6 @@
 import { Mail, Search } from "@ode-react-ui/icons";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { SearchButton } from "../Button";
+import SearchButton from "../Button/SearchButton";
 
 import { FormControl, Input } from "./index";
 
@@ -44,3 +44,17 @@ const Template: ComponentStory<typeof FormControl> = (args) => (
 );
 
 export const Base = Template.bind({});
+
+export const Large = () => {
+  return (
+    <FormControl id="large-search" className="input-group">
+      <Input
+        type="search"
+        placeholder="Placeholder text"
+        size="lg"
+        noValidationIcon
+      />
+      <SearchButton type="submit" aria-label="search" icon={<Search />} />
+    </FormControl>
+  );
+};
