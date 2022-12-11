@@ -5,7 +5,7 @@ import Header from "./Header";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Core/Header One",
+  title: "Components/Core/Headers/Header One",
   component: Header,
 } as ComponentMeta<typeof Header>;
 

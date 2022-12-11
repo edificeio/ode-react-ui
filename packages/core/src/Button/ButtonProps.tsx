@@ -16,15 +16,15 @@ export interface ButtonProps extends React.ComponentPropsWithRef<"button"> {
   /**
    * `primary`, `secondary`, `tertiary` or `danger`
    */
-  color: ButtonColors;
+  color?: ButtonColors;
   /**
    * `filled`, `outline` or `ghost`
    */
-  variant: ButtonVariants;
+  variant?: ButtonVariants;
   /**
    * Does it has a text ?
    */
-  children: string;
+  children: ReactNode | null;
   /**
    * Display Icon Component to the left
    */
@@ -36,7 +36,7 @@ export interface ButtonProps extends React.ComponentPropsWithRef<"button"> {
   /**
    * Is it loading ?
    */
-  loading?: boolean;
+  isLoading?: boolean;
   /**
    * Override Loading Icon
    */
@@ -51,7 +51,7 @@ export interface ButtonProps extends React.ComponentPropsWithRef<"button"> {
    */
   disabled?: boolean;
   /**
-   * When using Icon Button
+   * For specific styling
    */
-  ariaLabel?: string;
+  className?: string;
 }

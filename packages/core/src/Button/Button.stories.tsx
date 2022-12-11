@@ -8,10 +8,11 @@ import {
   RafterLeft,
   RafterRight,
 } from "@ode-react-ui/icons";
+import IconButton from "./IconButton";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Core/Button",
+  title: "Components/Core/Buttons/Button",
   component: Button,
   argTypes: {
     color: {
@@ -32,7 +33,6 @@ export default {
     },
   },
   args: {
-    ariaLabel: "",
     color: "primary",
     variant: "filled",
     disabled: false,
@@ -86,24 +86,6 @@ Danger.parameters = {
   },
 };
 
-export const Icon = Template.bind({});
-Icon.args = {
-  ariaLabel: "Add User",
-  color: "primary",
-  variant: "filled",
-  type: "button",
-  disabled: false,
-  leftIcon: <AddUser title="Add User" />,
-};
-Icon.parameters = {
-  docs: {
-    description: {
-      story:
-        "When using an Icon Button, please provide a text to the aria-label attribute with ariaLabel props to make it accessible.",
-    },
-  },
-};
-
 export const WithIconLeft = Template.bind({});
 WithIconLeft.args = {
   color: "primary",
@@ -135,30 +117,13 @@ WithBothIcon.args = {
   rightIcon: <RafterRight title="Chevron Right" />,
 };
 
-export const LoadingButton = Template.bind({});
-LoadingButton.args = {
-  ariaLabel: "Loading",
-  color: "primary",
-  variant: "filled",
-  type: "button",
-  loading: true,
-};
-LoadingButton.parameters = {
-  docs: {
-    description: {
-      story:
-        "When loading, please provide a text to the aria-label attribute with ariaLabel props to make it accessible.",
-    },
-  },
-};
-
 export const LoadingButtonWithText = Template.bind({});
 LoadingButtonWithText.args = {
   color: "primary",
   variant: "filled",
   children: "Loading...",
   type: "button",
-  loading: true,
+  isLoading: true,
 };
 LoadingButtonWithText.parameters = {
   docs: {
@@ -175,7 +140,7 @@ LoadingButtonRightWithText.args = {
   variant: "filled",
   children: "Loading...",
   type: "button",
-  loading: true,
+  isLoading: true,
   loadingPosition: "right",
 };
 
@@ -190,21 +155,12 @@ LoadingButtonRightWithText.parameters = {
 
 export const LoadingButtonWithCustomIcon = Template.bind({});
 LoadingButtonWithCustomIcon.args = {
-  ariaLabel: "Loading",
   color: "primary",
   variant: "filled",
+  children: "Loading...",
   type: "button",
-  loading: true,
-  loadingIcon: <Hourglass title="Loading" />,
-};
-
-LoadingButtonWithCustomIcon.parameters = {
-  docs: {
-    description: {
-      story:
-        "Depending the context or the application, you can override the default loading icon with a custom one.",
-    },
-  },
+  isLoading: true,
+  loadingIcon: <Hourglass />,
 };
 
 export const ButtonGroupWithSecondaryAction = (args: any) => {
@@ -229,24 +185,24 @@ ButtonGroupWithSecondaryAction.parameters = {
   },
 };
 
-export const ButtonGroupWithIcon = (args: any) => {
+export const ButtonGroupWithIconButton = (args: any) => {
   return (
     <div className="d-flex align-items-center gap-8">
       <Button {...args} color="primary" variant="filled">
         Button
       </Button>
-      <Button
+      <IconButton
         {...args}
+        aria-label="Next Page"
         color="primary"
         variant="filled"
-        leftIcon={<RafterRight />}
-        ariaLabel="Next Page"
+        icon={<RafterRight />}
       />
     </div>
   );
 };
 
-ButtonGroupWithIcon.parameters = {
+ButtonGroupWithIconButton.parameters = {
   docs: {
     description: {
       story:
