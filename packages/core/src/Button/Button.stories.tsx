@@ -32,7 +32,6 @@ export default {
     },
   },
   args: {
-    ariaLabel: "",
     color: "primary",
     variant: "filled",
     disabled: false,

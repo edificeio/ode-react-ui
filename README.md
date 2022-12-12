@@ -32,7 +32,7 @@ Many tools are already configured like:
 > ⚠️ Before starting any development, please read the [CONTRIBUTION](./CONTRIBUTING.md) GUIDE.
 
 ```bash
-yarn i
+yarn
 ```
 
 > Then, you need to build at least once every lib to use them

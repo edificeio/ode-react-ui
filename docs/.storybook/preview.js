@@ -48,10 +48,16 @@ export const parameters = {
     },
   },
   options: {
+    // storySort: sortStories(SORT_ORDER),
     storySort: {
-      method: "alphabetical",
-      order: [],
-      locales: "",
+      // method: "alphabetical",
+      order: [
+        "Introduction",
+        "Design Tokens",
+        "Components",
+        "Icons",
+        "Examples",
+      ],
     },
   },
   viewport: { viewports: customViewports },

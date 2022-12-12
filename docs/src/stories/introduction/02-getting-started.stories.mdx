@@ -1,0 +1,91 @@
+<Meta title="Introduction/Getting Started" />
+
+# Getting Started
+
+## Install
+
+> ⚠️ Before starting any development, please read the [CONTRIBUTION](./CONTRIBUTING.md) Page.
+
+```bash
+yarn
+```
+
+> Then, you need to build at least once every lib to use them (monorepo workspace)
+
+```bash
+yarn build
+```
+
+## Dev
+
+Any available commands during your development.
+
+## Lint
+
+> Lint all libs from root folder
+
+```bash
+yarn lint
+```
+
+## Prettier
+
+> Prettier all libs from root folder
+
+```bash
+yarn format
+```
+
+## Clean
+
+> Clean all node_modules and lock file.
+
+```bash
+yarn clean
+```
+
+## Build
+
+> Build all libs from root folder
+
+```bash
+yarn build
+```
+
+---
+
+## Storybook
+
+> Start Storybook on port 6006
+
+```bash
+yarn dev-storybook
+```
+
+> If you want to work inside a React Application, start the playground.
+
+```bash
+yarn playground
+```
+
+---
+
+## [Turborepo](https://turborepo.org/)
+
+## Cache
+
+Turborepo will cache `build`, `lint`, `fix` and `format` results. So if no changes is detected and you run one command again, Turborepo will read from the cache and only apply the task on new changes.
+
+## Versioning and Publishing
+
+- [Versioning and Publishing](https://turborepo.org/docs/handbook/publishing-packages/versioning-and-publishing)
+
+## Github Actions
+
+- [Github Actions](https://turborepo.org/docs/ci/github-actions)
+
+---
+
+## License
+
+This project is licensed under the AGPL-3.0 license.
