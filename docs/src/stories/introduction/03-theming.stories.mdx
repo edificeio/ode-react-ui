@@ -1,0 +1,131 @@
+<Meta title="Introduction/Theming" />
+
+# Theming
+
+We use [ODE Bootstrap](https://github.com/opendigitaleducation/ode-bootstrap) and its child themes to theme our components and applications:
+
+- [ONE](https://code.web-education.net/one/ode-bootstrap-one)
+- [NEO](https://github.com/opendigitaleducation/ode-bootstrap-neo)
+
+ODE Bootstrap ONE & NEO are themes based on ODE bootstrap framework. These themes are customizable through variables.
+
+## ODE Bootstrap
+
+### Prerequesites
+
+- Docker
+- Yarn `1.22.19`
+- Node => `16.17.0`
+
+### Install
+
+Clone and install each repo.
+
+`ode-bootstrap`
+
+```
+git clone https://github.com/opendigitaleducation/ode-bootstrap.git
+./build.sh clean init
+```
+
+`ode-bootstrap-one`
+
+```
+git clone git@code.web-education.net:one/ode-bootstrap-one.git
+./build.sh clean initDev
+```
+
+`ode-bootstrap-neo`
+
+```
+git clone https://github.com/opendigitaleducation/ode-bootstrap-neo.git
+./build.sh clean initDev
+```
+
+> initDev command will create a symlink with `ode-bootstrap`
+
+### Dev
+
+A watcher is already configured in each child theme ONE & NEO.
+
+```
+yarn watch:react
+```
+
+This watcher will listen all changes in `ode-bootstrap`, `ode-bootstrap-one` and `ode-bootstrap-neo` and copy build files to Storybook documentation. So you can see any CSS you are doing.
+
+---
+
+⚠️ If the watcher doesn't start correctly, please run `yarn install` to create linked dependencies.
+
+---
+
+### Bootstrap 5.x
+
+If a component already exists in Bootstrap 5.x, we use it and override it if necessary. The same goes for utility classes.
+
+### Components
+
+Based on Bootstrap 5.2, many components use CSS Variables (CSS Custom Properties). We adhere to this guideline to create our own components or to override Bootstrap components.
+
+Some examples :
+
+- `_button.scss`
+- `_form-control.scss`
+- `_treeview.scss`
+
+---
+
+⚠️ If one Bootstrap's component doesn't have CSS Variables, we add them to override child themes (E.g: `_form-control.scss`)
+
+### Creating components
+
+Generic structure and styling should be done in `ode-bootstrap` when style override should be done inside `ode-bootstrap-one` or `ode-bootstrap-neo`
+
+#### Eg: Main component created in ODE Bootstrap
+
+```scss
+// _form-control.scss
+
+.form-control {
+  --#{$prefix}input-padding-y: #{$input-padding-y};
+  --#{$prefix}input-padding-x: #{$input-padding-x};
+  --#{$prefix}input-padding-y-lg: #{$input-padding-y-lg};
+  --#{$prefix}input-padding-x-lg: #{$input-padding-x-lg};
+  --#{$prefix}input-font-size-lg: #{$input-font-size-lg};
+  --#{$prefix}input-padding-y-sm: #{$input-padding-y-sm};
+  --#{$prefix}input-padding-x-sm: #{$input-padding-x-sm};
+  --#{$prefix}input-font-size-sm: #{$input-font-size-sm};
+  --#{$prefix}input-border-color: #{$input-border-color};
+  --#{$prefix}input-disabled-bg: #{$input-disabled-bg};
+  --#{$prefix}input-disabled-color: #{$input-disabled-color};
+  --#{$prefix}input-disabled-border-color: #{$input-disabled-border-color};
+  --#{$prefix}input-placeholder-color: #{$input-placeholder-color};
+  --#{$prefix}input-focus-border-color: #{$input-focus-border-color};
+  --#{$prefix}input-filled-border-color: #{$input-filled-border-color};
+  --#{$prefix}input-border-radius: #{$input-border-radius-lg};
+  --#{$prefix}input-border-radius-sm: #{$input-border-radius};
+  --#{$prefix}input-border-radius-lg: #{$input-border-radius-lg};
+
+  padding: var(--#{$prefix}input-padding-y) var(--#{$prefix}input-padding-x);
+  border-color: var(--#{$prefix}input-border-color);
+  font-size: var(--#{$prefix}input-font-size-lg);
+  min-height: inherit;
+
+...
+}
+```
+
+#### Eg: Override in child theme
+
+Only necessary overrides.
+
+```scss
+// ode-bootstrap-one > _form-control.scss
+
+$input-focus-border-color: $orange-200;
+
+.form-control {
+  --#{$prefix}input-focus-border-color: #{$input-focus-border-color};
+}
+```
