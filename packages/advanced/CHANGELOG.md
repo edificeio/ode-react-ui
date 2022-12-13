@@ -1,5 +1,12 @@
 # @ode-react-ui/advanced
 
+## 1.0.7-dev.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @ode-react-ui/core@1.0.7-dev.2
+
 ## 1.0.7-dev.1
 
 ### Patch Changes
