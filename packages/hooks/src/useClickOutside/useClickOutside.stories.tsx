@@ -2,9 +2,14 @@ import { useRef, useState } from "react";
 
 import useClickOutside from "./useClickOutside";
 import { Button } from "@ode-react-ui/core";
+// @ts-ignore
+import docs from "./useClickOutside.docs.mdx";
 
 export default {
   title: "Hooks/useClickOutside",
+  parameters: {
+    docs: { page: docs },
+  },
 };
 
 export const Example = () => {
