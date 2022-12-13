@@ -1,5 +1,19 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @ode-react-ui/hooks@1.0.7-dev.1
+  - @ode-react-ui/icons@1.0.7-dev.1
+
+## 1.0.7-dev.0
+
+### Patch Changes
+
+- [#34](https://github.com/opendigitaleducation/ode-react-ui/pull/34) [`f51a8eb`](https://github.com/opendigitaleducation/ode-react-ui/commit/f51a8ebf5bccc1aaf1f17d47f16b29ce13461889) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add forms components
+
 ## 1.0.6
 
 ### Patch Changes

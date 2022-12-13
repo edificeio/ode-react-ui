@@ -1,5 +1,20 @@
 # @ode-react-ui/advanced
 
+## 1.0.7-dev.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @ode-react-ui/icons@1.0.7-dev.1
+  - @ode-react-ui/core@1.0.7-dev.1
+
+## 1.0.7-dev.0
+
+### Patch Changes
+
+- Updated dependencies [[`f51a8eb`](https://github.com/opendigitaleducation/ode-react-ui/commit/f51a8ebf5bccc1aaf1f17d47f16b29ce13461889)]:
+  - @ode-react-ui/core@1.0.7-dev.0
+
 ## 1.0.5
 
 ### Patch Changes
