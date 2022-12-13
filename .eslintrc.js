@@ -12,20 +12,6 @@ module.exports = {
     "plugin:import/typescript",
     "plugin:prettier/recommended",
   ],
-  /* overrides: [
-    {
-      files: ["*.ts", "*.tsx"],
-      extends: ["plugin:@typescript-eslint/recommended"],
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: false,
-        },
-        ecmaVersion: "latest",
-        sourceType: "module",
-        project: ["./tsconfig.json"],
-      },
-    },
-  ], */
   parserOptions: {
     ecmaFeatures: {
       jsx: false,
@@ -87,6 +73,7 @@ module.exports = {
   ignorePatterns: [
     ".eslintrc.js",
     "*.d.ts",
+    "*.docs.mdx",
     "*.stories.tsx",
     "dist",
     "node_modules",
