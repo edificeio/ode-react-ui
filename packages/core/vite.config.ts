@@ -13,7 +13,13 @@ export default defineConfig({
       fileName: (format) => (format === "es" ? "index.mjs" : "index.cjs"),
     },
     rollupOptions: {
-      external: ["react", "react-dom", "ode-ts-client", "@ode-react-ui/icons"],
+      external: [
+        "react",
+        "react-dom",
+        "ode-ts-client",
+        "@ode-react-ui/icons",
+        "@ode-react-ui/icons/nav",
+      ],
       output: {
         globals: {
           "react": "React",

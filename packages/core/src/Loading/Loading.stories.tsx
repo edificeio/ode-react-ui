@@ -15,7 +15,7 @@ export default {
     },
   },
   args: {
-    loading: true,
+    isLoading: true,
     loadingPosition: "left",
     loadingIcon: undefined,
   },
