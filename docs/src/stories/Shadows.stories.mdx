@@ -1,0 +1,161 @@
+import { Meta } from "@storybook/addon-docs";
+import { Card } from "../components/Card";
+
+<Meta title="Design Tokens/Shadows" />
+
+<style>
+  {`
+  .card {
+    border: 0 !important;
+  }
+`}
+</style>
+
+# Shadows
+
+## SCSS
+
+- Variables can be used in your SCSS code
+- Utility classes can be used directly on your components
+
+<table>
+  <thead>
+    <tr>
+      <th>SCSS Var</th>
+      <th>CSS Values</th>
+      <th>Utilities Classes</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>
+          <pre>-</pre>
+        </code>
+      </td>
+      <td>
+        <code>
+          <pre>none</pre>
+        </code>
+      </td>
+      <td>
+        <code>
+          <pre>.shadow-none</pre>
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+          <pre>$box-shadow</pre>
+        </code>
+      </td>
+      <td>
+        <code>
+          <pre>0 .5rem 1rem rgba($black, .15)</pre>
+        </code>
+      </td>
+      <td>
+        <code>
+          <pre>.shadow</pre>
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+          <pre>$box-shadow-sm</pre>
+        </code>
+      </td>
+      <td>
+        <code>
+          <pre>0 .125rem .25rem rgba($black, .075)</pre>
+        </code>
+      </td>
+      <td>
+        <code>
+          <pre>.shadow-sm</pre>
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+          <pre>$box-shadow-lg</pre>
+        </code>
+      </td>
+      <td>
+        <code>
+          <pre>0 1rem 3rem rgba($black, .175)</pre>
+        </code>
+      </td>
+      <td>
+        <code>
+          <pre>.shadow-lg</pre>
+        </code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+<div class="card flex-row align-items-center gap-64">
+  <Card
+    style={{
+      width: "12rem",
+      height: "12rem",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      textAlign: "center",
+      border: "1px solid rgba(0, 0, 0, 0.1)",
+    }}
+    className="shadow-none"
+  >
+    <div style={{ fontSize: "1.6rem" }}>.shadow-none</div>
+  </Card>
+  <Card
+    style={{
+      width: "12rem",
+      height: "12rem",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      textAlign: "center",
+      border: "1px solid rgba(0, 0, 0, 0.1)",
+    }}
+    className="shadow-sm"
+  >
+    <div style={{ fontSize: "1.6rem" }}>.shadow-sm</div>
+  </Card>
+  <Card
+    style={{
+      width: "12rem",
+      height: "12rem",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      textAlign: "center",
+      border: "1px solid rgba(0, 0, 0, 0.1)",
+    }}
+    className="shadow"
+  >
+    <div style={{ fontSize: "1.6rem" }}>.shadow</div>
+  </Card>
+  <Card
+    style={{
+      width: "12rem",
+      height: "12rem",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      textAlign: "center",
+      border: "1px solid rgba(0, 0, 0, 0.1)",
+    }}
+    className="shadow-lg"
+  >
+    <div style={{ fontSize: "1.6rem" }}>.shadow-lg</div>
+  </Card>
+</div>
