@@ -1,7 +1,8 @@
 module.exports = {
   stories: [
-    "../../packages/core/src/**/*.stories.@(js|jsx|ts|tsx)",
     "../../packages/advanced/src/**/*.stories.@(js|jsx|ts|tsx)",
+    "../../packages/core/src/**/*.stories.@(js|jsx|ts|tsx)",
+    "../../packages/hooks/src/**/*.stories.@(js|jsx|ts|tsx)",
     "../src/**/*.stories.mdx",
   ],
   staticDirs: ["../public"],
