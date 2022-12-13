@@ -1,9 +1,9 @@
-name: Build, Versioning & Release
+name: Pre-Release
 
 on:
   push:
     branches:
-      - main
+      - dev
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
