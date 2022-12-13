@@ -1,5 +1,12 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.3
+
+### Patch Changes
+
+- Updated dependencies [[`5ccbf45`](https://github.com/opendigitaleducation/ode-react-ui/commit/5ccbf4516992ec7bab747274558559448cb1c2f8)]:
+  - @ode-react-ui/hooks@1.0.7-dev.3
+
 ## 1.0.7-dev.2
 
 ### Patch Changes
