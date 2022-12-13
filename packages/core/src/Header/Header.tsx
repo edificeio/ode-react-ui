@@ -9,7 +9,7 @@
 
 import { useRef, useState } from "react";
 
-import { useOnClickOutside, useTitle } from "@ode-react-ui/hooks";
+import { useClickOutside, useTitle } from "@ode-react-ui/hooks";
 import { RafterDown } from "@ode-react-ui/icons";
 import {
   Search,
@@ -55,7 +55,7 @@ const Header = ({ is1d = false }: HeaderProps): JSX.Element => {
   });
 
   const collapseRef = useRef(null);
-  useOnClickOutside(collapseRef, () => setIsCollapsed(true));
+  useClickOutside(collapseRef, () => setIsCollapsed(true));
 
   return (
     <header className={classes}>

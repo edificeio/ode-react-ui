@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-import useOnClickOutside from "./useClickOutside";
+import useClickOutside from "./useClickOutside";
 import { Button } from "@ode-react-ui/core";
 
 export default {
@@ -11,7 +11,7 @@ export const Example = () => {
   const ref = useRef<HTMLButtonElement>(null);
   const [isOpen, setOpen] = useState<boolean>(true);
 
-  useOnClickOutside(ref, () => setOpen(false));
+  useClickOutside(ref, () => setOpen(false));
 
   if (isOpen) {
     return (
