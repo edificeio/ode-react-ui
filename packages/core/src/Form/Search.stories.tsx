@@ -1,4 +1,4 @@
-import { Mail, Search } from "@ode-react-ui/icons";
+import { Search } from "@ode-react-ui/icons";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import SearchButton from "../Button/SearchButton";
 

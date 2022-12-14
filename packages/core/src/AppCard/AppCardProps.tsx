@@ -29,6 +29,10 @@ export type BaseProps = {
    * Title, Card Component, ...
    */
   variant?: string;
+  /**
+   * Additional ClassName for styling purpose
+   */
+  className?: string;
 } & AppHeadingProps;
 
 export type AppCardProps<T extends React.ElementType> =
