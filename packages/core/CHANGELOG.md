@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.6
+
+### Patch Changes
+
+- [`e91b8eb`](https://github.com/opendigitaleducation/ode-react-ui/commit/e91b8eb89065be8e746e2aa97df6ca77977c672a) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix Main export and move TreeView inside core package
+
 ## 1.0.7-dev.5
 
 ### Patch Changes

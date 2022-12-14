@@ -1,5 +1,11 @@
 # @ode-react-ui/storybook
 
+## 1.0.5-dev.3
+
+### Patch Changes
+
+- [`e91b8eb`](https://github.com/opendigitaleducation/ode-react-ui/commit/e91b8eb89065be8e746e2aa97df6ca77977c672a) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix Main export and move TreeView inside core package
+
 ## 1.0.5-dev.2
 
 ### Patch Changes
