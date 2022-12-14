@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.4
+
+### Patch Changes
+
+- [#37](https://github.com/opendigitaleducation/ode-react-ui/pull/37) [`663fa8e`](https://github.com/opendigitaleducation/ode-react-ui/commit/663fa8e726ba6d9794f4155142966bafe9eee9df) Thanks [@david-cc](https://github.com/david-cc)! - Adding Modal component
+
 ## 1.0.7-dev.3
 
 ### Patch Changes
