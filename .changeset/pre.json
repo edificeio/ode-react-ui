@@ -9,6 +9,7 @@
     "@ode-react-ui/icons": "1.0.6"
   },
   "changesets": [
+    "curly-dots-hope",
     "fair-parrots-build",
     "famous-chefs-travel",
     "gentle-cobras-carry",
