@@ -2,9 +2,11 @@ import { useState } from "react";
 
 import { TreeView } from "@ode-react-ui/advanced";
 import { TreeNode } from "@ode-react-ui/advanced/src/TreeView/TreeViewProps";
+import { Plus } from "@ode-react-ui/icons";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Button } from "../Button";
+import { FormControl, Input, Label } from "../Form";
 import Modal from "./Modal";
 import ModalHeader from "./ModalHeader";
 
@@ -172,6 +174,22 @@ const TemplateMoveFile: ComponentStory<typeof Modal> = (args) => {
         </Modal.Subtitle>
         <Modal.Body>
           <TreeView data={data} />
+
+          <div className="mt-48">
+            <FormControl id="folder-name" className="d-flex gap-8">
+              <Input type="text" placeholder="Saisir un nom" size="md" />
+              <Button
+                color="primary"
+                onClick={() => {}}
+                type="button"
+                leftIcon={<Plus />}
+                variant="ghost"
+                className="text-nowrap"
+              >
+                Créer dossier
+              </Button>
+            </FormControl>
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <Button
