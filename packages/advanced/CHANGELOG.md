@@ -1,5 +1,12 @@
 # @ode-react-ui/advanced
 
+## 1.0.7-dev.6
+
+### Patch Changes
+
+- Updated dependencies [[`e91b8eb`](https://github.com/opendigitaleducation/ode-react-ui/commit/e91b8eb89065be8e746e2aa97df6ca77977c672a)]:
+  - @ode-react-ui/core@1.0.7-dev.6
+
 ## 1.0.7-dev.5
 
 ### Patch Changes
