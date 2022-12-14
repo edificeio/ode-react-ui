@@ -6,4 +6,6 @@ export * from "./Grid";
 export * from "./Header";
 export * from "./Heading";
 export * from "./Loading";
+export * from "./Main";
 export * from "./Modal";
+export * from "./TreeView";

@@ -9,6 +9,16 @@ export default {
 export const Base = () => {
   return (
     <div>
+      <Grid.Col
+        sm="1"
+        style={{
+          backgroundColor: "#ebebeb",
+          padding: ".8rem",
+          minHeight: "10rem",
+        }}
+      >
+        1
+      </Grid.Col>
       <Grid>
         <Grid.Col
           sm="1"
