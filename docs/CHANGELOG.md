@@ -1,5 +1,11 @@
 # @ode-react-ui/storybook
 
+## 1.0.5-dev.2
+
+### Patch Changes
+
+- [`7d0a08a`](https://github.com/opendigitaleducation/ode-react-ui/commit/7d0a08a31db2db334ade81cfd663410360df49e9) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add micro components to handle grid layout
+
 ## 1.0.5-dev.1
 
 ### Patch Changes
