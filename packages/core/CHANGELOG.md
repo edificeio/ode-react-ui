@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.7
+
+### Patch Changes
+
+- fixes button components, move TreeView, add useKey doc
+
 ## 1.0.7-dev.6
 
 ### Patch Changes
