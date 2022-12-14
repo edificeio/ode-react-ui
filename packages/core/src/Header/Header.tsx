@@ -62,7 +62,7 @@ const Header = ({ is1d = false }: HeaderProps): JSX.Element => {
       {is1d ? (
         <div className="container-fluid">
           <nav className="navbar">
-            <a className="navbar-title d-md-none text-truncate" href="/">
+            <a className="navbar-title d-md-none text-truncate h4" href="/">
               {title}
             </a>
             <div className="d-none d-md-inline-flex gap-12 align-items-center">

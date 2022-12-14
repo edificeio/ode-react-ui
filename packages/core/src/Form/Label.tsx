@@ -9,7 +9,7 @@ const Label = forwardRef(
   (
     {
       leftIcon,
-      optionalText = "- Optional",
+      optionalText = "Optional",
       requiredText = "*",
       children,
     }: LabelProps,
@@ -34,7 +34,7 @@ const Label = forwardRef(
       <label ref={ref} htmlFor={id} className={classes}>
         {leftIcon}
         {children}
-        {optionalState && <em className="optional">{optionalText}</em>}
+        {optionalState && <em className="optional">- {optionalText}</em>}
         {requiredState && <em className="required">{requiredText}</em>}
       </label>
     );

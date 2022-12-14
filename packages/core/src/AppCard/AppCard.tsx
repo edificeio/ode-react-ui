@@ -33,6 +33,7 @@ const Root: PolymorphicAppCard = forwardRef(
       headingStyle,
       isHeading = false,
       level,
+      className,
       variant = "title",
       ...restProps
     }: AppCardProps<T>,
@@ -48,6 +49,7 @@ const Root: PolymorphicAppCard = forwardRef(
         "app-card-title": variant === "title",
       },
       getIconClass(app),
+      className,
     );
 
     const value = useMemo(

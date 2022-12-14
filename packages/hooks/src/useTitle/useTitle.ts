@@ -3,15 +3,15 @@ import { useEffect, useState } from "react";
 export default function useTitle() {
   const documentDefined = typeof document !== "undefined";
 
-  const [title, setTitle] = useState<string>(() => document.title);
+  const [state, setState] = useState<string>(() => document.title);
 
   useEffect(() => {
     if (!documentDefined) return;
 
-    setTitle(document.title);
+    setState(document.title);
   }, []);
 
   return {
-    title,
+    state,
   };
 }

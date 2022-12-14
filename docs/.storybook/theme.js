@@ -4,9 +4,8 @@ import { create } from "@storybook/theming";
 
 export default create({
   base: "light",
-  brandTitle: "Open Digital Education",
-  brandUrl: "",
+  brandTitle: "ODE React UI",
+  brandUrl: "https://github.com/opendigitaleducation/ode-react-ui",
   brandImage: "/logo.png",
-  brandTarget: "_self",
   fontBase: '"Roboto", sans-serif',
 });

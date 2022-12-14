@@ -113,3 +113,11 @@ ReadOnlyStatus.args = {
   type: "text",
   placeholder: "This input is readonly and can't be modified.",
 };
+
+/* export const ReadOnlyStatusWith = ({ ...args }) => {
+  return (
+    <FormControl id="example-5" isReadOnly>
+      <Input type={args.type} size={args.size} placeholder={args.placeholder} />
+    </FormControl>
+  );
+}; */
