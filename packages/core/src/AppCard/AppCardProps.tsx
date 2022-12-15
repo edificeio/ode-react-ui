@@ -33,6 +33,10 @@ export type BaseProps = {
    * Additional ClassName for styling purpose
    */
   className?: string;
+  /**
+   * TODO: create variant rather than hack
+   */
+  noName?: boolean;
 } & AppHeadingProps;
 
 export type AppCardProps<T extends React.ElementType> =

@@ -18,6 +18,7 @@ export default {
 const Template: ComponentStory<typeof AppCard> = (args) => (
   <AppCard {...args}>
     <AppCard.Icon size="32" />
+    <AppCard.Name />
   </AppCard>
 );
 
