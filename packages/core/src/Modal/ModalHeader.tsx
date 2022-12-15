@@ -1,5 +1,3 @@
-import { Close } from "@ode-react-ui/icons";
-
 /**
  * Modal Header
  */
@@ -12,12 +10,10 @@ const ModalHeader = (props: ModalHeaderProps) => {
       </h2>
       <button
         type="button"
-        className="btn btn-naked close"
+        className="btn btn-close"
         aria-label="Close"
         onClick={() => onModalClose()}
-      >
-        <Close title="Close" />
-      </button>
+      ></button>
     </div>
   );
 };
