@@ -11,7 +11,6 @@ import { useOdeIcons } from "@ode-react-ui/hooks";
 import clsx from "clsx";
 
 import AppIcon from "../AppIcon/AppIcon";
-import { Heading } from "../Heading";
 import { Context } from "./AppCardContext";
 import {
   AppCardProps,
@@ -19,6 +18,7 @@ import {
   DefaultElementType,
   PolymorphicAppCard,
 } from "./AppCardProps";
+import AppName from "./AppName";
 
 /**
  * AppCard Component displays icon and name of application
@@ -32,6 +32,7 @@ const Root: PolymorphicAppCard = forwardRef(
       children,
       headingStyle,
       isHeading = false,
+      noName = false,
       level,
       className,
       variant = "title",
@@ -55,7 +56,10 @@ const Root: PolymorphicAppCard = forwardRef(
     const value = useMemo(
       () => ({
         icon: app.icon,
-        displayName: app.name,
+        displayName,
+        isHeading,
+        level,
+        headingStyle,
         code: getIconCode(app),
       }),
       [],
@@ -67,11 +71,7 @@ const Root: PolymorphicAppCard = forwardRef(
       <Context.Provider value={value}>
         <Component ref={ref} className={classes} {...restProps}>
           {children}
-          {isHeading ? (
-            <Heading {...{ level, headingStyle }}>{displayName}</Heading>
-          ) : (
-            <p>{displayName}</p>
-          )}
+          {/* {showName()} */}
         </Component>
       </Context.Provider>
     );
@@ -80,6 +80,7 @@ const Root: PolymorphicAppCard = forwardRef(
 
 const AppCard = Object.assign({}, Root, {
   Icon: AppIcon,
+  Name: AppName,
 });
 
 // @ts-expect-error

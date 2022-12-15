@@ -25,6 +25,7 @@ export default {
 const Template: ComponentStory<typeof AppCard> = (args) => (
   <AppCard {...args}>
     <AppCard.Icon size="40" />
+    <AppCard.Name />
   </AppCard>
 );
 
@@ -53,7 +54,11 @@ export const OnlyTitle = () => {
     isExternal: false,
   };
 
-  return <AppCard app={mockedApp} isHeading headingStyle="h3" level="h1" />;
+  return (
+    <AppCard app={mockedApp} isHeading headingStyle="h3" level="h1">
+      <AppCard.Name />
+    </AppCard>
+  );
 };
 OnlyTitle.parameters = {
   docs: {
@@ -78,6 +83,7 @@ export const PassingData = () => {
   return (
     <AppCard app={mockedApp} isHeading headingStyle="h3" level="h1">
       <AppCard.Icon size="40" />
+      <AppCard.Name />
     </AppCard>
   );
 };
@@ -98,6 +104,7 @@ export const ImageAsIcon = () => {
     <div>
       <AppCard app={mockedApp} isHeading headingStyle="h3" level="h1">
         <AppCard.Icon size="40" />
+        <AppCard.Name />
       </AppCard>
     </div>
   );
@@ -125,6 +132,7 @@ export const HeadingStyle = () => {
   return (
     <AppCard app={mockedApp} isHeading>
       <AppCard.Icon size="40" />
+      <AppCard.Name />
     </AppCard>
   );
 };
@@ -152,6 +160,7 @@ export const TitleAsText = () => {
   return (
     <AppCard app={mockedApp}>
       <AppCard.Icon size="40" />
+      <AppCard.Name />
     </AppCard>
   );
 };
@@ -179,6 +188,7 @@ export const IconCustomSize = () => {
   return (
     <AppCard app={mockedApp} isHeading level="h1" headingStyle="h3">
       <AppCard.Icon size="24" />
+      <AppCard.Name />
     </AppCard>
   );
 };
@@ -211,6 +221,7 @@ export const UseAsALink = () => {
       href="/"
     >
       <AppCard.Icon size="40" />
+      <AppCard.Name />
     </AppCard>
   );
 };
@@ -219,6 +230,34 @@ UseAsALink.parameters = {
     description: {
       story:
         "By using the `as` props, you can override the default behaviour of this component. In some contexts, we need a link, so use `as='a'` and add an `href` prop.",
+    },
+  },
+};
+
+export const WithoutName = () => {
+  // For example only
+  const mockedApp = {
+    address: "/blog",
+    icon: "blog-large",
+    name: "Blog",
+    scope: [],
+    display: false,
+    displayName: "",
+    isExternal: false,
+  };
+
+  return (
+    <AppCard app={mockedApp} noName isHeading level="h1" headingStyle="h3">
+      <AppCard.Icon size="48" />
+      <AppCard.Name />
+    </AppCard>
+  );
+};
+WithoutName.parameters = {
+  docs: {
+    description: {
+      story:
+        "For example, when used as default when no image is defined in the Card Component.",
     },
   },
 };
