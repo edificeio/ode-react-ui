@@ -1,5 +1,11 @@
 # @ode-react-ui/storybook
 
+## 1.0.5-dev.4
+
+### Patch Changes
+
+- [#42](https://github.com/opendigitaleducation/ode-react-ui/pull/42) [`ec4bf0e`](https://github.com/opendigitaleducation/ode-react-ui/commit/ec4bf0eba7c5a9a05e580956fcd6e6b239efc692) Thanks [@david-cc](https://github.com/david-cc)! - Add Shadows Storybook
+
 ## 1.0.5-dev.3
 
 ### Patch Changes
