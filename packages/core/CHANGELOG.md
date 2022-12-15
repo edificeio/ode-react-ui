@@ -1,5 +1,15 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.8
+
+### Patch Changes
+
+- update packages
+
+- Updated dependencies []:
+  - @ode-react-ui/hooks@1.0.7-dev.8
+  - @ode-react-ui/icons@1.0.7-dev.8
+
 ## 1.0.7-dev.7
 
 ### Patch Changes
