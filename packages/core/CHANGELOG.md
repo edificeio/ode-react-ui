@@ -1,5 +1,14 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.11
+
+### Patch Changes
+
+- [#46](https://github.com/opendigitaleducation/ode-react-ui/pull/46) [`b983d7d`](https://github.com/opendigitaleducation/ode-react-ui/commit/b983d7dceee18a4291bcf8b546b4718b74660ed2) Thanks [@github-actions](https://github.com/apps/github-actions)! - update AppCard Component and fix useTitle hook
+
+- Updated dependencies [[`b983d7d`](https://github.com/opendigitaleducation/ode-react-ui/commit/b983d7dceee18a4291bcf8b546b4718b74660ed2)]:
+  - @ode-react-ui/hooks@1.0.7-dev.11
+
 ## 1.0.7-dev.10
 
 ### Patch Changes
