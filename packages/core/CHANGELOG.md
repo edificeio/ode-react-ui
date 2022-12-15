@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.9
+
+### Patch Changes
+
+- update assets
+
 ## 1.0.7-dev.8
 
 ### Patch Changes
