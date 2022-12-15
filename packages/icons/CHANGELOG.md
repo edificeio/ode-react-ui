@@ -1,5 +1,11 @@
 # @ode-react-ui/icons
 
+## 1.0.7-dev.8
+
+### Patch Changes
+
+- update packages
+
 ## 1.0.7-dev.1
 
 ### Patch Changes
