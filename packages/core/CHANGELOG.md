@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.10
+
+### Patch Changes
+
+- [`8f74db2`](https://github.com/opendigitaleducation/ode-react-ui/commit/8f74db257321d1c3873177fd1e57833e057fc77d) Thanks [@david-cc](https://github.com/david-cc)! - Replace Modal close button with booststrap
+
 ## 1.0.7-dev.9
 
 ### Patch Changes
