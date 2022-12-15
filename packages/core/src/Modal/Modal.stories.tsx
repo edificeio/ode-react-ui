@@ -1,14 +1,13 @@
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { useState } from "react";
 
-import { TreeView } from "@ode-react-ui/advanced";
-import { TreeNode } from "@ode-react-ui/advanced/src/TreeView/TreeViewProps";
+import { TreeView } from "@ode-react-ui/core";
+import { TreeNode } from "../TreeView/TreeViewProps";
 import { Plus } from "@ode-react-ui/icons";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Button } from "../Button";
-import { FormControl, Input, Label } from "../Form";
+import { FormControl, Input } from "../Form";
 import Modal from "./Modal";
-import ModalHeader from "./ModalHeader";
 
 export default {
   title: "Components/Core/Modal",
