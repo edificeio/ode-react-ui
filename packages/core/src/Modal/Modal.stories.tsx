@@ -75,9 +75,9 @@ const Template: ComponentStory<typeof Modal> = (args) => {
 export const Primary = Template.bind({});
 Primary.args = {
   id: "primaryModal",
+  size: "lg",
   scrollable: true,
 };
-Primary.decorators = [(Story) => <div className="p-12">{Story()}</div>];
 
 const data: TreeNode = {
   id: "root",
