@@ -7,8 +7,12 @@ import { GridColProps, GridProps } from "./GridProps";
 /**
  * Grid of 12 columns on Desktop, 8 on Tablet and 4 on Mobile
  */
-const Grid = ({ children }: GridProps) => {
-  return <div className="grid">{children}</div>;
+const Grid = ({ children, ...restProps }: GridProps) => {
+  return (
+    <div className="grid" {...restProps}>
+      {children}
+    </div>
+  );
 };
 
 export const Column = ({

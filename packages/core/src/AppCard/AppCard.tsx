@@ -10,7 +10,6 @@ import { forwardRef, useMemo } from "react";
 import { useOdeIcons } from "@ode-react-ui/hooks";
 import clsx from "clsx";
 
-import AppIcon from "../AppIcon/AppIcon";
 import { Context } from "./AppCardContext";
 import {
   AppCardProps,
@@ -18,6 +17,7 @@ import {
   DefaultElementType,
   PolymorphicAppCard,
 } from "./AppCardProps";
+import AppIcon from "./AppIcon";
 import AppName from "./AppName";
 
 /**
@@ -32,7 +32,6 @@ const Root: PolymorphicAppCard = forwardRef(
       children,
       headingStyle,
       isHeading = false,
-      noName = false,
       level,
       className,
       variant = "title",
@@ -40,27 +39,35 @@ const Root: PolymorphicAppCard = forwardRef(
     }: AppCardProps<T>,
     ref: AppCardRef<T>,
   ) => {
-    const { getIconClass, getIconCode } = useOdeIcons();
-    const { name } = app;
+    const { getIconClass, getBackgroundLightIconClass, getIconCode } =
+      useOdeIcons();
+    const { name, icon } = app;
     const displayName = name || "Application";
 
     const classes = clsx(
-      "app-card app-card-react",
+      "application application-react",
       {
-        "app-card-title": variant === "title",
+        "application-title": variant === "title",
+        "application-square": variant === "square",
       },
       getIconClass(app),
       className,
     );
 
+    function getBackgroundColor() {
+      return getBackgroundLightIconClass(app);
+    }
+
     const value = useMemo(
       () => ({
-        icon: app.icon,
+        icon,
         displayName,
         isHeading,
         level,
+        variant,
         headingStyle,
         code: getIconCode(app),
+        getBackgroundColor,
       }),
       [],
     );
@@ -71,7 +78,6 @@ const Root: PolymorphicAppCard = forwardRef(
       <Context.Provider value={value}>
         <Component ref={ref} className={classes} {...restProps}>
           {children}
-          {/* {showName()} */}
         </Component>
       </Context.Provider>
     );

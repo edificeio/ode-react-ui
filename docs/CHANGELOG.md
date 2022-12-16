@@ -1,5 +1,11 @@
 # @ode-react-ui/storybook
 
+## 1.0.5-dev.6
+
+### Patch Changes
+
+- update AppCard component, add icon files
+
 ## 1.0.5-dev.5
 
 ### Patch Changes

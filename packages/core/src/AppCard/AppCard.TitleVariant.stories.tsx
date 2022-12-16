@@ -4,13 +4,13 @@ import { AppCard } from "../index";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Core/AppCard/All Apps",
+  title: "Components/Core/AppCard/Titles",
   component: AppCard,
   args: {
     level: "h1",
     headingStyle: "h3",
     isHeading: true,
-    variant: "square",
+    variant: "title",
   },
   argTypes: {
     variant: {

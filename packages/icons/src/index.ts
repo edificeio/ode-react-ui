@@ -33,6 +33,7 @@ export { default as Download } from "./Download";
 export { default as Edit } from "./Edit";
 export { default as Error } from "./Error";
 export { default as ExternalLink } from "./ExternalLink";
+export { default as Files } from "./Files";
 export { default as Filter } from "./Filter";
 export { default as Flag } from "./Flag";
 export { default as Folder } from "./Folder";

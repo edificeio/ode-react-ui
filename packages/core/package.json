@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/core",
-  "version": "1.0.7-dev.11",
+  "version": "1.0.7-dev.12",
   "private": false,
   "description": "@ode-react-ui react core components",
   "keywords": [
@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@ode-react-ui/hooks": "1.0.7-dev.11",
-    "@ode-react-ui/icons": "1.0.7-dev.8",
+    "@ode-react-ui/icons": "1.0.7-dev.12",
     "@types/node": "18.7.23",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
@@ -57,7 +57,7 @@
   },
   "peerDependencies": {
     "@ode-react-ui/hooks": "1.0.7-dev.11",
-    "@ode-react-ui/icons": "1.0.7-dev.8",
+    "@ode-react-ui/icons": "1.0.7-dev.12",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

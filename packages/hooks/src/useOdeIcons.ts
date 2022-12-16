@@ -110,6 +110,27 @@ export default function useOdeIcons() {
     if (appCode) return `color-app-${appCode}`;
     return `color-app-default`;
   }
+  /**
+   *
+   * @param app
+   * @return the CSS class used to style icons
+   */
+  function getBackgroundIconClass(app: IWebApp): string {
+    const appCode = getIconCode(app);
+    if (appCode) return `bg-app-${appCode}`;
+    return `bg-app-default`;
+  }
+
+  /**
+   *
+   * @param app
+   * @return the CSS class used to style icons
+   */
+  function getBackgroundLightIconClass(app: IWebApp): string {
+    const appCode = getIconCode(app);
+    if (appCode) return `bg-light-${appCode}`;
+    return `bg-light-default`;
+  }
 
   /**
    *
@@ -122,6 +143,8 @@ export default function useOdeIcons() {
 
   return {
     getIconClass,
+    getBackgroundIconClass,
+    getBackgroundLightIconClass,
     getIconCode,
     getWidgetIconClass,
     isIconUrl,
