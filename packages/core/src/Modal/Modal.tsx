@@ -10,6 +10,7 @@ import { forwardRef, useRef } from "react";
 import { useClickOutside, useKeyPress } from "@ode-react-ui/hooks";
 
 import ModalBody from "./ModalBody";
+import { ModalContext } from "./ModalContext";
 import ModalFooter from "./ModalFooter";
 import ModalHeader from "./ModalHeader";
 import { ModalProps } from "./ModalProps";
@@ -20,7 +21,15 @@ import ModalSubtitle from "./ModalSubtitle";
  */
 const Root = forwardRef<HTMLDivElement, ModalProps>(
   (props: ModalProps, ref) => {
-    const { isOpen, onModalClose, scrollable, children } = props;
+    const { id, isOpen, onModalClose, scrollable, children } = props;
+
+    const ariaLabelId = `aria_label_${id}`;
+    const ariaDescriptionId = `aria_desc_${id}`;
+
+    const modalContextValue = {
+      ariaLabelId,
+      ariaDescriptionId,
+    };
 
     const modalRef = useRef(null);
     useClickOutside(modalRef, () => {
@@ -36,13 +45,14 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
     }, ["Escape"]);
 
     return (
-      <>
+      <ModalContext.Provider value={modalContextValue}>
         <div
+          id={id}
           ref={ref}
           role="dialog"
           aria-modal="true"
-          aria-labelledby="modal_label"
-          aria-describedby="modal_desc"
+          aria-labelledby={ariaLabelId}
+          aria-describedby={ariaDescriptionId}
           className={`modal fade ${isOpen ? "show d-block" : ""}`}
           tabIndex={-1}
         >
@@ -56,7 +66,7 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
           </div>
         </div>
         {isOpen && <div className="modal-backdrop fade show"></div>}
-      </>
+      </ModalContext.Provider>
     );
   },
 );
