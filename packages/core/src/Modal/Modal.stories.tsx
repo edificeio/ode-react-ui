@@ -74,6 +74,7 @@ const Template: ComponentStory<typeof Modal> = (args) => {
 
 export const Primary = Template.bind({});
 Primary.args = {
+  id: "primaryModal",
   scrollable: true,
 };
 Primary.decorators = [(Story) => <div className="p-12">{Story()}</div>];
@@ -214,5 +215,6 @@ const TemplateMoveFile: ComponentStory<typeof Modal> = (args) => {
 };
 export const MoveFile = TemplateMoveFile.bind({});
 MoveFile.args = {
+  id: "moveFileModal",
   scrollable: true,
 };
