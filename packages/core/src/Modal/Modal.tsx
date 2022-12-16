@@ -8,6 +8,7 @@
 import { forwardRef, useRef } from "react";
 
 import { useClickOutside, useKeyPress } from "@ode-react-ui/hooks";
+import clsx from "clsx";
 
 import ModalBody from "./ModalBody";
 import { ModalContext } from "./ModalContext";
@@ -21,7 +22,14 @@ import ModalSubtitle from "./ModalSubtitle";
  */
 const Root = forwardRef<HTMLDivElement, ModalProps>(
   (props: ModalProps, ref) => {
-    const { id, isOpen, onModalClose, scrollable, children } = props;
+    const {
+      id,
+      isOpen,
+      onModalClose,
+      size = "md",
+      scrollable,
+      children,
+    } = props;
 
     const ariaLabelId = `aria_label_${id}`;
     const ariaDescriptionId = `aria_desc_${id}`;
@@ -44,6 +52,11 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
       }
     }, ["Escape"]);
 
+    const dialogClasses = clsx("modal-dialog", {
+      [`modal-${size}`]: size,
+      "modal-dialog-scrollable": scrollable,
+    });
+
     return (
       <ModalContext.Provider value={modalContextValue}>
         <div
@@ -56,12 +69,7 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
           className={`modal fade ${isOpen ? "show d-block" : ""}`}
           tabIndex={-1}
         >
-          <div
-            ref={modalRef}
-            className={`modal-dialog ${
-              scrollable ? "modal-dialog-scrollable" : ""
-            }`}
-          >
+          <div ref={modalRef} className={dialogClasses}>
             <div className="modal-content">{children}</div>
           </div>
         </div>
