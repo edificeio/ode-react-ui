@@ -68,6 +68,33 @@ OnlyTitle.parameters = {
   },
 };
 
+export const OnlyIcon = () => {
+  // For example only
+  const mockedApp = {
+    address: "/blog",
+    icon: "blog-large",
+    name: "Blog",
+    scope: [],
+    display: false,
+    displayName: "",
+    isExternal: false,
+  };
+
+  return (
+    <AppCard app={mockedApp} isHeading level="h1" headingStyle="h3">
+      <AppCard.Icon size="48" />
+    </AppCard>
+  );
+};
+OnlyIcon.parameters = {
+  docs: {
+    description: {
+      story:
+        "For example, when used as default when no image is defined in the Card Component.",
+    },
+  },
+};
+
 export const PassingData = () => {
   // For example only
   const mockedApp = {
@@ -234,7 +261,7 @@ UseAsALink.parameters = {
   },
 };
 
-export const WithoutName = () => {
+export const CardVariantWithoutName = () => {
   // For example only
   const mockedApp = {
     address: "/blog",
@@ -247,17 +274,39 @@ export const WithoutName = () => {
   };
 
   return (
-    <AppCard app={mockedApp} noName isHeading level="h1" headingStyle="h3">
+    <AppCard
+      app={mockedApp}
+      variant="square"
+      isHeading
+      level="h1"
+      headingStyle="h3"
+    >
+      <AppCard.Icon size="48" />
+    </AppCard>
+  );
+};
+export const CardVariantWithName = () => {
+  // For example only
+  const mockedApp = {
+    address: "/blog",
+    icon: "blog-large",
+    name: "Blog",
+    scope: [],
+    display: false,
+    displayName: "",
+    isExternal: false,
+  };
+
+  return (
+    <AppCard
+      app={mockedApp}
+      variant="square"
+      isHeading
+      level="h1"
+      headingStyle="h3"
+    >
       <AppCard.Icon size="48" />
       <AppCard.Name />
     </AppCard>
   );
-};
-WithoutName.parameters = {
-  docs: {
-    description: {
-      story:
-        "For example, when used as default when no image is defined in the Card Component.",
-    },
-  },
 };

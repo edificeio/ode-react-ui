@@ -3,21 +3,23 @@ import { createContext, useContext } from "react";
 import { HeadingElement } from "../Heading/HeadingProps";
 
 interface ContextProps {
-  icon: string;
-  displayName: string;
   code: string;
+  displayName: string;
+  headingStyle?: HeadingElement;
+  icon: string;
   isHeading?: boolean;
   level?: HeadingElement;
-  headingStyle?: HeadingElement;
+  variant?: string;
+  getBackgroundColor: () => string;
 }
 
 export const Context = createContext<ContextProps | null>({
-  icon: "",
-  displayName: "Application",
   code: "placeholder",
+  displayName: "Application",
+  headingStyle: "h3",
+  icon: "",
   isHeading: false,
   level: "h1",
-  headingStyle: "h3",
 });
 
 export default function useAppCard() {

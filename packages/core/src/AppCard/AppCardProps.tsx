@@ -28,15 +28,11 @@ export type BaseProps = {
   /**
    * Title, Card Component, ...
    */
-  variant?: string;
+  variant?: "title" | "square";
   /**
    * Additional ClassName for styling purpose
    */
   className?: string;
-  /**
-   * TODO: create variant rather than hack
-   */
-  noName?: boolean;
 } & AppHeadingProps;
 
 export type AppCardProps<T extends React.ElementType> =

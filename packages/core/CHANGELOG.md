@@ -1,5 +1,14 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.12
+
+### Patch Changes
+
+- update AppCard component, add icon files
+
+- Updated dependencies []:
+  - @ode-react-ui/icons@1.0.7-dev.12
+
 ## 1.0.7-dev.11
 
 ### Patch Changes
