@@ -75,6 +75,7 @@ module.exports = {
     "*.d.ts",
     "*.docs.mdx",
     "*.stories.tsx",
+    "Template*.tsx",
     "dist",
     "node_modules",
     "prettier.config.js",
