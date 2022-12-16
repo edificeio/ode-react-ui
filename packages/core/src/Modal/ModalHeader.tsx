@@ -1,11 +1,15 @@
+import { useModalContext } from "./ModalContext";
+
 /**
  * Modal Header
  */
 const ModalHeader = (props: ModalHeaderProps) => {
   const { onModalClose, children } = props;
+  const { ariaLabelId } = useModalContext();
+
   return (
     <div className="modal-header">
-      <h2 id="modal_label" className="modal-title">
+      <h2 id={ariaLabelId} className="modal-title">
         {children}
       </h2>
       <button

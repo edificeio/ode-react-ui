@@ -1,5 +1,11 @@
 export interface ModalProps {
   /**
+   * Modal id (useful when multiple modal on the same page)
+   */
+
+  id: string;
+
+  /**
    * Is Modal Open
    */
   isOpen: boolean;

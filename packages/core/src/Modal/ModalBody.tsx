@@ -1,11 +1,17 @@
+import { useModalContext } from "./ModalContext";
+
 /**
  * Modal Body
  */
-const ModalBody = (props: ModalBodyProps) => (
-  <div id="modal_desc" className="modal-body">
-    {props.children}
-  </div>
-);
+const ModalBody = (props: ModalBodyProps) => {
+  const { ariaDescriptionId } = useModalContext();
+
+  return (
+    <div id={ariaDescriptionId} className="modal-body">
+      {props.children}
+    </div>
+  );
+};
 
 ModalBody.displayName = "ModalBody";
 
