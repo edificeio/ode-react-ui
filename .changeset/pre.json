@@ -9,6 +9,7 @@
     "@ode-react-ui/icons": "1.0.6"
   },
   "changesets": [
+    "afraid-colts-travel",
     "brave-weeks-shout",
     "chatty-cars-sell",
     "curly-dots-hope",
