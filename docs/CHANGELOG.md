@@ -1,5 +1,11 @@
 # @ode-react-ui/storybook
 
+## 1.0.5-dev.7
+
+### Patch Changes
+
+- [#49](https://github.com/opendigitaleducation/ode-react-ui/pull/49) [`4d9734d`](https://github.com/opendigitaleducation/ode-react-ui/commit/4d9734d021e62ba03884df9679bee7fd25e9e524) Thanks [@david-cc](https://github.com/david-cc)! - Shadows UI Feedback fixes
+
 ## 1.0.5-dev.6
 
 ### Patch Changes
