@@ -3,16 +3,21 @@ export function Card(props: {
   style?: {
     [item: string]: string;
   };
+  noShadow?: boolean;
   children: React.ReactNode;
 }) {
-  const { className, style, children } = props;
+  const { className, style, noShadow, children } = props;
 
-  const mergedStyle = {
+  const mergedStyle: any = {
     ...style,
     backgroundColor: "#fff",
-    boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.15)",
     borderRadius: "8px",
   };
+
+  if (!noShadow) {
+    mergedStyle.boxShadow = "0px 2px 6px rgba(0, 0, 0, 0.15)";
+  }
+
   return (
     <div className={className} style={mergedStyle}>
       {children}

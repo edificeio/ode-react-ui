@@ -53,7 +53,7 @@ import { Card } from "../components/Card";
       </td>
       <td>
         <code>
-          <pre>0 .5rem 1rem rgba($black, .15)</pre>
+          <pre>0 0.2rem 0.6em 0 rgba($black, 0.15)</pre>
         </code>
       </td>
       <td>
@@ -65,34 +65,34 @@ import { Card } from "../components/Card";
     <tr>
       <td>
         <code>
-          <pre>$box-shadow-sm</pre>
+          <pre>$box-shadow-hover</pre>
         </code>
       </td>
       <td>
         <code>
-          <pre>0 .125rem .25rem rgba($black, .075)</pre>
+          <pre>0 0.4rem 1rem 0 rgba($black, 0.12)</pre>
         </code>
       </td>
       <td>
         <code>
-          <pre>.shadow-sm</pre>
+          <pre>.shadow-hover</pre>
         </code>
       </td>
     </tr>
     <tr>
       <td>
         <code>
-          <pre>$box-shadow-lg</pre>
+          <pre>$box-shadow-bottom</pre>
         </code>
       </td>
       <td>
         <code>
-          <pre>0 1rem 3rem rgba($black, .175)</pre>
+          <pre>0 -0.6rem 3rem -1rem rgba($black, 0.15)</pre>
         </code>
       </td>
       <td>
         <code>
-          <pre>.shadow-lg</pre>
+          <pre>.shadow-bottom</pre>
         </code>
       </td>
     </tr>
@@ -104,58 +104,70 @@ import { Card } from "../components/Card";
 <div class="card flex-row align-items-center gap-64">
   <Card
     style={{
-      width: "12rem",
-      height: "12rem",
+      width: "16rem",
+      height: "20rem",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
       textAlign: "center",
-      border: "1px solid rgba(0, 0, 0, 0.1)",
     }}
+    noShadow={true}
     className="shadow-none"
   >
-    <div style={{ fontSize: "1.6rem" }}>.shadow-none</div>
+    <div style={{ fontSize: "1.6rem" }} className="d-block">
+      <h3>None</h3>
+      <p>.shadow-none</p>
+    </div>
   </Card>
   <Card
     style={{
-      width: "12rem",
-      height: "12rem",
+      width: "16rem",
+      height: "20rem",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
       textAlign: "center",
-      border: "1px solid rgba(0, 0, 0, 0.1)",
     }}
-    className="shadow-sm"
-  >
-    <div style={{ fontSize: "1.6rem" }}>.shadow-sm</div>
-  </Card>
-  <Card
-    style={{
-      width: "12rem",
-      height: "12rem",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      textAlign: "center",
-      border: "1px solid rgba(0, 0, 0, 0.1)",
-    }}
+    noShadow={true}
     className="shadow"
   >
-    <div style={{ fontSize: "1.6rem" }}>.shadow</div>
+    <div style={{ fontSize: "1.6rem" }} className="d-block">
+      <h3>Default</h3>
+      <p>.shadow</p>
+    </div>
   </Card>
   <Card
     style={{
-      width: "12rem",
-      height: "12rem",
+      width: "16rem",
+      height: "20rem",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
       textAlign: "center",
-      border: "1px solid rgba(0, 0, 0, 0.1)",
     }}
-    className="shadow-lg"
+    noShadow={true}
+    className="shadow-hover"
   >
-    <div style={{ fontSize: "1.6rem" }}>.shadow-lg</div>
+    <div style={{ fontSize: "1.6rem" }} className="d-block">
+      <h3>Hover</h3>
+      <p>.shadow-hover</p>
+    </div>
+  </Card>
+  <Card
+    style={{
+      width: "16rem",
+      height: "20rem",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      textAlign: "center",
+    }}
+    noShadow={true}
+    className="shadow-bottom"
+  >
+    <div style={{ fontSize: "1.6rem" }} className="d-block">
+      <h3>Bottom</h3>
+      <p>.shadow-bottom</p>
+    </div>
   </Card>
 </div>
