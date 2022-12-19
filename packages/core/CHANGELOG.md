@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.13
+
+### Patch Changes
+
+- [#47](https://github.com/opendigitaleducation/ode-react-ui/pull/47) [`1f7f2db`](https://github.com/opendigitaleducation/ode-react-ui/commit/1f7f2db32d7f23388e106d7e55b6b3231e87a7dc) Thanks [@david-cc](https://github.com/david-cc)! - Fix Modal UI feedback
+
 ## 1.0.7-dev.12
 
 ### Patch Changes
