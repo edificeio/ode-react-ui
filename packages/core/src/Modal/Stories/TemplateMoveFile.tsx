@@ -23,7 +23,7 @@ export const TemplateMoveFile: ComponentStory<typeof Modal> = (args) => {
         color="primary"
         onClick={() => setModalOpen(true)}
       >
-        Création
+        Déplacer
       </Button>
       <Modal
         {...args}
@@ -31,7 +31,7 @@ export const TemplateMoveFile: ComponentStory<typeof Modal> = (args) => {
         onModalClose={() => setModalOpen(false)}
       >
         <Modal.Header onModalClose={() => setModalOpen(false)}>
-          Création
+          Déplacer
         </Modal.Header>
         <Modal.Subtitle>
           Sélectionner le dossier vers lequel déplacer les éléments

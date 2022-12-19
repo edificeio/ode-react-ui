@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 export * from "./AppCard";
+export * from "./Alert";
 export * from "./Button";
 export * from "./Form";
 export * from "./Grid";
