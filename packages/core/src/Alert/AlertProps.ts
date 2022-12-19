@@ -2,18 +2,18 @@ import { ReactNode } from "react";
 
 export type AlertRef = HTMLDivElement;
 
-export type ALertVariants = "success" | "warning" | "information" | "error";
+export type ALertTypes = "success" | "warning" | "info" | "danger";
 
 export interface AlertProps {
   /**
    * Type of alert
    */
-  variant?: ALertVariants;
+  type?: ALertTypes;
 
   /**
-   * Is alert dissmissible
+   * Alert can be closed with a button ?
    */
-  isDismissible?: boolean | string;
+  isDismissible?: boolean;
 
   /**
    * Add custom class
@@ -21,7 +21,12 @@ export interface AlertProps {
   className?: string;
 
   /**
-   * Does it has a text ?
+   * Alert box content
    */
   children: ReactNode;
+
+  /**
+   * Callback when alert is closed
+   */
+  onClose?: Function;
 }

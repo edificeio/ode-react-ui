@@ -1,4 +1,4 @@
-import { forwardRef, Ref } from "react";
+import { forwardRef, Ref, useState } from "react";
 
 /**
  * Alert  Component
@@ -20,42 +20,55 @@ import { AlertProps, AlertRef } from "./AlertProps";
 const Alert = forwardRef(
   (
     {
-      variant = "success",
+      type = "success",
       className = "",
       children,
       isDismissible = false,
+      onClose = () => {},
     }: AlertProps,
     ref: Ref<AlertRef>,
   ) => {
+    const [isVisible, setVisibleStatus] = useState<boolean>(true);
+
     const mapping = {
       success: { icon: <SuccessOutline />, classModifier: "alert-success" },
       warning: { icon: <AlertCircle />, classModifier: "alert-warning" },
-      information: { icon: <InfoCircle />, classModifier: "alert-info" },
-      error: { icon: <Error />, classModifier: "alert-danger" },
+      info: { icon: <InfoCircle />, classModifier: "alert-info" },
+      danger: { icon: <Error />, classModifier: "alert-danger" },
     };
 
     const classes = clsx(
       "alert",
-      mapping[variant].classModifier,
+      mapping[type].classModifier,
       {
         "alert-dismissible": isDismissible,
       },
       className,
     );
 
+    const closeAlertHandler = () => {
+      setVisibleStatus(false);
+      onClose();
+    };
+
     return (
-      <div ref={ref} className={classes} role="alert">
-        <div className="me-12">{mapping[variant].icon}</div>
-        <div>{children}</div>
-        {isDismissible && (
-          <button
-            type="button"
-            className="btn-close"
-            data-bs-dismiss="alert"
-            aria-label="Close"
-          ></button>
+      <>
+        {isVisible && (
+          <div ref={ref} className={classes} role="alert">
+            <div className="me-12">{mapping[type].icon}</div>
+            <div>{children}</div>
+            {isDismissible && (
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+                onClick={closeAlertHandler}
+              ></button>
+            )}
+          </div>
         )}
-      </div>
+      </>
     );
   },
 );
