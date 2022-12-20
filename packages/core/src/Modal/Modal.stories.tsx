@@ -1,12 +1,14 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { useState } from "react";
 
 import { TreeView } from "@ode-react-ui/core";
-import { TreeNode } from "../TreeView/TreeViewProps";
 import { Plus } from "@ode-react-ui/icons";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Button } from "../Button";
-import { FormControl, Input } from "../Form";
+import { FormControl, Input, Label } from "../Form";
+import { Heading } from "../Heading";
+import { TreeView } from "../TreeView";
+import { TreeNode } from "../TreeView/TreeViewProps";
 import Modal from "./Modal";
 
 export default {
@@ -162,6 +164,7 @@ const TemplateMoveFile: ComponentStory<typeof Modal> = (args) => {
         Déplacer l'élément
       </Button>
       <Modal
+        id="MoveFile"
         {...args}
         isOpen={isModalOpen}
         onModalClose={() => setModalOpen(false)}
@@ -217,4 +220,149 @@ export const MoveFile = TemplateMoveFile.bind({});
 MoveFile.args = {
   id: "moveFileModal",
   scrollable: true,
+};
+
+export const CreateFile = ({ ...args }) => {
+  const [isModalOpen, setModalOpen] = useState(false);
+  // For example only
+  const mockedApp = {
+    address: "/blog",
+    icon: "blog-large",
+    name: "Blog",
+    scope: [],
+    display: false,
+    displayName: "",
+    isExternal: false,
+  };
+  return (
+    <>
+      <Button
+        type="button"
+        variant="filled"
+        color="primary"
+        onClick={() => setModalOpen(true)}
+      >
+        Création
+      </Button>
+      <Modal
+        id="createFile"
+        size="lg"
+        {...args}
+        isOpen={isModalOpen}
+        onModalClose={() => setModalOpen(false)}
+      >
+        <Modal.Header onModalClose={() => setModalOpen(false)}>
+          Création
+        </Modal.Header>
+
+        <Modal.Body>
+          <Heading headingStyle="h4" level="h4" className="mb-16">
+            Général
+          </Heading>
+
+          <div className="row mb-24">
+            <div
+              className="ratio ratio-1x1 rounded-2 bg-blog bg-light"
+              style={{ width: 160 }}
+            >
+              <AppCard app={mockedApp} variant="square">
+                <AppCard.Icon size="48" />
+              </AppCard>
+            </div>
+
+            <div className="col">
+              <FormControl id="title" className="mb-16">
+                <Label>Titre</Label>
+                <Input
+                  type="text"
+                  placeholder="Nom de la ressource"
+                  size="md"
+                  aria-required={true}
+                />
+              </FormControl>
+              <FormControl id="description" isOptional>
+                <Label>Description</Label>
+                <Input
+                  type="text"
+                  placeholder="Nom de la ressource"
+                  size="md"
+                  aria-required={true}
+                />
+              </FormControl>
+            </div>
+          </div>
+
+          <Heading headingStyle="h4" level="h4" className="mb-16">
+            Accès au blog
+          </Heading>
+
+          <Alert type="info">
+            Votre blog reste accessible aux personnes à qui vous l'avez partagé.
+            Vous pouvez cependant créer un lien public afin que des personnes
+            hors de l'ENT puissent y accéder.
+          </Alert>
+
+          <div className="form-check form-switch my-16">
+            <input
+              className="form-check-input "
+              type="checkbox"
+              role="switch"
+              id="flexSwitchCheckDefault"
+            />
+            <label
+              className="form-check-label"
+              htmlFor="flexSwitchCheckDefault"
+            >
+              Accessible publiquement via une URL
+            </label>
+          </div>
+
+          <FormControl id="slug">
+            <div className="d-flex align-items-center mt-16 mb-3 gap-4">
+              <div>https://neoconnect.opendigitaleducation.com/</div>
+
+              <Input
+                type="text"
+                size="md"
+                placeholder="extention personnalisée"
+              />
+              <Button
+                color="primary"
+                onClick={() => {}}
+                type="button"
+                leftIcon={<Copy />}
+                variant="ghost"
+                className="text-nowrap"
+              >
+                Copier URL
+              </Button>
+            </div>
+          </FormControl>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button
+            type="button"
+            color="primary"
+            variant="outline"
+            onClick={() => setModalOpen(false)}
+          >
+            Annuler
+          </Button>
+
+          <Button
+            type="button"
+            color="primary"
+            variant="filled"
+            onClick={() => setModalOpen(false)}
+          >
+            Créer
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+};
+CreateFile.args = {
+  scrollable: false,
 };
