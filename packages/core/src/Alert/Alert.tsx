@@ -103,7 +103,7 @@ const Alert = forwardRef(
         {isVisible && (
           <div ref={refAlert} className={classes} role="alert">
             <div className="me-12">{mapping[type].icon}</div>
-            <div>{children}</div>
+            <div className="alert-content">{children}</div>
             {button}
             {isDismissible && (
               <button

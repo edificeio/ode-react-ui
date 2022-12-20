@@ -7,6 +7,7 @@ import { Alert } from "../Alert";
 import { AppCard } from "../AppCard";
 import { Button } from "../Button";
 import { FormControl, Input, Label } from "../Form";
+import { Heading } from "../Heading";
 import { TreeView } from "../TreeView";
 import { TreeNode } from "../TreeView/TreeViewProps";
 import Modal from "./Modal";
@@ -163,6 +164,7 @@ export const MoveFile = ({ ...args }) => {
         Déplacer
       </Button>
       <Modal
+        id="MoveFile"
         {...args}
         isOpen={isModalOpen}
         onModalClose={() => setModalOpen(false)}
@@ -220,6 +222,16 @@ MoveFile.args = {
 
 export const CreateFile = ({ ...args }) => {
   const [isModalOpen, setModalOpen] = useState(false);
+  // For example only
+  const mockedApp = {
+    address: "/blog",
+    icon: "blog-large",
+    name: "Blog",
+    scope: [],
+    display: false,
+    displayName: "",
+    isExternal: false,
+  };
   return (
     <>
       <Button
@@ -231,6 +243,8 @@ export const CreateFile = ({ ...args }) => {
         Création
       </Button>
       <Modal
+        id="createFile"
+        size="lg"
         {...args}
         isOpen={isModalOpen}
         onModalClose={() => setModalOpen(false)}
@@ -240,24 +254,16 @@ export const CreateFile = ({ ...args }) => {
         </Modal.Header>
 
         <Modal.Body>
-          <div className="h4 mb-16">Général</div>
+          <Heading headingStyle="h4" level="h4" className="mb-16">
+            Général
+          </Heading>
 
-          <div className="row">
+          <div className="row mb-24">
             <div
               className="ratio ratio-1x1 rounded-2 bg-blog bg-light"
               style={{ width: 160 }}
             >
-              <AppCard
-                app={{
-                  address: "/blog",
-                  icon: "blog-large",
-                  name: "Blog",
-                  scope: [],
-                  display: true,
-                  displayName: "",
-                  isExternal: false,
-                }}
-              >
+              <AppCard app={mockedApp} variant="square">
                 <AppCard.Icon size="48" />
               </AppCard>
             </div>
@@ -283,50 +289,53 @@ export const CreateFile = ({ ...args }) => {
               </FormControl>
             </div>
           </div>
-          <hr className="my-24" />
-          <div className="h4 mb-16">Accès au blog</div>
+
+          <Heading headingStyle="h4" level="h4" className="mb-16">
+            Accès au blog
+          </Heading>
+
           <Alert type="info">
             Votre blog reste accessible aux personnes à qui vous l'avez partagé.
             Vous pouvez cependant créer un lien public afin que des personnes
             hors de l'ENT puissent y accéder.
           </Alert>
 
-          <div className="form-check mt-14">
+          <div className="form-check form-switch my-16">
             <input
-              className="form-check-input"
+              className="form-check-input "
               type="checkbox"
-              value=""
-              id="flexCheckDefault"
+              role="switch"
+              id="flexSwitchCheckDefault"
             />
-            <label className="form-check-label" htmlFor="flexCheckDefault">
+            <label
+              className="form-check-label"
+              htmlFor="flexSwitchCheckDefault"
+            >
               Accessible publiquement via une URL
             </label>
           </div>
 
-          <div className="input-group mb-3 d-flex gap-8">
-            <div>
-              <span className="input-group-text" id="basic-addon3">
-                https://neoconnect.opendigitaleducation.com/
-              </span>
-              <input
+          <FormControl id="slug">
+            <div className="d-flex align-items-center mt-16 mb-3 gap-4">
+              <div>https://neoconnect.opendigitaleducation.com/</div>
+
+              <Input
                 type="text"
-                className="form-control"
-                id="basic-url"
-                aria-describedby="basic-addon3"
+                size="md"
                 placeholder="extention personnalisée"
               />
+              <Button
+                color="primary"
+                onClick={() => {}}
+                type="button"
+                leftIcon={<Copy />}
+                variant="ghost"
+                className="text-nowrap"
+              >
+                Copier URL
+              </Button>
             </div>
-            <Button
-              color="primary"
-              onClick={() => {}}
-              type="button"
-              leftIcon={<Copy />}
-              variant="ghost"
-              className="text-nowrap"
-            >
-              Copier URL
-            </Button>
-          </div>
+          </FormControl>
         </Modal.Body>
 
         <Modal.Footer>
@@ -345,7 +354,7 @@ export const CreateFile = ({ ...args }) => {
             variant="filled"
             onClick={() => setModalOpen(false)}
           >
-            Enregistrer
+            Créer
           </Button>
         </Modal.Footer>
       </Modal>
