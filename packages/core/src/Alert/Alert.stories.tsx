@@ -1,7 +1,8 @@
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
+import { Button } from "../Button";
 import Alert from "./Alert";
 import { AlertRef } from "./AlertProps";
 
@@ -22,6 +23,11 @@ export default {
         type: null,
       },
     },
+    onVisibilityChange: {
+      control: {
+        type: null,
+      },
+    },
   },
   args: {
     type: "success",
@@ -30,28 +36,60 @@ export default {
 } as ComponentMeta<typeof Alert>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Alert> = (args) => <Alert {...args} />;
+const Template: ComponentStory<typeof Alert> = (args) => {
+  const ref = useRef<AlertRef>(null);
+  const [showButton, setShowButtonState] = useState(false);
+
+  const onClickButton = useCallback(() => {
+    if (ref.current) {
+      ref.current.show();
+    }
+  }, [ref]);
+
+  return (
+    <div>
+      {showButton && (
+        <Button type="button" onClick={onClickButton}>
+          Show Alert again
+        </Button>
+      )}
+      <Alert
+        {...args}
+        ref={ref}
+        onVisibilityChange={(state: boolean) => setShowButtonState(!state)}
+      >
+        {args.children}
+      </Alert>
+    </div>
+  );
+};
 
 export const Base = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Base.args = {
   type: "success",
   children:
-    "Omnis commodo quidem magna, taciti vulputate habitasse consectetur ornare tincidunt! Labore veniam sem officiis quibusdam, error, iusto erat consequat rhoncus venenatis pretium felis fugit ullamcorper perspiciatis, magni perspiciatis!",
+    "Labore veniam sem officiis quibusdam, error, iusto erat consequat rhoncus venenatis pretium felis fugit ullamcorper perspiciatis, magni perspiciatis!",
 };
 
-export const Dissmissible = ({ ...args }) => {
-  return (
-    <div>
-      <Alert type={args.type} isDismissible={args.isDismissible}>
-        {args.children}
-      </Alert>
-    </div>
-  );
-};
+export const Dissmissible = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Dissmissible.args = {
   type: "success",
+  children:
+    "Ornare senectus inceptos, laboriosam montes suscipit, tristique rhoncus, tristique irure itaque cum, tellus imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
+  isDismissible: true,
+};
+
+export const WithAction = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+WithAction.args = {
+  type: "success",
+  button: (
+    <Button type="button" variant="outline" color="tertiary">
+      Voir
+    </Button>
+  ),
   children:
     "Ornare senectus inceptos, laboriosam montes suscipit, tristique rhoncus, tristique irure itaque cum, tellus imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
   isDismissible: true,
@@ -79,4 +117,25 @@ Error.args = {
   type: "danger",
   children:
     "Ornare senectus inceptos, laboriosam montes suscipit, tristique rhoncus, tristique irure itaque cum, tellus imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
+};
+
+export const ToastBase = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+ToastBase.args = {
+  type: "success",
+  isToast: true,
+  isDismissible: true,
+  children:
+    "Imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
+};
+
+export const ToastTimer = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+ToastTimer.args = {
+  type: "success",
+  isToast: true,
+  isDismissible: true,
+  autoClose: true,
+  children:
+    "Imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
 };

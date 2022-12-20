@@ -1,6 +1,9 @@
 import { ReactNode } from "react";
 
-export type AlertRef = HTMLDivElement;
+export interface AlertRef extends HTMLDivElement {
+  show: Function;
+  hide: Function;
+}
 
 export type ALertTypes = "success" | "warning" | "info" | "danger";
 
@@ -16,9 +19,20 @@ export interface AlertProps {
   isDismissible?: boolean;
 
   /**
-   * Add custom class
+   * Alert is displayed as Toast
    */
-  className?: string;
+  isToast?: boolean;
+
+  /**
+   * Alert must close after delay
+   */
+  autoClose?: boolean;
+
+  /**
+   * If autoClose if activated, set the delay
+   * Défault : 3000
+   */
+  autoCloseDelay?: number;
 
   /**
    * Alert box content
@@ -26,7 +40,22 @@ export interface AlertProps {
   children: ReactNode;
 
   /**
+   * Alert box action
+   */
+  button?: ReactNode;
+
+  /**
    * Callback when alert is closed
    */
   onClose?: Function;
+
+  /**
+   * Callback when alert is closed
+   */
+  onVisibilityChange?: Function;
+
+  /**
+   * Add custom class
+   */
+  className?: string;
 }

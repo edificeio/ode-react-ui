@@ -1,4 +1,12 @@
-import { forwardRef, Ref, useState } from "react";
+import {
+  forwardRef,
+  Ref,
+  useEffect,
+  useImperativeHandle,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 
 /**
  * Alert  Component
@@ -23,13 +31,23 @@ const Alert = forwardRef(
       type = "success",
       className = "",
       children,
+      button,
       isDismissible = false,
+      isToast = false,
+      autoClose = false,
+      autoCloseDelay = 3000,
       onClose = () => {},
+      onVisibilityChange = () => {},
     }: AlertProps,
     ref: Ref<AlertRef>,
   ) => {
     const [isVisible, setVisibleStatus] = useState<boolean>(true);
 
+    // Local ref will be merged with forwardRef in useImperativeHandle below
+    const refAlert = useRef<HTMLDivElement>(null);
+
+    // Here we are mapping alert type with icon Component and bootstrap class
+    // https://getbootstrap.com/docs/5.2/components/alerts/
     const mapping = {
       success: { icon: <SuccessOutline />, classModifier: "alert-success" },
       warning: { icon: <AlertCircle />, classModifier: "alert-warning" },
@@ -37,33 +55,63 @@ const Alert = forwardRef(
       danger: { icon: <Error />, classModifier: "alert-danger" },
     };
 
+    // Create className Attribute from component parameters
     const classes = clsx(
       "alert",
       mapping[type].classModifier,
       {
-        "alert-dismissible": isDismissible,
+        "is-dismissible": isDismissible,
+        "is-toast ": isToast,
       },
       className,
     );
 
-    const closeAlertHandler = () => {
+    useEffect(() => {
+      if (autoClose && isVisible) {
+        setTimeout(() => {
+          hide();
+        }, autoCloseDelay);
+      }
+    }, [isVisible]);
+
+    // Method to hide alert
+    const hide = () => {
       setVisibleStatus(false);
+      // The parent component can execute function when alert is closed
       onClose();
     };
+
+    // Method to show alert
+    const show = () => {
+      setVisibleStatus(true);
+    };
+
+    // The parent component can get alert visible state
+    useLayoutEffect(() => {
+      onVisibilityChange(isVisible);
+    }, [isVisible]);
+
+    // We add to method to control the alert from parent component
+    useImperativeHandle(ref, () => ({
+      show,
+      hide,
+      ...(refAlert.current as HTMLDivElement),
+    }));
 
     return (
       <>
         {isVisible && (
-          <div ref={ref} className={classes} role="alert">
+          <div ref={refAlert} className={classes} role="alert">
             <div className="me-12">{mapping[type].icon}</div>
             <div>{children}</div>
+            {button}
             {isDismissible && (
               <button
                 type="button"
                 className="btn-close"
                 data-bs-dismiss="alert"
                 aria-label="Close"
-                onClick={closeAlertHandler}
+                onClick={hide}
               ></button>
             )}
           </div>
