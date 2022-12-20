@@ -1,31 +1,51 @@
 export interface TreeItemProps {
   /**
-   * @param nodeId: node's id
+   * Node's id
    */
   nodeId: string;
 
   /**
-   * @param label: node's label
+   * Node's label
    */
   label: string;
 
   /**
-   * @param children: react component children
+   * ReactNode children
    */
   children: React.ReactNode;
 
   /**
-   * @param section: is node a section (root element)
+   * Is current node a section (root element)
    */
   section?: boolean;
 
   /**
-   * @param selected: is node selected
+   * Is node selected
    */
   selected: boolean;
 
   /**
-   * @param select: function to select item and deselect other selec
+   * Callback function to provide selected item to parent component (TreeView)
    */
-  select: Function;
+  onItemSelect?: Function;
+
+  /**
+   * Callback function to provide folded item to parent component (TreeView)
+   */
+  onItemFold?: Function;
+
+  /**
+   * Callback function to provide unfolded item to parent component (TreeView)
+   */
+  onItemUnfold?: Function;
+
+  /**
+   * Callback function to provide focused item to parent component (TreeView)
+   */
+  onItemFocus?: Function;
+
+  /**
+   * Callback function to provide blured item to parent component (TreeView)
+   */
+  onItemBlur?: Function;
 }

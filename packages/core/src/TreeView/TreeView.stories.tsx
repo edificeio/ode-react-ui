@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import TreeView from "./TreeView";
-import { TreeNode } from "./TreeViewProps";
+import { TreeNode } from "./TreeNode";
+import { useState } from "react";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -79,11 +80,72 @@ const data: TreeNode = {
 };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof TreeView> = (args) => (
-  <TreeView {...args} />
-);
+const Template: ComponentStory<typeof TreeView> = (args) => {
+  const [events, setEvents] = useState<Array<string>>([]);
+
+  const maxEventHistory = 20;
+
+  const setRotativeEvents = (event: string) => {
+    console.log(event);
+
+    if (events.length >= maxEventHistory) {
+      setEvents([event]);
+      return;
+    }
+    setEvents([event, ...events]);
+  };
+
+  const handleTreeItemSelect = (nodeId: string) => {
+    setRotativeEvents(`Select / Node = ${nodeId}`);
+  };
+
+  const handleTreeItemFold = (nodeId: string) => {
+    setRotativeEvents(`Fold / Node = ${nodeId}`);
+  };
+
+  const handleTreeItemUnfold = (nodeId: string) => {
+    setRotativeEvents(`Unfold / Node = ${nodeId}`);
+  };
+
+  const handleTreeItemFocus = (nodeId: string) => {
+    setRotativeEvents(`Focus / Node = ${nodeId}`);
+  };
+
+  const handleTreeItemBlur = (nodeId: string) => {
+    setRotativeEvents(`Blur / Node = ${nodeId}`);
+  };
+
+  const treeViewArgs = {
+    data,
+    onTreeItemSelect: handleTreeItemSelect,
+    onTreeItemFold: handleTreeItemFold,
+    onTreeItemUnfold: handleTreeItemUnfold,
+    onTreeItemFocus: handleTreeItemFocus,
+    onTreeItemBlur: handleTreeItemBlur,
+  };
+
+  return (
+    <>
+      <TreeView {...args} {...treeViewArgs} />
+      <div
+        className="bg-light position-absolute p-8"
+        style={{
+          top: "8px",
+          right: "8px",
+          fontSize: "1rem",
+        }}
+      >
+        <span>
+          Events history (recent first, cleared after {maxEventHistory}):
+        </span>
+        <ul>
+          {events.map((event) => (
+            <li>{event}</li>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
+};
 
 export const Base = Template.bind({});
-Base.args = {
-  data,
-};
