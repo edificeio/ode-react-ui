@@ -8,18 +8,45 @@
 import { forwardRef, useState } from "react";
 
 import { TreeItem } from "./TreeItem";
-import { TreeNode, TreeViewProps } from "./TreeViewProps";
+import { TreeNode } from "./TreeNode";
+import { TreeViewProps } from "./TreeViewProps";
 
 /**
  * UI TreeView Component
  */
 
 const TreeView = forwardRef<HTMLDivElement, TreeViewProps>(
-  ({ data }: TreeViewProps, ref) => {
+  (props: TreeViewProps, ref) => {
+    const {
+      data,
+      onTreeItemSelect,
+      onTreeItemFold,
+      onTreeItemUnfold,
+      onTreeItemFocus,
+      onTreeItemBlur,
+    } = props;
+
     const [selectedItem, setSelectedItem] = useState<string>("");
 
-    const handleSelected = (selectedNodeId: string) => {
-      setSelectedItem(selectedNodeId);
+    const handleItemSelect = (nodeId: string) => {
+      setSelectedItem(nodeId);
+      onTreeItemSelect?.(nodeId);
+    };
+
+    const handleItemFold = (nodeId: string) => {
+      onTreeItemFold?.(nodeId);
+    };
+
+    const handleItemUnfold = (nodeId: string) => {
+      onTreeItemUnfold?.(nodeId);
+    };
+
+    const handleItemFocus = (nodeId: string) => {
+      onTreeItemFocus?.(nodeId);
+    };
+
+    const handleItemBlur = (nodeId: string) => {
+      onTreeItemBlur?.(nodeId);
     };
 
     const renderTree = (node: TreeNode) => (
@@ -29,7 +56,11 @@ const TreeView = forwardRef<HTMLDivElement, TreeViewProps>(
         label={node.name}
         section={node.section}
         selected={selectedItem === node.id}
-        select={handleSelected}
+        onItemSelect={handleItemSelect}
+        onItemFold={handleItemFold}
+        onItemUnfold={handleItemUnfold}
+        onItemFocus={handleItemFocus}
+        onItemBlur={handleItemBlur}
       >
         {Array.isArray(node.children)
           ? node.children.map((item) => renderTree(item))

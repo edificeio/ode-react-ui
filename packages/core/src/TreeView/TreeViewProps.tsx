@@ -1,28 +1,33 @@
+import { TreeNode } from "./TreeNode";
+
 export interface TreeViewProps {
   /**
-   * TreeNode
+   * TreeNode data
    */
   data: TreeNode;
-}
-
-export interface TreeNode {
-  /**
-   * @param id : node's id
-   */
-  id: string;
 
   /**
-   * @param name : name's id
+   * Callback function to provide selected item to parent component
    */
-  name: string;
+  onTreeItemSelect?: Function;
 
   /**
-   * @param section: indicate if node is a top section (useful for specific icon)
+   * Callback function to provide folded item to parent component
    */
-  section?: boolean;
+  onTreeItemFold?: Function;
 
   /**
-   * Is this node contains children ?
+   * Callback function to provide unfolded item to parent component
    */
-  children?: readonly TreeNode[];
+  onTreeItemUnfold?: Function;
+
+  /**
+   * Callback function to provide focused item to parent component
+   */
+  onTreeItemFocus?: Function;
+
+  /**
+   * Callback function to provide blured item to parent component
+   */
+  onTreeItemBlur?: Function;
 }

@@ -5,26 +5,50 @@
  * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/advanced/src/TreeViewCustom/TreeItem.tsx
  * @see WAI-ARIA https://www.w3.org/WAI/ARIA/apg/patterns/treeview/
  */
-import { useState } from "react";
+import React, { useState } from "react";
 
 import { Folder, RafterRight, RafterDown } from "@ode-react-ui/icons";
 
 import { TreeItemProps } from "./TreeItemProps";
 
 export const TreeItem = (props: TreeItemProps) => {
-  const { nodeId, label, children, section, selected, select } = props;
+  const {
+    nodeId,
+    label,
+    children,
+    section,
+    selected,
+    onItemSelect,
+    onItemFold,
+    onItemUnfold,
+    onItemFocus,
+    onItemBlur,
+  } = props;
   const [expanded, setExpanded] = useState<boolean>(false);
 
-  const handleFoldClick = (event: React.UIEvent<HTMLDivElement>) => {
+  const handleItemSelect = (event: React.UIEvent<HTMLDivElement>) => {
     event.preventDefault();
-    setExpanded(!expanded);
+    onItemSelect?.(nodeId);
     event.stopPropagation();
   };
 
-  const handleItemClick = (event: React.UIEvent<HTMLDivElement>) => {
+  const handleItemFoldUnfold = (event: React.UIEvent<HTMLDivElement>) => {
     event.preventDefault();
-    select(nodeId);
+    setExpanded(!expanded);
+    expanded ? onItemUnfold?.(nodeId) : onItemFold?.(nodeId);
     event.stopPropagation();
+  };
+
+  const handleItemFocus = (event: React.FocusEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    onItemFocus?.(nodeId);
+    // no need to stop propagation because focus event does not bubble
+  };
+
+  const handleItemBlur = (event: React.FocusEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    onItemBlur?.(nodeId);
+    // no need to stop propagation because blur event does not bubble
   };
 
   const rafterSize = section ? 16 : 12;
@@ -36,8 +60,8 @@ export const TreeItem = (props: TreeItemProps) => {
           <div
             tabIndex={0}
             role="button"
-            onClick={handleFoldClick}
-            onKeyPress={handleFoldClick}
+            onClick={handleItemFoldUnfold}
+            onKeyPress={handleItemFoldUnfold}
           >
             {Array.isArray(children) && !expanded && (
               <RafterRight
@@ -69,9 +93,11 @@ export const TreeItem = (props: TreeItemProps) => {
           <div
             tabIndex={0}
             role="button"
-            onClick={handleItemClick}
-            onKeyPress={handleItemClick}
             className="d-flex align-items-center gap-8"
+            onClick={handleItemSelect}
+            onKeyPress={handleItemSelect}
+            onFocus={handleItemFocus}
+            onBlur={handleItemBlur}
           >
             {section && <Folder title="Folder" width={20} height={20} />}
             <span>{label}</span>
