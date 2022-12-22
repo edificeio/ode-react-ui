@@ -108,7 +108,7 @@ export default function useOdeIcons() {
   function getIconClass(app: IWebApp): string {
     const appCode = getIconCode(app);
     if (appCode) return `color-app-${appCode}`;
-    return `color-app-default`;
+    return `color-app-placeholder`;
   }
   /**
    *
@@ -118,7 +118,7 @@ export default function useOdeIcons() {
   function getBackgroundIconClass(app: IWebApp): string {
     const appCode = getIconCode(app);
     if (appCode) return `bg-app-${appCode}`;
-    return `bg-app-default`;
+    return `bg-app-placeholder`;
   }
 
   /**
@@ -129,7 +129,7 @@ export default function useOdeIcons() {
   function getBackgroundLightIconClass(app: IWebApp): string {
     const appCode = getIconCode(app);
     if (appCode) return `bg-light-${appCode}`;
-    return `bg-light-default`;
+    return `bg-light-placeholder`;
   }
 
   /**

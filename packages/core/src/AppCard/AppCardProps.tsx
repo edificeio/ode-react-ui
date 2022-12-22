@@ -1,10 +1,6 @@
 import React, { ReactNode } from "react";
 
 import { HeadingProps } from "../Heading/HeadingProps";
-/* import {
-  PolymorphicComponentPropWithRef,
-  PolymorphicRef,
-} from "../utils/create-polymorphic-component"; */
 import {
   PolymorphicComponentPropsWithRef,
   PolymorphicRef,
@@ -25,10 +21,6 @@ export type BaseProps = {
    * Passing compounds components
    */
   children?: ReactNode;
-  /**
-   * Title, Card Component, ...
-   */
-  variant?: "title" | "square";
   /**
    * Additional ClassName for styling purpose
    */

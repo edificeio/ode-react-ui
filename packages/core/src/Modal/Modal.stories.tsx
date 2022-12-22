@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-import { TreeView } from "@ode-react-ui/core";
 import { Plus } from "@ode-react-ui/icons";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
@@ -12,7 +11,7 @@ import { TreeNode } from "../TreeView/TreeViewProps";
 import Modal from "./Modal";
 
 export default {
-  title: "Components/Core/Modal",
+  title: "Components/Modal",
   component: Modal,
 } as ComponentMeta<typeof Modal>;
 
@@ -164,7 +163,6 @@ const TemplateMoveFile: ComponentStory<typeof Modal> = (args) => {
         Déplacer l'élément
       </Button>
       <Modal
-        id="MoveFile"
         {...args}
         isOpen={isModalOpen}
         onModalClose={() => setModalOpen(false)}
@@ -245,7 +243,6 @@ export const CreateFile = ({ ...args }) => {
         Création
       </Button>
       <Modal
-        id="createFile"
         size="lg"
         {...args}
         isOpen={isModalOpen}

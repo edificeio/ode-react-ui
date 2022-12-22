@@ -34,7 +34,6 @@ const Root: PolymorphicAppCard = forwardRef(
       isHeading = false,
       level,
       className,
-      variant = "title",
       ...restProps
     }: AppCardProps<T>,
     ref: AppCardRef<T>,
@@ -45,18 +44,10 @@ const Root: PolymorphicAppCard = forwardRef(
     const displayName = name || "Application";
 
     const classes = clsx(
-      "application application-react",
-      {
-        "application-title": variant === "title",
-        "application-square": variant === "square",
-      },
+      "application application-react application-title",
       getIconClass(app),
       className,
     );
-
-    function getBackgroundColor() {
-      return getBackgroundLightIconClass(app);
-    }
 
     const value = useMemo(
       () => ({
@@ -64,10 +55,9 @@ const Root: PolymorphicAppCard = forwardRef(
         displayName,
         isHeading,
         level,
-        variant,
         headingStyle,
         code: getIconCode(app),
-        getBackgroundColor,
+        bgCode: getBackgroundLightIconClass(app),
       }),
       [],
     );

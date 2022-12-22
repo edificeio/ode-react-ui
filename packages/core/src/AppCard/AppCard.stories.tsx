@@ -4,7 +4,7 @@ import { AppCard } from "../index";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Core/AppCard",
+  title: "Components/AppCard",
   component: AppCard,
   parameters: {
     docs: {
@@ -259,54 +259,4 @@ UseAsALink.parameters = {
         "By using the `as` props, you can override the default behaviour of this component. In some contexts, we need a link, so use `as='a'` and add an `href` prop.",
     },
   },
-};
-
-export const CardVariantWithoutName = () => {
-  // For example only
-  const mockedApp = {
-    address: "/blog",
-    icon: "blog-large",
-    name: "Blog",
-    scope: [],
-    display: false,
-    displayName: "",
-    isExternal: false,
-  };
-
-  return (
-    <AppCard
-      app={mockedApp}
-      variant="square"
-      isHeading
-      level="h1"
-      headingStyle="h3"
-    >
-      <AppCard.Icon size="48" />
-    </AppCard>
-  );
-};
-export const CardVariantWithName = () => {
-  // For example only
-  const mockedApp = {
-    address: "/blog",
-    icon: "blog-large",
-    name: "Blog",
-    scope: [],
-    display: false,
-    displayName: "",
-    isExternal: false,
-  };
-
-  return (
-    <AppCard
-      app={mockedApp}
-      variant="square"
-      isHeading
-      level="h1"
-      headingStyle="h3"
-    >
-      <AppCard.Icon size="48" />
-      <AppCard.Name />
-    </AppCard>
-  );
 };

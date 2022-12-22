@@ -6,7 +6,7 @@ import { FormControl, Label, Input, FormText } from "./index";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Core/Forms/Form Control",
+  title: "Forms/Form Control",
   component: FormControl,
   argTypes: {
     status: {
@@ -52,7 +52,7 @@ export const WithLabelAndIcon = () => {
 
 export const WithInformativeMessage = () => {
   return (
-    <FormControl id="email">
+    <FormControl id="email" style={{ marginTop: "3px" }}>
       <Label leftIcon={<Mail />}>Email</Label>
       <Input type="text" placeholder="Placeholder text" size="md" />
       <FormText>Informative Message</FormText>
