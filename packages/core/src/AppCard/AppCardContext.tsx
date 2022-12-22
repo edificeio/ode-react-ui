@@ -9,8 +9,7 @@ interface ContextProps {
   icon: string;
   isHeading?: boolean;
   level?: HeadingElement;
-  variant?: string;
-  getBackgroundColor: () => string;
+  bgCode: string;
 }
 
 export const Context = createContext<ContextProps | null>({
@@ -20,6 +19,7 @@ export const Context = createContext<ContextProps | null>({
   icon: "",
   isHeading: false,
   level: "h1",
+  bgCode: "",
 });
 
 export default function useAppCard() {

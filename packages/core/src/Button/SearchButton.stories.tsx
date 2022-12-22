@@ -5,7 +5,7 @@ import SearchButton from "./SearchButton";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Core/Buttons/SearchButton",
+  title: "Components/Buttons/SearchButton",
   component: SearchButton,
   args: {
     "aria-label": "search",

@@ -4,7 +4,7 @@ import { TreeNode } from "./TreeViewProps";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Core/TreeView",
+  title: "Components/TreeView",
   component: TreeView,
 } as ComponentMeta<typeof TreeView>;
 

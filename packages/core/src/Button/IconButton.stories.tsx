@@ -5,7 +5,7 @@ import { AddUser, Block, Hourglass } from "@ode-react-ui/icons";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Core/Buttons/Icon Button",
+  title: "Components/Buttons/Icon Button",
   component: IconButton,
   argTypes: {
     color: {

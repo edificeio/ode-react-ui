@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export interface FormControlProps {
+export interface FormControlProps extends React.ComponentPropsWithRef<"div"> {
   /**
    * For accessibility
    */
