@@ -1,5 +1,14 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.14
+
+### Patch Changes
+
+- [#53](https://github.com/opendigitaleducation/ode-react-ui/pull/53) [`528442a`](https://github.com/opendigitaleducation/ode-react-ui/commit/528442a35c3f6713030b6378fe3c059cbd21d5a0) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update avatar component, stories, and hooks
+
+- Updated dependencies [[`528442a`](https://github.com/opendigitaleducation/ode-react-ui/commit/528442a35c3f6713030b6378fe3c059cbd21d5a0)]:
+  - @ode-react-ui/hooks@1.0.7-dev.14
+
 ## 1.0.7-dev.13
 
 ### Patch Changes
