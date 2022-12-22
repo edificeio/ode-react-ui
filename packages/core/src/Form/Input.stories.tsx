@@ -6,7 +6,7 @@ import { FormControl, Input, Label, FormText } from "./index";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Core/Forms/Input",
+  title: "Forms/Input",
   component: Input,
   argTypes: {
     size: {

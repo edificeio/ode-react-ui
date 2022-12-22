@@ -6,7 +6,7 @@ import { Hourglass } from "@ode-react-ui/icons";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Core/Loading",
+  title: "Components/Loading",
   component: Loading,
   argTypes: {
     loadingPosition: {

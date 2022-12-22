@@ -20,6 +20,7 @@ const Root = forwardRef(
       isReadOnly,
       isRequired,
       status,
+      ...restProps
     }: FormControlProps,
     ref?: Ref<HTMLDivElement>,
   ) => {
@@ -36,7 +37,7 @@ const Root = forwardRef(
 
     return (
       <Context.Provider value={values}>
-        <div ref={ref} className={className}>
+        <div ref={ref} className={className} {...restProps}>
           {children}
         </div>
       </Context.Provider>

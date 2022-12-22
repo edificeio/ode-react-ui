@@ -5,7 +5,7 @@ import { FormControl, Label } from "./index";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Core/Forms/Label",
+  title: "Forms/Label",
   component: Label,
   args: {
     children: "Email",
