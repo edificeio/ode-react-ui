@@ -1,5 +1,4 @@
 import { Copy, Plus } from "@ode-react-ui/icons";
-import { useModal } from "@ode-react-ui/hooks";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Alert } from "../Alert";
@@ -11,6 +10,7 @@ import { TreeNode } from "../TreeView/TreeViewProps";
 import { TreeView } from "../TreeView";
 import Modal from "./Modal";
 import { data } from "../utils/mock-tree-data";
+import { useModal } from "@ode-react-ui/hooks";
 
 export default {
   title: "Components/Modal",

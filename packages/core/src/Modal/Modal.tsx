@@ -9,6 +9,7 @@ import { forwardRef, useRef } from "react";
 
 import { useClickOutside, useKeyPress } from "@ode-react-ui/hooks";
 import clsx from "clsx";
+import { createPortal } from "react-dom";
 
 import ModalBody from "./ModalBody";
 import { ModalContext } from "./ModalContext";
@@ -59,21 +60,28 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
 
     return (
       <ModalContext.Provider value={modalContextValue}>
-        <div
-          id={id}
-          ref={ref}
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby={ariaLabelId}
-          aria-describedby={ariaDescriptionId}
-          className={`modal fade ${isOpen ? "show d-block" : ""}`}
-          tabIndex={-1}
-        >
-          <div ref={modalRef} className={dialogClasses}>
-            <div className="modal-content">{children}</div>
-          </div>
-        </div>
-        {isOpen && <div className="modal-backdrop fade show"></div>}
+        {isOpen
+          ? createPortal(
+              <>
+                <div
+                  id={id}
+                  ref={ref}
+                  role="dialog"
+                  aria-modal="true"
+                  aria-labelledby={ariaLabelId}
+                  aria-describedby={ariaDescriptionId}
+                  className={`modal fade ${isOpen ? "show d-block" : ""}`}
+                  tabIndex={-1}
+                >
+                  <div ref={modalRef} className={dialogClasses}>
+                    <div className="modal-content">{children}</div>
+                  </div>
+                </div>
+                {isOpen && <div className="modal-backdrop fade show"></div>}
+              </>,
+              document.body,
+            )
+          : null}
       </ModalContext.Provider>
     );
   },
