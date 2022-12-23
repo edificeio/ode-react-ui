@@ -1,5 +1,11 @@
 # @ode-react-ui/hooks
 
+## 1.0.7-dev.15
+
+### Patch Changes
+
+- [#55](https://github.com/opendigitaleducation/ode-react-ui/pull/55) [`c76fdd1`](https://github.com/opendigitaleducation/ode-react-ui/commit/c76fdd173a17dda45048ccb3316ead02ca00928f) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add ImagePicker component, fixes Alert Component, update stories
+
 ## 1.0.7-dev.14
 
 ### Patch Changes
