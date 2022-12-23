@@ -13,7 +13,7 @@ export interface InputProps
   /**
    * Change text of placeholder
    */
-  placeholder: string;
+  placeholder?: string;
   /**
    * Disabled status
    */

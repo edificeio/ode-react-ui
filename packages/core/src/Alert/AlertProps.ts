@@ -1,17 +1,17 @@
-import { ReactNode } from "react";
+import { ComponentPropsWithRef, ReactNode } from "react";
 
-export interface AlertRef extends HTMLDivElement {
+export interface AlertRef {
   show: Function;
   hide: Function;
 }
 
-export type ALertTypes = "success" | "warning" | "info" | "danger";
+export type AlertTypes = "success" | "warning" | "info" | "danger";
 
-export interface AlertProps {
+export interface AlertProps extends ComponentPropsWithRef<"div"> {
   /**
    * Type of alert
    */
-  type?: ALertTypes;
+  type?: AlertTypes;
 
   /**
    * Alert can be closed with a button ?

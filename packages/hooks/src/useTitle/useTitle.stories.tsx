@@ -11,7 +11,7 @@ export default {
 };
 
 export const Example = () => {
-  const { state: title } = useTitle();
+  const title = useTitle();
 
   return (
     <Heading level="h1" headingStyle="h3">
