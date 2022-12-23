@@ -6,7 +6,6 @@ interface AvatarProps {
   variant: string;
   size?: string;
   appCode?: string;
-  appName?: string;
   alt?: string;
   src?: string;
 }
@@ -16,20 +15,23 @@ const Avatar = ({
   variant = "square",
   size = "md",
   appCode = "placeholder",
-  appName = "placeholder",
-  alt,
+  alt = "alternative text",
   src,
 }: AvatarProps) => {
+  const isTitle = variant === "title";
+  const isSquare = variant === "square";
+  const isCircle = variant === "circle";
+
   const classes = clsx("avatar react", {
-    "avatar-xs": size === "xs" && variant !== "title",
-    "avatar-md": size === "md" && variant !== "title",
-    "avatar-lg": size === "lg" && variant !== "title",
-    "avatar-title": variant === "title",
-    "rounded": variant === "square",
-    "rounded-circle": variant === "circle",
+    "avatar-xs": size === "xs" && !isTitle,
+    "avatar-md": size === "md" && !isTitle,
+    "avatar-lg": size === "lg" && !isTitle,
+    "avatar-title gap-12 w-auto": isTitle,
+    rounded: isSquare,
+    "rounded-circle": isCircle,
     [`bg-light-${appCode} color-app-${appCode}`]:
-      !isIconUrl && appCode && variant !== "title",
-    [`color-app-${appCode}`]: variant === "title",
+      !isIconUrl && appCode && !isTitle,
+    [`color-app-${appCode}`]: isTitle,
   });
 
   if (isIconUrl && src) {

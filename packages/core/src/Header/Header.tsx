@@ -41,7 +41,7 @@ interface HeaderProps {
 const Header = ({ is1d = false }: HeaderProps): JSX.Element => {
   const welcomeUser = "Bonjour Support ONE, bienvenue !";
   const unreadNotification = 2;
-  const { title } = useTitle();
+  const title = useTitle();
 
   const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
 
