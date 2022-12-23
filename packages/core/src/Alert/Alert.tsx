@@ -24,7 +24,6 @@ import {
 import clsx from "clsx";
 
 import { AlertProps, AlertRef } from "./AlertProps";
-
 const Alert = forwardRef(
   (
     {
@@ -46,25 +45,17 @@ const Alert = forwardRef(
     // Local ref will be merged with forwardRef in useImperativeHandle below
     const refAlert = useRef<HTMLDivElement>(null);
 
-    // Here we are mapping alert type with icon Component and bootstrap class
-    // https://getbootstrap.com/docs/5.2/components/alerts/
-    const mapping = {
-      success: { icon: <SuccessOutline />, classModifier: "alert-success" },
-      warning: { icon: <AlertCircle />, classModifier: "alert-warning" },
-      info: { icon: <InfoCircle />, classModifier: "alert-info" },
-      danger: { icon: <Error />, classModifier: "alert-danger" },
-    };
+    // We add two method to control the alert from parent component
+    useImperativeHandle(ref, () => ({
+      show,
+      hide,
+      ...(refAlert.current as HTMLDivElement),
+    }));
 
-    // Create className Attribute from component parameters
-    const classes = clsx(
-      "alert",
-      mapping[type].classModifier,
-      {
-        "is-dismissible": isDismissible,
-        "is-toast ": isToast,
-      },
-      className,
-    );
+    // The parent component can get alert visible state
+    useLayoutEffect(() => {
+      onVisibilityChange(isVisible);
+    }, [isVisible]);
 
     useEffect(() => {
       if (autoClose && isVisible) {
@@ -86,24 +77,32 @@ const Alert = forwardRef(
       setVisibleStatus(true);
     };
 
-    // The parent component can get alert visible state
-    useLayoutEffect(() => {
-      onVisibilityChange(isVisible);
-    }, [isVisible]);
+    // Here we are mapping alert type with icon Component and bootstrap class
+    // https://getbootstrap.com/docs/5.2/components/alerts/
+    const mapping = {
+      success: { icon: <SuccessOutline />, classModifier: "alert-success" },
+      warning: { icon: <AlertCircle />, classModifier: "alert-warning" },
+      info: { icon: <InfoCircle />, classModifier: "alert-info" },
+      danger: { icon: <Error />, classModifier: "alert-danger" },
+    };
 
-    // We add to method to control the alert from parent component
-    useImperativeHandle(ref, () => ({
-      show,
-      hide,
-      ...(refAlert.current as HTMLDivElement),
-    }));
+    // Create className Attribute from component parameters
+    const classes = clsx(
+      "alert gap-12",
+      mapping[type].classModifier,
+      {
+        "is-dismissible": isDismissible,
+        "is-toast ": isToast,
+      },
+      className,
+    );
 
     return (
       <>
-        {isVisible && (
+        {isVisible ? (
           <div ref={refAlert} className={classes} role="alert">
-            <div className="me-12">{mapping[type].icon}</div>
-            <div className="alert-content">{children}</div>
+            {mapping[type].icon}
+            <div className="alert-content small">{children}</div>
             {button && <div className="ms-12">{button}</div>}
             {isDismissible && (
               <button
@@ -115,7 +114,7 @@ const Alert = forwardRef(
               ></button>
             )}
           </div>
-        )}
+        ) : null}
       </>
     );
   },

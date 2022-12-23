@@ -1,14 +1,16 @@
-import { useState } from "react";
-
-import { Plus } from "@ode-react-ui/icons";
+import { Copy, Plus } from "@ode-react-ui/icons";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
+import { Alert } from "../Alert";
 import { Button } from "../Button";
 import { FormControl, Input, Label } from "../Form";
 import { Heading } from "../Heading";
-import { TreeView } from "../TreeView";
+import { ImagePicker } from "../ImagePicker";
 import { TreeNode } from "../TreeView/TreeViewProps";
+import { TreeView } from "../TreeView";
 import Modal from "./Modal";
+import { data } from "../utils/mock-tree-data";
+import { useModal } from "@ode-react-ui/hooks";
 
 export default {
   title: "Components/Modal",
@@ -16,8 +18,16 @@ export default {
 } as ComponentMeta<typeof Modal>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Modal> = (args) => {
-  const [isModalOpen, setModalOpen] = useState(false);
+const Template: ComponentStory<typeof Modal> = (args: any) => {
+  const { isOpen, toggle: toggleModal } = useModal(false);
+
+  function handleOpenModal() {
+    toggleModal(true);
+  }
+
+  function handleCloseModal() {
+    toggleModal(false);
+  }
 
   return (
     <>
@@ -25,16 +35,12 @@ const Template: ComponentStory<typeof Modal> = (args) => {
         type="button"
         variant="filled"
         color="primary"
-        onClick={() => setModalOpen(true)}
+        onClick={handleOpenModal}
       >
         Open Modal
       </Button>
-      <Modal
-        {...args}
-        isOpen={isModalOpen}
-        onModalClose={() => setModalOpen(false)}
-      >
-        <Modal.Header onModalClose={() => setModalOpen(false)}>
+      <Modal {...args} isOpen={isOpen} onModalClose={handleCloseModal}>
+        <Modal.Header onModalClose={handleCloseModal}>
           Modal Header
         </Modal.Header>
         <Modal.Subtitle>Subtitle or description</Modal.Subtitle>
@@ -55,7 +61,7 @@ const Template: ComponentStory<typeof Modal> = (args) => {
             type="button"
             color="primary"
             variant="outline"
-            onClick={() => setModalOpen(false)}
+            onClick={handleCloseModal}
           >
             Cancel
           </Button>
@@ -63,7 +69,7 @@ const Template: ComponentStory<typeof Modal> = (args) => {
             type="button"
             color="primary"
             variant="filled"
-            onClick={() => setModalOpen(false)}
+            onClick={handleCloseModal}
           >
             Validate
           </Button>
@@ -73,84 +79,23 @@ const Template: ComponentStory<typeof Modal> = (args) => {
   );
 };
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Base = Template.bind({});
+Base.args = {
   id: "primaryModal",
   size: "lg",
   scrollable: true,
 };
 
-const data: TreeNode = {
-  id: "root",
-  name: "Section Element",
-  section: true,
-  children: [
-    {
-      id: "1",
-      name: "level 1 arborescence tree",
-      children: [
-        {
-          id: "4",
-          name: "level 2 arborescence tree",
-          children: [
-            {
-              id: "8",
-              name: "level 3 arborescence tree",
-              children: [
-                {
-                  id: "12",
-                  name: "level 4 arborescence tree",
-                },
-                {
-                  id: "13",
-                  name: "level 4 arborescence tree",
-                },
-              ],
-            },
-            {
-              id: "9",
-              name: "level 3 arborescence tree",
-            },
-          ],
-        },
-        {
-          id: "5",
-          name: "level 2 arborescence tree",
-          children: [
-            {
-              id: "10",
-              name: "level 3 arborescence tree",
-            },
-            {
-              id: "11",
-              name: "level 3 arborescence tree",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: "2",
-      name: "level 1 arborescence tree",
-      children: [
-        {
-          id: "6",
-          name: "level 2 arborescence tree",
-        },
-        {
-          id: "7",
-          name: "level 2 arborescence tree",
-        },
-      ],
-    },
-    {
-      id: "3",
-      name: "level 1 arborescence tree",
-    },
-  ],
-};
-const TemplateMoveFile: ComponentStory<typeof Modal> = (args) => {
-  const [isModalOpen, setModalOpen] = useState(false);
+const TemplateMoveFile: ComponentStory<typeof Modal> = (args: any) => {
+  const { isOpen, toggle: toggleModal } = useModal(false);
+
+  function handleOpenModal() {
+    toggleModal(true);
+  }
+
+  function handleCloseModal() {
+    toggleModal(false);
+  }
 
   return (
     <>
@@ -158,18 +103,12 @@ const TemplateMoveFile: ComponentStory<typeof Modal> = (args) => {
         type="button"
         variant="filled"
         color="primary"
-        onClick={() => setModalOpen(true)}
+        onClick={handleOpenModal}
       >
         Déplacer l'élément
       </Button>
-      <Modal
-        {...args}
-        isOpen={isModalOpen}
-        onModalClose={() => setModalOpen(false)}
-      >
-        <Modal.Header onModalClose={() => setModalOpen(false)}>
-          Déplacer
-        </Modal.Header>
+      <Modal {...args} isOpen={isOpen} onModalClose={handleCloseModal}>
+        <Modal.Header onModalClose={handleCloseModal}>Déplacer</Modal.Header>
         <Modal.Subtitle>
           Sélectionner le dossier vers lequel déplacer les éléments
         </Modal.Subtitle>
@@ -197,7 +136,7 @@ const TemplateMoveFile: ComponentStory<typeof Modal> = (args) => {
             type="button"
             color="primary"
             variant="outline"
-            onClick={() => setModalOpen(false)}
+            onClick={handleCloseModal}
           >
             Annuler
           </Button>
@@ -205,7 +144,7 @@ const TemplateMoveFile: ComponentStory<typeof Modal> = (args) => {
             type="button"
             color="primary"
             variant="filled"
-            onClick={() => setModalOpen(false)}
+            onClick={handleCloseModal}
           >
             Déplacer
           </Button>
@@ -220,52 +159,49 @@ MoveFile.args = {
   scrollable: true,
 };
 
-export const CreateFile = ({ ...args }) => {
-  const [isModalOpen, setModalOpen] = useState(false);
-  // For example only
-  const mockedApp = {
-    address: "/blog",
-    icon: "blog-large",
-    name: "Blog",
-    scope: [],
-    display: false,
-    displayName: "",
-    isExternal: false,
-  };
+export const CreateFile = (args: any) => {
+  const { isOpen, toggle: toggleModal } = useModal(false);
+
+  function handleOpenModal() {
+    toggleModal(true);
+  }
+
+  function handleCloseModal() {
+    toggleModal(false);
+  }
+
   return (
     <>
       <Button
         type="button"
         variant="filled"
         color="primary"
-        onClick={() => setModalOpen(true)}
+        onClick={handleOpenModal}
       >
         Création
       </Button>
       <Modal
-        size="lg"
         {...args}
-        isOpen={isModalOpen}
-        onModalClose={() => setModalOpen(false)}
+        size="lg"
+        isOpen={isOpen}
+        onModalClose={handleCloseModal}
       >
-        <Modal.Header onModalClose={() => setModalOpen(false)}>
-          Création
-        </Modal.Header>
+        <Modal.Header onModalClose={handleCloseModal}>Création</Modal.Header>
 
         <Modal.Body>
-          <Heading headingStyle="h4" level="h4" className="mb-16">
+          <Heading headingStyle="h4" level="h3" className="mb-16">
             Général
           </Heading>
 
-          <div className="row mb-24">
-            <div
-              className="ratio ratio-1x1 rounded-2 bg-blog bg-light"
-              style={{ width: 160 }}
-            >
-              <AppCard app={mockedApp} variant="square">
-                <AppCard.Icon size="48" />
-              </AppCard>
-            </div>
+          <div className="d-flex flex-column flex-md-row gap-16 mb-24">
+            <ImagePicker
+              label="Upload an image"
+              addButtonLabel="Add image"
+              deleteButtonLabel="Delete image"
+              onUploadImage={() => {}}
+              onDeleteImage={() => {}}
+              className="align-self-center"
+            />
 
             <div className="col">
               <FormControl id="title" className="mb-16">
@@ -289,7 +225,7 @@ export const CreateFile = ({ ...args }) => {
             </div>
           </div>
 
-          <Heading headingStyle="h4" level="h4" className="mb-16">
+          <Heading headingStyle="h4" level="h3" className="mb-16">
             Accès au blog
           </Heading>
 
@@ -299,23 +235,23 @@ export const CreateFile = ({ ...args }) => {
             hors de l'ENT puissent y accéder.
           </Alert>
 
-          <div className="form-check form-switch my-16">
-            <input
-              className="form-check-input "
+          <FormControl
+            id="flexSwitchCheckDefault"
+            className="form-check form-switch my-16"
+          >
+            <FormControl.Input
+              className="form-check-input"
               type="checkbox"
               role="switch"
-              id="flexSwitchCheckDefault"
+              size="md"
             />
-            <label
-              className="form-check-label"
-              htmlFor="flexSwitchCheckDefault"
-            >
+            <FormControl.Label className="form-check-label">
               Accessible publiquement via une URL
-            </label>
-          </div>
+            </FormControl.Label>
+          </FormControl>
 
           <FormControl id="slug">
-            <div className="d-flex align-items-center mt-16 mb-3 gap-4">
+            <div className="d-flex flex-wrap align-items-center mt-16 mb-3 gap-4">
               <div>https://neoconnect.opendigitaleducation.com/</div>
 
               <Input
@@ -342,7 +278,7 @@ export const CreateFile = ({ ...args }) => {
             type="button"
             color="primary"
             variant="outline"
-            onClick={() => setModalOpen(false)}
+            onClick={handleCloseModal}
           >
             Annuler
           </Button>
@@ -351,7 +287,7 @@ export const CreateFile = ({ ...args }) => {
             type="button"
             color="primary"
             variant="filled"
-            onClick={() => setModalOpen(false)}
+            onClick={handleCloseModal}
           >
             Créer
           </Button>

@@ -9,7 +9,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: "Avatar",
+        component:
+          "Avatar used for Card Components, as Placeholder for Application Icon",
       },
     },
   },
@@ -35,7 +36,9 @@ export default {
   },
 } as ComponentMeta<typeof Avatar>;
 
-const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
+const Template: ComponentStory<typeof Avatar> = (args: any) => (
+  <Avatar {...args} />
+);
 export const Base = Template.bind({});
 
 export const Large = Template.bind({});

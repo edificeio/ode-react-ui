@@ -23,9 +23,9 @@ export default {
   },
   args: {
     "aria-label": "",
-    "color": "primary",
-    "variant": "filled",
-    "disabled": false,
+    color: "primary",
+    variant: "filled",
+    disabled: false,
   },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } as ComponentMeta<typeof IconButton>;
@@ -39,21 +39,21 @@ export const Base = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Base.args = {
   "aria-label": "Add User",
-  "color": "primary",
-  "variant": "filled",
-  "type": "button",
-  "disabled": false,
-  "icon": <AddUser />,
+  color: "primary",
+  variant: "filled",
+  type: "button",
+  disabled: false,
+  icon: <AddUser />,
 };
 
 export const IconWithAriaLabel = Template.bind({});
 IconWithAriaLabel.args = {
   "aria-label": "Add User",
-  "color": "primary",
-  "variant": "filled",
-  "type": "button",
-  "disabled": false,
-  "icon": <AddUser title="Add User" />,
+  color: "primary",
+  variant: "filled",
+  type: "button",
+  disabled: false,
+  icon: <AddUser title="Add User" />,
 };
 IconWithAriaLabel.parameters = {
   docs: {
@@ -67,10 +67,10 @@ IconWithAriaLabel.parameters = {
 export const LoadingIconButton = Template.bind({});
 LoadingIconButton.args = {
   "aria-label": "Loading",
-  "color": "primary",
-  "variant": "filled",
-  "type": "button",
-  "isLoading": true,
+  color: "primary",
+  variant: "filled",
+  type: "button",
+  isLoading: true,
 };
 LoadingIconButton.parameters = {
   docs: {
@@ -84,11 +84,11 @@ LoadingIconButton.parameters = {
 export const LoadingIconButtonWithCustomIcon = Template.bind({});
 LoadingIconButtonWithCustomIcon.args = {
   "aria-label": "Loading",
-  "color": "primary",
-  "variant": "filled",
-  "type": "button",
-  "isLoading": true,
-  "loadingIcon": <Hourglass title="Loading" />,
+  color: "primary",
+  variant: "filled",
+  type: "button",
+  isLoading: true,
+  loadingIcon: <Hourglass title="Loading" />,
 };
 
 LoadingIconButtonWithCustomIcon.parameters = {
@@ -103,9 +103,9 @@ LoadingIconButtonWithCustomIcon.parameters = {
 export const DisabledIconButton = Template.bind({});
 DisabledIconButton.args = {
   "aria-label": "Add User",
-  "color": "primary",
-  "variant": "filled",
-  "type": "button",
-  "disabled": true,
-  "icon": <Block title="Add User" />,
+  color: "primary",
+  variant: "filled",
+  type: "button",
+  disabled: true,
+  icon: <Block title="Add User" />,
 };

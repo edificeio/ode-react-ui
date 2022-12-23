@@ -3,9 +3,17 @@
 | Component Name | Figma | Development | A11y check | Storybook |
 | -------------- | :---: | :---------: | :--------: | :-------: |
 | AppCard        |  ✅   |     ✅      |     ✅     |    ✅     |
+| Alert          |  ✅   |     ✅      |     ✅     |    ✅     |
+| Avatar         |  ✅   |     ✅      |     ✅     |    ✅     |
 | Button         |  ✅   |     ✅      |     ✅     |    ✅     |
-| Loading        |  ✅   |     ✅      |     ✅     |    ✅     |
+| Form           |  ✅   |     ✅      |     ✅     |    ✅     |
+| Grid           |  ✅   |     ✅      |     ✅     |    ✅     |
 | Header         |  ✅   |     ✅      |     ✅     |    ✅     |
-| Headings       |  ✅   |     ✅      |     ✅     |    ✅     |
+| Heading        |  ✅   |     ✅      |     ✅     |    ✅     |
+| ImagePicker    |  ✅   |     ✅      |     ✅     |    ✅     |
 | Loading        |  ✅   |     ✅      |     ✅     |    ✅     |
 | Logo           |  ✅   |     ✅      |     ✅     |    ✅     |
+| Main           |  ✅   |     ✅      |     ✅     |    ✅     |
+| Modal          |  ✅   |     ✅      |     ✅     |    ✅     |
+| NavLink        |  ✅   |     ✅      |     ✅     |    ✅     |
+| TreeView       |  ✅   |     ✅      |     ✅     |    ✅     |

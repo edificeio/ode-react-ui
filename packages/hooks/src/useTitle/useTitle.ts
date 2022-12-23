@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function useTitle() {
+export default function useTitle(): string {
   const documentDefined = typeof document !== "undefined";
 
   const [title, setTitle] = useState<string>(() => document.title);
@@ -11,7 +11,5 @@ export default function useTitle() {
     setTitle(document.title);
   }, []);
 
-  return {
-    title,
-  };
+  return title;
 }
