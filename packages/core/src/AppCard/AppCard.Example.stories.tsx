@@ -10,19 +10,12 @@ export default {
     level: "h1",
     headingStyle: "h3",
     isHeading: true,
-    variant: "square",
-  },
-  argTypes: {
-    variant: {
-      options: ["title", "square"],
-      control: { type: "select" },
-    },
   },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } as ComponentMeta<typeof AppCard>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof AppCard> = (args) => (
+const Template: ComponentStory<typeof AppCard> = (args: any) => (
   <AppCard {...args}>
     <AppCard.Icon size="32" />
     <AppCard.Name />

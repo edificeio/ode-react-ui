@@ -59,21 +59,23 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
 
     return (
       <ModalContext.Provider value={modalContextValue}>
-        <div
-          id={id}
-          ref={ref}
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby={ariaLabelId}
-          aria-describedby={ariaDescriptionId}
-          className={`modal fade ${isOpen ? "show d-block" : ""}`}
-          tabIndex={-1}
-        >
-          <div ref={modalRef} className={dialogClasses}>
-            <div className="modal-content">{children}</div>
+        <>
+          <div
+            id={id}
+            ref={ref}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={ariaLabelId}
+            aria-describedby={ariaDescriptionId}
+            className={`modal fade ${isOpen ? "show d-block" : ""}`}
+            tabIndex={-1}
+          >
+            <div ref={modalRef} className={dialogClasses}>
+              <div className="modal-content">{children}</div>
+            </div>
           </div>
-        </div>
-        {isOpen && <div className="modal-backdrop fade show"></div>}
+          {isOpen && <div className="modal-backdrop fade show"></div>}
+        </>
       </ModalContext.Provider>
     );
   },

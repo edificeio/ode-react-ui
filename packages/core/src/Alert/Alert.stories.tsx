@@ -8,11 +8,19 @@ import { AlertRef } from "./AlertProps";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Core/Alerts/Alert",
+  title: "Components/Alert",
   component: Alert,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Alert Component is contextual and used on the interface to guide users. It can be closable if the message is one-time information. Alert Component can be accompanied by a button to refer users to additional information available. The colors used in the Component come from the support palette.",
+      },
+    },
+  },
   argTypes: {
     type: {
-      options: ["success", "warning", "information", "error"],
+      options: ["success", "warning", "info", "danger"],
       control: { type: "select" },
     },
     isDismissible: {
@@ -36,7 +44,7 @@ export default {
 } as ComponentMeta<typeof Alert>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Alert> = (args) => {
+const Template: ComponentStory<typeof Alert> = (args: any) => {
   const ref = useRef<AlertRef>(null);
   const [showButton, setShowButtonState] = useState(false);
 
@@ -86,7 +94,7 @@ export const WithAction = Template.bind({});
 WithAction.args = {
   type: "success",
   button: (
-    <Button type="button" variant="outline" color="tertiary">
+    <Button type="button" variant="ghost" color="tertiary">
       Voir
     </Button>
   ),
