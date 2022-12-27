@@ -1,9 +1,9 @@
 import React from "react";
 
-export interface ActionsBarProps {
+export interface ActionBarProps {
   /**
    * Add Buttons To Actions bar
    */
   children: React.ReactNode;
 }
-export type ActionBarType = React.FC<ActionsBarProps>;
+export type ActionBarType = React.FC<ActionBarProps>;
