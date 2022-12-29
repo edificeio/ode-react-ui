@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.17
+
+### Patch Changes
+
+- [#57](https://github.com/opendigitaleducation/ode-react-ui/pull/57) [`6073e6a`](https://github.com/opendigitaleducation/ode-react-ui/commit/6073e6a295b0fde6df3eb6f638816c81eb8552e1) Thanks [@roolian](https://github.com/roolian)! - Add ActionBar Component and Story
+
 ## 1.0.7-dev.16
 
 ### Patch Changes
