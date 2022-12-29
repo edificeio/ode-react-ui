@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.18
+
+### Patch Changes
+
+- [#58](https://github.com/opendigitaleducation/ode-react-ui/pull/58) [`5792e4c`](https://github.com/opendigitaleducation/ode-react-ui/commit/5792e4c5de3037418b2ffa387c02482b8b4ef03e) Thanks [@roolian](https://github.com/roolian)! - Fix alert layout errors
+
 ## 1.0.7-dev.17
 
 ### Patch Changes
