@@ -1,15 +1,29 @@
-import { Copy, Plus, Search } from "@ode-react-ui/icons";
+import {
+  ArrowUp,
+  Check,
+  CheckboxEmpty,
+  CheckboxSelected,
+  Close,
+  Copy,
+  Plus,
+  RafterDown,
+  RafterUp,
+  Save,
+  Search,
+} from "@ode-react-ui/icons";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Alert } from "../Alert";
-import { Button, SearchButton } from "../Button";
-import { FormControl, Input, Label } from "../Form";
+import { Button, IconButton, SearchButton } from "../Button";
+import { Checkbox, FormControl, Input, Label, Radio } from "../Form";
 import { Heading } from "../Heading";
 import { ImagePicker } from "../ImagePicker";
 import { TreeView } from "../TreeView";
 import Modal from "./Modal";
 import { data } from "../utils/mock-tree-data";
 import { useModal } from "@ode-react-ui/hooks";
+import { ChangeEvent, EventHandler, useState } from "react";
+import { Avatar } from "../Avatar";
 
 export default {
   title: "Components/Modal",
@@ -301,8 +315,58 @@ CreateFile.args = {
   scrollable: false,
 };
 
+//Sample to adapt
+const sharingModelEdited: any = [
+  {
+    id: 0,
+    hide: false,
+    type: "group",
+    username: "Enseignants du groupe CLG-DENIS POISSON",
+    name: "Enseignants du groupe CLG-DENIS POISSON",
+    actions: {
+      read: true,
+      write: true,
+      manage: true,
+      comment: 0,
+    },
+  },
+  {
+    id: 2,
+    hide: false,
+    type: "group",
+    username: "Eleves du groupe CLG-DENIS POISSON",
+    name: "Eleves du groupe CLG-DENIS POISSON",
+    actions: {
+      read: true,
+      write: true,
+      manage: true,
+      comment: 0,
+    },
+  },
+];
+
+//Sample to adapt
+const actions = [
+  {
+    displayName: "read",
+  },
+  {
+    displayName: "write",
+  },
+  {
+    displayName: "manage",
+  },
+  {
+    displayName: "comment",
+  },
+];
+
 export const ShareFile = (args: any) => {
   const { isOpen, toggle: toggleModal } = useModal(false);
+  const [showBookmarkInput, toggleBookmarkInput] = useState(false);
+  const [radioPublicationValue, setRadioPublicationValue] =
+    useState<string>("now");
+  const [items, setItems] = useState<any>(sharingModelEdited);
 
   function handleOpenModal() {
     toggleModal(true);
@@ -311,6 +375,22 @@ export const ShareFile = (args: any) => {
   function handleCloseModal() {
     toggleModal(false);
   }
+
+  const handleRadioPublicationChange = (event: any) => {
+    setRadioPublicationValue(event.target.value);
+  };
+
+  const handleActionCheckbox = (item: any, actionName: string) => {
+    setItems((prevItems: any[]) => {
+      //item.actions[actionName] = !item.actions[actionName];
+      const newItems = [...prevItems];
+      const index = newItems.findIndex((x) => x.id == item.id);
+      newItems[index].actions[actionName] =
+        !newItems[index].actions[actionName];
+
+      return newItems;
+    });
+  };
 
   return (
     <>
@@ -334,42 +414,124 @@ export const ShareFile = (args: any) => {
 
         <Modal.Body>
           <Heading headingStyle="h4" level="h3" className="mb-16">
-            Liste des utilisateurs affectés par le partage
+            Utilisateurs ayant accès
           </Heading>
 
-          <table className="table">
-            <thead className="table-dark bg-secondary">
+          <table className="table border align-middle">
+            <thead className="bg-secondary text-white">
               <tr>
                 <th scope="col"></th>
                 <th scope="col"></th>
-                <th scope="col">Consulter</th>
-                <th scope="col">Contribuer</th>
-                <th scope="col">Gérer</th>
-                <th scope="col">Commenter</th>
+                {actions.map((action) => (
+                  <th
+                    key={action.displayName}
+                    scope="col"
+                    className="text-center"
+                  >
+                    {action.displayName}
+                  </th>
+                ))}
                 <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">Image</th>
-                <td>
-                  Enseignants du groupe
-                  <br /> CLG-DENIS POISSON
-                </td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>delete</td>
-              </tr>
+              {items.map((item: any) => (
+                <tr key={item.id}>
+                  <th scope="row">
+                    <div className="w-24">
+                      <img
+                        alt="alternative text"
+                        src="https://media.istockphoto.com/id/1322277517/fr/photo/herbe-sauvage-dans-les-montagnes-au-coucher-du-soleil.jpg?s=612x612&w=0&k=20&c=tQ19uZQLlIFy8J6QWMyOL6lPt3pdSHBSDFHoXr1K_g0="
+                        className="rounded-circle w-24 h-24 object-fit-cover"
+                      />
+                    </div>
+                  </th>
+                  <td>
+                    {item.type === "user" && item.username}
+                    {item.type === "group" && item.name}
+                  </td>
+                  {actions.map((action) => (
+                    <td
+                      key={action.displayName}
+                      style={{ width: "80px" }}
+                      className="text-center"
+                    >
+                      <Checkbox
+                        checked={item.actions[action.displayName]}
+                        onChange={(e) =>
+                          handleActionCheckbox(item, action.displayName)
+                        }
+                      />
+                    </td>
+                  ))}
+                  <td>
+                    <IconButton
+                      aria-label="Delete"
+                      color="tertiary"
+                      icon={<Close />}
+                      type="button"
+                      variant="ghost"
+                      title="Delete"
+                    />
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
+
+          <div className="mt-24">
+            <Button
+              color="tertiary"
+              leftIcon={<Save title="Save" />}
+              rightIcon={
+                <RafterDown
+                  title="Show"
+                  style={{
+                    transition: "rotate 0.3s ease-out",
+                    rotate: showBookmarkInput ? "180deg" : "0deg",
+                  }}
+                />
+              }
+              type="button"
+              variant="ghost"
+              onClick={() => toggleBookmarkInput(!showBookmarkInput)}
+            >
+              Enregistrer comme favori de partage
+            </Button>
+            {showBookmarkInput && (
+              <div className="mt-16">
+                <FormControl
+                  id="bookmarkName"
+                  className="d-flex flex-wrap align-items-center gap-16"
+                >
+                  <div className="flex-fill">
+                    <FormControl.Input
+                      placeholder="Saisir le nom du favori"
+                      size="sm"
+                      type="text"
+                    />
+                  </div>
+                  <Button
+                    type="button"
+                    color="primary"
+                    variant="ghost"
+                    leftIcon={<Save />}
+                    className="text-nowrap"
+                  >
+                    Enregistrer favori
+                  </Button>
+                </FormControl>
+              </div>
+            )}
+          </div>
+
+          <hr className="my-24 text-medium" />
 
           <Heading headingStyle="h4" level="h3" className="my-24">
             Rechercher des utilisateurs
           </Heading>
 
-          <FormControl className="input-group" id="search">
+          <FormControl className="input-group max-w-512" id="search">
             <Input
               noValidationIcon
               placeholder="nom d’utilisateurs, groupes, favoris"
@@ -379,32 +541,28 @@ export const ShareFile = (args: any) => {
             <SearchButton aria-label="search" icon={<Search />} type="submit" />
           </FormControl>
 
+          <hr className="my-24 text-medium" />
+
           <Heading headingStyle="h4" level="h3" className="my-24">
             Circuit de publication des billets
           </Heading>
 
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              type="radio"
-              name="publication"
-              id="publication-now"
-            />
-            <label className="form-check-label" htmlFor="publication-now">
-              Publication immédiate
-            </label>
-          </div>
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              type="radio"
-              name="publication"
-              id="publication-validate"
-            />
-            <label className="form-check-label" htmlFor="publication-validate">
-              Billets soumis à validation
-            </label>
-          </div>
+          <Radio
+            label="Publication immédiate"
+            id="publication-now"
+            name="publication"
+            value="now"
+            model={radioPublicationValue}
+            onChange={handleRadioPublicationChange}
+          />
+          <Radio
+            label="Billets soumis à validation"
+            id="publication-validate"
+            name="publication"
+            value="validate"
+            model={radioPublicationValue}
+            onChange={handleRadioPublicationChange}
+          />
         </Modal.Body>
 
         <Modal.Footer>
@@ -423,7 +581,7 @@ export const ShareFile = (args: any) => {
             variant="filled"
             onClick={handleCloseModal}
           >
-            Créer
+            Partager
           </Button>
         </Modal.Footer>
       </Modal>
