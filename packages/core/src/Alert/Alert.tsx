@@ -45,7 +45,7 @@ const Alert = forwardRef(
     // Local ref will be merged with forwardRef in useImperativeHandle below
     const refAlert = useRef<HTMLDivElement>(null);
 
-    // We add two method to control the alert from parent component
+    // We add two methods to control the alert from parent component
     useImperativeHandle(ref, () => ({
       show,
       hide,
@@ -105,13 +105,24 @@ const Alert = forwardRef(
             <div className="alert-content small">{children}</div>
             {button && <div className="ms-12">{button}</div>}
             {isDismissible && (
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="alert"
-                aria-label="Close"
-                onClick={hide}
-              ></button>
+              <div className="btn-close-container">
+                <button
+                  type="button"
+                  className="btn btn-close"
+                  data-bs-dismiss="alert"
+                  aria-label="Close"
+                  onClick={hide}
+                ></button>
+              </div>
+            )}
+            {/* Waiting animation library */}
+            {autoClose && (
+              <div
+                className="alert-progress"
+                style={{
+                  transform: `scaleX(0)`,
+                }}
+              ></div>
             )}
           </div>
         ) : null}
