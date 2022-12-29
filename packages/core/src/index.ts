@@ -1,4 +1,5 @@
 /* eslint-disable import/prefer-default-export */
+export * from "./ActionBar";
 export * from "./AppCard";
 export * from "./Avatar";
 export * from "./Button";
