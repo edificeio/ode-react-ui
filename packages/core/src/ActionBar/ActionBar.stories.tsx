@@ -11,7 +11,7 @@ export default {
 } as ComponentMeta<typeof ActionBar>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof ActionBar> = (args) => {
+const Template: ComponentStory<typeof ActionBar> = (args: any) => {
   return (
     <>
       <ActionBar {...args} />

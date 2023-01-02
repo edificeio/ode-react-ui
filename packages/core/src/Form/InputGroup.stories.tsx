@@ -1,4 +1,3 @@
-import { Search } from "@ode-react-ui/icons";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { useMemo, useRef, useState } from "react";
 import Button from "../Button/Button";
@@ -7,7 +6,7 @@ import { FormControl, Input } from "./index";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Forms/Input Group (dev)",
+  title: "Forms/Input Group",
   component: FormControl,
   parameters: {
     docs: {

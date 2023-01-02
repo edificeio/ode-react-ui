@@ -2,11 +2,7 @@ import { Heading } from "../index";
 import useAppCard from "./AppCardContext";
 
 const AppName = () => {
-  const { isHeading, level, headingStyle, displayName, variant } = useAppCard();
-
-  if (variant === "square") {
-    <p>{displayName}</p>;
-  }
+  const { isHeading, level, headingStyle, displayName } = useAppCard();
 
   return isHeading ? (
     <Heading {...{ level, headingStyle }}>{displayName}</Heading>
