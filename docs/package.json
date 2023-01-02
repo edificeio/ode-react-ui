@@ -32,7 +32,7 @@
     "react-dom": "18.0.0"
   },
   "devDependencies": {
-    "@ode-react-ui/icons": "1.0.7-dev.12",
+    "@ode-react-ui/icons": "*",
     "@babel/core": "7.20.5",
     "@storybook/addon-a11y": "6.5.14",
     "@storybook/addon-actions": "6.5.14",

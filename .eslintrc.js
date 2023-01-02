@@ -3,15 +3,18 @@ module.exports = {
     browser: true,
     es2021: true,
   },
+  parser: "@typescript-eslint/parser",
   extends: [
     "eslint:recommended",
-    "plugin:react/recommended",
     "standard-with-typescript",
     "prettier",
+    "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:import/typescript",
     "plugin:prettier/recommended",
+    "plugin:jsx-a11y/recommended",
   ],
+  plugins: ["react", "jsx-a11y"],
   parserOptions: {
     ecmaFeatures: {
       jsx: false,
@@ -20,24 +23,8 @@ module.exports = {
     sourceType: "module",
     project: ["./tsconfig.json"],
   },
-  plugins: ["react"],
   rules: {
-    "arrow-parens": "off",
-    "prefer-object-spread": "off",
-    "react/display-name": "off",
-    "react/function-component-definition": "off",
-    "react/jsx-one-expression-per-line": "off",
-    "react/jsx-props-no-spreading": "off",
-    "react/jsx-uses-react": "off",
-    "react/no-unescaped-entities": "off",
-    "react/react-in-jsx-scope": "off",
-    "react/require-default-props": "off",
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        devDependencies: true,
-      },
-    ],
+    "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/no-unnecessary-type-assertion": "off",
@@ -48,17 +35,17 @@ module.exports = {
     "import/order": [
       "error",
       {
-        "groups": ["builtin", "external", "internal"],
-        "pathGroups": [
+        groups: ["builtin", "external", "internal"],
+        pathGroups: [
           {
             pattern: "react",
             group: "external",
             position: "before",
           },
         ],
-        "pathGroupsExcludedImportTypes": ["react"],
+        pathGroupsExcludedImportTypes: ["react"],
         "newlines-between": "always",
-        "alphabetize": {
+        alphabetize: {
           order: "asc",
           caseInsensitive: true,
         },
@@ -79,7 +66,6 @@ module.exports = {
     "node_modules",
     "prettier.config.js",
     "public",
-    "storybook-static",
     "svgr.config.cjs",
     "tsconfig.json",
     "vite.config.ts",

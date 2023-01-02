@@ -88,6 +88,6 @@ const Modal = Object.assign({}, Root, {
   Footer: ModalFooter,
 });
 
-Modal.displayName = "Modal";
+Root.displayName = "Modal";
 
 export default Modal;

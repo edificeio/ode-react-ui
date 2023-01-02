@@ -42,8 +42,8 @@
     "lint": "eslint \"**/*.{ts,tsx}\""
   },
   "devDependencies": {
-    "@ode-react-ui/core": "1.0.7-dev.18",
-    "@ode-react-ui/icons": "1.0.7-dev.12",
+    "@ode-react-ui/core": "*",
+    "@ode-react-ui/icons": "*",
     "@types/node": "18.7.23",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
@@ -56,8 +56,8 @@
     "vite-plugin-dts": "1.6.6"
   },
   "peerDependencies": {
-    "@ode-react-ui/core": "1.0.7-dev.18",
-    "@ode-react-ui/icons": "1.0.7-dev.12",
+    "@ode-react-ui/core": "*",
+    "@ode-react-ui/icons": "*",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

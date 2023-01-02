@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
+import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
   esbuild: {
@@ -16,15 +17,14 @@ export default defineConfig({
       external: [
         "react",
         "react-dom",
-        "ode-ts-client",
+        "@ode-react-ui/hooks",
         "@ode-react-ui/icons",
         "@ode-react-ui/icons/nav",
       ],
       output: {
         globals: {
-          "react": "React",
+          react: "React",
           "react-dom": "ReactDom",
-          "ode-ts-client": "OdeTsClient",
         },
       },
     },
@@ -33,6 +33,7 @@ export default defineConfig({
     react({
       jsxRuntime: "classic",
     }),
+    visualizer(),
     dts({
       insertTypesEntry: false,
       outputDir: "dist",
