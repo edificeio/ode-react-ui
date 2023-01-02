@@ -1,5 +1,11 @@
 # @ode-react-ui/hooks
 
+## 1.0.7-dev.19
+
+### Patch Changes
+
+- [`32b6063`](https://github.com/opendigitaleducation/ode-react-ui/commit/32b606307b3107dca65549d0e4bda971a885d2b6) Thanks [@clementcreusat](https://github.com/clementcreusat)! - refactor packages and configuration
+
 ## 1.0.7-dev.16
 
 ### Patch Changes

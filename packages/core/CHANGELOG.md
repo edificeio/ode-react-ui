@@ -1,5 +1,16 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.19
+
+### Patch Changes
+
+- [#59](https://github.com/opendigitaleducation/ode-react-ui/pull/59) [`8bcd789`](https://github.com/opendigitaleducation/ode-react-ui/commit/8bcd789893e7b63f20134d85b105cef254f733c8) Thanks [@roolian](https://github.com/roolian)! - Add Input Group in stories
+
+- [`32b6063`](https://github.com/opendigitaleducation/ode-react-ui/commit/32b606307b3107dca65549d0e4bda971a885d2b6) Thanks [@clementcreusat](https://github.com/clementcreusat)! - refactor packages and configuration
+
+- Updated dependencies [[`32b6063`](https://github.com/opendigitaleducation/ode-react-ui/commit/32b606307b3107dca65549d0e4bda971a885d2b6)]:
+  - @ode-react-ui/hooks@1.0.7-dev.19
+
 ## 1.0.7-dev.18
 
 ### Patch Changes
