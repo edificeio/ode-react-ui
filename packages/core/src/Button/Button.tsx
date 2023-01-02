@@ -20,6 +20,7 @@ const Button = forwardRef(
   (
     {
       color = "primary",
+      type = "button",
       children,
       isLoading,
       loadingIcon,
@@ -45,7 +46,7 @@ const Button = forwardRef(
     );
 
     return (
-      <button ref={ref} className={classes} {...restProps}>
+      <button ref={ref} className={classes} type={type} {...restProps}>
         {isLoading ? (
           <Loading
             isLoading

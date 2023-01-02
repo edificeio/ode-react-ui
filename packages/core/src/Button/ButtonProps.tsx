@@ -12,7 +12,7 @@ export interface ButtonProps extends React.ComponentPropsWithRef<"button"> {
   /**
    * `button`, `submit` or `reset`
    */
-  type: ButtonTypes;
+  type?: ButtonTypes;
   /**
    * `primary`, `secondary`, `tertiary` or `danger`
    */

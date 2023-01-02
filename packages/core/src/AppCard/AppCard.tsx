@@ -80,6 +80,6 @@ const AppCard = Object.assign({}, Root, {
 });
 
 // @ts-expect-error
-AppCard.displayName = "AppCard";
+Root.displayName = "AppCard";
 
 export default AppCard;

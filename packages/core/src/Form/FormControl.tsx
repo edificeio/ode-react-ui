@@ -51,6 +51,6 @@ const FormControl = Object.assign({}, Root, {
   Text: FormText,
 });
 
-FormControl.displayName = "FormControl";
+Root.displayName = "FormControl";
 
 export default FormControl;

@@ -13,8 +13,8 @@
   "license": "AGPL-3.0",
   "author": "Open Digital Education",
   "workspaces": [
-    "docs",
-    "packages/*"
+    "packages/*",
+    "docs"
   ],
   "scripts": {
     "build": "turbo run build --filter=!@ode-react-ui/storybook",
@@ -45,17 +45,19 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-config-standard-with-typescript": "23.0.0",
     "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsx-a11y": "6.6.1",
     "eslint-plugin-n": "15.6.0",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-promise": "6.1.1",
     "eslint-plugin-react": "7.31.11",
     "husky": "8.0.0",
-    "prettier": "2.8.1",
+    "prettier": "latest",
+    "rollup-plugin-visualizer": "5.8.3",
     "turbo": "latest",
     "typescript": "4.8.3"
   },
-  "packageManager": "yarn@1.22.19",
   "engines": {
     "node": ">=16.0.0"
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }
