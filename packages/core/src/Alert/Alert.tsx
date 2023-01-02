@@ -1,3 +1,11 @@
+/**
+ * Alert  Component
+ *
+ * @see Docs     https://ode-react-ui.vercel.app/?path=/docs/components-core-alert--base
+ * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/Alert/Alert.tsx
+ * @see WAI-ARIA https://www.w3.org/WAI/ARIA/apg/patterns/alert/
+ */
+
 import {
   forwardRef,
   Ref,
@@ -8,13 +16,6 @@ import {
   useState,
 } from "react";
 
-/**
- * Alert  Component
- *
- * @see Docs     https://ode-react-ui.vercel.app/?path=/docs/components-core-alert--base
- * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/Alert/Alert.tsx
- * @see WAI-ARIA https://www.w3.org/WAI/ARIA/apg/patterns/alert/
- */
 import {
   AlertCircle,
   Error,
