@@ -42,11 +42,6 @@
     "format:write": "prettier --write .",
     "lint": "eslint \"**/*.{ts,tsx}\""
   },
-  "dependencies": {
-    "clsx": "1.2.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
   "devDependencies": {
     "@types/node": "18.7.18",
     "@types/react": "18.0.17",
@@ -54,14 +49,14 @@
     "@vitejs/plugin-react": "2.2.0",
     "clsx": "1.2.1",
     "concurrently": "7.5.0",
-    "ode-ts-client": "feat-explorer",
+    "ode-ts-client": "/Users/ccre/Developer/ode/ode-ts-client",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "vite": "3.2.2",
     "vite-plugin-dts": "1.6.6"
   },
   "peerDependencies": {
-    "ode-ts-client": "feat-explorer",
+    "ode-ts-client": "/Users/ccre/Developer/ode/ode-ts-client",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
