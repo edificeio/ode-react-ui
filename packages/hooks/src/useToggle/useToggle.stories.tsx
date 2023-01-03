@@ -13,7 +13,7 @@ export const Example = () => {
       <Heading level="h1" headingStyle="h3">
         {state.toString()}
       </Heading>
-      <Button type="button" color="primary" variant="filled" onClick={toggle}>
+      <Button color="primary" variant="filled" onClick={toggle}>
         Toggle
       </Button>
     </>

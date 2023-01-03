@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import { resolve } from "path";
+import pkg from "./package.json";
 
 export default defineConfig({
   esbuild: {
@@ -16,7 +17,7 @@ export default defineConfig({
       formats: ["es", "cjs"],
     },
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: [...Object.keys(pkg.peerDependencies)],
     },
   },
   plugins: [

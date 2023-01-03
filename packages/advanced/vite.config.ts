@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
+import pkg from "./package.json";
 
 export default defineConfig({
   esbuild: {
@@ -13,18 +14,7 @@ export default defineConfig({
       fileName: (format) => (format === "es" ? "index.mjs" : "index.cjs"),
     },
     rollupOptions: {
-      external: [
-        "react",
-        "react-dom",
-        "@ode-react-ui/core",
-        "@ode-react-ui/icons",
-      ],
-      output: {
-        globals: {
-          "react": "React",
-          "react-dom": "ReactDom",
-        },
-      },
+      external: [...Object.keys(pkg.peerDependencies)],
     },
   },
   plugins: [
