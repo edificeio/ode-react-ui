@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.20
+
+### Patch Changes
+
+- [#63](https://github.com/opendigitaleducation/ode-react-ui/pull/63) [`5f7e40b`](https://github.com/opendigitaleducation/ode-react-ui/commit/5f7e40beeef4e0f0234997a36d1f17caf0f5d436) Thanks [@roolian](https://github.com/roolian)! - Add Components Checkbox and Radio. Add Sample of modal for resource sharing.
+
 ## 1.0.7-dev.19
 
 ### Patch Changes
