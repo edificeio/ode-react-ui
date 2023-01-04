@@ -1,29 +1,30 @@
+import { ChangeEvent, EventHandler, useState } from "react";
+
+import { useModal } from "@ode-react-ui/hooks";
 import {
-  ArrowUp,
-  Check,
-  CheckboxEmpty,
-  CheckboxSelected,
-  Close,
-  Copy,
-  Plus,
-  RafterDown,
-  RafterUp,
-  Save,
-  Search,
+    ArrowUp,
+    Check,
+    CheckboxEmpty,
+    CheckboxSelected,
+    Close,
+    Copy,
+    Plus,
+    RafterDown,
+    RafterUp,
+    Save,
+    Search,
 } from "@ode-react-ui/icons";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Alert } from "../Alert";
+import { Avatar } from "../Avatar";
 import { Button, IconButton, SearchButton } from "../Button";
 import { Checkbox, FormControl, Input, Label, Radio } from "../Form";
 import { Heading } from "../Heading";
 import { ImagePicker } from "../ImagePicker";
 import { TreeView } from "../TreeView";
-import Modal from "./Modal";
 import { data } from "../utils/mock-tree-data";
-import { useModal } from "@ode-react-ui/hooks";
-import { ChangeEvent, EventHandler, useState } from "react";
-import { Avatar } from "../Avatar";
+import Modal from "./Modal";
 
 export default {
   title: "Components/Modal",
@@ -589,5 +590,151 @@ export const ShareFile = (args: any) => {
   );
 };
 ShareFile.args = {
+  scrollable: false,
+};
+
+export const PublishOnLibrary = (args: any) => {
+  const { isOpen, toggle: toggleModal } = useModal(false);
+
+  function handleOpenModal() {
+    toggleModal(true);
+  }
+
+  function handleCloseModal() {
+    toggleModal(false);
+  }
+
+  return (
+    <>
+      <Button
+        type="button"
+        variant="filled"
+        color="primary"
+        onClick={handleOpenModal}
+      >
+        Publier dans la bibliothèque
+      </Button>
+      <Modal
+        {...args}
+        size="lg"
+        isOpen={isOpen}
+        onModalClose={handleCloseModal}
+      >
+        <Modal.Header onModalClose={handleCloseModal}>
+          Publier dans la Bibliothèque
+        </Modal.Header>
+        <p>
+          La Bilbiothèque est un espace de partage d’activités et de ressources
+          mutualisées entre enseignants.
+        </p>
+
+        <Modal.Body>
+          <Heading headingStyle="h4" level="h3" className="mb-16">
+            Général
+          </Heading>
+
+          <FormControl id="title" className="mb-16">
+            <Label>Titre</Label>
+            <Input
+              type="text"
+              placeholder="Nom de la ressource"
+              size="md"
+              aria-required={true}
+            />
+          </FormControl>
+
+          <div className="mb-24">
+            <ImagePicker
+              label="Upload an image"
+              addButtonLabel="Add image"
+              deleteButtonLabel="Delete image"
+              onUploadImage={() => {}}
+              onDeleteImage={() => {}}
+              className="align-self-center"
+            />
+          </div>
+
+          <FormControl id="description" isOptional>
+            <Label>Description et contexte pédagogique</Label>
+            <Input
+              type="text"
+              placeholder="Description de la ressource"
+              size="md"
+              aria-required={true}
+            />
+          </FormControl>
+
+          <Heading headingStyle="h4" level="h3" className="mb-16">
+            Accès au blog
+          </Heading>
+
+          <Alert type="info">
+            Votre blog reste accessible aux personnes à qui vous l'avez partagé.
+            Vous pouvez cependant créer un lien public afin que des personnes
+            hors de l'ENT puissent y accéder.
+          </Alert>
+
+          <FormControl
+            id="flexSwitchCheckDefault"
+            className="form-check form-switch my-16"
+          >
+            <FormControl.Input
+              className="form-check-input"
+              type="checkbox"
+              role="switch"
+              size="md"
+            />
+            <FormControl.Label className="form-check-label">
+              Accessible publiquement via une URL
+            </FormControl.Label>
+          </FormControl>
+
+          <FormControl id="slug">
+            <div className="d-flex flex-wrap align-items-center mt-16 mb-3 gap-4">
+              <div>https://neoconnect.opendigitaleducation.com/</div>
+
+              <Input
+                type="text"
+                size="md"
+                placeholder="extention personnalisée"
+              />
+              <Button
+                color="primary"
+                onClick={() => {}}
+                type="button"
+                leftIcon={<Copy />}
+                variant="ghost"
+                className="text-nowrap"
+              >
+                Copier URL
+              </Button>
+            </div>
+          </FormControl>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button
+            type="button"
+            color="primary"
+            variant="outline"
+            onClick={handleCloseModal}
+          >
+            Annuler
+          </Button>
+
+          <Button
+            type="button"
+            color="primary"
+            variant="filled"
+            onClick={handleCloseModal}
+          >
+            Créer
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+};
+PublishOnLibrary.args = {
   scrollable: false,
 };
