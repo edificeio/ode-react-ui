@@ -1795,15 +1795,6 @@
   resolved "https://registry.yarnpkg.com/@ode-react-ui/core/-/core-1.0.6.tgz#a68a260e83903695e8cc7d46958d2e519796f590"
   integrity sha512-/VQKN95kQhHug1McTYqNPy6m7lgVgqp8WTm1yEFe5j7uUq80I5fyH7N8imFoP+lNSxS7hpsI96oa5s0Qn0klnQ==
 
-"@ode-react-ui/hooks@*":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@ode-react-ui/hooks/-/hooks-1.0.6.tgz#451c76c9a1ff75c3b196652cda8e7b0206297fab"
-  integrity sha512-EmABmVM3i3nTmGbDTLysJXt1+4aHHbjhN1c1jPNt1YN4Zr/aXY9iHybxwuO7Wh8b+KjPft+9YxAxAZ7JyKOzsA==
-  dependencies:
-    clsx "1.2.1"
-    react "18.2.0"
-    react-dom "18.2.0"
-
 "@ode-react-ui/icons@*":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@ode-react-ui/icons/-/icons-1.0.6.tgz#747aef035d5cb4a9584ec8167b7afcf82dd8bdf2"
@@ -9753,8 +9744,10 @@ objectorarray@^1.0.5:
   resolved "https://registry.yarnpkg.com/objectorarray/-/objectorarray-1.0.5.tgz#2c05248bbefabd8f43ad13b41085951aac5e68a5"
   integrity sha512-eJJDYkhJFFbBBAxeh8xW+weHlkI28n2ZdQV/J/DNfWfSKlGEf2xcfAbZTv3riEXHAhL9SVOTs2pRmXiSTf78xg==
 
-"ode-ts-client@file:../ode-ts-client":
-  version "1.0.0-explorer.202211281333"
+ode-ts-client@feat-explorer:
+  version "1.0.0-explorer.202301041021"
+  resolved "https://registry.yarnpkg.com/ode-ts-client/-/ode-ts-client-1.0.0-explorer.202301041021.tgz#3951fc29717fd9c18efa517b6a0823f5636a8c0b"
+  integrity sha512-u3pq+DZ6YDvE201u50KPwM9ShQ9a69TaJLCPrVKF5Ycufay/wxarq7CLkRs18jB9lpRPe/4enJ9qngiUSjHPdQ==
   dependencies:
     axios "~0.21.1"
     core-js "3.8.3"
