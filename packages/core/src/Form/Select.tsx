@@ -35,6 +35,10 @@ export interface SelectProps
    * Unique id of select
    */
   id?: string;
+  /**
+   * Status to handle Form Validation
+   */
+  status?: "valid" | "invalid";
 }
 
 const Select = forwardRef(
@@ -46,6 +50,7 @@ const Select = forwardRef(
       disabled = false,
       placeholderOption = false,
       id = "",
+      status,
       ...restProps
     }: SelectProps,
     ref: Ref<HTMLSelectElement>,
@@ -58,7 +63,10 @@ const Select = forwardRef(
         checked: model === restProps.value,
         disabled,
         ref,
-        className: clsx(restProps.className, "form-select c-pointer"),
+        className: clsx(restProps.className, "form-select c-pointer", {
+          "is-invalid": status === "invalid",
+          "is-valid": status === "valid",
+        }),
       },
     };
 

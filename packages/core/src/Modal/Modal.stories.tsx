@@ -808,12 +808,18 @@ export const PublishOnLibrary = (args: any) => {
             En cliquant sur publier
           </Heading>
 
-          <ul className="s">
-            <li className="s">
+          <ul className="mb-12">
+            <li>
               J'accepte que mon activité soit publiée sous licence Creative
               Commons
+              <img
+                className="ms-8 d-inline-block"
+                src="/assets/creative-commons.png"
+                alt="Icone licence Creative
+                  Commons"
+              />
             </li>
-            <li className="s">
+            <li>
               J'accepte d'être cité en tant qu'auteur, que le nom de mon
               établissement soit affiché ainsi qu'un aperçu de mon avatar. Cela
               permettra aux enseignants de la communauté d'échanger plus
