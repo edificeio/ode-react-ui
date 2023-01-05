@@ -30,6 +30,7 @@ const Avatar = forwardRef(
 
     const classes = clsx("avatar react", {
       "avatar-xs": size === "xs" && !isTitle,
+      "avatar-sm": size === "sm" && !isTitle,
       "avatar-md": size === "md" && !isTitle,
       "avatar-lg": size === "lg" && !isTitle,
       "avatar-title gap-12 w-auto": isTitle,
