@@ -1,9 +1,11 @@
-import { ChangeEvent, EventHandler, useState } from "react";
+import { useState } from "react";
 
 import { useModal } from "@ode-react-ui/hooks";
 import {
+  Bookmark,
   Close,
   Copy,
+  InfoCircle,
   Plus,
   RafterDown,
   Save,
@@ -320,6 +322,8 @@ const sharingModelEdited: any = [
     type: "group",
     username: "Enseignants du groupe CLG-DENIS POISSON",
     name: "Enseignants du groupe CLG-DENIS POISSON",
+    avatarUrl:
+      "https://media.istockphoto.com/id/1322277517/fr/photo/herbe-sauvage-dans-les-montagnes-au-coucher-du-soleil.jpg?s=612x612&w=0&k=20&c=tQ19uZQLlIFy8J6QWMyOL6lPt3pdSHBSDFHoXr1K_g0=",
     actions: {
       read: true,
       write: true,
@@ -414,72 +418,75 @@ export const ShareFile = (args: any) => {
             Utilisateurs ayant accès
           </Heading>
 
-          <table className="table border align-middle">
-            <thead className="bg-secondary text-white">
-              <tr>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                {actions.map((action) => (
-                  <th
-                    key={action.displayName}
-                    scope="col"
-                    className="text-center"
-                  >
-                    {action.displayName}
-                  </th>
-                ))}
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>
-              {items.map((item: any) => (
-                <tr key={item.id}>
-                  <th scope="row">
-                    <div className="w-24">
-                      <img
-                        alt="alternative text"
-                        src="https://media.istockphoto.com/id/1322277517/fr/photo/herbe-sauvage-dans-les-montagnes-au-coucher-du-soleil.jpg?s=612x612&w=0&k=20&c=tQ19uZQLlIFy8J6QWMyOL6lPt3pdSHBSDFHoXr1K_g0="
-                        className="rounded-circle w-24 h-24 object-fit-cover"
-                      />
-                    </div>
-                  </th>
-                  <td>
-                    {item.type === "user" && item.username}
-                    {item.type === "group" && item.name}
-                  </td>
+          <div className="table-responsive">
+            <table className="table  border align-middle">
+              <thead className="bg-secondary text-white">
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
                   {actions.map((action) => (
-                    <td
+                    <th
                       key={action.displayName}
-                      style={{ width: "80px" }}
+                      scope="col"
                       className="text-center"
                     >
-                      <Checkbox
-                        checked={item.actions[action.displayName]}
-                        onChange={(e) =>
-                          handleActionCheckbox(item, action.displayName)
-                        }
+                      {action.displayName}
+                    </th>
+                  ))}
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                {items.map((item: any) => (
+                  <tr key={item.id}>
+                    <th scope="row">
+                      <Avatar
+                        alt="alternative text"
+                        appCode="placeholder"
+                        size="xs"
+                        isIconUrl={!!item.avatarUrl}
+                        src={item.avatarUrl}
+                        variant="circle"
+                      />
+                    </th>
+                    <td>
+                      {item.type === "user" && item.username}
+                      {item.type === "group" && item.name}
+                    </td>
+                    {actions.map((action) => (
+                      <td
+                        key={action.displayName}
+                        style={{ width: "80px" }}
+                        className="text-center"
+                      >
+                        <Checkbox
+                          checked={item.actions[action.displayName]}
+                          onChange={(e) =>
+                            handleActionCheckbox(item, action.displayName)
+                          }
+                        />
+                      </td>
+                    ))}
+                    <td>
+                      <IconButton
+                        aria-label="Delete"
+                        color="tertiary"
+                        icon={<Close />}
+                        type="button"
+                        variant="ghost"
+                        title="Delete"
                       />
                     </td>
-                  ))}
-                  <td>
-                    <IconButton
-                      aria-label="Delete"
-                      color="tertiary"
-                      icon={<Close />}
-                      type="button"
-                      variant="ghost"
-                      title="Delete"
-                    />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
 
           <div className="mt-24">
             <Button
               color="tertiary"
-              leftIcon={<Save title="Save" />}
+              leftIcon={<Bookmark />}
               rightIcon={
                 <RafterDown
                   title="Show"
@@ -524,8 +531,8 @@ export const ShareFile = (args: any) => {
 
           <hr />
 
-          <Heading headingStyle="h4" level="h3" className="my-24">
-            Rechercher des utilisateurs
+          <Heading headingStyle="h4" level="h3" className="my-24 d-flex">
+            Rechercher des utilisateurs <InfoCircle className="ms-8" />
           </Heading>
 
           <FormControl className="input-group max-w-512" id="search">
