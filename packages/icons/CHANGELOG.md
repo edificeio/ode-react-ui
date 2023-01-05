@@ -1,5 +1,11 @@
 # @ode-react-ui/icons
 
+## 1.0.7-dev.21
+
+### Patch Changes
+
+- [`63258da`](https://github.com/opendigitaleducation/ode-react-ui/commit/63258daed0db9e885be99eccd90458a19f62c1c4) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add bookmark icon
+
 ## 1.0.7-dev.12
 
 ### Patch Changes
