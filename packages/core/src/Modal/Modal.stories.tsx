@@ -2,24 +2,20 @@ import { ChangeEvent, EventHandler, useState } from "react";
 
 import { useModal } from "@ode-react-ui/hooks";
 import {
-    ArrowUp,
-    Check,
-    CheckboxEmpty,
-    CheckboxSelected,
-    Close,
-    Copy,
-    Plus,
-    RafterDown,
-    RafterUp,
-    Save,
-    Search,
+  Close,
+  Copy,
+  Plus,
+  RafterDown,
+  Save,
+  Search,
 } from "@ode-react-ui/icons";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Alert } from "../Alert";
 import { Avatar } from "../Avatar";
 import { Button, IconButton, SearchButton } from "../Button";
-import { Checkbox, FormControl, Input, Label, Radio } from "../Form";
+import { Checkbox, FormControl, Input, Label, Radio, Select } from "../Form";
+import { OptionsType } from "../Form/Select";
 import { Heading } from "../Heading";
 import { ImagePicker } from "../ImagePicker";
 import { TreeView } from "../TreeView";
@@ -73,8 +69,8 @@ const Template: ComponentStory<typeof Modal> = (args: any) => {
         <Modal.Footer>
           <Button
             type="button"
-            color="primary"
-            variant="outline"
+            color="tertiary"
+            variant="ghost"
             onClick={handleCloseModal}
           >
             Cancel
@@ -148,8 +144,8 @@ const TemplateMoveFile: ComponentStory<typeof Modal> = (args: any) => {
         <Modal.Footer>
           <Button
             type="button"
-            color="primary"
-            variant="outline"
+            color="tertiary"
+            variant="ghost"
             onClick={handleCloseModal}
           >
             Annuler
@@ -292,8 +288,8 @@ export const CreateFile = (args: any) => {
         <Modal.Footer>
           <Button
             type="button"
-            color="primary"
-            variant="outline"
+            color="tertiary"
+            variant="ghost"
             onClick={handleCloseModal}
           >
             Annuler
@@ -526,7 +522,7 @@ export const ShareFile = (args: any) => {
             )}
           </div>
 
-          <hr className="my-24 text-medium" />
+          <hr />
 
           <Heading headingStyle="h4" level="h3" className="my-24">
             Rechercher des utilisateurs
@@ -542,7 +538,7 @@ export const ShareFile = (args: any) => {
             <SearchButton aria-label="search" icon={<Search />} type="submit" />
           </FormControl>
 
-          <hr className="my-24 text-medium" />
+          <hr />
 
           <Heading headingStyle="h4" level="h3" className="my-24">
             Circuit de publication des billets
@@ -569,8 +565,8 @@ export const ShareFile = (args: any) => {
         <Modal.Footer>
           <Button
             type="button"
-            color="primary"
-            variant="outline"
+            color="tertiary"
+            variant="ghost"
             onClick={handleCloseModal}
           >
             Annuler
@@ -595,6 +591,75 @@ ShareFile.args = {
 
 export const PublishOnLibrary = (args: any) => {
   const { isOpen, toggle: toggleModal } = useModal(false);
+
+  const [activityType, setActivityType] = useState();
+  const [subjectArea, setSubjectArea] = useState();
+  const [language, setLanguage] = useState();
+  const [ageMin, setAgeMin] = useState();
+  const [ageMax, setAgeMax] = useState();
+
+  const activityTypesOptions: OptionsType[] = [
+    { value: "classroomActivity", label: "Activité en classe" },
+    { value: "groupActivity", label: "Activité en groupe" },
+    { value: "personalActivity", label: "Activité individuelle" },
+    { value: "homework", label: "Activité à la maison" },
+    { value: "exercize", label: "Exercice" },
+    { value: "learningPath", label: "Parcours pédagogique" },
+    { value: "courseElement", label: "Élément de cours" },
+  ];
+
+  const languageOptions: OptionsType[] = [
+    { value: "german", label: "Allemand" },
+    { value: "english", label: "Anglais" },
+    { value: "arabian", label: "Arabe" },
+    { value: "spanish", label: "Espagnol" },
+    { value: "french", label: "Français" },
+    { value: "italian", label: "Italien" },
+    { value: "japanese", label: "Japonais" },
+    { value: "mandarinChinese", label: "Mandarin" },
+    { value: "portuguese", label: "Portuguais" },
+    { value: "russian", label: "Russe" },
+  ];
+
+  const subjectAreaOptions: OptionsType[] = [
+    { value: "artActivity", label: "Activités artistiques" },
+    { value: "readLearning", label: "Apprentissage de la lecture" },
+    { value: "chemistry", label: "Chimie" },
+    { value: "law", label: "Droit" },
+    { value: "worldDiscovery", label: "Découverte du monde" },
+    { value: "economy", label: "Economie" },
+    { value: "mediaEducation", label: "Education aux médias" },
+    { value: "musicEducation", label: "Education musicale" },
+    { value: "sportEducation", label: "Education physique et sportive" },
+    { value: "citizenshipEducation", label: "Enseignement civique" },
+    { value: "geography", label: "Géographie" },
+    { value: "history", label: "Histoire" },
+    { value: "artHistory", label: "Histoire des arts" },
+    { value: "ComputerScience", label: "Informatique" },
+    { value: "languages", label: "Langues" },
+    { value: "ancientLanguages", label: "Langues anciennes" },
+    { value: "literature", label: "Littérature" },
+    { value: "mathematics", label: "Mathématiques" },
+    { value: "vocationalGuidance", label: "Orientation" },
+    { value: "philosohppy", label: "Philosophie" },
+    { value: "physics", label: "Physique" },
+    { value: "politicalSscience", label: "Sciences politiques" },
+    { value: "sociology", label: "Sociologie" },
+    { value: "biology", label: "SVT - Biologie" },
+    { value: "geology", label: "SVT - Géologie" },
+    { value: "technology", label: "Technologie" },
+    { value: "german", label: "Allemand" },
+    { value: "english", label: "Anglais" },
+    { value: "arabian", label: "Arabe" },
+    { value: "spanish", label: "Espagnol" },
+    { value: "french", label: "Français" },
+    { value: "frensh", label: "Français" },
+    { value: "italian", label: "Italien" },
+    { value: "japanese", label: "Japonais" },
+    { value: "mandarinChinese", label: "Mandarin" },
+    { value: "portuguese", label: "Portuguais" },
+    { value: "russian", label: "Russe" },
+  ];
 
   function handleOpenModal() {
     toggleModal(true);
@@ -623,10 +688,11 @@ export const PublishOnLibrary = (args: any) => {
         <Modal.Header onModalClose={handleCloseModal}>
           Publier dans la Bibliothèque
         </Modal.Header>
-        <p>
+
+        <Modal.Subtitle>
           La Bilbiothèque est un espace de partage d’activités et de ressources
           mutualisées entre enseignants.
-        </p>
+        </Modal.Subtitle>
 
         <Modal.Body>
           <Heading headingStyle="h4" level="h3" className="mb-16">
@@ -644,6 +710,7 @@ export const PublishOnLibrary = (args: any) => {
           </FormControl>
 
           <div className="mb-24">
+            <div className="form-label">Image d'illustration</div>
             <ImagePicker
               label="Upload an image"
               addButtonLabel="Add image"
@@ -654,7 +721,7 @@ export const PublishOnLibrary = (args: any) => {
             />
           </div>
 
-          <FormControl id="description" isOptional>
+          <FormControl id="description">
             <Label>Description et contexte pédagogique</Label>
             <Input
               type="text"
@@ -664,59 +731,112 @@ export const PublishOnLibrary = (args: any) => {
             />
           </FormControl>
 
+          <hr />
+
           <Heading headingStyle="h4" level="h3" className="mb-16">
-            Accès au blog
+            Informations sur le contenu
           </Heading>
 
-          <Alert type="info">
-            Votre blog reste accessible aux personnes à qui vous l'avez partagé.
-            Vous pouvez cependant créer un lien public afin que des personnes
-            hors de l'ENT puissent y accéder.
+          <div className="row mb-24">
+            <div className="col">
+              <Select
+                id="activityType"
+                label="Type d’activité"
+                options={activityTypesOptions}
+                model={activityType}
+                placeholderOption="Sélectionner"
+              />
+            </div>
+            <div className="col">
+              <Select
+                id="subjectArea"
+                label="Discipline"
+                options={subjectAreaOptions}
+                model={subjectArea}
+                placeholderOption="Sélectionner"
+              />
+            </div>
+            <div className="col">
+              <Select
+                id="language"
+                label="Langue"
+                options={languageOptions}
+                model={language}
+                placeholderOption="Sélectionner"
+              />
+            </div>
+          </div>
+
+          <div className="mb-24">
+            <label htmlFor="" className="form-label">
+              Âge conseillé des élèves
+            </label>
+            <div className="d-flex">
+              <div className="me-16">
+                <Select
+                  id="ageMin"
+                  options={[
+                    3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+                  ]}
+                  model={ageMin}
+                  placeholderOption="Age minimum"
+                />
+              </div>
+              <div className="">
+                <Select
+                  id="ageMax"
+                  options={[
+                    3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+                  ]}
+                  model={ageMax}
+                  placeholderOption="Age maximum"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="mb-24">
+            <FormControl id="keywords" isOptional>
+              <Label>Mots-clefs (5 max), séparés par des virgules</Label>
+              <Input type="text" size="md" placeholder="Mots clés" />
+            </FormControl>
+          </div>
+
+          <hr />
+
+          <Heading headingStyle="h4" level="h3" className="mb-16">
+            En cliquant sur publier
+          </Heading>
+
+          <ul className="s">
+            <li className="s">
+              J'accepte que mon activité soit publiée sous licence Creative
+              Commons
+            </li>
+            <li className="s">
+              J'accepte d'être cité en tant qu'auteur, que le nom de mon
+              établissement soit affiché ainsi qu'un aperçu de mon avatar. Cela
+              permettra aux enseignants de la communauté d'échanger plus
+              facilement avec vous de manière bienveillante !
+            </li>
+          </ul>
+
+          <Alert type="info" className="mb-12">
+            Si votre contenu comporte des commentaires, ceux-ci ne seront pas
+            publiés dans la Bibliothèque.
           </Alert>
 
-          <FormControl
-            id="flexSwitchCheckDefault"
-            className="form-check form-switch my-16"
-          >
-            <FormControl.Input
-              className="form-check-input"
-              type="checkbox"
-              role="switch"
-              size="md"
-            />
-            <FormControl.Label className="form-check-label">
-              Accessible publiquement via une URL
-            </FormControl.Label>
-          </FormControl>
-
-          <FormControl id="slug">
-            <div className="d-flex flex-wrap align-items-center mt-16 mb-3 gap-4">
-              <div>https://neoconnect.opendigitaleducation.com/</div>
-
-              <Input
-                type="text"
-                size="md"
-                placeholder="extention personnalisée"
-              />
-              <Button
-                color="primary"
-                onClick={() => {}}
-                type="button"
-                leftIcon={<Copy />}
-                variant="ghost"
-                className="text-nowrap"
-              >
-                Copier URL
-              </Button>
-            </div>
-          </FormControl>
+          <Alert type="warning">
+            Les billets actuellement en brouillon et les billets ajoutés après
+            la publication du Blog dans la Bibliothèque ne seront pas visibles.
+          </Alert>
         </Modal.Body>
 
         <Modal.Footer>
           <Button
             type="button"
-            color="primary"
-            variant="outline"
+            color="tertiary"
+            variant="ghost"
             onClick={handleCloseModal}
           >
             Annuler
@@ -728,7 +848,7 @@ export const PublishOnLibrary = (args: any) => {
             variant="filled"
             onClick={handleCloseModal}
           >
-            Créer
+            Accepter et publier
           </Button>
         </Modal.Footer>
       </Modal>
