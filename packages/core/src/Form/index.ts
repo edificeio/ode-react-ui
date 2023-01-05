@@ -4,3 +4,4 @@ export { default as FormText } from "./FormText";
 export { default as FormControl } from "./FormControl";
 export { default as Checkbox } from "./Checkbox";
 export { default as Radio } from "./Radio";
+export { default as Select } from "./Select";
