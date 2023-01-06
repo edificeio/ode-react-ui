@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/core",
-  "version": "1.0.7-dev.20",
+  "version": "1.0.7-dev.22",
   "private": false,
   "description": "@ode-react-ui react core components",
   "keywords": [
@@ -43,7 +43,7 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@ode-react-ui/hooks": "1.0.7-dev.19",
+    "@ode-react-ui/hooks": "1.0.7-dev.22",
     "@ode-react-ui/icons": "*",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
@@ -57,7 +57,7 @@
     "vite-plugin-dts": "1.7.1"
   },
   "peerDependencies": {
-    "@ode-react-ui/hooks": "1.0.7-dev.19",
+    "@ode-react-ui/hooks": "1.0.7-dev.22",
     "@ode-react-ui/icons": "*",
     "react": "18.2.0",
     "react-dom": "18.2.0"
