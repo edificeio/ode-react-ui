@@ -56,7 +56,9 @@ const Header = ({ is1d = false, src = "" }: HeaderProps): JSX.Element => {
   });
 
   const collapseRef = useRef(null);
-  useClickOutside(collapseRef, () => setIsCollapsed(true));
+  useClickOutside(collapseRef, () => {
+    setIsCollapsed(true);
+  });
 
   return (
     <header className={classes}>
