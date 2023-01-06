@@ -11,10 +11,9 @@ Please check the name of the package you changed
 - [ ] Hooks
 - [ ] Advanced
 
-## Is Documentation or Configuration changed?
+## Has the documentation changed?
 
 - [ ] Storybook
-- [ ] Config
 
 ## Type of change
 

@@ -24,7 +24,7 @@
     "dev": "vite dev",
     "vite:preview": "vite preview",
     "build-storybook": "build-storybook --docs -o dist/",
-    "dev-storybook": "start-storybook -p 6006",
+    "start-storybook": "start-storybook -p 6006",
     "preview": "start-storybook --docs --no-manager-cache"
   },
   "dependencies": {
