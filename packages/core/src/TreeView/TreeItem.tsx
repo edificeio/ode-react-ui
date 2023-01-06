@@ -56,12 +56,13 @@ export const TreeItem = (props: TreeItemProps) => {
   const renderItem = () => (
     <li id={nodeId} role="treeitem" aria-selected={selected}>
       <div aria-expanded={expanded}>
-        <div className="action-container d-flex align-items-center gap-8 ms-8 px-2 py-8">
+        <div className="action-container d-flex align-items-center gap-8 ms-8 px-2">
           <div
+            className="py-8"
             tabIndex={0}
             role="button"
             onClick={handleItemFoldUnfold}
-            onKeyPress={handleItemFoldUnfold}
+            onKeyDown={handleItemFoldUnfold}
           >
             {Array.isArray(children) && !expanded && (
               <RafterRight
@@ -93,9 +94,9 @@ export const TreeItem = (props: TreeItemProps) => {
           <div
             tabIndex={0}
             role="button"
-            className="d-flex align-items-center gap-8"
+            className="flex-fill d-flex align-items-center gap-8 py-8"
             onClick={handleItemSelect}
-            onKeyPress={handleItemSelect}
+            onKeyDown={handleItemSelect}
             onFocus={handleItemFocus}
             onBlur={handleItemBlur}
           >
