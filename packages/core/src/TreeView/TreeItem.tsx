@@ -35,7 +35,7 @@ export const TreeItem = (props: TreeItemProps) => {
   const handleItemFoldUnfold = (event: React.UIEvent<HTMLDivElement>) => {
     event.preventDefault();
     setExpanded(!expanded);
-    expanded ? onItemUnfold?.(nodeId) : onItemFold?.(nodeId);
+    expanded ? onItemFold?.(nodeId) : onItemUnfold?.(nodeId);
     event.stopPropagation();
   };
 

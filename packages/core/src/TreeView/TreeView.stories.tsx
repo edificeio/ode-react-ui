@@ -92,7 +92,7 @@ const Template: ComponentStory<typeof TreeView> = (args) => {
       setEvents([event]);
       return;
     }
-    setEvents([event, ...events]);
+    setEvents([...events, event]);
   };
 
   const handleTreeItemSelect = (nodeId: string) => {
@@ -136,7 +136,8 @@ const Template: ComponentStory<typeof TreeView> = (args) => {
         }}
       >
         <span>
-          Events history (recent first, cleared after {maxEventHistory}):
+          Events history (for debug only/cleared after {maxEventHistory}{" "}
+          events):
         </span>
         <ul>
           {events.map((event) => (
