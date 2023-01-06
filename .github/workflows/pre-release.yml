@@ -27,7 +27,7 @@ jobs:
         run: yarn build
 
       - name: Build Storybook
-        run: yarn build:storybook
+        run: yarn docs:build
 
       - name: Write NPM_TOKEN
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
