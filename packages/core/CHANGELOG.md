@@ -1,5 +1,18 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.22
+
+### Patch Changes
+
+- [#71](https://github.com/opendigitaleducation/ode-react-ui/pull/71) [`a52d70a`](https://github.com/opendigitaleducation/ode-react-ui/commit/a52d70aae757274111a5d58e8942125f63985892) Thanks [@david-cc](https://github.com/david-cc)! - Export TreeNode and TreeView events. Fix fold/unfold behaviour. Enlarge TreeItem zone selection.
+
+- [#73](https://github.com/opendigitaleducation/ode-react-ui/pull/73) [`647de18`](https://github.com/opendigitaleducation/ode-react-ui/commit/647de181e65d71cbea2b7cf80b829a61cfbad435) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update deps and add hook useThemeHelper
+
+- [#66](https://github.com/opendigitaleducation/ode-react-ui/pull/66) [`c0be5df`](https://github.com/opendigitaleducation/ode-react-ui/commit/c0be5dfb131dcf4d6fc92a5eca152e124a2f964c) Thanks [@roolian](https://github.com/roolian)! - Feat: Add story for modal library publication
+  Feat: Add component Select
+- Updated dependencies [[`647de18`](https://github.com/opendigitaleducation/ode-react-ui/commit/647de181e65d71cbea2b7cf80b829a61cfbad435)]:
+  - @ode-react-ui/hooks@1.0.7-dev.22
+
 ## 1.0.7-dev.20
 
 ### Patch Changes
