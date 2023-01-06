@@ -32,13 +32,14 @@ import NavLink from "../NavLink/NavLink";
 
 interface HeaderProps {
   is1d?: boolean;
+  src: string;
 }
 
 /**
  * Header Component
  */
 
-const Header = ({ is1d = false }: HeaderProps): JSX.Element => {
+const Header = ({ is1d = false, src = "" }: HeaderProps): JSX.Element => {
   const welcomeUser = "Bonjour Support ONE, bienvenue !";
   const unreadNotification = 2;
   const title = useTitle();
@@ -126,11 +127,7 @@ const Header = ({ is1d = false }: HeaderProps): JSX.Element => {
               }`}
               id="navbarCollapsed"
             >
-              <Logo
-                is1d
-                url="/assets/logo-one.png"
-                translate="Retour accueil"
-              />
+              <Logo is1d src={src} translate="Retour accueil" />
 
               <ul className="navbar-nav gap-8">
                 <li className="nav-item">
@@ -158,10 +155,7 @@ const Header = ({ is1d = false }: HeaderProps): JSX.Element => {
       ) : (
         <nav className="navbar navbar-expand-md">
           <div className="container-fluid">
-            <Logo
-              url="https://recette.opendigitaleducation.com/assets/themes/cg77/img/illustrations/logo.png"
-              translate="Retour accueil"
-            />
+            <Logo src={src} />
             <a href="/" className="navbar-title d-md-none">
               {title}
             </a>

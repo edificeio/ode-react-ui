@@ -1,7 +1,11 @@
+import { useState } from "react";
+
 import useOdeFactory from "./useOdeFactory";
 
 export default function useThemeHelper() {
   const { conf } = useOdeFactory();
+  const [theme, setTheme] = useState() as any;
+  // const [is1D, setIs1D] = useState<boolean>(false);
 
   /**
    *
@@ -19,71 +23,46 @@ export default function useThemeHelper() {
   }
 
   /**
+   * Get Degree School
+   * @returns boolean
+   */
+  async function getDegreeSchool(): Promise<boolean> {
+    const { themeName } = await getPlatform().theme.onSkinReady();
+    const getConf = await getPlatform().theme.getConf();
+
+    for (const override of getConf.overriding) {
+      if (override.child === themeName) {
+        return override.parent === "panda";
+      }
+    }
+    return false;
+  }
+
+  /**
    * Return the path URL to the active theme, for example : /assets/themes/ode-bootstrap-neo
    * */
-  /* async function getBootstrapThemePath(): Promise<string> {
-    const theme = getPlatform().theme.themeName;
+  async function getBootstrapThemePath(): Promise<string> {
+    const { themeName } = await getPlatform().theme.onSkinReady();
+    const isReady = await getPlatform().theme.onSkinReady();
     const getConf = await getPlatform().theme.getConf();
-    for (let override of getConf.overriding) {
-      if (override.child === theme) {
+
+    for (const override of getConf.overriding) {
+      if (override.child === themeName) {
         return `${getCDN()}/assets/themes/${override.bootstrapVersion}`;
       }
     }
-    return `${getCDN()}/assets/themes/${theme}`;
-  } */
-
-  /* async function getBootstrapSkinPath(): Promise<string> {
-    const stylePath = await getBootstrapThemePath();
-    return `${stylePath}/skins/${getPlatform().theme.skinName}`;
-  } */
-
-  /**
-   * Extracted from an old code base.
-   * */
-  /* function toSkinUrl(url: string): string {
-    const theme = document.getElementById("theme");
-    const path = getPlatform().theme.basePath;
-
-    if (!theme.attr("href")) {
-      return "";
-    }
-    if (
-      url.indexOf("http://") === -1 &&
-      url.indexOf("https://") === -1 &&
-      url.indexOf("/workspace/") === -1
-    ) {
-      return path + url;
-    }
-    return url;
-  } */
-
-  /**
-   * Load the JS of a derived theme (skin)
-   */
-  function loadThemeJs(theme: string) {
-    const { body } = document;
-    const script = document.createElement("script");
-
-    script.id = "themeJs";
-    script.src = `${
-      getPlatform().cdnDomain
-    }/assets/themes/${theme}/js/theme.js?version=${
-      getPlatform().deploymentTag
-    }`;
-    script.type = "text/javascript";
-
-    body.append(script);
+    setTheme(isReady);
+    return `${getCDN()}/assets/themes/${themeName}`;
   }
 
-  function removeThemeJS() {
-    const script = document.getElementById("themeJS");
-    return script?.remove();
+  async function getBootstrapSkinPath(): Promise<string> {
+    const stylePath = await getBootstrapThemePath();
+    return `${stylePath}/skins/${getPlatform().theme.skinName}`;
   }
 
   return {
-    getPlatform,
-    getCDN,
-    loadThemeJs,
-    removeThemeJS,
+    getDegreeSchool,
+    getBootstrapSkinPath,
+    theme,
   };
 }

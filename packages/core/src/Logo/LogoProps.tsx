@@ -1,5 +1,5 @@
 export interface LogoProps {
-  url: string;
+  src: string;
   is1d?: boolean;
   translate?: string;
 }
