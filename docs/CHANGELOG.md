@@ -1,5 +1,11 @@
 # @ode-react-ui/storybook
 
+## 1.0.5-dev.12
+
+### Patch Changes
+
+- [#73](https://github.com/opendigitaleducation/ode-react-ui/pull/73) [`647de18`](https://github.com/opendigitaleducation/ode-react-ui/commit/647de181e65d71cbea2b7cf80b829a61cfbad435) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update deps and add hook useThemeHelper
+
 ## 1.0.5-dev.11
 
 ### Patch Changes
