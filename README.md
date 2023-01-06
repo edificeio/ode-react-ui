@@ -84,7 +84,7 @@ yarn build
 > Start Storybook on port 6006
 
 ```bash
-yarn dev
+yarn docs
 ```
 
 > If you want to work inside a React Application, start the playground.
