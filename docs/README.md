@@ -23,7 +23,7 @@ For specific MDX documentation, you must write them inside `stories` folder from
 > Start Storybook on port 6006
 
 ```bash
-yarn storybook
+yarn start-storybook
 ```
 
 ### Build
