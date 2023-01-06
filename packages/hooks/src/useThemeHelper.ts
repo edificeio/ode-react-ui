@@ -1,14 +1,9 @@
-import { useState } from "react";
-
 import useOdeFactory from "./useOdeFactory";
 
 export default function useThemeHelper() {
   const { conf } = useOdeFactory();
-  const [theme, setTheme] = useState() as any;
-  // const [is1D, setIs1D] = useState<boolean>(false);
 
   /**
-   *
    * Get Platform using conf shorthand
    */
   function getPlatform() {
@@ -24,7 +19,7 @@ export default function useThemeHelper() {
 
   /**
    * Get Degree School
-   * @returns boolean
+   * @returns true if degree is 1D or false if is 2D
    */
   async function getDegreeSchool(): Promise<boolean> {
     const { themeName } = await getPlatform().theme.onSkinReady();
@@ -39,11 +34,23 @@ export default function useThemeHelper() {
   }
 
   /**
-   * Return the path URL to the active theme, for example : /assets/themes/ode-bootstrap-neo
+   * Theme
+   * @returns a string with the current skin path
+   */
+
+  async function getThemeName(): Promise<string> {
+    const theme = await getPlatform().theme.onSkinReady();
+    /* const getConf = await getPlatform().theme.getConf(); */
+
+    return theme?.skin;
+  }
+
+  /**
+   * Theme
+   * @returns the path URL to the active theme, for example : /assets/themes/ode-bootstrap-neo
    * */
   async function getBootstrapThemePath(): Promise<string> {
     const { themeName } = await getPlatform().theme.onSkinReady();
-    const isReady = await getPlatform().theme.onSkinReady();
     const getConf = await getPlatform().theme.getConf();
 
     for (const override of getConf.overriding) {
@@ -51,10 +58,13 @@ export default function useThemeHelper() {
         return `${getCDN()}/assets/themes/${override.bootstrapVersion}`;
       }
     }
-    setTheme(isReady);
     return `${getCDN()}/assets/themes/${themeName}`;
   }
 
+  /**
+   * Theme
+   * @returns the complete string path with skin
+   */
   async function getBootstrapSkinPath(): Promise<string> {
     const stylePath = await getBootstrapThemePath();
     return `${stylePath}/skins/${getPlatform().theme.skinName}`;
@@ -63,6 +73,6 @@ export default function useThemeHelper() {
   return {
     getDegreeSchool,
     getBootstrapSkinPath,
-    theme,
+    getThemeName,
   };
 }
