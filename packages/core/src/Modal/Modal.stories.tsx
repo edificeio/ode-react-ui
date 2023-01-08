@@ -419,7 +419,7 @@ export const ShareFile = (args: any) => {
           </Heading>
 
           <div className="table-responsive">
-            <table className="table  border align-middle">
+            <table className="table  border align-middle mb-0">
               <thead className="bg-secondary text-white">
                 <tr>
                   <th scope="col"></th>
@@ -483,21 +483,23 @@ export const ShareFile = (args: any) => {
             </table>
           </div>
 
-          <div className="mt-24">
+          <div className="mt-16">
             <Button
               color="tertiary"
               leftIcon={<Bookmark />}
               rightIcon={
                 <RafterDown
                   title="Show"
+                  className="w-16 min-w-0"
                   style={{
-                    transition: "rotate 0.3s ease-out",
-                    rotate: showBookmarkInput ? "180deg" : "0deg",
+                    transition: "rotate 0.2s ease-out",
+                    rotate: showBookmarkInput ? "-180deg" : "0deg",
                   }}
                 />
               }
               type="button"
               variant="ghost"
+              className="fw-normal"
               onClick={() => toggleBookmarkInput(!showBookmarkInput)}
             >
               Enregistrer comme favori de partage
@@ -531,7 +533,7 @@ export const ShareFile = (args: any) => {
 
           <hr />
 
-          <Heading headingStyle="h4" level="h3" className="my-24 d-flex">
+          <Heading headingStyle="h4" level="h3" className="mb-16 d-flex">
             Rechercher des utilisateurs <InfoCircle className="ms-8" />
           </Heading>
 
@@ -547,7 +549,7 @@ export const ShareFile = (args: any) => {
 
           <hr />
 
-          <Heading headingStyle="h4" level="h3" className="my-24">
+          <Heading headingStyle="h4" level="h3" className="mb-16">
             Circuit de publication des billets
           </Heading>
 
