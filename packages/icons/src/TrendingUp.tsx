@@ -20,7 +20,7 @@ const SvgTrendingUp = ({
   >
     {title ? <title id={titleId}>{title}</title> : null}
     <g
-      clipPath="url(#trendingUp_svg__a)"
+      clipPath="url(#trending-up_svg__a)"
       fillRule="evenodd"
       clipRule="evenodd"
       fill="currentColor"
@@ -29,7 +29,7 @@ const SvgTrendingUp = ({
       <path d="M16 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0V7h-5a1 1 0 0 1-1-1Z" />
     </g>
     <defs>
-      <clipPath id="trendingUp_svg__a">
+      <clipPath id="trending-up_svg__a">
         <path fill="#fff" d="M0 0h24v24H0z" />
       </clipPath>
     </defs>
