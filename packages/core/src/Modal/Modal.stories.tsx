@@ -783,22 +783,24 @@ export const PublishOnLibrary = (args: any) => {
             <div className="d-flex">
               <div className="me-16">
                 <Select
+                  defaultValue="Age min."
                   id="ageMin"
                   options={[
                     3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
                   ]}
                   model={ageMin}
-                  placeholderOption="Age minimum"
+                  placeholderOption="Age min."
                 />
               </div>
-              <div className="">
+              <div>
                 <Select
+                  defaultValue="Age max."
                   id="ageMax"
                   options={[
                     3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
                   ]}
                   model={ageMax}
-                  placeholderOption="Age maximum"
+                  placeholderOption="Age max."
                 />
               </div>
             </div>
