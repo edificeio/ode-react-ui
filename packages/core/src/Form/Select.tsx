@@ -51,6 +51,7 @@ const Select = forwardRef(
       placeholderOption = false,
       id = "",
       status,
+      children,
       ...restProps
     }: SelectProps,
     ref: Ref<HTMLSelectElement>,
@@ -79,7 +80,9 @@ const Select = forwardRef(
         )}
         <select {...selectProps}>
           {placeholderOption && (
-            <option selected={!model}>{placeholderOption}</option>
+            <option selected={!model} disabled>
+              {placeholderOption}
+            </option>
           )}
           {options?.map((option) => {
             const value = typeof option === "object" ? option.value : option;
