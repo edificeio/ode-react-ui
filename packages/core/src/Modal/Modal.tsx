@@ -89,6 +89,8 @@ const Modal = Object.assign({}, Root, {
   Footer: ModalFooter,
 });
 
+/* This is a hack due to Storybook issue rendering displayName [Object object] */
 Root.displayName = "Modal";
+Modal.displayName = "Modal";
 
 export default Modal;
