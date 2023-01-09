@@ -1,7 +1,7 @@
 export { default as Account } from "./Account";
 export { default as Actualites } from "./Actualites";
-export { default as Admin } from "./Admin";
 export { default as AdminPortal } from "./AdminPortal";
+export { default as Admin } from "./Admin";
 export { default as AdmissionPostBac } from "./AdmissionPostBac";
 export { default as Agenda } from "./Agenda";
 export { default as Archive } from "./Archive";
