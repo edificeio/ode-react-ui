@@ -22,7 +22,7 @@ const ModalHeader = (props: ModalHeaderProps) => {
   );
 };
 
-ModalHeader.displayName = "ModalHeader";
+ModalHeader.displayName = "Modal.Header";
 
 export default ModalHeader;
 

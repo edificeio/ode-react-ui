@@ -5,7 +5,7 @@ const ModalFooter = (props: ModalFooterProps) => (
   <div className="modal-footer">{props.children}</div>
 );
 
-ModalFooter.displayName = "ModalFooter";
+ModalFooter.displayName = "Modal.Footer";
 
 export default ModalFooter;
 

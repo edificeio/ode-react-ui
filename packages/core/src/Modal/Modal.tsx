@@ -34,12 +34,8 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
     const ariaLabelId = `aria_label_${id}`;
     const ariaDescriptionId = `aria_desc_${id}`;
 
-    const modalContextValue = {
-      ariaLabelId,
-      ariaDescriptionId,
-    };
-
     const modalRef = useRef(null);
+
     useClickOutside(modalRef, () => {
       if (typeof onModalClose === "function") {
         onModalClose();
@@ -56,6 +52,11 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
       [`modal-${size}`]: size,
       "modal-dialog-scrollable": scrollable,
     });
+
+    const modalContextValue = {
+      ariaLabelId,
+      ariaDescriptionId,
+    };
 
     return (
       <ModalContext.Provider value={modalContextValue}>
