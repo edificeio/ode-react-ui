@@ -23,7 +23,7 @@ export default {
   },
 } as ComponentMeta<typeof FormControl>;
 
-const Template: ComponentStory<typeof FormControl> = (args) => (
+const Template: ComponentStory<typeof FormControl> = (args: any) => (
   <FormControl {...args}>
     <Label>Email</Label>
     <Input type="text" placeholder="Placeholder text" size="md" />
@@ -113,11 +113,3 @@ ReadOnlyStatus.args = {
   type: "text",
   placeholder: "This input is readonly and can't be modified.",
 };
-
-/* export const ReadOnlyStatusWith = ({ ...args }) => {
-  return (
-    <FormControl id="example-5" isReadOnly>
-      <Input type={args.type} size={args.size} placeholder={args.placeholder} />
-    </FormControl>
-  );
-}; */
