@@ -1,5 +1,21 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.23
+
+### Patch Changes
+
+- [#78](https://github.com/opendigitaleducation/ode-react-ui/pull/78) [`096d969`](https://github.com/opendigitaleducation/ode-react-ui/commit/096d969f650c5fe0330028e7b9d4aabfda3431ee) Thanks [@github-actions](https://github.com/apps/github-actions)! - fix path components and url userbook account in header component
+
+- [#79](https://github.com/opendigitaleducation/ode-react-ui/pull/79) [`e22b1c6`](https://github.com/opendigitaleducation/ode-react-ui/commit/e22b1c6d4daff949fbc8c23db82f095eb1915d40) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix displayname for compound modal
+
+- [#81](https://github.com/opendigitaleducation/ode-react-ui/pull/81) [`a2df441`](https://github.com/opendigitaleducation/ode-react-ui/commit/a2df441a470214d7dc8b55bb21d04569bdea1944) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update select component
+
+- [#80](https://github.com/opendigitaleducation/ode-react-ui/pull/80) [`7e62071`](https://github.com/opendigitaleducation/ode-react-ui/commit/7e6207133653a8b7e6de1c4b7bedc3829db4e4a9) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix issue rendering dsplayname for compound component
+
+- Updated dependencies [[`302e46c`](https://github.com/opendigitaleducation/ode-react-ui/commit/302e46c8b475dcf4270b071e26f814dc23b01a84), [`676336a`](https://github.com/opendigitaleducation/ode-react-ui/commit/676336aa330bd8d72a712da4d70c9000e9025811)]:
+  - @ode-react-ui/hooks@1.0.7-dev.23
+  - @ode-react-ui/icons@1.0.7-dev.23
+
 ## 1.0.7-dev.22
 
 ### Patch Changes
