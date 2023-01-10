@@ -249,7 +249,7 @@ export const CreateFile = (args: any) => {
 
           <FormControl
             id="flexSwitchCheckDefault"
-            className="form-check form-switch my-16"
+            className="form-check form-switch mt-16 mb-8"
           >
             <FormControl.Input
               className="form-check-input"
@@ -263,7 +263,7 @@ export const CreateFile = (args: any) => {
           </FormControl>
 
           <FormControl id="slug">
-            <div className="d-flex flex-wrap align-items-center mt-16 mb-3 gap-4">
+            <div className="d-flex flex-wrap align-items-center gap-4">
               <div>https://neoconnect.opendigitaleducation.com/</div>
 
               <div className="flex-fill">
