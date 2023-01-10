@@ -1,21 +1,7 @@
 import useOdeFactory from "./useOdeFactory";
 
-export default function useThemeHelper() {
-  const { conf } = useOdeFactory();
-
-  /**
-   * Get Platform using conf shorthand
-   */
-  function getPlatform() {
-    return conf().Platform;
-  }
-
-  /**
-   * Get the configured CDN URL root.
-   */
-  function getCDN() {
-    return getPlatform().cdnDomain;
-  }
+export default function useOdeBootstrap() {
+  const { getPlatform, getCdn } = useOdeFactory();
 
   /**
    * Get Degree School
@@ -36,14 +22,13 @@ export default function useThemeHelper() {
   /**
    * Theme
    * @returns a string with the current skin path
+   * e.g: cg77
    */
-
-  async function getThemeName(): Promise<string> {
-    const theme = await getPlatform().theme.onSkinReady();
-    /* const getConf = await getPlatform().theme.getConf(); */
+  /* async function getThemeName(): Promise<string> {
+    const theme = await platform().theme.onSkinReady();
 
     return theme?.skin;
-  }
+  } */
 
   /**
    * Theme
@@ -55,24 +40,42 @@ export default function useThemeHelper() {
 
     for (const override of getConf.overriding) {
       if (override.child === themeName) {
-        return `${getCDN()}/assets/themes/${override.bootstrapVersion}`;
+        return `${getCdn()}/assets/themes/${override.bootstrapVersion}`;
       }
     }
-    return `${getCDN()}/assets/themes/${themeName}`;
+    return `${getCdn()}/assets/themes/${themeName}`;
   }
 
   /**
    * Theme
-   * @returns the complete string path with skin
+   * @returns the path of images in ode-boostrap
    */
-  async function getBootstrapSkinPath(): Promise<string> {
+  function getOdeBootstrapImages() {
+    return "/assets/themes/ode-bootstrap/images";
+  }
+
+  /**
+   * Theme
+   * @returns the path of apps icons in ode-boostrap
+   */
+  function getOdeBootstrapIcons() {
+    return "/assets/themes/ode-bootstrap/icons";
+  }
+
+  /**
+   * Theme
+   * @returns the complete CSS string path
+   */
+  async function getOdeBoostrapThemePath(): Promise<string> {
     const stylePath = await getBootstrapThemePath();
-    return `${stylePath}/skins/${getPlatform().theme.skinName}`;
+    const { skinName } = getPlatform().theme;
+    return `${stylePath}/skins/${skinName}/theme.css`;
   }
 
   return {
     getDegreeSchool,
-    getBootstrapSkinPath,
-    getThemeName,
+    getOdeBoostrapThemePath,
+    getOdeBootstrapIcons,
+    getOdeBootstrapImages,
   };
 }
