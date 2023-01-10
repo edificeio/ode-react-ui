@@ -33,7 +33,11 @@ const AppIcon = ({
       {...props}
     >
       {title ? <title>{title}</title> : null}
-      <use xlinkHref={`apps.svg#${code || "placeholder"}`} />
+      <use
+        xlinkHref={`/assets/themes/ode-bootstrap/icons/apps.svg#${
+          code || "placeholder"
+        }`}
+      />
     </svg>
   );
 };

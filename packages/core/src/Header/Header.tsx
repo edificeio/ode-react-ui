@@ -83,7 +83,7 @@ const Header = ({ is1d = false, src = "" }: HeaderProps): JSX.Element => {
                 </a>
               </li>
               <li className="nav-item">
-                <a href="/" className="nav-link">
+                <a href="/userbook/mon-compte" className="nav-link">
                   <OneProfile className="icon user" />
                   <span className="visually-hidden">Profil</span>
                 </a>
