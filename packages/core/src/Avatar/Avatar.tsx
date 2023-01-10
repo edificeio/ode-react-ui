@@ -54,7 +54,9 @@ const Avatar = forwardRef(
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
           >
-            <use xlinkHref={`apps.svg#${appCode}`} />
+            <use
+              xlinkHref={`/assets/themes/ode-bootstrap/icons/apps.svg#${appCode}`}
+            />
           </svg>
         </div>
       );
@@ -71,7 +73,7 @@ const Avatar = forwardRef(
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
-          <use xlinkHref="apps.svg#placeholder" />
+          <use xlinkHref="/assets/themes/ode-bootstrap/icons/apps.svg#placeholder" />
         </svg>
       </div>
     );
