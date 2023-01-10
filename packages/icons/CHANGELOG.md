@@ -1,5 +1,11 @@
 # @ode-react-ui/icons
 
+## 1.0.7-dev.23
+
+### Patch Changes
+
+- [#77](https://github.com/opendigitaleducation/ode-react-ui/pull/77) [`676336a`](https://github.com/opendigitaleducation/ode-react-ui/commit/676336aa330bd8d72a712da4d70c9000e9025811) Thanks [@clementcreusat](https://github.com/clementcreusat)! - rename icons
+
 ## 1.0.7-dev.21
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @ode-react-ui/hooks
 
+## 1.0.7-dev.23
+
+### Patch Changes
+
+- [#82](https://github.com/opendigitaleducation/ode-react-ui/pull/82) [`302e46c`](https://github.com/opendigitaleducation/ode-react-ui/commit/302e46c8b475dcf4270b071e26f814dc23b01a84) Thanks [@clementcreusat](https://github.com/clementcreusat)! - clean hooks
+
 ## 1.0.7-dev.22
 
 ### Patch Changes
