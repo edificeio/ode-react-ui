@@ -50,7 +50,7 @@ export default function useOdeIcons() {
     } else {
       appCode = app.displayName.trim().toLowerCase();
     }
-    appCode = conf().Platform.idiom.removeAccents(appCode);
+    appCode = conf.Platform.idiom.removeAccents(appCode);
     // @see distinct values for app's displayName is in query /auth/oauth2/userinfo
     switch (appCode) {
       case "admin.title":
