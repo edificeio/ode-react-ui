@@ -1,9 +1,10 @@
 import { ComponentMeta } from "@storybook/react";
-import Grid from "./Grid";
+import Grid, { Column } from "./Grid";
 
 export default {
   title: "Layouts/Grid",
   component: Grid,
+  subcomponents: { Column },
 } as ComponentMeta<typeof Grid>;
 
 export const Base = () => {

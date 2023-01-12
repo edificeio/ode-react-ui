@@ -9,11 +9,14 @@ import {
   RafterRight,
 } from "@ode-react-ui/icons";
 import IconButton from "./IconButton";
+import SearchButton from "./SearchButton";
+import { ButtonProps } from "./ButtonProps";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Components/Buttons/Button",
   component: Button,
+  subcomponents: { IconButton, SearchButton },
   argTypes: {
     color: {
       options: ["primary", "secondary", "tertiary", "danger"],
@@ -41,7 +44,9 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = (args: ButtonProps) => (
+  <Button {...args} />
+);
 
 export const Base = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
@@ -163,7 +168,7 @@ LoadingButtonWithCustomIcon.args = {
   loadingIcon: <Hourglass />,
 };
 
-export const ButtonGroupWithSecondaryAction = (args: any) => {
+export const ButtonGroupWithSecondaryAction = (args: ButtonProps) => {
   return (
     <div className="d-flex align-items-center gap-8">
       <Button {...args} color="secondary" variant="outline">
@@ -185,7 +190,7 @@ ButtonGroupWithSecondaryAction.parameters = {
   },
 };
 
-export const ButtonGroupWithIconButton = (args: any) => {
+export const ButtonGroupWithIconButton = (args: ButtonProps) => {
   return (
     <div className="d-flex align-items-center gap-8">
       <Button {...args} color="primary" variant="filled">
@@ -211,7 +216,7 @@ ButtonGroupWithIconButton.parameters = {
   },
 };
 
-export const ButtonGroupWithThirdAction = (args: any) => {
+export const ButtonGroupWithThirdAction = (args: ButtonProps) => {
   return (
     <div className="d-flex align-items-center gap-8">
       <Button

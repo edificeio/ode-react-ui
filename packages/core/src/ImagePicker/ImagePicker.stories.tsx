@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { Avatar, ImagePicker } from "../index";
+import { IconButton, ImagePicker } from "../index";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -35,7 +35,7 @@ export default {
   },
 } as ComponentMeta<typeof ImagePicker>;
 
-const Template: ComponentStory<typeof ImagePicker> = (args) => (
+const Template: ComponentStory<typeof ImagePicker> = (args: any) => (
   <ImagePicker {...args} />
 );
 export const Base = Template.bind({});

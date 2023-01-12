@@ -82,7 +82,7 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
   },
 );
 
-const Modal = Object.assign({}, Root, {
+const Modal = Object.assign(Root, {
   Header: ModalHeader,
   Subtitle: ModalSubtitle,
   Body: ModalBody,

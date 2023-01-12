@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 /**
  * Modal Subtitle
  */
@@ -10,5 +12,5 @@ ModalSubtitle.displayName = "Modal.Subtitle";
 export default ModalSubtitle;
 
 export interface ModalSubtitleProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }

@@ -23,14 +23,21 @@ import { ImagePicker } from "../ImagePicker";
 import { TreeView } from "../TreeView";
 import { data } from "../utils/mock-tree-data";
 import Modal from "./Modal";
+import { ModalProps } from "./ModalProps";
 
 export default {
   title: "Components/Modal",
   component: Modal,
+  subcomponents: {
+    Header: Modal.Header,
+    Subtitle: Modal.Subtitle,
+    Body: Modal.Body,
+    Footer: Modal.Footer,
+  },
 } as ComponentMeta<typeof Modal>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Modal> = (args: any) => {
+const Template: ComponentStory<typeof Modal> = (args: ModalProps) => {
   const { isOpen, toggle: toggleModal } = useModal(false);
 
   function handleOpenModal() {

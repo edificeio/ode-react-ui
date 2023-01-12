@@ -8,17 +8,18 @@ import { FormControl, Input } from "./index";
 export default {
   title: "Forms/Input Group",
   component: FormControl,
+  subcomponents: { Input, Button },
   parameters: {
     docs: {
       description: {
         component:
-          "The Input group is made with FormControl, Inputs and SearchButton components. Adding the `input-group` class to the FormControl component will add the right style. All components have access to all their expected props.",
+          "The Input group is made with FormControl, Inputs and Button components. Adding the `input-group` class to the FormControl component will add the right style. All components have access to all their expected props.",
       },
     },
   },
 } as ComponentMeta<typeof FormControl>;
 
-const Template: ComponentStory<typeof FormControl> = (args) => (
+const Template: ComponentStory<typeof FormControl> = (args: any) => (
   <FormControl id={args.id} status={args.status} className="input-group">
     <span className="input-group-text">http://ode.example.test/</span>
     <FormControl.Input type="text" placeholder="Url path" size="md" />

@@ -1,4 +1,5 @@
 type ModalSize = "md" | "lg";
+
 export interface ModalProps {
   /**
    * Modal id (useful when multiple modal on the same page)

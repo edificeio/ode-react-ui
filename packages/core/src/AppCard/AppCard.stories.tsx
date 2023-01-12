@@ -1,11 +1,14 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { AppCard } from "../index";
+import { BaseProps } from "./AppCardProps";
+import AppIcon from "./AppIcon";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Components/AppCard",
   component: AppCard,
+  subcomponents: { AppIcon },
   parameters: {
     docs: {
       description: {
@@ -15,6 +18,15 @@ export default {
     },
   },
   args: {
+    app: {
+      address: "/blog",
+      icon: "",
+      name: "",
+      scope: [],
+      display: false,
+      displayName: "",
+      isExternal: false,
+    },
     level: "h1",
     headingStyle: "h3",
     isHeading: true,
@@ -22,7 +34,7 @@ export default {
   },
 } as ComponentMeta<typeof AppCard>;
 
-const Template: ComponentStory<typeof AppCard> = (args) => (
+const Template: ComponentStory<typeof AppCard> = (args: BaseProps) => (
   <AppCard {...args}>
     <AppCard.Icon size="40" />
     <AppCard.Name />

@@ -1,12 +1,14 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import IconButton from "./IconButton";
+import IconButton, { IconButtonProps } from "./IconButton";
 import { AddUser, Block, Hourglass } from "@ode-react-ui/icons";
+import Button from "./Button";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Components/Buttons/Icon Button",
   component: IconButton,
+  subcomponents: { Button },
   argTypes: {
     color: {
       options: ["primary", "secondary", "tertiary", "danger"],
@@ -31,7 +33,7 @@ export default {
 } as ComponentMeta<typeof IconButton>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof IconButton> = (args) => (
+const Template: ComponentStory<typeof IconButton> = (args: IconButtonProps) => (
   <IconButton {...args} />
 );
 
