@@ -1,5 +1,11 @@
 # @ode-react-ui/storybook
 
+## 1.0.5-dev.13
+
+### Patch Changes
+
+- [`6a86e54`](https://github.com/opendigitaleducation/ode-react-ui/commit/6a86e543450d88ea4adb8f674a716de924896100) Thanks [@ccreusat](https://github.com/ccreusat)! - fix object assign and storyname
+
 ## 1.0.5-dev.12
 
 ### Patch Changes
