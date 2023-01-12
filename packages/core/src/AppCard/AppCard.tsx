@@ -74,7 +74,7 @@ const Root: PolymorphicAppCard = forwardRef(
   },
 );
 
-const AppCard = Object.assign({}, Root, {
+const AppCard = Object.assign(Root, {
   Icon: AppIcon,
   Name: AppName,
 });

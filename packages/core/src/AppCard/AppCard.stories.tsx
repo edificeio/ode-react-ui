@@ -8,7 +8,9 @@ import AppIcon from "./AppIcon";
 export default {
   title: "Components/AppCard",
   component: AppCard,
-  subcomponents: { AppIcon },
+  subcomponents: {
+    Icon: AppIcon,
+  },
   parameters: {
     docs: {
       description: {

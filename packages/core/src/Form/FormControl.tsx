@@ -51,8 +51,6 @@ const FormControl = Object.assign(Root, {
   Text: FormText,
 });
 
-/* This is a hack due to Storybook issue rendering displayName [Object object] */
 Root.displayName = "FormControl";
-FormControl.displayName = "FormControl";
 
 export default FormControl;
