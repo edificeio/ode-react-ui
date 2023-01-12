@@ -8,7 +8,7 @@ import { FormControl, Label, Input, FormText } from "./index";
 export default {
   title: "Forms/Form Control",
   component: FormControl,
-  subcomponents: { Label, Input, FormText },
+  subcomponents: { Label, Input, Text: FormText },
   argTypes: {
     status: {
       options: ["valid", "invalid"],
