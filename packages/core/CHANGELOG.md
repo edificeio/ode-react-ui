@@ -1,5 +1,15 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.24
+
+### Patch Changes
+
+- [#86](https://github.com/opendigitaleducation/ode-react-ui/pull/86) [`c129bab`](https://github.com/opendigitaleducation/ode-react-ui/commit/c129babdd8fa3bb9496dd1b9d1f584172cc5c228) Thanks [@github-actions](https://github.com/apps/github-actions)! - add subcomponents for stories components
+
+- [`6a86e54`](https://github.com/opendigitaleducation/ode-react-ui/commit/6a86e543450d88ea4adb8f674a716de924896100) Thanks [@ccreusat](https://github.com/ccreusat)! - fix object assign and storyname
+
+- [#87](https://github.com/opendigitaleducation/ode-react-ui/pull/87) [`1c10cf2`](https://github.com/opendigitaleducation/ode-react-ui/commit/1c10cf2bfc520d5080d9486068a0e589461dbd74) Thanks [@clementcreusat](https://github.com/clementcreusat)! - Fix style and accessibility warnings. Refactor TreeItem: extract events handler to dedicated hook
+
 ## 1.0.7-dev.23
 
 ### Patch Changes
