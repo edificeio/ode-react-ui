@@ -27,10 +27,15 @@ const IconButton = forwardRef(
     { icon, className, ...restProps }: IconButtonProps,
     ref?: Ref<ButtonRef>,
   ) => {
-    const classes = clsx("btn-icon", className);
+    const buttonProps = {
+      ...restProps,
+      ...{
+        className: clsx("btn-icon", className),
+      },
+    };
 
     return (
-      <Button ref={ref} {...restProps} className={classes}>
+      <Button ref={ref} {...buttonProps}>
         {icon}
       </Button>
     );

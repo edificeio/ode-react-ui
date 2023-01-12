@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 /**
  * Modal Footer
  */
@@ -10,5 +12,5 @@ ModalFooter.displayName = "Modal.Footer";
 export default ModalFooter;
 
 export interface ModalFooterProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }

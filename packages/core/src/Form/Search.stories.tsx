@@ -2,12 +2,13 @@ import { Search } from "@ode-react-ui/icons";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import SearchButton from "../Button/SearchButton";
 
-import { FormControl } from "./index";
+import { FormControl, Input } from "./index";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Forms/Search",
   component: FormControl,
+  subcomponents: { Input, SearchButton },
   parameters: {
     docs: {
       description: {
@@ -31,7 +32,7 @@ export default {
   },
 } as ComponentMeta<typeof FormControl>;
 
-const Template: ComponentStory<typeof FormControl> = (args) => (
+const Template: ComponentStory<typeof FormControl> = (args: any) => (
   <FormControl id={args.id} status={args.status} className="input-group">
     <FormControl.Input
       type="search"

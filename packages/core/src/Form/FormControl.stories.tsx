@@ -1,6 +1,6 @@
-import { Mail, Search } from "@ode-react-ui/icons";
+import { Mail } from "@ode-react-ui/icons";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Button } from "../Button";
+import { FormControlProps } from "./FormControlProps";
 
 import { FormControl, Label, Input, FormText } from "./index";
 
@@ -8,6 +8,7 @@ import { FormControl, Label, Input, FormText } from "./index";
 export default {
   title: "Forms/Form Control",
   component: FormControl,
+  subcomponents: { Label, Input, FormText },
   argTypes: {
     status: {
       options: ["valid", "invalid"],
@@ -23,7 +24,9 @@ export default {
   },
 } as ComponentMeta<typeof FormControl>;
 
-const Template: ComponentStory<typeof FormControl> = (args: any) => (
+const Template: ComponentStory<typeof FormControl> = (
+  args: FormControlProps,
+) => (
   <FormControl {...args}>
     <Label>Email</Label>
     <Input type="text" placeholder="Placeholder text" size="md" />

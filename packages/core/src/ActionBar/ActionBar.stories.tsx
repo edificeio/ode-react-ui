@@ -8,6 +8,7 @@ import ActionBar from "./ActionBar";
 export default {
   title: "Components/ActionBar",
   component: ActionBar,
+  subcomponents: { Button },
 } as ComponentMeta<typeof ActionBar>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

@@ -7,12 +7,13 @@ import { FormControl, Label } from "./index";
 export default {
   title: "Forms/Label",
   component: Label,
+  subcomponents: { FormControl },
   args: {
     children: "Email",
   },
 } as ComponentMeta<typeof Label>;
 
-const Template: ComponentStory<typeof Label> = (args) => (
+const Template: ComponentStory<typeof Label> = (args: any) => (
   <FormControl id="uuid">
     <Label {...args}>{args.children}</Label>
   </FormControl>

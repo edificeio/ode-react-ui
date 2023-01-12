@@ -2,7 +2,6 @@ import { forwardRef, Ref } from "react";
 
 import clsx from "clsx";
 
-// variant: icon ou image
 interface AvatarProps {
   isIconUrl?: boolean;
   variant: string;

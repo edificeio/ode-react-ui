@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import { useModalContext } from "./ModalContext";
 
 /**
@@ -18,5 +20,5 @@ ModalBody.displayName = "Modal.Body";
 export default ModalBody;
 
 export interface ModalBodyProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }

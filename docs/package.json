@@ -39,11 +39,10 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "rollup-plugin-visualizer": "5.9.0",
-    "typescript": "4.9.4"
+    "typescript": "4.8.4"
   },
   "devDependencies": {
     "@babel/core": "7.20.5",
-    "@ode-react-ui/icons": "*",
     "@storybook/addon-a11y": "6.5.15",
     "@storybook/addon-actions": "6.5.15",
     "@storybook/addon-essentials": "6.5.15",

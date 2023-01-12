@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import { useModalContext } from "./ModalContext";
 
 /**
@@ -27,6 +29,6 @@ ModalHeader.displayName = "Modal.Header";
 export default ModalHeader;
 
 export interface ModalHeaderProps {
-  onModalClose: Function;
-  children: React.ReactNode;
+  onModalClose: () => {};
+  children: ReactNode;
 }

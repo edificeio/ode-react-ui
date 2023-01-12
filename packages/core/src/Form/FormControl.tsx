@@ -45,7 +45,7 @@ const Root = forwardRef(
   },
 );
 
-const FormControl = Object.assign({}, Root, {
+const FormControl = Object.assign(Root, {
   Label,
   Input,
   Text: FormText,
