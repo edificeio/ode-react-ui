@@ -2,14 +2,7 @@ import { forwardRef, Ref } from "react";
 
 import clsx from "clsx";
 
-interface AvatarProps {
-  isIconUrl?: boolean;
-  variant: string;
-  size?: string;
-  appCode?: string;
-  alt?: string;
-  src?: string;
-}
+import { AvatarProps } from "./AvatarProps";
 
 const Avatar = forwardRef(
   (
@@ -20,6 +13,7 @@ const Avatar = forwardRef(
       appCode = "placeholder",
       alt = "alternative text",
       src,
+      className,
     }: AvatarProps,
     ref: Ref<HTMLImageElement>,
   ) => {
@@ -27,18 +21,22 @@ const Avatar = forwardRef(
     const isSquare = variant === "square";
     const isCircle = variant === "circle";
 
-    const classes = clsx("avatar react", {
-      "avatar-xs": size === "xs" && !isTitle,
-      "avatar-sm": size === "sm" && !isTitle,
-      "avatar-md": size === "md" && !isTitle,
-      "avatar-lg": size === "lg" && !isTitle,
-      "avatar-title gap-12 w-auto": isTitle,
-      rounded: isSquare,
-      "rounded-circle": isCircle,
-      [`bg-light-${appCode} color-app-${appCode}`]:
-        !isIconUrl && appCode && !isTitle,
-      [`color-app-${appCode}`]: isTitle,
-    });
+    const classes = clsx(
+      "avatar react",
+      {
+        "avatar-xs": size === "xs" && !isTitle,
+        "avatar-sm": size === "sm" && !isTitle,
+        "avatar-md": size === "md" && !isTitle,
+        "avatar-lg": size === "lg" && !isTitle,
+        "avatar-title gap-12 w-auto": isTitle,
+        rounded: isSquare,
+        "rounded-circle": isCircle,
+        [`bg-light-${appCode} color-app-${appCode}`]:
+          !isIconUrl && appCode && !isTitle,
+        [`color-app-${appCode}`]: isTitle,
+      },
+      className,
+    );
 
     if (isIconUrl && src) {
       return <img src={src} alt={alt} className={classes} ref={ref} />;
@@ -80,5 +78,4 @@ const Avatar = forwardRef(
 );
 
 Avatar.displayName = "Avatar";
-
 export default Avatar;
