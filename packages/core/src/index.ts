@@ -3,6 +3,7 @@ export * from "./ActionBar";
 export * from "./AppCard";
 export * from "./Avatar";
 export * from "./Button";
+export * from "./Card";
 export * from "./Form";
 export * from "./Grid";
 export * from "./Header";
