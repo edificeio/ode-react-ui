@@ -1,8 +1,10 @@
-export interface CardProps {
+import { ComponentPropsWithRef } from "react";
+
+export interface CardProps extends ComponentPropsWithRef<"div"> {
   /**
    * To show the icon of an application
    */
-  appCode: string;
+  appCode?: string;
   /**
    * Person who created resource
    * */
@@ -14,11 +16,11 @@ export interface CardProps {
   /**
    * Updated time
    */
-  updatedAt: string;
+  updatedAt?: string;
   /**
    * Shared number
    */
-  people: string;
+  people?: string;
   /**
    * Display Card as Folder
    */
