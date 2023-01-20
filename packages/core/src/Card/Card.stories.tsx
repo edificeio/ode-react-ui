@@ -38,6 +38,11 @@ LoadingCard.args = {
   isLoading: true,
 };
 
+export const AnimatedCard = Template.bind({});
+AnimatedCard.args = {
+  isAnimated: true,
+};
+
 export const FolderCard = Template.bind({});
 FolderCard.args = {
   isFolder: true,
