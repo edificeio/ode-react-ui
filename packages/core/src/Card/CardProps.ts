@@ -28,6 +28,10 @@ export interface CardProps {
    */
   isSelected?: boolean;
   /**
+   * Add animation to the Card Component
+   */
+  isAnimated?: boolean;
+  /**
    * Skeleton Card
    * */
   isLoading?: boolean;

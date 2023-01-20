@@ -16,6 +16,7 @@ const Card = forwardRef(
       creatorName = "tom.mate",
       isSelected = false,
       isFolder = false,
+      isAnimated = false,
       appCode = "placeholder",
       people = "23",
       src = "",
@@ -32,6 +33,7 @@ const Card = forwardRef(
       {
         "placeholder-glow": isLoading,
         "is-selected": isSelected,
+        "is-animated": isAnimated,
       },
       className,
     );
