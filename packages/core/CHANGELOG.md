@@ -4,6 +4,8 @@
 
 ### Patch Changes
 
+- fix card component props
+
 - [#88](https://github.com/opendigitaleducation/ode-react-ui/pull/88) [`7523c11`](https://github.com/opendigitaleducation/ode-react-ui/commit/7523c111d611630fc685e1c1d82cbc4c878138a5) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add card component
 
 - [#90](https://github.com/opendigitaleducation/ode-react-ui/pull/90) [`42ed150`](https://github.com/opendigitaleducation/ode-react-ui/commit/42ed1509df6df6f4139dda611d45d760932d4c8e) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fixing styles card component
