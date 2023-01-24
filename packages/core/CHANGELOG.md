@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.27
+
+### Patch Changes
+
+- [`a89f1d6`](https://github.com/opendigitaleducation/ode-react-ui/commit/a89f1d6c9c86fb6c1c615f30c81fb360e4f4a409) Thanks [@ccreusat](https://github.com/ccreusat)! - fix types card component
+
 ## 1.0.7-dev.26
 
 ### Patch Changes
