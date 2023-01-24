@@ -19,9 +19,10 @@ const Card = forwardRef(
       isAnimated = false,
       appCode = "placeholder",
       people = "23",
-      src = "",
+      resourceSrc = "",
       isLoading = false,
       className,
+      userSrc = "",
       onSelect,
       onOpen,
       ...restProps
@@ -108,10 +109,10 @@ const Card = forwardRef(
             <Files width="48" height="48" className={classesFiles} />
           ) : (
             <Avatar
-              isIconUrl={!!src}
+              isIconUrl={!!resourceSrc}
               variant="square"
               appCode={appCode}
-              src={src}
+              src={resourceSrc}
               className={classesAvatar}
             />
           )}
@@ -131,7 +132,17 @@ const Card = forwardRef(
         {!isFolder ? (
           <div className="card-footer" role="contentinfo">
             <div className={classesProfile}>
-              <OneProfile />
+              {userSrc ? (
+                <Avatar
+                  className={classesAvatar}
+                  isIconUrl={!!userSrc}
+                  size="xs"
+                  src={userSrc}
+                  variant="circle"
+                />
+              ) : (
+                <OneProfile />
+              )}
               <p className={classesName}>{creatorName}</p>
             </div>
             <p className={classesPeople}>

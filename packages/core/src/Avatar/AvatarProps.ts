@@ -11,7 +11,7 @@ export interface AvatarProps {
   /**
    * Avatar' size
    */
-  size?: string;
+  size?: "xs" | "sm" | "md" | "lg";
   /**
    * To show the icon of an application
    */
