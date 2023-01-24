@@ -1,6 +1,6 @@
 import React, { forwardRef, Ref } from "react";
 
-import { Files, Options, Users } from "@ode-react-ui/icons";
+import { Files, Globe, Options, Users } from "@ode-react-ui/icons";
 import { OneProfile } from "@ode-react-ui/icons/nav";
 import clsx from "clsx";
 
@@ -11,20 +11,22 @@ import { CardProps } from "./CardProps";
 const Card = forwardRef(
   (
     {
-      name = "Resource",
-      updatedAt = "2 days ago",
-      creatorName = "tom.mate",
-      isSelected = false,
-      isFolder = false,
-      isAnimated = false,
       appCode = "placeholder",
+      className,
+      creatorName = "tom.mate",
+      isAnimated = false,
+      isFolder = false,
+      isLoading = false,
+      isSelected = false,
+      isShared = false,
+      isPublic = false,
+      name = "Resource",
       people = "23",
       resourceSrc = "",
-      isLoading = false,
-      className,
+      updatedAt = "2 days ago",
       userSrc = "",
-      onSelect,
       onOpen,
+      onSelect,
       ...restProps
     }: CardProps,
     ref: Ref<HTMLDivElement>,
@@ -50,16 +52,12 @@ const Card = forwardRef(
       placeholder: isLoading,
     });
 
-    const classesName = clsx("small", {
+    const classesName = clsx("small text-truncate", {
       placeholder: isLoading,
     });
 
-    const classesProfile = clsx("d-inline-flex align-items-center gap-8", {
-      placeholder: isLoading,
-    });
-
-    const classesPeople = clsx(
-      "d-inline-flex align-items-center gap-4 caption",
+    const classesProfile = clsx(
+      "d-inline-flex align-items-center gap-8 text-truncate",
       {
         placeholder: isLoading,
       },
@@ -130,8 +128,11 @@ const Card = forwardRef(
           </div>
         </div>
         {!isFolder ? (
-          <div className="card-footer" role="contentinfo">
-            <div className={classesProfile}>
+          <div className="card-footer">
+            <div
+              className={classesProfile}
+              style={{ maxWidth: isShared || isPublic ? "80%" : "60%" }}
+            >
               {userSrc ? (
                 <Avatar
                   className={classesAvatar}
@@ -145,10 +146,10 @@ const Card = forwardRef(
               )}
               <p className={classesName}>{creatorName}</p>
             </div>
-            <p className={classesPeople}>
-              <Users width={16} height={16} />
-              <strong className="small">{people}</strong>
-            </p>
+            <div className="d-inline-flex align-items-center gap-8">
+              {isPublic && <Globe width={16} height={16} />}
+              {isShared && <Users width={16} height={16} />}
+            </div>
           </div>
         ) : null}
       </div>
