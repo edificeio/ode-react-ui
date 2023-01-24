@@ -34,6 +34,14 @@ export interface CardProps extends ComponentPropsWithRef<"div"> {
    */
   isAnimated?: boolean;
   /**
+   * Show icon if resource is shared
+   */
+  isShared?: boolean;
+  /**
+   * Show icon if resource is public
+   */
+  isPublic?: boolean;
+  /**
    * Skeleton Card
    * */
   isLoading?: boolean;
