@@ -44,7 +44,11 @@ export interface CardProps extends ComponentPropsWithRef<"div"> {
   /**
    * If Resource has image, `src` props shows the image
    */
-  src?: string;
+  resourceSrc?: string;
+  /**
+   * User Image Profile
+   */
+  userSrc?: string;
   /**
    * Action to open a single resource
    */
