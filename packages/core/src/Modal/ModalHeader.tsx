@@ -29,6 +29,6 @@ ModalHeader.displayName = "Modal.Header";
 export default ModalHeader;
 
 export interface ModalHeaderProps {
-  onModalClose: () => {};
+  onModalClose: () => void;
   children: ReactNode;
 }

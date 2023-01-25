@@ -15,7 +15,7 @@ export interface ModalProps {
   /**
    * Function to call when closing modal
    */
-  onModalClose: Function;
+  onModalClose: () => void;
 
   /**
    * Size of the modal (width)

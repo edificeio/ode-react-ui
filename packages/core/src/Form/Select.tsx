@@ -22,7 +22,7 @@ export interface SelectProps
   /**
    * State controlling select state
    */
-  model: string | undefined;
+  model?: string | undefined;
   /**
    * Label of the select
    */
@@ -79,11 +79,7 @@ const Select = forwardRef(
           </label>
         )}
         <select {...selectProps}>
-          {placeholderOption && (
-            <option selected={!model} disabled>
-              {placeholderOption}
-            </option>
-          )}
+          {placeholderOption && <option disabled>{placeholderOption}</option>}
           {options?.map((option) => {
             const value = typeof option === "object" ? option.value : option;
             const label = typeof option === "object" ? option.label : option;
