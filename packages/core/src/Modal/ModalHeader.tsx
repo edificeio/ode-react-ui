@@ -18,7 +18,9 @@ const ModalHeader = (props: ModalHeaderProps) => {
         type="button"
         className="btn btn-close"
         aria-label="Close"
-        onClick={() => onModalClose()}
+        onClick={() => {
+          onModalClose();
+        }}
       ></button>
     </div>
   );
