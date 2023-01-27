@@ -25,6 +25,11 @@ export interface TreeItemProps {
   selected: boolean;
 
   /**
+   * Node ID used for navigation folders
+   */
+  selectedNodeId: string;
+
+  /**
    * Callback function to provide selected item to parent component (TreeView)
    */
   onItemSelect?: Function;

@@ -5,7 +5,7 @@
  * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/advanced/src/TreeViewCustom/TreeViewCustom.tsx
  * @see WAI-ARIA https://www.w3.org/WAI/ARIA/apg/patterns/treeview/
  */
-import { forwardRef, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 
 import { TreeItem } from "./TreeItem";
 import { TreeNode } from "./TreeNode";
@@ -24,13 +24,18 @@ const TreeView = forwardRef<HTMLDivElement, TreeViewProps>(
       onTreeItemUnfold,
       onTreeItemFocus,
       onTreeItemBlur,
+      selectedNodeId,
     } = props;
 
-    const [selectedItem, setSelectedItem] = useState<string>("");
+    const [selectedItem, setSelectedItem] = useState<string>(selectedNodeId);
 
-    const handleItemSelect = (nodeId: string) => {
+    useEffect(() => {
+      handleItemSelect(selectedNodeId);
+    }, [selectedNodeId]);
+
+    const handleItemSelect = (nodeId: string, label?: string) => {
       setSelectedItem(nodeId);
-      onTreeItemSelect?.(nodeId);
+      onTreeItemSelect?.(nodeId, label);
     };
 
     const handleItemFold = (nodeId: string) => {
@@ -55,6 +60,7 @@ const TreeView = forwardRef<HTMLDivElement, TreeViewProps>(
         nodeId={node.id}
         label={node.name}
         section={node.section}
+        selectedNodeId={selectedNodeId}
         selected={selectedItem === node.id}
         onItemSelect={handleItemSelect}
         onItemFold={handleItemFold}
@@ -69,7 +75,7 @@ const TreeView = forwardRef<HTMLDivElement, TreeViewProps>(
     );
 
     return (
-      <div id="treeview" ref={ref} className="treeview">
+      <div ref={ref} id="treeview" className="treeview">
         {renderTree(data)}
       </div>
     );
