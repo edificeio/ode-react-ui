@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.30
+
+### Patch Changes
+
+- [`655b063`](https://github.com/opendigitaleducation/ode-react-ui/commit/655b063e5789ace7fd85f577552911f2a3163144) Thanks [@ccreusat](https://github.com/ccreusat)! - update treeview component to handle sync navigation
+
 ## 1.0.7-dev.29
 
 ### Patch Changes
