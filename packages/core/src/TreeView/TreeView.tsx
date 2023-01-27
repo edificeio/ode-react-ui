@@ -27,10 +27,12 @@ const TreeView = forwardRef<HTMLDivElement, TreeViewProps>(
       selectedNodeId,
     } = props;
 
-    const [selectedItem, setSelectedItem] = useState<string>(selectedNodeId);
+    const [selectedItem, setSelectedItem] = useState<string>(
+      selectedNodeId || "",
+    );
 
     useEffect(() => {
-      handleItemSelect(selectedNodeId);
+      handleItemSelect(selectedNodeId as string);
     }, [selectedNodeId]);
 
     const handleItemSelect = (nodeId: string, label?: string) => {
