@@ -1,5 +1,11 @@
 # @ode-react-ui/storybook
 
+## 1.0.5-dev.14
+
+### Patch Changes
+
+- [`6a9ad28`](https://github.com/opendigitaleducation/ode-react-ui/commit/6a9ad28e6228059c87eeceac8066f4c4f07c0782) Thanks [@ccreusat](https://github.com/ccreusat)! - update
+
 ## 1.0.5-dev.13
 
 ### Patch Changes
