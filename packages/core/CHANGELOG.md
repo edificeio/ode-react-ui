@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.32
+
+### Patch Changes
+
+- [`cf3ae27`](https://github.com/opendigitaleducation/ode-react-ui/commit/cf3ae27da4a9bc6cf20ec4be8123ad82935c250d) Thanks [@ccreusat](https://github.com/ccreusat)! - fix treeview props
+
 ## 1.0.7-dev.30
 
 ### Patch Changes
