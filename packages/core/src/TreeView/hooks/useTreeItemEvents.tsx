@@ -1,5 +1,6 @@
 export default function useTreeItemEvents(
   nodeId: string,
+  label: string,
   expanded: boolean,
   setExpanded: Function,
   onItemSelect: Function | undefined,
@@ -10,14 +11,14 @@ export default function useTreeItemEvents(
 ) {
   const handleItemClick = (event: React.MouseEvent<HTMLDivElement>) => {
     event.preventDefault();
-    onItemSelect?.(nodeId);
+    onItemSelect?.(nodeId, label);
     event.stopPropagation();
   };
 
   const handleItemKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (event.code === "Enter" || event.code === "Space") {
       event.preventDefault();
-      onItemSelect?.(nodeId);
+      onItemSelect?.(nodeId, label);
       event.stopPropagation();
     }
   };

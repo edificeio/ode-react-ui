@@ -120,19 +120,14 @@ const Card = forwardRef(
             </h3>
             {!isFolder ? (
               <p className="card-text small">
-                {/* <em>{dayjs(updatedAt).format("DD/MM/YYYY")}</em> */}
-                {/* <em>{dayjs(updatedAt).fromNow()}</em> */}
                 <em className={classesText}>{updatedAt}</em>
               </p>
             ) : null}
           </div>
         </div>
         {!isFolder ? (
-          <div className="card-footer">
-            <div
-              className={classesProfile}
-              style={{ maxWidth: isShared || isPublic ? "80%" : "60%" }}
-            >
+          <div className="card-footer gap-16">
+            <div className={classesProfile}>
               {userSrc ? (
                 <Avatar
                   className={classesAvatar}

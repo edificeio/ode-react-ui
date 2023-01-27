@@ -5,7 +5,7 @@
  * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/advanced/src/TreeViewCustom/TreeItem.tsx
  * @see WAI-ARIA https://www.w3.org/WAI/ARIA/apg/patterns/treeview/
  */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Folder, RafterRight, RafterDown } from "@ode-react-ui/icons";
 
@@ -24,6 +24,7 @@ export const TreeItem = (props: TreeItemProps) => {
     onItemUnfold,
     onItemFocus,
     onItemBlur,
+    selectedNodeId,
   } = props;
 
   const [expanded, setExpanded] = useState<boolean>(false);
@@ -37,6 +38,7 @@ export const TreeItem = (props: TreeItemProps) => {
     handleItemBlur,
   } = useTreeItemEvents(
     nodeId,
+    label,
     expanded,
     setExpanded,
     onItemSelect,
@@ -45,6 +47,12 @@ export const TreeItem = (props: TreeItemProps) => {
     onItemFocus,
     onItemBlur,
   );
+
+  useEffect(() => {
+    if (selectedNodeId === nodeId) {
+      setExpanded(true);
+    }
+  }, [selectedNodeId]);
 
   const rafterSize = section ? 16 : 12;
 
