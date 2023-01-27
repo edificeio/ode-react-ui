@@ -2,6 +2,8 @@ import React, { forwardRef, Ref, useId } from "react";
 
 import clsx from "clsx";
 
+import { useFormControl } from "./FormContext";
+
 export interface OptionsType {
   /**
    * Value
@@ -24,21 +26,9 @@ export interface SelectProps
    */
   model?: string | undefined;
   /**
-   * Label of the select
-   */
-  label?: string | false;
-  /**
    * Add a placeholder option
    */
   placeholderOption?: string | false;
-  /**
-   * Unique id of select
-   */
-  id?: string;
-  /**
-   * Status to handle Form Validation
-   */
-  status?: "valid" | "invalid";
 }
 
 const Select = forwardRef(
@@ -46,16 +36,15 @@ const Select = forwardRef(
     {
       options,
       model,
-      label = false,
       disabled = false,
       placeholderOption = false,
-      id = "",
-      status,
       children,
       ...restProps
     }: SelectProps,
     ref: Ref<HTMLSelectElement>,
   ) => {
+    const { id, isRequired, status } = useFormControl();
+
     const selectId = id !== "" ? id : useId();
     const selectProps = {
       ...restProps,
@@ -73,12 +62,7 @@ const Select = forwardRef(
 
     return (
       <>
-        {label && (
-          <label className="form-label" htmlFor={selectId}>
-            {label}
-          </label>
-        )}
-        <select {...selectProps}>
+        <select {...selectProps} required={isRequired}>
           {placeholderOption && <option disabled>{placeholderOption}</option>}
           {options?.map((option) => {
             const value = typeof option === "object" ? option.value : option;
