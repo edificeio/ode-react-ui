@@ -1,5 +1,15 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.29
+
+### Patch Changes
+
+- [`4917d7b`](https://github.com/opendigitaleducation/ode-react-ui/commit/4917d7b5db83ff9c658dab33ebfb80a114afbc61) Thanks [@david-cc](https://github.com/david-cc)! - refacto Select component and fix ModalHeader lint
+
+- [#91](https://github.com/opendigitaleducation/ode-react-ui/pull/91) [`f2e7fc9`](https://github.com/opendigitaleducation/ode-react-ui/commit/f2e7fc9dab1eb7b25368bf562142f1cfca61f9bc) Thanks [@github-actions](https://github.com/apps/github-actions)! - Fix modal types and add missing export components
+
+- [#91](https://github.com/opendigitaleducation/ode-react-ui/pull/91) [`5be0fae`](https://github.com/opendigitaleducation/ode-react-ui/commit/5be0fae9e3733bf31041f59d9fcdfe524ddfaa2c) Thanks [@github-actions](https://github.com/apps/github-actions)! - fix lint issue on ModalHeader
+
 ## 1.0.7-dev.28
 
 ### Patch Changes
