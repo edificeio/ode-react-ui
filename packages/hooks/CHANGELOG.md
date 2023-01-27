@@ -1,5 +1,11 @@
 # @ode-react-ui/hooks
 
+## 1.0.7-dev.31
+
+### Patch Changes
+
+- [`c84c39a`](https://github.com/opendigitaleducation/ode-react-ui/commit/c84c39a3f006f64ee3d17438db2d8244e598ad01) Thanks [@ccreusat](https://github.com/ccreusat)! - add hook to use luxon
+
 ## 1.0.7-dev.23
 
 ### Patch Changes
