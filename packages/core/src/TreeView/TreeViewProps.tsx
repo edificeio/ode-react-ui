@@ -9,7 +9,7 @@ export interface TreeViewProps {
   /**
    * Node ID used for navigation folders
    */
-  selectedNodeId?: string;
+  selectedNodesIds?: string[];
 
   /**
    * Callback function to provide selected item to parent component

@@ -18,4 +18,8 @@ export interface TreeNode {
    * Is this node contains children ?
    */
   children?: readonly TreeNode[];
+  /**
+   * All none declare types
+   */
+  [key: string]: any;
 }

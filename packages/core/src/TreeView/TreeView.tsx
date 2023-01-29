@@ -24,16 +24,16 @@ const TreeView = forwardRef<HTMLDivElement, TreeViewProps>(
       onTreeItemUnfold,
       onTreeItemFocus,
       onTreeItemBlur,
-      selectedNodeId,
+      selectedNodesIds,
     } = props;
 
-    const [selectedItem, setSelectedItem] = useState<string>(
-      selectedNodeId || "",
-    );
+    const [selectedItem, setSelectedItem] = useState<string>("");
 
     useEffect(() => {
-      handleItemSelect(selectedNodeId as string);
-    }, [selectedNodeId]);
+      if (selectedNodesIds?.length && selectedNodesIds?.length >= 1) {
+        handleItemSelect(selectedNodesIds.at(-1) as string);
+      }
+    }, [selectedNodesIds]);
 
     const handleItemSelect = (nodeId: string, label?: string) => {
       setSelectedItem(nodeId);
@@ -62,7 +62,7 @@ const TreeView = forwardRef<HTMLDivElement, TreeViewProps>(
         nodeId={node.id}
         label={node.name}
         section={node.section}
-        selectedNodeId={selectedNodeId}
+        selectedNodesIds={selectedNodesIds}
         selected={selectedItem === node.id}
         onItemSelect={handleItemSelect}
         onItemFold={handleItemFold}
