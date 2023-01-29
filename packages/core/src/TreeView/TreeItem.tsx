@@ -24,7 +24,7 @@ export const TreeItem = (props: TreeItemProps) => {
     onItemUnfold,
     onItemFocus,
     onItemBlur,
-    selectedNodeId,
+    selectedNodesIds,
   } = props;
 
   const [expanded, setExpanded] = useState<boolean>(false);
@@ -49,10 +49,18 @@ export const TreeItem = (props: TreeItemProps) => {
   );
 
   useEffect(() => {
-    if (selectedNodeId === nodeId) {
-      setExpanded(true);
+    if (selectedNodesIds?.length && selectedNodesIds?.length >= 1) {
+      const lastNodeId = selectedNodesIds.at(-1) as string;
+      selectedNodesIds.some((node: string) => {
+        if (node === nodeId && nodeId !== lastNodeId) {
+          setExpanded(true);
+          return node === nodeId;
+        }
+        setExpanded(false);
+        return false;
+      });
     }
-  }, [selectedNodeId]);
+  }, [selectedNodesIds]);
 
   const rafterSize = section ? 16 : 12;
 
