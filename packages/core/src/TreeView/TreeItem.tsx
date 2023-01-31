@@ -50,7 +50,9 @@ export const TreeItem = (props: TreeItemProps) => {
 
   useEffect(() => {
     if (selectedNodesIds?.length && selectedNodesIds?.length >= 1) {
-      const lastNodeId = selectedNodesIds.at(-1) as string;
+      const lastNodeId = selectedNodesIds[
+        selectedNodesIds.length - 1
+      ] as string;
       selectedNodesIds.some((node: string) => {
         if (node === nodeId && nodeId !== lastNodeId) {
           setExpanded(true);
