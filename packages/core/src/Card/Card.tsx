@@ -111,6 +111,7 @@ const Card = forwardRef(
               variant="square"
               appCode={appCode}
               src={resourceSrc}
+              alt={name}
               className={classesAvatar}
             />
           )}

@@ -5,6 +5,5 @@
 | useClickOutside |     ✅      |           |
 | useToggle       |     ✅      |           |
 | useOdeFactory   |     ✅      |           |
-| useThemeHelper  |     ✅      |           |
 | useOdeIcons     |     ✅      |           |
 | useTitle        |     ✅      |           |
