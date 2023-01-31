@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.37
+
+### Patch Changes
+
+- [#96](https://github.com/opendigitaleducation/ode-react-ui/pull/96) [`9452382`](https://github.com/opendigitaleducation/ode-react-ui/commit/94523824193213bca5dbf88d02d65659cb260eaf) Thanks [@github-actions](https://github.com/apps/github-actions)! - hide treeview if trash is selected
+
 ## 1.0.7-dev.36
 
 ### Patch Changes
