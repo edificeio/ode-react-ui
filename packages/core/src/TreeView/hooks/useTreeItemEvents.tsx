@@ -11,14 +11,14 @@ export default function useTreeItemEvents(
 ) {
   const handleItemClick = (event: React.MouseEvent<HTMLDivElement>) => {
     event.preventDefault();
-    onItemSelect?.(nodeId, label);
+    onItemSelect?.(nodeId);
     event.stopPropagation();
   };
 
   const handleItemKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (event.code === "Enter" || event.code === "Space") {
       event.preventDefault();
-      onItemSelect?.(nodeId, label);
+      onItemSelect?.(nodeId);
       event.stopPropagation();
     }
   };
