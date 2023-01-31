@@ -24,6 +24,7 @@ export const TreeItem = (props: TreeItemProps) => {
     onItemUnfold,
     onItemFocus,
     onItemBlur,
+    selectedItem,
     selectedNodesIds,
   } = props;
 
@@ -62,7 +63,10 @@ export const TreeItem = (props: TreeItemProps) => {
         return false;
       });
     }
-  }, [selectedNodesIds]);
+    if (selectedItem === "") {
+      setExpanded(false);
+    }
+  }, [selectedNodesIds, selectedItem]);
 
   const rafterSize = section ? 16 : 12;
 
