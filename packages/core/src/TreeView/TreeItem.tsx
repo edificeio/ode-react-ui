@@ -64,7 +64,6 @@ export const TreeItem = (props: TreeItemProps) => {
     } else {
       setExpanded(false);
     }
-    console.log("selectedNodesIds", selectedNodesIds);
   }, [selectedNodesIds]);
 
   const rafterSize = section ? 16 : 12;
