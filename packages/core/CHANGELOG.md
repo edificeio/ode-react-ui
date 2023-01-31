@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.35
+
+### Patch Changes
+
+- [`a7ed4a3`](https://github.com/opendigitaleducation/ode-react-ui/commit/a7ed4a37341f1a1d41445ff340d561a0932b5745) Thanks [@ccreusat](https://github.com/ccreusat)! - fix treeview update with unfold status
+
 ## 1.0.7-dev.34
 
 ### Patch Changes
