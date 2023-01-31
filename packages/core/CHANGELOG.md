@@ -1,5 +1,13 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.36
+
+### Patch Changes
+
+- [`5a0e299`](https://github.com/opendigitaleducation/ode-react-ui/commit/5a0e2994bcf786846235c57991b05d8b8d135c72) Thanks [@ccreusat](https://github.com/ccreusat)! - fix treeview component
+
+- [#95](https://github.com/opendigitaleducation/ode-react-ui/pull/95) [`13d3913`](https://github.com/opendigitaleducation/ode-react-ui/commit/13d39138023f7837cfc264a42cf7cbd482533fe7) Thanks [@github-actions](https://github.com/apps/github-actions)! - fix treeview issues
+
 ## 1.0.7-dev.35
 
 ### Patch Changes
