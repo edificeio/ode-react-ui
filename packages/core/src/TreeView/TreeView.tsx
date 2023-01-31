@@ -65,7 +65,6 @@ const TreeView = forwardRef<HTMLDivElement, TreeViewProps>(
         label={node.name}
         section={node.section}
         selectedNodesIds={selectedNodesIds}
-        selectedItem={selectedItem}
         selected={selectedItem === node.id}
         onItemSelect={handleItemSelect}
         onItemFold={handleItemFold}
