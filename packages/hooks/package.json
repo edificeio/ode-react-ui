@@ -57,7 +57,8 @@
     "vite-plugin-dts": "1.7.1"
   },
   "dependencies": {
-    "luxon": "3.2.1"
+    "luxon": "3.2.1",
+    "react-hot-toast": "2.4.0"
   },
   "peerDependencies": {
     "ode-ts-client": "feat-explorer",
