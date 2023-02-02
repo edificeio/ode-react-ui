@@ -12,7 +12,12 @@ import { usePopper } from "react-popper";
 
 import { TooltipProps } from "./TooltipProps";
 
-const Tooltip = ({ children, placement = "right" }: TooltipProps) => {
+const Tooltip = ({
+  children,
+  message,
+  icon = null,
+  placement = "auto",
+}: TooltipProps) => {
   const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(
     null,
   );
@@ -57,7 +62,10 @@ const Tooltip = ({ children, placement = "right" }: TooltipProps) => {
           style={styles.popper}
           {...attributes.popper}
         >
-          <div className="tooltip-inner shadow-hover">Some tooltip text!</div>
+          <div className="tooltip-inner shadow-hover d-flex gap-8 align-items-center">
+            {icon && icon}
+            <div>{message}</div>
+          </div>
           <div
             className="tooltip-arrow"
             ref={setArrowElement}
