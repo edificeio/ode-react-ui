@@ -57,7 +57,7 @@
     "vite-plugin-dts": "1.7.1"
   },
   "dependencies": {
-    "react-popper": "2.0.3",
+    "react-popper": "2.3.0",
     "@popperjs/core": "2.11.6"
   },
   "peerDependencies": {
