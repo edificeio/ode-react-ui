@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 type Placement =
   | "auto"
@@ -19,12 +19,20 @@ type Placement =
 
 export interface TooltipProps {
   /**
+   * Text to display inside tooltip
+   */
+  message: string;
+  /**
    * Element to be wrapped as Tooltip trigger
    */
   children: React.ReactNode;
   /**
    * Tooltip position
    */
-  placement: Placement;
+  placement?: Placement;
+  /**
+   * Tooltip left icon
+   */
+  icon?: ReactNode;
 }
 export type TooltipType = React.FC<TooltipProps>;

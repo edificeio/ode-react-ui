@@ -4,6 +4,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Button } from "../Button";
 import Tooltip from "./Tooltip";
+import { AlertCircle } from "@ode-react-ui/icons";
 
 export default {
   title: "Components/Tooltip",
@@ -29,6 +30,8 @@ const Template: ComponentStory<typeof Tooltip> = (args: any) => {
 
 export const Base = Template.bind({});
 Base.args = {
+  message:
+    "Optio minus varius reprehenderit ridiculus praesentium metus porttitor tellus.",
   children: (
     <>
       <Button type="button" variant="filled" color="primary">
@@ -41,9 +44,24 @@ Base.args = {
 export const Bottom = Template.bind({});
 Bottom.args = {
   placement: "bottom",
+  message:
+    "Optio minus varius reprehenderit ridiculus praesentium metus porttitor tellus.",
   children: (
     <Button type="button" variant="filled" color="primary">
       Bottom Tooltip
+    </Button>
+  ),
+};
+
+export const Icon = Template.bind({});
+Icon.args = {
+  placement: "right",
+  message:
+    "Optio minus varius reprehenderit ridiculus praesentium metus porttitor tellus.",
+  icon: <AlertCircle />,
+  children: (
+    <Button type="button" variant="filled" color="primary">
+      Icon Tooltip
     </Button>
   ),
 };
