@@ -1,5 +1,11 @@
 # @ode-react-ui/hooks
 
+## 1.0.7-dev.38
+
+### Patch Changes
+
+- [#97](https://github.com/opendigitaleducation/ode-react-ui/pull/97) [`e5d1f5b`](https://github.com/opendigitaleducation/ode-react-ui/commit/e5d1f5b0fda37b99cae092c4afb3fc3de6fd390b) Thanks [@david-cc](https://github.com/david-cc)! - Add useHotToast hook
+
 ## 1.0.7-dev.33
 
 ### Patch Changes
