@@ -14,9 +14,19 @@ export const Example = () => {
   const { hotToast } = useHotToast(Alert);
 
   const infoNotify = () =>
-    hotToast.info(<h3>This is an info message in a H3 tag</h3>);
-  const warningNotify = () => hotToast.warning("This is a warning message!");
+    hotToast.info(
+      `This is an info message with duration equal to ${Infinity}`,
+      {
+        duration: Infinity,
+        isDismissible: true,
+      },
+    );
+
+  const warningNotify = () =>
+    hotToast.warning(<h3>This is a warning message in a H3 tag</h3>);
+
   const sucessNotify = () => hotToast.success("This is a success message!");
+
   const errorNotify = () =>
     hotToast.error(<div>This is an error message in a DIV tag</div>);
 
@@ -33,10 +43,10 @@ export const Example = () => {
           <Button color="danger" onClick={errorNotify}>
             Make me an error toast
           </Button>
-          <Button color="secondary" onClick={infoNotify}>
+          <Button color="primary" onClick={infoNotify}>
             Make me an info toast
           </Button>
-          <Button color="primary" onClick={warningNotify}>
+          <Button color="secondary" onClick={warningNotify}>
             Make me a warning toast
           </Button>
         </div>
