@@ -1,0 +1,30 @@
+import { Canvas, Story } from "@storybook/addon-docs";
+
+# useHotToast
+
+## Usage
+
+- Show notification messages.
+
+## Example
+
+<Canvas>
+  <Story id="hooks-usehottoast--example" />
+</Canvas>
+
+## Hook usage
+
+The hook can be used in combination with the Alert component to display messages with Alert design.
+
+Here an example of how to use the hook:
+
+```jsx
+const { hotToast } = useHotToast(Alert);
+
+const infoNotify = () =>
+  hotToast.info(<h3>This is an info message in a h3 tag</h3>);
+const warningNotify = () => hotToast.warning("This is a warning message!");
+const sucessNotify = () => hotToast.success("This is a success message!");
+const errorNotify = () =>
+  hotToast.error(<div>This is an error message in a div tag</div>);
+```
