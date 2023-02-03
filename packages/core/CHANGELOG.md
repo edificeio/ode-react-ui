@@ -1,5 +1,14 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.39
+
+### Patch Changes
+
+- [#99](https://github.com/opendigitaleducation/ode-react-ui/pull/99) [`2f0c035`](https://github.com/opendigitaleducation/ode-react-ui/commit/2f0c0353e35bb9ed4b03fa5fe96587859281fe84) Thanks [@roolian](https://github.com/roolian)! - Add Tooltip
+
+- Updated dependencies [[`9df1aa8`](https://github.com/opendigitaleducation/ode-react-ui/commit/9df1aa8739c418deb5bd530b35071813a328f6aa), [`5fc130b`](https://github.com/opendigitaleducation/ode-react-ui/commit/5fc130b65af8e3f33377d55cb0800d10ba683db4)]:
+  - @ode-react-ui/hooks@1.0.7-dev.39
+
 ## 1.0.7-dev.38
 
 ### Patch Changes
