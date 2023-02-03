@@ -13,14 +13,7 @@ export default {
 export const Example = () => {
   const { hotToast } = useHotToast(Alert);
 
-  const infoNotify = () =>
-    hotToast.info(
-      `This is an info message with duration equal to ${Infinity}`,
-      {
-        duration: Infinity,
-        isDismissible: true,
-      },
-    );
+  const infoNotify = () => hotToast.info("This is an info message!");
 
   const warningNotify = () =>
     hotToast.warning(<h3>This is a warning message in a H3 tag</h3>);
@@ -30,6 +23,15 @@ export const Example = () => {
   const errorNotify = () =>
     hotToast.error(<div>This is an error message in a DIV tag</div>);
 
+  const dismissibleInfoNotify = () =>
+    hotToast.info(
+      `This is an info message with infinite duration and dismissible.`,
+      {
+        duration: Infinity,
+        isDismissible: true,
+      },
+    );
+
   return (
     <>
       <Toaster />
@@ -38,16 +40,23 @@ export const Example = () => {
         <h2>Hot Toast 🍞</h2>
         <div className="d-flex gap-8 p-24">
           <Button color="tertiary" onClick={sucessNotify}>
-            Make me a sucess toast
+            Sucess toast
           </Button>
           <Button color="danger" onClick={errorNotify}>
-            Make me an error toast
+            Error toast
           </Button>
           <Button color="primary" onClick={infoNotify}>
-            Make me an info toast
+            Info toast
           </Button>
           <Button color="secondary" onClick={warningNotify}>
-            Make me a warning toast
+            Warning toast
+          </Button>
+          <Button
+            color="primary"
+            variant="outline"
+            onClick={dismissibleInfoNotify}
+          >
+            Dismissible toast
           </Button>
         </div>
       </div>
