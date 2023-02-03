@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/core",
-  "version": "1.0.7-dev.38",
+  "version": "1.0.7-dev.39",
   "private": false,
   "description": "@ode-react-ui react core components",
   "keywords": [
@@ -43,7 +43,7 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@ode-react-ui/hooks": "1.0.7-dev.38",
+    "@ode-react-ui/hooks": "1.0.7-dev.39",
     "@ode-react-ui/icons": "*",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
@@ -61,7 +61,7 @@
     "@popperjs/core": "2.11.6"
   },
   "peerDependencies": {
-    "@ode-react-ui/hooks": "1.0.7-dev.38",
+    "@ode-react-ui/hooks": "1.0.7-dev.39",
     "@ode-react-ui/icons": "*",
     "react": "18.2.0",
     "react-dom": "18.2.0"
