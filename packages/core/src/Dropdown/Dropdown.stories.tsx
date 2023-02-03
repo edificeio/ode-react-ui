@@ -23,7 +23,7 @@ const Template: ComponentStory<typeof Dropdown> = (args: any) => {
 
 export const Base = Template.bind({});
 Base.args = {
-  children: (
+  trigger: (
     <DropdownTrigger title="Dropdown toggle" icon={<Filter width={20} />} />
   ),
   content: (
