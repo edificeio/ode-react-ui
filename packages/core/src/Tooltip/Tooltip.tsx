@@ -39,7 +39,6 @@ const Tooltip = ({
   });
 
   const [visible, setVisible] = useState<boolean>(false);
-  console.log(attributes.popper);
 
   return (
     <>
