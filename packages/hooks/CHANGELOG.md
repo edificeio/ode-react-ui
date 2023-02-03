@@ -1,5 +1,13 @@
 # @ode-react-ui/hooks
 
+## 1.0.7-dev.39
+
+### Patch Changes
+
+- [`9df1aa8`](https://github.com/opendigitaleducation/ode-react-ui/commit/9df1aa8739c418deb5bd530b35071813a328f6aa) Thanks [@david-cc](https://github.com/david-cc)! - add dismissible toast to storybook
+
+- [#100](https://github.com/opendigitaleducation/ode-react-ui/pull/100) [`5fc130b`](https://github.com/opendigitaleducation/ode-react-ui/commit/5fc130b65af8e3f33377d55cb0800d10ba683db4) Thanks [@github-actions](https://github.com/apps/github-actions)! - Add options to hot toast (duration, isDismissible)
+
 ## 1.0.7-dev.38
 
 ### Patch Changes
