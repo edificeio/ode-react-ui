@@ -1,6 +1,7 @@
 import React from "react";
 
-export interface DropdownTriggerProps {
+export interface DropdownTriggerProps
+  extends React.ComponentPropsWithRef<"button"> {
   /**
    * Dropdown trigger title
    */
@@ -8,11 +9,11 @@ export interface DropdownTriggerProps {
   /**
    * Controlable state off dropdown trigger
    */
-  style?: "ghost" | "outline";
+  variant?: "ghost" | "outline";
   /**
    * Controlable state off dropdown trigger
    */
-  state?: "hover" | "selected" | "disabled" | "focus";
+  state?: "default" | "hover" | "selected" | "disabled" | "focus";
   /**
    * Add an icon in dropdown trigger
    */
@@ -22,3 +23,5 @@ export interface DropdownTriggerProps {
    */
   size?: "sm" | "md" | "lg";
 }
+
+export type DropdownTriggerType = React.ReactElement<DropdownTriggerProps>;

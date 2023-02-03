@@ -5,14 +5,14 @@
  * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/Dropdown/Dropdown.tsx
  */
 
-import { useState } from "react";
+import React, { useState } from "react";
 
 import clsx from "clsx";
 import { usePopper } from "react-popper";
 
 import { DropdownProps } from "./DropdownProps";
 
-const Dropdown = ({ children, content }: DropdownProps) => {
+const Dropdown = ({ trigger, content }: DropdownProps) => {
   const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(
     null,
   );
@@ -24,18 +24,21 @@ const Dropdown = ({ children, content }: DropdownProps) => {
     placement: "bottom-start",
   });
 
-  const [visible, setVisible] = useState<boolean>(false);
+  const [visible, setVisible] = useState<boolean>(true);
+
+  const clonedTrigger = React.cloneElement(trigger, {
+    ref: setReferenceElement,
+    onClick: () => {
+      console.log(5545);
+      setVisible((oldState) => !oldState);
+    },
+    state: visible ? "selected" : "default",
+  });
+
   return (
     <>
-      <button
-        className="d-inline-block"
-        ref={setReferenceElement}
-        onClick={() => {
-          setVisible((oldState) => !oldState);
-        }}
-      >
-        {children}
-      </button>
+      {clonedTrigger}
+
       {visible && (
         <div
           className={clsx("tooltip d-block show", `bs-tooltip-auto`)}
@@ -49,5 +52,5 @@ const Dropdown = ({ children, content }: DropdownProps) => {
     </>
   );
 };
-
+Dropdown.displayName = "Dropdown";
 export default Dropdown;

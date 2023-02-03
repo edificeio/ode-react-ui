@@ -69,24 +69,24 @@ const TemplateStyle: ComponentStory<typeof DropdownTrigger> = (args: any) => {
       <div className="d-flex gap-16 align-items-end mb-16">
         <DropdownTrigger
           icon={<Filter />}
-          style="ghost"
+          variant="ghost"
           title="Default dropdown"
         />
         <DropdownTrigger
           icon={<Filter />}
-          style="ghost"
+          variant="ghost"
           title="Selected dropdown"
           state="selected"
         />
         <DropdownTrigger
           icon={<Filter />}
-          style="ghost"
+          variant="ghost"
           title="Disabled dropdown"
           state="disabled"
         />
         <DropdownTrigger
           icon={<Filter />}
-          style="ghost"
+          variant="ghost"
           title="Focused dropdown"
           state="focus"
         />
