@@ -1,4 +1,6 @@
-import React from "react";
+import React, { ReactElement } from "react";
+
+import { DropdownTriggerProps } from "./DropdownTriggerProps";
 
 export interface DropdownProps {
   /**
@@ -8,5 +10,5 @@ export interface DropdownProps {
   /**
    * Element to be wrapped as Tooltip trigger
    */
-  children: React.ReactNode;
+  trigger: ReactElement<DropdownTriggerProps>;
 }
