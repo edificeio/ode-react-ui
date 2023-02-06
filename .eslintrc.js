@@ -31,6 +31,7 @@ module.exports = {
     "@typescript-eslint/prefer-nullish-coalescing": "off",
     "@typescript-eslint/quotes": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
     "no-console": "off",
     "import/order": [
       "error",

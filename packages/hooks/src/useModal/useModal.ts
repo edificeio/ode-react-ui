@@ -7,8 +7,5 @@ export default function useModal(initialState = false) {
     setOpen(state);
   }
 
-  return {
-    isOpen,
-    toggle,
-  };
+  return [isOpen, toggle];
 }

@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 export * from "./ActionBar";
 export * from "./Alert";
 export * from "./AppCard";
@@ -14,4 +13,6 @@ export * from "./Loading";
 export * from "./Logo";
 export * from "./Main";
 export * from "./Modal";
+export * from "./OdeClientProvider";
+export * from "./Toast";
 export * from "./TreeView";
