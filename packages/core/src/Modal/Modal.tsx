@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-confusing-void-expression */
 /**
  * Modal Component
  *
@@ -5,7 +6,7 @@
  * @see Source    https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/Modal/Modal.tsx
  * @see WAI-ARIA  https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/
  */
-import { forwardRef, useRef } from "react";
+import { forwardRef } from "react";
 
 import { useClickOutside, useKeyPress } from "@ode-react-ui/hooks";
 import clsx from "clsx";
@@ -34,18 +35,10 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
     const ariaLabelId = `aria_label_${id}`;
     const ariaDescriptionId = `aria_desc_${id}`;
 
-    const modalRef = useRef(null);
-
-    useClickOutside(modalRef, () => {
-      if (typeof onModalClose === "function") {
-        onModalClose();
-      }
-    });
+    const modalRef = useClickOutside(onModalClose);
 
     useKeyPress(() => {
-      if (typeof onModalClose === "function") {
-        onModalClose();
-      }
+      onModalClose();
     }, ["Escape"]);
 
     const dialogClasses = clsx("modal-dialog", {

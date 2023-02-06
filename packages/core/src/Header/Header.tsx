@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-confusing-void-expression */
 /**
  * Header / Navbar  Component
  *
@@ -7,7 +8,7 @@
  * @see WAI-ARIA https://www.w3.org/WAI/tutorials/menus/structure/
  */
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 import { useClickOutside, useTitle } from "@ode-react-ui/hooks";
 import { RafterDown } from "@ode-react-ui/icons";
@@ -55,8 +56,7 @@ const Header = ({ is1d = false, src = "" }: HeaderProps): JSX.Element => {
     "no-1d": !is1d,
   });
 
-  const collapseRef = useRef(null);
-  useClickOutside(collapseRef, () => {
+  const collapseRef = useClickOutside(() => {
     setIsCollapsed(true);
   });
 
