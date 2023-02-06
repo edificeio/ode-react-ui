@@ -1,5 +1,14 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.40
+
+### Patch Changes
+
+- [#101](https://github.com/opendigitaleducation/ode-react-ui/pull/101) [`85020f6`](https://github.com/opendigitaleducation/ode-react-ui/commit/85020f6c7096e67ab0bdf6328ea4f053395cabad) Thanks [@clementcreusat](https://github.com/clementcreusat)! - refacto, adding hook useOdeBackend, useOdeClient, adding OdeClientProvider, change custom hook clickOutside
+
+- Updated dependencies [[`85020f6`](https://github.com/opendigitaleducation/ode-react-ui/commit/85020f6c7096e67ab0bdf6328ea4f053395cabad)]:
+  - @ode-react-ui/hooks@1.0.7-dev.40
+
 ## 1.0.7-dev.39
 
 ### Patch Changes
