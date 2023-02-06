@@ -1,77 +1,147 @@
-import { useCallback, useRef, useState } from "react";
-
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-
+import toast, { Toaster, resolveValue } from "react-hot-toast";
 import { Button } from "../Button";
-import Alert from "./Alert";
-import { AlertRef } from "./AlertProps";
+
+import Toast from "./Toast";
+import { ToastProps } from "./ToastProps";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Alert",
-  component: Alert,
+  title: "Components/Toast",
+  component: Toast,
   parameters: {
     docs: {
       description: {
         component:
-          "Alert Component is contextual and used on the interface to guide users. Alert Component can be accompanied by a button to refer users to additional information available. The colors used in the Component come from the support palette.",
+          "Toast Component is contextual and used on the interface to guide users. It can be closable if the message is one-time information. Alert Component can be accompanied by a button to refer users to additional information available. The colors used in the Component come from the support palette.",
       },
     },
-  },
-  argTypes: {
-    type: {
-      options: ["success", "warning", "info", "danger"],
-      control: { type: "select" },
-    },
-    isDismissible: {
-      control: { type: "boolean" },
-    },
-    onClose: {
-      control: {
-        type: null,
-      },
-    },
-    onVisibilityChange: {
-      control: {
-        type: null,
-      },
-    },
-  },
-  args: {
-    type: "success",
   },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-} as ComponentMeta<typeof Alert>;
+} as ComponentMeta<typeof Toast>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Alert> = (args: any) => {
-  const ref = useRef<AlertRef>(null);
-  const [showButton, setShowButtonState] = useState(false);
+export const Base = () => {
+  // Action to close the Toast
+  const { dismiss } = toast;
 
-  const onClickButton = useCallback(() => {
-    if (ref.current) {
-      ref.current.show();
-    }
-  }, [ref]);
+  /**
+   * Optional options:
+   * https://react-hot-toast.com/docs/toaster
+   */
+  const toastOptions = {
+    position: "top-right",
+    reverseOrder: false,
+    gutter: 8,
+  };
+
+  const displayToast = () => {
+    toast("This is a toast");
+  };
 
   return (
-    <div>
-      {showButton && (
-        <Button type="button" onClick={onClickButton}>
-          Show Alert again
-        </Button>
-      )}
-      <Alert
-        {...args}
-        ref={ref}
-        onVisibilityChange={(state: boolean) => setShowButtonState(!state)}
-      >
-        {args.children}
-      </Alert>
-    </div>
+    <>
+      <Button type="button" onClick={displayToast}>
+        Show Toast Component
+      </Button>
+      <Toast
+        Toaster={Toaster}
+        resolveValue={resolveValue}
+        dismiss={dismiss}
+        toastOptions={toastOptions}
+      />
+    </>
   );
 };
 
+export const Success = () => {
+  // Action to close Toast from react-hot-toast
+  const { dismiss } = toast;
+
+  // Optional options from react-hot-toast
+  const toastOptions = {
+    position: "top-right",
+    reverseOrder: false,
+    gutter: 8,
+  };
+
+  const displayToast = () => {
+    toast.success("This is a success toast");
+  };
+
+  return (
+    <>
+      <Button type="button" onClick={displayToast}>
+        Show Toast Component
+      </Button>
+      <Toast
+        Toaster={Toaster}
+        resolveValue={resolveValue}
+        dismiss={dismiss}
+        toastOptions={toastOptions}
+      />
+    </>
+  );
+};
+
+export const Error = () => {
+  // Action to close Toast from react-hot-toast
+  const { dismiss } = toast;
+
+  // Optional options from react-hot-toast
+  const toastOptions = {
+    position: "top-right",
+    reverseOrder: false,
+    gutter: 8,
+  };
+
+  const displayToast = () => {
+    toast.error("This is an error toast");
+  };
+
+  return (
+    <>
+      <Button type="button" onClick={displayToast}>
+        Show Toast Component
+      </Button>
+      <Toast
+        Toaster={Toaster}
+        resolveValue={resolveValue}
+        dismiss={dismiss}
+        toastOptions={toastOptions}
+      />
+    </>
+  );
+};
+export const Loading = () => {
+  // Action to close Toast from react-hot-toast
+  const { dismiss } = toast;
+
+  // Optional options from react-hot-toast
+  const toastOptions = {
+    position: "top-right",
+    reverseOrder: false,
+    gutter: 8,
+  };
+
+  const displayToast = () => {
+    toast.loading("This is a loading toast");
+  };
+
+  return (
+    <>
+      <Button type="button" onClick={displayToast}>
+        Show Toast Component
+      </Button>
+      <Toast
+        Toaster={Toaster}
+        resolveValue={resolveValue}
+        dismiss={dismiss}
+        toastOptions={toastOptions}
+      />
+    </>
+  );
+};
+/* 
 export const Base = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Base.args = {
@@ -127,7 +197,7 @@ Error.args = {
     "Ornare senectus inceptos, laboriosam montes suscipit, tristique rhoncus, tristique irure itaque cum, tellus imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
 };
 
-/* export const ToastBase = Template.bind({});
+export const ToastBase = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ToastBase.args = {
   type: "success",
