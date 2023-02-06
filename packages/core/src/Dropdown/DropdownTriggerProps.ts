@@ -22,6 +22,10 @@ export interface DropdownTriggerProps
    * Button size
    */
   size?: "sm" | "md" | "lg";
+  /**
+   * Add a badge
+   */
+  badgeContent?: string | number;
 }
 
 export type DropdownTriggerType = React.ReactElement<DropdownTriggerProps>;
