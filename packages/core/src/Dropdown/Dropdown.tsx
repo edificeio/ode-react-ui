@@ -5,7 +5,7 @@
  * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/Dropdown/Dropdown.tsx
  */
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import clsx from "clsx";
 import { usePopper } from "react-popper";
@@ -29,11 +29,29 @@ const Dropdown = ({ trigger, content }: DropdownProps) => {
   const clonedTrigger = React.cloneElement(trigger, {
     ref: setReferenceElement,
     onClick: () => {
-      console.log(5545);
       setVisible((oldState) => !oldState);
     },
     state: visible ? "selected" : "default",
   });
+
+  useEffect(() => {
+    const handleClickOutside = (event: Event) => {
+      if (
+        popperElement &&
+        !popperElement.contains(event.target as Node) &&
+        referenceElement &&
+        !referenceElement.contains(event.target as Node)
+      ) {
+        setVisible(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside, true);
+    document.addEventListener("touchstart", handleClickOutside, true);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside, true);
+      document.removeEventListener("touchstart", handleClickOutside, true);
+    };
+  }, [popperElement]);
 
   return (
     <>
@@ -41,7 +59,10 @@ const Dropdown = ({ trigger, content }: DropdownProps) => {
 
       {visible && (
         <div
-          className={clsx("tooltip d-block show", `bs-tooltip-auto`)}
+          className={clsx(
+            "bg-white shadow rounded d-block show py-12 px-8",
+            `bs-tooltip-auto`,
+          )}
           ref={setPopperElement}
           style={styles.popper}
           {...attributes.popper}

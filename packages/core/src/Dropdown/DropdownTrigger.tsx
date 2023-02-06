@@ -8,7 +8,7 @@
 
 import { forwardRef, Ref } from "react";
 
-import { RafterDown } from "@ode-react-ui/icons";
+import { RafterUp } from "@ode-react-ui/icons";
 import clsx from "clsx";
 
 import { DropdownTriggerProps } from "./DropdownTriggerProps";
@@ -21,6 +21,7 @@ const DropdownTrigger = forwardRef(
       style,
       icon,
       size = "lg",
+      badgeContent,
       ...props
     }: DropdownTriggerProps,
     ref: Ref<HTMLButtonElement>,
@@ -28,12 +29,20 @@ const DropdownTrigger = forwardRef(
     const classNames = clsx("dropdown-trigger", state, size, style);
 
     return (
-      <button ref={ref} className={classNames} {...props}>
+      <button ref={ref} className={classNames} {...props} type="button">
         <div className="dropdown-trigger-icon">{icon && icon}</div>
         <div>{title}</div>
-        <div className="dropdown-trigger-carret-icon">
-          {<RafterDown width={16} height={16} />}
-        </div>
+        {badgeContent ? (
+          <div>
+            <span className="badge text-bg-primary  rounded-pill">
+              {badgeContent}
+            </span>
+          </div>
+        ) : (
+          <div className="dropdown-trigger-carret-icon">
+            {<RafterUp width={16} height={16} />}
+          </div>
+        )}
       </button>
     );
   },
