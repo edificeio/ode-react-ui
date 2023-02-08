@@ -38,7 +38,7 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Modal> = (args: ModalProps) => {
-  const { isOpen, toggle: toggleModal } = useModal(false);
+  const [isOpen, toggleModal] = useModal(false);
 
   function handleOpenModal() {
     toggleModal(true);
@@ -106,7 +106,7 @@ Base.args = {
 };
 
 const TemplateMoveFile: ComponentStory<typeof Modal> = (args: any) => {
-  const { isOpen, toggle: toggleModal } = useModal(false);
+  const [isOpen, toggleModal] = useModal(false);
 
   function handleOpenModal() {
     toggleModal(true);
@@ -179,7 +179,7 @@ MoveFile.args = {
 };
 
 export const CreateFile = (args: any) => {
-  const { isOpen, toggle: toggleModal } = useModal(false);
+  const [isOpen, toggleModal] = useModal(false);
 
   function handleOpenModal() {
     toggleModal(true);
@@ -370,7 +370,7 @@ const actions = [
 ];
 
 export const ShareFile = (args: any) => {
-  const { isOpen, toggle: toggleModal } = useModal(false);
+  const [isOpen, toggleModal] = useModal(false);
   const [showBookmarkInput, toggleBookmarkInput] = useState(false);
   const [radioPublicationValue, setRadioPublicationValue] =
     useState<string>("now");
@@ -606,7 +606,7 @@ ShareFile.args = {
 };
 
 export const PublishOnLibrary = (args: any) => {
-  const { isOpen, toggle: toggleModal } = useModal(false);
+  const [isOpen, toggleModal] = useModal(false);
 
   const [activityType, setActivityType] = useState();
   const [subjectArea, setSubjectArea] = useState();
@@ -755,31 +755,34 @@ export const PublishOnLibrary = (args: any) => {
 
           <div className="row mb-24">
             <div className="col">
-              <Select
-                id="activityType"
-                label="Type d’activité"
-                options={activityTypesOptions}
-                model={activityType}
-                placeholderOption="Sélectionner"
-              />
+              <FormControl id="activityType">
+                <Label>Type d’activité</Label>
+                <Select
+                  options={activityTypesOptions}
+                  model={activityType}
+                  placeholderOption="Sélectionner"
+                />
+              </FormControl>
             </div>
             <div className="col">
-              <Select
-                id="subjectArea"
-                label="Discipline"
-                options={subjectAreaOptions}
-                model={subjectArea}
-                placeholderOption="Sélectionner"
-              />
+              <FormControl id="subjectArea">
+                <Label>Discipline</Label>
+                <Select
+                  options={subjectAreaOptions}
+                  model={subjectArea}
+                  placeholderOption="Sélectionner"
+                />
+              </FormControl>
             </div>
             <div className="col">
-              <Select
-                id="language"
-                label="Langue"
-                options={languageOptions}
-                model={language}
-                placeholderOption="Sélectionner"
-              />
+              <FormControl id="language">
+                <Label>Langue</Label>
+                <Select
+                  options={languageOptions}
+                  model={language}
+                  placeholderOption="Sélectionner"
+                />
+              </FormControl>
             </div>
           </div>
 
@@ -789,26 +792,28 @@ export const PublishOnLibrary = (args: any) => {
             </label>
             <div className="d-flex">
               <div className="me-16">
-                <Select
-                  defaultValue="Age min."
-                  id="ageMin"
-                  options={[
-                    3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
-                  ]}
-                  model={ageMin}
-                  placeholderOption="Age min."
-                />
+                <FormControl id="ageMin">
+                  <Select
+                    defaultValue="Age min."
+                    options={[
+                      3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+                    ]}
+                    model={ageMin}
+                    placeholderOption="Age min."
+                  />
+                </FormControl>
               </div>
               <div>
-                <Select
-                  defaultValue="Age max."
-                  id="ageMax"
-                  options={[
-                    3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
-                  ]}
-                  model={ageMax}
-                  placeholderOption="Age max."
-                />
+                <FormControl id="ageMax">
+                  <Select
+                    defaultValue="Age max."
+                    options={[
+                      3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+                    ]}
+                    model={ageMax}
+                    placeholderOption="Age max."
+                  />
+                </FormControl>
               </div>
             </div>
           </div>
