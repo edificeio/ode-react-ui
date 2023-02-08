@@ -22,9 +22,10 @@ const Dropdown = ({ trigger, content }: DropdownProps) => {
 
   const { styles, attributes } = usePopper(referenceElement, popperElement, {
     placement: "bottom-start",
+    modifiers: [{ name: "offset", options: { offset: [0, 12] } }],
   });
 
-  const [visible, setVisible] = useState<boolean>(true);
+  const [visible, setVisible] = useState<boolean>(false);
 
   const clonedTrigger = React.cloneElement(trigger, {
     ref: setReferenceElement,
