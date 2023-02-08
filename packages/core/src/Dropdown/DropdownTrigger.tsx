@@ -18,7 +18,7 @@ const DropdownTrigger = forwardRef(
     {
       title = "",
       state,
-      style,
+      variant,
       icon,
       size = "lg",
       badgeContent,
@@ -26,7 +26,7 @@ const DropdownTrigger = forwardRef(
     }: DropdownTriggerProps,
     ref: Ref<HTMLButtonElement>,
   ) => {
-    const classNames = clsx("dropdown-trigger", state, size, style);
+    const classNames = clsx("dropdown-trigger", state, size, variant);
 
     return (
       <button ref={ref} className={classNames} {...props} type="button">
