@@ -35,11 +35,7 @@ Many tools are already configured like:
 yarn
 ```
 
-> Then, you need to build at least once every lib to use them
-
-```bash
-yarn build
-```
+> The script build will be run as a pre-install script so you can use each library
 
 ## Dev
 

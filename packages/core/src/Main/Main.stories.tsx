@@ -1,5 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Main from "./Main";
+import { MainProps } from "./MainProps";
 
 export default {
   title: "Layouts/Main",
@@ -9,6 +10,8 @@ export default {
   },
 } as ComponentMeta<typeof Main>;
 
-const Template: ComponentStory<typeof Main> = (args) => <Main {...args}></Main>;
+const Template: ComponentStory<typeof Main> = (args: MainProps) => (
+  <Main {...args}></Main>
+);
 
 export const Base = Template.bind({});

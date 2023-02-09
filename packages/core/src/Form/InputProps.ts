@@ -22,4 +22,8 @@ export interface InputProps
    * Remove validation icon
    */
   noValidationIcon?: boolean;
+  /**
+   * Optional class for styling purpose
+   */
+  className?: string;
 }

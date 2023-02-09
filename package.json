@@ -17,6 +17,7 @@
     "docs"
   ],
   "scripts": {
+    "postinstall": "yarn build",
     "build": "turbo run build --filter=!@ode-react-ui/storybook",
     "check:advanced": "package-check --cwd=packages/advanced",
     "check:core": "package-check --cwd=packages/core",

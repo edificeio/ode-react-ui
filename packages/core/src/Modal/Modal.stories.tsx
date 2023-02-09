@@ -20,7 +20,7 @@ import { Checkbox, FormControl, Input, Label, Radio, Select } from "../Form";
 import { OptionsType } from "../Form/Select";
 import { Heading } from "../Heading";
 import { ImagePicker } from "../ImagePicker";
-import { TreeView } from "../TreeView";
+import { TreeView } from "../../../advanced/src/TreeView";
 import { data } from "../utils/mock-tree-data";
 import Modal from "./Modal";
 import { ModalProps } from "./ModalProps";
@@ -38,14 +38,14 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Modal> = (args: ModalProps) => {
-  const [isOpen, toggleModal] = useModal(false);
+  const [isOpen, toggle] = useModal(false);
 
   function handleOpenModal() {
-    toggleModal(true);
+    toggle(true);
   }
 
   function handleCloseModal() {
-    toggleModal(false);
+    toggle(false);
   }
 
   return (
@@ -106,14 +106,14 @@ Base.args = {
 };
 
 const TemplateMoveFile: ComponentStory<typeof Modal> = (args: any) => {
-  const [isOpen, toggleModal] = useModal(false);
+  const [isOpen, toggle] = useModal(false);
 
   function handleOpenModal() {
-    toggleModal(true);
+    toggle(true);
   }
 
   function handleCloseModal() {
-    toggleModal(false);
+    toggle(false);
   }
 
   return (
@@ -179,14 +179,14 @@ MoveFile.args = {
 };
 
 export const CreateFile = (args: any) => {
-  const [isOpen, toggleModal] = useModal(false);
+  const [isOpen, toggle] = useModal(false);
 
   function handleOpenModal() {
-    toggleModal(true);
+    toggle(true);
   }
 
   function handleCloseModal() {
-    toggleModal(false);
+    toggle(false);
   }
 
   return (
@@ -370,18 +370,18 @@ const actions = [
 ];
 
 export const ShareFile = (args: any) => {
-  const [isOpen, toggleModal] = useModal(false);
+  const [isOpen, toggle] = useModal(false);
   const [showBookmarkInput, toggleBookmarkInput] = useState(false);
   const [radioPublicationValue, setRadioPublicationValue] =
     useState<string>("now");
   const [items, setItems] = useState<any>(sharingModelEdited);
 
   function handleOpenModal() {
-    toggleModal(true);
+    toggle(true);
   }
 
   function handleCloseModal() {
-    toggleModal(false);
+    toggle(false);
   }
 
   const handleRadioPublicationChange = (event: any) => {
@@ -606,7 +606,7 @@ ShareFile.args = {
 };
 
 export const PublishOnLibrary = (args: any) => {
-  const [isOpen, toggleModal] = useModal(false);
+  const [isOpen, toggle] = useModal(false);
 
   const [activityType, setActivityType] = useState();
   const [subjectArea, setSubjectArea] = useState();
@@ -678,11 +678,11 @@ export const PublishOnLibrary = (args: any) => {
   ];
 
   function handleOpenModal() {
-    toggleModal(true);
+    toggle(true);
   }
 
   function handleCloseModal() {
-    toggleModal(false);
+    toggle(false);
   }
 
   return (
@@ -756,8 +756,8 @@ export const PublishOnLibrary = (args: any) => {
           <div className="row mb-24">
             <div className="col">
               <FormControl id="activityType">
-                <Label>Type d’activité</Label>
                 <Select
+                  label="Type d’activité"
                   options={activityTypesOptions}
                   model={activityType}
                   placeholderOption="Sélectionner"

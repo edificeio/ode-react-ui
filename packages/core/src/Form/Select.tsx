@@ -50,7 +50,6 @@ const Select = forwardRef(
       ...restProps,
       ...{
         id: selectId,
-        checked: model === restProps.value,
         disabled,
         ref,
         className: clsx(restProps.className, "form-select c-pointer", {

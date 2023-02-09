@@ -16,21 +16,26 @@ const Input = forwardRef(
       placeholder,
       size = "md",
       type = "text",
+      className,
       ...restProps
     }: InputProps,
     ref: Ref<HTMLInputElement>,
   ) => {
     const { id, isRequired, isReadOnly, status } = useFormControl();
 
-    const classes = clsx({
-      "form-control": !isReadOnly,
-      "form-control-lg": size === "lg",
-      "form-control-sm": size === "sm",
-      "is-invalid": status === "invalid",
-      "is-valid": status === "valid",
-      "form-control-plaintext": isReadOnly,
-      "no-validation-icon": noValidationIcon,
-    });
+    const classes = clsx(
+      {
+        "form-control": !isReadOnly,
+        "form-control-lg": size === "lg",
+        "form-control-sm": size === "sm",
+        "is-invalid": status === "invalid",
+        "is-valid": status === "valid",
+        "form-control-plaintext": isReadOnly,
+        "no-validation-icon": noValidationIcon,
+      },
+      className,
+    );
+
     return (
       <input
         ref={ref}

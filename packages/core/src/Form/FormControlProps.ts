@@ -22,7 +22,7 @@ export interface FormControlProps extends React.ComponentPropsWithRef<"div"> {
    */
   children: ReactNode;
   /**
-   * For additional styling
+   * Optional class for styling purpose
    */
   className?: string;
   /**

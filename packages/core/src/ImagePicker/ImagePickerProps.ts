@@ -1,5 +1,7 @@
 import { ComponentPropsWithRef } from "react";
 
+import { IWebApp } from "ode-ts-client";
+
 export interface ImagePickerProps extends ComponentPropsWithRef<"input"> {
   /**
    * Description of the ImagePicker label.
@@ -20,9 +22,9 @@ export interface ImagePickerProps extends ComponentPropsWithRef<"input"> {
   /**
    * To show the icon of an application
    */
-  appCode?: string;
+  app: IWebApp;
   /**
-   * Optional ClassName for styling purpose
+   * Optional class for styling purpose
    */
   className?: string;
   /**
