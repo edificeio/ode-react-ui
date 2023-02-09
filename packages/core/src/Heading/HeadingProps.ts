@@ -18,7 +18,7 @@ export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
    */
   children: ReactNode;
   /**
-   * For specific styling
+   * Optional class for styling purpose
    */
   className?: string;
 }

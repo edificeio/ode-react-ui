@@ -11,6 +11,7 @@ import {
   IWebApp,
   ISession,
   ITheme,
+  IIdiom,
 } from "ode-ts-client";
 
 export interface OdeProviderParams {

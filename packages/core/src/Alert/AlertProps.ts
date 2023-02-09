@@ -55,7 +55,7 @@ export interface AlertProps extends ComponentPropsWithRef<"div"> {
   onVisibilityChange?: Function;
 
   /**
-   * Add custom class
+   * Optional class for styling purpose
    */
   className?: string;
 }

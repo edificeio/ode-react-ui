@@ -20,4 +20,8 @@ export interface LabelProps
    * Label Text
    */
   children: ReactNode;
+  /**
+   * Optional class for styling purpose
+   */
+  className?: string;
 }

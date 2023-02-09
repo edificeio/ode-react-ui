@@ -1,8 +1,7 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { AppCard } from "../index";
-import { BaseProps } from "./AppCardProps";
-import AppIcon from "./AppIcon";
+import { AppCard, AppIcon } from "../index";
+import { AppCardProps, BaseProps } from "./AppCardProps";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -38,7 +37,7 @@ export default {
 
 const Template: ComponentStory<typeof AppCard> = (args: BaseProps) => (
   <AppCard {...args}>
-    <AppCard.Icon size="40" />
+    <AppIcon app={args.app} size="40" />
     <AppCard.Name />
   </AppCard>
 );
@@ -56,9 +55,15 @@ Base.args = {
   },
 };
 
-export const OnlyTitle = () => {
-  // For example only
-  const mockedApp = {
+export const OnlyTitle = (args: BaseProps) => {
+  return (
+    <AppCard app={args.app} isHeading headingStyle="h3" level="h1">
+      <AppCard.Name />
+    </AppCard>
+  );
+};
+OnlyTitle.args = {
+  app: {
     address: "/blog",
     icon: "blog-large",
     name: "Blog",
@@ -66,13 +71,7 @@ export const OnlyTitle = () => {
     display: false,
     displayName: "",
     isExternal: false,
-  };
-
-  return (
-    <AppCard app={mockedApp} isHeading headingStyle="h3" level="h1">
-      <AppCard.Name />
-    </AppCard>
-  );
+  },
 };
 OnlyTitle.parameters = {
   docs: {
@@ -82,21 +81,10 @@ OnlyTitle.parameters = {
   },
 };
 
-export const OnlyIcon = () => {
-  // For example only
-  const mockedApp = {
-    address: "/blog",
-    icon: "blog-large",
-    name: "Blog",
-    scope: [],
-    display: false,
-    displayName: "",
-    isExternal: false,
-  };
-
+export const OnlyIcon = (args: BaseProps) => {
   return (
-    <AppCard app={mockedApp} isHeading level="h1" headingStyle="h3">
-      <AppCard.Icon size="48" />
+    <AppCard app={args.app} isHeading level="h1" headingStyle="h3">
+      <AppIcon app={args.app} size="40" />
     </AppCard>
   );
 };
@@ -109,29 +97,27 @@ OnlyIcon.parameters = {
   },
 };
 
-export const PassingData = () => {
-  // For example only
-  const mockedApp = {
-    address: "/blog",
-    icon: "blog-large",
-    name: "Blog",
-    scope: [],
-    display: false,
-    displayName: "",
-    isExternal: false,
-  };
-
+export const PassingData = (args: BaseProps) => {
   return (
-    <AppCard app={mockedApp} isHeading headingStyle="h3" level="h1">
-      <AppCard.Icon size="40" />
+    <AppCard app={args.app} isHeading headingStyle="h3" level="h1">
+      <AppIcon app={args.app} size="40" />
       <AppCard.Name />
     </AppCard>
   );
 };
 
-export const ImageAsIcon = () => {
-  // For example only
-  const mockedApp = {
+export const ImageAsIcon = (args: BaseProps) => {
+  return (
+    <div>
+      <AppCard app={args.app} isHeading headingStyle="h3" level="h1">
+        <AppIcon app={args.app} size="40" />
+        <AppCard.Name />
+      </AppCard>
+    </div>
+  );
+};
+ImageAsIcon.args = {
+  app: {
     address: "/form",
     icon: "https://ent.l-educdenormandie.fr/formulaire/public/img/logo.svg",
     name: "Formulaire",
@@ -139,16 +125,7 @@ export const ImageAsIcon = () => {
     display: false,
     displayName: "",
     isExternal: false,
-  };
-
-  return (
-    <div>
-      <AppCard app={mockedApp} isHeading headingStyle="h3" level="h1">
-        <AppCard.Icon size="40" />
-        <AppCard.Name />
-      </AppCard>
-    </div>
-  );
+  },
 };
 ImageAsIcon.parameters = {
   docs: {
@@ -158,21 +135,10 @@ ImageAsIcon.parameters = {
   },
 };
 
-export const HeadingStyle = () => {
-  // For example
-  const mockedApp = {
-    address: "/blog",
-    icon: "blog-large",
-    name: "Blog",
-    scope: [],
-    display: false,
-    displayName: "",
-    isExternal: false,
-  };
-
+export const HeadingStyle = (args: BaseProps) => {
   return (
-    <AppCard app={mockedApp} isHeading>
-      <AppCard.Icon size="40" />
+    <AppCard app={args.app} isHeading>
+      <AppIcon app={args.app} size="40" />
       <AppCard.Name />
     </AppCard>
   );
@@ -186,21 +152,10 @@ HeadingStyle.parameters = {
   },
 };
 
-export const TitleAsText = () => {
-  // For example only
-  const mockedApp = {
-    address: "/blog",
-    icon: "blog-large",
-    name: "Blog",
-    scope: [],
-    display: false,
-    displayName: "",
-    isExternal: false,
-  };
-
+export const TitleAsText = (args: BaseProps) => {
   return (
-    <AppCard app={mockedApp}>
-      <AppCard.Icon size="40" />
+    <AppCard app={args.app}>
+      <AppIcon app={args.app} size="40" />
       <AppCard.Name />
     </AppCard>
   );
@@ -214,21 +169,10 @@ TitleAsText.parameters = {
   },
 };
 
-export const IconCustomSize = () => {
-  // For example only
-  const mockedApp = {
-    address: "/blog",
-    icon: "blog-large",
-    name: "Blog",
-    scope: [],
-    display: false,
-    displayName: "",
-    isExternal: false,
-  };
-
+export const IconCustomSize = (args: BaseProps) => {
   return (
-    <AppCard app={mockedApp} isHeading level="h1" headingStyle="h3">
-      <AppCard.Icon size="24" />
+    <AppCard app={args.app} isHeading level="h1" headingStyle="h3">
+      <AppIcon app={args.app} size="24" />
       <AppCard.Name />
     </AppCard>
   );
@@ -242,7 +186,7 @@ IconCustomSize.parameters = {
   },
 };
 
-export const UseAsALink = () => {
+export const UseAsALink = (args: BaseProps) => {
   const mockedApp = {
     address: "/blog",
     icon: "blog-large",
@@ -261,7 +205,7 @@ export const UseAsALink = () => {
       as="a"
       href="/"
     >
-      <AppCard.Icon size="40" />
+      <AppIcon app={args.app} size="40" />
       <AppCard.Name />
     </AppCard>
   );

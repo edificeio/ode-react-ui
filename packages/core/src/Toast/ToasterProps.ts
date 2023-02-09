@@ -54,6 +54,9 @@ export interface Toast {
   };
 
   style?: CSSProperties;
+  /**
+   * Optional class for styling purpose
+   */
   className?: string;
   iconTheme?: IconTheme;
 
@@ -92,6 +95,9 @@ export interface ToasterProps {
 
 export interface ToastWrapperProps {
   id: string;
+  /**
+   * Optional class for styling purpose
+   */
   className?: string;
   style?: React.CSSProperties;
   onHeightUpdate: (id: string, height: number) => void;

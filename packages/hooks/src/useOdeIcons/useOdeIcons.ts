@@ -1,21 +1,6 @@
-import useOdeFactory from "./useOdeFactory";
-import { IWebApp, IWidget, WidgetName } from "./utils/useOdeTsClient";
-
-export type AppCode = string | null;
-
-export interface UseAppIconsProps {
-  /**
-   * appCode from application. If doesn't exist, defaultIcon is served.
-   */
-  appCode?: AppCode;
-  /**
-   * defaultIcon must be a string from @ode-react-ui/icons
-   */
-  defaultIcon?: string;
-}
+import { type IWidget, WidgetName, IWebApp } from "ode-ts-client";
 
 export default function useOdeIcons() {
-  const { conf } = useOdeFactory();
   /**
    * Map between widget name and its icon name
    */
@@ -43,14 +28,13 @@ export default function useOdeIcons() {
    * @param app
    */
   function getIconCode(app: IWebApp): string {
-    const { icon } = app;
-    let appCode = icon.trim().toLowerCase() || "";
+    let appCode = app?.icon.trim().toLowerCase() || "";
     if (appCode && appCode.length > 0) {
       if (appCode.endsWith("-large")) appCode = appCode.replace("-large", "");
     } else {
       appCode = app.displayName.trim().toLowerCase();
     }
-    appCode = conf.Platform.idiom.removeAccents(appCode);
+    // appCode = configurationFramework.Platform.idiom.removeAccents(appCode);
     // @see distinct values for app's displayName is in query /auth/oauth2/userinfo
     switch (appCode) {
       case "admin.title":
