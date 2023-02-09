@@ -37,6 +37,7 @@ function Toast(props: ToastProps) {
         return (
           <div
             className={`toast fade gap-12 ${
+              // @ts-expect-error
               mapping[toast.type].classModifier
             } ${toast.type === "loading" ? "is-loading" : null} ${
               toast.visible ? "show" : "hide"
@@ -45,7 +46,10 @@ function Toast(props: ToastProps) {
             aria-live="assertive"
             aria-atomic="true"
           >
-            {mapping[toast.type].icon}
+            {
+              // @ts-expect-error
+              mapping[toast.type].icon
+            }
             {/* <div className="toast-body">{resolveValue(message, toast)}</div> */}
             <div className="toast-body">
               {resolveValue(toast.message, toast)}
