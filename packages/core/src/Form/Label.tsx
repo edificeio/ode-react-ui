@@ -12,14 +12,19 @@ const Label = forwardRef(
       optionalText = "Optional",
       requiredText = "*",
       children,
+      className,
     }: LabelProps,
     ref?: Ref<HTMLLabelElement>,
   ) => {
     const { id, isOptional, isRequired } = useFormControl();
 
-    const classes = clsx("form-label", {
-      "has-icon": leftIcon,
-    });
+    const classes = clsx(
+      "form-label",
+      {
+        "has-icon": leftIcon,
+      },
+      className,
+    );
 
     const optionalState = isOptional && !isRequired;
     const requiredState = isRequired && !isOptional;

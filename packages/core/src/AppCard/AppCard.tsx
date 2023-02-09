@@ -17,7 +17,6 @@ import {
   DefaultElementType,
   PolymorphicAppCard,
 } from "./AppCardProps";
-import AppIcon from "./AppIcon";
 import AppName from "./AppName";
 
 /**
@@ -75,7 +74,6 @@ const Root: PolymorphicAppCard = forwardRef(
 );
 
 const AppCard = Object.assign(Root, {
-  Icon: AppIcon,
   Name: AppName,
 });
 

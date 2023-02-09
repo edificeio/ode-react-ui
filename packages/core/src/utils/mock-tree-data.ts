@@ -1,4 +1,4 @@
-import { TreeNode } from "../TreeView/TreeViewProps";
+import { TreeNode } from "../../../advanced/src/TreeView/TreeViewProps";
 
 export const data: TreeNode = {
   id: "root",

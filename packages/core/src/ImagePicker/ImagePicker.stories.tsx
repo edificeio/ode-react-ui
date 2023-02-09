@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { IconButton, ImagePicker } from "../index";
+import { ImagePicker } from "../index";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -15,6 +15,15 @@ export default {
     },
   },
   args: {
+    app: {
+      address: "/blog",
+      icon: "blog-large",
+      name: "Blog",
+      scope: [],
+      display: false,
+      displayName: "",
+      isExternal: false,
+    },
     label: "Upload an image",
     addButtonLabel: "Add image",
     deleteButtonLabel: "Delete image",

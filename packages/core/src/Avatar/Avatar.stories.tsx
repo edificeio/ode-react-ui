@@ -10,93 +10,108 @@ export default {
     docs: {
       description: {
         component:
-          "Avatar used for Card Components, as Placeholder for Application Icon",
+          "Avatar used for Card Components or User image. Default image is a placeholder or when src isn't provided or on error.",
       },
     },
   },
   args: {
-    isIconUrl: false,
     variant: "square",
     size: "md",
-    appCode: "placeholder",
-    appName: "placeholder",
-    alt: "alternative text",
-    src: "https://media.istockphoto.com/id/1322277517/fr/photo/herbe-sauvage-dans-les-montagnes-au-coucher-du-soleil.jpg?s=612x612&w=0&k=20&c=tQ19uZQLlIFy8J6QWMyOL6lPt3pdSHBSDFHoXr1K_g0=",
   },
   argTypes: {
-    isIconUrl: { control: "boolean" },
     variant: {
-      options: ["square", "circle", "title"],
+      options: ["square", "rounded", "circle"],
       control: { type: "select" },
     },
     size: {
-      options: ["md", "lg"],
+      options: ["xs", "sm", "md", "lg"],
       control: { type: "inline-radio" },
     },
   },
 } as ComponentMeta<typeof Avatar>;
 
-const Template: ComponentStory<typeof Avatar> = (args: any) => (
-  <Avatar {...args} />
-);
+const Template: ComponentStory<typeof Avatar> = (args: any) => {
+  return (
+    <>
+      <Avatar {...args} />
+    </>
+  );
+};
 export const Base = Template.bind({});
 
-export const Large = Template.bind({});
-Large.args = {
-  size: "lg",
+export const AvatarSizes = () => {
+  return (
+    <div className="d-flex align-items-center gap-8">
+      <Avatar src="" size="xs" alt="alternative text" />
+      <Avatar src="" size="sm" alt="alternative text" />
+      <Avatar src="" size="md" alt="alternative text" />
+      <Avatar src="" size="lg" alt="alternative text" />
+    </div>
+  );
 };
 
-export const IconCircle = Template.bind({});
-IconCircle.args = {
-  size: "md",
-  variant: "circle",
+export const AvatarShapes = () => {
+  return (
+    <div className="d-flex align-items-center gap-8">
+      <Avatar
+        src="https://i.pravatar.cc/300"
+        size="md"
+        variant="square"
+        alt="alternative text"
+      />
+      <Avatar
+        src="https://i.pravatar.cc/300"
+        size="md"
+        variant="rounded"
+        alt="alternative text"
+      />
+      <Avatar
+        src="https://i.pravatar.cc/300"
+        size="md"
+        variant="circle"
+        alt="alternative text"
+      />
+    </div>
+  );
 };
 
-export const Image = Template.bind({});
-Image.args = {
-  isIconUrl: true,
+export const AvatarFallback = () => {
+  return (
+    <div className="d-flex align-items-center gap-8">
+      <Avatar
+        src="/assets/themes/ode-bootstrap/images/no-avatar"
+        size="md"
+        variant="square"
+        alt="alternative text"
+      />
+    </div>
+  );
+};
+AvatarFallback.parameters = {
+  docs: {
+    description: {
+      story:
+        "If `src` is undefined or on error, we use the placeholder image as a fallback.",
+    },
+  },
 };
 
-export const ImageCustomURL = Template.bind({});
-ImageCustomURL.args = {
-  isIconUrl: true,
-  src: "https://ent.l-educdenormandie.fr/formulaire/public/img/logo.svg",
+export const AvatarCustomFallback = () => {
+  return (
+    <div className="d-flex align-items-center gap-8">
+      <Avatar
+        src=""
+        size="md"
+        alt="alternative text"
+        imgPlaceholder="https://bit.ly/kent-c-dodds"
+      />
+    </div>
+  );
 };
-
-export const ImageLarge = Template.bind({});
-ImageLarge.args = {
-  isIconUrl: true,
-  size: "lg",
-};
-
-export const ImageCircle = Template.bind({});
-ImageCircle.args = {
-  isIconUrl: true,
-  variant: "circle",
-};
-
-export const IconApp = () => {
-  const mockedApp = {
-    address: "/blog",
-    icon: "exercizer",
-    name: "Blog",
-    scope: [],
-    display: false,
-    displayName: "",
-    isExternal: false,
-  };
-  return <Avatar appCode={mockedApp.icon} variant="square" />;
-};
-
-export const IconAppLarge = () => {
-  const mockedApp = {
-    address: "/blog",
-    icon: "exercizer",
-    name: "Blog",
-    scope: [],
-    display: false,
-    displayName: "",
-    isExternal: false,
-  };
-  return <Avatar appCode={mockedApp.icon} variant="square" size="lg" />;
+AvatarCustomFallback.parameters = {
+  docs: {
+    description: {
+      story: "You can override the default fallback with `imgPlaceholder`",
+    },
+  },
 };

@@ -1,10 +1,12 @@
 import { ComponentPropsWithRef } from "react";
 
+import { IWebApp } from "ode-ts-client";
+
 export interface CardProps extends ComponentPropsWithRef<"div"> {
   /**
    * To show the icon of an application
    */
-  appCode?: string;
+  app: IWebApp;
   /**
    * Person who created resource
    * */
@@ -46,7 +48,7 @@ export interface CardProps extends ComponentPropsWithRef<"div"> {
    * */
   isLoading?: boolean;
   /**
-   * Additional ClassName for styling purpose
+   * Optional class for styling purpose
    */
   className?: string;
   /**

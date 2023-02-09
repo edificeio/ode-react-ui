@@ -1,29 +1,25 @@
 export interface AvatarProps {
   /**
-   * Show image as default behaviour
-   */
-  isIconUrl?: boolean;
-  /**
    * Shape of Avatar
    * `title`, `square`, `circle`
    */
-  variant: string;
+  variant?: "square" | "rounded" | "circle";
   /**
    * Avatar' size
    */
   size?: "xs" | "sm" | "md" | "lg";
   /**
-   * To show the icon of an application
+   * Show image when `src` props is provided
    */
-  appCode?: string;
+  src: string;
+  /**
+   * Custom fallback image
+   */
+  imgPlaceholder?: string;
   /**
    * Alternative text when using image
    */
-  alt?: string;
-  /**
-   * SRC link of image
-   */
-  src?: string;
+  alt: string;
   /**
    * Optional class for styling purpose
    */

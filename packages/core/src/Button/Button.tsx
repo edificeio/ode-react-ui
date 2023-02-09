@@ -21,6 +21,7 @@ const Button = forwardRef(
     {
       color = "primary",
       type = "button",
+      size = "md",
       children,
       isLoading,
       loadingIcon,
@@ -41,6 +42,8 @@ const Button = forwardRef(
           variant === "outline" || variant === "ghost",
         "btn-icon": !children,
         "btn-loading": isLoading,
+        "btn-lg": size === "lg",
+        "btn-sm": size === "sm",
       },
       className,
     );

@@ -9,7 +9,9 @@ import {
 
 import { Delete, Edit } from "@ode-react-ui/icons";
 import clsx from "clsx";
+import { IWebApp } from "ode-ts-client";
 
+import { AppIcon } from "../AppIcon";
 import { Avatar } from "../Avatar";
 import { IconButton } from "../Button";
 import { FormControl, Input } from "../Form";
@@ -23,7 +25,7 @@ const ImagePicker = forwardRef(
       deleteButtonLabel = "Delete image",
       src,
       className,
-      appCode = "placeholder",
+      app,
       onUploadImage,
       onDeleteImage,
     }: ImagePickerProps,
@@ -135,14 +137,16 @@ const ImagePicker = forwardRef(
             size="sm"
             type="file"
           />
-          <Avatar
-            variant="square"
-            alt={preview?.name}
-            appCode={appCode}
-            isIconUrl={!!preview.image || !!src}
-            size="lg"
-            src={preview.image}
-          />
+          {preview.image ? (
+            <Avatar alt={preview.name} src={preview.image} size="lg" />
+          ) : (
+            <AppIcon
+              app={app as IWebApp}
+              iconFit="ratio"
+              size="160"
+              variant="rounded"
+            />
+          )}
         </FormControl.Label>
       </FormControl>
     );

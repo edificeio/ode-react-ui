@@ -2,76 +2,53 @@ import { forwardRef, Ref } from "react";
 
 import clsx from "clsx";
 
+import { Image } from "../Image";
 import { AvatarProps } from "./AvatarProps";
 
 const Avatar = forwardRef(
   (
     {
-      isIconUrl = false,
       variant = "square",
       size = "md",
-      appCode = "placeholder",
-      alt = "alternative text",
+      alt,
       src,
+      imgPlaceholder,
       className,
     }: AvatarProps,
     ref: Ref<HTMLImageElement>,
   ) => {
-    const isTitle = variant === "title";
+    const placeholder =
+      imgPlaceholder || "/assets/themes/ode-bootstrap/images/no-avatar.svg";
+
     const isSquare = variant === "square";
+    const isRounded = variant === "rounded";
     const isCircle = variant === "circle";
 
+    const avatarSizes = {
+      "avatar-xs": size === "xs",
+      "avatar-sm": size === "sm",
+      "avatar-md": size === "md",
+      "avatar-lg": size === "lg",
+    };
+
+    const avatarVariants = {
+      square: isSquare,
+      rounded: isRounded,
+      "rounded-circle": isCircle,
+    };
+
     const classes = clsx(
-      "avatar react",
+      "avatar",
       {
-        "avatar-xs": size === "xs" && !isTitle,
-        "avatar-sm": size === "sm" && !isTitle,
-        "avatar-md": size === "md" && !isTitle,
-        "avatar-lg": size === "lg" && !isTitle,
-        "avatar-title gap-12 w-auto": isTitle,
-        rounded: isSquare,
-        "rounded-circle": isCircle,
-        [`bg-light-${appCode} color-app-${appCode}`]:
-          !isIconUrl && appCode && !isTitle,
-        [`color-app-${appCode}`]: isTitle,
+        ...avatarSizes,
+        ...avatarVariants,
       },
       className,
     );
 
-    if (isIconUrl && src) {
-      return <img src={src} alt={alt} className={classes} ref={ref} />;
-    }
-
-    if (!isIconUrl && appCode) {
-      return (
-        <div className={classes} ref={ref}>
-          <svg
-            role="img"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <use
-              xlinkHref={`/assets/themes/ode-bootstrap/icons/apps.svg#${appCode}`}
-            />
-          </svg>
-        </div>
-      );
-    }
-
     return (
-      <div
-        className={`${classes} bg-light-placeholder color-app-placeholder`}
-        ref={ref}
-      >
-        <svg
-          role="img"
-          fill="currentColor"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-          <use xlinkHref="/assets/themes/ode-bootstrap/icons/apps.svg#placeholder" />
-        </svg>
+      <div ref={ref} className={classes}>
+        <Image src={src} alt={alt} imgPlaceholder={placeholder} />
       </div>
     );
   },

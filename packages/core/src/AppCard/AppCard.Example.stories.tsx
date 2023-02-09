@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { AppCard } from "../index";
+import { AppCard, AppIcon } from "../index";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -17,7 +17,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof AppCard> = (args: any) => (
   <AppCard {...args}>
-    <AppCard.Icon size="32" />
+    <AppIcon app={args.app} size="40" />
     <AppCard.Name />
   </AppCard>
 );

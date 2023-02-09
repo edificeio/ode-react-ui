@@ -3,6 +3,7 @@ import { Ref, useEffect, useRef } from "react";
 import { Button } from "../Button";
 
 import { FormControl, Input, Label, FormText } from "./index";
+import { InputProps } from "./InputProps";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -47,7 +48,7 @@ export default {
   },
 } as ComponentMeta<typeof Input>;
 
-const Template: ComponentStory<typeof Input> = (args) => {
+const Template: ComponentStory<typeof Input> = (args: InputProps) => {
   return (
     <FormControl id="example">
       <Input {...args} />

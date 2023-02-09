@@ -88,13 +88,15 @@ const Alert = forwardRef(
     };
 
     // Create className Attribute from component parameters
+    const toastClasses = {
+      "is-dismissible": isDismissible,
+      "is-toast ": isToast,
+    };
+
     const classes = clsx(
       "alert gap-12",
       mapping[type].classModifier,
-      {
-        "is-dismissible": isDismissible,
-        "is-toast ": isToast,
-      },
+      toastClasses,
       className,
     );
 

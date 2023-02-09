@@ -18,6 +18,6 @@ const FormText = ({ children }: { children: ReactNode }) => {
   );
 };
 
-FormText.displayName = "FormText";
+FormText.displayName = "Text";
 
 export default FormText;

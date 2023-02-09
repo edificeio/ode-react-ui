@@ -16,6 +16,16 @@ export default {
   },
   argTypes: {},
   args: {
+    app: {
+      icon: "blog",
+      address: "",
+      display: false,
+      displayName: "",
+      isExternal: false,
+      name: "Blog",
+      scope: [],
+    },
+    userSrc: "https://i.pravatar.cc/300",
     onOpen: () => console.log("open"),
     onSelect: () => console.log("select"),
   },
@@ -30,7 +40,8 @@ export const Base = Template.bind({});
 
 export const CardWithImage = Template.bind({});
 CardWithImage.args = {
-  src: "https://media.istockphoto.com/id/1322277517/fr/photo/herbe-sauvage-dans-les-montagnes-au-coucher-du-soleil.jpg?s=612x612&w=0&k=20&c=tQ19uZQLlIFy8J6QWMyOL6lPt3pdSHBSDFHoXr1K_g0=",
+  resourceSrc:
+    "https://media.istockphoto.com/id/1322277517/fr/photo/herbe-sauvage-dans-les-montagnes-au-coucher-du-soleil.jpg?s=612x612&w=0&k=20&c=tQ19uZQLlIFy8J6QWMyOL6lPt3pdSHBSDFHoXr1K_g0=",
 };
 
 export const LoadingCard = Template.bind({});

@@ -22,7 +22,7 @@ export type BaseProps = {
    */
   children?: ReactNode;
   /**
-   * Additional ClassName for styling purpose
+   * Optional class for styling purpose
    */
   className?: string;
 } & AppHeadingProps;

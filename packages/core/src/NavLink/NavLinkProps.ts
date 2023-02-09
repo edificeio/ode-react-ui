@@ -6,7 +6,7 @@ export interface NavLinkProps<T> {
    */
   link: T;
   /**
-   * To override default classes
+   * Optional class for styling purpose
    */
   className?: T;
   /**

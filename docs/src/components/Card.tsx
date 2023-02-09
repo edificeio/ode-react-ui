@@ -1,8 +1,6 @@
 export function Card(props: {
   className?: string;
-  style?: {
-    [item: string]: string;
-  };
+  style?: Record<string, string>;
   noShadow?: boolean;
   children: React.ReactNode;
 }) {

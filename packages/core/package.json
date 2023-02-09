@@ -43,8 +43,6 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@ode-react-ui/hooks": "1.0.7-dev.40",
-    "@ode-react-ui/icons": "*",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.10",
@@ -57,12 +55,14 @@
     "vite-plugin-dts": "1.7.1"
   },
   "dependencies": {
-    "react-popper": "2.3.0",
     "@popperjs/core": "2.11.6",
-    "react-hot-toast": "2.4.0"
+    "framer-motion": "9.0.2",
+    "ode-ts-client": "feat-explorer",
+    "react-hot-toast": "2.4.0",
+    "react-popper": "2.3.0"
   },
   "peerDependencies": {
-    "@ode-react-ui/hooks": "1.0.7-dev.40",
+    "@ode-react-ui/hooks": "*",
     "@ode-react-ui/icons": "*",
     "react": "18.2.0",
     "react-dom": "18.2.0"

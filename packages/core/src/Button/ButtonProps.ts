@@ -7,6 +7,7 @@ export type ButtonRef = HTMLButtonElement;
 export type ButtonTypes = "button" | "submit" | "reset";
 export type ButtonColors = "primary" | "secondary" | "tertiary" | "danger";
 export type ButtonVariants = "filled" | "outline" | "ghost";
+export type ButtonSizes = "sm" | "md" | "lg";
 
 export interface ButtonProps extends React.ComponentPropsWithRef<"button"> {
   /**
@@ -21,6 +22,10 @@ export interface ButtonProps extends React.ComponentPropsWithRef<"button"> {
    * `filled`, `outline` or `ghost`
    */
   variant?: ButtonVariants;
+  /**
+   * `sm`, `md` or `lg`
+   */
+  size?: ButtonSizes;
   /**
    * Does it has a text ?
    */
@@ -51,7 +56,7 @@ export interface ButtonProps extends React.ComponentPropsWithRef<"button"> {
    */
   disabled?: boolean;
   /**
-   * For specific styling
+   * Optional class for styling purpose
    */
   className?: string;
 }

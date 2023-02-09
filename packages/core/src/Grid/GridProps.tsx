@@ -25,7 +25,7 @@ export interface GridColProps extends React.ComponentPropsWithoutRef<"div"> {
    */
   children: ReactNode;
   /**
-   * Additional ClassName for styling purpose
+   * Optional class for styling purpose
    */
   className?: string;
   /**
