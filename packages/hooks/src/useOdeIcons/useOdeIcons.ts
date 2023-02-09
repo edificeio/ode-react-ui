@@ -6,11 +6,11 @@ export default function useOdeIcons() {
    */
   const iconOfWidget: { [name in WidgetName]: string } = {
     "last-infos-widget": "ic-widget-actualites",
-    birthday: "ic-star", // FIXME obviously wrong => create missing icon in CSS
+    birthday: "ic-star",
     "calendar-widget": "ic-widget-calendar",
     "carnet-de-bord": "ic-widget-carnet-de-bord",
     "record-me": "ic-widget-microphone",
-    mood: "ic-star", // FIXME obviously wrong => create missing icon in CSS
+    mood: "ic-star",
     "my-apps": "ic-widget-apps",
     notes: "ic-widget-notes",
     "rss-widget": "ic-widget-rss",
@@ -21,7 +21,8 @@ export default function useOdeIcons() {
     "cursus-widget": "ic-widget-aide-devoirs",
     "maxicours-widget": "ic-widget-maxicours",
     "school-widget": "ic-widget-schoolbook",
-    universalis: "ic-widget-universalis",
+    "universalis-widget": "ic-widget-universalis",
+    "briefme-widget": "ic-widget-briefme",
   };
   /**
    * Map between apps and their CSS code.
