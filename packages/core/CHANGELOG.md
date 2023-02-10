@@ -1,5 +1,20 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.41
+
+### Patch Changes
+
+- [#105](https://github.com/opendigitaleducation/ode-react-ui/pull/105) [`3770f72`](https://github.com/opendigitaleducation/ode-react-ui/commit/3770f723544e24b86d78cbe6d37dfd008a7c2c1b) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add popover component, image component, refactor avatar and appicon component
+
+- [#104](https://github.com/opendigitaleducation/ode-react-ui/pull/104) [`0f6c166`](https://github.com/opendigitaleducation/ode-react-ui/commit/0f6c1667d9c6d0f714cb2f51141202ca10410b48) Thanks [@roolian](https://github.com/roolian)! - Add Dropdown component
+
+- [#107](https://github.com/opendigitaleducation/ode-react-ui/pull/107) [`c57520a`](https://github.com/opendigitaleducation/ode-react-ui/commit/c57520aa198cb1c485c05260025b3a788be2befd) Thanks [@clementcreusat](https://github.com/clementcreusat)! - custom header component and add nav subcomponents, useHeader hook
+
+- [#103](https://github.com/opendigitaleducation/ode-react-ui/pull/103) [`23c109c`](https://github.com/opendigitaleducation/ode-react-ui/commit/23c109c96def72c0878e89d6d3d502bfbaa6d5e5) Thanks [@github-actions](https://github.com/apps/github-actions)! - fix Modal storybook errors
+
+- Updated dependencies [[`3770f72`](https://github.com/opendigitaleducation/ode-react-ui/commit/3770f723544e24b86d78cbe6d37dfd008a7c2c1b), [`c57520a`](https://github.com/opendigitaleducation/ode-react-ui/commit/c57520aa198cb1c485c05260025b3a788be2befd)]:
+  - @ode-react-ui/hooks@1.0.7-dev.41
+
 ## 1.0.7-dev.40
 
 ### Patch Changes

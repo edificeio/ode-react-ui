@@ -1,5 +1,13 @@
 # @ode-react-ui/hooks
 
+## 1.0.7-dev.41
+
+### Patch Changes
+
+- [#105](https://github.com/opendigitaleducation/ode-react-ui/pull/105) [`3770f72`](https://github.com/opendigitaleducation/ode-react-ui/commit/3770f723544e24b86d78cbe6d37dfd008a7c2c1b) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add popover component, image component, refactor avatar and appicon component
+
+- [#107](https://github.com/opendigitaleducation/ode-react-ui/pull/107) [`c57520a`](https://github.com/opendigitaleducation/ode-react-ui/commit/c57520aa198cb1c485c05260025b3a788be2befd) Thanks [@clementcreusat](https://github.com/clementcreusat)! - custom header component and add nav subcomponents, useHeader hook
+
 ## 1.0.7-dev.40
 
 ### Patch Changes
