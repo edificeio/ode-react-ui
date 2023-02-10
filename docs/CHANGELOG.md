@@ -1,5 +1,11 @@
 # @ode-react-ui/storybook
 
+## 1.0.5-dev.15
+
+### Patch Changes
+
+- [#105](https://github.com/opendigitaleducation/ode-react-ui/pull/105) [`3770f72`](https://github.com/opendigitaleducation/ode-react-ui/commit/3770f723544e24b86d78cbe6d37dfd008a7c2c1b) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add popover component, image component, refactor avatar and appicon component
+
 ## 1.0.5-dev.14
 
 ### Patch Changes
