@@ -6,7 +6,7 @@ export interface CardProps extends ComponentPropsWithRef<"div"> {
   /**
    * To show the icon of an application
    */
-  app: IWebApp;
+  app?: IWebApp;
   /**
    * Person who created resource
    * */

@@ -27,7 +27,7 @@ const SearchButton = forwardRef(
     { icon = <Search />, onClick, ...restProps }: SearchButtonProps,
     ref?: Ref<ButtonRef>,
   ) => {
-    const classes = clsx("btn-search");
+    const classes = clsx("btn-search btn-sm");
 
     return (
       <IconButton
