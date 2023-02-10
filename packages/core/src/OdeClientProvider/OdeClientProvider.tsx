@@ -3,26 +3,10 @@ import { createContext, type ReactNode, useMemo, useContext } from "react";
 import { useOdeBackend } from "@ode-react-ui/hooks";
 
 import {
+  ContextProps,
   FrameworkProps,
-  IHttp,
-  ISession,
-  ITheme,
-  IWebApp,
   OdeProviderParams,
 } from "./OdeClientProps";
-
-export interface ContextProps {
-  app: IWebApp | undefined;
-  appCode: string;
-  currentLanguage: string;
-  http: IHttp;
-  i18n: (key: string, params?: Record<string, any> | undefined) => string;
-  params: OdeProviderParams;
-  session: ISession | null;
-  theme: ITheme;
-  is1d: boolean;
-  basePath: string;
-}
 
 export interface OdeClientProps {
   children: ReactNode;

@@ -40,7 +40,7 @@ export interface ContextProps {
   http: IHttp;
   i18n: (key: string, params?: Record<string, any> | undefined) => string;
   params: OdeProviderParams;
-  session: ISession | null;
+  session: ISession;
   theme: ITheme;
   is1d: boolean;
   basePath: string;

@@ -14,7 +14,7 @@ const Avatar = forwardRef(
       src,
       imgPlaceholder,
       className,
-    }: AvatarProps,
+    }: AvatarProps<string>,
     ref: Ref<HTMLImageElement>,
   ) => {
     const placeholder =
@@ -29,6 +29,7 @@ const Avatar = forwardRef(
       "avatar-sm": size === "sm",
       "avatar-md": size === "md",
       "avatar-lg": size === "lg",
+      "avatar-xl": size === "xl",
     };
 
     const avatarVariants = {
