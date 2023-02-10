@@ -1,27 +1,30 @@
-export interface AvatarProps {
+type AvatarVariants = "square" | "rounded" | "circle";
+type AvatarSizes = "xs" | "sm" | "md" | "lg" | "xl";
+
+export interface AvatarProps<T> {
   /**
    * Shape of Avatar
    * `title`, `square`, `circle`
    */
-  variant?: "square" | "rounded" | "circle";
+  variant?: AvatarVariants;
   /**
    * Avatar' size
    */
-  size?: "xs" | "sm" | "md" | "lg";
+  size?: AvatarSizes;
   /**
    * Show image when `src` props is provided
    */
-  src: string;
+  src: T;
   /**
    * Custom fallback image
    */
-  imgPlaceholder?: string;
+  imgPlaceholder?: T;
   /**
    * Alternative text when using image
    */
-  alt: string;
+  alt: T;
   /**
    * Optional class for styling purpose
    */
-  className?: string;
+  className?: T;
 }

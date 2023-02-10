@@ -13,23 +13,30 @@ import clsx from "clsx";
 import { ButtonRef } from "./ButtonProps";
 import IconButton, { IconButtonProps } from "./IconButton";
 
-type PickedProps = "type" | "icon";
+type PickedProps = "type" | "icon" | "size";
 
-export interface SearchButtonProps extends Pick<IconButtonProps, PickedProps> {}
+export interface SearchButtonProps extends Pick<IconButtonProps, PickedProps> {
+  onClick?: any;
+}
 
 /**
  * SearchButton extends the IconButton component by omitting unnecessary props.
  */
-
 const SearchButton = forwardRef(
   (
-    { icon = <Search />, ...restProps }: SearchButtonProps,
+    { icon = <Search />, onClick, ...restProps }: SearchButtonProps,
     ref?: Ref<ButtonRef>,
   ) => {
     const classes = clsx("btn-search");
 
     return (
-      <IconButton ref={ref} className={classes} icon={icon} {...restProps} />
+      <IconButton
+        ref={ref}
+        className={classes}
+        icon={icon}
+        {...restProps}
+        onClick={onClick}
+      />
     );
   },
 );

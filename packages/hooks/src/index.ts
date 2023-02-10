@@ -9,3 +9,4 @@ export * from "./useOdeBackend";
 export * from "./useOdeIcons";
 export * from "./useTitle";
 export * from "./useToggle";
+export * from "./useBookmark";
