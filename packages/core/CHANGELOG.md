@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.42
+
+### Patch Changes
+
+- [#108](https://github.com/opendigitaleducation/ode-react-ui/pull/108) [`cda10ff`](https://github.com/opendigitaleducation/ode-react-ui/commit/cda10ffde20169a82623c448a34017fb030d474e) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix search and icon component classname
+
 ## 1.0.7-dev.41
 
 ### Patch Changes
