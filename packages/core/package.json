@@ -61,7 +61,8 @@
     "framer-motion": "9.0.2",
     "ode-ts-client": "feat-explorer",
     "react-hot-toast": "2.4.0",
-    "react-popper": "2.3.0"
+    "react-popper": "2.3.0",
+    "swiper": "9.0.4"
   },
   "peerDependencies": {
     "@ode-react-ui/hooks": "1.0.7-dev.41",

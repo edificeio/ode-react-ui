@@ -21,7 +21,7 @@ export interface SelectListProps {
    */
   options: OptionListItemType[];
   /**
-   * State controlling select state
+   * State initializing select state
    */
   model?: Array<string | number>;
   /**
