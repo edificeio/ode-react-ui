@@ -1,6 +1,13 @@
 import { useState } from "react";
 
 import { useModal } from "@ode-react-ui/hooks";
+// Import Swiper React components
+import { Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
 import {
   Bookmark,
   Close,
@@ -33,6 +40,12 @@ export default {
     Subtitle: Modal.Subtitle,
     Body: Modal.Body,
     Footer: Modal.Footer,
+  },
+  argTypes: {
+    size: {
+      options: ["md", "lg"],
+      control: { type: "select" },
+    },
   },
 } as ComponentMeta<typeof Modal>;
 
@@ -214,6 +227,15 @@ export const CreateFile = (args: any) => {
 
           <div className="d-flex flex-column flex-md-row gap-16 mb-24">
             <ImagePicker
+              app={{
+                address: "/blog",
+                icon: "blog-large",
+                name: "Blog",
+                scope: [],
+                display: false,
+                displayName: "",
+                isExternal: false,
+              }}
               label="Upload an image"
               addButtonLabel="Add image"
               deleteButtonLabel="Delete image"
@@ -449,9 +471,7 @@ export const ShareFile = (args: any) => {
                     <th scope="row">
                       <Avatar
                         alt="alternative text"
-                        appCode="placeholder"
                         size="xs"
-                        isIconUrl={!!item.avatarUrl}
                         src={item.avatarUrl}
                         variant="circle"
                       />
@@ -728,6 +748,15 @@ export const PublishOnLibrary = (args: any) => {
           <div className="mb-24">
             <div className="form-label">Image d'illustration</div>
             <ImagePicker
+              app={{
+                address: "/blog",
+                icon: "blog-large",
+                name: "Blog",
+                scope: [],
+                display: false,
+                displayName: "",
+                isExternal: false,
+              }}
               label="Upload an image"
               addButtonLabel="Add image"
               deleteButtonLabel="Delete image"
@@ -757,7 +786,6 @@ export const PublishOnLibrary = (args: any) => {
             <div className="col">
               <FormControl id="activityType">
                 <Select
-                  label="Type d’activité"
                   options={activityTypesOptions}
                   model={activityType}
                   placeholderOption="Sélectionner"
@@ -879,6 +907,142 @@ export const PublishOnLibrary = (args: any) => {
           >
             Accepter et publier
           </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+};
+PublishOnLibrary.args = {
+  scrollable: false,
+};
+
+export const OnBoardingTrash = (args: any) => {
+  const [isOpen, toggle] = useModal(false);
+  const [swiperInstance, setSwiperInstance] = useState<any>();
+  const [swiperProgress, setSwiperprogress] = useState<number>(0);
+
+  function handleOpenModal() {
+    toggle(true);
+  }
+
+  function handleCloseModal() {
+    toggle(false);
+  }
+
+  return (
+    <>
+      <Button
+        type="button"
+        variant="filled"
+        color="primary"
+        onClick={handleOpenModal}
+      >
+        On Boarding recycle bin
+      </Button>
+      <Modal
+        {...args}
+        size="md"
+        isOpen={isOpen}
+        onModalClose={handleCloseModal}
+      >
+        <Modal.Header onModalClose={handleCloseModal}>
+          Du nouveau dans la corbeille !
+        </Modal.Header>
+
+        <Modal.Body>
+          <Swiper
+            modules={[Pagination]}
+            onSwiper={(swiper) => {
+              setSwiperInstance(swiper);
+            }}
+            onProgress={(swiper, progress) => {
+              setSwiperprogress(progress);
+            }}
+            pagination={{
+              clickable: true,
+            }}
+          >
+            <SwiperSlide>
+              <div className="d-flex gap-24 flex-column justify-content-center align-items-stretch">
+                <p>
+                  Votre corbeille évolue pour vous permettre de mieux gérer
+                  votre espace.
+                </p>
+                <div className="mx-auto">
+                  <img
+                    src={`assets/themes/ode-bootstrap/images/onboarding/corbeille1.png`}
+                    alt=""
+                  />
+                </div>
+                <p>
+                  Les contenus placés dans la corbeille ne génèrent plus de
+                  notifications et n’apparaitront plus dans votre fil
+                  d’actualités{" "}
+                </p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="d-flex gap-24 flex-column justify-content-center align-items-stretch">
+                <p>
+                  Vous pouvez maintenant supprimer les contenus que l’on vous a
+                  partagé qui ne vous intéressent plus !
+                </p>
+                <div className="mx-auto">
+                  <img
+                    src={`assets/themes/ode-bootstrap/images/onboarding/corbeille1.png`}
+                    alt=""
+                  />
+                </div>
+                <p>
+                  Les contenus que l’on vous a partagés et que vous avez placés
+                  dans votre corbeille disparaitront de votre espace en fin
+                  d’année scolaire
+                </p>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button
+            type="button"
+            color="tertiary"
+            variant="ghost"
+            onClick={handleCloseModal}
+          >
+            Plus tard
+          </Button>
+
+          {swiperProgress > 0 && (
+            <Button
+              type="button"
+              color="primary"
+              variant="outline"
+              onClick={() => swiperInstance.slidePrev()}
+            >
+              Précédent
+            </Button>
+          )}
+          {swiperProgress < 1 && (
+            <Button
+              type="button"
+              color="primary"
+              variant="filled"
+              onClick={() => swiperInstance.slideNext()}
+            >
+              Suivant
+            </Button>
+          )}
+          {swiperProgress === 1 && (
+            <Button
+              type="button"
+              color="primary"
+              variant="filled"
+              onClick={handleCloseModal}
+            >
+              Fermer
+            </Button>
+          )}
         </Modal.Footer>
       </Modal>
     </>
