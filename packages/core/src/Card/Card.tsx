@@ -4,7 +4,6 @@ import { useOdeIcons } from "@ode-react-ui/hooks";
 import { Files, Globe, Options, Users } from "@ode-react-ui/icons";
 import { OneProfile } from "@ode-react-ui/icons/nav";
 import clsx from "clsx";
-import { IWebApp } from "ode-ts-client";
 
 import { AppIcon } from "../AppIcon";
 import { Avatar } from "../Avatar";
@@ -75,13 +74,6 @@ const Card = forwardRef(
       placeholder: isLoading,
     });
 
-    /* function handleKeyDown(e: React.KeyboardEvent) {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        onOpen?.();
-      }
-    } */
-
     function handleOnSelect(event: React.MouseEvent) {
       event.stopPropagation();
       onSelect?.();
@@ -97,12 +89,7 @@ const Card = forwardRef(
         />
       </div>
     ) : (
-      <AppIcon
-        app={app as IWebApp}
-        iconFit="ratio"
-        size="80"
-        variant="rounded"
-      />
+      <AppIcon app={app} iconFit="ratio" size="80" variant="rounded" />
     );
 
     const renderThumbnails = isFolder ? (
