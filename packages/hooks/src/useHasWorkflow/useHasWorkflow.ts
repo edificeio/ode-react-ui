@@ -1,18 +1,22 @@
 import { type ISession } from "ode-ts-client";
 
 export default function useHasWorkflow(session: ISession) {
-  const workflows: Record<string, Record<string, boolean> | boolean> = {
+  const workflows: Record<string, Record<string, boolean>> = {
     conversation: {
       view: session?.hasWorkflow(
         "org.entcore.conversation.controllers.ConversationController|view",
       ),
     },
-    community: session?.hasWorkflow(
-      "net.atos.entng.community.controllers.CommunityController|view",
-    ),
-    search: session?.hasWorkflow(
-      "fr.openent.searchengine.controllers.SearchEngineController|view",
-    ),
+    community: {
+      view: session?.hasWorkflow(
+        "net.atos.entng.community.controllers.CommunityController|view",
+      ),
+    },
+    search: {
+      view: session?.hasWorkflow(
+        "fr.openent.searchengine.controllers.SearchEngineController|view",
+      ),
+    },
     zimbra: {
       view: session?.hasWorkflow(
         "fr.openent.zimbra.controllers.ZimbraController|view",

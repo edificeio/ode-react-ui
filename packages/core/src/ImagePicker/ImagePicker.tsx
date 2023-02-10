@@ -138,7 +138,7 @@ const ImagePicker = forwardRef(
             type="file"
           />
           {preview.image ? (
-            <Avatar alt={preview.name} src={preview.image} size="lg" />
+            <Avatar alt={preview.name} src={preview.image} size="xl" />
           ) : (
             <AppIcon
               app={app as IWebApp}

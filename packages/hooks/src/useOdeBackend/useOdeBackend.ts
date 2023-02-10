@@ -35,8 +35,6 @@ export interface OdeClientProps {
   params: OdeProviderParams;
 }
 
-export type { IWebApp, ISession, ITheme, IHttp };
-
 /** Custom Hook for ode-ts-client integration */
 export default function useOdeBackend({
   params,
@@ -52,7 +50,7 @@ export default function useOdeBackend({
   const [idiom, setIdiom] = useState<IIdiom>(
     configurationFramework.Platform.idiom,
   );
-  const [session, setSession] = useState<ISession | null>(null);
+  const [session, setSession] = useState<ISession>(undefined!);
   const [theme, setTheme] = useState<ITheme>(
     configurationFramework.Platform.theme,
   );
