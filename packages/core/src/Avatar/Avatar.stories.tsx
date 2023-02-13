@@ -10,7 +10,7 @@ export default {
     docs: {
       description: {
         component:
-          "Avatar used for Card Components or User image. Default image is a placeholder or when src isn't provided or on error.",
+          "Avatar used for Card Components or User image. Default image is a placeholder or when `src` isn't provided or on error.",
       },
     },
   },
@@ -49,6 +49,14 @@ export const AvatarSizes = () => {
     </div>
   );
 };
+AvatarSizes.parameters = {
+  docs: {
+    description: {
+      story:
+        "Avatar Component accepts 4 sizes with the `size` prop attribute: `xs | sm | md | lg`",
+    },
+  },
+};
 
 export const AvatarShapes = () => {
   return (
@@ -73,6 +81,14 @@ export const AvatarShapes = () => {
       />
     </div>
   );
+};
+AvatarShapes.parameters = {
+  docs: {
+    description: {
+      story:
+        "Avatar Component can take 3 different shapes with the `variant` prop attribute: `square | rounded | circle`. Default value is `square`",
+    },
+  },
 };
 
 export const AvatarFallback = () => {

@@ -38,41 +38,77 @@ const Template: ComponentStory<typeof Card> = (args: CardProps) => (
 
 export const Base = Template.bind({});
 
+export const Default = Template.bind({});
+Default.parameters = {
+  docs: {
+    description: {
+      story:
+        "If no `resourceSrc` is passed, Card Component shows the AppIcon placeholder.",
+    },
+  },
+};
+
 export const CardWithImage = Template.bind({});
 CardWithImage.args = {
   resourceSrc:
     "https://media.istockphoto.com/id/1322277517/fr/photo/herbe-sauvage-dans-les-montagnes-au-coucher-du-soleil.jpg?s=612x612&w=0&k=20&c=tQ19uZQLlIFy8J6QWMyOL6lPt3pdSHBSDFHoXr1K_g0=",
 };
-
-export const LoadingCard = Template.bind({});
-LoadingCard.args = {
-  isLoading: true,
+CardWithImage.parameters = {
+  docs: {
+    description: {
+      story:
+        "If `resourceSrc` is provided, Card Component shows the actual image.",
+    },
+  },
 };
 
-export const AnimatedCard = Template.bind({});
-AnimatedCard.args = {
-  isAnimated: true,
+export const Variant = () => {
+  return (
+    <div className="d-flex align-items-center gap-16">
+      <Card className="flex-fill" />
+      <Card isFolder className="flex-fill" />
+    </div>
+  );
+};
+Variant.parameters = {
+  docs: {
+    description: {
+      story:
+        "If `isFolder` props is set to true, Component will be a folder card. Otherwise, it is a resource card.",
+    },
+  },
 };
 
-export const FolderCard = Template.bind({});
-FolderCard.args = {
-  isFolder: true,
+export const LoadingStatus = () => {
+  return (
+    <div className="d-flex align-items-center gap-16">
+      <Card isLoading className="flex-fill" />
+      <Card isFolder isLoading className="flex-fill" />
+    </div>
+  );
+};
+LoadingStatus.parameters = {
+  docs: {
+    description: {
+      story:
+        "Card Component accepts an `isLoading` prop to show loading status.",
+    },
+  },
 };
 
-export const FolderLoadingCard = Template.bind({});
-FolderLoadingCard.args = {
-  isFolder: true,
-  isLoading: true,
+export const SelectedState = () => {
+  return (
+    <div className="d-flex align-items-center gap-16">
+      <Card isSelected className="flex-fill" />
+      <Card isFolder isSelected className="flex-fill" />
+    </div>
+  );
 };
-
-export const SelectedCard = Template.bind({});
-SelectedCard.args = {
-  isFolder: false,
-  isSelected: true,
-};
-
-export const SelectedFolder = Template.bind({});
-SelectedFolder.args = {
-  isFolder: true,
-  isSelected: true,
+SelectedState.parameters = {
+  docs: {
+    description: {
+      story:
+        "Prop `isSelected` is used when any action can be performed with the ActionBar Component.",
+    },
+  },
 };

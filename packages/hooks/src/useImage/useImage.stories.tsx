@@ -11,12 +11,11 @@ export default {
 };
 
 export const Example = () => {
-  // const title = useTitle();
-  const title = "test";
+  const src = "";
+  const alt = "alternative text";
+  const placeholder =
+    "/assets/themes/ode-bootstrap/images/image-placeholder.png";
+  const { imgSrc, onError } = useImage({ src, placeholder });
 
-  return (
-    <Heading level="h1" headingStyle="h3">
-      {title}
-    </Heading>
-  );
+  return <img alt={alt} onError={onError} src={imgSrc} />;
 };

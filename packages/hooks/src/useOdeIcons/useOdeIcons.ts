@@ -29,7 +29,11 @@ export default function useOdeIcons() {
    * @param app
    */
   function getIconCode(app: IWebApp): string {
-    let appCode = app?.icon.trim().toLowerCase() || "";
+    let appCode = "";
+
+    appCode =
+      app?.icon !== undefined ? app?.icon.trim().toLowerCase() : "placeholder";
+
     if (appCode && appCode.length > 0) {
       if (appCode.endsWith("-large")) appCode = appCode.replace("-large", "");
     } else {

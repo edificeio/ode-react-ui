@@ -1,34 +1,28 @@
 import { Canvas, Story } from "@storybook/addon-docs";
 
-# useTitle
+# useImage
 
 ## Usage
 
-- Give the ability to detect and use the current Document title.
-- Currently used in Responsive with our Header Component.
+- Use a placeholder if an error occured with the provided `src`
+- Used in the `<Image/>` Component
 
 ## Example
 
 <Canvas>
-  <Story id="hooks-usetitle--example" />
+  <Story id="hooks-useimage--example" />
 </Canvas>
 
 ## Function
 
 ```jsx
-function useTitle() {
-  const documentDefined = typeof document !== "undefined";
+function useImage({ src, placeholder }: useImageProps) {
+  const [imgSrc, setImgSrc] = useState < string > (src || placeholder);
 
-  const [title, setTitle] = useState < string > (() => document.title);
-
-  useEffect(() => {
-    if (!documentDefined) return;
-
-    setTitle(document.title);
+  const onError = useCallback(() => {
+    setImgSrc(placeholder);
   }, []);
 
-  return {
-    title,
-  };
+  return { imgSrc, onError };
 }
 ```

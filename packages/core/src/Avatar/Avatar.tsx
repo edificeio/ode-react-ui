@@ -15,7 +15,7 @@ const Avatar = forwardRef(
       imgPlaceholder,
       className,
     }: AvatarProps<string>,
-    ref: Ref<HTMLImageElement>,
+    ref: Ref<HTMLDivElement>,
   ) => {
     const placeholder =
       imgPlaceholder || "/assets/themes/ode-bootstrap/images/no-avatar.svg";
@@ -56,4 +56,5 @@ const Avatar = forwardRef(
 );
 
 Avatar.displayName = "Avatar";
+
 export default Avatar;
