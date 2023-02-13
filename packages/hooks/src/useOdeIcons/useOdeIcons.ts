@@ -28,8 +28,8 @@ export default function useOdeIcons() {
    * Map between apps and their CSS code.
    * @param app
    */
-  function getIconCode(app: IWebApp): string {
-    let appCode = "";
+  function getIconCode(app: IWebApp | undefined): string | undefined {
+    let appCode: string | undefined = "";
 
     appCode =
       app?.icon !== undefined ? app?.icon.trim().toLowerCase() : "placeholder";
@@ -37,7 +37,10 @@ export default function useOdeIcons() {
     if (appCode && appCode.length > 0) {
       if (appCode.endsWith("-large")) appCode = appCode.replace("-large", "");
     } else {
-      appCode = app.displayName.trim().toLowerCase();
+      appCode =
+        app?.displayName !== undefined
+          ? app?.displayName.trim().toLowerCase()
+          : "";
     }
     // appCode = configurationFramework.Platform.idiom.removeAccents(appCode);
     // @see distinct values for app's displayName is in query /auth/oauth2/userinfo

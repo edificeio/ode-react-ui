@@ -4,3 +4,4 @@ export * from "./NavLink";
 export * from "./NavSearch";
 export * from "./Navbar";
 export * from "./NavbarNav";
+export * from "./useHeader";

@@ -13,7 +13,7 @@ const Logo = forwardRef(
     const logo = `logo ${is1d ? "ONE" : "NEO"}`;
     return (
       <a ref={ref} className={classes} href="/" aria-label={translate}>
-        <img className="logo" src={src} alt={logo} />
+        <img className="logo" src={src} alt={logo} width="300" height="52" />
       </a>
     );
   },

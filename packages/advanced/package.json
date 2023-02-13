@@ -42,9 +42,9 @@
     "lint": "eslint \"**/*.{ts,tsx}\""
   },
   "devDependencies": {
-    "@ode-react-ui/core": "1.0.7-dev.42",
+    "@ode-react-ui/core": "*",
     "@ode-react-ui/icons": "*",
-    "@ode-react-ui/hooks": "1.0.7-dev.41",
+    "@ode-react-ui/hooks": "*",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.10",
@@ -60,9 +60,9 @@
     "ode-ts-client": "feat-explorer"
   },
   "peerDependencies": {
-    "@ode-react-ui/core": "1.0.7-dev.42",
+    "@ode-react-ui/core": "*",
     "@ode-react-ui/icons": "*",
-    "@ode-react-ui/hooks": "1.0.7-dev.41",
+    "@ode-react-ui/hooks": "*",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
