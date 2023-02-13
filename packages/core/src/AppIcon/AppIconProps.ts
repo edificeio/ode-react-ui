@@ -36,11 +36,11 @@ export type Props =
       /**
        * Add padding around icon
        */
-      iconFit?: "ratio";
+      iconFit: "ratio";
       /**
        * Rounded or Circle variant
        */
-      variant?: AppVariants;
+      variant: AppVariants;
     };
 
 export type AppIconProps = BaseProps & Props;

@@ -41,8 +41,8 @@ const AppIcon = forwardRef(
       "icon-ratio": isRatio,
     };
 
-    const code = (app !== undefined && getIconCode(app)) || "placeholder";
-    const isIconURL = app !== undefined && isIconUrl(app?.icon);
+    const code = getIconCode(app);
+    const isIconURL = isIconUrl(app?.icon);
 
     const appCode = code || "placeholder";
 
@@ -70,7 +70,7 @@ const AppIcon = forwardRef(
       );
     }
 
-    if (!app) {
+    if (!isIconURL) {
       return (
         <div
           className={classes}
