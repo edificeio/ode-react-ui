@@ -134,7 +134,7 @@ LoadingButtonWithText.parameters = {
   docs: {
     description: {
       story:
-        "Loading button is not disabled but we had `pointer-events:none` to desactive its behaviour. You can add the disabled props if you want. Default position of the loading icon is on the left.",
+        "Loading button is not disabled but we have `pointer-events:none` to desactive its behaviour. You can add the disabled props if you want. Default position of the loading icon is on the left.",
     },
   },
 };

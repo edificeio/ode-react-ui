@@ -15,7 +15,6 @@ export default {
   },
   args: {
     size: "40",
-    app: {},
   },
   argTypes: {
     variant: {
@@ -37,9 +36,6 @@ const Template: ComponentStory<typeof AppIcon> = (args: AppIconProps) => (
   <AppIcon {...args} />
 );
 export const Base = Template.bind({});
-Base.args = {
-  app: {},
-};
 
 export const AppIconSizes = (args: AppIconProps) => {
   return (
@@ -51,6 +47,13 @@ export const AppIconSizes = (args: AppIconProps) => {
       <AppIcon app={args.app} size="160" />
     </div>
   );
+};
+AppIconSizes.parameters = {
+  docs: {
+    description: {
+      story: "App icon can take different size with the `size` prop attribute.",
+    },
+  },
 };
 
 export const AppIconAsImage = Template.bind({});
@@ -65,8 +68,16 @@ AppIconAsImage.args = {
     isExternal: false,
   },
 };
+AppIconAsImage.parameters = {
+  docs: {
+    description: {
+      story:
+        "If the `icon` property is a `url`, AppIcon displays the image instead of an svg icon.",
+    },
+  },
+};
 
-export const AppIconAsImageSizes = (args: AppIconProps) => {
+export const AppIconImageSizes = (args: AppIconProps) => {
   return (
     <div className="d-flex align-items-center gap-8">
       <AppIcon app={args.app} size="24" />
@@ -77,7 +88,7 @@ export const AppIconAsImageSizes = (args: AppIconProps) => {
     </div>
   );
 };
-AppIconAsImageSizes.args = {
+AppIconImageSizes.args = {
   app: {
     address: "/form",
     icon: "https://ent.l-educdenormandie.fr/formulaire/public/img/logo.svg",
@@ -86,6 +97,14 @@ AppIconAsImageSizes.args = {
     display: false,
     displayName: "",
     isExternal: false,
+  },
+};
+AppIconImageSizes.parameters = {
+  docs: {
+    description: {
+      story:
+        "Like the default AppIcon, the `size` prop attribute works on image too.",
+    },
   },
 };
 
@@ -102,8 +121,16 @@ AppIconWithRatio.args = {
   },
   iconFit: "ratio",
 };
+AppIconWithRatio.parameters = {
+  docs: {
+    description: {
+      story:
+        "Using the `iconFit` attribute with the `ratio` value will give a `backgroundColor` and some `padding` to the AppIcon. Default value is `contain`",
+    },
+  },
+};
 
-export const AppIconWithRatioSizes = (args: AppIconProps) => {
+export const AppIconRatioSizes = (args: AppIconProps) => {
   return (
     <div className="d-flex align-items-center gap-8">
       <AppIcon app={args.app} size="24" variant="square" iconFit="ratio" />
@@ -114,13 +141,13 @@ export const AppIconWithRatioSizes = (args: AppIconProps) => {
     </div>
   );
 };
-AppIconWithRatioSizes.args = {
+AppIconRatioSizes.args = {
   iconFit: "ratio",
   variant: "rounded",
 };
 
-export const AppIconWithCircle = Template.bind({});
-AppIconWithCircle.args = {
+export const AppIconCircle = Template.bind({});
+AppIconCircle.args = {
   app: {
     icon: "blog",
     address: "",
@@ -133,8 +160,16 @@ AppIconWithCircle.args = {
   iconFit: "ratio",
   variant: "circle",
 };
+AppIconCircle.parameters = {
+  docs: {
+    description: {
+      story:
+        "Using the `variant` attribute with the `circle` value will change the shape of AppIcon. Default value is `square`",
+    },
+  },
+};
 
-export const AppIconWithCircleSizes = (args: AppIconProps) => {
+export const AppIconCircleSizes = (args: AppIconProps) => {
   return (
     <div className="d-flex align-items-center gap-8">
       <AppIcon app={args.app} size="24" iconFit="ratio" variant="circle" />
@@ -146,8 +181,8 @@ export const AppIconWithCircleSizes = (args: AppIconProps) => {
   );
 };
 
-export const AppIconWithRounded = Template.bind({});
-AppIconWithRounded.args = {
+export const AppIconRounded = Template.bind({});
+AppIconRounded.args = {
   app: {
     icon: "blog",
     address: "",
@@ -160,8 +195,16 @@ AppIconWithRounded.args = {
   iconFit: "ratio",
   variant: "rounded",
 };
+AppIconRounded.parameters = {
+  docs: {
+    description: {
+      story:
+        "Using the `variant` attribute with the `rounded` value will change the shape of AppIcon. Default value is `square`",
+    },
+  },
+};
 
-export const AppIconWithRoundedSizes = (args: AppIconProps) => {
+export const AppIconRoundedSizes = (args: AppIconProps) => {
   return (
     <div className="d-flex align-items-center gap-8">
       <AppIcon app={args.app} size="24" iconFit="ratio" variant="rounded" />
@@ -172,7 +215,7 @@ export const AppIconWithRoundedSizes = (args: AppIconProps) => {
     </div>
   );
 };
-AppIconWithRoundedSizes.args = {
+AppIconRoundedSizes.args = {
   app: {
     icon: "blog",
     address: "",

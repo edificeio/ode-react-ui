@@ -68,7 +68,7 @@ const Card = forwardRef(
       },
     );
 
-    const appCode = (app !== undefined && getIconCode(app)) || "placeholder";
+    const appCode = getIconCode(app);
 
     const classesFiles = clsx(`color-app-${appCode}`, {
       placeholder: isLoading,
@@ -152,4 +152,5 @@ const Card = forwardRef(
 );
 
 Card.displayName = "Card";
+
 export default Card;

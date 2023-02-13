@@ -14,7 +14,7 @@ export interface CardProps extends ComponentPropsWithRef<"div"> {
   /**
    * Name of resource or Folder
    * */
-  name: string;
+  name?: string;
   /**
    * Updated time
    */
