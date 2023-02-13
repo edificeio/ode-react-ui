@@ -1,21 +1,23 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
-import { useState, useId, useRef, useEffect } from "react";
+import { useRef, useState, useId, useEffect } from "react";
 
 import {
   useClickOutside,
   useTitle,
   useHover,
-  useHasWorkflow,
   useBookmark,
+  useHasWorkflow,
 } from "@ode-react-ui/hooks";
-import { IConfigurationFramework, IHttp, type ISession } from "ode-ts-client";
+import { IConfigurationFramework, IHttp, ISession } from "ode-ts-client";
 
-export function useHeader(
-  configurationFramework: IConfigurationFramework,
-  http: IHttp,
-  session: ISession,
-  hotToast: any,
-) {
+export function useHeader({
+  session,
+  configurationFramework,
+  http,
+}: {
+  session: ISession;
+  configurationFramework: IConfigurationFramework;
+  http: IHttp;
+}): any {
   /**
    * All necessary refs
    */
@@ -74,11 +76,17 @@ export function useHeader(
   const searchWorkflow = search.view;
   const conversationWorflow = conversation.view;
   const zimbraWorkflow = zimbra.view;
+  const zimbraPreauth = zimbra.preauth;
 
   useEffect(() => {
     (async () => {
-      await refreshMails();
+      try {
+        await refreshMails();
+      } catch (error) {
+        console.error(error);
+      }
     })();
+    goToMessagerie();
   }, []);
 
   /**
@@ -92,14 +100,14 @@ export function useHeader(
         });
 
         if (response.status !== 200) {
-          hotToast.error("something wrong happened!");
+          // hotToast.error("something wrong happened!");
           setMessages(0);
         }
 
         setMessages(response.count);
       } catch (error) {
         console.error("error");
-        hotToast.error("something wrong happened!");
+        // hotToast.error("something wrong happened!");
         setMessages(0);
       }
     } else {
@@ -111,7 +119,7 @@ export function useHeader(
         setMessages(response.count);
       } catch (error) {
         console.error("error");
-        hotToast.error("something wrong happened!");
+        // hotToast.error("something wrong happened!");
         setMessages(0);
       }
     }
@@ -126,6 +134,31 @@ export function useHeader(
 
   function toggleCollapsedNav() {
     setIsCollapsed(!isCollapsed);
+  }
+
+  const [msgLink, setMsgLink] = useState<string>("");
+  function goToMessagerie(): void {
+    let messagerieLink = "";
+    // FIXME This is the old-fashioned way of accessing preferences. Do not reproduce anymore (use ode-ts-client lib instead)
+    http
+      .get("/userbook/preference/zimbra")
+      .then((data: { preference: string }) => {
+        try {
+          if (
+            data.preference
+              ? JSON.parse(data.preference).modeExpert && zimbraPreauth
+              : false
+          ) {
+            messagerieLink = "/zimbra/preauth";
+          } else {
+            messagerieLink = window.location.origin + "/zimbra/zimbra";
+          }
+        } catch (e) {
+          messagerieLink = "/zimbra/zimbra";
+        }
+      });
+
+    setMsgLink(messagerieLink);
   }
 
   return {
@@ -151,6 +184,7 @@ export function useHeader(
     zimbraWorkflow,
     searchWorkflow,
     isCollapsed,
+    msgLink,
     redirectToSearch,
     toggleCollapsedNav,
   };

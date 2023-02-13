@@ -32,6 +32,7 @@ module.exports = {
     "@typescript-eslint/quotes": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/no-floating-promises": "off",
     "no-console": "off",
     "import/order": [
       "error",
