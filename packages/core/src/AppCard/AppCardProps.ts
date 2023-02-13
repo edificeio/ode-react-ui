@@ -1,5 +1,7 @@
 import React, { ReactNode } from "react";
 
+import { IWebApp } from "ode-ts-client";
+
 import { HeadingProps } from "../Heading/HeadingProps";
 import {
   PolymorphicComponentPropsWithRef,
@@ -12,7 +14,7 @@ export type BaseProps = {
   /**
    * Pass all information about an app
    */
-  app: any;
+  app: IWebApp;
   /**
    * Use as title element (h1, h2)
    */

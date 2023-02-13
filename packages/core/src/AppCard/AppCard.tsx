@@ -55,7 +55,7 @@ const Root: PolymorphicAppCard = forwardRef(
         isHeading,
         level,
         headingStyle,
-        code: getIconCode(app),
+        code: getIconCode(app)!,
         bgCode: getBackgroundLightIconClass(app),
       }),
       [],

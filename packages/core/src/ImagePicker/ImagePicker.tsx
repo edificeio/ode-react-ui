@@ -9,7 +9,6 @@ import {
 
 import { Delete, Edit } from "@ode-react-ui/icons";
 import clsx from "clsx";
-import { IWebApp } from "ode-ts-client";
 
 import { AppIcon } from "../AppIcon";
 import { Avatar } from "../Avatar";
@@ -140,12 +139,7 @@ const ImagePicker = forwardRef(
           {preview.image ? (
             <Avatar alt={preview.name} src={preview.image} size="xl" />
           ) : (
-            <AppIcon
-              app={app as IWebApp}
-              iconFit="ratio"
-              size="160"
-              variant="rounded"
-            />
+            <AppIcon app={app} iconFit="ratio" size="160" variant="rounded" />
           )}
         </FormControl.Label>
       </FormControl>

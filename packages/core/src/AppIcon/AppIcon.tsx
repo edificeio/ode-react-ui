@@ -41,8 +41,10 @@ const AppIcon = forwardRef(
       "icon-ratio": isRatio,
     };
 
+    const icon = app?.icon !== undefined ? app.icon : "placeholder";
+    const displayName = app?.displayName !== undefined ? app.displayName : "";
     const code = getIconCode(app);
-    const isIconURL = isIconUrl(app?.icon);
+    const isIconURL = isIconUrl(icon);
 
     const appCode = code || "placeholder";
 
@@ -53,9 +55,6 @@ const AppIcon = forwardRef(
       [`bg-light-${appCode}`]: appCode && !isContain,
       [`color-app-${appCode}`]: appCode,
     });
-
-    const icon = app?.icon !== undefined ? app.icon : "";
-    const displayName = app?.displayName !== undefined ? app.displayName : "";
 
     if (isIconURL) {
       return (

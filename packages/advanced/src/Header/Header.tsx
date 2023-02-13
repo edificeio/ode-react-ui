@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
-import { useRef, useState, useId, useEffect } from "react";
-
 import {
   Logo,
   SearchButton,
@@ -10,13 +7,6 @@ import {
   Avatar,
   useOdeClient,
 } from "@ode-react-ui/core";
-import {
-  useBookmark,
-  useClickOutside,
-  useHasWorkflow,
-  useHover,
-  useTitle,
-} from "@ode-react-ui/hooks";
 import { RafterDown } from "@ode-react-ui/icons";
 import {
   Search,
@@ -25,7 +15,7 @@ import {
   Home,
   NeoMessaging,
   MyApps,
-  NeoAssistance as Assistance,
+  // NeoAssistance as Assistance,
   NewRelease,
   OneMessaging,
   OneProfile,
@@ -34,11 +24,13 @@ import {
 import clsx from "clsx";
 import { AnimatePresence } from "framer-motion";
 
+import { Badge } from "./Badge";
 import { Navbar } from "./Navbar";
 import { NavBarNav } from "./NavbarNav";
 import { NavItem } from "./NavItem";
 import { NavLink } from "./NavLink";
 import { NavSearch } from "./NavSearch";
+import { useHeader } from "./useHeader";
 import { WidgetAppsBody, WidgetAppsFooter } from "./WidgetApps";
 
 interface HeaderProps {
@@ -54,149 +46,30 @@ export default function Header({
 }: HeaderProps): JSX.Element {
   const { http, session, i18n } = useOdeClient();
   // const { hotToast } = useHotToast(Alert);
-
-  /**
-   * All necessary refs
-   */
-  const collapseRef = useClickOutside(() => {
-    setIsCollapsed(true);
-  });
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  /**
-   * Get document title for responsive usage
-   */
-  const title = useTitle();
-
-  /**
-   * Collapse helper for Responsive
-   */
-  const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
-
-  /**
-   * useHover hook
-   */
-  const [appsRef, isAppsHovered] = useHover<HTMLLIElement>();
-  const [searchRef, isSearchHovered] = useHover<HTMLLIElement>();
-
-  /**
-   * IDs for Popover Component
-   */
-  const popoverAppsId = useId();
-  const popoverSearchId = useId();
-
-  /**
-   * Count conversation app
-   */
-  const [messages, setMessages] = useState<number>(0);
-
-  /**
-   * Get user info: avatar, username and welcome message
-   */
-  const userAvatar = session?.avatarUrl;
-  const userName = session?.user?.username;
-  const welcomeUser = `Bonjour ${session?.user?.username}, bienvenue!`;
-
-  /**
-   * Get Bookmarked Apps
-   */
-  const bookmarkedApps = useBookmark(configurationFramework);
-
-  /**
-   * Handle Header Workflows
-   */
   const {
-    workflows: { conversation, zimbra, community, search },
-  } = useHasWorkflow(session);
-
-  const communityWorkflow = community.view;
-  const searchWorkflow = search.view;
-  const conversationWorflow = conversation.view;
-  const zimbraWorkflow = zimbra.view;
-  const zimbraPreauth = zimbra.preauth;
-
-  useEffect(() => {
-    (async () => {
-      try {
-        await refreshMails();
-      } catch (error) {
-        console.error(error);
-      }
-    })();
-    goToMessagerie();
-  }, []);
-
-  /**
-   * Get message count for zimbra or chat app
-   */
-  async function refreshMails() {
-    if (zimbraWorkflow) {
-      try {
-        const response = await http.get("/zimbra/count/INBOX", {
-          queryParams: { unread: true, _: new Date().getTime() },
-        });
-
-        if (response.status !== 200) {
-          // hotToast.error("something wrong happened!");
-          setMessages(0);
-        }
-
-        setMessages(response.count);
-      } catch (error) {
-        console.error("error");
-        // hotToast.error("something wrong happened!");
-        setMessages(0);
-      }
-    } else {
-      try {
-        const response = await http.get("/conversation/count/INBOX", {
-          queryParams: { unread: true, _: new Date().getTime() },
-        });
-
-        setMessages(response.count);
-      } catch (error) {
-        console.error("error");
-        // hotToast.error("something wrong happened!");
-        setMessages(0);
-      }
-    }
-  }
-
-  function redirectToSearch() {
-    if (inputRef.current) {
-      const value = inputRef.current.value;
-      window.location.href = `/searchengine#/${value}`;
-    }
-  }
-
-  function toggleCollapsedNav() {
-    setIsCollapsed(!isCollapsed);
-  }
-
-  const [msgLink, setMsgLink] = useState<string>("");
-  function goToMessagerie(): void {
-    let messagerieLink = "";
-    // FIXME This is the old-fashioned way of accessing preferences. Do not reproduce anymore (use ode-ts-client lib instead)
-    http
-      .get("/userbook/preference/zimbra")
-      .then((data: { preference: string }) => {
-        try {
-          if (
-            data.preference
-              ? JSON.parse(data.preference).modeExpert && zimbraPreauth
-              : false
-          ) {
-            messagerieLink = "/zimbra/preauth";
-          } else {
-            messagerieLink = window.location.origin + "/zimbra/zimbra";
-          }
-        } catch (e) {
-          messagerieLink = "/zimbra/zimbra";
-        }
-      });
-
-    setMsgLink(messagerieLink);
-  }
+    inputRef,
+    collapseRef,
+    title,
+    bookmarkedApps,
+    appsRef,
+    isAppsHovered,
+    popoverAppsId,
+    searchRef,
+    isSearchHovered,
+    popoverSearchId,
+    messages,
+    userAvatar,
+    userName,
+    welcomeUser,
+    communityWorkflow,
+    conversationWorflow,
+    zimbraWorkflow,
+    searchWorkflow,
+    isCollapsed,
+    msgLink,
+    redirectToSearch,
+    toggleCollapsedNav,
+  } = useHeader({ session, http, configurationFramework });
 
   const classes = clsx("header header-react", {
     "no-2d": is1d,
@@ -229,7 +102,7 @@ export default function Header({
               >
                 {conversationWorflow && (
                   <NavItem>
-                    <a href="/" className="nav-link">
+                    <a href="/conversation/conversation" className="nav-link">
                       <OneMessaging className="icon notification" />
                       <span className="position-absolute badge rounded-pill bg-danger">
                         {messages}
@@ -248,14 +121,14 @@ export default function Header({
                     </span>
                   </a>
                 </NavItem>
-                <NavItem>
+                {/* <NavItem>
                   <a href="/" className="nav-link">
                     <Assistance className="icon help" />
                     <span className="visually-hidden">
                       {i18n("navbar.help")}
                     </span>
                   </a>
-                </NavItem>
+                </NavItem> */}
                 <NavItem>
                   <a href="/" className="nav-link">
                     <Disconnect className="icon logout" />
@@ -335,9 +208,9 @@ export default function Header({
         <Navbar className="navbar-expand-md">
           <div className="container-fluid">
             <Logo src={`${src}/img/illustrations/logo.png`} />
-            <a href="/" className="navbar-title d-md-none">
+            <NavLink link="/" className="navbar-title d-md-none">
               {title}
-            </a>
+            </NavLink>
             <ul className="navbar-nav">
               <NavItem>
                 <NavLink link="/" translate={i18n("navbar.home")}>
@@ -374,16 +247,11 @@ export default function Header({
                 <NavItem>
                   <NavLink
                     className="position-relative"
-                    link="/"
+                    link="/conversation/conversation"
                     translate={i18n("conversation")}
                   >
                     <NeoMessaging color="#fff" />
-                    <span className="position-absolute badge rounded-pill bg-warning">
-                      {messages}
-                      <span className="visually-hidden">
-                        {i18n("navbar.messages")}
-                      </span>
-                    </span>
+                    <Badge>{messages}</Badge>
                   </NavLink>
                 </NavItem>
               )}
@@ -395,20 +263,15 @@ export default function Header({
                     translate={i18n("conversation")}
                   >
                     <NeoMessaging color="#fff" />
-                    <span className="position-absolute badge rounded-pill bg-warning">
-                      {messages}
-                      <span className="visually-hidden">
-                        {i18n("navbar.messages")}
-                      </span>
-                    </span>
+                    <Badge>{messages}</Badge>
                   </NavLink>
                 </NavItem>
               )}
-              <NavItem>
+              {/* <NavItem>
                 <NavLink link="/" translate={i18n("support")}>
                   <Assistance color="#fff" />
                 </NavLink>
-              </NavItem>
+              </NavItem> */}
               <NavItem>
                 <div className="dropdown">
                   <button
