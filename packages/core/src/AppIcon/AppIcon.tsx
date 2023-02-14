@@ -43,7 +43,7 @@ const AppIcon = forwardRef(
 
     const icon = app?.icon !== undefined ? app.icon : "placeholder";
     const displayName = app?.displayName !== undefined ? app.displayName : "";
-    const code = getIconCode(app);
+    const code = app ? getIconCode(app) : "";
     const isIconURL = isIconUrl(icon);
 
     const appCode = code || "placeholder";
