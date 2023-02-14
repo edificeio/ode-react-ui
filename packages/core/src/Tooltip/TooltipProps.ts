@@ -21,7 +21,7 @@ export interface TooltipProps {
   /**
    * Text to display inside tooltip
    */
-  message: string;
+  message: string | undefined;
   /**
    * Element to be wrapped as Tooltip trigger
    */

@@ -67,4 +67,12 @@ export interface CardProps extends ComponentPropsWithRef<"div"> {
    * Select Card and Open ActionBar
    */
   onSelect?: () => void;
+  /**
+   * Message tooltip icon Public
+   */
+  messagePublic?: string;
+  /**
+   * Message tooltip icon Shared
+   */
+  messageShared?: string;
 }
