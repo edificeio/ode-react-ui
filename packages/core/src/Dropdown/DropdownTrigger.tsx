@@ -30,11 +30,11 @@ const DropdownTrigger = forwardRef(
 
     return (
       <button ref={ref} className={classNames} {...props} type="button">
-        <div className="dropdown-trigger-icon">{icon && icon}</div>
+        {icon && <div className="dropdown-trigger-icon">{icon}</div>}
         <div>{title}</div>
         {badgeContent ? (
           <div>
-            <span className="badge text-bg-primary  rounded-pill">
+            <span className="badge text-bg-secondary  rounded-pill">
               {badgeContent}
             </span>
           </div>
