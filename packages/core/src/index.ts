@@ -11,6 +11,7 @@ export * from "./Heading";
 export * from "./Image";
 export * from "./ImagePicker";
 export * from "./Loading";
+export * from "./LoadingScreen";
 export * from "./Logo";
 export * from "./Main";
 export * from "./Modal";
