@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
+import { Tooltip } from "../Tooltip";
 import Card from "./Card";
 import { CardProps } from "./CardProps";
 
@@ -109,6 +110,38 @@ SelectedState.parameters = {
     description: {
       story:
         "Prop `isSelected` is used when any action can be performed with the ActionBar Component.",
+    },
+  },
+};
+
+export const TooltipShare = () => {
+  const message = "Tooltip Shared";
+  return (
+    <div className="d-flex align-items-center gap-16">
+      <Card messageShared={message} isShared className="flex-fill" />
+    </div>
+  );
+};
+TooltipShare.parameters = {
+  docs: {
+    description: {
+      story: "Card Component tooltip with picto shared",
+    },
+  },
+};
+
+export const TooltipPublic = () => {
+  const message = "Tooltip Public";
+  return (
+    <div className="d-flex align-items-center gap-16">
+      <Card messagePublic={message} isPublic className="flex-fill" />
+    </div>
+  );
+};
+TooltipPublic.parameters = {
+  docs: {
+    description: {
+      story: "Card Component tooltip with picto public",
     },
   },
 };
