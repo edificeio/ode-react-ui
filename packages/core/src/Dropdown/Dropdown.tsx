@@ -8,6 +8,7 @@
 import React, { useEffect, useState } from "react";
 
 import clsx from "clsx";
+import { motion, AnimatePresence } from "framer-motion";
 import { usePopper } from "react-popper";
 
 import { DropdownProps } from "./DropdownProps";
@@ -57,20 +58,25 @@ const Dropdown = ({ trigger, content }: DropdownProps) => {
   return (
     <>
       {clonedTrigger}
-
-      {visible && (
-        <div
-          className={clsx(
-            "bg-white shadow rounded d-block show py-12 px-8",
-            `bs-tooltip-auto`,
-          )}
-          ref={setPopperElement}
-          style={styles.popper}
-          {...attributes.popper}
-        >
-          {content}
-        </div>
-      )}
+      <AnimatePresence>
+        {visible && (
+          <motion.div
+            initial={{ opacity: 0, top: 10 }}
+            animate={{ opacity: 1, top: 0 }}
+            exit={{ opacity: 0, top: 10 }}
+            transition={{ duration: 0.3 }}
+            className={clsx(
+              "bg-white shadow rounded-4 d-block show py-12 px-8",
+              `bs-tooltip-auto`,
+            )}
+            ref={setPopperElement}
+            style={styles.popper}
+            {...attributes.popper}
+          >
+            {content}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
