@@ -145,13 +145,13 @@ const Card = forwardRef(
             </div>
             <div className="d-inline-flex align-items-center gap-8">
               {isPublic && (
-                <Tooltip message={messagePublic} placement="left">
+                <Tooltip message={messagePublic} placement="top">
                   <Globe width={16} height={16} />
                 </Tooltip>
               )}
 
               {isShared && (
-                <Tooltip message={messageShared} placement="left">
+                <Tooltip message={messageShared} placement="top">
                   <Users width={16} height={16} />
                 </Tooltip>
               )}
