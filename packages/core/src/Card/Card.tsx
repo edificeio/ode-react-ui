@@ -9,6 +9,7 @@ import { AppIcon } from "../AppIcon";
 import { Avatar } from "../Avatar";
 import { IconButton } from "../Button";
 import { Image } from "../Image";
+import { Tooltip } from "../Tooltip";
 import { CardProps } from "./CardProps";
 
 const Card = forwardRef(
@@ -30,6 +31,8 @@ const Card = forwardRef(
       userSrc = "",
       onOpen,
       onSelect,
+      messagePublic,
+      messageShared,
       ...restProps
     }: CardProps,
     ref: Ref<HTMLDivElement>,
@@ -141,8 +144,17 @@ const Card = forwardRef(
               <p className={classesName}>{creatorName}</p>
             </div>
             <div className="d-inline-flex align-items-center gap-8">
-              {isPublic && <Globe width={16} height={16} />}
-              {isShared && <Users width={16} height={16} />}
+              {isPublic && (
+                <Tooltip message={messagePublic} placement="left">
+                  <Globe width={16} height={16} />
+                </Tooltip>
+              )}
+
+              {isShared && (
+                <Tooltip message={messageShared} placement="left">
+                  <Users width={16} height={16} />
+                </Tooltip>
+              )}
             </div>
           </div>
         ) : null}

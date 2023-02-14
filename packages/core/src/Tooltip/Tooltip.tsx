@@ -43,7 +43,7 @@ const Tooltip = ({
   return (
     <>
       <div
-        className="d-inline-block"
+        className="d-inline-block position-relative z-2"
         ref={setReferenceElement}
         onMouseEnter={() => {
           setVisible(true);
