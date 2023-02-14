@@ -7,7 +7,7 @@ export interface DropdownTriggerProps
    */
   title: string;
   /**
-   * Controlable state off dropdown trigger
+   * Set appearance
    */
   variant?: "ghost" | "outline";
   /**
