@@ -955,8 +955,8 @@ export const OnBoardingTrash = (args: any) => {
             onSwiper={(swiper) => {
               setSwiperInstance(swiper);
             }}
-            onProgress={(swiper, progress) => {
-              setSwiperprogress(progress);
+            onSlideChange={(swiper) => {
+              setSwiperprogress(swiper.progress);
             }}
             pagination={{
               clickable: true,
