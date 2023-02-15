@@ -16,6 +16,7 @@ const SelectList = ({
   hideCheckbox,
   onChange = (model) => {},
   model = [],
+  minWidth = "250px",
 }: SelectListProps) => {
   const [localModel, setLocalModel] = useState(model);
   const handleOptionClick = (value: string | number) => {
@@ -36,7 +37,7 @@ const SelectList = ({
 
   return (
     <>
-      <div className="select-list">
+      <div className="select-list" style={{ minWidth }}>
         {options?.map((option: OptionListItemType, index: number) => (
           <div
             key={option.value}

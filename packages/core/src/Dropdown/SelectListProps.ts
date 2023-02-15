@@ -32,6 +32,10 @@ export interface SelectListProps {
    * Option to hide checkbox
    */
   hideCheckbox?: boolean;
+  /**
+   * Define the min width (default 250px)
+   */
+  minWidth?: string;
 }
 
 export type SelectListType = React.ReactElement<SelectListProps>;
