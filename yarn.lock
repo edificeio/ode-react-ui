@@ -1944,6 +1944,20 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
+"@ode-react-ui/core@*":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@ode-react-ui/core/-/core-1.0.6.tgz#a68a260e83903695e8cc7d46958d2e519796f590"
+  integrity sha512-/VQKN95kQhHug1McTYqNPy6m7lgVgqp8WTm1yEFe5j7uUq80I5fyH7N8imFoP+lNSxS7hpsI96oa5s0Qn0klnQ==
+
+"@ode-react-ui/hooks@*":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@ode-react-ui/hooks/-/hooks-1.0.6.tgz#451c76c9a1ff75c3b196652cda8e7b0206297fab"
+  integrity sha512-EmABmVM3i3nTmGbDTLysJXt1+4aHHbjhN1c1jPNt1YN4Zr/aXY9iHybxwuO7Wh8b+KjPft+9YxAxAZ7JyKOzsA==
+  dependencies:
+    clsx "1.2.1"
+    react "18.2.0"
+    react-dom "18.2.0"
+
 "@ode-react-ui/icons@*":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@ode-react-ui/icons/-/icons-1.0.6.tgz#747aef035d5cb4a9584ec8167b7afcf82dd8bdf2"
