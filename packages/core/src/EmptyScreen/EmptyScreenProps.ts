@@ -1,17 +1,13 @@
 export interface EmptyScreenProps {
   /**
-   * Image
+   * Image source
    */
-  image:
-    | "blog"
-    | "collaborativeeditor"
-    | "collaborativewall"
-    | "exercizer"
-    | "mindmap"
-    | "scrapbook"
-    | "search"
-    | "timelinegenerator"
-    | "trash";
+  imageSrc: string;
+
+  /**
+   * Image alt
+   */
+  imageAlt?: string;
 
   /**
    * Title

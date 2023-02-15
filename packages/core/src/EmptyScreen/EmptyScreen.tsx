@@ -8,13 +8,22 @@
 
 import { Heading } from "../Heading";
 import { EmptyScreenProps } from "./EmptyScreenProps";
-const EmptyScreen = ({ image, title, text }: EmptyScreenProps) => {
+const EmptyScreen = ({
+  imageSrc,
+  imageAlt = "",
+  title,
+  text,
+}: EmptyScreenProps) => {
   return (
-    <div className="text-center max-w-512 mx-auto">
-      <div className="emptyscreen-image"></div>
-      {image}
+    <div className="emptyscreen">
+      {imageSrc && (
+        <div className="emptyscreen-image mb-12">
+          <img src={imageSrc} alt={imageAlt} />
+        </div>
+      )}
+
       {title && (
-        <Heading level="h2" className="h2 text-secondary mb-8">
+        <Heading level="h2" headingStyle="h2" className="text-secondary mb-8">
           {title}
         </Heading>
       )}
