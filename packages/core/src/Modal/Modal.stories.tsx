@@ -970,7 +970,7 @@ export const OnBoardingTrash = (args: any) => {
                 </p>
                 <div className="mx-auto">
                   <img
-                    src={`assets/themes/ode-bootstrap/images/onboarding/corbeille1.png`}
+                    src={`assets/themes/ode-bootstrap/images/onboarding/corbeille-notif.svg`}
                     alt=""
                   />
                 </div>
@@ -989,7 +989,7 @@ export const OnBoardingTrash = (args: any) => {
                 </p>
                 <div className="mx-auto">
                   <img
-                    src={`assets/themes/ode-bootstrap/images/onboarding/corbeille1.png`}
+                    src={`assets/themes/ode-bootstrap/images/onboarding/corbeille-delete.svg`}
                     alt=""
                   />
                 </div>
