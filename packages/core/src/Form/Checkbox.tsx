@@ -1,13 +1,12 @@
-import React, { forwardRef, Ref } from "react";
+import { forwardRef, Ref } from "react";
 
 import clsx from "clsx";
 
-export interface CheckboxProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {}
+import { CheckboxProps } from "./CheckboxProps";
 
 const Checkbox = forwardRef(
   (
-    { disabled = false, checked = false, ...restProps }: CheckboxProps,
+    { label, disabled = false, checked = false, ...restProps }: CheckboxProps,
     ref: Ref<HTMLInputElement>,
   ) => {
     const inputProps = {
@@ -18,12 +17,20 @@ const Checkbox = forwardRef(
         disabled,
         ref,
         className: clsx(restProps.className, "form-check-input c-pointer"),
+        id: restProps.id
+          ? restProps.id
+          : (Math.floor(Math.random() * 9999999999) + 10000000000).toString(),
       },
     };
 
     return (
-      <div className="position-relative d-inline-block mt-8 form-check">
+      <div className="position-relative d-inline-block mt-6 form-check">
         <input {...inputProps} />
+        {label && (
+          <label className="form-check-label" htmlFor={inputProps.id}>
+            {label}
+          </label>
+        )}
       </div>
     );
   },
