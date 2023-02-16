@@ -32,7 +32,7 @@ const Root = forwardRef(
         isReadOnly: isReadOnly!,
         status: status!,
       }),
-      [],
+      [status],
     );
 
     return (
