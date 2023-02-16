@@ -8,7 +8,14 @@ export const Library = ({ text, textButton, src, alt }: LibraryProps) => {
   return (
     <>
       <div className="p-16">
-        <Image width="270" height="140" loading="lazy" src={src} alt={alt} />
+        <Image
+          width="270"
+          height="140"
+          loading="lazy"
+          className="rounded"
+          src={src}
+          alt={alt}
+        />
         <p className="m-8">{text}</p>
         <Button
           rightIcon={<ArrowRight />}
