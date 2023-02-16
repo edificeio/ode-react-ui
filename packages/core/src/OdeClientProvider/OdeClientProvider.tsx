@@ -23,10 +23,11 @@ export default function OdeClientProvider({
 }: OdeClientProps) {
   const { http } = framework;
 
-  const { app, currentLanguage, idiom, session, theme } = useOdeBackend({
-    params,
-    framework,
-  });
+  const { app, currentLanguage, idiom, session, theme, getBootstrapTheme } =
+    useOdeBackend({
+      params,
+      framework,
+    });
 
   const is1d: boolean = theme?.is1D;
   const basePath: string = theme?.basePath;
@@ -44,6 +45,7 @@ export default function OdeClientProvider({
       params,
       session,
       theme,
+      getBootstrapTheme,
     }),
     [app, currentLanguage, http, idiom, session, theme],
   );

@@ -106,6 +106,19 @@ export default function useOdeBackend({
     link.href = odeBootstrapPath;
   }
 
+  function getBootstrapTheme() {
+    let odeBootstrapPath: string = "";
+
+    for (const override of theme.skins) {
+      if (override.child === configurationFramework.Platform.theme.themeName) {
+        odeBootstrapPath = `${configurationFramework.Platform.cdnDomain}/assets/themes/`;
+        odeBootstrapPath += `${override.bootstrapVersion}`;
+      }
+    }
+
+    return odeBootstrapPath;
+  }
+
   function loadLangAttribute(currentLanguage: string) {
     document
       .querySelector("html")
@@ -136,5 +149,6 @@ export default function useOdeBackend({
     logout,
     session,
     theme,
+    getBootstrapTheme,
   };
 }

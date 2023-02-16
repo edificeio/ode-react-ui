@@ -11,4 +11,8 @@ export interface LibraryProps {
    * Src image library
    */
   src: string;
+  /**
+   * Alt image library
+   */
+  alt: string;
 }
