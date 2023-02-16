@@ -4,11 +4,11 @@ import { ArrowRight } from "@ode-react-ui/icons";
 import { Image } from "../Image";
 import { LibraryProps } from "./LibraryProps";
 
-export const Library = ({ text, textButton, src }: LibraryProps) => {
+export const Library = ({ text, textButton, src, alt }: LibraryProps) => {
   return (
     <>
       <div className="p-16">
-        <Image src={src} alt="alt" />
+        <Image width="270" height="140" loading="lazy" src={src} alt={alt} />
         <p className="m-8">{text}</p>
         <Button
           rightIcon={<ArrowRight />}

@@ -14,11 +14,12 @@ export default {
   args: {
     text: "Découvrez plein d'activités à réutiliser dans la bibliothèque !",
     textButton: "Découvrir",
-    src: "/assets/themes/ode-bootstrap/images/image-library.png",
+    src: "/assets/themes/ode-bootstrap/images/image-library-one.svg",
+    alt: "Lien vers la bibliothèque",
   },
 } as ComponentMeta<typeof Library>;
 
-export const Base = (args: any) => {
+export const LibraryOne = (args: any) => {
   return (
     <>
       <div
@@ -31,4 +32,23 @@ export const Base = (args: any) => {
       </div>
     </>
   );
+};
+
+export const LibraryNeo = (args: any) => {
+  return (
+    <>
+      <div
+        className="p-16"
+        style={{
+          width: `300px`,
+        }}
+      >
+        <Library {...args} />
+      </div>
+    </>
+  );
+};
+
+LibraryNeo.args = {
+  src: "/assets/themes/ode-bootstrap/images/image-library-neo.svg",
 };
