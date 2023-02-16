@@ -35,4 +35,3 @@ export interface TooltipProps {
    */
   icon?: ReactNode;
 }
-export type TooltipType = React.FC<TooltipProps>;
