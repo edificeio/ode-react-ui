@@ -1,5 +1,15 @@
 # @ode-react-ui/advanced
 
+## 1.0.7-dev.43
+
+### Patch Changes
+
+- [#112](https://github.com/opendigitaleducation/ode-react-ui/pull/112) [`8e50a10`](https://github.com/opendigitaleducation/ode-react-ui/commit/8e50a10c72024cc9f0537af0350898f6242ae706) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix header conversation & zimbra link, useHeader hook
+
+- Updated dependencies [[`ee92c8f`](https://github.com/opendigitaleducation/ode-react-ui/commit/ee92c8f270d0ce479b14727c7cfee9d0b21a11b5), [`3972498`](https://github.com/opendigitaleducation/ode-react-ui/commit/39724985c51254ba224f457d0db4a93ea100143d), [`ce0080c`](https://github.com/opendigitaleducation/ode-react-ui/commit/ce0080cd731c4627708b694c87994b35f156a9f9)]:
+  - @ode-react-ui/core@1.0.7-dev.43
+  - @ode-react-ui/hooks@1.0.7-dev.43
+
 ## 1.0.7-dev.42
 
 ### Patch Changes
