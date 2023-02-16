@@ -1,5 +1,11 @@
 # @ode-react-ui/hooks
 
+## 1.0.7-dev.44
+
+### Patch Changes
+
+- [#119](https://github.com/opendigitaleducation/ode-react-ui/pull/119) [`1ff0cbd`](https://github.com/opendigitaleducation/ode-react-ui/commit/1ff0cbd2ca2fa02e728fef20d40af87b87def3a7) Thanks [@nabil-mansouri](https://github.com/nabil-mansouri)! - when src param of useImage change the initial value of the state is not always updated. the fix change the state when the src value change
+
 ## 1.0.7-dev.43
 
 ### Patch Changes
