@@ -1,4 +1,4 @@
-import { forwardRef, Ref } from "react";
+import { forwardRef, Ref, useMemo } from "react";
 
 import clsx from "clsx";
 
@@ -9,6 +9,16 @@ const Checkbox = forwardRef(
     { label, disabled = false, checked = false, ...restProps }: CheckboxProps,
     ref: Ref<HTMLInputElement>,
   ) => {
+    const id = useMemo(
+      () =>
+        restProps.id
+          ? restProps.id
+          : (
+              Math.floor(Math.random() * 999999999999) + 1000000000000
+            ).toString(),
+      [],
+    );
+
     const inputProps = {
       ...restProps,
       ...{
@@ -17,9 +27,7 @@ const Checkbox = forwardRef(
         disabled,
         ref,
         className: clsx(restProps.className, "form-check-input c-pointer"),
-        id: restProps.id
-          ? restProps.id
-          : (Math.floor(Math.random() * 9999999999) + 10000000000).toString(),
+        id,
       },
     };
 
