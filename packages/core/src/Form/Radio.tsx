@@ -1,18 +1,8 @@
-import React, { forwardRef, Ref } from "react";
+import { forwardRef, Ref, useMemo } from "react";
 
 import clsx from "clsx";
 
-export interface RadioProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
-  /**
-   * State controlling radio group
-   */
-  model: string | boolean;
-  /**
-   * Label of the radio checkbox
-   */
-  label?: string | false;
-}
+import { RadioProps } from "./RadioProps";
 
 const Radio = forwardRef(
   (
@@ -25,6 +15,15 @@ const Radio = forwardRef(
     }: RadioProps,
     ref: Ref<HTMLInputElement>,
   ) => {
+    const id = useMemo(
+      () =>
+        restProps.id
+          ? restProps.id
+          : (
+              Math.floor(Math.random() * 999999999999) + 1000000000000
+            ).toString(),
+      [],
+    );
     const inputProps = {
       ...restProps,
       ...{
@@ -33,6 +32,7 @@ const Radio = forwardRef(
         disabled,
         ref,
         className: clsx(restProps.className, "form-check-input c-pointer"),
+        id,
       },
     };
 
@@ -40,7 +40,7 @@ const Radio = forwardRef(
       <div className="position-relative form-check">
         <input {...inputProps} />
         {label && (
-          <label className="form-check-label" htmlFor={restProps.id}>
+          <label className="form-check-label" htmlFor={inputProps.id}>
             {label}
           </label>
         )}
