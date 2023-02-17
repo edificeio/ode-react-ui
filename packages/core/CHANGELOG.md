@@ -1,5 +1,13 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.45
+
+### Patch Changes
+
+- [#121](https://github.com/opendigitaleducation/ode-react-ui/pull/121) [`21dd02c`](https://github.com/opendigitaleducation/ode-react-ui/commit/21dd02cb1793149761a160529165c38b07d51be0) Thanks [@varmentier](https://github.com/varmentier)! - feat(core): #WB2-27, add storybook component library
+
+- [#123](https://github.com/opendigitaleducation/ode-react-ui/pull/123) [`6922064`](https://github.com/opendigitaleducation/ode-react-ui/commit/692206418360d503e615a7222600e30be28cc54d) Thanks [@roolian](https://github.com/roolian)! - Add Modal story : Onboarding Recycle bin
+
 ## 1.0.7-dev.44
 
 ### Patch Changes
