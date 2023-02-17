@@ -1,5 +1,11 @@
 # @ode-react-ui/storybook
 
+## 1.0.5-dev.17
+
+### Patch Changes
+
+- [#121](https://github.com/opendigitaleducation/ode-react-ui/pull/121) [`21dd02c`](https://github.com/opendigitaleducation/ode-react-ui/commit/21dd02cb1793149761a160529165c38b07d51be0) Thanks [@varmentier](https://github.com/varmentier)! - feat(core): #WB2-27, add storybook component library
+
 ## 1.0.5-dev.16
 
 ### Patch Changes
