@@ -1,7 +1,7 @@
 type AvatarVariants = "square" | "rounded" | "circle";
 type AvatarSizes = "xs" | "sm" | "md" | "lg" | "xl";
 
-export interface AvatarProps<T> {
+export interface AvatarProps extends React.ComponentPropsWithRef<"img"> {
   /**
    * Shape of Avatar
    * `title`, `square`, `circle`
@@ -14,17 +14,17 @@ export interface AvatarProps<T> {
   /**
    * Show image when `src` props is provided
    */
-  src: T;
+  src: string;
   /**
    * Custom fallback image
    */
-  imgPlaceholder?: T;
+  imgPlaceholder?: string;
   /**
    * Alternative text when using image
    */
-  alt: T;
+  alt: string;
   /**
    * Optional class for styling purpose
    */
-  className?: T;
+  className?: string;
 }

@@ -351,6 +351,8 @@ export default function Header({
                           src={userAvatar}
                           variant="circle"
                           className="bg-white"
+                          width="32"
+                          height="32"
                         />
                       </NavLink>
                     </NavItem>
