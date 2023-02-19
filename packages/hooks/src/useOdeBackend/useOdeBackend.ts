@@ -45,7 +45,7 @@ export default function useOdeBackend({
 }) {
   const { sessionFramework, configurationFramework } = framework;
 
-  const [app, setApp] = useState<IWebApp>();
+  const [app, setApp] = useState<IWebApp>(undefined!);
   const [currentLanguage, setCurrentLanguage] = useState<string>("fr");
   const [idiom, setIdiom] = useState<IIdiom>(
     configurationFramework.Platform.idiom,
@@ -68,7 +68,7 @@ export default function useOdeBackend({
 
         setSession(sessionFramework.session);
 
-        const promise = await Promise.all([
+        const promise: any = await Promise.all([
           configurationFramework.Platform.apps.initialize(
             params.app,
             params.alternativeApp,

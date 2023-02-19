@@ -34,7 +34,7 @@ export interface OdeClientProps {
 }
 
 export interface ContextProps {
-  app: IWebApp | undefined;
+  app: IWebApp;
   appCode: string;
   currentLanguage: string;
   http: IHttp;
