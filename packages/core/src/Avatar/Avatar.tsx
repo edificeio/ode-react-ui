@@ -14,7 +14,8 @@ const Avatar = forwardRef(
       src,
       imgPlaceholder,
       className,
-    }: AvatarProps<string>,
+      ...restProps
+    }: AvatarProps,
     ref: Ref<HTMLDivElement>,
   ) => {
     const placeholder =
@@ -49,7 +50,12 @@ const Avatar = forwardRef(
 
     return (
       <div ref={ref} className={classes}>
-        <Image src={src} alt={alt} imgPlaceholder={placeholder} />
+        <Image
+          src={src}
+          alt={alt}
+          imgPlaceholder={placeholder}
+          {...restProps}
+        />
       </div>
     );
   },

@@ -102,7 +102,14 @@ const Card = forwardRef(
     );
 
     const renderUserPhoto = userSrc ? (
-      <Avatar alt={creatorName} size="xs" src={userSrc} variant="circle" />
+      <Avatar
+        alt={creatorName}
+        size="xs"
+        src={userSrc}
+        variant="circle"
+        width="24"
+        height="24"
+      />
     ) : (
       <OneProfile />
     );
