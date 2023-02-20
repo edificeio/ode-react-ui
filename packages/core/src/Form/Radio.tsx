@@ -8,6 +8,7 @@ const Radio = forwardRef(
   (
     {
       model,
+      icon,
       label = false,
       disabled = false,
       checked = false,
@@ -31,15 +32,30 @@ const Radio = forwardRef(
         checked: model === restProps.value,
         disabled,
         ref,
-        className: clsx(restProps.className, "form-check-input c-pointer"),
+        className: clsx(
+          restProps.className,
+          "form-check-input c-pointer",
+          icon && "d-none",
+        ),
         id,
       },
     };
 
     return (
-      <div className="position-relative form-check">
+      <div className={clsx("position-relative form-check", icon && "ps-0")}>
         <input {...inputProps} />
-        {label && (
+        {icon && (
+          <label
+            htmlFor={inputProps.id}
+            className={clsx(
+              "c-pointer",
+              model !== restProps.value && "text-muted",
+            )}
+          >
+            {icon}
+          </label>
+        )}
+        {!icon && label && (
           <label className="form-check-label" htmlFor={inputProps.id}>
             {label}
           </label>
