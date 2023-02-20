@@ -95,7 +95,7 @@ const WithStatusTemplate: ComponentStory<typeof Select> = (args: any) => {
   return (
     <div>
       <FormControl id="subjectArea" status={value}>
-        <Label>Discipline {value}</Label>
+        <Label>Discipline {value === "invalid" ? "invalide" : "valide"}</Label>
         <Select
           options={statusOptions}
           model={value}

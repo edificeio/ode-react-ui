@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, ReactNode } from "react";
 
 export interface RadioProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -15,7 +15,7 @@ export interface RadioProps
    */
   label?: string | false;
   /**
-   * Groups of radio button are linked by name
+   * Replace with an icon
    */
-  name: string;
+  icon?: ReactNode;
 }
