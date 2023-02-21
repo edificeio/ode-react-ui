@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.47
+
+### Patch Changes
+
+- [`d0979b9`](https://github.com/opendigitaleducation/ode-react-ui/commit/d0979b91335f282a48fec53e7aeeba54086e126c) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix folder color when no app is provided
+
 ## 1.0.7-dev.46
 
 ### Patch Changes
