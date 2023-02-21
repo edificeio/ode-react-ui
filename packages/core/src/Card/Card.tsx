@@ -71,7 +71,7 @@ const Card = forwardRef(
       },
     );
 
-    const appCode = app ? getIconCode(app) : "";
+    const appCode = app ? getIconCode(app) : "placeholder";
 
     const classesFiles = clsx(`color-app-${appCode}`, {
       placeholder: isLoading,
