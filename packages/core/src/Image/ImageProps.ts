@@ -19,4 +19,8 @@ export interface ImageProps extends React.ComponentPropsWithRef<"img"> {
    * Placeholder image as fallback
    */
   imgPlaceholder?: string;
+  /**
+   * Optional class for styling purpose
+   */
+  className?: string;
 }
