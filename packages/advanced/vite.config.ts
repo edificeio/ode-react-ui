@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import pkg from "./package.json";
+import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
   esbuild: {
@@ -24,6 +25,7 @@ export default defineConfig({
     react({
       jsxRuntime: "classic",
     }),
+    visualizer(),
     dts({
       insertTypesEntry: false,
       outputDir: "dist",

@@ -91,6 +91,8 @@ export default function Header({
                   size="sm"
                   src={userAvatar}
                   variant="circle"
+                  width="32"
+                  height="32"
                 />
                 <span className="navbar-text">{welcomeUser}</span>
               </div>
