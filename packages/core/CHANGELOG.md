@@ -1,5 +1,15 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.50
+
+### Patch Changes
+
+- [`8786b28`](https://github.com/opendigitaleducation/ode-react-ui/commit/8786b28b756bdb825054baad13773d3f3943544a) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix error with useOdeBackend
+
+- Updated dependencies [[`8786b28`](https://github.com/opendigitaleducation/ode-react-ui/commit/8786b28b756bdb825054baad13773d3f3943544a)]:
+  - @ode-react-ui/hooks@1.0.7-dev.50
+  - @ode-react-ui/icons@1.0.7-dev.50
+
 ## 1.0.7-dev.49
 
 ### Patch Changes
