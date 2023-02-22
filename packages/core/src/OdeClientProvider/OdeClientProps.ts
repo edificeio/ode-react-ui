@@ -44,6 +44,7 @@ export interface ContextProps {
   theme: ITheme;
   is1d: boolean;
   basePath: string;
+  getBootstrapTheme: () => string;
 }
 
 export type { IWebApp, ISession, ITheme, IHttp };

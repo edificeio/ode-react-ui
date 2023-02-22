@@ -10,6 +10,7 @@ export * from "./Grid";
 export * from "./Heading";
 export * from "./Image";
 export * from "./ImagePicker";
+export * from "./Library";
 export * from "./Loading";
 export * from "./LoadingScreen";
 export * from "./Logo";

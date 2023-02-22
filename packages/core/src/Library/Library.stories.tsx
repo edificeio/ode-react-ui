@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ComponentMeta } from "@storybook/react";
 import Library from "./Library";
 
 export default {
@@ -15,7 +15,8 @@ export default {
     text: "Découvrez plein d'activités à réutiliser dans la bibliothèque !",
     textButton: "Découvrir",
     src: "/assets/themes/ode-bootstrap/images/image-library-one.svg",
-    alt: "Lien vers la bibliothèque",
+    alt: "Découvrir la bibliothèque",
+    url: "#",
   },
 } as ComponentMeta<typeof Library>;
 
