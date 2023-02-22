@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/core",
-  "version": "1.0.7-dev.49",
+  "version": "1.0.7-dev.50",
   "private": false,
   "description": "@ode-react-ui react core components",
   "keywords": [
@@ -43,8 +43,8 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@ode-react-ui/hooks": "1.0.7-dev.46",
-    "@ode-react-ui/icons": "1.0.7-dev.46",
+    "@ode-react-ui/hooks": "1.0.7-dev.50",
+    "@ode-react-ui/icons": "1.0.7-dev.50",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.10",
@@ -65,8 +65,8 @@
     "swiper": "9.0.4"
   },
   "peerDependencies": {
-    "@ode-react-ui/hooks": "1.0.7-dev.46",
-    "@ode-react-ui/icons": "1.0.7-dev.46",
+    "@ode-react-ui/hooks": "1.0.7-dev.50",
+    "@ode-react-ui/icons": "1.0.7-dev.50",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

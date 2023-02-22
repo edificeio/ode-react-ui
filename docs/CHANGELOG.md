@@ -1,5 +1,11 @@
 # @ode-react-ui/storybook
 
+## 1.0.5-dev.20
+
+### Patch Changes
+
+- [`8786b28`](https://github.com/opendigitaleducation/ode-react-ui/commit/8786b28b756bdb825054baad13773d3f3943544a) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix error with useOdeBackend
+
 ## 1.0.5-dev.19
 
 ### Patch Changes
