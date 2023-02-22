@@ -1,6 +1,6 @@
-import { Button } from "@ode-react-ui/core";
 import { ArrowRight } from "@ode-react-ui/icons";
 
+import { Button } from "../Button";
 import { Image } from "../Image";
 import { LibraryProps } from "./LibraryProps";
 
