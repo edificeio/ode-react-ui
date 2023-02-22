@@ -1,5 +1,14 @@
 # @ode-react-ui/advanced
 
+## 1.0.7-dev.49
+
+### Patch Changes
+
+- [`f997d57`](https://github.com/opendigitaleducation/ode-react-ui/commit/f997d575a6c964ce7afacdefea1afcd262942ec8) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add visualizer and fix header component
+
+- Updated dependencies [[`af4078e`](https://github.com/opendigitaleducation/ode-react-ui/commit/af4078e6695b6d413506e5844c48417db1889e17)]:
+  - @ode-react-ui/core@1.0.7-dev.49
+
 ## 1.0.7-dev.48
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @ode-react-ui/storybook
 
+## 1.0.5-dev.19
+
+### Patch Changes
+
+- [#130](https://github.com/opendigitaleducation/ode-react-ui/pull/130) [`af4078e`](https://github.com/opendigitaleducation/ode-react-ui/commit/af4078e6695b6d413506e5844c48417db1889e17) Thanks [@varmentier](https://github.com/varmentier)! - feat(core): #WB2-72, add integration component library
+
 ## 1.0.5-dev.18
 
 ### Patch Changes
