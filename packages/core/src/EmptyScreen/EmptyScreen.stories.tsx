@@ -36,7 +36,7 @@ export default {
 } as ComponentMeta<typeof EmptyScreen>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof EmptyScreen> = (args: any) => {
+export const Template: ComponentStory<typeof EmptyScreen> = (args: any) => {
   return (
     <div>
       <EmptyScreen
