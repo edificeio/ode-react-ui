@@ -8,7 +8,8 @@
 
 import { Heading } from "../Heading";
 import { EmptyScreenProps } from "./EmptyScreenProps";
-const EmptyScreen = ({
+
+export const EmptyScreen = ({
   imageSrc,
   imageAlt = "",
   title,
@@ -18,7 +19,7 @@ const EmptyScreen = ({
     <div className="emptyscreen">
       {imageSrc && (
         <div className="emptyscreen-image mb-12">
-          <img src={imageSrc} alt={imageAlt} />
+          <img className="mx-auto" src={imageSrc} alt={imageAlt} />
         </div>
       )}
 
