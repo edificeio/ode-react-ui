@@ -1,5 +1,11 @@
 # @ode-react-ui/storybook
 
+## 1.0.5-dev.21
+
+### Patch Changes
+
+- [#134](https://github.com/opendigitaleducation/ode-react-ui/pull/134) [`f54b247`](https://github.com/opendigitaleducation/ode-react-ui/commit/f54b247449762b925c579ca074f0053694960fbd) Thanks [@varmentier](https://github.com/varmentier)! - feat(core): #WB2-481, add integration emptyScreen
+
 ## 1.0.5-dev.20
 
 ### Patch Changes
