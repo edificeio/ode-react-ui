@@ -17,7 +17,7 @@ export const Library = ({ text, textButton, src, alt, url }: LibraryProps) => {
           alt={alt}
         />
         <p className="m-8">{text}</p>
-        <a href={url}>
+        <a href={url} target="_blank" rel="noreferrer">
           <Button
             rightIcon={<ArrowRight />}
             className="py-0 px-8"
