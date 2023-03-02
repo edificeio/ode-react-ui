@@ -1,6 +1,5 @@
 import { useHover } from "@ode-react-ui/hooks";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { AnimatePresence } from "framer-motion";
 import { useId } from "react";
 
 import { Button, Popover, PopoverProps } from "../index";
@@ -20,7 +19,7 @@ export default {
 } as ComponentMeta<typeof Popover>;
 
 const Template: ComponentStory<typeof Popover> = (args: PopoverProps) => {
-  const [popoverRef, isPopoverHovered] = useHover<HTMLButtonElement>();
+  const [popoverRef, isPopoverHovered] = useHover<HTMLDivElement>();
   const popoverId = useId();
   return (
     <div
@@ -32,28 +31,23 @@ const Template: ComponentStory<typeof Popover> = (args: PopoverProps) => {
       }}
       className="position-relative"
     >
-      <Button
-        ref={popoverRef}
-        aria-haspopup="true"
-        aria-expanded={isPopoverHovered}
-      >
-        Hover me!
-        <AnimatePresence>
-          {isPopoverHovered ? (
-            <Popover id={popoverId}>
-              <PopoverHeader>
-                <p>Header</p>
-              </PopoverHeader>
-              <PopoverBody>
-                <p>Body</p>
-              </PopoverBody>
-              <PopoverFooter className="border-top border-ghost">
-                <p>Footer</p>
-              </PopoverFooter>
-            </Popover>
-          ) : null}
-        </AnimatePresence>
-      </Button>
+      <div ref={popoverRef} className="position-relative">
+        <Button aria-haspopup="true" aria-expanded={isPopoverHovered}>
+          Hover me!
+        </Button>
+        {isPopoverHovered}
+        <Popover id={popoverId} isVisible={isPopoverHovered}>
+          <PopoverHeader>
+            <p>Header</p>
+          </PopoverHeader>
+          <PopoverBody>
+            <p>Body</p>
+          </PopoverBody>
+          <PopoverFooter className="border-top border-ghost">
+            <p>Footer</p>
+          </PopoverFooter>
+        </Popover>
+      </div>
     </div>
   );
 };

@@ -7,8 +7,8 @@
 
 import React, { useEffect, useState } from "react";
 
+import { animated, useTransition } from "@react-spring/web";
 import clsx from "clsx";
-import { motion, AnimatePresence } from "framer-motion";
 import { usePopper } from "react-popper";
 
 import { DropdownProps } from "./DropdownProps";
@@ -28,11 +28,19 @@ const Dropdown = ({ trigger, content }: DropdownProps) => {
 
   const [visible, setVisible] = useState<boolean>(false);
 
+  const transition = useTransition(visible, {
+    from: { opacity: 0, y: 10 },
+    enter: { opacity: 1, y: 0 },
+    leave: { opacity: 0, y: 10 },
+  });
+
+  const handleClick = () => {
+    setVisible((oldState) => !oldState);
+  };
+
   const clonedTrigger = React.cloneElement(trigger, {
     ref: setReferenceElement,
-    onClick: () => {
-      setVisible((oldState) => !oldState);
-    },
+    onClick: handleClick,
     state: visible ? "selected" : "default",
   });
 
@@ -58,25 +66,23 @@ const Dropdown = ({ trigger, content }: DropdownProps) => {
   return (
     <>
       {clonedTrigger}
-      <AnimatePresence>
-        {visible && (
-          <motion.div
-            initial={{ opacity: 0, top: 10 }}
-            animate={{ opacity: 1, top: 0 }}
-            exit={{ opacity: 0, top: 10 }}
-            transition={{ duration: 0.3 }}
-            className={clsx(
-              "bg-white shadow rounded-4 d-block show py-12 px-8",
-              `bs-tooltip-auto`,
-            )}
-            ref={setPopperElement}
-            style={styles.popper}
-            {...attributes.popper}
-          >
-            {content}
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {transition((style, visible) => (
+        <>
+          {visible && (
+            <animated.div
+              className={clsx(
+                "bg-white shadow rounded-4 d-block show py-12 px-8",
+                `bs-tooltip-auto`,
+              )}
+              ref={setPopperElement}
+              style={{ ...styles.popper, ...style }}
+              {...attributes.popper}
+            >
+              {content}
+            </animated.div>
+          )}
+        </>
+      ))}
     </>
   );
 };
