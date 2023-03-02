@@ -1,8 +1,7 @@
-import { forwardRef, Ref } from "react";
+import { forwardRef } from "react";
 
+import { animated, useTransition } from "@react-spring/web";
 import clsx from "clsx";
-import { motion } from "framer-motion";
-// import { usePopper } from "react-popper";
 
 import { PopoverProps } from "./PopoverProps";
 
@@ -21,33 +20,33 @@ export const PopoverFooter = ({ children, className }: PopoverProps) => {
   return <div className={classes}>{children}</div>;
 };
 
-const Popover = forwardRef(
-  (
-    { children, className, id, ...restProps }: PopoverProps,
-    ref: Ref<HTMLDivElement>,
-  ) => {
+const Popover = forwardRef<HTMLDivElement, PopoverProps>(
+  ({ children, className, id, isVisible, ...restProps }, ref) => {
     const classes = clsx(
-      "popover position-absolute top-100 start-50 translate-middle-x",
+      "popover d-block position-absolute top-100 start-50 translate-middle-x",
       className,
     );
 
-    return (
-      <motion.div
-        aria-labelledby={id}
-        ref={ref}
-        className={classes}
-        role="tooltip"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{
-          type: "spring",
-          duration: 1.5,
-        }}
-        {...restProps}
-      >
-        {children}
-      </motion.div>
+    const transition = useTransition(isVisible, {
+      from: { opacity: 0 },
+      enter: { opacity: 1 },
+      leave: { opacity: 0 },
+    });
+
+    return transition(
+      (style, isVisible) =>
+        isVisible && (
+          <animated.div
+            ref={ref}
+            aria-labelledby={id}
+            className={classes}
+            role="tooltip"
+            style={style}
+            {...restProps}
+          >
+            {children}
+          </animated.div>
+        ),
     );
   },
 );
