@@ -2,6 +2,7 @@ import Table from "./Table";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Checkbox } from "../Form";
 import { Users } from "@ode-react-ui/icons";
+import React, { useState } from "react";
 
 interface IRow {
   id: string;
@@ -55,6 +56,57 @@ const sampleData: IRow[] = [
     public: true,
     currentRole: "Gestionnaire",
   },
+  {
+    id: "3",
+    name: "Le roman de renard",
+    createdAt: 1677163550,
+    creatorId: "1",
+    creatorName: "Guillaume Tell",
+    modifiedAt: 1677163550,
+    modifierId: "1",
+    modifierName: "Guillaume Tell",
+    thumbnail:
+      "https://media.istockphoto.com/id/1322277517/fr/photo/herbe-sauvage-dans-les-montagnes-au-coucher-du-soleil.jpg?s=612x612&w=0&k=20&c=tQ19uZQLlIFy8J6QWMyOL6lPt3pdSHBSDFHoXr1K_g0=",
+    trashed: false,
+    shared: true,
+    numberOfShares: 12,
+    public: true,
+    currentRole: "Gestionnaire",
+  },
+  {
+    id: "4",
+    name: "La conjugaison pour les Nuls",
+    createdAt: 1677163550,
+    creatorId: "1",
+    creatorName: "Guillaume Tell",
+    modifiedAt: 1677163550,
+    modifierId: "1",
+    modifierName: "Guillaume Tell",
+    thumbnail:
+      "https://media.istockphoto.com/id/1322277517/fr/photo/herbe-sauvage-dans-les-montagnes-au-coucher-du-soleil.jpg?s=612x612&w=0&k=20&c=tQ19uZQLlIFy8J6QWMyOL6lPt3pdSHBSDFHoXr1K_g0=",
+    trashed: false,
+    shared: true,
+    numberOfShares: 12,
+    public: true,
+    currentRole: "Gestionnaire",
+  },
+  {
+    id: "5",
+    name: "Qui était Jules César?",
+    createdAt: 1677163550,
+    creatorId: "1",
+    creatorName: "Guillaume Tell",
+    modifiedAt: 1677163550,
+    modifierId: "1",
+    modifierName: "Guillaume Tell",
+    thumbnail:
+      "https://media.istockphoto.com/id/1322277517/fr/photo/herbe-sauvage-dans-les-montagnes-au-coucher-du-soleil.jpg?s=612x612&w=0&k=20&c=tQ19uZQLlIFy8J6QWMyOL6lPt3pdSHBSDFHoXr1K_g0=",
+    trashed: false,
+    shared: true,
+    numberOfShares: 12,
+    public: true,
+    currentRole: "Gestionnaire",
+  },
 ];
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -75,15 +127,37 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Table> = (args: any) => {
+  const [selectedItems, setSelectedItems] = useState<string[]>([]);
+
+  const onSelectItem = (itemId: string) => {
+    setSelectedItems((currentSelection: string[]) => {
+      //state need to be immutable
+      const newSelection = [...currentSelection];
+      if (!newSelection.includes(itemId)) {
+        newSelection.push(itemId);
+      } else {
+        newSelection.splice(newSelection.indexOf(itemId), 1); //deleting
+      }
+      return newSelection;
+    });
+  };
+
+  const onSelectAllItems = (deselect: boolean) => {
+    setSelectedItems(() => {
+      return deselect ? [] : sampleData.map((item) => item.id);
+    });
+  };
+
   return (
     <div>
       <Table>
-        <thead>
+        <thead className="table-primary">
           <tr>
             <th>
               <Checkbox
+                checked={selectedItems.length === sampleData.length}
                 onChange={(e) => {
-                  alert(e.target.checked);
+                  onSelectAllItems(selectedItems.length === sampleData.length);
                 }}
               />
             </th>
@@ -99,8 +173,18 @@ const Template: ComponentStory<typeof Table> = (args: any) => {
         <tbody>
           {sampleData.map((item: IRow) => (
             <tr>
-              <td>
-                <Checkbox value={item.id} />
+              <td
+                onClick={() => {
+                  //On peut simplifier la sélection en la plcant sur la cellule ou la ligne
+                  onSelectItem(item.id);
+                }}
+              >
+                <Checkbox
+                  checked={selectedItems.includes(item.id)}
+                  onChange={() => {
+                    //onSelectItem(item.id);
+                  }}
+                />
               </td>
               <td>{item.name}</td>
               <td>{new Date(item.createdAt * 1000).toLocaleDateString()}</td>

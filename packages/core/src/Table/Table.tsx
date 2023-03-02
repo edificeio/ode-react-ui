@@ -13,7 +13,7 @@ import { TableProps, TableRef } from "./TableProps";
 const Table = forwardRef(({ children }: TableProps, ref: Ref<TableRef>) => {
   return (
     <>
-      <table className="table">{children}</table>
+      <table className="table-explorer">{children}</table>
     </>
   );
 });
