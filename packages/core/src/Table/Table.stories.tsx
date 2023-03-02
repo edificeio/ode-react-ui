@@ -81,7 +81,11 @@ const Template: ComponentStory<typeof Table> = (args: any) => {
         <thead>
           <tr>
             <th>
-              <Checkbox onChange={(e)=> {alert(e.target.checked)} }/>
+              <Checkbox
+                onChange={(e) => {
+                  alert(e.target.checked);
+                }}
+              />
             </th>
             <th>Nom de la ressource</th>
             <th>Création</th>
