@@ -9,6 +9,7 @@
 import { forwardRef } from "react";
 
 import { useClickOutside, useKeyPress } from "@ode-react-ui/hooks";
+import { useTransition, animated } from "@react-spring/web";
 import clsx from "clsx";
 
 import ModalBody from "./ModalBody";
@@ -51,25 +52,50 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
       ariaDescriptionId,
     };
 
+    const transition = useTransition(isOpen, {
+      from: {
+        x: -50,
+        opacity: 0,
+      },
+      enter: {
+        x: 0,
+        opacity: 1,
+      },
+      leave: {
+        x: 50,
+        opacity: 0,
+      },
+    });
+
     return (
       <ModalContext.Provider value={modalContextValue}>
-        <>
-          <div
-            id={id}
-            ref={ref}
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby={ariaLabelId}
-            aria-describedby={ariaDescriptionId}
-            className={`modal fade ${isOpen ? "show d-block" : ""}`}
-            tabIndex={-1}
-          >
-            <div ref={modalRef} className={dialogClasses}>
-              <div className="modal-content">{children}</div>
-            </div>
-          </div>
-          {isOpen && <div className="modal-backdrop fade show"></div>}
-        </>
+        {transition((style, isOpen) => (
+          <>
+            {isOpen && (
+              <animated.div
+                id={id}
+                ref={ref}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby={ariaLabelId}
+                aria-describedby={ariaDescriptionId}
+                className={`modal fade ${isOpen ? "show d-block" : ""}`}
+                style={style}
+                tabIndex={-1}
+              >
+                <div ref={modalRef} className={dialogClasses}>
+                  <div className="modal-content">{children}</div>
+                </div>
+              </animated.div>
+            )}
+            {isOpen && (
+              <animated.div
+                className="modal-backdrop fade show"
+                style={{ opacity: 0.65 }}
+              ></animated.div>
+            )}
+          </>
+        ))}
       </ModalContext.Provider>
     );
   },

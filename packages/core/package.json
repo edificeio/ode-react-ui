@@ -58,7 +58,7 @@
   },
   "dependencies": {
     "@popperjs/core": "2.11.6",
-    "framer-motion": "9.0.2",
+    "@react-spring/web": "9.7.0",
     "ode-ts-client": "feat-explorer",
     "react-hot-toast": "2.4.0",
     "react-popper": "2.3.0",

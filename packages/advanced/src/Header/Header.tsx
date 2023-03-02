@@ -15,14 +15,12 @@ import {
   Home,
   NeoMessaging,
   MyApps,
-  // NeoAssistance as Assistance,
   NewRelease,
   OneMessaging,
   OneProfile,
   Userbook,
 } from "@ode-react-ui/icons/nav";
 import clsx from "clsx";
-import { AnimatePresence } from "framer-motion";
 
 import { Badge } from "./Badge";
 import { Navbar } from "./Navbar";
@@ -45,7 +43,6 @@ export default function Header({
   configurationFramework,
 }: HeaderProps): JSX.Element {
   const { http, session, i18n } = useOdeClient();
-  // const { hotToast } = useHotToast(Alert);
   const {
     inputRef,
     collapseRef,
@@ -232,18 +229,18 @@ export default function Header({
                 >
                   <MyApps color="#fff" />
                 </NavLink>
-                <AnimatePresence>
-                  {isAppsHovered ? (
-                    <Popover className="top-100" id={popoverAppsId}>
-                      <PopoverBody>
-                        <WidgetAppsBody bookmarkedApps={bookmarkedApps} />
-                      </PopoverBody>
-                      <PopoverFooter className="widget-footer border-top border-ghost">
-                        <WidgetAppsFooter />
-                      </PopoverFooter>
-                    </Popover>
-                  ) : null}
-                </AnimatePresence>
+                <Popover
+                  className="top-100"
+                  id={popoverAppsId}
+                  isVisible={isAppsHovered}
+                >
+                  <PopoverBody>
+                    <WidgetAppsBody bookmarkedApps={bookmarkedApps} />
+                  </PopoverBody>
+                  <PopoverFooter className="widget-footer border-top border-ghost">
+                    <WidgetAppsFooter />
+                  </PopoverFooter>
+                </Popover>
               </NavItem>
               {conversationWorflow && (
                 <NavItem>
@@ -325,20 +322,19 @@ export default function Header({
                         >
                           <Search className="icon search" />
                         </NavLink>
-                        <AnimatePresence>
-                          {isSearchHovered ? (
-                            <Popover id={popoverSearchId}>
-                              <NavSearch ref={inputRef}>
-                                <SearchButton
-                                  type="submit"
-                                  size="sm"
-                                  onClick={redirectToSearch}
-                                  aria-label={i18n("explorer.label.search")}
-                                />
-                              </NavSearch>
-                            </Popover>
-                          ) : null}
-                        </AnimatePresence>
+                        <Popover
+                          id={popoverSearchId}
+                          isVisible={isSearchHovered}
+                        >
+                          <NavSearch ref={inputRef}>
+                            <SearchButton
+                              type="submit"
+                              size="sm"
+                              onClick={redirectToSearch}
+                              aria-label={i18n("explorer.label.search")}
+                            />
+                          </NavSearch>
+                        </Popover>
                       </NavItem>
                     )}
                     <NavItem>
