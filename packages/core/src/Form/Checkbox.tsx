@@ -32,7 +32,7 @@ const Checkbox = forwardRef(
     };
 
     return (
-      <div className="position-relative d-inline-block mt-6 form-check">
+      <div className="position-relative d-inline-block form-check">
         <input {...inputProps} />
         {label && (
           <label className="form-check-label" htmlFor={inputProps.id}>
