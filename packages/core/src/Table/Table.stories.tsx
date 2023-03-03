@@ -1,7 +1,7 @@
-import Table from "./Table";
+import TableExplorer from "./TableExplorer";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Checkbox } from "../Form";
-import { Users } from "@ode-react-ui/icons";
+import { Checklist, Users } from "@ode-react-ui/icons";
 import React, { useState } from "react";
 
 interface IRow {
@@ -111,22 +111,22 @@ const sampleData: IRow[] = [
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Table",
-  component: Table,
+  title: "Components/TableExplorer",
+  component: TableExplorer,
   parameters: {
     docs: {
       description: {
-        component: "Table.",
+        component: "TableExplorer.",
       },
     },
   },
   argTypes: {},
   args: {},
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-} as ComponentMeta<typeof Table>;
+} as ComponentMeta<typeof TableExplorer>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Table> = (args: any) => {
+const Template: ComponentStory<typeof TableExplorer> = (args: any) => {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
   const onSelectItem = (itemId: string) => {
@@ -150,8 +150,8 @@ const Template: ComponentStory<typeof Table> = (args: any) => {
 
   return (
     <div>
-      <Table>
-        <thead className="table-primary">
+      <TableExplorer>
+        <thead>
           <tr>
             <th>
               <Checkbox
@@ -175,20 +175,25 @@ const Template: ComponentStory<typeof Table> = (args: any) => {
             <tr>
               <td
                 onClick={() => {
-                  //On peut simplifier la sélection en la plcant sur la cellule ou la ligne
+                  //On peut simplifier la sélection en la placant sur la cellule ou la ligne
                   onSelectItem(item.id);
                 }}
               >
                 <Checkbox
                   checked={selectedItems.includes(item.id)}
                   onChange={() => {
+                    //Logique déplaçée sur la cellule td
                     //onSelectItem(item.id);
                   }}
                 />
               </td>
-              <td>{item.name}</td>
+              <td>
+                <div className="d-inline-flex gap-8">
+                  <Checklist width={20} height={20} /> {item.name}
+                </div>
+              </td>
               <td>{new Date(item.createdAt * 1000).toLocaleDateString()}</td>
-              <td>{item.creatorName}</td>
+              <td className="text-blue">{item.creatorName}</td>
               <td>
                 {item.shared && (
                   <div className="d-inline-flex align-items-center gap-4">
@@ -196,12 +201,12 @@ const Template: ComponentStory<typeof Table> = (args: any) => {
                   </div>
                 )}
               </td>
-              <td>Il y a 2 heures</td>
-              <td>{item.currentRole}</td>
+              <td className="fst-italic text-gray-700">Il y a 2 heures</td>
+              <td className="fst-italic text-gray-700">{item.currentRole}</td>
             </tr>
           ))}
         </tbody>
-      </Table>
+      </TableExplorer>
     </div>
   );
 };
