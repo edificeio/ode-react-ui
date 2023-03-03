@@ -1,7 +1,7 @@
 import TableExplorer from "./TableExplorer";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Checkbox } from "../Form";
-import { Checklist, Users } from "@ode-react-ui/icons";
+import { Checklist, Globe, Lock, Users } from "@ode-react-ui/icons";
 import React, { useState } from "react";
 
 interface IRow {
@@ -35,7 +35,7 @@ const sampleData: IRow[] = [
       "https://media.istockphoto.com/id/1322277517/fr/photo/herbe-sauvage-dans-les-montagnes-au-coucher-du-soleil.jpg?s=612x612&w=0&k=20&c=tQ19uZQLlIFy8J6QWMyOL6lPt3pdSHBSDFHoXr1K_g0=",
     trashed: false,
     shared: true,
-    numberOfShares: 14,
+    numberOfShares: 49,
     public: true,
     currentRole: "Gestionnaire",
   },
@@ -52,8 +52,8 @@ const sampleData: IRow[] = [
       "https://media.istockphoto.com/id/1322277517/fr/photo/herbe-sauvage-dans-les-montagnes-au-coucher-du-soleil.jpg?s=612x612&w=0&k=20&c=tQ19uZQLlIFy8J6QWMyOL6lPt3pdSHBSDFHoXr1K_g0=",
     trashed: false,
     shared: true,
-    numberOfShares: 12,
-    public: true,
+    numberOfShares: 26,
+    public: false,
     currentRole: "Gestionnaire",
   },
   {
@@ -85,9 +85,9 @@ const sampleData: IRow[] = [
     thumbnail:
       "https://media.istockphoto.com/id/1322277517/fr/photo/herbe-sauvage-dans-les-montagnes-au-coucher-du-soleil.jpg?s=612x612&w=0&k=20&c=tQ19uZQLlIFy8J6QWMyOL6lPt3pdSHBSDFHoXr1K_g0=",
     trashed: false,
-    shared: true,
-    numberOfShares: 12,
-    public: true,
+    shared: false,
+    numberOfShares: 0,
+    public: false,
     currentRole: "Gestionnaire",
   },
   {
@@ -103,8 +103,8 @@ const sampleData: IRow[] = [
       "https://media.istockphoto.com/id/1322277517/fr/photo/herbe-sauvage-dans-les-montagnes-au-coucher-du-soleil.jpg?s=612x612&w=0&k=20&c=tQ19uZQLlIFy8J6QWMyOL6lPt3pdSHBSDFHoXr1K_g0=",
     trashed: false,
     shared: true,
-    numberOfShares: 12,
-    public: true,
+    numberOfShares: 29,
+    public: false,
     currentRole: "Gestionnaire",
   },
 ];
@@ -116,7 +116,10 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: "TableExplorer.",
+        component: "List view of resources.",
+      },
+      source: {
+        type: "code",
       },
     },
   },
@@ -188,18 +191,24 @@ const Template: ComponentStory<typeof TableExplorer> = (args: any) => {
                 />
               </td>
               <td>
-                <div className="d-inline-flex gap-8">
+                <div className="d-inline-flex gap-8 align-items-center">
                   <Checklist width={20} height={20} /> {item.name}
                 </div>
               </td>
               <td>{new Date(item.createdAt * 1000).toLocaleDateString()}</td>
               <td className="text-blue">{item.creatorName}</td>
               <td>
-                {item.shared && (
-                  <div className="d-inline-flex align-items-center gap-4">
-                    <Users width="16" height="16" /> {item.numberOfShares}
-                  </div>
-                )}
+                <div className="d-inline-flex align-items-center gap-4">
+                  {item.public && <Globe width="16" height="16" />}
+                  {item.shared && (
+                    <>
+                      <Users width="16" height="16" /> {item.numberOfShares}
+                    </>
+                  )}
+                  {!item.public && !item.shared && (
+                    <Lock width="16" height="16" />
+                  )}
+                </div>
               </td>
               <td className="fst-italic text-gray-700">Il y a 2 heures</td>
               <td className="fst-italic text-gray-700">{item.currentRole}</td>
