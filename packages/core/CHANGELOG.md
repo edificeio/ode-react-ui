@@ -1,5 +1,16 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.52
+
+### Patch Changes
+
+- [#138](https://github.com/opendigitaleducation/ode-react-ui/pull/138) [`2689147`](https://github.com/opendigitaleducation/ode-react-ui/commit/268914753d40cee44f0136e209f7b7cf5decbdcc) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add visually-hidden component
+
+- [#137](https://github.com/opendigitaleducation/ode-react-ui/pull/137) [`e504c0c`](https://github.com/opendigitaleducation/ode-react-ui/commit/e504c0c9e129d6c3311a53cd188d5b6d48404256) Thanks [@clementcreusat](https://github.com/clementcreusat)! - react-spring instead of framer and refacto odeclientprovider
+
+- Updated dependencies [[`e504c0c`](https://github.com/opendigitaleducation/ode-react-ui/commit/e504c0c9e129d6c3311a53cd188d5b6d48404256)]:
+  - @ode-react-ui/hooks@1.0.7-dev.52
+
 ## 1.0.7-dev.51
 
 ### Patch Changes
