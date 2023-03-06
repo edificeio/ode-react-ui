@@ -1,5 +1,11 @@
 # @ode-react-ui/hooks
 
+## 1.0.7-dev.52
+
+### Patch Changes
+
+- [#137](https://github.com/opendigitaleducation/ode-react-ui/pull/137) [`e504c0c`](https://github.com/opendigitaleducation/ode-react-ui/commit/e504c0c9e129d6c3311a53cd188d5b6d48404256) Thanks [@clementcreusat](https://github.com/clementcreusat)! - react-spring instead of framer and refacto odeclientprovider
+
 ## 1.0.7-dev.50
 
 ### Patch Changes
