@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useCallback, useEffect, useState } from "react";
 
 import {
   IConfigurationFramework,
@@ -54,10 +53,13 @@ export default function useOdeBackend({
   const [theme, setTheme] = useState<ITheme>(
     configurationFramework.Platform.theme,
   );
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     (async () => {
       try {
+        setIsLoading(true);
+
         await Promise.all([
           sessionFramework.initialize(),
           configurationFramework.initialize(
@@ -65,8 +67,6 @@ export default function useOdeBackend({
             params.cdnDomain || null,
           ),
         ]);
-
-        setSession(sessionFramework.session);
 
         const promise: any = await Promise.all([
           configurationFramework.Platform.apps.initialize(
@@ -76,12 +76,15 @@ export default function useOdeBackend({
           configurationFramework.Platform.apps.getWebAppConf(params.app),
           configurationFramework.Platform.theme.getConf(),
         ]);
+        setSession(sessionFramework.session);
         setApp(promise[1]);
         setBootstrapTheme(promise[2]);
         setTheme(configurationFramework.Platform.theme);
         setIdiom(configurationFramework.Platform.idiom);
       } catch (error) {
         console.log(error); // An unrecovable error occured
+      } finally {
+        setIsLoading(false);
       }
     })();
   }, []);
@@ -106,7 +109,7 @@ export default function useOdeBackend({
     link.href = odeBootstrapPath;
   }
 
-  function getBootstrapTheme() {
+  const getBootstrapTheme = useCallback(() => {
     let odeBootstrapPath: string = "";
 
     for (const override of theme.skins) {
@@ -117,36 +120,40 @@ export default function useOdeBackend({
     }
 
     return odeBootstrapPath;
-  }
+  }, [theme]);
 
-  function loadLangAttribute(currentLanguage: string) {
-    document
-      .querySelector("html")
-      ?.setAttribute("lang", currentLanguage || "fr");
-  }
+  const loadLangAttribute = useCallback(
+    (currentLanguage: string) => {
+      document
+        .querySelector("html")
+        ?.setAttribute("lang", currentLanguage || "fr");
+    },
+    [currentLanguage],
+  );
 
   /** The custom-hook-ized login process */
-  function login(/* email: string, password: string */) {
-    // sessionFramework.login(email, password).then(() => {
-    //   setSession(sessionFramework.session); // ...same session object, but triggers React rendering.
-    // });
-  }
+  // function login(/* email: string, password: string */) {
+  //   // sessionFramework.login(email, password).then(() => {
+  //   //   setSession(sessionFramework.session); // ...same session object, but triggers React rendering.
+  //   // });
+  // }
 
   /** The custom-hook-ized logout process */
-  function logout() {
-    // sessionFramework.logout().then(() => {
-    //   setSession(sessionFramework.session); // ...same session object, but triggers React rendering.
-    // });
-  }
+  // function logout() {
+  //   // sessionFramework.logout().then(() => {
+  //   //   setSession(sessionFramework.session); // ...same session object, but triggers React rendering.
+  //   // });
+  // }
 
   // Return instances, to be initialized later.
   return {
+    isLoading,
     app,
     appName: params.app,
     currentLanguage,
     idiom,
-    login,
-    logout,
+    // login,
+    // logout,
     session,
     theme,
     getBootstrapTheme,
