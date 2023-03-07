@@ -55,3 +55,35 @@ const DisabledTemplate: ComponentStory<typeof Checkbox> = (args: any) => {
   );
 };
 export const Disabled = DisabledTemplate.bind({});
+
+const IndeterminateTemplate: ComponentStory<typeof Checkbox> = (args: any) => {
+  const [isChecked, setIsChecked] = useState(false);
+  const [isIndeterminate, setIsIndeterminate] = useState(true);
+
+  const handleOnChange = () => {
+    setIsChecked((isChecked) => {
+      setIsIndeterminate(isChecked);
+      return !isChecked && !isIndeterminate;
+    });
+  };
+
+  const label = () => {
+    if (isIndeterminate) {
+      return "Ni décoché, ni coché";
+    } else {
+      return isChecked ? "Coché" : "Décoché";
+    }
+  };
+
+  return (
+    <div className="d-flex align-items-center">
+      <Checkbox
+        checked={isChecked}
+        indeterminate={isIndeterminate}
+        label={label()}
+        onChange={handleOnChange}
+      />
+    </div>
+  );
+};
+export const Indeterminate = IndeterminateTemplate.bind({});
