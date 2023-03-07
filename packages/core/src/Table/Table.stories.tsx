@@ -159,6 +159,10 @@ const Template: ComponentStory<typeof TableExplorer> = (args: any) => {
             <th>
               <Checkbox
                 checked={selectedItems.length === sampleData.length}
+                indeterminate={
+                  0 < selectedItems.length &&
+                  selectedItems.length < sampleData.length
+                }
                 onChange={(e) => {
                   onSelectAllItems(selectedItems.length === sampleData.length);
                 }}
@@ -191,14 +195,14 @@ const Template: ComponentStory<typeof TableExplorer> = (args: any) => {
                 />
               </td>
               <td>
-                <div className="d-inline-flex gap-8 align-items-center">
-                  <Checklist width={20} height={20} /> {item.name}
+                <div className="d-flex gap-8 align-items-center">
+                  <Checklist width={20} height={20} /> <div>{item.name}</div>
                 </div>
               </td>
               <td>{new Date(item.createdAt * 1000).toLocaleDateString()}</td>
               <td className="text-blue">{item.creatorName}</td>
               <td>
-                <div className="d-inline-flex align-items-center gap-4">
+                <div className="d-flex align-items-center gap-4">
                   {item.public && <Globe width="16" height="16" />}
                   {item.shared && (
                     <>

@@ -12,4 +12,8 @@ export interface CheckboxProps
    * If checked
    */
   checked?: boolean;
+  /**
+   * If indeterminate
+   */
+  indeterminate?: boolean;
 }
