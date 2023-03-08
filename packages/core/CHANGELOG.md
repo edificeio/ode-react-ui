@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.53
+
+### Patch Changes
+
+- [`20f6bdb`](https://github.com/opendigitaleducation/ode-react-ui/commit/20f6bdb712375937247b7ab3366c844df4ff12a0) Thanks [@ccreusat](https://github.com/ccreusat)! - fix detect session for current language
+
 ## 1.0.7-dev.52
 
 ### Patch Changes
