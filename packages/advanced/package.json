@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/advanced",
-  "version": "1.0.7-dev.52",
+  "version": "1.0.7-dev.53",
   "private": false,
   "description": "@ode-react-ui react advanced components",
   "keywords": [
@@ -42,7 +42,7 @@
     "lint": "eslint \"**/*.{ts,tsx}\""
   },
   "devDependencies": {
-    "@ode-react-ui/core": "1.0.7-dev.52",
+    "@ode-react-ui/core": "1.0.7-dev.53",
     "@ode-react-ui/icons": "1.0.7-dev.50",
     "@ode-react-ui/hooks": "1.0.7-dev.52",
     "@types/node": "18.11.18",
@@ -60,7 +60,7 @@
     "ode-ts-client": "feat-explorer"
   },
   "peerDependencies": {
-    "@ode-react-ui/core": "1.0.7-dev.52",
+    "@ode-react-ui/core": "1.0.7-dev.53",
     "@ode-react-ui/icons": "1.0.7-dev.50",
     "@ode-react-ui/hooks": "1.0.7-dev.52",
     "react": "18.2.0",
