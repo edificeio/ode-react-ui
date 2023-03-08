@@ -92,8 +92,10 @@ export default function useOdeBackend({
   useEffect(() => {
     const lang = session?.currentLanguage as string;
 
-    loadLangAttribute(lang);
-    setCurrentLanguage(lang);
+    if (session) {
+      loadLangAttribute(lang);
+      setCurrentLanguage(lang);
+    }
   }, [session]);
 
   function setBootstrapTheme(conf: any) {
