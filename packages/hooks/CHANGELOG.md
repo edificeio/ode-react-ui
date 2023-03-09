@@ -1,5 +1,11 @@
 # @ode-react-ui/hooks
 
+## 1.0.7-dev.54
+
+### Patch Changes
+
+- [#142](https://github.com/opendigitaleducation/ode-react-ui/pull/142) [`07bc84d`](https://github.com/opendigitaleducation/ode-react-ui/commit/07bc84de53dad7f7bd6f1e582d2a37f9cf9b4a45) Thanks [@varmentier](https://github.com/varmentier)! - feat #WB2-573, integration modal onboarding trash
+
 ## 1.0.7-dev.52
 
 ### Patch Changes
