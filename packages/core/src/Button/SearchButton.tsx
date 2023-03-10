@@ -17,6 +17,7 @@ type PickedProps = "type" | "icon" | "size";
 
 export interface SearchButtonProps extends Pick<IconButtonProps, PickedProps> {
   onClick?: any;
+  disabled?: boolean;
 }
 
 /**
