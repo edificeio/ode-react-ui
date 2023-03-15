@@ -5,6 +5,7 @@ export * from "./AppIcon";
 export * from "./Avatar";
 export * from "./Button";
 export * from "./Card";
+export * from "./Dropdown";
 export * from "./EmptyScreen";
 export * from "./Form";
 export * from "./Grid";
