@@ -32,6 +32,10 @@ export interface SelectListProps {
    * Option to hide checkbox
    */
   hideCheckbox?: boolean;
+  /**
+   * Option to manage a model with only one element at a time.
+   */
+  isMonoSelection?: boolean;
 }
 
 export type SelectListType = React.ReactElement<SelectListProps>;
