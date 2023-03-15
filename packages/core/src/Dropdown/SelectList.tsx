@@ -14,20 +14,25 @@ import { OptionListItemType, SelectListProps } from "./SelectListProps";
 const SelectList = ({
   options,
   hideCheckbox,
+  isMonoSelection,
   onChange = (model) => {},
   model = [],
 }: SelectListProps) => {
   const [localModel, setLocalModel] = useState(model);
   const handleOptionClick = (value: string | number) => {
-    setLocalModel((previousModel) => {
-      const newModel = [...previousModel];
-      if (previousModel.includes(value)) {
-        newModel.splice(newModel.indexOf(value), 1);
-      } else {
-        newModel.push(value);
-      }
-      return newModel;
-    });
+    if (isMonoSelection) {
+      setLocalModel([value]);
+    } else {
+      setLocalModel((previousModel) => {
+        const newModel = [...previousModel];
+        if (previousModel.includes(value)) {
+          newModel.splice(newModel.indexOf(value), 1);
+        } else {
+          newModel.push(value);
+        }
+        return newModel;
+      });
+    }
   };
 
   useEffect(() => {
