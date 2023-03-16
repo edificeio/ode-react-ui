@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 import clsx from "clsx";
 
-interface NavBarNavProps extends React.ComponentPropsWithoutRef<"ul"> {
+export interface NavBarNavProps extends React.ComponentPropsWithoutRef<"ul"> {
   children: ReactNode;
   className?: string;
 }

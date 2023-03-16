@@ -7,7 +7,12 @@ import {
   useBookmark,
   useHasWorkflow,
 } from "@ode-react-ui/hooks";
-import { IConfigurationFramework, IHttp, ISession } from "ode-ts-client";
+import {
+  IConfigurationFramework,
+  IHttp,
+  ISession,
+  odeServices,
+} from "ode-ts-client";
 
 export function useHeader({
   session,
@@ -136,6 +141,13 @@ export function useHeader({
     setIsCollapsed(!isCollapsed);
   }
 
+  const handleLogout = () => {
+    (async () => {
+      await odeServices.session().logout();
+      window.location.href = "/auth/login";
+    })();
+  };
+
   const [msgLink, setMsgLink] = useState<string>("");
   function goToMessagerie(): void {
     let messagerieLink = "";
@@ -187,5 +199,6 @@ export function useHeader({
     msgLink,
     redirectToSearch,
     toggleCollapsedNav,
+    handleLogout,
   };
 }
