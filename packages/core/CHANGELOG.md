@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.56
+
+### Patch Changes
+
+- [#145](https://github.com/opendigitaleducation/ode-react-ui/pull/145) [`6ce60d0`](https://github.com/opendigitaleducation/ode-react-ui/commit/6ce60d03b1ede1b884d87ce4530288afb5e3cc76) Thanks [@david-cc](https://github.com/david-cc)! - Add the possibility to have only one element selected in Select List Component
+
 ## 1.0.7-dev.55
 
 ### Patch Changes
