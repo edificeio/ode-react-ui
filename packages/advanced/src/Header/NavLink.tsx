@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 import clsx from "clsx";
 
-interface NavLinkProps<T> {
+export interface NavLinkProps<T> {
   /**
    * href link
    */

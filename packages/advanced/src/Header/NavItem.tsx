@@ -2,7 +2,7 @@ import { forwardRef, ReactNode, Ref } from "react";
 
 import clsx from "clsx";
 
-interface NavItemProps extends React.ComponentPropsWithRef<"li"> {
+export interface NavItemProps extends React.ComponentPropsWithRef<"li"> {
   children: ReactNode;
   className?: string;
 }

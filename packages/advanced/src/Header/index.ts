@@ -5,3 +5,6 @@ export * from "./NavSearch";
 export * from "./Navbar";
 export * from "./NavbarNav";
 export * from "./useHeader";
+
+// types
+export { type HeaderProps } from "./HeaderProps";

@@ -1,4 +1,5 @@
 import {
+  VisuallyHidden,
   Logo,
   SearchButton,
   Popover,
@@ -23,6 +24,7 @@ import {
 import clsx from "clsx";
 
 import { Badge } from "./Badge";
+import { HeaderProps } from "./HeaderProps";
 import { Navbar } from "./Navbar";
 import { NavBarNav } from "./NavbarNav";
 import { NavItem } from "./NavItem";
@@ -30,12 +32,6 @@ import { NavLink } from "./NavLink";
 import { NavSearch } from "./NavSearch";
 import { useHeader } from "./useHeader";
 import { WidgetAppsBody, WidgetAppsFooter } from "./WidgetApps";
-
-interface HeaderProps {
-  is1d?: boolean;
-  src: string;
-  configurationFramework: any;
-}
 
 export default function Header({
   is1d = false,
@@ -66,6 +62,7 @@ export default function Header({
     msgLink,
     redirectToSearch,
     toggleCollapsedNav,
+    handleLogout,
   } = useHeader({ session, http, configurationFramework });
 
   const classes = clsx("header header-react", {
@@ -99,23 +96,24 @@ export default function Header({
                 className="gap-8"
                 aria-hidden="false"
                 aria-label={i18n("navbar.main.navigation")}
-                role="menubar"
               >
                 {conversationWorflow && (
                   <NavItem>
                     <a href="/conversation/conversation" className="nav-link">
                       <OneMessaging className="icon notification" />
                       {hasMessages && <Badge>{messages}</Badge>}
+                      <VisuallyHidden>{i18n("navbar.messages")}</VisuallyHidden>
                     </a>
                   </NavItem>
                 )}
                 <NavItem>
-                  <a href="/userbook/mon-compte" className="nav-link">
+                  <NavLink
+                    link="/userbook/mon-compte"
+                    className="dropdown-item"
+                    translate={i18n("navbar.myaccount")}
+                  >
                     <OneProfile className="icon user" />
-                    <span className="visually-hidden">
-                      {i18n("navbar.myaccount")}
-                    </span>
-                  </a>
+                  </NavLink>
                 </NavItem>
                 {/* <NavItem>
                   <a href="/" className="nav-link">
@@ -126,12 +124,13 @@ export default function Header({
                   </a>
                 </NavItem> */}
                 <NavItem>
-                  <a href="/" className="nav-link">
+                  <button
+                    className="nav-link btn logout"
+                    onClick={handleLogout}
+                  >
                     <Disconnect className="icon logout" />
-                    <span className="visually-hidden">
-                      {i18n("navbar.disconnect")}
-                    </span>
-                  </a>
+                    <VisuallyHidden>{i18n("navbar.disconnect")}</VisuallyHidden>
+                  </button>
                 </NavItem>
                 <NavItem className="d-md-none">
                   <button
@@ -355,13 +354,15 @@ export default function Header({
                       <hr className="dropdown-divider" />
                     </NavItem>
                     <NavItem>
-                      <NavLink
-                        link="/"
-                        className="dropdown-item"
-                        translate={i18n("navbar.disconnect")}
+                      <button
+                        className="nav-link btn logout"
+                        onClick={handleLogout}
                       >
                         <Disconnect className="icon logout" />
-                      </NavLink>
+                        <VisuallyHidden>
+                          {i18n("navbar.disconnect")}
+                        </VisuallyHidden>
+                      </button>
                     </NavItem>
                   </ul>
                 </div>
