@@ -73,6 +73,8 @@ export default function Header({
     "no-1d": !is1d,
   });
 
+  const hasMessages = messages.length > 0;
+
   return (
     <header className={classes}>
       {is1d ? (
@@ -103,12 +105,7 @@ export default function Header({
                   <NavItem>
                     <a href="/conversation/conversation" className="nav-link">
                       <OneMessaging className="icon notification" />
-                      <span className="position-absolute badge rounded-pill bg-danger">
-                        {messages}
-                        <span className="visually-hidden">
-                          {i18n("navbar.messages")}
-                        </span>
-                      </span>
+                      {hasMessages && <Badge>{messages}</Badge>}
                     </a>
                   </NavItem>
                 )}
@@ -250,7 +247,7 @@ export default function Header({
                     translate={i18n("conversation")}
                   >
                     <NeoMessaging color="#fff" />
-                    <Badge>{messages}</Badge>
+                    {hasMessages && <Badge>{messages}</Badge>}
                   </NavLink>
                 </NavItem>
               )}
@@ -262,7 +259,7 @@ export default function Header({
                     translate={i18n("conversation")}
                   >
                     <NeoMessaging color="#fff" />
-                    <Badge>{messages}</Badge>
+                    {hasMessages && <Badge>{messages}</Badge>}
                   </NavLink>
                 </NavItem>
               )}
