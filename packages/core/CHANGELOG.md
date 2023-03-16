@@ -1,5 +1,14 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.57
+
+### Patch Changes
+
+- [#147](https://github.com/opendigitaleducation/ode-react-ui/pull/147) [`9ee1cc9`](https://github.com/opendigitaleducation/ode-react-ui/commit/9ee1cc964ec12009073911c6e5be6c540fc7a9c2) Thanks [@github-actions](https://github.com/apps/github-actions)! - fix header logout and add types multi components
+
+- Updated dependencies [[`f3954b5`](https://github.com/opendigitaleducation/ode-react-ui/commit/f3954b5b475d9c790a00b49b86cea8594971a970)]:
+  - @ode-react-ui/hooks@1.0.7-dev.57
+
 ## 1.0.7-dev.56
 
 ### Patch Changes
