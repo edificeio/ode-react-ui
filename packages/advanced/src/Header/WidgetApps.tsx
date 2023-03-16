@@ -22,6 +22,7 @@ export const WidgetAppsBody = ({
   bookmarkedApps: IWebApp[];
 }) => {
   const { i18n } = useOdeClient();
+
   return (
     <div className="widget-body d-flex flex-wrap">
       {!bookmarkedApps.length && (
