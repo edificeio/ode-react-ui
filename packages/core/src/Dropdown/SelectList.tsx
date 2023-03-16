@@ -58,7 +58,6 @@ const SelectList = ({
             }}
             tabIndex={0}
             onKeyDown={(event) => {
-              console.log(event);
               event.key === "Enter" && handleOptionClick(option.value);
             }}
           >
