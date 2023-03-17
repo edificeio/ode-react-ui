@@ -1,5 +1,13 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.58
+
+### Patch Changes
+
+- [`64163a1`](https://github.com/opendigitaleducation/ode-react-ui/commit/64163a148b5010fb375fc5b14991a3177029d7f4) Thanks [@ccreusat](https://github.com/ccreusat)! - add timeline link
+
+- [#148](https://github.com/opendigitaleducation/ode-react-ui/pull/148) [`7b1c704`](https://github.com/opendigitaleducation/ode-react-ui/commit/7b1c70421cfc414d5f021d7992e37048b4aa7ce2) Thanks [@david-cc](https://github.com/david-cc)! - a11y: Set Focus to Modal h2 element (https://docs.deque.com/issue-help/1.0.0/en/focus-modal-none)
+
 ## 1.0.7-dev.57
 
 ### Patch Changes
