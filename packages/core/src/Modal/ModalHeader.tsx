@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 
 import { useModalContext } from "./ModalContext";
 
@@ -8,10 +8,15 @@ import { useModalContext } from "./ModalContext";
 const ModalHeader = (props: ModalHeaderProps) => {
   const { onModalClose, children } = props;
   const { ariaLabelId } = useModalContext();
+  const h2Ref = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    h2Ref.current?.focus();
+  }, []);
 
   return (
     <div className="modal-header">
-      <h2 id={ariaLabelId} className="modal-title">
+      <h2 ref={h2Ref} id={ariaLabelId} className="modal-title" tabIndex={-1}>
         {children}
       </h2>
       <button
