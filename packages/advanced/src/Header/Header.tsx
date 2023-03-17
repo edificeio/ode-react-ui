@@ -78,7 +78,10 @@ export default function Header({
         <>
           <div className="container-fluid">
             <Navbar>
-              <a className="navbar-title d-md-none text-truncate h4" href="/">
+              <a
+                className="navbar-title d-md-none text-truncate h4"
+                href="/timeline/timeline"
+              >
                 {title}
               </a>
               <div className="d-none d-md-inline-flex gap-12 align-items-center">
@@ -203,7 +206,10 @@ export default function Header({
         <Navbar className="navbar-expand-md">
           <div className="container-fluid">
             <Logo src={`${src}/img/illustrations/logo.png`} />
-            <NavLink link="/" className="navbar-title d-md-none">
+            <NavLink
+              link="/timeline/timeline"
+              className="navbar-title d-md-none"
+            >
               {title}
             </NavLink>
             <ul className="navbar-nav">
