@@ -19,7 +19,13 @@ export const EmptyScreen = ({
     <div className="emptyscreen">
       {imageSrc && (
         <div className="emptyscreen-image mb-12">
-          <img className="mx-auto" src={imageSrc} alt={imageAlt} />
+          <img
+            className="mx-auto"
+            src={imageSrc}
+            alt={imageAlt}
+            width="250"
+            height="250"
+          />
         </div>
       )}
 
