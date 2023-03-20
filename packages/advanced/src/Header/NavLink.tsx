@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 
+import { VisuallyHidden } from "@ode-react-ui/core";
 import clsx from "clsx";
 
 export interface NavLinkProps<T> {
@@ -38,7 +39,11 @@ export function NavLink({
   return (
     <a href={link} className={classes} {...restProps}>
       {children}
-      {translate && <span className="nav-text">{translate}</span>}
+      {translate && (
+        <VisuallyHidden>
+          <span className="nav-text">{translate}</span>
+        </VisuallyHidden>
+      )}
     </a>
   );
 }
