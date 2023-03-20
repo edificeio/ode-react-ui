@@ -1,5 +1,11 @@
 # @ode-react-ui/advanced
 
+## 1.0.7-dev.59
+
+### Patch Changes
+
+- [`1f75ae1`](https://github.com/opendigitaleducation/ode-react-ui/commit/1f75ae168fd5dc315d55ad796d673645c26e4f36) Thanks [@ccreusat](https://github.com/ccreusat)! - fix timeline link and count messages
+
 ## 1.0.7-dev.58
 
 ### Patch Changes
