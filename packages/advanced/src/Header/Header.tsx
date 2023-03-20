@@ -70,7 +70,9 @@ export default function Header({
     "no-1d": !is1d,
   });
 
-  const hasMessages = messages.length > 0;
+  const hasMessages = messages > 0;
+
+  console.log("hasMessages", messages);
 
   return (
     <header className={classes}>
@@ -214,7 +216,10 @@ export default function Header({
             </NavLink>
             <ul className="navbar-nav">
               <NavItem>
-                <NavLink link="/" translate={i18n("navbar.home")}>
+                <NavLink
+                  link="/timeline/timeline"
+                  translate={i18n("navbar.home")}
+                >
                   <Home color="#fff" />
                 </NavLink>
               </NavItem>
