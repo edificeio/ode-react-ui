@@ -72,8 +72,6 @@ export default function Header({
 
   const hasMessages = messages > 0;
 
-  console.log("hasMessages", messages);
-
   return (
     <header className={classes}>
       {is1d ? (
