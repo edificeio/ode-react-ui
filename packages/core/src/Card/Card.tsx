@@ -84,7 +84,14 @@ const Card = forwardRef(
 
     const renderResource = resourceSrc ? (
       <div className="card-image">
-        <Image alt="" src={resourceSrc} objectFit="cover" className="h-full" />
+        <Image
+          alt=""
+          src={resourceSrc}
+          width="80"
+          height="80"
+          objectFit="cover"
+          className="h-full"
+        />
       </div>
     ) : (
       <AppIcon app={app} iconFit="ratio" size="80" variant="rounded" />
