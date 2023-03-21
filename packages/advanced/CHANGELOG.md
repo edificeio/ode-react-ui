@@ -1,5 +1,19 @@
 # @ode-react-ui/advanced
 
+## 1.0.7-dev.60
+
+### Patch Changes
+
+- [`489ac36`](https://github.com/opendigitaleducation/ode-react-ui/commit/489ac363ba7eed3d1248002289ca72aabb6b0c70) Thanks [@ccreusat](https://github.com/ccreusat)! - remove console log
+
+- [#151](https://github.com/opendigitaleducation/ode-react-ui/pull/151) [`71a3c67`](https://github.com/opendigitaleducation/ode-react-ui/commit/71a3c67df9f4becfc558ebb65386f5b91fbedf9f) Thanks [@varmentier](https://github.com/varmentier)! - fix(folder): #WB2-587, folder root selected default on app
+
+- [#154](https://github.com/opendigitaleducation/ode-react-ui/pull/154) [`a1be1c7`](https://github.com/opendigitaleducation/ode-react-ui/commit/a1be1c782dddb3b064f0c9467723bfbfd3ca03af) Thanks [@varmentier](https://github.com/varmentier)! - fix(card, treeView): #WB2-628, add class text-truncate and text-break to folder and treeItem.tsx
+
+- Updated dependencies [[`071b78d`](https://github.com/opendigitaleducation/ode-react-ui/commit/071b78dca587b4b9333863ca43295c4abe6742e3), [`7013af3`](https://github.com/opendigitaleducation/ode-react-ui/commit/7013af3ccb82a5ff61f2a141f640bb1aa8a85a9e), [`71a3c67`](https://github.com/opendigitaleducation/ode-react-ui/commit/71a3c67df9f4becfc558ebb65386f5b91fbedf9f), [`a1be1c7`](https://github.com/opendigitaleducation/ode-react-ui/commit/a1be1c782dddb3b064f0c9467723bfbfd3ca03af)]:
+  - @ode-react-ui/core@1.0.7-dev.60
+  - @ode-react-ui/hooks@1.0.7-dev.60
+
 ## 1.0.7-dev.59
 
 ### Patch Changes
