@@ -1,5 +1,11 @@
 # @ode-react-ui/hooks
 
+## 1.0.7-dev.60
+
+### Patch Changes
+
+- [#155](https://github.com/opendigitaleducation/ode-react-ui/pull/155) [`7013af3`](https://github.com/opendigitaleducation/ode-react-ui/commit/7013af3ccb82a5ff61f2a141f640bb1aa8a85a9e) Thanks [@david-cc](https://github.com/david-cc)! - Add useTrapFocus hook to make Modal ADA compliant
+
 ## 1.0.7-dev.57
 
 ### Patch Changes
