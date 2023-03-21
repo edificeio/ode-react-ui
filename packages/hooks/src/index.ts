@@ -7,6 +7,7 @@ export * from "./useKeyPress";
 export * from "./useModal";
 export * from "./useOdeBackend";
 export * from "./useOdeIcons";
+export * from "./useTrapFocus";
 export * from "./useTitle";
 export * from "./useToggle";
 export * from "./useBookmark";
