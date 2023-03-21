@@ -6,9 +6,13 @@
  * @see Source    https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/Modal/Modal.tsx
  * @see WAI-ARIA  https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/
  */
-import { forwardRef } from "react";
+import { forwardRef, useEffect } from "react";
 
-import { useClickOutside, useKeyPress } from "@ode-react-ui/hooks";
+import {
+  useClickOutside,
+  useKeyPress,
+  useTrapFocus,
+} from "@ode-react-ui/hooks";
 import { useTransition, animated } from "@react-spring/web";
 import clsx from "clsx";
 
@@ -38,9 +42,11 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
 
     const modalRef = useClickOutside(onModalClose);
 
-    useKeyPress(() => {
-      onModalClose();
-    }, ["Escape"]);
+    useKeyPress(onModalClose, ["Escape"]);
+
+    useEffect(() => {
+      useTrapFocus(modalRef);
+    }, []);
 
     const dialogClasses = clsx("modal-dialog", {
       [`modal-${size}`]: size,
@@ -83,7 +89,7 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
                 style={style}
                 tabIndex={-1}
               >
-                <div ref={modalRef} className={dialogClasses}>
+                <div id={`${id}_ref`} ref={modalRef} className={dialogClasses}>
                   <div className="modal-content">{children}</div>
                 </div>
               </animated.div>
