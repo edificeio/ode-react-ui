@@ -1,5 +1,20 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.60
+
+### Patch Changes
+
+- [#153](https://github.com/opendigitaleducation/ode-react-ui/pull/153) [`071b78d`](https://github.com/opendigitaleducation/ode-react-ui/commit/071b78dca587b4b9333863ca43295c4abe6742e3) Thanks [@varmentier](https://github.com/varmentier)! - fix(card): #WB2-627, add width and height img composant card
+
+- [#155](https://github.com/opendigitaleducation/ode-react-ui/pull/155) [`7013af3`](https://github.com/opendigitaleducation/ode-react-ui/commit/7013af3ccb82a5ff61f2a141f640bb1aa8a85a9e) Thanks [@david-cc](https://github.com/david-cc)! - Add useTrapFocus hook to make Modal ADA compliant
+
+- [#151](https://github.com/opendigitaleducation/ode-react-ui/pull/151) [`71a3c67`](https://github.com/opendigitaleducation/ode-react-ui/commit/71a3c67df9f4becfc558ebb65386f5b91fbedf9f) Thanks [@varmentier](https://github.com/varmentier)! - fix(folder): #WB2-587, folder root selected default on app
+
+- [#154](https://github.com/opendigitaleducation/ode-react-ui/pull/154) [`a1be1c7`](https://github.com/opendigitaleducation/ode-react-ui/commit/a1be1c782dddb3b064f0c9467723bfbfd3ca03af) Thanks [@varmentier](https://github.com/varmentier)! - fix(card, treeView): #WB2-628, add class text-truncate and text-break to folder and treeItem.tsx
+
+- Updated dependencies [[`7013af3`](https://github.com/opendigitaleducation/ode-react-ui/commit/7013af3ccb82a5ff61f2a141f640bb1aa8a85a9e)]:
+  - @ode-react-ui/hooks@1.0.7-dev.60
+
 ## 1.0.7-dev.58
 
 ### Patch Changes
