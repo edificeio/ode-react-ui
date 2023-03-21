@@ -116,14 +116,14 @@ export const TreeItem = (props: TreeItemProps) => {
           <div
             tabIndex={0}
             role="button"
-            className="flex-fill d-flex align-items-center gap-8 py-8"
+            className="flex-fill d-flex align-items-center text-truncate gap-8 py-8"
             onClick={handleItemClick}
             onKeyDown={handleItemKeyDown}
             onFocus={handleItemFocus}
             onBlur={handleItemBlur}
           >
             {section && <Folder title="Folder" width={20} height={20} />}
-            <span>{label}</span>
+            <span className="text-truncate">{label}</span>
           </div>
         </div>
 
