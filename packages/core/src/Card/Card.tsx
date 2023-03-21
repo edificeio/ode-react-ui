@@ -50,7 +50,7 @@ const Card = forwardRef(
     );
 
     const classesTitle = clsx(
-      "card-title body text-truncate text-truncate--2 pe-16",
+      "card-title body text-break text-truncate text-truncate--2 pe-16",
       {
         placeholder: isLoading,
       },
