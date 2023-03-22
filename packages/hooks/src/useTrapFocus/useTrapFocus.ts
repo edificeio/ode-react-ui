@@ -10,7 +10,7 @@ export default function useTrapFocus(ref: React.RefObject<HTMLElement>): void {
   const rootElement: HTMLElement | null = ref.current;
 
   const focusableElements =
-    'button:not([disabled], [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+    'button:not([disabled]), [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
   // get first element to be focused inside modal
   const firstFocusableElement = rootElement?.querySelectorAll(
     focusableElements,
