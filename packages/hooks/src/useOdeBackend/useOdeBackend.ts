@@ -53,13 +53,11 @@ export default function useOdeBackend({
   const [theme, setTheme] = useState<ITheme>(
     configurationFramework.Platform.theme,
   );
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     (async () => {
       try {
-        setIsLoading(true);
-
         await Promise.all([
           sessionFramework.initialize(),
           configurationFramework.initialize(
@@ -76,6 +74,10 @@ export default function useOdeBackend({
           configurationFramework.Platform.apps.getWebAppConf(params.app),
           configurationFramework.Platform.theme.getConf(),
         ]);
+        const lang = sessionFramework.session?.currentLanguage as string;
+
+        loadLangAttribute(lang);
+        setCurrentLanguage(lang);
         setSession(sessionFramework.session);
         setApp(promise[1]);
         setBootstrapTheme(promise[2]);
@@ -88,15 +90,6 @@ export default function useOdeBackend({
       }
     })();
   }, []);
-
-  useEffect(() => {
-    const lang = session?.currentLanguage as string;
-
-    if (session) {
-      loadLangAttribute(lang);
-      setCurrentLanguage(lang);
-    }
-  }, [session]);
 
   function setBootstrapTheme(conf: any) {
     let odeBootstrapPath: string = "";
@@ -124,28 +117,11 @@ export default function useOdeBackend({
     return odeBootstrapPath;
   }, [theme]);
 
-  const loadLangAttribute = useCallback(
-    (currentLanguage: string) => {
-      document
-        .querySelector("html")
-        ?.setAttribute("lang", currentLanguage || "fr");
-    },
-    [currentLanguage],
-  );
-
-  /** The custom-hook-ized login process */
-  // function login(/* email: string, password: string */) {
-  //   // sessionFramework.login(email, password).then(() => {
-  //   //   setSession(sessionFramework.session); // ...same session object, but triggers React rendering.
-  //   // });
-  // }
-
-  /** The custom-hook-ized logout process */
-  // function logout() {
-  //   // sessionFramework.logout().then(() => {
-  //   //   setSession(sessionFramework.session); // ...same session object, but triggers React rendering.
-  //   // });
-  // }
+  const loadLangAttribute = (currentLanguage: string) => {
+    document
+      .querySelector("html")
+      ?.setAttribute("lang", currentLanguage || "fr");
+  };
 
   // Return instances, to be initialized later.
   return {
@@ -154,8 +130,6 @@ export default function useOdeBackend({
     appName: params.app,
     currentLanguage,
     idiom,
-    // login,
-    // logout,
     session,
     theme,
     getBootstrapTheme,
