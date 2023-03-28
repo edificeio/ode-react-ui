@@ -26,6 +26,10 @@ export interface DropdownTriggerProps
    * Add a badge
    */
   badgeContent?: string | number;
+  /**
+   * Stretch the dropdown trigger.
+   */
+  grow?: boolean;
 }
 
 export type DropdownTriggerType = React.ReactElement<DropdownTriggerProps>;
