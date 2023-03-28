@@ -1,5 +1,14 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.61
+
+### Patch Changes
+
+- [#157](https://github.com/opendigitaleducation/ode-react-ui/pull/157) [`6ca2301`](https://github.com/opendigitaleducation/ode-react-ui/commit/6ca2301f4eef82649a3febace7fc8e242e3a696a) Thanks [@david-cc](https://github.com/david-cc)! - add grow props to DropdownTrigger to stetch or not the button
+
+- Updated dependencies [[`90c1c4d`](https://github.com/opendigitaleducation/ode-react-ui/commit/90c1c4da0eb2234765acb804584b5c43e7fa3de3), [`040b62e`](https://github.com/opendigitaleducation/ode-react-ui/commit/040b62effd0afe2a8654661af2fb8730fcaaf944), [`c3fd1ac`](https://github.com/opendigitaleducation/ode-react-ui/commit/c3fd1acbb2d33ccb690c368af5c56cea66a9a4b6)]:
+  - @ode-react-ui/hooks@1.0.7-dev.61
+
 ## 1.0.7-dev.60
 
 ### Patch Changes
