@@ -1,5 +1,15 @@
 # @ode-react-ui/hooks
 
+## 1.0.7-dev.61
+
+### Patch Changes
+
+- [#156](https://github.com/opendigitaleducation/ode-react-ui/pull/156) [`90c1c4d`](https://github.com/opendigitaleducation/ode-react-ui/commit/90c1c4da0eb2234765acb804584b5c43e7fa3de3) Thanks [@github-actions](https://github.com/apps/github-actions)! - Fix useTrapFocus for Modals that have a diasbled button as last element (useTrapFocus was not working for MoveModal and PublishModal)
+
+- [#156](https://github.com/opendigitaleducation/ode-react-ui/pull/156) [`040b62e`](https://github.com/opendigitaleducation/ode-react-ui/commit/040b62effd0afe2a8654661af2fb8730fcaaf944) Thanks [@github-actions](https://github.com/apps/github-actions)! - Fix useTrapFocus focusableElements query selector typo
+
+- [#156](https://github.com/opendigitaleducation/ode-react-ui/pull/156) [`c3fd1ac`](https://github.com/opendigitaleducation/ode-react-ui/commit/c3fd1acbb2d33ccb690c368af5c56cea66a9a4b6) Thanks [@github-actions](https://github.com/apps/github-actions)! - fix currentLanguage undefined
+
 ## 1.0.7-dev.60
 
 ### Patch Changes
