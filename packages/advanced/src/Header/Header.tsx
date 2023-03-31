@@ -182,7 +182,7 @@ export default function Header({
                     </a>
                   </NavItem>
                   <NavItem>
-                    <a href="/" className="button">
+                    <a href="/userbook/annuaire" className="button">
                       <Userbook color="#fff" className="d-md-none" />
                       <span className="d-inline-block">
                         {i18n("portal.header.navigation.classMembers")}
@@ -190,7 +190,7 @@ export default function Header({
                     </a>
                   </NavItem>
                   <NavItem>
-                    <a href="/" className="button">
+                    <a href="/welcome" className="button">
                       <MyApps color="#fff" className="d-md-none" />
                       <span className="d-inline-block">
                         {i18n("portal.header.navigation.myapps")}
