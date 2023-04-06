@@ -1,4 +1,4 @@
-type ModalSize = "md" | "lg";
+type ModalSize = "md" | "lg" | "xl";
 
 export interface ModalProps {
   /**
