@@ -7,4 +7,4 @@ export * from "./NavbarNav";
 export * from "./useHeader";
 
 // types
-export { type HeaderProps } from "./HeaderProps";
+export { type HeaderProps } from "./interface";

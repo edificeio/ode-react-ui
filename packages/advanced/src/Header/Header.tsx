@@ -20,11 +20,15 @@ import {
   OneMessaging,
   OneProfile,
   Userbook,
+  OneAssistance as Assistance,
+  NeoAssistance,
 } from "@ode-react-ui/icons/nav";
 import clsx from "clsx";
 
+import { Help } from "../Help";
+import { useHelp } from "../Help/useHelp";
 import { Badge } from "./Badge";
-import { HeaderProps } from "./HeaderProps";
+import { HeaderProps } from "./interface";
 import { Navbar } from "./Navbar";
 import { NavBarNav } from "./NavbarNav";
 import { NavItem } from "./NavItem";
@@ -64,6 +68,14 @@ export default function Header({
     toggleCollapsedNav,
     handleLogout,
   } = useHeader({ session, http, configurationFramework });
+
+  const {
+    isModalOpen: isHelpOpen,
+    setIsModalOpen: setIsHelpOpen,
+    parsedContent,
+    parsedHeadline,
+    error,
+  } = useHelp();
 
   const classes = clsx("header header-react", {
     "no-2d": is1d,
@@ -118,19 +130,27 @@ export default function Header({
                     <OneProfile className="icon user" />
                   </NavLink>
                 </NavItem>
-                {/* <NavItem>
-                  <a href="/" className="nav-link">
-                    <Assistance className="icon help" />
-                    <span className="visually-hidden">
-                      {i18n("navbar.help")}
-                    </span>
-                  </a>
-                </NavItem> */}
                 <NavItem>
                   <button
-                    className="nav-link btn logout"
-                    onClick={handleLogout}
+                    className="nav-link"
+                    onClick={() => {
+                      setIsHelpOpen(true);
+                    }}
                   >
+                    <Assistance className="icon help" />
+                    <VisuallyHidden>{i18n("navbar.help")}</VisuallyHidden>
+                  </button>
+
+                  <Help
+                    isHelpOpen={isHelpOpen}
+                    setIsHelpOpen={setIsHelpOpen}
+                    parsedContent={parsedContent}
+                    parsedHeadline={parsedHeadline}
+                    error={error}
+                  />
+                </NavItem>
+                <NavItem>
+                  <button className="nav-link" onClick={handleLogout}>
                     <Disconnect className="icon logout" />
                     <VisuallyHidden>{i18n("navbar.disconnect")}</VisuallyHidden>
                   </button>
@@ -174,7 +194,7 @@ export default function Header({
 
                 <NavBarNav className="gap-8">
                   <NavItem>
-                    <a href="/" className="button">
+                    <a href="/timeline/timeline" className="button">
                       <NewRelease color="#fff" className="d-md-none" />
                       <span className="d-inline-block">
                         {i18n("portal.header.navigation.whatsnew")}
@@ -271,11 +291,25 @@ export default function Header({
                   </NavLink>
                 </NavItem>
               )}
-              {/* <NavItem>
-                <NavLink link="/" translate={i18n("support")}>
-                  <Assistance color="#fff" />
-                </NavLink>
-              </NavItem> */}
+              <NavItem>
+                <button
+                  className="nav-link btn btn-naked"
+                  onClick={() => {
+                    setIsHelpOpen(true);
+                  }}
+                >
+                  <NeoAssistance color="#fff" />
+                  <VisuallyHidden>{i18n("support")}</VisuallyHidden>
+                </button>
+
+                <Help
+                  isHelpOpen={isHelpOpen}
+                  setIsHelpOpen={setIsHelpOpen}
+                  parsedContent={parsedContent}
+                  parsedHeadline={parsedHeadline}
+                  error={error}
+                />
+              </NavItem>
               <NavItem>
                 <div className="dropdown">
                   <button
