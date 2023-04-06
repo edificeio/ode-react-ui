@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.62
+
+### Patch Changes
+
+- [#160](https://github.com/opendigitaleducation/ode-react-ui/pull/160) [`00a4d5d`](https://github.com/opendigitaleducation/ode-react-ui/commit/00a4d5d152c4b1f0036fcb925f5012af659ca2ec) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update modal component and add help component
+
 ## 1.0.7-dev.61
 
 ### Patch Changes

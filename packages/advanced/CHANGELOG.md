@@ -1,5 +1,16 @@
 # @ode-react-ui/advanced
 
+## 1.0.7-dev.62
+
+### Patch Changes
+
+- [#158](https://github.com/opendigitaleducation/ode-react-ui/pull/158) [`7763a2c`](https://github.com/opendigitaleducation/ode-react-ui/commit/7763a2c8b817306d3b0300a01a18135321ed5119) Thanks [@varmentier](https://github.com/varmentier)! - fix(advanced): #WB2-613, fix url header appli, ma classe
+
+- [#160](https://github.com/opendigitaleducation/ode-react-ui/pull/160) [`00a4d5d`](https://github.com/opendigitaleducation/ode-react-ui/commit/00a4d5d152c4b1f0036fcb925f5012af659ca2ec) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update modal component and add help component
+
+- Updated dependencies [[`00a4d5d`](https://github.com/opendigitaleducation/ode-react-ui/commit/00a4d5d152c4b1f0036fcb925f5012af659ca2ec)]:
+  - @ode-react-ui/core@1.0.7-dev.62
+
 ## 1.0.7-dev.61
 
 ### Patch Changes
