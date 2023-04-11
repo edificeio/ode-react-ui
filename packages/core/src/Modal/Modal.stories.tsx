@@ -71,7 +71,12 @@ const Template: ComponentStory<typeof Modal> = (args: ModalProps) => {
       >
         Open Modal
       </Button>
-      <Modal {...args} isOpen={isOpen} onModalClose={handleCloseModal}>
+      <Modal
+        {...args}
+        isOpen={isOpen}
+        onModalClose={handleCloseModal}
+        focusId="validateButtonId"
+      >
         <Modal.Header onModalClose={handleCloseModal}>
           Modal Header
         </Modal.Header>
@@ -98,6 +103,7 @@ const Template: ComponentStory<typeof Modal> = (args: ModalProps) => {
             Cancel
           </Button>
           <Button
+            id="validateButtonId"
             type="button"
             color="primary"
             variant="filled"

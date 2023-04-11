@@ -3,11 +3,13 @@ import { createContext, useContext } from "react";
 export interface ModalContextProps {
   ariaLabelId: string;
   ariaDescriptionId: string;
+  focusId: string | undefined;
 }
 
 export const ModalContext = createContext<ModalContextProps>({
   ariaLabelId: "",
   ariaDescriptionId: "",
+  focusId: "",
 });
 ModalContext.displayName = "ModalContext";
 
