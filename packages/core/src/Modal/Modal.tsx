@@ -46,6 +46,11 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
 
     useEffect(() => {
       useTrapFocus(modalRef);
+      // prevent body scrolling while modale is active
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = "";
+      };
     }, []);
 
     const dialogClasses = clsx("modal-dialog", {
