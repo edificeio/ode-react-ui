@@ -1,5 +1,13 @@
 # @ode-react-ui/core
 
+## 1.0.7-dev.63
+
+### Patch Changes
+
+- [#161](https://github.com/opendigitaleducation/ode-react-ui/pull/161) [`e58254b`](https://github.com/opendigitaleducation/ode-react-ui/commit/e58254b8844e0058ff9a12d0442115165b4ee027) Thanks [@github-actions](https://github.com/apps/github-actions)! - prevent body scrolling when modal is active
+
+- [#162](https://github.com/opendigitaleducation/ode-react-ui/pull/162) [`f33b238`](https://github.com/opendigitaleducation/ode-react-ui/commit/f33b238d22921daeb02886ed7e46688f1ccced2c) Thanks [@david-cc](https://github.com/david-cc)! - add Modal default focus param
+
 ## 1.0.7-dev.62
 
 ### Patch Changes
