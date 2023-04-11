@@ -71,48 +71,50 @@ const Template: ComponentStory<typeof Modal> = (args: ModalProps) => {
       >
         Open Modal
       </Button>
-      <Modal
-        {...args}
-        isOpen={isOpen}
-        onModalClose={handleCloseModal}
-        focusId="validateButtonId"
-      >
-        <Modal.Header onModalClose={handleCloseModal}>
-          Modal Header
-        </Modal.Header>
-        <Modal.Subtitle>Subtitle or description</Modal.Subtitle>
-        <Modal.Body>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rutrum
-            nunc et mollis varius. Donec quis imperdiet libero. Sed eleifend
-            euismod ipsum, et elementum enim ultricies sed. Nunc convallis
-            tempus viverra. Mauris faucibus dolor felis, ac consectetur purus
-            aliquet id. Orci varius natoque penatibus et magnis dis parturient
-            montes, nascetur ridiculus mus. Aliquam imperdiet neque non neque
-            bibendum, nec gravida sem lobortis. Cras mattis congue arcu, dictum
-            dictum velit fermentum eget.
-          </p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button
-            type="button"
-            color="tertiary"
-            variant="ghost"
-            onClick={handleCloseModal}
-          >
-            Cancel
-          </Button>
-          <Button
-            id="validateButtonId"
-            type="button"
-            color="primary"
-            variant="filled"
-            onClick={handleCloseModal}
-          >
-            Validate
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      {isOpen && (
+        <Modal
+          {...args}
+          isOpen={isOpen}
+          onModalClose={handleCloseModal}
+          focusId="validateButtonId"
+        >
+          <Modal.Header onModalClose={handleCloseModal}>
+            Modal Header
+          </Modal.Header>
+          <Modal.Subtitle>Subtitle or description</Modal.Subtitle>
+          <Modal.Body>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rutrum
+              nunc et mollis varius. Donec quis imperdiet libero. Sed eleifend
+              euismod ipsum, et elementum enim ultricies sed. Nunc convallis
+              tempus viverra. Mauris faucibus dolor felis, ac consectetur purus
+              aliquet id. Orci varius natoque penatibus et magnis dis parturient
+              montes, nascetur ridiculus mus. Aliquam imperdiet neque non neque
+              bibendum, nec gravida sem lobortis. Cras mattis congue arcu,
+              dictum dictum velit fermentum eget.
+            </p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button
+              type="button"
+              color="tertiary"
+              variant="ghost"
+              onClick={handleCloseModal}
+            >
+              Cancel
+            </Button>
+            <Button
+              id="validateButtonId"
+              type="button"
+              color="primary"
+              variant="filled"
+              onClick={handleCloseModal}
+            >
+              Validate
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )}
     </>
   );
 };
@@ -145,49 +147,51 @@ const TemplateMoveFile: ComponentStory<typeof Modal> = (args: any) => {
       >
         Déplacer l'élément
       </Button>
-      <Modal {...args} isOpen={isOpen} onModalClose={handleCloseModal}>
-        <Modal.Header onModalClose={handleCloseModal}>Déplacer</Modal.Header>
-        <Modal.Subtitle>
-          Sélectionner le dossier vers lequel déplacer les éléments
-        </Modal.Subtitle>
-        <Modal.Body>
-          <TreeView data={data} />
+      {isOpen && (
+        <Modal {...args} isOpen={isOpen} onModalClose={handleCloseModal}>
+          <Modal.Header onModalClose={handleCloseModal}>Déplacer</Modal.Header>
+          <Modal.Subtitle>
+            Sélectionner le dossier vers lequel déplacer les éléments
+          </Modal.Subtitle>
+          <Modal.Body>
+            <TreeView data={data} />
 
-          <div className="mt-48">
-            <FormControl id="folder-name" className="d-flex gap-8">
-              <Input type="text" placeholder="Saisir un nom" size="md" />
-              <Button
-                color="primary"
-                onClick={() => {}}
-                type="button"
-                leftIcon={<Plus />}
-                variant="ghost"
-                className="text-nowrap"
-              >
-                Créer dossier
-              </Button>
-            </FormControl>
-          </div>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button
-            type="button"
-            color="tertiary"
-            variant="ghost"
-            onClick={handleCloseModal}
-          >
-            Annuler
-          </Button>
-          <Button
-            type="button"
-            color="primary"
-            variant="filled"
-            onClick={handleCloseModal}
-          >
-            Déplacer
-          </Button>
-        </Modal.Footer>
-      </Modal>
+            <div className="mt-48">
+              <FormControl id="folder-name" className="d-flex gap-8">
+                <Input type="text" placeholder="Saisir un nom" size="md" />
+                <Button
+                  color="primary"
+                  onClick={() => {}}
+                  type="button"
+                  leftIcon={<Plus />}
+                  variant="ghost"
+                  className="text-nowrap"
+                >
+                  Créer dossier
+                </Button>
+              </FormControl>
+            </div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button
+              type="button"
+              color="tertiary"
+              variant="ghost"
+              onClick={handleCloseModal}
+            >
+              Annuler
+            </Button>
+            <Button
+              type="button"
+              color="primary"
+              variant="filled"
+              onClick={handleCloseModal}
+            >
+              Déplacer
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )}
     </>
   );
 };
@@ -218,130 +222,132 @@ export const CreateFile = (args: any) => {
       >
         Création
       </Button>
-      <Modal
-        {...args}
-        size="lg"
-        isOpen={isOpen}
-        onModalClose={handleCloseModal}
-      >
-        <Modal.Header onModalClose={handleCloseModal}>Création</Modal.Header>
+      {isOpen && (
+        <Modal
+          {...args}
+          size="lg"
+          isOpen={isOpen}
+          onModalClose={handleCloseModal}
+        >
+          <Modal.Header onModalClose={handleCloseModal}>Création</Modal.Header>
 
-        <Modal.Body>
-          <Heading headingStyle="h4" level="h3" className="mb-16">
-            Général
-          </Heading>
+          <Modal.Body>
+            <Heading headingStyle="h4" level="h3" className="mb-16">
+              Général
+            </Heading>
 
-          <div className="d-flex flex-column flex-md-row gap-16 mb-24">
-            <ImagePicker
-              app={{
-                address: "/blog",
-                icon: "blog-large",
-                name: "Blog",
-                scope: [],
-                display: false,
-                displayName: "",
-                isExternal: false,
-              }}
-              label="Upload an image"
-              addButtonLabel="Add image"
-              deleteButtonLabel="Delete image"
-              onUploadImage={() => {}}
-              onDeleteImage={() => {}}
-              className="align-self-center"
-            />
+            <div className="d-flex flex-column flex-md-row gap-16 mb-24">
+              <ImagePicker
+                app={{
+                  address: "/blog",
+                  icon: "blog-large",
+                  name: "Blog",
+                  scope: [],
+                  display: false,
+                  displayName: "",
+                  isExternal: false,
+                }}
+                label="Upload an image"
+                addButtonLabel="Add image"
+                deleteButtonLabel="Delete image"
+                onUploadImage={() => {}}
+                onDeleteImage={() => {}}
+                className="align-self-center"
+              />
 
-            <div className="col">
-              <FormControl id="title" className="mb-16">
-                <Label>Titre</Label>
-                <Input
-                  type="text"
-                  placeholder="Nom de la ressource"
-                  size="md"
-                  aria-required={true}
-                />
-              </FormControl>
-              <FormControl id="description" isOptional>
-                <Label>Description</Label>
-                <Input
-                  type="text"
-                  placeholder="Nom de la ressource"
-                  size="md"
-                  aria-required={true}
-                />
-              </FormControl>
-            </div>
-          </div>
-
-          <Heading headingStyle="h4" level="h3" className="mb-16">
-            Accès au blog
-          </Heading>
-
-          <Alert type="info">
-            Votre blog reste accessible aux personnes à qui vous l'avez partagé.
-            Vous pouvez cependant créer un lien public afin que des personnes
-            hors de l'ENT puissent y accéder.
-          </Alert>
-
-          <FormControl
-            id="flexSwitchCheckDefault"
-            className="form-check form-switch mt-16 mb-8"
-          >
-            <FormControl.Input
-              className="form-check-input"
-              type="checkbox"
-              role="switch"
-              size="md"
-            />
-            <FormControl.Label className="form-check-label">
-              Accessible publiquement via une URL
-            </FormControl.Label>
-          </FormControl>
-
-          <FormControl id="slug">
-            <div className="d-flex flex-wrap align-items-center gap-4">
-              <div>https://neoconnect.opendigitaleducation.com/</div>
-
-              <div className="flex-fill">
-                <Input
-                  type="text"
-                  size="md"
-                  placeholder="extention personnalisée"
-                />
+              <div className="col">
+                <FormControl id="title" className="mb-16">
+                  <Label>Titre</Label>
+                  <Input
+                    type="text"
+                    placeholder="Nom de la ressource"
+                    size="md"
+                    aria-required={true}
+                  />
+                </FormControl>
+                <FormControl id="description" isOptional>
+                  <Label>Description</Label>
+                  <Input
+                    type="text"
+                    placeholder="Nom de la ressource"
+                    size="md"
+                    aria-required={true}
+                  />
+                </FormControl>
               </div>
-              <Button
-                color="primary"
-                onClick={() => {}}
-                type="button"
-                leftIcon={<Copy />}
-                variant="ghost"
-                className="text-nowrap"
-              >
-                Copier URL
-              </Button>
             </div>
-          </FormControl>
-        </Modal.Body>
 
-        <Modal.Footer>
-          <Button
-            type="button"
-            color="tertiary"
-            variant="ghost"
-            onClick={handleCloseModal}
-          >
-            Annuler
-          </Button>
+            <Heading headingStyle="h4" level="h3" className="mb-16">
+              Accès au blog
+            </Heading>
 
-          <Button
-            type="button"
-            color="primary"
-            variant="filled"
-            onClick={handleCloseModal}
-          >
-            Créer
-          </Button>
-        </Modal.Footer>
-      </Modal>
+            <Alert type="info">
+              Votre blog reste accessible aux personnes à qui vous l'avez
+              partagé. Vous pouvez cependant créer un lien public afin que des
+              personnes hors de l'ENT puissent y accéder.
+            </Alert>
+
+            <FormControl
+              id="flexSwitchCheckDefault"
+              className="form-check form-switch mt-16 mb-8"
+            >
+              <FormControl.Input
+                className="form-check-input"
+                type="checkbox"
+                role="switch"
+                size="md"
+              />
+              <FormControl.Label className="form-check-label">
+                Accessible publiquement via une URL
+              </FormControl.Label>
+            </FormControl>
+
+            <FormControl id="slug">
+              <div className="d-flex flex-wrap align-items-center gap-4">
+                <div>https://neoconnect.opendigitaleducation.com/</div>
+
+                <div className="flex-fill">
+                  <Input
+                    type="text"
+                    size="md"
+                    placeholder="extention personnalisée"
+                  />
+                </div>
+                <Button
+                  color="primary"
+                  onClick={() => {}}
+                  type="button"
+                  leftIcon={<Copy />}
+                  variant="ghost"
+                  className="text-nowrap"
+                >
+                  Copier URL
+                </Button>
+              </div>
+            </FormControl>
+          </Modal.Body>
+
+          <Modal.Footer>
+            <Button
+              type="button"
+              color="tertiary"
+              variant="ghost"
+              onClick={handleCloseModal}
+            >
+              Annuler
+            </Button>
+
+            <Button
+              type="button"
+              color="primary"
+              variant="filled"
+              onClick={handleCloseModal}
+            >
+              Créer
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )}
     </>
   );
 };
@@ -438,192 +444,198 @@ export const ShareFile = (args: any) => {
       >
         Share
       </Button>
-      <Modal
-        {...args}
-        size="lg"
-        isOpen={isOpen}
-        onModalClose={handleCloseModal}
-      >
-        <Modal.Header onModalClose={handleCloseModal}>
-          Partager avec ...
-        </Modal.Header>
+      {isOpen && (
+        <Modal
+          {...args}
+          size="lg"
+          isOpen={isOpen}
+          onModalClose={handleCloseModal}
+        >
+          <Modal.Header onModalClose={handleCloseModal}>
+            Partager avec ...
+          </Modal.Header>
 
-        <Modal.Body>
-          <Heading headingStyle="h4" level="h3" className="mb-16">
-            Utilisateurs ayant accès
-          </Heading>
+          <Modal.Body>
+            <Heading headingStyle="h4" level="h3" className="mb-16">
+              Utilisateurs ayant accès
+            </Heading>
 
-          <div className="table-responsive">
-            <table className="table  border align-middle mb-0">
-              <thead className="bg-secondary text-white">
-                <tr>
-                  <th scope="col"></th>
-                  <th scope="col"></th>
-                  {actions.map((action) => (
-                    <th
-                      key={action.displayName}
-                      scope="col"
-                      className="text-center"
-                    >
-                      {action.displayName}
-                    </th>
-                  ))}
-                  <th scope="col"></th>
-                </tr>
-              </thead>
-              <tbody>
-                {items.map((item: any) => (
-                  <tr key={item.id}>
-                    <th scope="row">
-                      <Avatar
-                        alt="alternative text"
-                        size="xs"
-                        src={item.avatarUrl}
-                        variant="circle"
-                      />
-                    </th>
-                    <td>
-                      {item.type === "user" && item.username}
-                      {item.type === "group" && item.name}
-                    </td>
+            <div className="table-responsive">
+              <table className="table  border align-middle mb-0">
+                <thead className="bg-secondary text-white">
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
                     {actions.map((action) => (
-                      <td
+                      <th
                         key={action.displayName}
-                        style={{ width: "80px" }}
+                        scope="col"
                         className="text-center"
                       >
-                        <Checkbox
-                          checked={item.actions[action.displayName]}
-                          onChange={(e) =>
-                            handleActionCheckbox(item, action.displayName)
-                          }
+                        {action.displayName}
+                      </th>
+                    ))}
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {items.map((item: any) => (
+                    <tr key={item.id}>
+                      <th scope="row">
+                        <Avatar
+                          alt="alternative text"
+                          size="xs"
+                          src={item.avatarUrl}
+                          variant="circle"
+                        />
+                      </th>
+                      <td>
+                        {item.type === "user" && item.username}
+                        {item.type === "group" && item.name}
+                      </td>
+                      {actions.map((action) => (
+                        <td
+                          key={action.displayName}
+                          style={{ width: "80px" }}
+                          className="text-center"
+                        >
+                          <Checkbox
+                            checked={item.actions[action.displayName]}
+                            onChange={(e) =>
+                              handleActionCheckbox(item, action.displayName)
+                            }
+                          />
+                        </td>
+                      ))}
+                      <td>
+                        <IconButton
+                          aria-label="Delete"
+                          color="tertiary"
+                          icon={<Close />}
+                          type="button"
+                          variant="ghost"
+                          title="Delete"
                         />
                       </td>
-                    ))}
-                    <td>
-                      <IconButton
-                        aria-label="Delete"
-                        color="tertiary"
-                        icon={<Close />}
-                        type="button"
-                        variant="ghost"
-                        title="Delete"
-                      />
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
 
-          <div className="mt-16">
-            <Button
-              color="tertiary"
-              leftIcon={<Bookmark />}
-              rightIcon={
-                <RafterDown
-                  title="Show"
-                  className="w-16 min-w-0"
-                  style={{
-                    transition: "rotate 0.2s ease-out",
-                    rotate: showBookmarkInput ? "-180deg" : "0deg",
-                  }}
-                />
-              }
-              type="button"
-              variant="ghost"
-              className="fw-normal"
-              onClick={() => toggleBookmarkInput(!showBookmarkInput)}
-            >
-              Enregistrer comme favori de partage
-            </Button>
-            {showBookmarkInput && (
-              <div className="mt-16">
-                <FormControl
-                  id="bookmarkName"
-                  className="d-flex flex-wrap align-items-center gap-16"
-                >
-                  <div className="flex-fill">
-                    <FormControl.Input
-                      placeholder="Saisir le nom du favori"
-                      size="sm"
-                      type="text"
-                    />
-                  </div>
-                  <Button
-                    type="button"
-                    color="primary"
-                    variant="ghost"
-                    leftIcon={<Save />}
-                    className="text-nowrap"
+            <div className="mt-16">
+              <Button
+                color="tertiary"
+                leftIcon={<Bookmark />}
+                rightIcon={
+                  <RafterDown
+                    title="Show"
+                    className="w-16 min-w-0"
+                    style={{
+                      transition: "rotate 0.2s ease-out",
+                      rotate: showBookmarkInput ? "-180deg" : "0deg",
+                    }}
+                  />
+                }
+                type="button"
+                variant="ghost"
+                className="fw-normal"
+                onClick={() => toggleBookmarkInput(!showBookmarkInput)}
+              >
+                Enregistrer comme favori de partage
+              </Button>
+              {showBookmarkInput && (
+                <div className="mt-16">
+                  <FormControl
+                    id="bookmarkName"
+                    className="d-flex flex-wrap align-items-center gap-16"
                   >
-                    Enregistrer favori
-                  </Button>
-                </FormControl>
-              </div>
-            )}
-          </div>
+                    <div className="flex-fill">
+                      <FormControl.Input
+                        placeholder="Saisir le nom du favori"
+                        size="sm"
+                        type="text"
+                      />
+                    </div>
+                    <Button
+                      type="button"
+                      color="primary"
+                      variant="ghost"
+                      leftIcon={<Save />}
+                      className="text-nowrap"
+                    >
+                      Enregistrer favori
+                    </Button>
+                  </FormControl>
+                </div>
+              )}
+            </div>
 
-          <hr />
+            <hr />
 
-          <Heading headingStyle="h4" level="h3" className="mb-16 d-flex">
-            Rechercher des utilisateurs <InfoCircle className="ms-8" />
-          </Heading>
+            <Heading headingStyle="h4" level="h3" className="mb-16 d-flex">
+              Rechercher des utilisateurs <InfoCircle className="ms-8" />
+            </Heading>
 
-          <FormControl className="input-group max-w-512" id="search">
-            <Input
-              noValidationIcon
-              placeholder="nom d’utilisateurs, groupes, favoris"
-              size="md"
-              type="search"
+            <FormControl className="input-group max-w-512" id="search">
+              <Input
+                noValidationIcon
+                placeholder="nom d’utilisateurs, groupes, favoris"
+                size="md"
+                type="search"
+              />
+              <SearchButton
+                aria-label="search"
+                icon={<Search />}
+                type="submit"
+              />
+            </FormControl>
+
+            <hr />
+
+            <Heading headingStyle="h4" level="h3" className="mb-16">
+              Circuit de publication des billets
+            </Heading>
+
+            <Radio
+              label="Publication immédiate"
+              id="publication-now"
+              name="publication"
+              value="now"
+              model={radioPublicationValue}
+              onChange={handleRadioPublicationChange}
             />
-            <SearchButton aria-label="search" icon={<Search />} type="submit" />
-          </FormControl>
+            <Radio
+              label="Billets soumis à validation"
+              id="publication-validate"
+              name="publication"
+              value="validate"
+              model={radioPublicationValue}
+              onChange={handleRadioPublicationChange}
+            />
+          </Modal.Body>
 
-          <hr />
+          <Modal.Footer>
+            <Button
+              type="button"
+              color="tertiary"
+              variant="ghost"
+              onClick={handleCloseModal}
+            >
+              Annuler
+            </Button>
 
-          <Heading headingStyle="h4" level="h3" className="mb-16">
-            Circuit de publication des billets
-          </Heading>
-
-          <Radio
-            label="Publication immédiate"
-            id="publication-now"
-            name="publication"
-            value="now"
-            model={radioPublicationValue}
-            onChange={handleRadioPublicationChange}
-          />
-          <Radio
-            label="Billets soumis à validation"
-            id="publication-validate"
-            name="publication"
-            value="validate"
-            model={radioPublicationValue}
-            onChange={handleRadioPublicationChange}
-          />
-        </Modal.Body>
-
-        <Modal.Footer>
-          <Button
-            type="button"
-            color="tertiary"
-            variant="ghost"
-            onClick={handleCloseModal}
-          >
-            Annuler
-          </Button>
-
-          <Button
-            type="button"
-            color="primary"
-            variant="filled"
-            onClick={handleCloseModal}
-          >
-            Partager
-          </Button>
-        </Modal.Footer>
-      </Modal>
+            <Button
+              type="button"
+              color="primary"
+              variant="filled"
+              onClick={handleCloseModal}
+            >
+              Partager
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )}
     </>
   );
 };
@@ -721,200 +733,203 @@ export const PublishOnLibrary = (args: any) => {
       >
         Publier dans la bibliothèque
       </Button>
-      <Modal
-        {...args}
-        size="lg"
-        isOpen={isOpen}
-        onModalClose={handleCloseModal}
-      >
-        <Modal.Header onModalClose={handleCloseModal}>
-          Publier dans la Bibliothèque
-        </Modal.Header>
+      {isOpen && (
+        <Modal
+          {...args}
+          size="lg"
+          isOpen={isOpen}
+          onModalClose={handleCloseModal}
+        >
+          <Modal.Header onModalClose={handleCloseModal}>
+            Publier dans la Bibliothèque
+          </Modal.Header>
 
-        <Modal.Subtitle>
-          La Bilbiothèque est un espace de partage d’activités et de ressources
-          mutualisées entre enseignants.
-        </Modal.Subtitle>
+          <Modal.Subtitle>
+            La Bilbiothèque est un espace de partage d’activités et de
+            ressources mutualisées entre enseignants.
+          </Modal.Subtitle>
 
-        <Modal.Body>
-          <Heading headingStyle="h4" level="h3" className="mb-16">
-            Général
-          </Heading>
+          <Modal.Body>
+            <Heading headingStyle="h4" level="h3" className="mb-16">
+              Général
+            </Heading>
 
-          <FormControl id="title" className="mb-16">
-            <Label>Titre</Label>
-            <Input
-              type="text"
-              placeholder="Nom de la ressource"
-              size="md"
-              aria-required={true}
-            />
-          </FormControl>
-
-          <div className="mb-24">
-            <div className="form-label">Image d'illustration</div>
-            <ImagePicker
-              app={{
-                address: "/blog",
-                icon: "blog-large",
-                name: "Blog",
-                scope: [],
-                display: false,
-                displayName: "",
-                isExternal: false,
-              }}
-              label="Upload an image"
-              addButtonLabel="Add image"
-              deleteButtonLabel="Delete image"
-              onUploadImage={() => {}}
-              onDeleteImage={() => {}}
-              className="align-self-center"
-            />
-          </div>
-
-          <FormControl id="description">
-            <Label>Description et contexte pédagogique</Label>
-            <Input
-              type="text"
-              placeholder="Description de la ressource"
-              size="md"
-              aria-required={true}
-            />
-          </FormControl>
-
-          <hr />
-
-          <Heading headingStyle="h4" level="h3" className="mb-16">
-            Informations sur le contenu
-          </Heading>
-
-          <div className="row mb-24">
-            <div className="col">
-              <FormControl id="activityType">
-                <Select
-                  options={activityTypesOptions}
-                  model={activityType}
-                  placeholderOption="Sélectionner"
-                />
-              </FormControl>
-            </div>
-            <div className="col">
-              <FormControl id="subjectArea">
-                <Label>Discipline</Label>
-                <Select
-                  options={subjectAreaOptions}
-                  model={subjectArea}
-                  placeholderOption="Sélectionner"
-                />
-              </FormControl>
-            </div>
-            <div className="col">
-              <FormControl id="language">
-                <Label>Langue</Label>
-                <Select
-                  options={languageOptions}
-                  model={language}
-                  placeholderOption="Sélectionner"
-                />
-              </FormControl>
-            </div>
-          </div>
-
-          <div className="mb-24">
-            <label htmlFor="" className="form-label">
-              Âge conseillé des élèves
-            </label>
-            <div className="d-flex">
-              <div className="me-16">
-                <FormControl id="ageMin">
-                  <Select
-                    defaultValue="Age min."
-                    options={[
-                      3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
-                    ]}
-                    model={ageMin}
-                    placeholderOption="Age min."
-                  />
-                </FormControl>
-              </div>
-              <div>
-                <FormControl id="ageMax">
-                  <Select
-                    defaultValue="Age max."
-                    options={[
-                      3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
-                    ]}
-                    model={ageMax}
-                    placeholderOption="Age max."
-                  />
-                </FormControl>
-              </div>
-            </div>
-          </div>
-
-          <div className="mb-24">
-            <FormControl id="keywords" isOptional>
-              <Label>Mots-clefs (5 max), séparés par des virgules</Label>
-              <Input type="text" size="md" placeholder="Mots clés" />
-            </FormControl>
-          </div>
-
-          <hr />
-
-          <Heading headingStyle="h4" level="h3" className="mb-16">
-            En cliquant sur publier
-          </Heading>
-
-          <ul className="mb-12">
-            <li>
-              J'accepte que mon activité soit publiée sous licence Creative
-              Commons
-              <img
-                className="ms-8 d-inline-block"
-                src="/assets/creative-commons.png"
-                alt="Icone licence Creative
-                  Commons"
+            <FormControl id="title" className="mb-16">
+              <Label>Titre</Label>
+              <Input
+                type="text"
+                placeholder="Nom de la ressource"
+                size="md"
+                aria-required={true}
               />
-            </li>
-            <li>
-              J'accepte d'être cité en tant qu'auteur, que le nom de mon
-              établissement soit affiché ainsi qu'un aperçu de mon avatar. Cela
-              permettra aux enseignants de la communauté d'échanger plus
-              facilement avec vous de manière bienveillante !
-            </li>
-          </ul>
+            </FormControl>
 
-          <Alert type="info" className="mb-12">
-            Si votre contenu comporte des commentaires, ceux-ci ne seront pas
-            publiés dans la Bibliothèque.
-          </Alert>
+            <div className="mb-24">
+              <div className="form-label">Image d'illustration</div>
+              <ImagePicker
+                app={{
+                  address: "/blog",
+                  icon: "blog-large",
+                  name: "Blog",
+                  scope: [],
+                  display: false,
+                  displayName: "",
+                  isExternal: false,
+                }}
+                label="Upload an image"
+                addButtonLabel="Add image"
+                deleteButtonLabel="Delete image"
+                onUploadImage={() => {}}
+                onDeleteImage={() => {}}
+                className="align-self-center"
+              />
+            </div>
 
-          <Alert type="warning">
-            Les billets actuellement en brouillon et les billets ajoutés après
-            la publication du Blog dans la Bibliothèque ne seront pas visibles.
-          </Alert>
-        </Modal.Body>
+            <FormControl id="description">
+              <Label>Description et contexte pédagogique</Label>
+              <Input
+                type="text"
+                placeholder="Description de la ressource"
+                size="md"
+                aria-required={true}
+              />
+            </FormControl>
 
-        <Modal.Footer>
-          <Button
-            type="button"
-            color="tertiary"
-            variant="ghost"
-            onClick={handleCloseModal}
-          >
-            Annuler
-          </Button>
+            <hr />
 
-          <Button
-            type="button"
-            color="primary"
-            variant="filled"
-            onClick={handleCloseModal}
-          >
-            Accepter et publier
-          </Button>
-        </Modal.Footer>
-      </Modal>
+            <Heading headingStyle="h4" level="h3" className="mb-16">
+              Informations sur le contenu
+            </Heading>
+
+            <div className="row mb-24">
+              <div className="col">
+                <FormControl id="activityType">
+                  <Select
+                    options={activityTypesOptions}
+                    model={activityType}
+                    placeholderOption="Sélectionner"
+                  />
+                </FormControl>
+              </div>
+              <div className="col">
+                <FormControl id="subjectArea">
+                  <Label>Discipline</Label>
+                  <Select
+                    options={subjectAreaOptions}
+                    model={subjectArea}
+                    placeholderOption="Sélectionner"
+                  />
+                </FormControl>
+              </div>
+              <div className="col">
+                <FormControl id="language">
+                  <Label>Langue</Label>
+                  <Select
+                    options={languageOptions}
+                    model={language}
+                    placeholderOption="Sélectionner"
+                  />
+                </FormControl>
+              </div>
+            </div>
+
+            <div className="mb-24">
+              <label htmlFor="" className="form-label">
+                Âge conseillé des élèves
+              </label>
+              <div className="d-flex">
+                <div className="me-16">
+                  <FormControl id="ageMin">
+                    <Select
+                      defaultValue="Age min."
+                      options={[
+                        3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+                      ]}
+                      model={ageMin}
+                      placeholderOption="Age min."
+                    />
+                  </FormControl>
+                </div>
+                <div>
+                  <FormControl id="ageMax">
+                    <Select
+                      defaultValue="Age max."
+                      options={[
+                        3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+                      ]}
+                      model={ageMax}
+                      placeholderOption="Age max."
+                    />
+                  </FormControl>
+                </div>
+              </div>
+            </div>
+
+            <div className="mb-24">
+              <FormControl id="keywords" isOptional>
+                <Label>Mots-clefs (5 max), séparés par des virgules</Label>
+                <Input type="text" size="md" placeholder="Mots clés" />
+              </FormControl>
+            </div>
+
+            <hr />
+
+            <Heading headingStyle="h4" level="h3" className="mb-16">
+              En cliquant sur publier
+            </Heading>
+
+            <ul className="mb-12">
+              <li>
+                J'accepte que mon activité soit publiée sous licence Creative
+                Commons
+                <img
+                  className="ms-8 d-inline-block"
+                  src="/assets/creative-commons.png"
+                  alt="Icone licence Creative
+                  Commons"
+                />
+              </li>
+              <li>
+                J'accepte d'être cité en tant qu'auteur, que le nom de mon
+                établissement soit affiché ainsi qu'un aperçu de mon avatar.
+                Cela permettra aux enseignants de la communauté d'échanger plus
+                facilement avec vous de manière bienveillante !
+              </li>
+            </ul>
+
+            <Alert type="info" className="mb-12">
+              Si votre contenu comporte des commentaires, ceux-ci ne seront pas
+              publiés dans la Bibliothèque.
+            </Alert>
+
+            <Alert type="warning">
+              Les billets actuellement en brouillon et les billets ajoutés après
+              la publication du Blog dans la Bibliothèque ne seront pas
+              visibles.
+            </Alert>
+          </Modal.Body>
+
+          <Modal.Footer>
+            <Button
+              type="button"
+              color="tertiary"
+              variant="ghost"
+              onClick={handleCloseModal}
+            >
+              Annuler
+            </Button>
+
+            <Button
+              type="button"
+              color="primary"
+              variant="filled"
+              onClick={handleCloseModal}
+            >
+              Accepter et publier
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )}
     </>
   );
 };
@@ -945,112 +960,114 @@ export const OnBoardingTrash = (args: any) => {
       >
         On Boarding recycle bin
       </Button>
-      <Modal
-        {...args}
-        size="md"
-        isOpen={isOpen}
-        onModalClose={handleCloseModal}
-      >
-        <Modal.Header onModalClose={handleCloseModal}>
-          Du nouveau dans la corbeille !
-        </Modal.Header>
+      {isOpen && (
+        <Modal
+          {...args}
+          size="md"
+          isOpen={isOpen}
+          onModalClose={handleCloseModal}
+        >
+          <Modal.Header onModalClose={handleCloseModal}>
+            Du nouveau dans la corbeille !
+          </Modal.Header>
 
-        <Modal.Body>
-          <Swiper
-            modules={[Pagination]}
-            onSwiper={(swiper) => {
-              setSwiperInstance(swiper);
-            }}
-            onSlideChange={(swiper) => {
-              setSwiperprogress(swiper.progress);
-            }}
-            pagination={{
-              clickable: true,
-            }}
-          >
-            <SwiperSlide>
-              <div className="d-flex gap-24 flex-column justify-content-center align-items-stretch">
-                <p>
-                  Votre corbeille évolue pour vous permettre de mieux gérer
-                  votre espace.
-                </p>
-                <div className="mx-auto">
-                  <img
-                    src={`assets/themes/ode-bootstrap/images/onboarding/corbeille-notif.svg`}
-                    alt=""
-                  />
-                </div>
-                <p>
-                  Les contenus placés dans la corbeille ne génèrent plus de
-                  notifications et n’apparaitront plus dans votre fil
-                  d’actualités{" "}
-                </p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="d-flex gap-24 flex-column justify-content-center align-items-stretch">
-                <p>
-                  Vous pouvez maintenant supprimer les contenus que l’on vous a
-                  partagé qui ne vous intéressent plus !
-                </p>
-                <div className="mx-auto">
-                  <img
-                    src={`assets/themes/ode-bootstrap/images/onboarding/corbeille-delete.svg`}
-                    alt=""
-                  />
-                </div>
-                <p>
-                  Les contenus que l’on vous a partagés et que vous avez placés
-                  dans votre corbeille disparaitront de votre espace en fin
-                  d’année scolaire
-                </p>
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </Modal.Body>
-
-        <Modal.Footer>
-          <Button
-            type="button"
-            color="tertiary"
-            variant="ghost"
-            onClick={handleCloseModal}
-          >
-            Plus tard
-          </Button>
-
-          {swiperProgress > 0 && (
-            <Button
-              type="button"
-              color="primary"
-              variant="outline"
-              onClick={() => swiperInstance.slidePrev()}
+          <Modal.Body>
+            <Swiper
+              modules={[Pagination]}
+              onSwiper={(swiper) => {
+                setSwiperInstance(swiper);
+              }}
+              onSlideChange={(swiper) => {
+                setSwiperprogress(swiper.progress);
+              }}
+              pagination={{
+                clickable: true,
+              }}
             >
-              Précédent
-            </Button>
-          )}
-          {swiperProgress < 1 && (
+              <SwiperSlide>
+                <div className="d-flex gap-24 flex-column justify-content-center align-items-stretch">
+                  <p>
+                    Votre corbeille évolue pour vous permettre de mieux gérer
+                    votre espace.
+                  </p>
+                  <div className="mx-auto">
+                    <img
+                      src={`assets/themes/ode-bootstrap/images/onboarding/corbeille-notif.svg`}
+                      alt=""
+                    />
+                  </div>
+                  <p>
+                    Les contenus placés dans la corbeille ne génèrent plus de
+                    notifications et n’apparaitront plus dans votre fil
+                    d’actualités{" "}
+                  </p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="d-flex gap-24 flex-column justify-content-center align-items-stretch">
+                  <p>
+                    Vous pouvez maintenant supprimer les contenus que l’on vous
+                    a partagé qui ne vous intéressent plus !
+                  </p>
+                  <div className="mx-auto">
+                    <img
+                      src={`assets/themes/ode-bootstrap/images/onboarding/corbeille-delete.svg`}
+                      alt=""
+                    />
+                  </div>
+                  <p>
+                    Les contenus que l’on vous a partagés et que vous avez
+                    placés dans votre corbeille disparaitront de votre espace en
+                    fin d’année scolaire
+                  </p>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </Modal.Body>
+
+          <Modal.Footer>
             <Button
               type="button"
-              color="primary"
-              variant="filled"
-              onClick={() => swiperInstance.slideNext()}
-            >
-              Suivant
-            </Button>
-          )}
-          {swiperProgress === 1 && (
-            <Button
-              type="button"
-              color="primary"
-              variant="filled"
+              color="tertiary"
+              variant="ghost"
               onClick={handleCloseModal}
             >
-              Fermer
+              Plus tard
             </Button>
-          )}
-        </Modal.Footer>
-      </Modal>
+
+            {swiperProgress > 0 && (
+              <Button
+                type="button"
+                color="primary"
+                variant="outline"
+                onClick={() => swiperInstance.slidePrev()}
+              >
+                Précédent
+              </Button>
+            )}
+            {swiperProgress < 1 && (
+              <Button
+                type="button"
+                color="primary"
+                variant="filled"
+                onClick={() => swiperInstance.slideNext()}
+              >
+                Suivant
+              </Button>
+            )}
+            {swiperProgress === 1 && (
+              <Button
+                type="button"
+                color="primary"
+                variant="filled"
+                onClick={handleCloseModal}
+              >
+                Fermer
+              </Button>
+            )}
+          </Modal.Footer>
+        </Modal>
+      )}
     </>
   );
 };
