@@ -46,15 +46,17 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
     useKeyPress(onModalClose, ["Escape"]);
 
     useEffect(() => {
-      // a11y: trap focus into modal
-      useTrapFocus(modalRef);
-      // a11y: prevent body scrolling while modale is active
-      document.body.style.overflow = "hidden";
-      // a11y: set focus to focusId element
-      // (if focusId is not setted then focus will go to close button at top right corner cf. ModalHeader)
-      if (focusId) {
-        const elem = document.getElementById(focusId);
-        elem?.focus();
+      if (isOpen) {
+        // a11y: trap focus into modal
+        useTrapFocus(modalRef);
+        // a11y: prevent body scrolling while modale is active
+        document.body.style.overflow = "hidden";
+        // a11y: set focus to focusId element
+        // (if focusId is not setted then focus will go to close button at top right corner cf. ModalHeader)
+        if (focusId) {
+          const elem = document.getElementById(focusId);
+          elem?.focus();
+        }
       }
 
       return () => {
