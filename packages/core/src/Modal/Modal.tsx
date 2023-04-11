@@ -17,7 +17,7 @@ import { useTransition, animated } from "@react-spring/web";
 import clsx from "clsx";
 
 import ModalBody from "./ModalBody";
-import { ModalContext } from "./ModalContext";
+import { ModalContext, ModalContextProps } from "./ModalContext";
 import ModalFooter from "./ModalFooter";
 import ModalHeader from "./ModalHeader";
 import { ModalProps } from "./ModalProps";
@@ -34,6 +34,7 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
       onModalClose,
       size = "md",
       scrollable,
+      focusId,
       children,
     } = props;
 
@@ -45,9 +46,17 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
     useKeyPress(onModalClose, ["Escape"]);
 
     useEffect(() => {
+      // a11y: trap focus into modal
       useTrapFocus(modalRef);
-      // prevent body scrolling while modale is active
+      // a11y: prevent body scrolling while modale is active
       document.body.style.overflow = "hidden";
+      // a11y: set focus to focusId element
+      // (if focusId is not setted then focus will go to close button at top right corner cf. ModalHeader)
+      if (focusId) {
+        const elem = document.getElementById(focusId);
+        elem?.focus();
+      }
+
       return () => {
         document.body.style.overflow = "";
       };
@@ -58,9 +67,10 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
       "modal-dialog-scrollable": scrollable,
     });
 
-    const modalContextValue = {
+    const modalContextValue: ModalContextProps = {
       ariaLabelId,
       ariaDescriptionId,
+      focusId,
     };
 
     const transition = useTransition(isOpen, {

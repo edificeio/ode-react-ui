@@ -28,6 +28,11 @@ export interface ModalProps {
   scrollable?: boolean;
 
   /**
+   * ID of the HTML element to receive focus when modal is active.
+   */
+  focusId?: string;
+
+  /**
    * Children
    */
   children: React.ReactNode;

@@ -7,19 +7,22 @@ import { useModalContext } from "./ModalContext";
  */
 const ModalHeader = (props: ModalHeaderProps) => {
   const { onModalClose, children } = props;
-  const { ariaLabelId } = useModalContext();
-  const h2Ref = useRef<HTMLHeadingElement>(null);
+  const { ariaLabelId, focusId } = useModalContext();
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    h2Ref.current?.focus();
+    if (!focusId) {
+      closeButtonRef.current?.focus();
+    }
   }, []);
 
   return (
     <div className="modal-header">
-      <h2 ref={h2Ref} id={ariaLabelId} className="modal-title" tabIndex={-1}>
+      <h2 id={ariaLabelId} className="modal-title" tabIndex={-1}>
         {children}
       </h2>
       <button
+        ref={closeButtonRef}
         type="button"
         className="btn btn-close"
         aria-label="Close"
