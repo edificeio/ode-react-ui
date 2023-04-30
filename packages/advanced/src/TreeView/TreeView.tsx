@@ -32,6 +32,8 @@ const TreeView = forwardRef<HTMLDivElement, TreeViewProps>(
     useEffect(() => {
       if (selectedNodesIds?.length && selectedNodesIds?.length >= 1) {
         setSelectedItem(selectedNodesIds[selectedNodesIds.length - 1]);
+      } else {
+        setSelectedItem("");
       }
     }, [selectedNodesIds]);
 

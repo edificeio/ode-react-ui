@@ -70,6 +70,6 @@ const Button = forwardRef(
   },
 );
 
-Button.displayName = "Button";
+if (import.meta.env.MODE === "dev") Button.displayName = "Button";
 
 export default Button;

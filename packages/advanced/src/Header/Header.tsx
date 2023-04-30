@@ -354,13 +354,15 @@ export default function Header({
                         aria-haspopup="true"
                         aria-expanded={isSearchHovered}
                       >
-                        <NavLink
-                          link="/searchengine"
-                          className="dropdown-item"
-                          translate={i18n("navbar.search")}
+                        <a
+                          href="/searchengine"
+                          className="nav-link dropdown-item"
                         >
                           <Search className="icon search" />
-                        </NavLink>
+                          <span className="nav-text">
+                            {i18n("navbar.search")}
+                          </span>
+                        </a>
                         <Popover
                           id={popoverSearchId}
                           isVisible={isSearchHovered}
@@ -377,10 +379,9 @@ export default function Header({
                       </NavItem>
                     )}
                     <NavItem>
-                      <NavLink
-                        link="/userbook/mon-compte"
-                        className="dropdown-item"
-                        translate={i18n("navbar.myaccount")}
+                      <a
+                        href="/userbook/mon-compte"
+                        className="nav-link dropdown-item"
                       >
                         <Avatar
                           alt={userName}
@@ -391,7 +392,10 @@ export default function Header({
                           width="32"
                           height="32"
                         />
-                      </NavLink>
+                        <span className="nav-text">
+                          {i18n("navbar.myaccount")}
+                        </span>
+                      </a>
                     </NavItem>
                     <NavItem>
                       <hr className="dropdown-divider" />
@@ -402,10 +406,10 @@ export default function Header({
                         onClick={handleLogout}
                       >
                         <Disconnect className="icon logout" />
-                        <VisuallyHidden>
-                          {i18n("navbar.disconnect")}
-                        </VisuallyHidden>
                       </button>
+                      <span className="nav-text">
+                        {i18n("navbar.disconnect")}
+                      </span>
                     </NavItem>
                   </ul>
                 </div>
