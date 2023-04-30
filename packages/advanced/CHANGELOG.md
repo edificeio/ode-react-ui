@@ -1,5 +1,13 @@
 # @ode-react-ui/advanced
 
+## 1.0.7-dev.64
+
+### Patch Changes
+
+- [`b321906`](https://github.com/opendigitaleducation/ode-react-ui/commit/b32190654c4be3adbc4c714c37418c38b98dfac5) Thanks [@ccreusat](https://github.com/ccreusat)! - fix issues header
+
+- [`b0a71f2`](https://github.com/opendigitaleducation/ode-react-ui/commit/b0a71f29f2754b116525fd75873862c75a5ddc88) Thanks [@ccreusat](https://github.com/ccreusat)! - add layout component
+
 ## 1.0.7-dev.63
 
 ### Patch Changes
