@@ -1888,6 +1888,20 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
+"@ode-react-ui/hooks@*":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@ode-react-ui/hooks/-/hooks-1.0.6.tgz#451c76c9a1ff75c3b196652cda8e7b0206297fab"
+  integrity sha512-EmABmVM3i3nTmGbDTLysJXt1+4aHHbjhN1c1jPNt1YN4Zr/aXY9iHybxwuO7Wh8b+KjPft+9YxAxAZ7JyKOzsA==
+  dependencies:
+    clsx "1.2.1"
+    react "18.2.0"
+    react-dom "18.2.0"
+
+"@ode-react-ui/icons@*":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@ode-react-ui/icons/-/icons-1.0.6.tgz#747aef035d5cb4a9584ec8167b7afcf82dd8bdf2"
+  integrity sha512-5fN6o0yX5dFOdTglb9SPL8gpwNg9RAau7XMfQ6AmGY6RDYNrKbuGIZNuLGPmgEC0bEmxAcE/RfWruqAgdXnq9g==
+
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.3":
   version "0.5.10"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.5.10.tgz#2eba163b8e7dbabb4ce3609ab5e32ab63dda3ef8"
