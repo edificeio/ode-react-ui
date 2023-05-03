@@ -1,5 +1,69 @@
 # @ode-react-ui/hooks
 
+## 1.0.7
+
+### Patch Changes
+
+- [#97](https://github.com/opendigitaleducation/ode-react-ui/pull/97) [`e5d1f5b`](https://github.com/opendigitaleducation/ode-react-ui/commit/e5d1f5b0fda37b99cae092c4afb3fc3de6fd390b) Thanks [@david-cc](https://github.com/david-cc)! - Add useHotToast hook
+
+- [#105](https://github.com/opendigitaleducation/ode-react-ui/pull/105) [`3770f72`](https://github.com/opendigitaleducation/ode-react-ui/commit/3770f723544e24b86d78cbe6d37dfd008a7c2c1b) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add popover component, image component, refactor avatar and appicon component
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`8e3b3e0`](https://github.com/opendigitaleducation/ode-react-ui/commit/8e3b3e079c057f566bc503332999bb6b80cf8d9c) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update packages
+
+- [#119](https://github.com/opendigitaleducation/ode-react-ui/pull/119) [`1ff0cbd`](https://github.com/opendigitaleducation/ode-react-ui/commit/1ff0cbd2ca2fa02e728fef20d40af87b87def3a7) Thanks [@nabil-mansouri](https://github.com/nabil-mansouri)! - when src param of useImage change the initial value of the state is not always updated. the fix change the state when the src value change
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`bfafcd7`](https://github.com/opendigitaleducation/ode-react-ui/commit/bfafcd7740bdeec52986f4e296a83bad48877f81) Thanks [@clementcreusat](https://github.com/clementcreusat)! - canary version
+
+- [`f3954b5`](https://github.com/opendigitaleducation/ode-react-ui/commit/f3954b5b475d9c790a00b49b86cea8594971a970) Thanks [@ccreusat](https://github.com/ccreusat)! - fix duplicate bookmarked from api call
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`8e3b3e0`](https://github.com/opendigitaleducation/ode-react-ui/commit/8e3b3e079c057f566bc503332999bb6b80cf8d9c) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add ImagePicker component, fixes Alert Component, update stories
+
+- [`90c1c4d`](https://github.com/opendigitaleducation/ode-react-ui/commit/90c1c4da0eb2234765acb804584b5c43e7fa3de3) Thanks [@david-cc](https://github.com/david-cc)! - Fix useTrapFocus for Modals that have a diasbled button as last element (useTrapFocus was not working for MoveModal and PublishModal)
+
+- [#73](https://github.com/opendigitaleducation/ode-react-ui/pull/73) [`647de18`](https://github.com/opendigitaleducation/ode-react-ui/commit/647de181e65d71cbea2b7cf80b829a61cfbad435) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update deps and add hook useThemeHelper
+
+- [#155](https://github.com/opendigitaleducation/ode-react-ui/pull/155) [`7013af3`](https://github.com/opendigitaleducation/ode-react-ui/commit/7013af3ccb82a5ff61f2a141f640bb1aa8a85a9e) Thanks [@david-cc](https://github.com/david-cc)! - Add useTrapFocus hook to make Modal ADA compliant
+
+- [`9df1aa8`](https://github.com/opendigitaleducation/ode-react-ui/commit/9df1aa8739c418deb5bd530b35071813a328f6aa) Thanks [@david-cc](https://github.com/david-cc)! - add dismissible toast to storybook
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`48e1614`](https://github.com/opendigitaleducation/ode-react-ui/commit/48e1614db440cf3caf59bef42a92ac86f3ab4b2e) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update packages
+
+- [#137](https://github.com/opendigitaleducation/ode-react-ui/pull/137) [`e504c0c`](https://github.com/opendigitaleducation/ode-react-ui/commit/e504c0c9e129d6c3311a53cd188d5b6d48404256) Thanks [@clementcreusat](https://github.com/clementcreusat)! - react-spring instead of framer and refacto odeclientprovider
+
+- [`040b62e`](https://github.com/opendigitaleducation/ode-react-ui/commit/040b62effd0afe2a8654661af2fb8730fcaaf944) Thanks [@david-cc](https://github.com/david-cc)! - Fix useTrapFocus focusableElements query selector typo
+
+- [#101](https://github.com/opendigitaleducation/ode-react-ui/pull/101) [`85020f6`](https://github.com/opendigitaleducation/ode-react-ui/commit/85020f6c7096e67ab0bdf6328ea4f053395cabad) Thanks [@clementcreusat](https://github.com/clementcreusat)! - refacto, adding hook useOdeBackend, useOdeClient, adding OdeClientProvider, change custom hook clickOutside
+
+- [`e3fb4a6`](https://github.com/opendigitaleducation/ode-react-ui/commit/e3fb4a6fc0945a31252a4ff7027c6cb3ca4acdca) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update packages
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`5ccbf45`](https://github.com/opendigitaleducation/ode-react-ui/commit/5ccbf4516992ec7bab747274558559448cb1c2f8) Thanks [@clementcreusat](https://github.com/clementcreusat)! - improve hooks documentation
+
+- [#82](https://github.com/opendigitaleducation/ode-react-ui/pull/82) [`302e46c`](https://github.com/opendigitaleducation/ode-react-ui/commit/302e46c8b475dcf4270b071e26f814dc23b01a84) Thanks [@clementcreusat](https://github.com/clementcreusat)! - clean hooks
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`b983d7d`](https://github.com/opendigitaleducation/ode-react-ui/commit/b983d7dceee18a4291bcf8b546b4718b74660ed2) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update AppCard Component and fix useTitle hook
+
+- [`6a9ad28`](https://github.com/opendigitaleducation/ode-react-ui/commit/6a9ad28e6228059c87eeceac8066f4c4f07c0782) Thanks [@ccreusat](https://github.com/ccreusat)! - update
+
+- [`c3fd1ac`](https://github.com/opendigitaleducation/ode-react-ui/commit/c3fd1acbb2d33ccb690c368af5c56cea66a9a4b6) Thanks [@ccreusat](https://github.com/ccreusat)! - fix currentLanguage undefined
+
+- [`5fc130b`](https://github.com/opendigitaleducation/ode-react-ui/commit/5fc130b65af8e3f33377d55cb0800d10ba683db4) Thanks [@david-cc](https://github.com/david-cc)! - Add options to hot toast (duration, isDismissible)
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`783714c`](https://github.com/opendigitaleducation/ode-react-ui/commit/783714c5cb2207ee504a7d2a36a3ed0643c93a19) Thanks [@clementcreusat](https://github.com/clementcreusat)! - Rename useClickOutside function and fix imports
+
+- [#53](https://github.com/opendigitaleducation/ode-react-ui/pull/53) [`528442a`](https://github.com/opendigitaleducation/ode-react-ui/commit/528442a35c3f6713030b6378fe3c059cbd21d5a0) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update avatar component, stories, and hooks
+
+- [#142](https://github.com/opendigitaleducation/ode-react-ui/pull/142) [`07bc84d`](https://github.com/opendigitaleducation/ode-react-ui/commit/07bc84de53dad7f7bd6f1e582d2a37f9cf9b4a45) Thanks [@varmentier](https://github.com/varmentier)! - feat #WB2-573, integration modal onboarding trash
+
+- [`8786b28`](https://github.com/opendigitaleducation/ode-react-ui/commit/8786b28b756bdb825054baad13773d3f3943544a) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix error with useOdeBackend
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`32b6063`](https://github.com/opendigitaleducation/ode-react-ui/commit/32b606307b3107dca65549d0e4bda971a885d2b6) Thanks [@clementcreusat](https://github.com/clementcreusat)! - refactor packages and configuration
+
+- [`c84c39a`](https://github.com/opendigitaleducation/ode-react-ui/commit/c84c39a3f006f64ee3d17438db2d8244e598ad01) Thanks [@ccreusat](https://github.com/ccreusat)! - add hook to use luxon
+
+- [#110](https://github.com/opendigitaleducation/ode-react-ui/pull/110) [`ce0080c`](https://github.com/opendigitaleducation/ode-react-ui/commit/ce0080cd731c4627708b694c87994b35f156a9f9) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update docs and fix some components
+
+- [#107](https://github.com/opendigitaleducation/ode-react-ui/pull/107) [`c57520a`](https://github.com/opendigitaleducation/ode-react-ui/commit/c57520aa198cb1c485c05260025b3a788be2befd) Thanks [@clementcreusat](https://github.com/clementcreusat)! - custom header component and add nav subcomponents, useHeader hook
+
 ## 1.0.7-dev.61
 
 ### Patch Changes

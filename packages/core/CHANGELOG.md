@@ -1,5 +1,182 @@
 # @ode-react-ui/core
 
+## 1.0.7
+
+### Patch Changes
+
+- [`9452382`](https://github.com/opendigitaleducation/ode-react-ui/commit/94523824193213bca5dbf88d02d65659cb260eaf) Thanks [@clementcreusat](https://github.com/clementcreusat)! - hide treeview if trash is selected
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`a25c8de`](https://github.com/opendigitaleducation/ode-react-ui/commit/a25c8de8c777d9c4c1793682055d6c722b7e3b0b) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update assets
+
+- [`bbb9102`](https://github.com/opendigitaleducation/ode-react-ui/commit/bbb91024cfa93c4017d6bc8efb0dbf17520377de) Thanks [@ccreusat](https://github.com/ccreusat)! - update card component
+
+- [#138](https://github.com/opendigitaleducation/ode-react-ui/pull/138) [`2689147`](https://github.com/opendigitaleducation/ode-react-ui/commit/268914753d40cee44f0136e209f7b7cf5decbdcc) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add visually-hidden component
+
+- [#145](https://github.com/opendigitaleducation/ode-react-ui/pull/145) [`6ce60d0`](https://github.com/opendigitaleducation/ode-react-ui/commit/6ce60d03b1ede1b884d87ce4530288afb5e3cc76) Thanks [@david-cc](https://github.com/david-cc)! - Add the possibility to have only one element selected in Select List Component
+
+- [`64163a1`](https://github.com/opendigitaleducation/ode-react-ui/commit/64163a148b5010fb375fc5b14991a3177029d7f4) Thanks [@ccreusat](https://github.com/ccreusat)! - add timeline link
+
+- [#153](https://github.com/opendigitaleducation/ode-react-ui/pull/153) [`071b78d`](https://github.com/opendigitaleducation/ode-react-ui/commit/071b78dca587b4b9333863ca43295c4abe6742e3) Thanks [@varmentier](https://github.com/varmentier)! - fix(card): #WB2-627, add width and height img composant card
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`5a8ef73`](https://github.com/opendigitaleducation/ode-react-ui/commit/5a8ef737806342cc000c1e617a04de0703a8f80f) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update AppCard component, add icon files
+
+- [#105](https://github.com/opendigitaleducation/ode-react-ui/pull/105) [`3770f72`](https://github.com/opendigitaleducation/ode-react-ui/commit/3770f723544e24b86d78cbe6d37dfd008a7c2c1b) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add popover component, image component, refactor avatar and appicon component
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`8e3b3e0`](https://github.com/opendigitaleducation/ode-react-ui/commit/8e3b3e079c057f566bc503332999bb6b80cf8d9c) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update packages
+
+- [`096d969`](https://github.com/opendigitaleducation/ode-react-ui/commit/096d969f650c5fe0330028e7b9d4aabfda3431ee) Thanks [@ccreusat](https://github.com/ccreusat)! - fix path components and url userbook account in header component
+
+- [`a7ed4a3`](https://github.com/opendigitaleducation/ode-react-ui/commit/a7ed4a37341f1a1d41445ff340d561a0932b5745) Thanks [@ccreusat](https://github.com/ccreusat)! - fix treeview update with unfold status
+
+- [`392b700`](https://github.com/opendigitaleducation/ode-react-ui/commit/392b700aa8b838ad4c4e55991f0701eb1152ab11) Thanks [@ccreusat](https://github.com/ccreusat)! - fix card component props
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`01594df`](https://github.com/opendigitaleducation/ode-react-ui/commit/01594df2cee1aa0b10738789e8ba4a0914d28258) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fixes button components, move TreeView, add useKey doc
+
+- [#71](https://github.com/opendigitaleducation/ode-react-ui/pull/71) [`a52d70a`](https://github.com/opendigitaleducation/ode-react-ui/commit/a52d70aae757274111a5d58e8942125f63985892) Thanks [@david-cc](https://github.com/david-cc)! - Export TreeNode and TreeView events. Fix fold/unfold behaviour. Enlarge TreeItem zone selection.
+
+- [`5a0e299`](https://github.com/opendigitaleducation/ode-react-ui/commit/5a0e2994bcf786846235c57991b05d8b8d135c72) Thanks [@ccreusat](https://github.com/ccreusat)! - fix treeview component
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`7d0a08a`](https://github.com/opendigitaleducation/ode-react-ui/commit/7d0a08a31db2db334ade81cfd663410360df49e9) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add micro components to handle grid layout
+
+- [`9ee1cc9`](https://github.com/opendigitaleducation/ode-react-ui/commit/9ee1cc964ec12009073911c6e5be6c540fc7a9c2) Thanks [@ccreusat](https://github.com/ccreusat)! - fix header logout and add types multi components
+
+- [#99](https://github.com/opendigitaleducation/ode-react-ui/pull/99) [`2f0c035`](https://github.com/opendigitaleducation/ode-react-ui/commit/2f0c0353e35bb9ed4b03fa5fe96587859281fe84) Thanks [@roolian](https://github.com/roolian)! - Add Tooltip
+
+- [`392b700`](https://github.com/opendigitaleducation/ode-react-ui/commit/392b700aa8b838ad4c4e55991f0701eb1152ab11) Thanks [@ccreusat](https://github.com/ccreusat)! - bump
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`8e3b3e0`](https://github.com/opendigitaleducation/ode-react-ui/commit/8e3b3e079c057f566bc503332999bb6b80cf8d9c) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add ImagePicker component, fixes Alert Component, update stories
+
+- [#73](https://github.com/opendigitaleducation/ode-react-ui/pull/73) [`647de18`](https://github.com/opendigitaleducation/ode-react-ui/commit/647de181e65d71cbea2b7cf80b829a61cfbad435) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update deps and add hook useThemeHelper
+
+- [#79](https://github.com/opendigitaleducation/ode-react-ui/pull/79) [`e22b1c6`](https://github.com/opendigitaleducation/ode-react-ui/commit/e22b1c6d4daff949fbc8c23db82f095eb1915d40) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix displayname for compound modal
+
+- [`a89f1d6`](https://github.com/opendigitaleducation/ode-react-ui/commit/a89f1d6c9c86fb6c1c615f30c81fb360e4f4a409) Thanks [@ccreusat](https://github.com/ccreusat)! - fix types card component
+
+- [#66](https://github.com/opendigitaleducation/ode-react-ui/pull/66) [`c0be5df`](https://github.com/opendigitaleducation/ode-react-ui/commit/c0be5dfb131dcf4d6fc92a5eca152e124a2f964c) Thanks [@roolian](https://github.com/roolian)! - Feat: Add story for modal library publication
+  Feat: Add component Select
+
+- [#155](https://github.com/opendigitaleducation/ode-react-ui/pull/155) [`7013af3`](https://github.com/opendigitaleducation/ode-react-ui/commit/7013af3ccb82a5ff61f2a141f640bb1aa8a85a9e) Thanks [@david-cc](https://github.com/david-cc)! - Add useTrapFocus hook to make Modal ADA compliant
+
+- [#37](https://github.com/opendigitaleducation/ode-react-ui/pull/37) [`663fa8e`](https://github.com/opendigitaleducation/ode-react-ui/commit/663fa8e726ba6d9794f4155142966bafe9eee9df) Thanks [@david-cc](https://github.com/david-cc)! - Adding Modal component
+
+- [#58](https://github.com/opendigitaleducation/ode-react-ui/pull/58) [`5792e4c`](https://github.com/opendigitaleducation/ode-react-ui/commit/5792e4c5de3037418b2ffa387c02482b8b4ef03e) Thanks [@roolian](https://github.com/roolian)! - Fix alert layout errors
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`48e1614`](https://github.com/opendigitaleducation/ode-react-ui/commit/48e1614db440cf3caf59bef42a92ac86f3ab4b2e) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update packages
+
+- [#34](https://github.com/opendigitaleducation/ode-react-ui/pull/34) [`f51a8eb`](https://github.com/opendigitaleducation/ode-react-ui/commit/f51a8ebf5bccc1aaf1f17d47f16b29ce13461889) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add forms components
+
+- [#136](https://github.com/opendigitaleducation/ode-react-ui/pull/136) [`2c70290`](https://github.com/opendigitaleducation/ode-react-ui/commit/2c702903db70a079ec528ab4ecaea9a4f002b311) Thanks [@varmentier](https://github.com/varmentier)! - feat(core): #WB2-72, add redirection library composant
+
+- [#121](https://github.com/opendigitaleducation/ode-react-ui/pull/121) [`21dd02c`](https://github.com/opendigitaleducation/ode-react-ui/commit/21dd02cb1793149761a160529165c38b07d51be0) Thanks [@varmentier](https://github.com/varmentier)! - feat(core): #WB2-27, add storybook component library
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`8f74db2`](https://github.com/opendigitaleducation/ode-react-ui/commit/8f74db257321d1c3873177fd1e57833e057fc77d) Thanks [@clementcreusat](https://github.com/clementcreusat)! - Replace Modal close button with booststrap
+
+- [#137](https://github.com/opendigitaleducation/ode-react-ui/pull/137) [`e504c0c`](https://github.com/opendigitaleducation/ode-react-ui/commit/e504c0c9e129d6c3311a53cd188d5b6d48404256) Thanks [@clementcreusat](https://github.com/clementcreusat)! - react-spring instead of framer and refacto odeclientprovider
+
+- [`a7211dd`](https://github.com/opendigitaleducation/ode-react-ui/commit/a7211ddde2b3f15775784859ac4c147dc08f6e9f) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add optional classname props to image component
+
+- [#123](https://github.com/opendigitaleducation/ode-react-ui/pull/123) [`6922064`](https://github.com/opendigitaleducation/ode-react-ui/commit/692206418360d503e615a7222600e30be28cc54d) Thanks [@roolian](https://github.com/roolian)! - Add Modal story : Onboarding Recycle bin
+
+- [#160](https://github.com/opendigitaleducation/ode-react-ui/pull/160) [`00a4d5d`](https://github.com/opendigitaleducation/ode-react-ui/commit/00a4d5d152c4b1f0036fcb925f5012af659ca2ec) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update modal component and add help component
+
+- [#59](https://github.com/opendigitaleducation/ode-react-ui/pull/59) [`8bcd789`](https://github.com/opendigitaleducation/ode-react-ui/commit/8bcd789893e7b63f20134d85b105cef254f733c8) Thanks [@roolian](https://github.com/roolian)! - Add Input Group in stories
+
+- [`a71a2bf`](https://github.com/opendigitaleducation/ode-react-ui/commit/a71a2bf542849bd7d40967420e32f99b5957c778) Thanks [@ccreusat](https://github.com/ccreusat)! - fix treeview component
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`e91b8eb`](https://github.com/opendigitaleducation/ode-react-ui/commit/e91b8eb89065be8e746e2aa97df6ca77977c672a) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix Main export and move TreeView inside core package
+
+- [#57](https://github.com/opendigitaleducation/ode-react-ui/pull/57) [`6073e6a`](https://github.com/opendigitaleducation/ode-react-ui/commit/6073e6a295b0fde6df3eb6f638816c81eb8552e1) Thanks [@roolian](https://github.com/roolian)! - Add ActionBar Component and Story
+
+- [#101](https://github.com/opendigitaleducation/ode-react-ui/pull/101) [`85020f6`](https://github.com/opendigitaleducation/ode-react-ui/commit/85020f6c7096e67ab0bdf6328ea4f053395cabad) Thanks [@clementcreusat](https://github.com/clementcreusat)! - refacto, adding hook useOdeBackend, useOdeClient, adding OdeClientProvider, change custom hook clickOutside
+
+- [`13d3913`](https://github.com/opendigitaleducation/ode-react-ui/commit/13d39138023f7837cfc264a42cf7cbd482533fe7) Thanks [@ccreusat](https://github.com/ccreusat)! - fix treeview issues
+
+- [`e3fb4a6`](https://github.com/opendigitaleducation/ode-react-ui/commit/e3fb4a6fc0945a31252a4ff7027c6cb3ca4acdca) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update packages
+
+- [#148](https://github.com/opendigitaleducation/ode-react-ui/pull/148) [`7b1c704`](https://github.com/opendigitaleducation/ode-react-ui/commit/7b1c70421cfc414d5f021d7992e37048b4aa7ce2) Thanks [@david-cc](https://github.com/david-cc)! - a11y: Set Focus to Modal h2 element (https://docs.deque.com/issue-help/1.0.0/en/focus-modal-none)
+
+- [`d0979b9`](https://github.com/opendigitaleducation/ode-react-ui/commit/d0979b91335f282a48fec53e7aeeba54086e126c) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix folder color when no app is provided
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`b983d7d`](https://github.com/opendigitaleducation/ode-react-ui/commit/b983d7dceee18a4291bcf8b546b4718b74660ed2) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update AppCard Component and fix useTitle hook
+
+- [`cf3ae27`](https://github.com/opendigitaleducation/ode-react-ui/commit/cf3ae27da4a9bc6cf20ec4be8123ad82935c250d) Thanks [@ccreusat](https://github.com/ccreusat)! - fix treeview props
+
+- [`4917d7b`](https://github.com/opendigitaleducation/ode-react-ui/commit/4917d7b5db83ff9c658dab33ebfb80a114afbc61) Thanks [@david-cc](https://github.com/david-cc)! - refacto Select component and fix ModalHeader lint
+
+- [`6a9ad28`](https://github.com/opendigitaleducation/ode-react-ui/commit/6a9ad28e6228059c87eeceac8066f4c4f07c0782) Thanks [@ccreusat](https://github.com/ccreusat)! - update
+
+- [`c129bab`](https://github.com/opendigitaleducation/ode-react-ui/commit/c129babdd8fa3bb9496dd1b9d1f584172cc5c228) Thanks [@ccreusat](https://github.com/ccreusat)! - add subcomponents for stories components
+
+- [#157](https://github.com/opendigitaleducation/ode-react-ui/pull/157) [`6ca2301`](https://github.com/opendigitaleducation/ode-react-ui/commit/6ca2301f4eef82649a3febace7fc8e242e3a696a) Thanks [@david-cc](https://github.com/david-cc)! - add grow props to DropdownTrigger to stetch or not the button
+
+- [`2362cd6`](https://github.com/opendigitaleducation/ode-react-ui/commit/2362cd65f051cd29f6e31e8ca677569879fac6a0) Thanks [@ccreusat](https://github.com/ccreusat)! - update treeview component to handle sync navigation
+
+- [#104](https://github.com/opendigitaleducation/ode-react-ui/pull/104) [`0f6c166`](https://github.com/opendigitaleducation/ode-react-ui/commit/0f6c1667d9c6d0f714cb2f51141202ca10410b48) Thanks [@roolian](https://github.com/roolian)! - Add Dropdown component
+
+- [`6a86e54`](https://github.com/opendigitaleducation/ode-react-ui/commit/6a86e543450d88ea4adb8f674a716de924896100) Thanks [@ccreusat](https://github.com/ccreusat)! - fix object assign and storyname
+
+- [#140](https://github.com/opendigitaleducation/ode-react-ui/pull/140) [`383cafd`](https://github.com/opendigitaleducation/ode-react-ui/commit/383cafd23e6b63cb5dd18df543b901c247346d7b) Thanks [@roolian](https://github.com/roolian)! - Add new component Table Explorer
+
+- [#47](https://github.com/opendigitaleducation/ode-react-ui/pull/47) [`1f7f2db`](https://github.com/opendigitaleducation/ode-react-ui/commit/1f7f2db32d7f23388e106d7e55b6b3231e87a7dc) Thanks [@david-cc](https://github.com/david-cc)! - Fix Modal UI feedback
+
+- [#133](https://github.com/opendigitaleducation/ode-react-ui/pull/133) [`b6936cc`](https://github.com/opendigitaleducation/ode-react-ui/commit/b6936cc013213e0dd322ba470435f7d677767456) Thanks [@roolian](https://github.com/roolian)! - Add Stories : Checkbox, Radio, Select
+
+- [#130](https://github.com/opendigitaleducation/ode-react-ui/pull/130) [`af4078e`](https://github.com/opendigitaleducation/ode-react-ui/commit/af4078e6695b6d413506e5844c48417db1889e17) Thanks [@varmentier](https://github.com/varmentier)! - feat(core): #WB2-72, add integration component library
+
+- [#63](https://github.com/opendigitaleducation/ode-react-ui/pull/63) [`5f7e40b`](https://github.com/opendigitaleducation/ode-react-ui/commit/5f7e40beeef4e0f0234997a36d1f17caf0f5d436) Thanks [@roolian](https://github.com/roolian)! - Add Components Checkbox and Radio. Add Sample of modal for resource sharing.
+
+- [#53](https://github.com/opendigitaleducation/ode-react-ui/pull/53) [`528442a`](https://github.com/opendigitaleducation/ode-react-ui/commit/528442a35c3f6713030b6378fe3c059cbd21d5a0) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update avatar component, stories, and hooks
+
+- [`20f6bdb`](https://github.com/opendigitaleducation/ode-react-ui/commit/20f6bdb712375937247b7ab3366c844df4ff12a0) Thanks [@ccreusat](https://github.com/ccreusat)! - fix detect session for current language
+
+- [#106](https://github.com/opendigitaleducation/ode-react-ui/pull/106) [`ee92c8f`](https://github.com/opendigitaleducation/ode-react-ui/commit/ee92c8f270d0ce479b14727c7cfee9d0b21a11b5) Thanks [@roolian](https://github.com/roolian)! - Add EmptyScreen Component
+
+- [#87](https://github.com/opendigitaleducation/ode-react-ui/pull/87) [`1c10cf2`](https://github.com/opendigitaleducation/ode-react-ui/commit/1c10cf2bfc520d5080d9486068a0e589461dbd74) Thanks [@clementcreusat](https://github.com/clementcreusat)! - Fix style and accessibility warnings. Refactor TreeItem: extract events handler to dedicated hook
+
+- [#88](https://github.com/opendigitaleducation/ode-react-ui/pull/88) [`7523c11`](https://github.com/opendigitaleducation/ode-react-ui/commit/7523c111d611630fc685e1c1d82cbc4c878138a5) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add card component
+
+- [#151](https://github.com/opendigitaleducation/ode-react-ui/pull/151) [`71a3c67`](https://github.com/opendigitaleducation/ode-react-ui/commit/71a3c67df9f4becfc558ebb65386f5b91fbedf9f) Thanks [@varmentier](https://github.com/varmentier)! - fix(folder): #WB2-587, folder root selected default on app
+
+- [`e58254b`](https://github.com/opendigitaleducation/ode-react-ui/commit/e58254b8844e0058ff9a12d0442115165b4ee027) Thanks [@david-cc](https://github.com/david-cc)! - prevent body scrolling when modal is active
+
+- [`c79cedd`](https://github.com/opendigitaleducation/ode-react-ui/commit/c79cedd1e311b4030331b0f9c137e11fba45fba7) Thanks [@david-cc](https://github.com/david-cc)! - Add EmptyScreen component export
+
+- [`8786b28`](https://github.com/opendigitaleducation/ode-react-ui/commit/8786b28b756bdb825054baad13773d3f3943544a) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix error with useOdeBackend
+
+- [`981035f`](https://github.com/opendigitaleducation/ode-react-ui/commit/981035f0112d603de3d713b4735a4944f82ceb6c) Thanks [@david-cc](https://github.com/david-cc)! - Add disabled property to the SearchButton
+
+- [#90](https://github.com/opendigitaleducation/ode-react-ui/pull/90) [`42ed150`](https://github.com/opendigitaleducation/ode-react-ui/commit/42ed1509df6df6f4139dda611d45d760932d4c8e) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fixing styles card component
+
+- [`f2e7fc9`](https://github.com/opendigitaleducation/ode-react-ui/commit/f2e7fc9dab1eb7b25368bf562142f1cfca61f9bc) Thanks [@david-cc](https://github.com/david-cc)! - Fix modal types and add missing export components
+
+- [`5be0fae`](https://github.com/opendigitaleducation/ode-react-ui/commit/5be0fae9e3733bf31041f59d9fcdfe524ddfaa2c) Thanks [@david-cc](https://github.com/david-cc)! - fix lint issue on ModalHeader
+
+- [#154](https://github.com/opendigitaleducation/ode-react-ui/pull/154) [`a1be1c7`](https://github.com/opendigitaleducation/ode-react-ui/commit/a1be1c782dddb3b064f0c9467723bfbfd3ca03af) Thanks [@varmentier](https://github.com/varmentier)! - fix(card, treeView): #WB2-628, add class text-truncate and text-break to folder and treeItem.tsx
+
+- [#81](https://github.com/opendigitaleducation/ode-react-ui/pull/81) [`a2df441`](https://github.com/opendigitaleducation/ode-react-ui/commit/a2df441a470214d7dc8b55bb21d04569bdea1944) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update select component
+
+- [#114](https://github.com/opendigitaleducation/ode-react-ui/pull/114) [`3972498`](https://github.com/opendigitaleducation/ode-react-ui/commit/39724985c51254ba224f457d0db4a93ea100143d) Thanks [@varmentier](https://github.com/varmentier)! - add tooltip to card component
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`32b6063`](https://github.com/opendigitaleducation/ode-react-ui/commit/32b606307b3107dca65549d0e4bda971a885d2b6) Thanks [@clementcreusat](https://github.com/clementcreusat)! - refactor packages and configuration
+
+- [#108](https://github.com/opendigitaleducation/ode-react-ui/pull/108) [`cda10ff`](https://github.com/opendigitaleducation/ode-react-ui/commit/cda10ffde20169a82623c448a34017fb030d474e) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix search and icon component classname
+
+- [#134](https://github.com/opendigitaleducation/ode-react-ui/pull/134) [`f54b247`](https://github.com/opendigitaleducation/ode-react-ui/commit/f54b247449762b925c579ca074f0053694960fbd) Thanks [@varmentier](https://github.com/varmentier)! - feat(core): #WB2-481, add integration emptyScreen
+
+- [#110](https://github.com/opendigitaleducation/ode-react-ui/pull/110) [`ce0080c`](https://github.com/opendigitaleducation/ode-react-ui/commit/ce0080cd731c4627708b694c87994b35f156a9f9) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update docs and fix some components
+
+- [#107](https://github.com/opendigitaleducation/ode-react-ui/pull/107) [`c57520a`](https://github.com/opendigitaleducation/ode-react-ui/commit/c57520aa198cb1c485c05260025b3a788be2befd) Thanks [@clementcreusat](https://github.com/clementcreusat)! - custom header component and add nav subcomponents, useHeader hook
+
+- [#80](https://github.com/opendigitaleducation/ode-react-ui/pull/80) [`7e62071`](https://github.com/opendigitaleducation/ode-react-ui/commit/7e6207133653a8b7e6de1c4b7bedc3829db4e4a9) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix issue rendering dsplayname for compound component
+
+- [#162](https://github.com/opendigitaleducation/ode-react-ui/pull/162) [`f33b238`](https://github.com/opendigitaleducation/ode-react-ui/commit/f33b238d22921daeb02886ed7e46688f1ccced2c) Thanks [@david-cc](https://github.com/david-cc)! - add Modal default focus param
+
+- [`23c109c`](https://github.com/opendigitaleducation/ode-react-ui/commit/23c109c96def72c0878e89d6d3d502bfbaa6d5e5) Thanks [@david-cc](https://github.com/david-cc)! - fix Modal storybook errors
+
+- Updated dependencies [[`e5d1f5b`](https://github.com/opendigitaleducation/ode-react-ui/commit/e5d1f5b0fda37b99cae092c4afb3fc3de6fd390b), [`5a8ef73`](https://github.com/opendigitaleducation/ode-react-ui/commit/5a8ef737806342cc000c1e617a04de0703a8f80f), [`3770f72`](https://github.com/opendigitaleducation/ode-react-ui/commit/3770f723544e24b86d78cbe6d37dfd008a7c2c1b), [`8e3b3e0`](https://github.com/opendigitaleducation/ode-react-ui/commit/8e3b3e079c057f566bc503332999bb6b80cf8d9c), [`1ff0cbd`](https://github.com/opendigitaleducation/ode-react-ui/commit/1ff0cbd2ca2fa02e728fef20d40af87b87def3a7), [`bfafcd7`](https://github.com/opendigitaleducation/ode-react-ui/commit/bfafcd7740bdeec52986f4e296a83bad48877f81), [`f3954b5`](https://github.com/opendigitaleducation/ode-react-ui/commit/f3954b5b475d9c790a00b49b86cea8594971a970), [`8e3b3e0`](https://github.com/opendigitaleducation/ode-react-ui/commit/8e3b3e079c057f566bc503332999bb6b80cf8d9c), [`90c1c4d`](https://github.com/opendigitaleducation/ode-react-ui/commit/90c1c4da0eb2234765acb804584b5c43e7fa3de3), [`647de18`](https://github.com/opendigitaleducation/ode-react-ui/commit/647de181e65d71cbea2b7cf80b829a61cfbad435), [`7013af3`](https://github.com/opendigitaleducation/ode-react-ui/commit/7013af3ccb82a5ff61f2a141f640bb1aa8a85a9e), [`9df1aa8`](https://github.com/opendigitaleducation/ode-react-ui/commit/9df1aa8739c418deb5bd530b35071813a328f6aa), [`48e1614`](https://github.com/opendigitaleducation/ode-react-ui/commit/48e1614db440cf3caf59bef42a92ac86f3ab4b2e), [`e504c0c`](https://github.com/opendigitaleducation/ode-react-ui/commit/e504c0c9e129d6c3311a53cd188d5b6d48404256), [`040b62e`](https://github.com/opendigitaleducation/ode-react-ui/commit/040b62effd0afe2a8654661af2fb8730fcaaf944), [`85020f6`](https://github.com/opendigitaleducation/ode-react-ui/commit/85020f6c7096e67ab0bdf6328ea4f053395cabad), [`e3fb4a6`](https://github.com/opendigitaleducation/ode-react-ui/commit/e3fb4a6fc0945a31252a4ff7027c6cb3ca4acdca), [`5ccbf45`](https://github.com/opendigitaleducation/ode-react-ui/commit/5ccbf4516992ec7bab747274558559448cb1c2f8), [`302e46c`](https://github.com/opendigitaleducation/ode-react-ui/commit/302e46c8b475dcf4270b071e26f814dc23b01a84), [`b983d7d`](https://github.com/opendigitaleducation/ode-react-ui/commit/b983d7dceee18a4291bcf8b546b4718b74660ed2), [`6a9ad28`](https://github.com/opendigitaleducation/ode-react-ui/commit/6a9ad28e6228059c87eeceac8066f4c4f07c0782), [`c3fd1ac`](https://github.com/opendigitaleducation/ode-react-ui/commit/c3fd1acbb2d33ccb690c368af5c56cea66a9a4b6), [`5fc130b`](https://github.com/opendigitaleducation/ode-react-ui/commit/5fc130b65af8e3f33377d55cb0800d10ba683db4), [`783714c`](https://github.com/opendigitaleducation/ode-react-ui/commit/783714c5cb2207ee504a7d2a36a3ed0643c93a19), [`528442a`](https://github.com/opendigitaleducation/ode-react-ui/commit/528442a35c3f6713030b6378fe3c059cbd21d5a0), [`07bc84d`](https://github.com/opendigitaleducation/ode-react-ui/commit/07bc84de53dad7f7bd6f1e582d2a37f9cf9b4a45), [`8786b28`](https://github.com/opendigitaleducation/ode-react-ui/commit/8786b28b756bdb825054baad13773d3f3943544a), [`32b6063`](https://github.com/opendigitaleducation/ode-react-ui/commit/32b606307b3107dca65549d0e4bda971a885d2b6), [`c84c39a`](https://github.com/opendigitaleducation/ode-react-ui/commit/c84c39a3f006f64ee3d17438db2d8244e598ad01), [`676336a`](https://github.com/opendigitaleducation/ode-react-ui/commit/676336aa330bd8d72a712da4d70c9000e9025811), [`63258da`](https://github.com/opendigitaleducation/ode-react-ui/commit/63258daed0db9e885be99eccd90458a19f62c1c4), [`ce0080c`](https://github.com/opendigitaleducation/ode-react-ui/commit/ce0080cd731c4627708b694c87994b35f156a9f9), [`c57520a`](https://github.com/opendigitaleducation/ode-react-ui/commit/c57520aa198cb1c485c05260025b3a788be2befd)]:
+  - @ode-react-ui/hooks@1.0.7
+  - @ode-react-ui/icons@1.0.7
+
 ## 1.0.7-dev.63
 
 ### Patch Changes
