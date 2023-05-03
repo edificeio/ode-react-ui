@@ -1,5 +1,23 @@
 # @ode-react-ui/icons
 
+## 1.0.7
+
+### Patch Changes
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`5a8ef73`](https://github.com/opendigitaleducation/ode-react-ui/commit/5a8ef737806342cc000c1e617a04de0703a8f80f) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update AppCard component, add icon files
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`bfafcd7`](https://github.com/opendigitaleducation/ode-react-ui/commit/bfafcd7740bdeec52986f4e296a83bad48877f81) Thanks [@clementcreusat](https://github.com/clementcreusat)! - canary version
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`48e1614`](https://github.com/opendigitaleducation/ode-react-ui/commit/48e1614db440cf3caf59bef42a92ac86f3ab4b2e) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update packages
+
+- [`e3fb4a6`](https://github.com/opendigitaleducation/ode-react-ui/commit/e3fb4a6fc0945a31252a4ff7027c6cb3ca4acdca) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update packages
+
+- [`8786b28`](https://github.com/opendigitaleducation/ode-react-ui/commit/8786b28b756bdb825054baad13773d3f3943544a) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix error with useOdeBackend
+
+- [#77](https://github.com/opendigitaleducation/ode-react-ui/pull/77) [`676336a`](https://github.com/opendigitaleducation/ode-react-ui/commit/676336aa330bd8d72a712da4d70c9000e9025811) Thanks [@clementcreusat](https://github.com/clementcreusat)! - rename icons
+
+- [#69](https://github.com/opendigitaleducation/ode-react-ui/pull/69) [`63258da`](https://github.com/opendigitaleducation/ode-react-ui/commit/63258daed0db9e885be99eccd90458a19f62c1c4) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add bookmark icon
+
 ## 1.0.7-dev.50
 
 ### Patch Changes

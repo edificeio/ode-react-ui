@@ -1,5 +1,43 @@
 # @ode-react-ui/advanced
 
+## 1.0.7
+
+### Patch Changes
+
+- [`64163a1`](https://github.com/opendigitaleducation/ode-react-ui/commit/64163a148b5010fb375fc5b14991a3177029d7f4) Thanks [@ccreusat](https://github.com/ccreusat)! - add timeline link
+
+- [`1f75ae1`](https://github.com/opendigitaleducation/ode-react-ui/commit/1f75ae168fd5dc315d55ad796d673645c26e4f36) Thanks [@ccreusat](https://github.com/ccreusat)! - fix timeline link and count messages
+
+- [#158](https://github.com/opendigitaleducation/ode-react-ui/pull/158) [`7763a2c`](https://github.com/opendigitaleducation/ode-react-ui/commit/7763a2c8b817306d3b0300a01a18135321ed5119) Thanks [@varmentier](https://github.com/varmentier)! - fix(advanced): #WB2-613, fix url header appli, ma classe
+
+- [`9ee1cc9`](https://github.com/opendigitaleducation/ode-react-ui/commit/9ee1cc964ec12009073911c6e5be6c540fc7a9c2) Thanks [@ccreusat](https://github.com/ccreusat)! - fix header logout and add types multi components
+
+- [`f3954b5`](https://github.com/opendigitaleducation/ode-react-ui/commit/f3954b5b475d9c790a00b49b86cea8594971a970) Thanks [@ccreusat](https://github.com/ccreusat)! - fix duplicate bookmarked from api call
+
+- [#137](https://github.com/opendigitaleducation/ode-react-ui/pull/137) [`e504c0c`](https://github.com/opendigitaleducation/ode-react-ui/commit/e504c0c9e129d6c3311a53cd188d5b6d48404256) Thanks [@clementcreusat](https://github.com/clementcreusat)! - react-spring instead of framer and refacto odeclientprovider
+
+- [#160](https://github.com/opendigitaleducation/ode-react-ui/pull/160) [`00a4d5d`](https://github.com/opendigitaleducation/ode-react-ui/commit/00a4d5d152c4b1f0036fcb925f5012af659ca2ec) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update modal component and add help component
+
+- [`b321906`](https://github.com/opendigitaleducation/ode-react-ui/commit/b32190654c4be3adbc4c714c37418c38b98dfac5) Thanks [@ccreusat](https://github.com/ccreusat)! - fix issues header
+
+- [`e3fb4a6`](https://github.com/opendigitaleducation/ode-react-ui/commit/e3fb4a6fc0945a31252a4ff7027c6cb3ca4acdca) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update packages
+
+- [`489ac36`](https://github.com/opendigitaleducation/ode-react-ui/commit/489ac363ba7eed3d1248002289ca72aabb6b0c70) Thanks [@ccreusat](https://github.com/ccreusat)! - remove console log
+
+- [#112](https://github.com/opendigitaleducation/ode-react-ui/pull/112) [`8e50a10`](https://github.com/opendigitaleducation/ode-react-ui/commit/8e50a10c72024cc9f0537af0350898f6242ae706) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix header conversation & zimbra link, useHeader hook
+
+- [#151](https://github.com/opendigitaleducation/ode-react-ui/pull/151) [`71a3c67`](https://github.com/opendigitaleducation/ode-react-ui/commit/71a3c67df9f4becfc558ebb65386f5b91fbedf9f) Thanks [@varmentier](https://github.com/varmentier)! - fix(folder): #WB2-587, folder root selected default on app
+
+- [`8786b28`](https://github.com/opendigitaleducation/ode-react-ui/commit/8786b28b756bdb825054baad13773d3f3943544a) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix error with useOdeBackend
+
+- [`f997d57`](https://github.com/opendigitaleducation/ode-react-ui/commit/f997d575a6c964ce7afacdefea1afcd262942ec8) Thanks [@clementcreusat](https://github.com/clementcreusat)! - add visualizer and fix header component
+
+- [#154](https://github.com/opendigitaleducation/ode-react-ui/pull/154) [`a1be1c7`](https://github.com/opendigitaleducation/ode-react-ui/commit/a1be1c782dddb3b064f0c9467723bfbfd3ca03af) Thanks [@varmentier](https://github.com/varmentier)! - fix(card, treeView): #WB2-628, add class text-truncate and text-break to folder and treeItem.tsx
+
+- [`b0a71f2`](https://github.com/opendigitaleducation/ode-react-ui/commit/b0a71f29f2754b116525fd75873862c75a5ddc88) Thanks [@ccreusat](https://github.com/ccreusat)! - add layout component
+
+- [#107](https://github.com/opendigitaleducation/ode-react-ui/pull/107) [`c57520a`](https://github.com/opendigitaleducation/ode-react-ui/commit/c57520aa198cb1c485c05260025b3a788be2befd) Thanks [@clementcreusat](https://github.com/clementcreusat)! - custom header component and add nav subcomponents, useHeader hook
+
 ## 1.0.7-dev.64
 
 ### Patch Changes
