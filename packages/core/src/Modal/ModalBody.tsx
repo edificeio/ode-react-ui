@@ -4,6 +4,17 @@ import clsx from "clsx";
 
 import { useModalContext } from "./ModalContext";
 
+export interface ModalBodyProps {
+  /**
+   *Children
+   */
+  children: ReactNode;
+  /**
+   * Optional class for styling purpose
+   */
+  className?: string | null;
+}
+
 /**
  * Modal Body
  */
@@ -23,14 +34,3 @@ const ModalBody = (props: ModalBodyProps) => {
 ModalBody.displayName = "Modal.Body";
 
 export default ModalBody;
-
-export interface ModalBodyProps {
-  /**
-   *Children
-   */
-  children: ReactNode;
-  /**
-   * Optional class for styling purpose
-   */
-  className?: string | null;
-}

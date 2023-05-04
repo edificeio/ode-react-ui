@@ -5,16 +5,13 @@
 
 ## Getting Started
 
+We follow [WAI ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/) rules and [Bootstrap 5](https://getbootstrap.com/docs/5.0/components/accordion/) guidelines when making our components
+
 ### Build
 
 ```bash
 yarn build
 ```
-
-Use Vite [Library mode](https://vitejs.dev/guide/build.html#library-mode).
-
-- Will generate a `dist` folder with `index` files (ESM + CJS)
-- Will generate `*.d.ts` for every component and index files
 
 ### Lint
 
@@ -22,11 +19,11 @@ Use Vite [Library mode](https://vitejs.dev/guide/build.html#library-mode).
 yarn lint
 ```
 
+If `yarn lint` shows issues, run the next command to fix them.
+
 ```bash
 yarn fix
 ```
-
-If `yarn lint` shows issues, run this command to fix them.
 
 ### Prettier
 
@@ -42,7 +39,7 @@ This command starts `format:check` + `format:write`
 
 - Folder name always in PascalCase: `TreeView`
 - Component file in PascalCase: `TreeView.tsx`
-- Component types & interface: `TreeViewProps.tsx`
+- Export types & interfaces inside Component file
 - Stories file in PascalCase + `*.stories.tsx` : `TreeView.stories.tsx`
 
 ```bash
@@ -50,39 +47,20 @@ src
   -- ComponentFolder
     -- Component.tsx
     -- Component.stories.tsx
-    -- ComponentProps.tsx
-    -- index.tsx
+    -- index.ts
 ```
 
-- Import the Component inside his own `index` file: `index.tsx`
+- Re-export the Component inside his own `index` file: `index.tsx`
+- Export everything if Component has types & interfaces
 
 ```jsx
 export { default as Component } from "./Component";
+export * from "./Component";
 ```
 
 ### Component Guideline
 
-Always add JSDoc syntax to Component file linking to :
-
-- Storybook Doc
-- Github Source file
-- WAI-ARIA Component page if exists
-
-```jsx
-/**
- * TreeView Component
- *
- * @see Docs     Storybook Link
- * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/master/packages/core/src/TreeView/TreeView.tsx
- * @see WAI-ARIA https://www.w3.org/WAI/ARIA/apg/patterns/treeview/
- */
-```
-
-### Component Syntax
-
-#### Component description
-
-- Always document basic guideline of Component. Used by Storybook to generate documentation.
+- Always document basic guideline of Component with JSDoc format. Used by Storybook to generate documentation.
 
 ```jsx
 /**
@@ -90,7 +68,7 @@ Always add JSDoc syntax to Component file linking to :
  */
 ```
 
-#### Interface description
+### Interface description
 
 - Always document typescript types and interface with JSDoc syntax. Used by Storybook to generate documentation.
 
@@ -115,17 +93,12 @@ export interface RenderTree {
 ### Index file inside `src` folder
 
 - Entry point of this React Library.
-- Import your component inside `index.tsx` file.
+- Import your component inside `index.ts` file.
 
 ```jsx
-// Components
-export { Button } from "./Button";
+export * from "./Button";
 ```
 
 ## Dev
 
 You can build your component using `Storybook`. See [README](../../apps/docs/README.md)
-
-## Components Roadmap
-
-[Roadmap](ROADMAP.md)

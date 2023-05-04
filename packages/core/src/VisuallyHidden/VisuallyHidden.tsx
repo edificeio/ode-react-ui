@@ -11,4 +11,5 @@ const VisuallyHidden = forwardRef(
 );
 
 VisuallyHidden.displayName = "VisuallyHidden";
+
 export default VisuallyHidden;

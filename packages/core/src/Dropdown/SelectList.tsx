@@ -1,15 +1,46 @@
-/**
- * SelectList Component
- *
- * @see Docs     https://ode-react-ui.vercel.app/?path=/docs/components-core-selectList--base
- * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/Dropdown/SelectList.tsx
- */
-
 import React, { useEffect, useState } from "react";
 
 import clsx from "clsx";
 
-import { OptionListItemType, SelectListProps } from "./SelectListProps";
+export interface OptionListItemType {
+  /**
+   * Value
+   */
+  value: string | number;
+  /**
+   * Label
+   */
+  label: string;
+  /**
+   * Add an icon
+   */
+  icon?: any;
+}
+
+export interface SelectListProps {
+  /**
+   * Options list
+   */
+  options: OptionListItemType[];
+  /**
+   * State initializing select state
+   */
+  model?: Array<string | number>;
+  /**
+   * Synchronisation of model value
+   */
+  onChange?: (model: Array<string | number>) => void;
+  /**
+   * Option to hide checkbox
+   */
+  hideCheckbox?: boolean;
+  /**
+   * Option to manage a model with only one element at a time.
+   */
+  isMonoSelection?: boolean;
+}
+
+export type SelectListType = React.ReactElement<SelectListProps>;
 
 const SelectList = ({
   options,
@@ -87,5 +118,7 @@ const SelectList = ({
     </>
   );
 };
+
 SelectList.displayName = "SelectList";
+
 export default SelectList;

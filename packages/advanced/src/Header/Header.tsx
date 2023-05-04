@@ -26,16 +26,21 @@ import {
 import clsx from "clsx";
 
 import { Help } from "../Help";
-import { useHelp } from "../Help/useHelp";
+import { useHelp } from "../Help/hooks/useHelp";
 import { Badge } from "./Badge";
-import { HeaderProps } from "./interface";
+import { useHeader } from "./hooks/useHeader";
 import { Navbar } from "./Navbar";
 import { NavBarNav } from "./NavbarNav";
 import { NavItem } from "./NavItem";
 import { NavLink } from "./NavLink";
 import { NavSearch } from "./NavSearch";
-import { useHeader } from "./useHeader";
 import { WidgetAppsBody, WidgetAppsFooter } from "./WidgetApps";
+
+export interface HeaderProps {
+  is1d?: boolean;
+  src: string;
+  configurationFramework: any;
+}
 
 export default function Header({
   is1d = false,

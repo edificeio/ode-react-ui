@@ -1,17 +1,53 @@
 import { createContext, type ReactNode, useMemo, useContext } from "react";
 
 import { useOdeBackend } from "@ode-react-ui/hooks";
-
 import {
-  ContextProps,
-  FrameworkProps,
-  OdeProviderParams,
-} from "./OdeClientProps";
+  App,
+  IConfigurationFramework,
+  IExplorerFramework,
+  IHttp,
+  NotifyFrameworkFactory,
+  ISessionFramework,
+  IWebApp,
+  ISession,
+  ITheme,
+} from "ode-ts-client";
+
+export interface OdeProviderParams {
+  alternativeApp?: boolean;
+  app: App;
+  cdnDomain?: string | null;
+  version?: string | null;
+}
+
+export interface FrameworkProps {
+  configurationFramework: IConfigurationFramework;
+  explorerFramework?: IExplorerFramework;
+  http: IHttp;
+  notifyFramework: NotifyFrameworkFactory;
+  sessionFramework: ISessionFramework;
+}
 
 export interface OdeClientProps {
   children: ReactNode;
   framework: FrameworkProps;
   params: OdeProviderParams;
+}
+
+export interface ContextProps {
+  app: IWebApp;
+  appCode: string;
+  basePath: string;
+  configurationFramework: IConfigurationFramework;
+  currentLanguage: string;
+  getBootstrapTheme: () => string;
+  http: IHttp;
+  i18n: (key: string, params?: Record<string, any> | undefined) => string;
+  is1d: boolean;
+  isAppLoading: boolean;
+  params: OdeProviderParams;
+  session: ISession;
+  theme: ITheme;
 }
 
 const Context = createContext<ContextProps | null>(null!);
@@ -30,7 +66,7 @@ export default function OdeClientProvider({
     session,
     theme,
     getBootstrapTheme,
-    isLoading,
+    isLoading: isAppLoading,
   } = useOdeBackend({
     params,
     framework,
@@ -54,8 +90,9 @@ export default function OdeClientProvider({
       theme,
       getBootstrapTheme,
       configurationFramework,
+      isAppLoading,
     }),
-    [isLoading],
+    [isAppLoading],
   );
 
   return <Context.Provider value={values}>{children}</Context.Provider>;

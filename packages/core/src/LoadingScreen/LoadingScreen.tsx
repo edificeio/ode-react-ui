@@ -1,10 +1,3 @@
-/**
- * LoadingScreen Component  Component
- *
- * @see Docs     https://ode-react-ui.vercel.app/?path=/docs/components-core-alert--base
- * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/LoadingScreen/LoadingScreen.tsx
- */
-
 import { forwardRef, Ref } from "react";
 
 import clsx from "clsx";

@@ -1,16 +1,27 @@
-/**
- * Loading  Component
- *
- * @see Docs     https://ode-react-ui.vercel.app/?path=/story/components-core-loading--base
- * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/Loading/Loading.tsx
- */
-
-import { forwardRef, Ref } from "react";
+import { forwardRef, ReactNode, Ref } from "react";
 
 import { Loader } from "@ode-react-ui/icons";
 import clsx from "clsx";
 
-import { LoadingProps } from "./LoadingProps";
+export type LoadingPosition = "left" | "right" | undefined;
+export type LoadingIcon = JSX.Element | undefined;
+
+export interface LoadingProps {
+  /**
+   * Is it loading ?
+   */
+  isLoading: boolean;
+  /**
+   * Override default loading icon
+   */
+  loadingIcon?: LoadingIcon;
+  /**
+   * Default position to left. When using with another component, position can be switched
+   */
+  loadingPosition?: LoadingPosition;
+  /** When using with another component, we can pass a children */
+  children?: ReactNode;
+}
 
 /**
  * Inform user about loading status

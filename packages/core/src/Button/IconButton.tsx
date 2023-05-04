@@ -9,8 +9,7 @@ import { forwardRef, ReactNode, Ref } from "react";
 
 import clsx from "clsx";
 
-import Button from "./Button";
-import { ButtonProps, ButtonRef } from "./ButtonProps";
+import Button, { ButtonProps, ButtonRef } from "./Button";
 
 type OmittedProps = "children" | "leftIcon" | "rightIcon";
 

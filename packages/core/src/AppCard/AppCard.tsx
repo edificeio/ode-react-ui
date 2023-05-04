@@ -1,23 +1,51 @@
-/**
- * AppCard Component
- *
- * @see Docs     https://ode-react-ui.vercel.app/?path=/docs/components-core-appcard--base
- * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/AppCard/AppCard.tsx
- */
-
-import { forwardRef, useMemo } from "react";
+import { ReactNode, forwardRef, useMemo } from "react";
 
 import { useOdeIcons } from "@ode-react-ui/hooks";
 import clsx from "clsx";
+import { IWebApp } from "ode-ts-client";
 
-import { Context } from "./AppCardContext";
+import { HeadingProps } from "../Heading";
 import {
-  AppCardProps,
-  AppCardRef,
-  DefaultElementType,
-  PolymorphicAppCard,
-} from "./AppCardProps";
+  PolymorphicComponentPropsWithRef,
+  PolymorphicRef,
+} from "../utils/create-polymorphic-component";
+import { Context } from "./AppCardContext";
 import AppName from "./AppName";
+
+type AppHeadingProps = Pick<HeadingProps, "level" | "headingStyle">;
+
+export type BaseProps = {
+  /**
+   * Pass all information about an app
+   */
+  app: IWebApp;
+  /**
+   * Use as title element (h1, h2)
+   */
+  isHeading?: boolean;
+  /**
+   * Passing compounds components
+   */
+  children?: ReactNode;
+  /**
+   * Optional class for styling purpose
+   */
+  className?: string;
+} & AppHeadingProps;
+
+export type AppCardProps<T extends React.ElementType> =
+  PolymorphicComponentPropsWithRef<T, BaseProps>;
+
+const defaultElement = "div";
+export type DefaultElementType = typeof defaultElement;
+
+export type AppCardRef<T extends React.ElementType> = PolymorphicRef<T>;
+
+export type PolymorphicAppCard = <
+  T extends React.ElementType = DefaultElementType,
+>(
+  props: AppCardProps<T>,
+) => React.ReactElement | null;
 
 /**
  * AppCard Component displays icon and name of application

@@ -1,15 +1,28 @@
-/**
- * Alert  Component
- *
- * @see Docs     https://ode-react-ui.vercel.app/?path=/docs/components-core-emptyscreen--base
- * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/EmptyScreen/EmptyScreen.tsx
- * @see WAI-ARIA https://www.w3.org/WAI/ARIA/apg/patterns/alert/
- */
-
 import { Heading } from "../Heading";
-import { EmptyScreenProps } from "./EmptyScreenProps";
 
-export const EmptyScreen = ({
+export interface EmptyScreenProps {
+  /**
+   * Image source
+   */
+  imageSrc: string;
+
+  /**
+   * Image alt
+   */
+  imageAlt?: string;
+
+  /**
+   * Title
+   */
+  title?: string;
+
+  /**
+   * Text to display
+   */
+  text?: string;
+}
+
+const EmptyScreen = ({
   imageSrc,
   imageAlt = "",
   title,

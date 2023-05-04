@@ -1,17 +1,21 @@
-/**
- * Dropdown  Component
- *
- * @see Docs     https://ode-react-ui.vercel.app/?path=/docs/components-core-dropdown--base
- * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/Dropdown/Dropdown.tsx
- */
-
-import React, { useEffect, useState } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 
 import { animated, useTransition } from "@react-spring/web";
 import clsx from "clsx";
 import { usePopper } from "react-popper";
 
-import { DropdownProps } from "./DropdownProps";
+import { DropdownTriggerProps } from "./DropdownTrigger";
+
+export interface DropdownProps {
+  /**
+   * Menu to display in dropdown
+   */
+  content: React.ReactNode;
+  /**
+   * Element to be wrapped as Tooltip trigger
+   */
+  trigger: ReactElement<DropdownTriggerProps>;
+}
 
 const Dropdown = ({ trigger, content }: DropdownProps) => {
   const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(

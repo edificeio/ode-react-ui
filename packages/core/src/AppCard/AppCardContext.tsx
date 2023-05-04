@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 
-import { HeadingElement } from "../Heading/HeadingProps";
+import { HeadingElement } from "../Heading";
 
 interface ContextProps {
   code: string;

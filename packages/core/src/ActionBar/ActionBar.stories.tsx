@@ -1,9 +1,7 @@
-import { useState } from "react";
-
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Button } from "../Button";
-import ActionBar from "./ActionBar";
+import ActionBar, { ActionBarProps } from "./ActionBar";
 
 export default {
   title: "Components/ActionBar",
@@ -12,7 +10,7 @@ export default {
 } as ComponentMeta<typeof ActionBar>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof ActionBar> = (args: any) => {
+const Template: ComponentStory<typeof ActionBar> = (args: ActionBarProps) => {
   return (
     <>
       <ActionBar {...args} />
