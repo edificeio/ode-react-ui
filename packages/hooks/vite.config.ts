@@ -1,23 +1,32 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
-import { visualizer } from "rollup-plugin-visualizer";
 import pkg from "./package.json";
+import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
   esbuild: {
     minifyIdentifiers: false,
   },
   build: {
-    lib: {
-      entry: "src/index.ts",
-      formats: ["es", "cjs"],
-      fileName: (format) => (format === "es" ? "index.mjs" : "index.cjs"),
-    },
     rollupOptions: {
+      preserveEntrySignatures: "strict",
+      input: "src/index.ts",
       external: [
-        ...Object.keys(pkg.dependencies),
         ...Object.keys(pkg.peerDependencies),
+        "@ode-react-ui/icons/nav",
+      ],
+      output: [
+        {
+          dir: "dist",
+          format: "esm",
+          preserveModules: true,
+          preserveModulesRoot: "src",
+          sourcemap: true,
+          entryFileNames: ({ name: fileName }) => {
+            return `${fileName}.js`;
+          },
+        },
       ],
     },
   },
@@ -26,9 +35,6 @@ export default defineConfig({
       jsxRuntime: "classic",
     }),
     visualizer(),
-    dts({
-      insertTypesEntry: false,
-      outputDir: "dist",
-    }),
+    dts(),
   ],
 });

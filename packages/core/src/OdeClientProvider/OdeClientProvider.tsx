@@ -21,7 +21,7 @@ export default function OdeClientProvider({
   framework,
   params,
 }: OdeClientProps) {
-  const { http } = framework;
+  const { http, configurationFramework } = framework;
 
   const {
     app,
@@ -53,6 +53,7 @@ export default function OdeClientProvider({
       session,
       theme,
       getBootstrapTheme,
+      configurationFramework,
     }),
     [isLoading],
   );
