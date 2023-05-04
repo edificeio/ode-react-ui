@@ -1,5 +1,20 @@
 # @ode-react-ui/advanced
 
+## 2.0.0-dev.1
+
+### Major Changes
+
+- [#167](https://github.com/opendigitaleducation/ode-react-ui/pull/167) [`373c17d`](https://github.com/opendigitaleducation/ode-react-ui/commit/373c17d2c489a5d86913a7bbe17824dd55ddc408) Thanks [@clementcreusat](https://github.com/clementcreusat)! - working tree shaking, better peer deps calls
+
+### Patch Changes
+
+- [#167](https://github.com/opendigitaleducation/ode-react-ui/pull/167) [`02b03ca`](https://github.com/opendigitaleducation/ode-react-ui/commit/02b03ca9e3da0bae7970d777871a133c02c9df2f) Thanks [@clementcreusat](https://github.com/clementcreusat)! - clean files, move ts props files inside components, rename unnecessary imports
+
+- Updated dependencies [[`02b03ca`](https://github.com/opendigitaleducation/ode-react-ui/commit/02b03ca9e3da0bae7970d777871a133c02c9df2f), [`373c17d`](https://github.com/opendigitaleducation/ode-react-ui/commit/373c17d2c489a5d86913a7bbe17824dd55ddc408)]:
+  - @ode-react-ui/hooks@2.0.0-dev.1
+  - @ode-react-ui/icons@2.0.0-dev.1
+  - @ode-react-ui/core@2.0.0-dev.1
+
 ## 1.0.8-dev.0
 
 ### Patch Changes
