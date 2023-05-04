@@ -1,5 +1,11 @@
 # @ode-react-ui/icons
 
+## 2.0.0-dev.2
+
+### Patch Changes
+
+- [`1a49bfa`](https://github.com/opendigitaleducation/ode-react-ui/commit/1a49bfa2f4379dc3e0cd4035962f3be5f1d13bce) Thanks [@ccreusat](https://github.com/ccreusat)! - update vite deps
+
 ## 2.0.0-dev.1
 
 ### Major Changes
