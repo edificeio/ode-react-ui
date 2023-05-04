@@ -9,15 +9,25 @@ export default defineConfig({
     minifyIdentifiers: false,
   },
   build: {
-    lib: {
-      entry: "src/index.ts",
-      formats: ["es", "cjs"],
-      fileName: (format) => (format === "es" ? "index.mjs" : "index.cjs"),
-    },
     rollupOptions: {
+      preserveEntrySignatures: "strict",
+      input: "src/index.ts",
       external: [
         ...Object.keys(pkg.dependencies),
         ...Object.keys(pkg.peerDependencies),
+        "@ode-react-ui/icons/nav",
+      ],
+      output: [
+        {
+          dir: "dist",
+          format: "esm",
+          preserveModules: true,
+          preserveModulesRoot: "src",
+          sourcemap: true,
+          entryFileNames: ({ name: fileName }) => {
+            return `${fileName}.js`;
+          },
+        },
       ],
     },
   },
@@ -26,9 +36,6 @@ export default defineConfig({
       jsxRuntime: "classic",
     }),
     visualizer(),
-    dts({
-      insertTypesEntry: false,
-      outputDir: "dist",
-    }),
+    dts(),
   ],
 });

@@ -2,19 +2,12 @@ import { type ReactNode } from "react";
 
 import { Main, useOdeClient } from "@ode-react-ui/core";
 import clsx from "clsx";
-import { IConfigurationFramework } from "ode-ts-client";
 import { Toaster } from "react-hot-toast";
 
 import { Header } from "../Header";
 
-const Layout = ({
-  children,
-  configurationFramework,
-}: {
-  children: ReactNode;
-  configurationFramework: IConfigurationFramework;
-}) => {
-  const { is1d, basePath } = useOdeClient();
+const Layout = ({ children }: { children: ReactNode }) => {
+  const { is1d, basePath, configurationFramework } = useOdeClient();
   return (
     <>
       <Header
