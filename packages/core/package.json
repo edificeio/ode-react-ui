@@ -50,7 +50,7 @@
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.10",
-    "@vitejs/plugin-react": "3.0.1",
+    "@vitejs/plugin-react": "4.0.0",
     "clsx": "1.2.1",
     "concurrently": "7.6.0",
     "ode-ts-client": "feat-explorer",
@@ -59,8 +59,8 @@
     "react-hot-toast": "2.4.1",
     "react-popper": "2.3.0",
     "swiper": "9.0.4",
-    "vite": "4.0.4",
-    "vite-plugin-dts": "1.7.1"
+    "vite": "4.3.4",
+    "vite-plugin-dts": "2.3.0"
   },
   "peerDependencies": {
     "@ode-react-ui/hooks": "2.0.0-dev.1",
