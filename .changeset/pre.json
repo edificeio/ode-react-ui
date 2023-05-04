@@ -9,6 +9,8 @@
     "@ode-react-ui/icons": "1.0.7"
   },
   "changesets": [
-    "big-houses-remember"
+    "big-houses-remember",
+    "clever-sloths-speak",
+    "cuddly-dogs-obey"
   ]
 }
