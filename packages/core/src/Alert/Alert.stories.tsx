@@ -3,8 +3,7 @@ import { useCallback, useRef, useState } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Button } from "../Button";
-import Alert from "./Alert";
-import { AlertRef } from "./AlertProps";
+import Alert, { AlertProps, AlertRef } from "./Alert";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -44,7 +43,7 @@ export default {
 } as ComponentMeta<typeof Alert>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Alert> = (args: any) => {
+const Template: ComponentStory<typeof Alert> = (args: AlertProps) => {
   const ref = useRef<AlertRef>(null);
   const [showButton, setShowButtonState] = useState(false);
 

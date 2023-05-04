@@ -1,5 +1,5 @@
 import { ComponentMeta } from "@storybook/react";
-import Library from "./Library";
+import Library, { LibraryProps } from "./Library";
 
 export default {
   title: "Components/Library",
@@ -20,7 +20,7 @@ export default {
   },
 } as ComponentMeta<typeof Library>;
 
-export const LibraryOne = (args: any) => {
+export const LibraryOne = (args: LibraryProps) => {
   return (
     <>
       <div
@@ -35,7 +35,7 @@ export const LibraryOne = (args: any) => {
   );
 };
 
-export const LibraryNeo = (args: any) => {
+export const LibraryNeo = (args: LibraryProps) => {
   return (
     <>
       <div

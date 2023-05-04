@@ -2,8 +2,7 @@ import { useState } from "react";
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import SelectList from "./SelectList";
-import { SelectListProps } from "./SelectListProps";
+import SelectList, { SelectListProps } from "./SelectList";
 import { Audio, Block, Lock } from "@ode-react-ui/icons";
 
 export default {

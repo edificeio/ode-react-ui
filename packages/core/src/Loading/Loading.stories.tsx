@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import Loading from "./Loading";
+import Loading, { LoadingProps } from "./Loading";
 
 import { Hourglass } from "@ode-react-ui/icons";
 
@@ -22,7 +22,7 @@ export default {
 } as ComponentMeta<typeof Loading>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Loading> = (args) => (
+const Template: ComponentStory<typeof Loading> = (args: LoadingProps) => (
   <Loading {...args} />
 );
 
@@ -42,7 +42,7 @@ Base.decorators = [
   ),
 ];
 
-export const LoadingWithCustomColor = (args: any) => {
+export const LoadingWithCustomColor = (args: LoadingProps) => {
   return <Loading {...args} color="blue" />;
 };
 

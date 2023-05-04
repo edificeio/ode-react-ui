@@ -1,17 +1,41 @@
-/**
- * Dropdown  Component
- *
- * @see Docs     https://ode-react-ui.vercel.app/?path=/docs/components-core-dropdown--base
- * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/Dropdown/DropdownTrigger.tsx
- * @see WAI-ARIA https://www.w3.org/WAI/ARIA/apg/patterns/button/
- */
-
 import { forwardRef, Ref } from "react";
 
 import { RafterUp } from "@ode-react-ui/icons";
 import clsx from "clsx";
 
-import { DropdownTriggerProps } from "./DropdownTriggerProps";
+export interface DropdownTriggerProps
+  extends React.ComponentPropsWithRef<"button"> {
+  /**
+   * Dropdown trigger title
+   */
+  title: string;
+  /**
+   * Set appearance
+   */
+  variant?: "ghost" | "outline";
+  /**
+   * Controlable state off dropdown trigger
+   */
+  state?: "default" | "hover" | "selected" | "disabled" | "focus";
+  /**
+   * Add an icon in dropdown trigger
+   */
+  icon?: React.ReactNode;
+  /**
+   * Button size
+   */
+  size?: "sm" | "md" | "lg";
+  /**
+   * Add a badge
+   */
+  badgeContent?: string | number;
+  /**
+   * Stretch the dropdown trigger.
+   */
+  grow?: boolean;
+}
+
+export type DropdownTriggerType = React.ReactElement<DropdownTriggerProps>;
 
 const DropdownTrigger = forwardRef(
   (
@@ -54,5 +78,7 @@ const DropdownTrigger = forwardRef(
     );
   },
 );
+
 DropdownTrigger.displayName = "DropdownTrigger";
+
 export default DropdownTrigger;

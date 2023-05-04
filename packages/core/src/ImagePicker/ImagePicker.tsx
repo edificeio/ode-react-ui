@@ -1,5 +1,6 @@
 import {
   ChangeEvent,
+  ComponentPropsWithRef,
   DragEvent,
   forwardRef,
   Ref,
@@ -9,12 +10,47 @@ import {
 
 import { Delete, Edit } from "@ode-react-ui/icons";
 import clsx from "clsx";
+import { IWebApp } from "ode-ts-client";
 
 import { AppIcon } from "../AppIcon";
 import { Avatar } from "../Avatar";
 import { IconButton } from "../Button";
 import { FormControl, Input } from "../Form";
-import { ImagePickerProps } from "./ImagePickerProps";
+
+export interface ImagePickerProps extends ComponentPropsWithRef<"input"> {
+  /**
+   * Description of the ImagePicker label.
+   */
+  label: string;
+  /**
+   * Accessible description of the add button
+   */
+  addButtonLabel: string;
+  /**
+   * Accessible description of the delete button
+   */
+  deleteButtonLabel: string;
+  /**
+   * Provide a default image as placeholder
+   */
+  src?: string;
+  /**
+   * To show the icon of an application
+   */
+  app?: IWebApp | undefined;
+  /**
+   * Optional class for styling purpose
+   */
+  className?: string;
+  /**
+   * Callback when uploading image
+   */
+  onUploadImage: (obj: Record<string, string>) => void;
+  /**
+   * Callback when deleting image
+   */
+  onDeleteImage: () => void;
+}
 
 const ImagePicker = forwardRef(
   (

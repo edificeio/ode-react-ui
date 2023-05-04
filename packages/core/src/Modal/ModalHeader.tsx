@@ -2,6 +2,11 @@ import { ReactNode, useEffect, useRef } from "react";
 
 import { useModalContext } from "./ModalContext";
 
+export interface ModalHeaderProps {
+  onModalClose: () => void;
+  children: ReactNode;
+}
+
 /**
  * Modal Header
  */
@@ -35,8 +40,3 @@ const ModalHeader = (props: ModalHeaderProps) => {
 ModalHeader.displayName = "Modal.Header";
 
 export default ModalHeader;
-
-export interface ModalHeaderProps {
-  onModalClose: () => void;
-  children: ReactNode;
-}

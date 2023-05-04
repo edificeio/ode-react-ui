@@ -1,9 +1,6 @@
-import { useCallback, useRef, useState } from "react";
-
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { Button } from "../Button";
-import EmptyScreen from "./EmptyScreen";
+import EmptyScreen, { EmptyScreenProps } from "./EmptyScreen";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -36,7 +33,9 @@ export default {
 } as ComponentMeta<typeof EmptyScreen>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-export const Template: ComponentStory<typeof EmptyScreen> = (args: any) => {
+export const Template: ComponentStory<typeof EmptyScreen> = (
+  args: EmptyScreenProps,
+) => {
   return (
     <div>
       <EmptyScreen
@@ -48,7 +47,6 @@ export const Template: ComponentStory<typeof EmptyScreen> = (args: any) => {
 };
 
 export const Base = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Base.args = {
   imageSrc: "illu-blog",
   title: "C’est un peu calme ici...",
@@ -56,7 +54,6 @@ Base.args = {
 };
 
 export const Mindmap = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Mindmap.args = {
   imageSrc: "illu-mindmap",
   title: "Une carte pour faire grandir les idées !",
@@ -64,7 +61,6 @@ Mindmap.args = {
 };
 
 export const TimelineGenerator = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 TimelineGenerator.args = {
   imageSrc: "illu-timelinegenerator",
   title: "Pas de frise ? Ça défrise !",
@@ -72,7 +68,6 @@ TimelineGenerator.args = {
 };
 
 export const Search = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Search.args = {
   imageSrc: "illu-search",
   title: "Désolé, il n’y a rien sous ce nom-là…",
@@ -80,7 +75,6 @@ Search.args = {
 };
 
 export const Trash = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Trash.args = {
   imageSrc: "illu-trash",
   title: "C’est vide par içi !",

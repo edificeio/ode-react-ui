@@ -22,7 +22,6 @@ export default defineConfig({
           format: "esm",
           preserveModules: true,
           preserveModulesRoot: "src",
-          sourcemap: true,
           entryFileNames: ({ name: fileName }) => {
             return `${fileName}.js`;
           },

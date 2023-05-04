@@ -1,16 +1,43 @@
-/**
- * Tooltip  Component
- *
- * @see Docs     https://ode-react-ui.vercel.app/?path=/docs/components-core-tooltip--base
- * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/Tooltip/Tooltip.tsx
- */
-
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 
 import clsx from "clsx";
 import { usePopper } from "react-popper";
 
-import { TooltipProps } from "./TooltipProps";
+export type Placement =
+  | "auto"
+  | "auto-start"
+  | "auto-end"
+  | "top"
+  | "top-start"
+  | "top-end"
+  | "bottom"
+  | "bottom-start"
+  | "bottom-end"
+  | "right"
+  | "right-start"
+  | "right-end"
+  | "left"
+  | "left-start"
+  | "left-end";
+
+export interface TooltipProps {
+  /**
+   * Text to display inside tooltip
+   */
+  message: string | undefined;
+  /**
+   * Element to be wrapped as Tooltip trigger
+   */
+  children: React.ReactNode;
+  /**
+   * Tooltip position
+   */
+  placement?: Placement;
+  /**
+   * Tooltip left icon
+   */
+  icon?: ReactNode;
+}
 
 const Tooltip = ({
   children,

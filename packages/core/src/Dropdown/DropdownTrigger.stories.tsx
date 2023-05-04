@@ -2,8 +2,8 @@ import { useState } from "react";
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import DropdownTrigger from "./DropdownTrigger";
 import { Filter, Plus, Settings } from "@ode-react-ui/icons";
+import DropdownTrigger, { DropdownTriggerProps } from "./DropdownTrigger";
 
 export default {
   title: "Components/Dropdown/DropdownTrigger",
@@ -11,7 +11,9 @@ export default {
 } as ComponentMeta<typeof DropdownTrigger>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof DropdownTrigger> = (args: any) => {
+const Template: ComponentStory<typeof DropdownTrigger> = (
+  args: DropdownTriggerProps,
+) => {
   return (
     <div className="d-flex gap-16">
       <DropdownTrigger title="Default dropdown" />
@@ -24,7 +26,9 @@ const Template: ComponentStory<typeof DropdownTrigger> = (args: any) => {
 
 export const States = Template.bind({});
 
-const TemplateSize: ComponentStory<typeof DropdownTrigger> = (args: any) => {
+const TemplateSize: ComponentStory<typeof DropdownTrigger> = (
+  args: DropdownTriggerProps,
+) => {
   return (
     <div className="d-flex gap-16 align-items-end">
       <DropdownTrigger size="lg" title="Big dropdown (default)" />
@@ -36,7 +40,9 @@ const TemplateSize: ComponentStory<typeof DropdownTrigger> = (args: any) => {
 
 export const Sizes = TemplateSize.bind({});
 
-const TemplateIcon: ComponentStory<typeof DropdownTrigger> = (args: any) => {
+const TemplateIcon: ComponentStory<typeof DropdownTrigger> = (
+  args: DropdownTriggerProps,
+) => {
   return (
     <div>
       <div className="d-flex gap-16 align-items-end mb-16">
@@ -63,7 +69,9 @@ const TemplateIcon: ComponentStory<typeof DropdownTrigger> = (args: any) => {
 
 export const Icons = TemplateIcon.bind({});
 
-const TemplateStyle: ComponentStory<typeof DropdownTrigger> = (args: any) => {
+const TemplateStyle: ComponentStory<typeof DropdownTrigger> = (
+  args: DropdownTriggerProps,
+) => {
   return (
     <div>
       <div className="d-flex gap-16 align-items-end mb-16">

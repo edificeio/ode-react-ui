@@ -2,9 +2,49 @@ import { forwardRef, Ref } from "react";
 
 import { useOdeIcons } from "@ode-react-ui/hooks";
 import clsx from "clsx";
+import { IWebApp } from "ode-ts-client";
 
 import { Image } from "../Image";
-import { AppIconProps } from "./AppIconProps";
+
+export type AppIconSize = "24" | "32" | "40" | "48" | "80" | "160";
+
+export interface BaseProps {
+  /**
+   * Define icon size
+   */
+  size?: AppIconSize;
+  /**
+   * App information to get code and name
+   */
+  app?: IWebApp;
+}
+
+type AppVariants = "square" | "circle" | "rounded";
+type SquareVariant = Extract<AppVariants, { type: "square" }>;
+
+export type Props =
+  | {
+      /**
+       * Show icon full width
+       */
+      iconFit?: "contain";
+      /**
+       * Square variant
+       */
+      variant?: SquareVariant;
+    }
+  | {
+      /**
+       * Add padding around icon
+       */
+      iconFit: "ratio";
+      /**
+       * Rounded or Circle variant
+       */
+      variant: AppVariants;
+    };
+
+export type AppIconProps = BaseProps & Props;
 
 /**
  * Icon Component used to display the icon of an application

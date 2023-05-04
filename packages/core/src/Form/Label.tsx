@@ -1,9 +1,34 @@
-import { forwardRef, Ref, useEffect } from "react";
+import { forwardRef, ReactNode, Ref, useEffect } from "react";
 
 import clsx from "clsx";
 
 import { useFormControl } from "./FormContext";
-import { LabelProps } from "./LabelProps";
+
+export type OmitLabelProps = "htmlFor";
+
+export interface LabelProps
+  extends Omit<React.ComponentPropsWithRef<"label">, OmitLabelProps> {
+  /**
+   * Display Icon to the left
+   */
+  leftIcon?: ReactNode;
+  /**
+   * Translated Optional Text
+   */
+  optionalText?: string;
+  /**
+   * Required Indicator or Text
+   */
+  requiredText?: string;
+  /**
+   * Label Text
+   */
+  children: ReactNode;
+  /**
+   * Optional class for styling purpose
+   */
+  className?: string;
+}
 
 const Label = forwardRef(
   (

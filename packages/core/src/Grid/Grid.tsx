@@ -1,12 +1,45 @@
+import { ReactNode } from "react";
+
 import clsx from "clsx";
 
-// import Col from "./GridCol";
-import { GridColProps, GridProps } from "./GridProps";
-// import { GridProps } from "./GridProps";
+export interface GridProps {
+  /**
+   * Content inside the Grid component. Usually GridCol components
+   */
+  children: ReactNode;
+}
+
+export interface GridColProps extends React.ComponentPropsWithoutRef<"div"> {
+  /**
+   * Size on Mobile
+   */
+  sm: string;
+  /**
+   * Size on Tablet
+   */
+  md?: string;
+  /**
+   * Size on Desktop
+   */
+  lg?: string;
+  /**
+   * Accept content as children
+   */
+  children: ReactNode;
+  /**
+   * Optional class for styling purpose
+   */
+  className?: string;
+  /**
+   * As Prop
+   */
+  as?: React.ElementType;
+}
 
 /**
  * Grid of 12 columns on Desktop, 8 on Tablet and 4 on Mobile
  */
+
 const Grid = ({ children, ...restProps }: GridProps) => {
   return (
     <div className="grid" {...restProps}>

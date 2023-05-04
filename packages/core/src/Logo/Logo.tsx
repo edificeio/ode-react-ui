@@ -2,7 +2,11 @@ import { forwardRef, Ref } from "react";
 
 import clsx from "clsx";
 
-import { LogoProps } from "./LogoProps";
+export interface LogoProps {
+  src: string;
+  is1d?: boolean;
+  translate?: string;
+}
 
 const Logo = forwardRef(
   (

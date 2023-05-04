@@ -1,9 +1,37 @@
-import { forwardRef } from "react";
+import { ReactNode, forwardRef } from "react";
 
 import { animated, useTransition } from "@react-spring/web";
 import clsx from "clsx";
 
-import { PopoverProps } from "./PopoverProps";
+export interface PopoverProps {
+  /**
+   * Popover id for a11y
+   */
+  id?: string;
+  /**
+   * When Popover is visible
+   */
+  isVisible?: boolean;
+  /**
+   * React Node
+   */
+  children: ReactNode;
+  /**
+   * Optional class for styling purpose
+   */
+  className?: string;
+}
+
+export interface PopoverElementProps {
+  /**
+   * React Node
+   */
+  children: ReactNode;
+  /**
+   * Optional class for styling purpose
+   */
+  className?: string;
+}
 
 export const PopoverHeader = ({ children, className }: PopoverProps) => {
   const classes = clsx("popover-header", className);

@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import Button from "../Button/Button";
 
 import { FormControl, Input } from "./index";

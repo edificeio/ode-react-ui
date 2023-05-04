@@ -1,16 +1,67 @@
-/**
- * Button  Component
- *
- * @see Docs     https://ode-react-ui.vercel.app/?path=/docs/components-core-button--base
- * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/Button/Button.tsx
- * @see WAI-ARIA https://www.w3.org/WAI/ARIA/apg/patterns/button/
- */
-import { forwardRef, Ref } from "react";
+import { forwardRef, ReactNode, Ref } from "react";
 
 import clsx from "clsx";
 
-import Loading from "../Loading/Loading";
-import { ButtonProps, ButtonRef } from "./ButtonProps";
+import Loading, { LoadingIcon, LoadingPosition } from "../Loading/Loading";
+
+export type ButtonRef = HTMLButtonElement;
+
+export type ButtonTypes = "button" | "submit" | "reset";
+export type ButtonColors = "primary" | "secondary" | "tertiary" | "danger";
+export type ButtonVariants = "filled" | "outline" | "ghost";
+export type ButtonSizes = "sm" | "md" | "lg";
+
+export interface ButtonProps extends React.ComponentPropsWithRef<"button"> {
+  /**
+   * `button`, `submit` or `reset`
+   */
+  type?: ButtonTypes;
+  /**
+   * `primary`, `secondary`, `tertiary` or `danger`
+   */
+  color?: ButtonColors;
+  /**
+   * `filled`, `outline` or `ghost`
+   */
+  variant?: ButtonVariants;
+  /**
+   * `sm`, `md` or `lg`
+   */
+  size?: ButtonSizes;
+  /**
+   * Does it has a text ?
+   */
+  children: ReactNode;
+  /**
+   * Display Icon Component to the left
+   */
+  leftIcon?: ReactNode;
+  /**
+   * Display Icon Component to the right
+   */
+  rightIcon?: ReactNode;
+  /**
+   * Is it loading ?
+   */
+  isLoading?: boolean;
+  /**
+   * Override Loading Icon
+   */
+  loadingIcon?: LoadingIcon;
+  /**
+   * Loading Icon Position
+   * `left`, `right`
+   */
+  loadingPosition?: LoadingPosition;
+  /**
+   * Disabled status
+   */
+  disabled?: boolean;
+  /**
+   * Optional class for styling purpose
+   */
+  className?: string;
+}
 
 /**
  * Primary UI component for user interaction
@@ -70,6 +121,6 @@ const Button = forwardRef(
   },
 );
 
-if (import.meta.env.MODE === "dev") Button.displayName = "Button";
+Button.displayName = "Button";
 
 export default Button;

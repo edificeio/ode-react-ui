@@ -32,6 +32,6 @@ const Layout = ({ children }: { children: ReactNode }) => {
   );
 };
 
-if (import.meta.env.MODE === "dev") Layout.displayName = "Layout";
+Layout.displayName = "Layout";
 
 export default Layout;

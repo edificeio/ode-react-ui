@@ -9,7 +9,25 @@ import {
 
 import clsx from "clsx";
 
-import { CheckboxProps } from "./CheckboxProps";
+export interface CheckboxProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
+  /**
+   * Add a label
+   */
+  label?: string;
+  /**
+   * If disable
+   */
+  disabled?: boolean;
+  /**
+   * If checked
+   */
+  checked?: boolean;
+  /**
+   * If indeterminate
+   */
+  indeterminate?: boolean;
+}
 
 const Checkbox = forwardRef(
   (

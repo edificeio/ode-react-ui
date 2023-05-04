@@ -1,8 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Tooltip } from "../Tooltip";
-import Card from "./Card";
-import { CardProps } from "./CardProps";
+import Card, { CardProps } from "./Card";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

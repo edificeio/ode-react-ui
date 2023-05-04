@@ -1,8 +1,29 @@
-import { forwardRef } from "react";
+import { ReactNode, forwardRef } from "react";
 
 import clsx from "clsx";
 
-import { HeadingProps } from "./HeadingProps";
+export type HeadingElement = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
+export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
+  /**
+   * Level of Heading
+   * `"h1" | "h2" | "h3" | "h4" | "h5" | "h6"`
+   */
+  level?: HeadingElement;
+  /**
+   * Apply Bootstrap utility Class
+   * `"h1" | "h2" | "h3" | "h4" | "h5" | "h6"`
+   */
+  headingStyle?: HeadingElement;
+  /**
+   * Text to render
+   */
+  children: ReactNode;
+  /**
+   * Optional class for styling purpose
+   */
+  className?: string;
+}
 
 /**
  * Heading component to display heading elements

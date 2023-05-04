@@ -1,6 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import Main from "./Main";
-import { MainProps } from "./MainProps";
+import Main, { MainProps } from "./Main";
 
 export default {
   title: "Layouts/Main",
