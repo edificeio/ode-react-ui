@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { ImagePicker } from "../index";
+import { ImagePickerProps } from "./ImagePicker";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -44,9 +45,9 @@ export default {
   },
 } as ComponentMeta<typeof ImagePicker>;
 
-const Template: ComponentStory<typeof ImagePicker> = (args: any) => (
-  <ImagePicker {...args} />
-);
+const Template: ComponentStory<typeof ImagePicker> = (
+  args: ImagePickerProps,
+) => <ImagePicker {...args} />;
 export const Base = Template.bind({});
 
 export const DisabledButton = Template.bind({});
@@ -84,7 +85,7 @@ ImageURL.parameters = {
   },
 };
 
-export const UploadImageWithCallbacks = (args: any) => {
+export const UploadImageWithCallbacks = (args: ImagePickerProps) => {
   function handleUploadImage(obj: any) {
     alert(`Uploading image ${JSON.stringify(obj)}`);
   }

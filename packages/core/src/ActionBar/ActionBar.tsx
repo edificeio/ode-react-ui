@@ -1,12 +1,13 @@
-/**
- * Actions Bar  Component
- *
- * @see Docs     https://ode-react-ui.vercel.app/?path=/docs/components-core-actionsbar--base
- * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/ActionsBar/ActionsBar.tsx
- */
 import { forwardRef, Ref } from "react";
 
-import { ActionBarProps } from "./ActionBarProps";
+export interface ActionBarProps {
+  /**
+   * Add Buttons To Actions bar
+   */
+  children: React.ReactNode;
+}
+
+export type ActionBarType = React.FC<ActionBarProps>;
 
 const ActionBar = forwardRef(
   ({ children }: ActionBarProps, ref: Ref<HTMLDivElement>) => {

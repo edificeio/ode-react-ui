@@ -1,6 +1,17 @@
+import { ReactNode } from "react";
+
 import clsx from "clsx";
 
-import { MainProps } from "./MainProps";
+export interface MainProps {
+  /**
+   * App content
+   */
+  children: ReactNode;
+  /**
+   * Optional class for styling purpose
+   */
+  className?: string;
+}
 
 export default function Main({ children, className }: MainProps) {
   const classes = clsx("container-fluid", className);

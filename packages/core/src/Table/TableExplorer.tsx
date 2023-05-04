@@ -8,7 +8,11 @@
 
 import { forwardRef, Ref } from "react";
 
-import { TableExplorerProps, TableExplorerRef } from "./TableExplorerProps";
+export type TableExplorerRef = HTMLTableElement;
+
+export interface TableExplorerProps {
+  children?: Array<React.ReactElement<HTMLTableSectionElement>>;
+}
 
 const TableExplorer = forwardRef(
   ({ children }: TableExplorerProps, ref: Ref<TableExplorerRef>) => {

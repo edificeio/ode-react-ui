@@ -1,5 +1,3 @@
-import { useCallback, useRef, useState } from "react";
-
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import LoadingScreen from "./LoadingScreen";
 

@@ -5,18 +5,13 @@
 
 ## Getting Started
 
-All shared Hooks between librairies and React Apps.
+All shared Hooks between packages and React Apps.
 
 ### Build
 
 ```bash
 yarn build
 ```
-
-Use Vite [Library mode](https://vitejs.dev/guide/build.html#library-mode) configuration file from `config` workspace and TypeScript to build the library.
-
-- Will generate a `dist` folder with `index` files (ESM + CJS)
-- Will generate `*.d.ts` for every component and index files
 
 ### Lint
 
@@ -40,6 +35,11 @@ yarn format
 
 This command starts `format:check` + `format:write` using Prettier configuration file from `config` workspace.
 
-## Hooks List
+## Dev
 
-[List](LIST.md)
+Every hook should have:
+
+- its own folder (e.g: `useImage`)
+- its own file (e.g: `useImage.ts`)
+- an `index.ts` file
+- `docs` and `stories` (e.g: `useImage.docs.mdx` / `useImage.stories.mdx`)

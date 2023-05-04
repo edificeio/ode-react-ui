@@ -3,7 +3,41 @@ import { forwardRef, Ref } from "react";
 import clsx from "clsx";
 
 import { useFormControl } from "./FormContext";
-import { InputProps } from "./InputProps";
+
+export type OmitInputProps =
+  | "disabled"
+  | "required"
+  | "size"
+  | "id"
+  | "readOnly";
+
+export interface InputProps
+  extends Omit<React.ComponentPropsWithRef<"input">, OmitInputProps> {
+  /**
+   * Control size of input
+   */
+  size: "sm" | "md" | "lg";
+  /**
+   * Type of input (text, password, ..)
+   */
+  type: string;
+  /**
+   * Change text of placeholder
+   */
+  placeholder?: string;
+  /**
+   * Disabled status
+   */
+  disabled?: boolean;
+  /**
+   * Remove validation icon
+   */
+  noValidationIcon?: boolean;
+  /**
+   * Optional class for styling purpose
+   */
+  className?: string;
+}
 
 /**
  * Input Form Component

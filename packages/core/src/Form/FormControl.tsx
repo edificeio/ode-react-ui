@@ -1,10 +1,40 @@
-import { forwardRef, Ref, useMemo } from "react";
+import { forwardRef, ReactNode, Ref, useMemo } from "react";
 
 import { Context } from "./FormContext";
-import { FormControlProps } from "./FormControlProps";
 import FormText from "./FormText";
 import Input from "./Input";
 import Label from "./Label";
+
+export interface FormControlProps extends React.ComponentPropsWithRef<"div"> {
+  /**
+   * For accessibility
+   */
+  id: string;
+  /**
+   * Is field optional ?
+   */
+  isOptional?: boolean;
+  /**
+   * Is field required ?
+   */
+  isRequired?: boolean;
+  /**
+   * Is field readonly ?
+   */
+  isReadOnly?: boolean;
+  /**
+   * Label, Input and Text
+   */
+  children: ReactNode;
+  /**
+   * Optional class for styling purpose
+   */
+  className?: string;
+  /**
+   * Status to handle Form Validation
+   */
+  status?: "valid" | "invalid";
+}
 
 /**
  * Form Control Component

@@ -23,7 +23,6 @@ export default defineConfig({
           format: "esm",
           preserveModules: true,
           preserveModulesRoot: "src",
-          sourcemap: true,
           entryFileNames: ({ name: fileName }) => {
             return `${fileName}.js`;
           },
@@ -35,10 +34,7 @@ export default defineConfig({
     react({
       jsxRuntime: "classic",
     }),
-    visualizer({
-      filename: "bundle-analysis.html",
-      open: true,
-    }),
+    visualizer(),
     dts(),
   ],
 });

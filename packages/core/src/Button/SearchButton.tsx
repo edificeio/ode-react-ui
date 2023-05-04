@@ -10,7 +10,7 @@ import { forwardRef, Ref } from "react";
 import { Search } from "@ode-react-ui/icons";
 import clsx from "clsx";
 
-import { ButtonRef } from "./ButtonProps";
+import { ButtonRef } from "./Button";
 import IconButton, { IconButtonProps } from "./IconButton";
 
 type PickedProps = "type" | "icon" | "size";

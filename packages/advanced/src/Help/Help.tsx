@@ -1,7 +1,13 @@
 import { Modal, useOdeClient } from "@ode-react-ui/core";
 import { createPortal } from "react-dom";
 
-import { HelpProps } from "./interface";
+export interface HelpProps {
+  isHelpOpen: boolean;
+  parsedHeadline: any;
+  parsedContent: any;
+  error: boolean;
+  setIsHelpOpen: (state: boolean) => void;
+}
 
 export default function Help({
   isHelpOpen,

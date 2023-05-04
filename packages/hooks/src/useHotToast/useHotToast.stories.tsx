@@ -1,6 +1,7 @@
 import { Alert, Button } from "@ode-react-ui/core";
 import useHotToast from "./useHotToast";
 import { Toaster } from "react-hot-toast";
+// @ts-ignore
 import docs from "./useHotToast.docs.mdx";
 
 export default {

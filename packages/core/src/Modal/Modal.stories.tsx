@@ -27,10 +27,8 @@ import { Checkbox, FormControl, Input, Label, Radio, Select } from "../Form";
 import { OptionsType } from "../Form/Select";
 import { Heading } from "../Heading";
 import { ImagePicker } from "../ImagePicker";
-import { TreeView } from "../../../advanced/src/TreeView";
-import { data } from "../utils/mock-tree-data";
-import Modal from "./Modal";
-import { ModalProps } from "./ModalProps";
+import { TreeNode, TreeView } from "../../../advanced/src/TreeView";
+import Modal, { ModalProps } from "./Modal";
 
 export default {
   title: "Components/Modal",
@@ -48,6 +46,76 @@ export default {
     },
   },
 } as ComponentMeta<typeof Modal>;
+
+const data: TreeNode = {
+  id: "root",
+  name: "Section Element",
+  section: true,
+  children: [
+    {
+      id: "1",
+      name: "level 1 arborescence tree",
+      children: [
+        {
+          id: "4",
+          name: "level 2 arborescence tree",
+          children: [
+            {
+              id: "8",
+              name: "level 3 arborescence tree",
+              children: [
+                {
+                  id: "12",
+                  name: "level 4 arborescence tree",
+                },
+                {
+                  id: "13",
+                  name: "level 4 arborescence tree",
+                },
+              ],
+            },
+            {
+              id: "9",
+              name: "level 3 arborescence tree",
+            },
+          ],
+        },
+        {
+          id: "5",
+          name: "level 2 arborescence tree",
+          children: [
+            {
+              id: "10",
+              name: "level 3 arborescence tree",
+            },
+            {
+              id: "11",
+              name: "level 3 arborescence tree",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "2",
+      name: "level 1 arborescence tree",
+      children: [
+        {
+          id: "6",
+          name: "level 2 arborescence tree",
+        },
+        {
+          id: "7",
+          name: "level 2 arborescence tree",
+        },
+      ],
+    },
+    {
+      id: "3",
+      name: "level 1 arborescence tree",
+    },
+  ],
+};
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Modal> = (args: ModalProps) => {

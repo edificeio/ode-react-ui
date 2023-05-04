@@ -2,8 +2,7 @@ import { useState } from "react";
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import Select from "./Select";
-import { OptionsType } from "./SelectProps";
+import Select, { OptionsType } from "./Select";
 import FormControl from "./FormControl";
 import Label from "./Label";
 

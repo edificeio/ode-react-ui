@@ -1,4 +1,2 @@
 export { default as Alert } from "./Alert";
-
-// types
-export * from "./AlertProps";
+export * from "./Alert";

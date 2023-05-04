@@ -65,8 +65,7 @@ We already have a `dev` branch created to work on packages.
 
 ![minor bump](./.changeset/minor_bump.png "Bump")
 
-- When questioning about bump other packages, please, enter No.
-
+- When questioning about bump other packages, `Enter`.
 - Add a summary about your work.
 - Say `Yes` to next prompt.
 - Add changeset to your tracked files.

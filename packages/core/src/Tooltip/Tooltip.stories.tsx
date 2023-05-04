@@ -1,9 +1,7 @@
-import { useState } from "react";
-
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Button } from "../Button";
-import Tooltip from "./Tooltip";
+import Tooltip, { TooltipProps } from "./Tooltip";
 import { AlertCircle } from "@ode-react-ui/icons";
 
 export default {
@@ -20,7 +18,7 @@ export default {
 } as ComponentMeta<typeof Tooltip>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Tooltip> = (args: any) => {
+const Template: ComponentStory<typeof Tooltip> = (args: TooltipProps) => {
   return (
     <>
       <Tooltip {...args} />

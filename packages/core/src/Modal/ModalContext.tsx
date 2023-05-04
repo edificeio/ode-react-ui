@@ -11,6 +11,7 @@ export const ModalContext = createContext<ModalContextProps>({
   ariaDescriptionId: "",
   focusId: "",
 });
+
 ModalContext.displayName = "ModalContext";
 
 export const useModalContext = () => {

@@ -1,9 +1,8 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ComponentMeta } from "@storybook/react";
 import toast, { Toaster, resolveValue } from "react-hot-toast";
 import { Button } from "../Button";
 
 import Toast from "./Toast";
-import { ToastProps } from "./ToastProps";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

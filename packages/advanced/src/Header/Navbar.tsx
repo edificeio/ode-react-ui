@@ -2,14 +2,12 @@ import { type ReactNode } from "react";
 
 import clsx from "clsx";
 
-export function Navbar({
-  children,
-  className,
-  ...restProps
-}: {
+export interface NavbarProps {
   children: ReactNode;
   className?: string;
-}) {
+}
+
+export function Navbar({ children, className, ...restProps }: NavbarProps) {
   const classes = clsx("navbar", className);
 
   return (

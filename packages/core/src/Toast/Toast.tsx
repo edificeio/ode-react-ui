@@ -1,10 +1,4 @@
-/**
- * Toast Component
- *
- * @see Docs     https://ode-react-ui.vercel.app/?path=/docs/components-core-alert--base
- * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/core/src/Toast/Toast.tsx
- * @see WAI-ARIA https://www.w3.org/WAI/ARIA/apg/patterns/alert/
- */
+import { CSSProperties } from "react";
 
 import {
   SuccessOutline,
@@ -14,8 +8,116 @@ import {
   Placeholder,
 } from "@ode-react-ui/icons";
 
-import { Toast as ToastType } from "./ToasterProps";
-import { ToastProps } from "./ToastProps";
+export type ToastType =
+  | "success"
+  | "error"
+  | "loading"
+  | "blank"
+  | "custom"
+  | "warning";
+
+export type ToastPosition =
+  | "top-left"
+  | "top-center"
+  | "top-right"
+  | "bottom-left"
+  | "bottom-center"
+  | "bottom-right";
+
+export type Renderable = JSX.Element | string | null;
+
+export interface IconTheme {
+  primary: string;
+  secondary: string;
+}
+
+export type ValueFunction<TValue, TArg> = (arg: TArg) => TValue;
+export type ValueOrFunction<TValue, TArg> =
+  | TValue
+  | ValueFunction<TValue, TArg>;
+
+const isFunction = <TValue, TArg>(
+  valOrFunction: ValueOrFunction<TValue, TArg>,
+): valOrFunction is ValueFunction<TValue, TArg> =>
+  typeof valOrFunction === "function";
+
+export const resolveValue = <TValue, TArg>(
+  valOrFunction: ValueOrFunction<TValue, TArg>,
+  arg: TArg,
+): TValue => (isFunction(valOrFunction) ? valOrFunction(arg) : valOrFunction);
+
+export interface ReactHotToastProps {
+  type: ToastType;
+  id: string;
+  message: ValueOrFunction<Renderable, ReactHotToastProps>;
+  icon?: Renderable;
+  duration?: number;
+  pauseDuration: number;
+  position?: ToastPosition;
+
+  ariaProps: {
+    role: "status" | "alert";
+    "aria-live": "assertive" | "off" | "polite";
+  };
+
+  style?: CSSProperties;
+  /**
+   * Optional class for styling purpose
+   */
+  className?: string;
+  iconTheme?: IconTheme;
+
+  createdAt: number;
+  visible: boolean;
+  height?: number;
+}
+
+export type ToastOptions = Partial<
+  Pick<
+    ReactHotToastProps,
+    | "id"
+    | "icon"
+    | "duration"
+    | "ariaProps"
+    | "className"
+    | "style"
+    | "position"
+    | "iconTheme"
+  >
+>;
+
+export type DefaultToastOptions = ToastOptions & {
+  [key in ToastType]?: ToastOptions;
+};
+
+export interface ToasterProps {
+  position?: ToastPosition;
+  toastOptions?: DefaultToastOptions;
+  reverseOrder?: boolean;
+  gutter?: number;
+  containerStyle?: React.CSSProperties;
+  containerClassName?: string;
+  children?: (toast: ReactHotToastProps) => JSX.Element;
+}
+
+export interface ToastWrapperProps {
+  id: string;
+  /**
+   * Optional class for styling purpose
+   */
+  className?: string;
+  style?: React.CSSProperties;
+  onHeightUpdate: (id: string, height: number) => void;
+  children?: React.ReactNode;
+}
+
+export interface ToastProps {
+  dismiss: any;
+  resolveValue: typeof resolveValue;
+  Toaster: React.ComponentType;
+  toastOptions: any;
+  i18n?: (key: string, params?: Record<string, any> | undefined) => string;
+}
 
 function Toast(props: ToastProps) {
   const { Toaster, toastOptions, resolveValue, dismiss } = props;
@@ -50,7 +152,6 @@ function Toast(props: ToastProps) {
               // @ts-expect-error
               mapping[toast.type].icon
             }
-            {/* <div className="toast-body">{resolveValue(message, toast)}</div> */}
             <div className="toast-body">
               {resolveValue(toast.message, toast)}
             </div>
