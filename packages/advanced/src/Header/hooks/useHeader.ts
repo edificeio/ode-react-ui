@@ -1,7 +1,7 @@
 import { useRef, useState, useId, useEffect } from "react";
 
 import {
-  useClickOutside,
+  // useClickOutside,
   useTitle,
   useHover,
   useBookmark,
@@ -26,9 +26,6 @@ export function useHeader({
   /**
    * All necessary refs
    */
-  const collapseRef = useClickOutside(() => {
-    setIsCollapsed(true);
-  });
   const inputRef = useRef<HTMLInputElement>(null);
 
   /**
@@ -175,7 +172,6 @@ export function useHeader({
 
   return {
     inputRef,
-    collapseRef,
     conversation,
     zimbra,
     community,
