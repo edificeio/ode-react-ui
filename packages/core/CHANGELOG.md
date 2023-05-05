@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 2.0.0-dev.5
+
+### Patch Changes
+
+- [`b7d98a3`](https://github.com/opendigitaleducation/ode-react-ui/commit/b7d98a33e1a5440b3ad67f9af89acd2a4dae4b63) Thanks [@ccreusat](https://github.com/ccreusat)! - fix issue with context provider
+
 ## 2.0.0-dev.4
 
 ### Patch Changes

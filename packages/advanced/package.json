@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/advanced",
-  "version": "2.0.0-dev.4",
+  "version": "2.0.0-dev.5",
   "private": false,
   "description": "@ode-react-ui react advanced components",
   "keywords": [
@@ -43,7 +43,7 @@
     "html-react-parser": "^3.0.15"
   },
   "devDependencies": {
-    "@ode-react-ui/core": "2.0.0-dev.4",
+    "@ode-react-ui/core": "2.0.0-dev.5",
     "@ode-react-ui/hooks": "2.0.0-dev.4",
     "@ode-react-ui/icons": "2.0.0-dev.4",
     "@types/node": "18.11.18",
@@ -60,7 +60,7 @@
     "vite-plugin-dts": "1.7.1"
   },
   "peerDependencies": {
-    "@ode-react-ui/core": "2.0.0-dev.4",
+    "@ode-react-ui/core": "2.0.0-dev.5",
     "@ode-react-ui/hooks": "2.0.0-dev.4",
     "@ode-react-ui/icons": "2.0.0-dev.4",
     "clsx": "1.2.1",
