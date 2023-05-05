@@ -50,7 +50,7 @@ export interface ContextProps {
   theme: ITheme;
 }
 
-const Context = createContext<ContextProps | null>(null!);
+export const Context = createContext<ContextProps | null>(null!);
 
 export default function OdeClientProvider({
   children,
