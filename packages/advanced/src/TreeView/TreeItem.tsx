@@ -10,7 +10,63 @@ import { useEffect, useState } from "react";
 import { Folder, RafterRight, RafterDown } from "@ode-react-ui/icons";
 
 import useTreeItemEvents from "./hooks/useTreeItemEvents";
-import { TreeItemProps } from "./TreeItemProps";
+
+export interface TreeItemProps {
+  /**
+   * Node's id
+   */
+  nodeId: string;
+
+  /**
+   * Node's label
+   */
+  label: string;
+
+  /**
+   * ReactNode children
+   */
+  children: React.ReactNode;
+
+  /**
+   * Is current node a section (root element)
+   */
+  section?: boolean;
+
+  /**
+   * Is node selected
+   */
+  selected: boolean;
+
+  /**
+   * Node ID used for navigation folders
+   */
+  selectedNodesIds?: string[];
+
+  /**
+   * Callback function to provide selected item to parent component (TreeView)
+   */
+  onItemSelect?: Function;
+
+  /**
+   * Callback function to provide folded item to parent component (TreeView)
+   */
+  onItemFold?: Function;
+
+  /**
+   * Callback function to provide unfolded item to parent component (TreeView)
+   */
+  onItemUnfold?: Function;
+
+  /**
+   * Callback function to provide focused item to parent component (TreeView)
+   */
+  onItemFocus?: Function;
+
+  /**
+   * Callback function to provide blured item to parent component (TreeView)
+   */
+  onItemBlur?: Function;
+}
 
 export const TreeItem = (props: TreeItemProps) => {
   const {

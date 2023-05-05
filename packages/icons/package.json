@@ -25,7 +25,8 @@
       "import": "./dist/index.js"
     },
     "./nav": {
-      "import": "./dist/nav.js"
+      "import": "./dist/nav/index.js",
+      "types": "./dist/nav/index.d.ts"
     }
   },
   "module": "dist/index.js",

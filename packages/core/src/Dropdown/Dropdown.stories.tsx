@@ -4,15 +4,13 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import Dropdown from "./Dropdown";
 import DropdownTrigger from "./DropdownTrigger";
-import { Button } from "../Button";
 import {
   Filter,
   SortAscendingLetters,
   SortDescending,
   SortDescendingLetters,
 } from "@ode-react-ui/icons";
-import SelectList from "./SelectList";
-import { OptionListItemType } from "./SelectListProps";
+import SelectList, { OptionListItemType } from "./SelectList";
 
 export default {
   title: "Components/Dropdown",

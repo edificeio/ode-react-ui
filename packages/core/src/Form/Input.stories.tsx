@@ -2,8 +2,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Ref, useEffect, useRef } from "react";
 import { Button } from "../Button";
 
-import { FormControl, Input, Label, FormText } from "./index";
-import { InputProps } from "./InputProps";
+import { FormControl, Input, Label, FormText, InputProps } from "./index";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

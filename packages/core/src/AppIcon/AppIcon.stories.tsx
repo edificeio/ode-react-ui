@@ -1,6 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import AppIcon from "./AppIcon";
-import { AppIconProps } from "./AppIconProps";
+import AppIcon, { AppIconProps } from "./AppIcon";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

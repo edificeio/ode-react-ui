@@ -90,5 +90,7 @@ const Dropdown = ({ trigger, content }: DropdownProps) => {
     </>
   );
 };
+
 Dropdown.displayName = "Dropdown";
+
 export default Dropdown;

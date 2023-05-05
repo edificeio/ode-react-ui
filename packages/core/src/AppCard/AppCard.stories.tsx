@@ -1,7 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { AppCard, AppIcon } from "../index";
-import { AppCardProps, BaseProps } from "./AppCardProps";
+import { AppCard, AppIcon, BaseProps } from "../index";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

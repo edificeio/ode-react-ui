@@ -9,7 +9,43 @@ import { forwardRef, useEffect, useState } from "react";
 
 import { TreeItem } from "./TreeItem";
 import { TreeNode } from "./TreeNode";
-import { TreeViewProps } from "./TreeViewProps";
+
+export interface TreeViewProps {
+  /**
+   * TreeNode data
+   */
+  data: TreeNode;
+
+  /**
+   * Node ID used for navigation folders
+   */
+  selectedNodesIds?: string[];
+
+  /**
+   * Callback function to provide selected item to parent component
+   */
+  onTreeItemSelect?: Function;
+
+  /**
+   * Callback function to provide folded item to parent component
+   */
+  onTreeItemFold?: Function;
+
+  /**
+   * Callback function to provide unfolded item to parent component
+   */
+  onTreeItemUnfold?: Function;
+
+  /**
+   * Callback function to provide focused item to parent component
+   */
+  onTreeItemFocus?: Function;
+
+  /**
+   * Callback function to provide blured item to parent component
+   */
+  onTreeItemBlur?: Function;
+}
 
 /**
  * UI TreeView Component
