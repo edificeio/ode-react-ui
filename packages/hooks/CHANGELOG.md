@@ -1,5 +1,13 @@
 # @ode-react-ui/hooks
 
+## 2.0.0-dev.4
+
+### Patch Changes
+
+- [`2989967`](https://github.com/opendigitaleducation/ode-react-ui/commit/298996765fe499c9f27b84aecb22eb618a07f0c0) Thanks [@ccreusat](https://github.com/ccreusat)! - downgrade @vitejs/plugin-react 4.0.0 to 3.0.1
+
+- [#171](https://github.com/opendigitaleducation/ode-react-ui/pull/171) [`b000e10`](https://github.com/opendigitaleducation/ode-react-ui/commit/b000e10b5d08189f4a545c21c123dfa38384a35f) Thanks [@github-actions](https://github.com/apps/github-actions)! - revert @vitejs/plugin-react version
+
 ## 2.0.0-dev.3
 
 ### Patch Changes

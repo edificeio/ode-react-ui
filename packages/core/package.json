@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/core",
-  "version": "2.0.0-dev.3",
+  "version": "2.0.0-dev.4",
   "private": false,
   "description": "@ode-react-ui react core components",
   "keywords": [
@@ -44,8 +44,8 @@
     "@popperjs/core": "2.11.6"
   },
   "devDependencies": {
-    "@ode-react-ui/hooks": "2.0.0-dev.3",
-    "@ode-react-ui/icons": "2.0.0-dev.3",
+    "@ode-react-ui/hooks": "2.0.0-dev.4",
+    "@ode-react-ui/icons": "2.0.0-dev.4",
     "@react-spring/web": "9.7.0",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
@@ -63,8 +63,8 @@
     "vite-plugin-dts": "1.7.1"
   },
   "peerDependencies": {
-    "@ode-react-ui/hooks": "2.0.0-dev.3",
-    "@ode-react-ui/icons": "2.0.0-dev.3",
+    "@ode-react-ui/hooks": "2.0.0-dev.4",
+    "@ode-react-ui/icons": "2.0.0-dev.4",
     "@react-spring/web": "9.7.0",
     "clsx": "1.2.1",
     "ode-ts-client": "feat-explorer",
