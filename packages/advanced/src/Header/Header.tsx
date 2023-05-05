@@ -24,6 +24,7 @@ import {
   NeoAssistance,
 } from "@ode-react-ui/icons/nav";
 import clsx from "clsx";
+import { IConfigurationFramework } from "ode-ts-client";
 
 import { Help } from "../Help";
 import { useHelp } from "../Help/hooks/useHelp";
@@ -39,7 +40,7 @@ import { WidgetAppsBody, WidgetAppsFooter } from "./WidgetApps";
 export interface HeaderProps {
   is1d?: boolean;
   src: string;
-  configurationFramework: any;
+  configurationFramework: IConfigurationFramework;
 }
 
 export default function Header({
