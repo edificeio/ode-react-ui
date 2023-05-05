@@ -1,8 +1,7 @@
 import { Mail } from "@ode-react-ui/icons";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { FormControlProps } from "./FormControlProps";
 
-import { FormControl, Label, Input, FormText } from "./index";
+import { FormControl, Label, Input, FormText, FormControlProps } from "./index";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

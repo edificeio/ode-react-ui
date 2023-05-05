@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import Button from "./Button";
+import Button, { ButtonProps } from "./Button";
 import {
   AddUser,
   Close,
@@ -10,7 +10,6 @@ import {
 } from "@ode-react-ui/icons";
 import IconButton from "./IconButton";
 import SearchButton from "./SearchButton";
-import { ButtonProps } from "./ButtonProps";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

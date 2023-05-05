@@ -47,17 +47,19 @@
     "@vitejs/plugin-react": "4.0.0",
     "clsx": "1.2.1",
     "concurrently": "7.6.0",
+    "ode-ts-client": "feat-explorer",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hot-toast": "2.4.1",
     "vite": "4.3.4",
     "vite-plugin-dts": "2.3.0"
   },
   "peerDependencies": {
     "clsx": "1.2.1",
+    "ode-ts-client": "feat-explorer",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hot-toast": "2.4.0",
-    "ode-ts-client": "feat-explorer"
+    "react-hot-toast": "2.4.1"
   },
   "publishConfig": {
     "access": "public"
