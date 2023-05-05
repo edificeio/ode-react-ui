@@ -1,5 +1,11 @@
 # @ode-react-ui/hooks
 
+## 2.0.0-dev.3
+
+### Patch Changes
+
+- [#170](https://github.com/opendigitaleducation/ode-react-ui/pull/170) [`38b508e`](https://github.com/opendigitaleducation/ode-react-ui/commit/38b508e154297cd4b4564200c61568349207f04a) Thanks [@github-actions](https://github.com/apps/github-actions)! - fix build storybook and clean files
+
 ## 2.0.0-dev.2
 
 ### Patch Changes

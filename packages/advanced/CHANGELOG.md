@@ -1,5 +1,16 @@
 # @ode-react-ui/advanced
 
+## 2.0.0-dev.3
+
+### Patch Changes
+
+- [#170](https://github.com/opendigitaleducation/ode-react-ui/pull/170) [`38b508e`](https://github.com/opendigitaleducation/ode-react-ui/commit/38b508e154297cd4b4564200c61568349207f04a) Thanks [@github-actions](https://github.com/apps/github-actions)! - fix build storybook and clean files
+
+- Updated dependencies [[`8c73a95`](https://github.com/opendigitaleducation/ode-react-ui/commit/8c73a9555e1a33468a02570b934aab4829884959), [`38b508e`](https://github.com/opendigitaleducation/ode-react-ui/commit/38b508e154297cd4b4564200c61568349207f04a)]:
+  - @ode-react-ui/core@2.0.0-dev.3
+  - @ode-react-ui/hooks@2.0.0-dev.3
+  - @ode-react-ui/icons@2.0.0-dev.3
+
 ## 2.0.0-dev.2
 
 ### Patch Changes
