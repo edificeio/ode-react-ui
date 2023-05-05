@@ -1,5 +1,14 @@
 # @ode-react-ui/storybook
 
+## 1.0.6-dev.1
+
+### Patch Changes
+
+- [#171](https://github.com/opendigitaleducation/ode-react-ui/pull/171) [`b000e10`](https://github.com/opendigitaleducation/ode-react-ui/commit/b000e10b5d08189f4a545c21c123dfa38384a35f) Thanks [@github-actions](https://github.com/apps/github-actions)! - revert @vitejs/plugin-react version
+
+- Updated dependencies [[`2989967`](https://github.com/opendigitaleducation/ode-react-ui/commit/298996765fe499c9f27b84aecb22eb618a07f0c0), [`b000e10`](https://github.com/opendigitaleducation/ode-react-ui/commit/b000e10b5d08189f4a545c21c123dfa38384a35f)]:
+  - @ode-react-ui/icons@2.0.0-dev.4
+
 ## 1.0.6-dev.0
 
 ### Patch Changes
