@@ -50,7 +50,6 @@ export default function Header({
   const { http, session, i18n } = useOdeClient();
   const {
     inputRef,
-    collapseRef,
     title,
     bookmarkedApps,
     appsRef,
@@ -162,7 +161,6 @@ export default function Header({
                 </NavItem>
                 <NavItem className="d-md-none">
                   <button
-                    ref={collapseRef}
                     className="nav-link btn btn-naked"
                     type="button"
                     aria-controls="navbarCollapsed"
@@ -231,12 +229,12 @@ export default function Header({
         <Navbar className="navbar-expand-md">
           <div className="container-fluid">
             <Logo src={`${src}/img/illustrations/logo.png`} />
-            <NavLink
-              link="/timeline/timeline"
-              className="navbar-title d-md-none"
+            <a
+              href="/timeline/timeline"
+              className="navbar-title text-truncate d-md-none"
             >
               {title}
-            </NavLink>
+            </a>
             <ul className="navbar-nav">
               <NavItem>
                 <NavLink
@@ -318,7 +316,6 @@ export default function Header({
               <NavItem>
                 <div className="dropdown">
                   <button
-                    ref={collapseRef}
                     className="nav-link btn btn-naked d-md-none"
                     type="button"
                     aria-controls="dropdown-navbar"
