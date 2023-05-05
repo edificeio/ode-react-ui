@@ -205,7 +205,7 @@ const Card = forwardRef(
         )}
         <button
           onClick={onOpen}
-          className="position-absolute bottom-0 end-0 top-0 start-0 opacity-0 z-1"
+          className="position-absolute bottom-0 end-0 top-0 start-0 opacity-0 z-1 w-100"
           aria-label="Open resource"
         ></button>
         <div className="card-body">
