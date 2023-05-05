@@ -12,10 +12,7 @@ export default defineConfig({
     rollupOptions: {
       preserveEntrySignatures: "strict",
       input: "src/index.ts",
-      external: [
-        ...Object.keys(pkg.peerDependencies),
-        "@ode-react-ui/icons/nav",
-      ],
+      external: [...Object.keys(pkg.peerDependencies)],
       output: [
         {
           dir: "dist",
