@@ -1,5 +1,5 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["src", "../advanced/src/TreeView"],
+  "include": ["src"],
   "exclude": ["node_modules", "dist"]
 }

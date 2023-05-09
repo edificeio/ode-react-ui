@@ -17,17 +17,18 @@
     "docs"
   ],
   "scripts": {
-    "postinstall": "yarn build",
     "build": "turbo run build --filter=!@ode-react-ui/storybook",
     "check:advanced": "package-check --cwd=packages/advanced",
     "check:core": "package-check --cwd=packages/core",
     "check:hooks": "package-check --cwd=packages/hooks",
     "check:icons": "package-check --cwd=packages/icons",
-    "clean": "rm -rf */**/node_modules && rm -rf node_modules && rm -f yarn.lock",
-    "docs": "turbo run start-storybook --filter=@ode-react-ui/storybook",
-    "docs:build": "turbo run build-storybook --filter=@ode-react-ui/storybook && cp -R ./packages/icons/assets/ ./docs/dist/icons/",
+    "clean": "rm -rf */**/node_modules && rm -rf node_modules && rm -f yarn.lock && rm -f */**/dist",
+    "docs": "start-storybook -p 6006",
+    "docs:build": "build-storybook --docs -o dist/ && cp -R packages/icons/assets/ dist/icons/",
+    "docs:preview": "start-storybook --docs --no-manager-cache",
     "fix": "turbo run fix",
     "format": "turbo run format",
+    "postinstall": "yarn build",
     "lint": "turbo run lint",
     "playground": "turbo run dev --filter=@ode-react-ui/storybook",
     "pre-commit": "yarn lint && yarn format",
@@ -39,10 +40,22 @@
     "@changesets/cli": "2.26.0"
   },
   "devDependencies": {
+    "@babel/core": "7.20.5",
     "@skypack/package-check": "0.2.2",
+    "@storybook/addon-a11y": "6.5.15",
+    "@storybook/addon-actions": "6.5.15",
+    "@storybook/addon-essentials": "6.5.15",
+    "@storybook/addon-interactions": "6.5.15",
+    "@storybook/addon-links": "6.5.15",
+    "@storybook/builder-vite": "0.2.6",
+    "@storybook/cli": "6.5.15",
+    "@storybook/react": "6.5.15",
+    "@storybook/testing-library": "0.0.13",
     "@typescript-eslint/eslint-plugin": "5.48.0",
     "@typescript-eslint/parser": "5.48.0",
-    "eslint": "8.31.0",
+    "@vitejs/plugin-react": "3.0.1",
+    "babel-loader": "8.2.5",
+    "eslint": "8.40.0",
     "eslint-config-prettier": "8.6.0",
     "eslint-config-standard-with-typescript": "26.0.0",
     "eslint-plugin-import": "2.26.0",
@@ -53,13 +66,16 @@
     "eslint-plugin-react": "7.31.11",
     "husky": "8.0.3",
     "install-peers-cli": "^2.2.0",
+    "ode-ts-client": "feat-explorer",
     "prettier": "2.8.1",
     "rollup-plugin-visualizer": "5.9.0",
     "turbo": "1.9.3",
-    "typescript": "4.8.4"
+    "typescript": "4.8.4",
+    "vite": "4.3.4",
+    "vite-plugin-dts": "2.3.0"
   },
+  "packageManager": "yarn@1.22.19",
   "engines": {
     "node": ">=16.0.0"
-  },
-  "packageManager": "yarn@1.22.19"
+  }
 }
