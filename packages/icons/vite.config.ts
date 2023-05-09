@@ -21,10 +21,6 @@ export default defineConfig({
       formats: ["es", "cjs"],
     },
     rollupOptions: {
-      /* output: {
-        preserveModules: true,
-        preserveModulesRoot: "src",
-      }, */
       external: [...Object.keys(peerDependencies)],
     },
   },
