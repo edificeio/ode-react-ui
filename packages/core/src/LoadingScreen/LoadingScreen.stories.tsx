@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import LoadingScreen from "./LoadingScreen";
+import LoadingScreen, { LoadingScreenProps } from "./LoadingScreen";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -9,7 +9,7 @@ export default {
     docs: {
       description: {
         component:
-          "The LoadingScreen component is commonly used with the Lazy Loaded (code splitting) component to notify the user that components are loading.",
+          "The LoadingScreen component is commonly used with Lazy Loaded Components (code splitting) to notify the user that components are loading.",
       },
     },
   },
@@ -18,7 +18,17 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof LoadingScreen> = (
-  args: ReturnType<typeof LoadingScreen>,
+  args: LoadingScreenProps,
 ) => <LoadingScreen {...args} />;
 
 export const Base = Template.bind({});
+
+export const Position = Template.bind({});
+Position.parameters = {
+  docs: {
+    description: {
+      story:
+        "Position of the component is set to `true` per default. If set to `false`, LoadingScreen will take the whole screen and shows an overlay",
+    },
+  },
+};

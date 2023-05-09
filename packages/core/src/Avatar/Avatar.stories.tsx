@@ -42,10 +42,10 @@ export const Base = Template.bind({});
 export const AvatarSizes = () => {
   return (
     <div className="d-flex align-items-center gap-8">
-      <Avatar src="" size="xs" alt="alternative text" />
-      <Avatar src="" size="sm" alt="alternative text" />
-      <Avatar src="" size="md" alt="alternative text" />
-      <Avatar src="" size="lg" alt="alternative text" />
+      <Avatar size="xs" alt="alternative text" />
+      <Avatar size="sm" alt="alternative text" />
+      <Avatar size="md" alt="alternative text" />
+      <Avatar size="lg" alt="alternative text" />
     </div>
   );
 };
@@ -116,7 +116,6 @@ export const AvatarCustomFallback = () => {
   return (
     <div className="d-flex align-items-center gap-8">
       <Avatar
-        src=""
         size="md"
         alt="alternative text"
         imgPlaceholder="https://bit.ly/kent-c-dodds"
