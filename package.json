@@ -74,8 +74,5 @@
     "vite": "4.3.4",
     "vite-plugin-dts": "2.3.0"
   },
-  "packageManager": "yarn@1.22.19",
-  "engines": {
-    "node": ">=16.x"
-  }
+  "packageManager": "yarn@1.22.19"
 }
