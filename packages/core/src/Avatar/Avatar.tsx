@@ -20,7 +20,7 @@ export interface AvatarProps extends React.ComponentPropsWithRef<"img"> {
   /**
    * Show image when `src` props is provided
    */
-  src: string;
+  src?: string;
   /**
    * Custom fallback image
    */
@@ -81,7 +81,7 @@ const Avatar = forwardRef(
     return (
       <div ref={ref} className={classes}>
         <Image
-          src={src}
+          src={src || placeholder}
           alt={alt}
           imgPlaceholder={placeholder}
           {...restProps}
