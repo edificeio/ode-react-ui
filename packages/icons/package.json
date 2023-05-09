@@ -38,8 +38,9 @@
     "*.d.ts"
   ],
   "scripts": {
-    "prebuild": "npx @svgr/cli assets --config-file ./svgr.config.cjs",
-    "build": "yarn prebuild && vite build",
+    "build": "yarn build:icons && yarn build:vite",
+    "build:icons": "svgr assets --config-file ./svgr.config.cjs",
+    "build:vite": "vite build",
     "fix": "eslint --fix \"**/*.{ts,tsx}\"",
     "format": "concurrently \"yarn:format:*\"",
     "format:check": "prettier --check .",
