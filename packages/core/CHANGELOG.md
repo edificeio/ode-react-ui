@@ -1,5 +1,17 @@
 # @ode-react-ui/core
 
+## 2.0.0-dev.6
+
+### Patch Changes
+
+- [#173](https://github.com/opendigitaleducation/ode-react-ui/pull/173) [`5e6630b`](https://github.com/opendigitaleducation/ode-react-ui/commit/5e6630bb297941666421cce2ce84b85c079ca749) Thanks [@github-actions](https://github.com/apps/github-actions)! - add missing stories and fix avatar component
+
+- [#173](https://github.com/opendigitaleducation/ode-react-ui/pull/173) [`1286afd`](https://github.com/opendigitaleducation/ode-react-ui/commit/1286afdbf998441deb6a0cfdc33f37d9d4ad39d3) Thanks [@github-actions](https://github.com/apps/github-actions)! - fixes build config
+
+- Updated dependencies [[`ca84c9c`](https://github.com/opendigitaleducation/ode-react-ui/commit/ca84c9cb646c28b192ac0d606cef8d2541256134), [`1286afd`](https://github.com/opendigitaleducation/ode-react-ui/commit/1286afdbf998441deb6a0cfdc33f37d9d4ad39d3)]:
+  - @ode-react-ui/icons@2.0.0-dev.6
+  - @ode-react-ui/hooks@2.0.0-dev.6
+
 ## 2.0.0-dev.5
 
 ### Patch Changes
