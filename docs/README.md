@@ -8,7 +8,7 @@
 
 [How To Write Stories](https://storybook.js.org/docs/react/writing-stories/introduction)
 
-Storybook will search for `*.stories.tsx` files inside [Core](../packages/core/) and [Advanced](../packages/advanced/) libs.
+Storybook will search for `*.stories.tsx` files inside each package.
 
 ### MDX Pages
 
@@ -23,15 +23,21 @@ For specific MDX documentation, you must write them inside `stories` folder from
 > Start Storybook on port 6006
 
 ```bash
-yarn start-storybook
+yarn docs
 ```
 
 ### Build
 
-> Build storybook document to `dist/storybook`
+> Build storybook document to `dist/` folder
 
 ```bash
-yarn build-storybook
+yarn docs:build
+```
+
+### Preview
+
+```bash
+yarn docs:preview
 ```
 
 ⚠️ Don't change output folder. This is used to deploy to Vercel.
