@@ -68,7 +68,7 @@ export interface TreeItemProps {
   onItemBlur?: Function;
 }
 
-export const TreeItem = (props: TreeItemProps) => {
+const TreeItem = (props: TreeItemProps) => {
   const {
     nodeId,
     label,

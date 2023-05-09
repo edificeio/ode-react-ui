@@ -1,36 +1,37 @@
-import { defineConfig } from "vite";
+import { resolve } from "path";
+
 import react from "@vitejs/plugin-react";
-import dts from "vite-plugin-dts";
-import pkg from "./package.json";
 import { visualizer } from "rollup-plugin-visualizer";
+import { defineConfig } from "vite";
+import dts from "vite-plugin-dts";
+
+import { peerDependencies } from "./package.json";
 
 export default defineConfig({
   esbuild: {
     minifyIdentifiers: false,
   },
   build: {
+    target: "esnext",
+    lib: {
+      entry: {
+        index: resolve(__dirname, "src/index.ts"),
+      },
+      formats: ["es", "cjs"],
+    },
     rollupOptions: {
-      preserveEntrySignatures: "strict",
-      input: "src/index.ts",
-      external: [...Object.keys(pkg.peerDependencies)],
-      output: [
-        {
-          dir: "dist",
-          format: "esm",
-          preserveModules: true,
-          preserveModulesRoot: "src",
-          entryFileNames: ({ name: fileName }) => {
-            return `${fileName}.js`;
-          },
-        },
-      ],
+      output: {
+        preserveModules: true,
+        preserveModulesRoot: "src",
+      },
+      external: [...Object.keys(peerDependencies)],
     },
   },
   plugins: [
     react({
       jsxRuntime: "classic",
     }),
-    visualizer(),
     dts(),
+    visualizer(),
   ],
 });

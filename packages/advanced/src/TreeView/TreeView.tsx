@@ -7,7 +7,7 @@
  */
 import { forwardRef, useEffect, useState } from "react";
 
-import { TreeItem } from "./TreeItem";
+import TreeItem from "./TreeItem";
 import { TreeNode } from "./TreeNode";
 
 export interface TreeViewProps {
