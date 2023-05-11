@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 2.0.0-dev.7
+
+### Patch Changes
+
+- [#176](https://github.com/opendigitaleducation/ode-react-ui/pull/176) [`488cbc6`](https://github.com/opendigitaleducation/ode-react-ui/commit/488cbc692c871bd9625038fa79ed5d14465d40f1) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix layout issue with flexbox
+
 ## 2.0.0-dev.6
 
 ### Patch Changes
