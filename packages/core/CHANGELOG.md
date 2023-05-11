@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 2.0.0-dev.8
+
+### Patch Changes
+
+- [`ff54847`](https://github.com/opendigitaleducation/ode-react-ui/commit/ff5484722f6000adc0c1d51d57dec0dc9055ed98) Thanks [@ccreusat](https://github.com/ccreusat)! - fix loading screen props
+
 ## 2.0.0-dev.7
 
 ### Patch Changes
