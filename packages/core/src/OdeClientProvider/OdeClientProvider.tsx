@@ -52,7 +52,7 @@ export interface ContextProps {
 
 export const Context = createContext<ContextProps | null>(null!);
 
-export default function OdeClientProvider({
+export function OdeClientProvider({
   children,
   framework,
   params,

@@ -1,5 +1,5 @@
 import { ComponentMeta } from "@storybook/react";
-import Grid, { Column } from "./Grid";
+import { Grid, Column } from "./Grid";
 
 export default {
   title: "Layouts/Grid",
