@@ -17,9 +17,7 @@ export default {
 } as ComponentMeta<typeof LoadingScreen>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof LoadingScreen> = (
-  args: LoadingScreenProps,
-) => <LoadingScreen {...args} />;
+const Template: ComponentStory<typeof LoadingScreen> = () => <LoadingScreen />;
 
 export const Base = Template.bind({});
 
