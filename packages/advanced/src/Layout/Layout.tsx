@@ -23,7 +23,7 @@ const Layout = ({
         configurationFramework={configurationFramework}
       />
       <Main
-        className={clsx("container-fluid bg-white", {
+        className={clsx("d-flex flex-column bg-white", {
           "rounded-4 border": is1d,
           "mt-24": is1d,
         })}

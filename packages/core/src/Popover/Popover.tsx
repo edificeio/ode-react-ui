@@ -48,7 +48,7 @@ export const PopoverFooter = ({ children, className }: PopoverProps) => {
   return <div className={classes}>{children}</div>;
 };
 
-const Popover = forwardRef<HTMLDivElement, PopoverProps>(
+export const Popover = forwardRef<HTMLDivElement, PopoverProps>(
   ({ children, className, id, isVisible, ...restProps }, ref) => {
     const classes = clsx(
       "popover d-block position-absolute top-100 start-50 translate-middle-x",
@@ -80,5 +80,3 @@ const Popover = forwardRef<HTMLDivElement, PopoverProps>(
 );
 
 Popover.displayName = "Popover";
-
-export default Popover;
