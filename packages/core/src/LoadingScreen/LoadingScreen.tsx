@@ -7,7 +7,7 @@ export interface LoadingScreenProps {
 }
 
 const LoadingScreen = forwardRef(
-  ({ position = true }: { position: boolean }, ref: Ref<HTMLDivElement>) => {
+  ({ position = true }: { position?: boolean }, ref: Ref<HTMLDivElement>) => {
     const image = "/assets/themes/ode-bootstrap/images/screen-loading.gif";
 
     const classes = clsx(
