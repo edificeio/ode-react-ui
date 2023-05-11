@@ -22,7 +22,7 @@ export const Context = createContext<ContextProps | null>({
   bgCode: "",
 });
 
-export default function useAppCard() {
+export function useAppCard() {
   const context = useContext(Context);
   if (!context) {
     throw new Error(

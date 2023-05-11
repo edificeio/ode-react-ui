@@ -7,6 +7,10 @@ export interface GridProps {
    * Content inside the Grid component. Usually GridCol components
    */
   children: ReactNode;
+  /**
+   * Optional class for styling purpose
+   */
+  className?: string;
 }
 
 export interface GridColProps extends React.ComponentPropsWithoutRef<"div"> {
@@ -40,9 +44,10 @@ export interface GridColProps extends React.ComponentPropsWithoutRef<"div"> {
  * Grid of 12 columns on Desktop, 8 on Tablet and 4 on Mobile
  */
 
-const Grid = ({ children, ...restProps }: GridProps) => {
+export const Grid = ({ children, className, ...restProps }: GridProps) => {
+  const classes = clsx("grid", className);
   return (
-    <div className="grid" {...restProps}>
+    <div className={classes} {...restProps}>
       {children}
     </div>
   );
@@ -78,4 +83,4 @@ Column.displayName = "Grid.Col";
 
 Grid.Col = Column;
 
-export default Grid;
+// export default Grid;
