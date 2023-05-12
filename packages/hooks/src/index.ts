@@ -11,3 +11,4 @@ export * from "./useTrapFocus";
 export * from "./useTitle";
 export * from "./useToggle";
 export * from "./useBookmark";
+export * from "./useDebounce";
