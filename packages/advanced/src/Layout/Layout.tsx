@@ -2,30 +2,24 @@ import { type ReactNode } from "react";
 
 import { Main, useOdeClient } from "@ode-react-ui/core";
 import clsx from "clsx";
-import { IConfigurationFramework } from "ode-ts-client";
 import { Toaster } from "react-hot-toast";
 
 import { Header } from "../Header";
 
-const Layout = ({
-  children,
-  configurationFramework,
-}: {
-  children: ReactNode;
-  configurationFramework: IConfigurationFramework;
-}) => {
-  const { is1d, basePath } = useOdeClient();
+const Layout = ({ children }: { children: ReactNode }) => {
+  // const { theme, configurationFramework } = useOdeClient();
+  const { confQuery, configurationFramework } = useOdeClient();
   return (
     <>
       <Header
-        is1d={is1d}
-        src={basePath}
+        is1d={confQuery?.data?.theme?.is1d}
+        src={confQuery?.data?.theme?.basePath}
         configurationFramework={configurationFramework}
       />
       <Main
         className={clsx("d-flex flex-column bg-white", {
-          "rounded-4 border": is1d,
-          "mt-24": is1d,
+          "rounded-4 border": confQuery?.data?.theme?.is1d,
+          "mt-24": confQuery?.data?.theme?.is1d,
         })}
       >
         {children}

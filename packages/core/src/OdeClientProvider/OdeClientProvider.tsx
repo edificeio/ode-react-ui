@@ -1,6 +1,14 @@
-import { createContext, type ReactNode, useMemo, useContext } from "react";
+import {
+  createContext,
+  type ReactNode,
+  useMemo,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
-import { useOdeBackend } from "@ode-react-ui/hooks";
+import { useConf, useSession } from "@ode-react-ui/hooks";
+import { UseQueryResult } from "@tanstack/react-query";
 import {
   App,
   IConfigurationFramework,
@@ -8,9 +16,14 @@ import {
   IHttp,
   NotifyFrameworkFactory,
   ISessionFramework,
-  IWebApp,
+  IUserInfo,
   ISession,
-  ITheme,
+  IUserDescription,
+  IWebApp,
+  UserProfile,
+  IGetConf,
+  IGetSession,
+  IOdeTheme,
 } from "ode-ts-client";
 
 export interface OdeProviderParams {
@@ -35,19 +48,21 @@ export interface OdeClientProps {
 }
 
 export interface ContextProps {
-  app: IWebApp;
-  appCode: string;
-  basePath: string;
+  appCode: App;
+  applications: IWebApp[] | undefined;
   configurationFramework: IConfigurationFramework;
-  currentLanguage: string;
-  getBootstrapTheme: () => string;
+  currentLanguage: string | undefined;
+  currentApp: IWebApp | undefined;
   http: IHttp;
   i18n: (key: string, params?: Record<string, any> | undefined) => string;
-  is1d: boolean;
-  isAppLoading: boolean;
-  params: OdeProviderParams;
+  init: boolean;
   session: ISession;
-  theme: ITheme;
+  sessionQuery: UseQueryResult<IGetSession>;
+  confQuery: UseQueryResult<IGetConf>;
+  theme: IOdeTheme | undefined;
+  user: IUserInfo | any;
+  userDescription: IUserDescription | undefined;
+  userProfile: UserProfile | undefined;
 }
 
 export const Context = createContext<ContextProps | null>(null!);
@@ -57,42 +72,52 @@ export function OdeClientProvider({
   framework,
   params,
 }: OdeClientProps) {
-  const { http, configurationFramework } = framework;
+  const { http, sessionFramework, configurationFramework } = framework;
+  const { app } = params;
 
-  const {
-    app,
-    currentLanguage,
-    idiom,
-    session,
-    theme,
-    getBootstrapTheme,
-    isLoading: isAppLoading,
-  } = useOdeBackend({
-    params,
-    framework,
-  });
+  const appCode = params.app;
 
-  const is1d: boolean = theme?.is1D;
-  const basePath: string = theme?.basePath;
-  const appCode: string = params.app;
+  const [init, setInit] = useState<boolean>(false);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        await Promise.all([
+          sessionFramework.initialize(),
+          configurationFramework.initialize(null, null),
+        ]);
+
+        await configurationFramework.Platform.apps.initialize(app, true);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setInit(true);
+      }
+    })();
+  }, []);
+
+  const sessionQuery = useSession();
+  const confQuery = useConf({ appCode });
 
   const values = useMemo(
     () => ({
-      app,
       appCode,
-      basePath,
-      currentLanguage,
-      http,
-      i18n: idiom.translate,
-      is1d,
-      params,
-      session,
-      theme,
-      getBootstrapTheme,
+      applications: confQuery?.data?.applications,
       configurationFramework,
-      isAppLoading,
+      confQuery,
+      currentApp: confQuery?.data?.currentApp,
+      currentLanguage: sessionQuery?.data?.currentLanguage,
+      http,
+      i18n: configurationFramework.Platform.idiom.translate,
+      init,
+      session: sessionFramework.session,
+      sessionQuery,
+      theme: confQuery?.data?.theme,
+      user: sessionQuery?.data?.user,
+      userDescription: sessionQuery?.data?.userDescription,
+      userProfile: sessionQuery?.data?.userProfile,
     }),
-    [isAppLoading],
+    [init],
   );
 
   return <Context.Provider value={values}>{children}</Context.Provider>;

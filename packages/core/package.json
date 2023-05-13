@@ -59,7 +59,8 @@
     "react-hot-toast": "2.4.1",
     "react-popper": "2.3.0",
     "swiper": "9.0.4",
-    "ode-ts-client": "feat-explorer"
+    "ode-ts-client": "feat-explorer",
+    "@tanstack/react-query": "4.29.5"
   },
   "peerDependencies": {
     "@ode-react-ui/hooks": "2.0.0-dev.6",
@@ -71,7 +72,8 @@
     "react-hot-toast": "2.4.1",
     "react-popper": "2.3.0",
     "swiper": "9.0.4",
-    "ode-ts-client": "feat-explorer"
+    "ode-ts-client": "feat-explorer",
+    "@tanstack/react-query": "4.29.5"
   },
   "publishConfig": {
     "access": "public"
