@@ -1,5 +1,18 @@
 # @ode-react-ui/core
 
+## 2.0.0-dev.9
+
+### Patch Changes
+
+- [#183](https://github.com/opendigitaleducation/ode-react-ui/pull/183) [`a2f1fb4`](https://github.com/opendigitaleducation/ode-react-ui/commit/a2f1fb46a001cee8a0a35974e9ce0a98efc87859) Thanks [@clementcreusat](https://github.com/clementcreusat)! - modify height toaster
+
+- [#184](https://github.com/opendigitaleducation/ode-react-ui/pull/184) [`39d5c7b`](https://github.com/opendigitaleducation/ode-react-ui/commit/39d5c7bd33610d1eab1f3c4c296ec671c084ab27) Thanks [@clementcreusat](https://github.com/clementcreusat)! - refacto OdeClientProvider and custom hooks to access session, user, theme and conf
+
+- [#175](https://github.com/opendigitaleducation/ode-react-ui/pull/175) [`498e4b2`](https://github.com/opendigitaleducation/ode-react-ui/commit/498e4b23caae3687c995fccb3195bae5e59d88a2) Thanks [@Headan](https://github.com/Headan)! - #WB2-779, add max-height dropdown
+
+- Updated dependencies [[`0d0304d`](https://github.com/opendigitaleducation/ode-react-ui/commit/0d0304d16245dc7d3a9bbfaa169518fb0f98cdf6), [`39d5c7b`](https://github.com/opendigitaleducation/ode-react-ui/commit/39d5c7bd33610d1eab1f3c4c296ec671c084ab27)]:
+  - @ode-react-ui/hooks@2.0.0-dev.9
+
 ## 2.0.0-dev.8
 
 ### Patch Changes

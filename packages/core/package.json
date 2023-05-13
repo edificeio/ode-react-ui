@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/core",
-  "version": "2.0.0-dev.8",
+  "version": "2.0.0-dev.9",
   "private": false,
   "description": "@ode-react-ui react core components",
   "keywords": [
@@ -46,7 +46,7 @@
     "@popperjs/core": "2.11.6"
   },
   "devDependencies": {
-    "@ode-react-ui/hooks": "2.0.0-dev.6",
+    "@ode-react-ui/hooks": "2.0.0-dev.9",
     "@ode-react-ui/icons": "2.0.0-dev.6",
     "@react-spring/web": "9.7.0",
     "@types/node": "18.11.18",
@@ -63,7 +63,7 @@
     "@tanstack/react-query": "4.29.5"
   },
   "peerDependencies": {
-    "@ode-react-ui/hooks": "2.0.0-dev.6",
+    "@ode-react-ui/hooks": "2.0.0-dev.9",
     "@ode-react-ui/icons": "2.0.0-dev.6",
     "@react-spring/web": "9.7.0",
     "clsx": "1.2.1",

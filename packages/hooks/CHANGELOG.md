@@ -1,5 +1,13 @@
 # @ode-react-ui/hooks
 
+## 2.0.0-dev.9
+
+### Patch Changes
+
+- [#180](https://github.com/opendigitaleducation/ode-react-ui/pull/180) [`0d0304d`](https://github.com/opendigitaleducation/ode-react-ui/commit/0d0304d16245dc7d3a9bbfaa169518fb0f98cdf6) Thanks [@david-cc](https://github.com/david-cc)! - Adding debounce hook
+
+- [#184](https://github.com/opendigitaleducation/ode-react-ui/pull/184) [`39d5c7b`](https://github.com/opendigitaleducation/ode-react-ui/commit/39d5c7bd33610d1eab1f3c4c296ec671c084ab27) Thanks [@clementcreusat](https://github.com/clementcreusat)! - refacto OdeClientProvider and custom hooks to access session, user, theme and conf
+
 ## 2.0.0-dev.6
 
 ### Patch Changes
