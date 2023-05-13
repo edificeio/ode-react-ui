@@ -1,7 +1,6 @@
 import { useRef, useState, useId, useEffect } from "react";
 
 import {
-  // useClickOutside,
   useTitle,
   useHover,
   useBookmark,
@@ -11,14 +10,19 @@ import {
   IConfigurationFramework,
   IHttp,
   ISession,
+  IUserInfo,
   odeServices,
 } from "ode-ts-client";
 
 export function useHeader({
+  user,
+  avatar,
   session,
   configurationFramework,
   http,
 }: {
+  user: IUserInfo | undefined;
+  avatar: string;
   session: ISession;
   configurationFramework: IConfigurationFramework;
   http: IHttp;
@@ -58,9 +62,9 @@ export function useHeader({
   /**
    * Get user info: avatar, username and welcome message
    */
-  const userAvatar = session?.avatarUrl;
-  const userName = session?.user?.username;
-  const welcomeUser = `Bonjour ${session?.user?.username}, bienvenue!`;
+  const userAvatar = avatar;
+  const userName = user?.username;
+  const welcomeUser = `Bonjour ${user?.username}, bienvenue!`;
 
   /**
    * Get Bookmarked Apps

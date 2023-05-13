@@ -8,6 +8,7 @@ import {
   Avatar,
   useOdeClient,
 } from "@ode-react-ui/core";
+import { useUser } from "@ode-react-ui/hooks";
 import { RafterDown } from "@ode-react-ui/icons";
 import {
   Search,
@@ -39,7 +40,7 @@ import { WidgetAppsBody, WidgetAppsFooter } from "./WidgetApps";
 
 export interface HeaderProps {
   is1d?: boolean;
-  src: string;
+  src: string | undefined;
   configurationFramework: IConfigurationFramework;
 }
 
@@ -48,7 +49,8 @@ export default function Header({
   src = "",
   configurationFramework,
 }: HeaderProps): JSX.Element {
-  const { http, session, i18n } = useOdeClient();
+  const { appCode, http, i18n, session } = useOdeClient();
+  const { user, avatar } = useUser({ appCode });
   const {
     inputRef,
     title,
@@ -72,7 +74,7 @@ export default function Header({
     redirectToSearch,
     toggleCollapsedNav,
     handleLogout,
-  } = useHeader({ session, http, configurationFramework });
+  } = useHeader({ user, avatar, http, session, configurationFramework });
 
   const {
     isModalOpen: isHelpOpen,

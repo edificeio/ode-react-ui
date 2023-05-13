@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/restrict-plus-operands */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState, useEffect } from "react";
@@ -8,18 +7,18 @@ import { BurgerMenu } from "@ode-react-ui/icons";
 import parse, { attributesToProps, domToReact } from "html-react-parser";
 
 export function useHelp() {
-  const { is1d, appCode } = useOdeClient();
+  const { theme, appCode } = useOdeClient();
   const [html, setHtml] = useState<string>("");
   const [visibility, setVisibility] = useState<boolean>(true);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
-  const helpPath = is1d ? "/help-1d" : "/help-2d";
+  const helpPath = theme?.is1d ? "/help-1d" : "/help-2d";
 
   useEffect(() => {
     (async () => {
       let helpURL = "";
       helpURL = helpPath + "/application/" + appCode + "/";
-      if (appCode === "." && window.location.pathname !== "/adapter") {
+      if (!appCode && window.location.pathname !== "/adapter") {
         helpURL = helpPath + "/application/portal/";
       } else if (window.location.pathname === "/adapter") {
         helpURL =
