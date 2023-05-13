@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/advanced",
-  "version": "2.0.0-dev.9",
+  "version": "2.0.0-dev.10",
   "private": false,
   "description": "@ode-react-ui react advanced components",
   "keywords": [
@@ -45,7 +45,7 @@
     "html-react-parser": "^3.0.15"
   },
   "devDependencies": {
-    "@ode-react-ui/core": "2.0.0-dev.9",
+    "@ode-react-ui/core": "2.0.0-dev.10",
     "@ode-react-ui/hooks": "2.0.0-dev.9",
     "@ode-react-ui/icons": "2.0.0-dev.6",
     "@types/node": "18.11.18",
@@ -58,7 +58,7 @@
     "react-hot-toast": "2.4.1"
   },
   "peerDependencies": {
-    "@ode-react-ui/core": "2.0.0-dev.9",
+    "@ode-react-ui/core": "2.0.0-dev.10",
     "@ode-react-ui/hooks": "2.0.0-dev.9",
     "@ode-react-ui/icons": "2.0.0-dev.6",
     "clsx": "1.2.1",
