@@ -99,6 +99,23 @@ export function OdeClientProvider({
   const sessionQuery = useSession();
   const confQuery = useConf({ appCode });
 
+  useEffect(() => {
+    const link = document.getElementById("theme") as HTMLAnchorElement;
+    link.href = `${confQuery?.data?.theme?.bootstrapUrl}/theme.css` as string;
+  }, [confQuery?.data]);
+
+  useEffect(() => {
+    const link = document.getElementById("favicon") as HTMLAnchorElement;
+    link.href =
+      `${confQuery?.data?.theme?.basePath}/img/illustrations/favicon.ico` as string;
+  }, [confQuery?.data]);
+
+  useEffect(() => {
+    document
+      .querySelector("html")
+      ?.setAttribute("lang", sessionQuery?.data?.currentLanguage || "fr");
+  }, [sessionQuery?.data]);
+
   const values = useMemo(
     () => ({
       appCode,
@@ -130,4 +147,12 @@ export function useOdeClient() {
     throw new Error(`Cannot be used outside of OdeClientProvider`);
   }
   return context;
+}
+
+export function useOdeTest() {
+  const { theme } = useOdeClient();
+
+  return {
+    theme,
+  };
 }
