@@ -1,5 +1,15 @@
 # @ode-react-ui/core
 
+## 2.0.0-dev.12
+
+### Patch Changes
+
+- [`b6ca9cb`](https://github.com/opendigitaleducation/ode-react-ui/commit/b6ca9cbf6994070e0aa57fdab027fe8e7af128aa) Thanks [@ccreusat](https://github.com/ccreusat)! - update storybook
+
+- Updated dependencies [[`b6ca9cb`](https://github.com/opendigitaleducation/ode-react-ui/commit/b6ca9cbf6994070e0aa57fdab027fe8e7af128aa)]:
+  - @ode-react-ui/hooks@2.0.0-dev.12
+  - @ode-react-ui/icons@2.0.0-dev.12
+
 ## 2.0.0-dev.11
 
 ### Minor Changes
