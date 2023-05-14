@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-
-import { AppCard, AppIcon } from "../../../../components/src/index";
+import { AppCard } from "../AppCard";
+import { AppIcon } from "../AppIcon";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

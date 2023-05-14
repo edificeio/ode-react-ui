@@ -1,23 +1,45 @@
 <Meta title="Packages/Core" />
 
-# ODE React UI: Core Components
+# ODE React UI: Core
 
-![npm](https://img.shields.io/npm/v/@ode-react-ui/core?style=flat-square) ![bundlephobia](https://img.shields.io/bundlephobia/min/@ode-react-ui/core?style=flat-square)
+![npm](https://img.shields.io/npm/v/@ode-react-ui/core?style=flat-square)
+![bundlephobia](https://img.shields.io/bundlephobia/min/@ode-react-ui/core?style=flat-square)
 
 ## Getting Started
 
-We follow [WAI ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/) rules and [Bootstrap 5](https://getbootstrap.com/docs/5.0/components/accordion/) guidelines when making our components
+This library exports `OdeClientProvider` which is a React context provider to access `ode-ts-client` through an application.
+
+It defines session, conf, user, theme to code an application.
+
+You can have access to all these elements:
+
+`appCode`: Current app name <br/>
+`applications`: List of user's applications <br/>
+`configurationFramework`: a re-export of `ode-ts-client` configurationFramework <br/>
+`currentApp`: Current app object (displayName, prefix, url, ...) <br/>
+`currentLanguage`: Current language used by the user <br/>
+`http`: http method re-export from `ode-ts-client` <br/>
+`i18n`: Method to translate i18n keys <br/>
+`init`: If an app is ready or still loading <br/>
+`session`: A re-export of `ode-ts-client` sessionFramework.session <br/>
+`theme`: Current theme used with some utilities (basePath, bootstrapPath, skinName, ...) <br/>
+`user`: User info <br/>
+`userDescription`: User description <br/>
+`userProfile`: User profile type <br/>
+
+Some of them can be accessed directly with their custom hook:
+
+`useI18n` <br/>
+`useTheme` <br/>
+`useUser`
+
+## Dev
 
 ### Build
 
 ```bash
 yarn build
 ```
-
-Use Vite [Library mode](https://vitejs.dev/guide/build.html#library-mode).
-
-- Will generate a `dist` folder with `index` files (ESM + CJS)
-- Will generate `*.d.ts` for every component and index files
 
 ### Lint
 
@@ -39,51 +61,55 @@ yarn format
 
 ## Structure
 
-### Component Folder
+### Component
 
 - Folder name always in PascalCase: `Button`
 - Component file in PascalCase: `Button.tsx`
-- Component types & interface: `ButtonProps.tsx`
-- Stories file in PascalCase + stories extension : `Button.stories.tsx`
+- Export types & interfaces inside Component file
+- Stories file in PascalCase + `*.stories.tsx` : `Button.stories.tsx`
 
 ```bash
 src
-  -- ComponentFolder
-    -- Component.tsx
-    -- Component.stories.tsx
-    -- ComponentProps.tsx
-    -- index.tsx
+  -- <Component>Folder
+    -- <Component>.tsx
+    -- <Component>.stories.tsx
+    -- index.ts
 ```
 
-- Import the Component inside his own `index` file: `index.tsx`
+- Re-export the Component inside his own `index` file: `index.ts`
+- Export everything if Component has types & interfaces
 
 ```jsx
 export { default as Component } from "./Component";
+export * from "./Component";
 ```
 
-### Component Guideline
+### Hook
 
-Always add JSDoc syntax to Component file linking to :
+- Folder name starts with `use` and written in camelCase: `useSession`
+- Component file in camelCase: `useSession.ts`
+- Export types & interfaces inside Hook file
+- Stories file in PascalCase + `*.stories.tsx` : `useSession.stories.tsx`
 
-- Storybook Doc
-- Github Source file
-- WAI-ARIA Component page if exists
+```bash
+src
+  -- use<Hook>
+    -- use<Hook>.tsx
+    -- use<Hook>.stories.tsx
+    -- index.ts
+```
+
+- Re-export the Hook inside his own `index` file: `index.ts`
+- Export everything if Hook has types & interfaces
 
 ```jsx
-/**
- * Button Component
- *
- * @see Docs     Storybook Link
- * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/master/packages/core/src/Button/Button.tsx
- * @see WAI-ARIA https://www.w3.org/WAI/ARIA/apg/patterns/button/
- */
+export { default as useSession } from "./useSession";
+export * from "./useSession";
 ```
 
-### Component Syntax
+### Guideline
 
-#### Component description
-
-- Always document basic guideline of Component. Used by Storybook to generate documentation.
+- Always document basic guideline of Component with JSDoc format. Used by Storybook to generate documentation.
 
 ```jsx
 /**
@@ -91,12 +117,12 @@ Always add JSDoc syntax to Component file linking to :
  */
 ```
 
-#### Interface description
+### Interface description
 
 - Always document typescript types and interface with JSDoc syntax. Used by Storybook to generate documentation.
 
 ```jsx
-// Interface description (e.g: ButtonProps.tsx)
+// Interface description (e.g: TreeViewProps.tsx)
 export interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
@@ -124,13 +150,12 @@ export interface ButtonProps {
 ### Index file inside `src` folder
 
 - Entry point of this React Library.
-- Import your component inside `index.tsx` file.
+- Import your component inside `index.ts` file.
 
 ```jsx
-// Components
-export { Button } from "./Button";
+export * from "./Button";
 ```
 
 ## Dev
 
-You can build your component using `Storybook` or `Playground`. See [README](../../apps/docs/README.md)
+You can build your component using `Storybook`. See [README](../../docs/README.md)
