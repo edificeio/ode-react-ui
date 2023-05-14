@@ -7,5 +7,7 @@
     "@ode-react-ui/hooks": "2.0.0",
     "@ode-react-ui/icons": "2.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "popular-actors-impress"
+  ]
 }
