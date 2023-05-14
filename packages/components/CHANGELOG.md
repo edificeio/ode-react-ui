@@ -1,5 +1,20 @@
 # @ode-react-ui/components
 
+## 2.0.0
+
+### Minor Changes
+
+- [#188](https://github.com/opendigitaleducation/ode-react-ui/pull/188) [`15b608f`](https://github.com/opendigitaleducation/ode-react-ui/commit/15b608ff6e05a56aa49ea4af0db3384d538fb700) Thanks [@clementcreusat](https://github.com/clementcreusat)! - remove advanced pkg in favor of components pkg, isolate core as the provider of shared context
+
+### Patch Changes
+
+- [#188](https://github.com/opendigitaleducation/ode-react-ui/pull/188) [`4028fb6`](https://github.com/opendigitaleducation/ode-react-ui/commit/4028fb6bee44e3ef420c53de0c95540e6afb10f8) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update storybook
+
+- Updated dependencies [[`5089cfa`](https://github.com/opendigitaleducation/ode-react-ui/commit/5089cfa4657c12662401e8cd73c7c853f6c45d71), [`2ef6c97`](https://github.com/opendigitaleducation/ode-react-ui/commit/2ef6c97e3284d4c41f7604becb57e4b153055a99), [`6b1e58d`](https://github.com/opendigitaleducation/ode-react-ui/commit/6b1e58d99fd6d17f36ba1a2eaba30e6096bbc4af), [`cd2ee9e`](https://github.com/opendigitaleducation/ode-react-ui/commit/cd2ee9e9dc3753c370ce60d1d03aa7ca93b3a86d), [`4028fb6`](https://github.com/opendigitaleducation/ode-react-ui/commit/4028fb6bee44e3ef420c53de0c95540e6afb10f8), [`b580e10`](https://github.com/opendigitaleducation/ode-react-ui/commit/b580e10364c4846b3bc777a8f4a69eceb10a1a96), [`ac19893`](https://github.com/opendigitaleducation/ode-react-ui/commit/ac1989313e9bcd7fb5f9707c0d91807071ca95fc), [`15b608f`](https://github.com/opendigitaleducation/ode-react-ui/commit/15b608ff6e05a56aa49ea4af0db3384d538fb700), [`f8e19b8`](https://github.com/opendigitaleducation/ode-react-ui/commit/f8e19b881e20eeb8b81452dc1b245ed49928ad79), [`b7e25fc`](https://github.com/opendigitaleducation/ode-react-ui/commit/b7e25fc3dfcae7f5e0bb84669a35ea392ddf46e1), [`da8c457`](https://github.com/opendigitaleducation/ode-react-ui/commit/da8c457a69430a61501405fb50f6f58b902a02c7), [`dc0ecf1`](https://github.com/opendigitaleducation/ode-react-ui/commit/dc0ecf18109a442ee46d7f3443dfd6146f614223), [`9a31662`](https://github.com/opendigitaleducation/ode-react-ui/commit/9a316621f4585b383d9cb9d5e7015a436bb3e3d7), [`f88a16b`](https://github.com/opendigitaleducation/ode-react-ui/commit/f88a16b43451b8c0c526ec0b39fd705d1d150783), [`bd3ee43`](https://github.com/opendigitaleducation/ode-react-ui/commit/bd3ee43fc9cd35dc3b294276af4f6acd1389ed80), [`f7bba8d`](https://github.com/opendigitaleducation/ode-react-ui/commit/f7bba8d08a28ec3a414765843b2ccc3fc17c4cb4), [`0aad3cf`](https://github.com/opendigitaleducation/ode-react-ui/commit/0aad3cf83f10bc6eb30ecdbcd15a70a88096b809), [`f60ff0f`](https://github.com/opendigitaleducation/ode-react-ui/commit/f60ff0f32a28b70b090a9719449a03ac6d7592ed), [`e301c25`](https://github.com/opendigitaleducation/ode-react-ui/commit/e301c25acb201ae98ea2875ddeedb70205f1c953), [`426eb92`](https://github.com/opendigitaleducation/ode-react-ui/commit/426eb9266725b6c942ceb2cfe44659a3560a939a), [`d17cf50`](https://github.com/opendigitaleducation/ode-react-ui/commit/d17cf50d2a886bc4af8195cfb15af49427c9276c)]:
+  - @ode-react-ui/core@2.0.0
+  - @ode-react-ui/hooks@2.0.0
+  - @ode-react-ui/icons@2.0.0
+
 ## 2.0.0-dev.12
 
 ### Patch Changes
