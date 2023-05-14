@@ -30,7 +30,6 @@
     "format": "turbo run format",
     "postinstall": "yarn build",
     "lint": "turbo run lint",
-    "playground": "turbo run dev --filter=@ode-react-ui/storybook",
     "pre-commit": "yarn lint && yarn format",
     "prepare": "husky install",
     "publish-packages": "changeset version && changeset publish"

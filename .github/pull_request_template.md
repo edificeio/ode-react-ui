@@ -6,10 +6,10 @@ Please include a summary of the changes and the related issue. Please also inclu
 
 Please check the name of the package you changed
 
+- [ ] Components
 - [ ] Core
 - [ ] Icons
 - [ ] Hooks
-- [ ] Advanced
 
 ## Has the documentation changed?
 
