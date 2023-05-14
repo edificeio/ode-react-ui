@@ -5,9 +5,17 @@ import { visualizer } from "rollup-plugin-visualizer";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
-import { peerDependencies } from "./package.json";
+import { dependencies, peerDependencies } from "./package.json";
 
 export default defineConfig({
+  resolve: {
+    alias: [
+      {
+        find: "@ode-react-ui/components",
+        replacement: resolve(__dirname, "src"),
+      },
+    ],
+  },
   esbuild: {
     minifyIdentifiers: false,
   },
@@ -24,7 +32,11 @@ export default defineConfig({
         preserveModules: true,
         preserveModulesRoot: "src",
       },
-      external: [...Object.keys(peerDependencies)],
+      external: [
+        ...Object.keys(dependencies),
+        ...Object.keys(peerDependencies),
+        "@ode-react-ui/icons/nav",
+      ],
     },
   },
   plugins: [

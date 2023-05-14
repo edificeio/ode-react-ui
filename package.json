@@ -17,7 +17,7 @@
     "docs"
   ],
   "scripts": {
-    "build": "turbo run build --filter=!@ode-react-ui/storybook",
+    "build": "turbo run build",
     "check:advanced": "package-check --cwd=packages/advanced",
     "check:core": "package-check --cwd=packages/core",
     "check:hooks": "package-check --cwd=packages/hooks",

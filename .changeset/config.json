@@ -8,10 +8,10 @@
   "fixed": [],
   "linked": [
     [
-      "@ode-react-ui/advanced",
+      "@ode-react-ui/components",
       "@ode-react-ui/core",
-      "@ode-react-ui/icons",
-      "@ode-react-ui/hooks"
+      "@ode-react-ui/hooks",
+      "@ode-react-ui/icons"
     ]
   ],
   "access": "public",
