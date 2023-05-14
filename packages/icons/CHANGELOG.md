@@ -1,5 +1,11 @@
 # @ode-react-ui/icons
 
+## 2.0.0-dev.11
+
+### Minor Changes
+
+- [`69a1f9b`](https://github.com/opendigitaleducation/ode-react-ui/commit/69a1f9bd62ebb3c7bda48f86d4335c0537cb3b6a) Thanks [@ccreusat](https://github.com/ccreusat)! - remove advanced pkg in favor of components pkg, isolate core as the provider of shared context
+
 ## 2.0.0-dev.6
 
 ### Patch Changes
