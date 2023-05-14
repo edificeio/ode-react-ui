@@ -21,13 +21,13 @@ import {
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Alert } from "../Alert";
+import { TreeNode, TreeView } from "../TreeView";
 import { Avatar } from "../Avatar";
 import { Button, IconButton, SearchButton } from "../Button";
 import { Checkbox, FormControl, Input, Label, Radio, Select } from "../Form";
 import { OptionsType } from "../Form/Select";
 import { Heading } from "../Heading";
 import { ImagePicker } from "../ImagePicker";
-import { TreeNode, TreeView } from "../../../advanced/src/TreeView";
 import Modal, { ModalProps } from "./Modal";
 
 export default {
