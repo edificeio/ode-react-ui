@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/core",
-  "version": "2.0.0",
+  "version": "2.0.1-dev.0",
   "private": false,
   "description": "@ode-react-ui react core library",
   "keywords": [
@@ -43,8 +43,8 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@ode-react-ui/hooks": "2.0.0",
-    "@ode-react-ui/icons": "2.0.0",
+    "@ode-react-ui/hooks": "2.0.1-dev.0",
+    "@ode-react-ui/icons": "2.0.1-dev.0",
     "@tanstack/react-query": "4.29.5",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
@@ -57,8 +57,8 @@
     "react-hot-toast": "2.4.1"
   },
   "peerDependencies": {
-    "@ode-react-ui/hooks": "2.0.0",
-    "@ode-react-ui/icons": "2.0.0",
+    "@ode-react-ui/hooks": "2.0.1-dev.0",
+    "@ode-react-ui/icons": "2.0.1-dev.0",
     "@tanstack/react-query": "4.29.5",
     "clsx": "1.2.1",
     "ode-ts-client": "feat-explorer",
