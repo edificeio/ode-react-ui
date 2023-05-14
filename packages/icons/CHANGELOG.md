@@ -1,5 +1,35 @@
 # @ode-react-ui/icons
 
+## 2.0.0
+
+### Major Changes
+
+- [#188](https://github.com/opendigitaleducation/ode-react-ui/pull/188) [`6b1e58d`](https://github.com/opendigitaleducation/ode-react-ui/commit/6b1e58d99fd6d17f36ba1a2eaba30e6096bbc4af) Thanks [@clementcreusat](https://github.com/clementcreusat)! - working tree shaking, better peer deps calls
+
+### Minor Changes
+
+- [#188](https://github.com/opendigitaleducation/ode-react-ui/pull/188) [`15b608f`](https://github.com/opendigitaleducation/ode-react-ui/commit/15b608ff6e05a56aa49ea4af0db3384d538fb700) Thanks [@clementcreusat](https://github.com/clementcreusat)! - remove advanced pkg in favor of components pkg, isolate core as the provider of shared context
+
+### Patch Changes
+
+- [#188](https://github.com/opendigitaleducation/ode-react-ui/pull/188) [`5089cfa`](https://github.com/opendigitaleducation/ode-react-ui/commit/5089cfa4657c12662401e8cd73c7c853f6c45d71) Thanks [@clementcreusat](https://github.com/clementcreusat)! - enter pre release
+
+- [#188](https://github.com/opendigitaleducation/ode-react-ui/pull/188) [`2ef6c97`](https://github.com/opendigitaleducation/ode-react-ui/commit/2ef6c97e3284d4c41f7604becb57e4b153055a99) Thanks [@clementcreusat](https://github.com/clementcreusat)! - clean files, move ts props files inside components, rename unnecessary imports
+
+- [#188](https://github.com/opendigitaleducation/ode-react-ui/pull/188) [`4028fb6`](https://github.com/opendigitaleducation/ode-react-ui/commit/4028fb6bee44e3ef420c53de0c95540e6afb10f8) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update storybook
+
+- [#188](https://github.com/opendigitaleducation/ode-react-ui/pull/188) [`b580e10`](https://github.com/opendigitaleducation/ode-react-ui/commit/b580e10364c4846b3bc777a8f4a69eceb10a1a96) Thanks [@clementcreusat](https://github.com/clementcreusat)! - update vite deps
+
+- [#188](https://github.com/opendigitaleducation/ode-react-ui/pull/188) [`f8e19b8`](https://github.com/opendigitaleducation/ode-react-ui/commit/f8e19b881e20eeb8b81452dc1b245ed49928ad79) Thanks [@clementcreusat](https://github.com/clementcreusat)! - downgrade @vitejs/plugin-react 4.0.0 to 3.0.1
+
+- [#188](https://github.com/opendigitaleducation/ode-react-ui/pull/188) [`da8c457`](https://github.com/opendigitaleducation/ode-react-ui/commit/da8c457a69430a61501405fb50f6f58b902a02c7) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix duplicate build
+
+- [#188](https://github.com/opendigitaleducation/ode-react-ui/pull/188) [`e301c25`](https://github.com/opendigitaleducation/ode-react-ui/commit/e301c25acb201ae98ea2875ddeedb70205f1c953) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix build storybook and clean files
+
+- [#188](https://github.com/opendigitaleducation/ode-react-ui/pull/188) [`426eb92`](https://github.com/opendigitaleducation/ode-react-ui/commit/426eb9266725b6c942ceb2cfe44659a3560a939a) Thanks [@clementcreusat](https://github.com/clementcreusat)! - revert @vitejs/plugin-react version
+
+- [#188](https://github.com/opendigitaleducation/ode-react-ui/pull/188) [`d17cf50`](https://github.com/opendigitaleducation/ode-react-ui/commit/d17cf50d2a886bc4af8195cfb15af49427c9276c) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fixes build config
+
 ## 2.0.0-dev.12
 
 ### Patch Changes
