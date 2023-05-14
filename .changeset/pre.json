@@ -2,7 +2,7 @@
   "mode": "pre",
   "tag": "dev",
   "initialVersions": {
-    "@ode-react-ui/advanced": "1.0.7",
+    "@ode-react-ui/components": "1.0.0",
     "@ode-react-ui/core": "1.0.7",
     "@ode-react-ui/hooks": "1.0.7",
     "@ode-react-ui/icons": "1.0.7"

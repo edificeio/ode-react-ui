@@ -1,6 +1,6 @@
 import { ComponentStory } from "@storybook/react";
 import { Lock, Mail } from "@ode-react-ui/icons";
-import { Button, FormControl, Input, Label } from "@ode-react-ui/core";
+import { Button, FormControl, Input, Label } from "@ode-react-ui/components";
 import { useEffect, useRef } from "react";
 import useTrapFocus from "./useTrapFocus";
 

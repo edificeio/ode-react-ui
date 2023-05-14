@@ -7,7 +7,6 @@ import {
   useState,
 } from "react";
 
-import { useConf, useSession } from "@ode-react-ui/hooks";
 import { UseQueryResult } from "@tanstack/react-query";
 import {
   App,
@@ -25,6 +24,9 @@ import {
   IGetSession,
   IOdeTheme,
 } from "ode-ts-client";
+
+import { useConf } from "../useConf";
+import { useSession } from "../useSession";
 
 export interface OdeProviderParams {
   alternativeApp?: boolean;
@@ -51,14 +53,14 @@ export interface ContextProps {
   appCode: App;
   applications: IWebApp[] | undefined;
   configurationFramework: IConfigurationFramework;
-  currentLanguage: string | undefined;
+  confQuery: UseQueryResult<IGetConf>;
   currentApp: IWebApp | undefined;
+  currentLanguage: string | undefined;
   http: IHttp;
   i18n: (key: string, params?: Record<string, any> | undefined) => string;
   init: boolean;
   session: ISession;
   sessionQuery: UseQueryResult<IGetSession>;
-  confQuery: UseQueryResult<IGetConf>;
   theme: IOdeTheme | undefined;
   user: IUserInfo | any;
   userDescription: IUserDescription | undefined;
@@ -147,12 +149,4 @@ export function useOdeClient() {
     throw new Error(`Cannot be used outside of OdeClientProvider`);
   }
   return context;
-}
-
-export function useOdeTest() {
-  const { theme } = useOdeClient();
-
-  return {
-    theme,
-  };
 }
