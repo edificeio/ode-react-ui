@@ -38,6 +38,8 @@ export interface ImagePickerProps extends ComponentPropsWithRef<"input"> {
    * To show the icon of an application
    */
   app?: IWebApp | undefined;
+
+  appCode?: string;
   /**
    * Optional class for styling purpose
    */

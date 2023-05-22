@@ -1,10 +1,11 @@
 import { useState } from "react";
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import Select, { OptionsType } from "./Select";
 import FormControl from "./FormControl";
 import Label from "./Label";
+import React from "react";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -18,7 +19,9 @@ export default {
     },
   },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-} as ComponentMeta<typeof Select>;
+} as Meta<typeof Select>;
+
+type Story = StoryObj<typeof Select>;
 
 const subjectAreaOptions: OptionsType[] = [
   { value: "artActivity", label: "Activités artistiques" },
@@ -61,7 +64,7 @@ const subjectAreaOptions: OptionsType[] = [
 ];
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Select> = (args: any) => {
+const Template = () => {
   const [value, setValue] = useState<string>();
 
   return (
@@ -80,10 +83,12 @@ const Template: ComponentStory<typeof Select> = (args: any) => {
   );
 };
 
-export const Base = Template.bind({});
+export const Base: Story = {
+  render: Template,
+};
 type status = "invalid" | "valid";
 
-const WithStatusTemplate: ComponentStory<typeof Select> = (args: any) => {
+const WithStatusTemplate = () => {
   const [value, setValue] = useState<status>("invalid");
 
   const statusOptions: OptionsType[] = [
@@ -107,4 +112,6 @@ const WithStatusTemplate: ComponentStory<typeof Select> = (args: any) => {
   );
 };
 
-export const WithStatus = WithStatusTemplate.bind({});
+export const WithStatus: Story = {
+  render: WithStatusTemplate,
+};

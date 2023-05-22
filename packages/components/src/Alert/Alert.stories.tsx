@@ -1,9 +1,10 @@
 import { useCallback, useRef, useState } from "react";
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { Button } from "../Button";
 import Alert, { AlertProps, AlertRef } from "./Alert";
+import React from "react";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -40,10 +41,12 @@ export default {
     type: "success",
   },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-} as ComponentMeta<typeof Alert>;
+} as Meta<typeof Alert>;
+
+type Story = StoryObj<typeof Alert>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Alert> = (args: AlertProps) => {
+const Template = (args: any) => {
   const ref = useRef<AlertRef>(null);
   const [showButton, setShowButtonState] = useState(false);
 
@@ -71,79 +74,70 @@ const Template: ComponentStory<typeof Alert> = (args: AlertProps) => {
   );
 };
 
-export const Base = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Base.args = {
-  type: "success",
-  children:
-    "Labore veniam sem officiis quibusdam, error, iusto erat consequat rhoncus venenatis pretium felis fugit ullamcorper perspiciatis, magni perspiciatis!",
+Template.displayName = "Alert";
+
+export const Base: Story = {
+  render: (args) => <Template {...args} />,
+  args: {
+    type: "success",
+    children:
+      "Labore veniam sem officiis quibusdam, error, iusto erat consequat rhoncus venenatis pretium felis fugit ullamcorper perspiciatis, magni perspiciatis!",
+  },
 };
 
-export const Dissmissible = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Dissmissible.args = {
-  type: "success",
-  children:
-    "Ornare senectus inceptos, laboriosam montes suscipit, tristique rhoncus, tristique irure itaque cum, tellus imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
-  isDismissible: true,
+export const Dissmissible: Story = {
+  render: (args) => <Template {...args} />,
+
+  args: {
+    type: "success",
+    children:
+      "Ornare senectus inceptos, laboriosam montes suscipit, tristique rhoncus, tristique irure itaque cum, tellus imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
+    isDismissible: true,
+  },
 };
 
-export const WithAction = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-WithAction.args = {
-  type: "success",
-  button: (
-    <Button type="button" variant="ghost" color="tertiary">
-      Voir
-    </Button>
-  ),
-  children:
-    "Ornare senectus inceptos, laboriosam montes suscipit, tristique rhoncus, tristique irure itaque cum, tellus imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
-  isDismissible: true,
+export const WithAction: Story = {
+  render: (args) => <Template {...args} />,
+
+  args: {
+    type: "success",
+    button: (
+      <Button type="button" variant="ghost" color="tertiary">
+        Voir
+      </Button>
+    ),
+    children:
+      "Ornare senectus inceptos, laboriosam montes suscipit, tristique rhoncus, tristique irure itaque cum, tellus imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
+    isDismissible: true,
+  },
 };
 
-export const Warning = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Warning.args = {
-  type: "warning",
-  children:
-    "Ornare senectus inceptos, laboriosam montes suscipit, tristique rhoncus, tristique irure itaque cum, tellus imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
+export const Warning: Story = {
+  render: (args) => <Template {...args} />,
+
+  args: {
+    type: "warning",
+    children:
+      "Ornare senectus inceptos, laboriosam montes suscipit, tristique rhoncus, tristique irure itaque cum, tellus imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
+  },
 };
 
-export const Information = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Information.args = {
-  type: "info",
-  children:
-    "Ornare senectus inceptos, laboriosam montes suscipit, tristique rhoncus, tristique irure itaque cum, tellus imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
+export const Information: Story = {
+  render: (args) => <Template {...args} />,
+
+  args: {
+    type: "info",
+    children:
+      "Ornare senectus inceptos, laboriosam montes suscipit, tristique rhoncus, tristique irure itaque cum, tellus imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
+  },
 };
 
-export const Error = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Error.args = {
-  type: "danger",
-  children:
-    "Ornare senectus inceptos, laboriosam montes suscipit, tristique rhoncus, tristique irure itaque cum, tellus imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
-};
+export const Error: Story = {
+  render: (args) => <Template {...args} />,
 
-/* export const ToastBase = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-ToastBase.args = {
-  type: "success",
-  isToast: true,
-  isDismissible: true,
-  children:
-    "Imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
+  args: {
+    type: "danger",
+    children:
+      "Ornare senectus inceptos, laboriosam montes suscipit, tristique rhoncus, tristique irure itaque cum, tellus imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
+  },
 };
-
-export const ToastTimer = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-ToastTimer.args = {
-  type: "success",
-  isToast: true,
-  isDismissible: true,
-  autoClose: true,
-  children:
-    "Imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
-};
- */

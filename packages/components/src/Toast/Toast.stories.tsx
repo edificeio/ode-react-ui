@@ -1,8 +1,9 @@
-import { ComponentMeta } from "@storybook/react";
+import { Meta } from "@storybook/react";
 import toast, { Toaster, resolveValue } from "react-hot-toast";
 import { Button } from "../Button";
 
 import Toast from "./Toast";
+import React from "react";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -17,7 +18,7 @@ export default {
     },
   },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-} as ComponentMeta<typeof Toast>;
+} as Meta<typeof Toast>;
 
 export const Base = () => {
   // Action to close the Toast
@@ -140,80 +141,3 @@ export const Loading = () => {
     </>
   );
 };
-/* 
-export const Base = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Base.args = {
-  type: "success",
-  children:
-    "Labore veniam sem officiis quibusdam, error, iusto erat consequat rhoncus venenatis pretium felis fugit ullamcorper perspiciatis, magni perspiciatis!",
-};
-
-export const Dissmissible = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Dissmissible.args = {
-  type: "success",
-  children:
-    "Ornare senectus inceptos, laboriosam montes suscipit, tristique rhoncus, tristique irure itaque cum, tellus imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
-  isDismissible: true,
-};
-
-export const WithAction = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-WithAction.args = {
-  type: "success",
-  button: (
-    <Button type="button" variant="ghost" color="tertiary">
-      Voir
-    </Button>
-  ),
-  children:
-    "Ornare senectus inceptos, laboriosam montes suscipit, tristique rhoncus, tristique irure itaque cum, tellus imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
-  isDismissible: true,
-};
-
-export const Warning = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Warning.args = {
-  type: "warning",
-  children:
-    "Ornare senectus inceptos, laboriosam montes suscipit, tristique rhoncus, tristique irure itaque cum, tellus imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
-};
-
-export const Information = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Information.args = {
-  type: "info",
-  children:
-    "Ornare senectus inceptos, laboriosam montes suscipit, tristique rhoncus, tristique irure itaque cum, tellus imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
-};
-
-export const Error = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Error.args = {
-  type: "danger",
-  children:
-    "Ornare senectus inceptos, laboriosam montes suscipit, tristique rhoncus, tristique irure itaque cum, tellus imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
-};
-
-export const ToastBase = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-ToastBase.args = {
-  type: "success",
-  isToast: true,
-  isDismissible: true,
-  children:
-    "Imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
-};
-
-export const ToastTimer = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-ToastTimer.args = {
-  type: "success",
-  isToast: true,
-  isDismissible: true,
-  autoClose: true,
-  children:
-    "Imperdiet ornare nostra nec curae cumque vitae, minus ridiculus? Auctor eget.",
-};
- */

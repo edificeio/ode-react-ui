@@ -1,8 +1,9 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { useMemo, useState } from "react";
 import Button from "../Button/Button";
 
 import { FormControl, Input } from "./index";
+import React from "react";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -17,9 +18,11 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof FormControl>;
+} as Meta<typeof FormControl>;
 
-const Template: ComponentStory<typeof FormControl> = (args: any) => (
+type Story = StoryObj<typeof FormControl>;
+
+const Template = (args: any) => (
   <FormControl id={args.id} status={args.status} className="input-group">
     <span className="input-group-text">http://ode.example.test/</span>
     <FormControl.Input type="text" placeholder="Url path" size="md" />
@@ -29,7 +32,9 @@ const Template: ComponentStory<typeof FormControl> = (args: any) => (
   </FormControl>
 );
 
-export const Base = Template.bind({});
+export const Base: Story = {
+  render: Template,
+};
 
 export const MultiInputGroup = () => {
   const [username, setUsername] = useState<string>("");
