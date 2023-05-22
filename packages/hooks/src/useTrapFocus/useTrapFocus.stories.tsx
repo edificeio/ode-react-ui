@@ -1,16 +1,35 @@
+<<<<<<< HEAD
 import { Lock, Mail } from "@ode-react-ui/icons";
 import { Button } from "../../../components/src/Button";
 import Label from "../../../components/src/Form/Label";
 import Input from "../../../components/src/Form/Input";
 import FormControl from "../../../components/src/Form/FormControl";
+=======
+import { StoryObj } from "@storybook/react";
+import { Lock, Mail } from "@ode-react-ui/icons";
+import { FormControl, Input, Label } from "../../../components/src/Form";
+import { Button } from "../../../components/src/Button";
+import { useEffect, useRef } from "react";
+>>>>>>> c7fc32c (chore(dep): upgraded version StoryBook)
 import useTrapFocus from "./useTrapFocus";
 
 export default {
   title: "Hooks/useTrapFocus",
 };
 
+<<<<<<< HEAD
 const Template = () => {
   const ref = useTrapFocus();
+=======
+type Story = StoryObj<typeof HTMLDivElement>;
+
+const Template = () => {
+  const divRef = useRef<any>();
+
+  useEffect(() => {
+    useTrapFocus(divRef);
+  }, []);
+>>>>>>> c7fc32c (chore(dep): upgraded version StoryBook)
 
   return (
     <div ref={ref} className="border rounded-4 m-64 py-12 px-8">
@@ -51,4 +70,6 @@ const Template = () => {
   );
 };
 
-export const Base = Template.bind({});
+export const Base: Story = {
+  render: Template,
+};

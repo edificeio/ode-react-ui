@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import Dropdown from "./Dropdown";
 import DropdownTrigger from "./DropdownTrigger";
@@ -11,11 +11,14 @@ import {
   SortDescendingLetters,
 } from "@ode-react-ui/icons";
 import SelectList, { OptionListItemType } from "./SelectList";
+import React from "react";
 
 export default {
   title: "Components/Dropdown",
   component: Dropdown,
-} as ComponentMeta<typeof Dropdown>;
+} as Meta<typeof Dropdown>;
+
+type Story = StoryObj<typeof Dropdown>;
 
 const options: OptionListItemType[] = [
   {
@@ -36,7 +39,7 @@ const options: OptionListItemType[] = [
 ];
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Dropdown> = (args: any) => {
+const Template = (args: any) => {
   const [listModel, setListModel] = useState<(string | number)[]>([]);
 
   return (
@@ -81,9 +84,11 @@ const Template: ComponentStory<typeof Dropdown> = (args: any) => {
   );
 };
 
-export const Base = Template.bind({});
+export const Base: Story = {
+  render: Template,
+};
 
-const GhostTemplate: ComponentStory<typeof Dropdown> = (args: any) => {
+const GhostTemplate = (args: any) => {
   const [listModel, setListModel] = useState<(string | number)[]>([]);
 
   return (
@@ -113,4 +118,6 @@ const GhostTemplate: ComponentStory<typeof Dropdown> = (args: any) => {
   );
 };
 
-export const Ghost = GhostTemplate.bind({});
+export const Ghost: Story = {
+  render: GhostTemplate,
+};

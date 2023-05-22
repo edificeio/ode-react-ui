@@ -1,11 +1,13 @@
+import { Meta, Story } from "@storybook/blocks";
+
 <Meta title="Introduction/Theming" />
 
 # Theming
 
 We use [ODE Bootstrap](https://github.com/opendigitaleducation/ode-bootstrap) and its child themes to theme our components and applications:
 
-- [ONE](https://code.web-education.net/one/ode-bootstrap-one)
-- [NEO](https://github.com/opendigitaleducation/ode-bootstrap-neo)
+*   [ONE](https://code.web-education.net/one/ode-bootstrap-one)
+*   [NEO](https://github.com/opendigitaleducation/ode-bootstrap-neo)
 
 ODE Bootstrap ONE & NEO are themes based on ODE bootstrap framework. These themes are customizable through variables.
 
@@ -13,9 +15,9 @@ ODE Bootstrap ONE & NEO are themes based on ODE bootstrap framework. These theme
 
 ### Prerequesites
 
-- Docker
-- Yarn `1.22.19`
-- Node => `16.17.0`
+*   Docker
+*   Yarn `1.22.19`
+*   Node => `16.17.0`
 
 ### Install
 
@@ -54,11 +56,11 @@ yarn watch:react
 
 This watcher will listen all changes in `ode-bootstrap`, `ode-bootstrap-one` and `ode-bootstrap-neo` and copy build files to Storybook documentation. So you can see any CSS you are doing.
 
----
+***
 
 ⚠️ If the watcher doesn't start correctly, please run `yarn install` to create linked dependencies.
 
----
+***
 
 ### Bootstrap 5.x
 
@@ -70,11 +72,11 @@ Based on Bootstrap 5.2, many components use CSS Variables (CSS Custom Properties
 
 Some examples :
 
-- `_button.scss`
-- `_form-control.scss`
-- `_treeview.scss`
+*   `_button.scss`
+*   `_form-control.scss`
+*   `_treeview.scss`
 
----
+***
 
 ⚠️ If one Bootstrap's component doesn't have CSS Variables, we add them to override child themes (E.g: `_form-control.scss`)
 

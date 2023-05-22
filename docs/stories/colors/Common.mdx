@@ -1,7 +1,8 @@
-import { Meta } from "@storybook/addon-docs";
+import { Meta } from "@storybook/blocks";
 import { Colors } from "../../components/Colors";
+import * as CommonStories from './Common.stories';
 
-<Meta title="Design Tokens/Colors/Common" component={Colors} />
+<Meta title="Design Tokens/Colors/Common" />
 
 <style>
   {`
@@ -23,6 +24,7 @@ Primary color of each plateform is used as secondary color for the other one. Th
 <div className="ctn">
   <div className="flex">
     <Colors color="Orange" hexa="#FF8D2E" />
+
     <Colors color="Blue" hexa="#2A9CC8" />
   </div>
 </div>
@@ -34,13 +36,21 @@ Grey palette is used for text elements, graphic elements, illustrations, etc.
 <div className="ctn">
   <div className="flex">
     <Colors color="Darkness" hexa="#000000" nameVar="$black" />
+
     <Colors color="Black" hexa="#4A4A4A" nameVar="$gray-800" />
+
     <Colors color="Graphite" hexa="#909090" nameVar="$gray-700" />
+
     <Colors color="Stone" hexa="#B0B0B0" nameVar="$gray-600" />
+
     <Colors color="Grey" hexa="#C7C7C7" nameVar="$gray-500" />
+
     <Colors color="Cloudy" hexa="#E4E4E4" nameVar="$gray-400" />
+
     <Colors color="Pearl" hexa="#F2F2F2" nameVar="$gray-300" />
+
     <Colors color="Fog" hexa="#FAFAFA" nameVar="$gray-200" />
+
     <Colors color="White" hexa="#FFFFFF" nameVar="$white" />
   </div>
 </div>
@@ -54,8 +64,11 @@ week representation elements, calendar and some specifique titles
 
 <div className="flex">
   <Colors color="Error" hexa="#E13A3A" nameVar="$danger" />
+
   <Colors color="Warning" hexa="#F59700" nameVar="$warning" />
+
   <Colors color="Success" hexa="#7DBF85" nameVar="$success" />
+
   <Colors color="Information" hexa="#4BAFD5" nameVar="$info" />
 </div>
 
@@ -65,8 +78,11 @@ Used for hover effects.
 
 <div className="flex">
   <Colors color="Error" hexa="#D12A2A" nameVar="$danger-900" />
+
   <Colors color="Warning" hexa="#E58D00" nameVar="$warning-900" />
+
   <Colors color="Success" hexa="#70A977" nameVar="$success-900" />
+
   <Colors color="Information" hexa="#3499BF" nameVar="$info-900" />
 </div>
 
@@ -76,8 +92,11 @@ Can be used for hover and animation effects.
 
 <div className="flex">
   <Colors color="Error" hexa="#f3a6a6" nameVar="$danger-200" />
+
   <Colors color="Warning" hexa="#f2c987" nameVar="$warning-200" />
+
   <Colors color="Success" hexa="#bbe1bf" nameVar="$success-200" />
+
   <Colors color="Information" hexa="#acd6e6" nameVar="$info-200" />
 </div>
 
@@ -87,7 +106,10 @@ Can be used for hover and animation effects.
 
 <div className="flex">
   <Colors color="Error" hexa="#ffe9e9" nameVar="$danger-100" />
+
   <Colors color="Warning" hexa="#fdecd2" nameVar="$warning-100" />
+
   <Colors color="Success" hexa="#daf1dd" nameVar="$success-100" />
+
   <Colors color="Information" hexa="#d7e8ee" nameVar="$info-100" />
 </div>

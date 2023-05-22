@@ -1,5 +1,7 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
+
 import Image, { ImageProps } from "./Image";
+import React from "react";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -17,28 +19,29 @@ export default {
     alt: "beautiful landscape",
   },
   argTypes: {},
-} as ComponentMeta<typeof Image>;
+} as Meta<typeof Image>;
 
-const Template: ComponentStory<typeof Image> = (args: ImageProps) => (
-  <Image {...args} />
-);
-export const Base = Template.bind({});
+type Story = StoryObj<typeof Image>;
 
-export const Ratio = (args: ImageProps) => {
-  return (
-    <div className="d-flex align-items-center">
-      <div style={{ width: "60%" }}>
-        <Image {...args} ratio="1" />
+export const Base: Story = {};
+
+export const Ratio: Story = {
+  render: (args: ImageProps) => {
+    return (
+      <div className="d-flex align-items-center">
+        <div style={{ width: "60%" }}>
+          <Image {...args} ratio="1" />
+        </div>
+        <div style={{ width: "60%" }}>
+          <Image {...args} ratio="4" />
+        </div>
+        <div style={{ width: "60%" }}>
+          <Image {...args} ratio="16" />
+        </div>
+        <div style={{ width: "60%" }}>
+          <Image {...args} ratio="21" />
+        </div>
       </div>
-      <div style={{ width: "60%" }}>
-        <Image {...args} ratio="4" />
-      </div>
-      <div style={{ width: "60%" }}>
-        <Image {...args} ratio="16" />
-      </div>
-      <div style={{ width: "60%" }}>
-        <Image {...args} ratio="21" />
-      </div>
-    </div>
-  );
+    );
+  },
 };

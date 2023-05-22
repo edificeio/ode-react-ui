@@ -1,13 +1,16 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import TreeView from "./TreeView";
 import { TreeNode } from "./TreeNode";
 import { useState } from "react";
+import React from "react";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Components/TreeView",
   component: TreeView,
-} as ComponentMeta<typeof TreeView>;
+} as Meta<typeof TreeView>;
+
+type Story = StoryObj<typeof TreeView>;
 
 const data: TreeNode = {
   id: "root",
@@ -80,7 +83,7 @@ const data: TreeNode = {
 };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof TreeView> = (args) => {
+const Template = (args) => {
   const [events, setEvents] = useState<Array<string>>([]);
 
   const maxEventHistory = 20;
@@ -149,4 +152,6 @@ const Template: ComponentStory<typeof TreeView> = (args) => {
   );
 };
 
-export const Base = Template.bind({});
+export const Base: Story = {
+  render: Template,
+};

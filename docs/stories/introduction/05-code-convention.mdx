@@ -1,3 +1,5 @@
+import { Meta, Story } from "@storybook/blocks";
+
 <Meta title="Introduction/Contributing/Code Convention" />
 
 # Code Convention
@@ -42,11 +44,11 @@ const useCounter = (score: number) => {
 
 Lift State Up as often as possible
 
-- The logic is contained in a parent component
-- Logic is reusable and moved to a custom Hook
-- Logic is more complex and will be handled by a reducer
-- Logic and Custom Hooks
-- Export all reusable logic inside a custom hook
+*   The logic is contained in a parent component
+*   Logic is reusable and moved to a custom Hook
+*   Logic is more complex and will be handled by a reducer
+*   Logic and Custom Hooks
+*   Export all reusable logic inside a custom hook
 
 ```jsx
 import { useCallback, useState } from "react";
@@ -75,18 +77,22 @@ const { state, setState } = useCustomHook();
 
 > With Array : [Example](https://stackblitz.com/edit/vitejs-vite-1tvais?file=src%2FApp.tsx)
 
-- Destructured values ​​in same order as returned values
-- Easy to rename values
+*   Destructured values ​​in same order as returned values
+*   Easy to rename values
 
 > With Object : [Example](https://stackblitz.com/edit/vitejs-vite-yt5ear?file=src%2FApp.tsx)
 
-- Destructured values ​​in different order is possible
+*   Destructured values ​​in different order is possible
 
-- Not as easy to rename values as Array option
-- How to write functions
-- Will write normal functions
-- Always with prefix handle then subjectEvent
-- Pass functions as Props with prefix on and onSubjectEvent
+*   Not as easy to rename values as Array option
+
+*   How to write functions
+
+*   Will write normal functions
+
+*   Always with prefix handle then subjectEvent
+
+*   Pass functions as Props with prefix on and onSubjectEvent
 
 ```jsx
 // handleActionSubject
@@ -104,10 +110,10 @@ function handleAddTask {
 
 > Will use arrow functions in specific cases
 
-- useCallback
-- useMemo
-- forwardRef
-- React.memo
+*   useCallback
+*   useMemo
+*   forwardRef
+*   React.memo
 
 ```jsx
 const visibleTodos = useMemo(() => {
@@ -149,7 +155,7 @@ return <Component onStoreOpen={handleStoreOpen} onItemClick={handleItemClick} />
 
 ## Clean your effects!
 
-- DOM
+*   DOM
 
 ```jsx
 window.addEventListener("online", callback);
@@ -161,7 +167,7 @@ return () => {
 };
 ```
 
-- useEffect + fetch
+*   useEffect + fetch
 
 ```jsx
 function SearchResults({ query }) {
@@ -188,8 +194,8 @@ function SearchResults({ query }) {
 
 ## Manage your state
 
-- Avoid duplication in state
-- Use computed properties depending on one state
+*   Avoid duplication in state
+*   Use computed properties depending on one state
 
 ```jsx
 DONT ❌
@@ -224,7 +230,7 @@ const visibleTodos = showActive ? activeTodos : todos;
 
 ## Performance and Optimisation
 
-If my app is slow, buggy or crashes, maybe it needs optimisation. <br/>
+If my app is slow, buggy or crashes, maybe it needs optimisation. <br />
 
 First, inspect your app with React Profiler :
 
@@ -232,11 +238,11 @@ First, inspect your app with React Profiler :
 
 Then apply necessary optimisations :
 
-- Use Composition instead of Props/Component Drilling
-- Move your state inside the right component
-- React Memo to memoize a component
-- useMemo to memoize a value
-- useCallback to memoize a function
+*   Use Composition instead of Props/Component Drilling
+*   Move your state inside the right component
+*   React Memo to memoize a component
+*   useMemo to memoize a value
+*   useCallback to memoize a function
 
 ## More on the workshop doc
 
