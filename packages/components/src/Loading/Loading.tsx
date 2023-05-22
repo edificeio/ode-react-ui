@@ -21,6 +21,8 @@ export interface LoadingProps {
   loadingPosition?: LoadingPosition;
   /** When using with another component, we can pass a children */
   children?: ReactNode;
+
+  color?: string;
 }
 
 /**

@@ -1,5 +1,5 @@
 import TableExplorer from "./TableExplorer";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { Checkbox } from "../Form";
 import { Checklist, Globe, Lock, Users } from "@ode-react-ui/icons";
 import React, { useState } from "react";
@@ -126,10 +126,12 @@ export default {
   argTypes: {},
   args: {},
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-} as ComponentMeta<typeof TableExplorer>;
+} as Meta<typeof TableExplorer>;
+
+type Story = StoryObj<typeof TableExplorer>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof TableExplorer> = (args: any) => {
+const Template = (args: any) => {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
   const onSelectItem = (itemId: string) => {
@@ -224,4 +226,6 @@ const Template: ComponentStory<typeof TableExplorer> = (args: any) => {
   );
 };
 
-export const Base = Template.bind({});
+export const Base: Story = {
+  render: Template,
+};

@@ -1,5 +1,6 @@
-import { Meta, Story } from "@storybook/addon-docs";
+import { Meta, Story } from "@storybook/blocks";
 import { Card } from "../components/Card";
+import * as RadiusStories from './Radius.stories';
 
 <Meta title="Design Tokens/Radius" />
 
@@ -8,7 +9,7 @@ import { Card } from "../components/Card";
   .card {
     border: 0 !important;
   }
-`}
+  `}
 </style>
 
 # Radius
@@ -17,8 +18,8 @@ Shapes used on the plateform are most of the time square, rectangle and circle. 
 
 ## SCSS
 
-- Variables can be used in your SCSS code
-- Utility classes can be used directly on your components
+*   Variables can be used in your SCSS code
+*   Utility classes can be used directly on your components
 
 <table>
   <thead>
@@ -27,8 +28,8 @@ Shapes used on the plateform are most of the time square, rectangle and circle. 
       <th>CSS Values</th>
       <th>Utilities Classes</th>
     </tr>
-
   </thead>
+
   <tbody>
     <tr>
       <td>
@@ -36,105 +37,127 @@ Shapes used on the plateform are most of the time square, rectangle and circle. 
           <pre>-</pre>
         </code>
       </td>
+
       <td>0</td>
+
       <td>
         <code>
           <pre>.rounded-0</pre>
         </code>
       </td>
     </tr>
+
     <tr>
       <td>
         <code>
           <pre>$border-radius-sm</pre>
         </code>
       </td>
+
       <td>0.4rem</td>
+
       <td>
         <code>
           <pre>.rounded / .rounded-1</pre>
         </code>
       </td>
     </tr>
+
     <tr>
       <td>
         <code>
           <pre>$border-radius</pre>
         </code>
       </td>
+
       <td>0.8rem</td>
+
       <td>
         <code>
           <pre>.rounded-2</pre>
         </code>
       </td>
     </tr>
+
     <tr>
       <td>
         <code>
           <pre>$border-radius-lg</pre>
         </code>
       </td>
+
       <td>1.2rem</td>
+
       <td>
         <code>
           <pre>.rounded-3</pre>
         </code>
       </td>
     </tr>
+
     <tr>
       <td>
         <code>
           <pre>$border-radius-xl</pre>
         </code>
       </td>
+
       <td>1.6rem</td>
+
       <td>
         <code>
           <pre>.rounded-4</pre>
         </code>
       </td>
     </tr>
+
     <tr>
       <td>
         <code>
           <pre>$border-radius-2xl</pre>
         </code>
       </td>
+
       <td>2.4rem</td>
+
       <td>
         <code>
           <pre>.rounded-5</pre>
         </code>
       </td>
     </tr>
+
     <tr>
       <td>
         <code>
           <pre>-</pre>
         </code>
       </td>
+
       <td>50%</td>
+
       <td>
         <code>
           <pre>.rounded-circle</pre>
         </code>
       </td>
     </tr>
+
     <tr>
       <td>
         <code>
           <pre>$border-radius-pill</pre>
         </code>
       </td>
+
       <td>50rem</td>
+
       <td>
         <code>
           <pre>.rounded-pill</pre>
         </code>
       </td>
     </tr>
-    
   </tbody>
 </table>
 
@@ -143,116 +166,124 @@ Shapes used on the plateform are most of the time square, rectangle and circle. 
 <div class="card flex-row align-items-center gap-16">
   <Card
     style={{
-      width: "8rem",
-      height: "8rem",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      textAlign: "center",
+     width: "8rem",
+     height: "8rem",
+     display: "flex",
+     alignItems: "center",
+     justifyContent: "center",
+     textAlign: "center",
     }}
     className="rounded"
   >
     <div style={{ fontSize: "1.2rem" }}>.rounded</div>
   </Card>
+
   <Card
     style={{
-      width: "8rem",
-      height: "8rem",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      textAlign: "center",
+     width: "8rem",
+     height: "8rem",
+     display: "flex",
+     alignItems: "center",
+     justifyContent: "center",
+     textAlign: "center",
     }}
     className="rounded-0"
   >
     <div style={{ fontSize: "1.2rem" }}>.rounded-0</div>
   </Card>
+
   <Card
     style={{
-      width: "8rem",
-      height: "8rem",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      textAlign: "center",
+     width: "8rem",
+     height: "8rem",
+     display: "flex",
+     alignItems: "center",
+     justifyContent: "center",
+     textAlign: "center",
     }}
     className="rounded-1"
   >
     <div style={{ fontSize: "1.2rem" }}>.rounded-1</div>
   </Card>
+
   <Card
     style={{
-      width: "8rem",
-      height: "8rem",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      textAlign: "center",
+     width: "8rem",
+     height: "8rem",
+     display: "flex",
+     alignItems: "center",
+     justifyContent: "center",
+     textAlign: "center",
     }}
     className="rounded-2"
   >
     <div style={{ fontSize: "1.2rem" }}>.rounded-2</div>
   </Card>
+
   <Card
     style={{
-      width: "8rem",
-      height: "8rem",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      textAlign: "center",
+     width: "8rem",
+     height: "8rem",
+     display: "flex",
+     alignItems: "center",
+     justifyContent: "center",
+     textAlign: "center",
     }}
     className="rounded-3"
   >
     <div style={{ fontSize: "1.2rem" }}>.rounded-3</div>
   </Card>
+
   <Card
     style={{
-      width: "8rem",
-      height: "8rem",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      textAlign: "center",
+     width: "8rem",
+     height: "8rem",
+     display: "flex",
+     alignItems: "center",
+     justifyContent: "center",
+     textAlign: "center",
     }}
     className="rounded-4"
   >
     <div style={{ fontSize: "1.2rem" }}>.rounded-4</div>
   </Card>
+
   <Card
     style={{
-      width: "8rem",
-      height: "8rem",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      textAlign: "center",
+     width: "8rem",
+     height: "8rem",
+     display: "flex",
+     alignItems: "center",
+     justifyContent: "center",
+     textAlign: "center",
     }}
     className="rounded-5"
   >
     <div style={{ fontSize: "1.2rem" }}>.rounded-5</div>
   </Card>
+
   <Card
     style={{
-      width: "8rem",
-      height: "8rem",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      textAlign: "center",
+     width: "8rem",
+     height: "8rem",
+     display: "flex",
+     alignItems: "center",
+     justifyContent: "center",
+     textAlign: "center",
     }}
     className="rounded-circle"
   >
     <div style={{ fontSize: "1.2rem" }}>.rounded-circle</div>
   </Card>
+
   <Card
     style={{
-      width: "8rem",
-      height: "8rem",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      textAlign: "center",
+     width: "8rem",
+     height: "8rem",
+     display: "flex",
+     alignItems: "center",
+     justifyContent: "center",
+     textAlign: "center",
     }}
     className="rounded-pill"
   >

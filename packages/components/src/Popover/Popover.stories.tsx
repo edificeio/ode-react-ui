@@ -1,15 +1,10 @@
 import { useHover } from "@ode-react-ui/hooks";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { useId } from "react";
 
-import {
-  Popover,
-  PopoverBody,
-  PopoverFooter,
-  PopoverHeader,
-  PopoverProps,
-} from "./Popover";
 import { Button } from "../Button";
+import { PopoverBody, PopoverFooter, PopoverHeader, Popover } from "./Popover";
+import React from "react";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -22,9 +17,11 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Popover>;
+} as Meta<typeof Popover>;
 
-const Template: ComponentStory<typeof Popover> = (args: PopoverProps) => {
+type Story = StoryObj<typeof Popover>;
+
+const PopoverWithHooks = () => {
   const [popoverRef, isPopoverHovered] = useHover<HTMLDivElement>();
   const popoverId = useId();
   return (
@@ -57,4 +54,7 @@ const Template: ComponentStory<typeof Popover> = (args: PopoverProps) => {
     </div>
   );
 };
-export const Base = Template.bind({});
+
+export const Base: Story = {
+  render: () => <PopoverWithHooks />,
+};

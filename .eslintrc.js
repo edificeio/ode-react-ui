@@ -9,16 +9,17 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:import/typescript",
+    "plugin:storybook/recommended"
   ],
   plugins: ["react", "import", "jsx-a11y"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
-      jsx: false,
+      jsx: false
     },
     ecmaVersion: "latest",
     sourceType: "module",
-    project: ["./tsconfig.json"],
+    project: ["./tsconfig.json"]
   },
   rules: {
     "@typescript-eslint/no-explicit-any": "off",
@@ -47,20 +48,8 @@ module.exports = {
   },
   settings: {
     react: {
-      version: "detect",
-    },
+      version: "detect"
+    }
   },
-  ignorePatterns: [
-    ".eslintrc.js",
-    "*.d.ts",
-    "*.docs.mdx",
-    "*.stories.tsx",
-    "dist",
-    "node_modules",
-    "prettier.config.js",
-    "public",
-    "svgr.config.cjs",
-    "tsconfig.json",
-    "vite.config.ts",
-  ],
+  ignorePatterns: [".eslintrc.js", "*.d.ts", "*.docs.mdx", "*.stories.tsx", "dist", "node_modules", "prettier.config.js", "public", "svgr.config.cjs", "tsconfig.json", "vite.config.ts"]
 };

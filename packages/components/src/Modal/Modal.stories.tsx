@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-import { useModal } from "@ode-react-ui/hooks";
 // Import Swiper React components
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -18,7 +17,7 @@ import {
   Save,
   Search,
 } from "@ode-react-ui/icons";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { Alert } from "../Alert";
 import { TreeNode, TreeView } from "../TreeView";
@@ -29,6 +28,8 @@ import { OptionsType } from "../Form/Select";
 import { Heading } from "../Heading";
 import { ImagePicker } from "../ImagePicker";
 import Modal, { ModalProps } from "./Modal";
+import React from "react";
+import { useToggle } from "@ode-react-ui/hooks";
 
 export default {
   title: "Components/Modal",
@@ -45,7 +46,9 @@ export default {
       control: { type: "select" },
     },
   },
-} as ComponentMeta<typeof Modal>;
+} as Meta<typeof Modal>;
+
+type Story = StoryObj<typeof Modal>;
 
 const data: TreeNode = {
   id: "root",
@@ -118,8 +121,8 @@ const data: TreeNode = {
 };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Modal> = (args: ModalProps) => {
-  const [isOpen, toggle] = useModal(false);
+const Template = (args: ModalProps) => {
+  const [isOpen, toggle] = useToggle(false);
 
   function handleOpenModal() {
     toggle(true);
@@ -187,15 +190,17 @@ const Template: ComponentStory<typeof Modal> = (args: ModalProps) => {
   );
 };
 
-export const Base = Template.bind({});
-Base.args = {
-  id: "primaryModal",
-  size: "lg",
-  scrollable: true,
+export const Base: Story = {
+  render: (args) => <Template {...args} />,
+  args: {
+    id: "primaryModal",
+    size: "lg",
+    scrollable: true,
+  },
 };
 
-const TemplateMoveFile: ComponentStory<typeof Modal> = (args: any) => {
-  const [isOpen, toggle] = useModal(false);
+const TemplateMoveFile = (args: any) => {
+  const [isOpen, toggle] = useToggle(false);
 
   function handleOpenModal() {
     toggle(true);
@@ -263,14 +268,17 @@ const TemplateMoveFile: ComponentStory<typeof Modal> = (args: any) => {
     </>
   );
 };
-export const MoveFile = TemplateMoveFile.bind({});
-MoveFile.args = {
-  id: "moveFileModal",
-  scrollable: true,
+
+export const MoveFile = {
+  render: (args) => <TemplateMoveFile {...args} />,
+  args: {
+    id: "moveFileModal",
+    scrollable: true,
+  },
 };
 
-export const CreateFile = (args: any) => {
-  const [isOpen, toggle] = useModal(false);
+const TemplateCreateFile = (args: any) => {
+  const [isOpen, toggle] = useToggle(false);
 
   function handleOpenModal() {
     toggle(true);
@@ -419,8 +427,12 @@ export const CreateFile = (args: any) => {
     </>
   );
 };
-CreateFile.args = {
-  scrollable: false,
+
+export const CreateFile = {
+  render: (args) => <TemplateCreateFile {...args} />,
+  args: {
+    scrollable: false,
+  },
 };
 
 //Sample to adapt
@@ -471,8 +483,8 @@ const actions = [
   },
 ];
 
-export const ShareFile = (args: any) => {
-  const [isOpen, toggle] = useModal(false);
+const TemplateShareFile = (args: any) => {
+  const [isOpen, toggle] = useToggle(false);
   const [showBookmarkInput, toggleBookmarkInput] = useState(false);
   const [radioPublicationValue, setRadioPublicationValue] =
     useState<string>("now");
@@ -707,12 +719,16 @@ export const ShareFile = (args: any) => {
     </>
   );
 };
-ShareFile.args = {
-  scrollable: false,
+
+export const ShareFile = {
+  render: (args) => <TemplateShareFile {...args} />,
+  args: {
+    scrollable: false,
+  },
 };
 
-export const PublishOnLibrary = (args: any) => {
-  const [isOpen, toggle] = useModal(false);
+const TemplatePublishOnLibrary = (args: any) => {
+  const [isOpen, toggle] = useToggle(false);
 
   const [activityType, setActivityType] = useState();
   const [subjectArea, setSubjectArea] = useState();
@@ -954,7 +970,7 @@ export const PublishOnLibrary = (args: any) => {
                   className="ms-8 d-inline-block"
                   src="/assets/creative-commons.png"
                   alt="Icone licence Creative
-                  Commons"
+                    Commons"
                 />
               </li>
               <li>
@@ -1001,12 +1017,16 @@ export const PublishOnLibrary = (args: any) => {
     </>
   );
 };
-PublishOnLibrary.args = {
-  scrollable: false,
+
+export const PublishOnLibrary = {
+  render: (args) => <TemplatePublishOnLibrary {...args} />,
+  args: {
+    scrollable: false,
+  },
 };
 
-export const OnBoardingTrash = (args: any) => {
-  const [isOpen, toggle] = useModal(false);
+const TemplateOnBoardingTrash = (args: any) => {
+  const [isOpen, toggle] = useToggle(false);
   const [swiperInstance, setSwiperInstance] = useState<any>();
   const [swiperProgress, setSwiperprogress] = useState<number>(0);
 
@@ -1139,6 +1159,7 @@ export const OnBoardingTrash = (args: any) => {
     </>
   );
 };
-PublishOnLibrary.args = {
-  scrollable: false,
+
+export const OnBoardingTrash = {
+  render: () => <TemplateOnBoardingTrash />,
 };

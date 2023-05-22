@@ -1,10 +1,12 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import LoadingScreen, { LoadingScreenProps } from "./LoadingScreen";
+import { Meta, StoryObj } from "@storybook/react";
+import LoadingScreen from "./LoadingScreen";
+import React from "react";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Components/LoadingScreen",
   component: LoadingScreen,
+  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
@@ -14,19 +16,25 @@ export default {
     },
   },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-} as ComponentMeta<typeof LoadingScreen>;
+} satisfies Meta<typeof LoadingScreen>;
+
+type Story = StoryObj<typeof LoadingScreen>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof LoadingScreen> = () => <LoadingScreen />;
 
-export const Base = Template.bind({});
+export const Base: Story = {
+  render: () => <LoadingScreen />,
+};
 
-export const Position = Template.bind({});
-Position.parameters = {
-  docs: {
-    description: {
-      story:
-        "Position of the component is set to `true` per default. If set to `false`, LoadingScreen will take the whole screen and shows an overlay",
+export const Position: Story = {
+  render: () => <LoadingScreen />,
+
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Position of the component is set to `true` per default. If set to `false`, LoadingScreen will take the whole screen and shows an overlay",
+      },
     },
   },
 };

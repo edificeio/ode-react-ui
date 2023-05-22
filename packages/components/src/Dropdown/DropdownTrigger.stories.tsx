@@ -1,17 +1,18 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { Filter, Plus, Settings } from "@ode-react-ui/icons";
 import DropdownTrigger, { DropdownTriggerProps } from "./DropdownTrigger";
+import React from "react";
 
 export default {
   title: "Components/Dropdown/DropdownTrigger",
   component: DropdownTrigger,
-} as ComponentMeta<typeof DropdownTrigger>;
+} as Meta<typeof DropdownTrigger>;
+
+type Story = StoryObj<typeof DropdownTrigger>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof DropdownTrigger> = (
-  args: DropdownTriggerProps,
-) => {
+const Template = (args: DropdownTriggerProps) => {
   return (
     <div className="d-flex gap-16">
       <DropdownTrigger title="Default dropdown" />
@@ -22,11 +23,11 @@ const Template: ComponentStory<typeof DropdownTrigger> = (
   );
 };
 
-export const States = Template.bind({});
+export const States: Story = {
+  render: Template,
+};
 
-const TemplateSize: ComponentStory<typeof DropdownTrigger> = (
-  args: DropdownTriggerProps,
-) => {
+const TemplateSize = () => {
   return (
     <div className="d-flex gap-16 align-items-end">
       <DropdownTrigger size="lg" title="Big dropdown (default)" />
@@ -36,11 +37,11 @@ const TemplateSize: ComponentStory<typeof DropdownTrigger> = (
   );
 };
 
-export const Sizes = TemplateSize.bind({});
+export const Sizes: Story = {
+  render: TemplateSize,
+};
 
-const TemplateIcon: ComponentStory<typeof DropdownTrigger> = (
-  args: DropdownTriggerProps,
-) => {
+const TemplateIcon = () => {
   return (
     <div>
       <div className="d-flex gap-16 align-items-end mb-16">
@@ -65,11 +66,11 @@ const TemplateIcon: ComponentStory<typeof DropdownTrigger> = (
   );
 };
 
-export const Icons = TemplateIcon.bind({});
+export const Icons: Story = {
+  render: TemplateIcon,
+};
 
-const TemplateStyle: ComponentStory<typeof DropdownTrigger> = (
-  args: DropdownTriggerProps,
-) => {
+const TemplateStyle = () => {
   return (
     <div>
       <div className="d-flex gap-16 align-items-end mb-16">
@@ -119,4 +120,6 @@ const TemplateStyle: ComponentStory<typeof DropdownTrigger> = (
   );
 };
 
-export const Style = TemplateStyle.bind({});
+export const Style: Story = {
+  render: TemplateStyle,
+};

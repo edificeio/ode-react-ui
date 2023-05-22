@@ -1,5 +1,6 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import Main, { MainProps } from "./Main";
+import React from "react";
 
 export default {
   title: "Layouts/Main",
@@ -7,10 +8,12 @@ export default {
   args: {
     children: "This this the main content of the application.",
   },
-} as ComponentMeta<typeof Main>;
+} as Meta<typeof Main>;
 
-const Template: ComponentStory<typeof Main> = (args: MainProps) => (
-  <Main {...args}></Main>
-);
+type Story = StoryObj<typeof Main>;
 
-export const Base = Template.bind({});
+const Template = (args: MainProps) => <Main {...args}></Main>;
+
+export const Base: Story = {
+  render: Template,
+};

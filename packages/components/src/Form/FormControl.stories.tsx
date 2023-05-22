@@ -1,6 +1,6 @@
 import React from "react";
 import { Mail } from "@ode-react-ui/icons";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import { FormControl, Label, Input, FormText, FormControlProps } from "./index";
 
@@ -22,18 +22,20 @@ export default {
     isRequired: false,
     status: undefined,
   },
-} as ComponentMeta<typeof FormControl>;
+} as Meta<typeof FormControl>;
 
-const Template: ComponentStory<typeof FormControl> = (
-  args: FormControlProps,
-) => (
+type Story = StoryObj<typeof FormControl>;
+
+const Template = (args: FormControlProps) => (
   <FormControl {...args}>
     <Label>Email</Label>
     <Input type="text" placeholder="Placeholder text" size="md" />
   </FormControl>
 );
 
-export const Base = Template.bind({});
+export const Base: Story = {
+  render: Template,
+};
 
 export const WithLabel = () => {
   return (
@@ -103,16 +105,16 @@ export const RequiredFieldCustomText = () => {
   );
 };
 
-export const ReadOnlyStatus = ({ ...args }) => {
-  return (
-    <FormControl id="example-5" isReadOnly>
-      <Input type={args.type} size={args.size} placeholder={args.placeholder} />
-    </FormControl>
-  );
-};
-ReadOnlyStatus.args = {
-  disabled: false,
-  size: "md",
-  type: "text",
-  placeholder: "This input is readonly and can't be modified.",
+export const ReadOnlyStatus: Story = {
+  render: ({ ...args }) => {
+    return (
+      <FormControl id="example-5" isReadOnly>
+        <Input type="text" size="md" placeholder={args.placeholder} />
+      </FormControl>
+    );
+  },
+
+  args: {
+    placeholder: "This input is readonly and can't be modified.",
+  },
 };

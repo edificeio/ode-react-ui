@@ -1,5 +1,6 @@
-import { ComponentMeta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import Library, { LibraryProps } from "./Library";
+import React from "react";
 
 export default {
   title: "Components/Library",
@@ -18,38 +19,44 @@ export default {
     alt: "Découvrir la bibliothèque",
     url: "#",
   },
-} as ComponentMeta<typeof Library>;
+} as Meta<typeof Library>;
 
-export const LibraryOne = (args: LibraryProps) => {
-  return (
-    <>
-      <div
-        className="p-16"
-        style={{
-          width: `300px`,
-        }}
-      >
-        <Library {...args} />
-      </div>
-    </>
-  );
+type Story = StoryObj<typeof Library>;
+
+export const LibraryOne: Story = {
+  render: (args: LibraryProps) => {
+    return (
+      <>
+        <div
+          className="p-16"
+          style={{
+            width: `300px`,
+          }}
+        >
+          <Library {...args} />
+        </div>
+      </>
+    );
+  },
 };
 
-export const LibraryNeo = (args: LibraryProps) => {
-  return (
-    <>
-      <div
-        className="p-16"
-        style={{
-          width: `300px`,
-        }}
-      >
-        <Library {...args} />
-      </div>
-    </>
-  );
-};
+export const LibraryNeo: Story = {
+  render: (args: LibraryProps) => {
+    return (
+      <>
+        <div
+          className="p-16"
+          style={{
+            width: `300px`,
+          }}
+        >
+          <Library {...args} />
+        </div>
+      </>
+    );
+  },
 
-LibraryNeo.args = {
-  src: "/assets/themes/ode-bootstrap/images/image-library-neo.svg",
+  args: {
+    src: "/assets/themes/ode-bootstrap/images/image-library-neo.svg",
+  },
 };

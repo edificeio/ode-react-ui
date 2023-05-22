@@ -1,8 +1,9 @@
-import { useCallback, useRef, useState } from "react";
+import { useState } from "react";
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn, StoryObj } from "@storybook/react";
 
 import Checkbox from "./Checkbox";
+import React from "react";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -16,10 +17,12 @@ export default {
     },
   },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-} as ComponentMeta<typeof Checkbox>;
+} as Meta<typeof Checkbox>;
+
+type Story = StoryObj<typeof Checkbox>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Checkbox> = (args: any) => {
+const Template = (args: any) => {
   const [isChecked, setIsChecked] = useState(false);
 
   return (
@@ -38,9 +41,11 @@ const Template: ComponentStory<typeof Checkbox> = (args: any) => {
   );
 };
 
-export const Base = Template.bind({});
+export const Base: Story = {
+  render: Template,
+};
 
-const DisabledTemplate: ComponentStory<typeof Checkbox> = (args: any) => {
+const DisabledTemplate: StoryFn<typeof Checkbox> = (args: any) => {
   const [isChecked, setIsChecked] = useState(true);
 
   return (
@@ -54,9 +59,11 @@ const DisabledTemplate: ComponentStory<typeof Checkbox> = (args: any) => {
     </div>
   );
 };
-export const Disabled = DisabledTemplate.bind({});
+export const Disabled: Story = {
+  render: DisabledTemplate,
+};
 
-const IndeterminateTemplate: ComponentStory<typeof Checkbox> = (args: any) => {
+const IndeterminateTemplate: StoryFn<typeof Checkbox> = (args: any) => {
   const [isChecked, setIsChecked] = useState(false);
   const [isIndeterminate, setIsIndeterminate] = useState(true);
 
@@ -86,4 +93,6 @@ const IndeterminateTemplate: ComponentStory<typeof Checkbox> = (args: any) => {
     </div>
   );
 };
-export const Indeterminate = IndeterminateTemplate.bind({});
+export const Indeterminate: Story = {
+  render: IndeterminateTemplate,
+};

@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import Radio from "./Radio";
-import { Applications, Filter, ViewList } from "@ode-react-ui/icons";
+import { Applications, ViewList } from "@ode-react-ui/icons";
+import React from "react";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -17,10 +18,12 @@ export default {
     },
   },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-} as ComponentMeta<typeof Radio>;
+} as Meta<typeof Radio>;
+
+type Story = StoryObj<typeof Radio>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Radio> = (args: any) => {
+const Template = (args: any) => {
   const [value, setValue] = useState<string>("CM1");
 
   return (
@@ -56,9 +59,11 @@ const Template: ComponentStory<typeof Radio> = (args: any) => {
   );
 };
 
-export const Base = Template.bind({});
+export const Base: Story = {
+  render: Template,
+};
 
-const IconTemplate: ComponentStory<typeof Radio> = (args: any) => {
+const IconTemplate = (args: any) => {
   const [value, setValue] = useState<string>("list");
 
   return (
@@ -82,4 +87,6 @@ const IconTemplate: ComponentStory<typeof Radio> = (args: any) => {
   );
 };
 
-export const Icon = IconTemplate.bind({});
+export const Icon: Story = {
+  render: IconTemplate,
+};

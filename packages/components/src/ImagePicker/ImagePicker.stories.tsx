@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 import ImagePicker, { ImagePickerProps } from "./ImagePicker";
 
@@ -42,68 +42,75 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof ImagePicker>;
+} as Meta<typeof ImagePicker>;
 
-const Template: ComponentStory<typeof ImagePicker> = (
-  args: ImagePickerProps,
-) => <ImagePicker {...args} />;
-export const Base = Template.bind({});
+type Story = StoryObj<typeof ImagePicker>;
 
-export const DisabledButton = Template.bind({});
-DisabledButton.parameters = {
-  docs: {
-    description: {
-      story: "When no image is uploaded, the delete button is disabled.",
+export const Base: Story = {};
+
+export const DisabledButton: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: "When no image is uploaded, the delete button is disabled.",
+      },
     },
   },
 };
 
-export const AppPlaceholder = Template.bind({});
-AppPlaceholder.args = {
-  appCode: "blog",
-};
-AppPlaceholder.parameters = {
-  docs: {
-    description: {
-      story:
-        "When an `appCode` prop is provided with the code of an application, the ImagePicker will show app icon as a placeholder.",
+export const AppPlaceholder: Story = {
+  args: {
+    appCode: "blog",
+  },
+
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "When an `appCode` prop is provided with the code of an application, the ImagePicker will show app icon as a placeholder.",
+      },
     },
   },
 };
 
-export const ImageURL = Template.bind({});
-ImageURL.args = {
-  src: "https://imgur.com/wZt78Lv.png",
-};
-ImageURL.parameters = {
-  docs: {
-    description: {
-      story:
-        "When an `src` prop is provided, the ImagePicker renders it as an image. The image can be deleted by clicking the delete button. When you click the Add button, the image will be replaced with the uploaded image.",
+export const ImageURL: Story = {
+  args: {
+    src: "https://imgur.com/wZt78Lv.png",
+  },
+
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "When an `src` prop is provided, the ImagePicker renders it as an image. The image can be deleted by clicking the delete button. When you click the Add button, the image will be replaced with the uploaded image.",
+      },
     },
   },
 };
 
-export const UploadImageWithCallbacks = (args: ImagePickerProps) => {
-  function handleUploadImage(obj: any) {
-    alert(`Uploading image ${JSON.stringify(obj)}`);
-  }
-  function handleDeleteImage() {
-    alert("Image deleted");
-  }
-  return (
-    <ImagePicker
-      {...args}
-      onUploadImage={handleUploadImage}
-      onDeleteImage={handleDeleteImage}
-    />
-  );
-};
-UploadImageWithCallbacks.parameters = {
-  docs: {
-    description: {
-      story:
-        "The `onUploadImage` and `onClearImage` props are needed to handle callbacks when the image is uploaded or deleted.",
+export const UploadImageWithCallbacks: Story = {
+  render: (args: ImagePickerProps) => {
+    function handleUploadImage(obj: any) {
+      alert(`Uploading image ${JSON.stringify(obj)}`);
+    }
+    function handleDeleteImage() {
+      alert("Image deleted");
+    }
+    return (
+      <ImagePicker
+        {...args}
+        onUploadImage={handleUploadImage}
+        onDeleteImage={handleDeleteImage}
+      />
+    );
+  },
+
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "The `onUploadImage` and `onClearImage` props are needed to handle callbacks when the image is uploaded or deleted.",
+      },
     },
   },
 };
