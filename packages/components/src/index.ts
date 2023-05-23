@@ -21,4 +21,5 @@ export * from "./Main";
 export * from "./Modal";
 export * from "./Popover";
 export * from "./TreeView";
+export * from "./Tooltip";
 export * from "./VisuallyHidden";
