@@ -19,7 +19,7 @@ const ModalHeader = (props: ModalHeaderProps) => {
     if (!focusId) {
       closeButtonRef.current?.focus();
     }
-  }, []);
+  }, [focusId]);
 
   return (
     <div className="modal-header">

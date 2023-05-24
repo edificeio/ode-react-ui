@@ -1,29 +1,40 @@
-import { type ISession } from "ode-ts-client";
+import { odeServices, IUserInfo } from "ode-ts-client";
 
-export default function useHasWorkflow(session: ISession) {
+import { useUser } from "../useUser";
+
+export default function useHasWorkflow() {
+  const { user } = useUser();
   const workflows: Record<string, Record<string, boolean>> = {
     conversation: {
-      view: session?.hasWorkflow(
-        "org.entcore.conversation.controllers.ConversationController|view",
-      ),
+      view: odeServices.session().hasWorkflow({
+        workflowName:
+          "org.entcore.conversation.controllers.ConversationController|view",
+        user: user as IUserInfo,
+      }),
     },
     community: {
-      view: session?.hasWorkflow(
-        "net.atos.entng.community.controllers.CommunityController|view",
-      ),
+      view: odeServices.session().hasWorkflow({
+        workflowName:
+          "net.atos.entng.community.controllers.CommunityController|view",
+        user: user as IUserInfo,
+      }),
     },
     search: {
-      view: session?.hasWorkflow(
-        "fr.openent.searchengine.controllers.SearchEngineController|view",
-      ),
+      view: odeServices.session().hasWorkflow({
+        workflowName:
+          "fr.openent.searchengine.controllers.SearchEngineController|view",
+        user: user as IUserInfo,
+      }),
     },
     zimbra: {
-      view: session?.hasWorkflow(
-        "fr.openent.zimbra.controllers.ZimbraController|view",
-      ),
-      preauth: session?.hasWorkflow(
-        "fr.openent.zimbra.controllers.ZimbraController|preauth",
-      ),
+      view: odeServices.session().hasWorkflow({
+        workflowName: "fr.openent.zimbra.controllers.ZimbraController|view",
+        user: user as IUserInfo,
+      }),
+      preauth: odeServices.session().hasWorkflow({
+        workflowName: "fr.openent.zimbra.controllers.ZimbraController|preauth",
+        user: user as IUserInfo,
+      }),
     },
   };
 

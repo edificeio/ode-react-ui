@@ -7,7 +7,7 @@ import {
   PopoverFooter,
   Avatar,
 } from "@ode-react-ui/components";
-import { useI18n, useUser, useOdeClient } from "@ode-react-ui/core";
+import { useI18n, useUser, useHeader } from "@ode-react-ui/core";
 import { RafterDown } from "@ode-react-ui/icons";
 import {
   Search,
@@ -24,12 +24,11 @@ import {
   NeoAssistance,
 } from "@ode-react-ui/icons/nav";
 import clsx from "clsx";
-import { IConfigurationFramework } from "ode-ts-client";
+import { odeServices } from "ode-ts-client";
 
 import { Help } from "../Help";
 import { useHelp } from "../Help/hooks/useHelp";
 import { Badge } from "./Badge";
-import { useHeader } from "./hooks/useHeader";
 import { Navbar } from "./Navbar";
 import { NavBarNav } from "./NavbarNav";
 import { NavItem } from "./NavItem";
@@ -40,15 +39,12 @@ import { WidgetAppsBody, WidgetAppsFooter } from "./WidgetApps";
 export interface HeaderProps {
   is1d?: boolean;
   src: string | undefined;
-  configurationFramework: IConfigurationFramework;
 }
 
 export default function Header({
   is1d = false,
   src = "",
-  configurationFramework,
 }: HeaderProps): JSX.Element {
-  const { http, session } = useOdeClient();
   const { i18n } = useI18n();
   const { user, avatar } = useUser();
   const {
@@ -74,7 +70,7 @@ export default function Header({
     redirectToSearch,
     toggleCollapsedNav,
     handleLogout,
-  } = useHeader({ user, avatar, http, session, configurationFramework });
+  } = useHeader({ user, avatar });
 
   const {
     isModalOpen: isHelpOpen,
@@ -203,7 +199,9 @@ export default function Header({
                     <a href="/timeline/timeline" className="button">
                       <NewRelease color="#fff" className="d-md-none" />
                       <span className="d-inline-block">
-                        {i18n("portal.header.navigation.whatsnew")}
+                        {odeServices
+                          .idiom()
+                          .translate("portal.header.navigation.whatsnew")}
                       </span>
                     </a>
                   </NavItem>
@@ -211,7 +209,9 @@ export default function Header({
                     <a href="/userbook/annuaire" className="button">
                       <Userbook color="#fff" className="d-md-none" />
                       <span className="d-inline-block">
-                        {i18n("portal.header.navigation.classMembers")}
+                        {odeServices
+                          .idiom()
+                          .translate("portal.header.navigation.classMembers")}
                       </span>
                     </a>
                   </NavItem>
@@ -219,7 +219,9 @@ export default function Header({
                     <a href="/welcome" className="button">
                       <MyApps color="#fff" className="d-md-none" />
                       <span className="d-inline-block">
-                        {i18n("portal.header.navigation.myapps")}
+                        {odeServices
+                          .idiom()
+                          .translate("portal.header.navigation.myapps")}
                       </span>
                     </a>
                   </NavItem>

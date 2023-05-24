@@ -24,14 +24,7 @@ export interface RadioProps
 
 const Radio = forwardRef(
   (
-    {
-      model,
-      icon,
-      label = false,
-      disabled = false,
-      checked = false,
-      ...restProps
-    }: RadioProps,
+    { model, icon, label = false, disabled = false, ...restProps }: RadioProps,
     ref: Ref<HTMLInputElement>,
   ) => {
     const id = useMemo(
@@ -41,7 +34,7 @@ const Radio = forwardRef(
           : (
               Math.floor(Math.random() * 999999999999) + 1000000000000
             ).toString(),
-      [],
+      [restProps.id],
     );
     const inputProps = {
       ...restProps,
