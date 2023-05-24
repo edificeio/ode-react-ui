@@ -58,7 +58,7 @@ const Label = forwardRef(
       if (isOptional && isRequired) {
         throw new Error("Cannot be optional and required at the same time");
       }
-    }, []);
+    }, [isOptional, isRequired]);
 
     return (
       <label ref={ref} htmlFor={id} className={classes}>

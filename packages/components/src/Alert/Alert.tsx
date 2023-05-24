@@ -3,6 +3,7 @@ import {
   forwardRef,
   ReactNode,
   Ref,
+  useCallback,
   useEffect,
   useImperativeHandle,
   useLayoutEffect,
@@ -19,8 +20,8 @@ import {
 import clsx from "clsx";
 
 export interface AlertRef {
-  show: Function;
-  hide: Function;
+  show: () => void;
+  hide: () => void;
 }
 
 export type AlertTypes = "success" | "warning" | "info" | "danger";
@@ -65,12 +66,12 @@ export interface AlertProps extends ComponentPropsWithRef<"div"> {
   /**
    * Callback when alert is closed
    */
-  onClose?: Function;
+  onClose?: () => void;
 
   /**
    * Callback when alert is closed
    */
-  onVisibilityChange?: Function;
+  onVisibilityChange?: (isVisible: boolean) => void;
 
   /**
    * Optional class for styling purpose
@@ -89,8 +90,8 @@ const Alert = forwardRef(
       isToast = false,
       autoClose = false,
       autoCloseDelay = 3000,
-      onClose = () => {},
-      onVisibilityChange = () => {},
+      onClose,
+      onVisibilityChange,
     }: AlertProps,
     ref: Ref<AlertRef>,
   ) => {
@@ -98,6 +99,13 @@ const Alert = forwardRef(
 
     // Local ref will be merged with forwardRef in useImperativeHandle below
     const refAlert = useRef<HTMLDivElement>(null);
+
+    // Method to hide alert
+    const hide = useCallback(() => {
+      setVisibleStatus(false);
+      // The parent component can execute function when alert is closed
+      onClose?.();
+    }, [onClose]);
 
     // We add two methods to control the alert from parent component
     useImperativeHandle(ref, () => ({
@@ -108,8 +116,8 @@ const Alert = forwardRef(
 
     // The parent component can get alert visible state
     useLayoutEffect(() => {
-      onVisibilityChange(isVisible);
-    }, [isVisible]);
+      onVisibilityChange?.(isVisible);
+    }, [isVisible, onVisibilityChange]);
 
     useEffect(() => {
       if (autoClose && isVisible) {
@@ -117,14 +125,7 @@ const Alert = forwardRef(
           hide();
         }, autoCloseDelay);
       }
-    }, [isVisible]);
-
-    // Method to hide alert
-    const hide = () => {
-      setVisibleStatus(false);
-      // The parent component can execute function when alert is closed
-      onClose();
-    };
+    }, [autoClose, autoCloseDelay, hide, isVisible]);
 
     // Method to show alert
     const show = () => {
