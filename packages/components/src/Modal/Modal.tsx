@@ -84,10 +84,11 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
 
     useKeyPress(onModalClose, ["Escape"]);
 
+    useTrapFocus(modalRef);
+
     useEffect(() => {
       if (isOpen) {
         // a11y: trap focus into modal
-        useTrapFocus(modalRef);
         // a11y: prevent body scrolling while modale is active
         document.body.style.overflow = "hidden";
         // a11y: set focus to focusId element
@@ -101,7 +102,7 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
       return () => {
         document.body.style.overflow = "";
       };
-    }, []);
+    }, [focusId, isOpen]);
 
     const dialogClasses = clsx("modal-dialog", {
       [`modal-${size}`]: size,

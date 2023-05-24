@@ -38,14 +38,13 @@ const Select = forwardRef(
       model,
       disabled = false,
       placeholderOption = false,
-      children,
       ...restProps
     }: SelectProps,
     ref: Ref<HTMLSelectElement>,
   ) => {
-    const { id, isRequired, status } = useFormControl();
+    const { isRequired, status } = useFormControl();
 
-    const selectId = id !== "" ? id : useId();
+    const selectId = useId();
     const selectProps = {
       ...restProps,
       ...{
