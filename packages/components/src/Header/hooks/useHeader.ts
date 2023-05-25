@@ -102,12 +102,14 @@ export function useHeader({
         });
 
         if (response.status !== 200) {
+          // hotToast.error("something wrong happened!");
           setMessages(0);
         }
 
         setMessages(response.count);
       } catch (error) {
         console.error("error");
+        // hotToast.error("something wrong happened!");
         setMessages(0);
       }
     } else {
@@ -119,6 +121,7 @@ export function useHeader({
         setMessages(response.count);
       } catch (error) {
         console.error("error");
+        // hotToast.error("something wrong happened!");
         setMessages(0);
       }
     }
