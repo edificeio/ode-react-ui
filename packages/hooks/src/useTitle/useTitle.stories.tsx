@@ -1,5 +1,5 @@
 import useTitle from "./useTitle";
-import { Heading } from "@ode-react-ui/components";
+import { Heading } from "../../../components/src/Heading";
 // @ts-ignore
 import docs from "./useTitle.docs.mdx";
 

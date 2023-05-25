@@ -2,8 +2,14 @@ import { useHover } from "@ode-react-ui/hooks";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { useId } from "react";
 
-import { Button, Popover, PopoverProps } from "../index";
-import { PopoverBody, PopoverFooter, PopoverHeader } from "./Popover";
+import {
+  Popover,
+  PopoverBody,
+  PopoverFooter,
+  PopoverHeader,
+  PopoverProps,
+} from "./Popover";
+import { Button } from "../Button";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
