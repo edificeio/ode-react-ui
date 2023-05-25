@@ -8,6 +8,9 @@
     "@ode-react-ui/icons": "2.0.0"
   },
   "changesets": [
-    "popular-actors-impress"
+    "afraid-starfishes-judge",
+    "heavy-dolphins-poke",
+    "popular-actors-impress",
+    "serious-dogs-sniff"
   ]
 }

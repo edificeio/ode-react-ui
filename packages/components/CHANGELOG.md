@@ -1,5 +1,19 @@
 # @ode-react-ui/components
 
+## 2.0.1-dev.1
+
+### Patch Changes
+
+- [#195](https://github.com/opendigitaleducation/ode-react-ui/pull/195) [`d44e525`](https://github.com/opendigitaleducation/ode-react-ui/commit/d44e5251d2ae3a3429a5828b7284620e2e17c4b1) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix useTrapFocus hook and components path inside stories files
+
+- [#191](https://github.com/opendigitaleducation/ode-react-ui/pull/191) [`6eaa3ed`](https://github.com/opendigitaleducation/ode-react-ui/commit/6eaa3ed35a2c260cf4bd578278f57a32b5925121) Thanks [@Headan](https://github.com/Headan)! - add export tooltip
+
+- [#195](https://github.com/opendigitaleducation/ode-react-ui/pull/195) [`66c9a83`](https://github.com/opendigitaleducation/ode-react-ui/commit/66c9a83272d7bbf87014b7dc40564b65887f84cc) Thanks [@clementcreusat](https://github.com/clementcreusat)! - refactor client provider to init conf, session and idiom
+
+- Updated dependencies [[`d44e525`](https://github.com/opendigitaleducation/ode-react-ui/commit/d44e5251d2ae3a3429a5828b7284620e2e17c4b1), [`66c9a83`](https://github.com/opendigitaleducation/ode-react-ui/commit/66c9a83272d7bbf87014b7dc40564b65887f84cc)]:
+  - @ode-react-ui/hooks@2.0.1-dev.1
+  - @ode-react-ui/core@2.0.1-dev.1
+
 ## 2.0.1-dev.0
 
 ### Patch Changes
