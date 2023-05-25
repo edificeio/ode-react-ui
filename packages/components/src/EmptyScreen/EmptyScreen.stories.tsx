@@ -33,7 +33,7 @@ export default {
 } as ComponentMeta<typeof EmptyScreen>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof EmptyScreen> = (
+export const Template: ComponentStory<typeof EmptyScreen> = (
   args: EmptyScreenProps,
 ) => {
   return (
