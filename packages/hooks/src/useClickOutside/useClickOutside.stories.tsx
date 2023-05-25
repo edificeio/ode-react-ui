@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import useClickOutside from "./useClickOutside";
-import { Button } from "../../../components/src/Button";
+import { Button } from "@ode-react-ui/components";
 // @ts-ignore
 import docs from "./useClickOutside.docs.mdx";
 

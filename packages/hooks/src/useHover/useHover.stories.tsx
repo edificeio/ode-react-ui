@@ -1,4 +1,4 @@
-import { Button } from "../../../components/src/Button";
+import { Button } from "@ode-react-ui/components";
 import useHover from "./useHover";
 // @ts-ignore
 import docs from "./useHover.docs.mdx";
