@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/restrict-plus-operands */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState, useEffect } from "react";
@@ -54,7 +55,7 @@ export function useHelp() {
         console.error(error);
       }
     })();
-  }, [appCode, helpPath]);
+  }, []);
 
   const options = {
     replace: (domNode: any) => {

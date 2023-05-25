@@ -1,24 +1,27 @@
-import {
-  useRef,
-  useState,
-  useId,
-  useEffect,
-  useCallback,
-  useMemo,
-} from "react";
+import { useRef, useState, useId, useEffect } from "react";
 
+import { useBookmark, useHasWorkflow } from "@ode-react-ui/core";
 import { useTitle, useHover } from "@ode-react-ui/hooks";
-import { IUserInfo, odeServices } from "ode-ts-client";
+import {
+  IConfigurationFramework,
+  IHttp,
+  ISession,
+  IUserInfo,
+  odeServices,
+} from "ode-ts-client";
 
-import { useBookmark } from "../useBookmark";
-import { useHasWorkflow } from "../useHasWorkflow";
-
-export default function useHeader({
+export function useHeader({
   user,
   avatar,
+  session,
+  configurationFramework,
+  http,
 }: {
   user: IUserInfo | undefined;
   avatar: string;
+  session: ISession;
+  configurationFramework: IConfigurationFramework;
+  http: IHttp;
 }): any {
   /**
    * All necessary refs
@@ -62,16 +65,14 @@ export default function useHeader({
   /**
    * Get Bookmarked Apps
    */
-  const bookmarkedApps = useBookmark();
+  const bookmarkedApps = useBookmark(configurationFramework);
 
   /**
    * Handle Header Workflows
    */
   const {
     workflows: { conversation, zimbra, community, search },
-  } = useHasWorkflow();
-
-  /* console.log({ conversation, zimbra, community, search }); */
+  } = useHasWorkflow(session);
 
   const communityWorkflow = community.view;
   const searchWorkflow = search.view;
@@ -79,15 +80,24 @@ export default function useHeader({
   const zimbraWorkflow = zimbra.view;
   const zimbraPreauth = zimbra.preauth;
 
-  const [msgLink, setMsgLink] = useState<string>("");
+  useEffect(() => {
+    (async () => {
+      try {
+        await refreshMails();
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+    goToMessagerie();
+  }, []);
 
   /**
    * Get message count for zimbra or chat app
    */
-  const refreshMails = useCallback(async () => {
+  async function refreshMails() {
     if (zimbraWorkflow) {
       try {
-        const response = await odeServices.http().get("/zimbra/count/INBOX", {
+        const response = await http.get("/zimbra/count/INBOX", {
           queryParams: { unread: true, _: new Date().getTime() },
         });
 
@@ -102,11 +112,9 @@ export default function useHeader({
       }
     } else {
       try {
-        const response = await odeServices
-          .http()
-          .get("/conversation/count/INBOX", {
-            queryParams: { unread: true, _: new Date().getTime() },
-          });
+        const response = await http.get("/conversation/count/INBOX", {
+          queryParams: { unread: true, _: new Date().getTime() },
+        });
 
         setMessages(response.count);
       } catch (error) {
@@ -114,13 +122,31 @@ export default function useHeader({
         setMessages(0);
       }
     }
-  }, [zimbraWorkflow]);
+  }
 
-  const goToMessagerie = useCallback(() => {
+  function redirectToSearch() {
+    if (inputRef.current) {
+      const value = inputRef.current.value;
+      window.location.href = `/searchengine#/${value}`;
+    }
+  }
+
+  function toggleCollapsedNav() {
+    setIsCollapsed(!isCollapsed);
+  }
+
+  const handleLogout = () => {
+    (async () => {
+      await odeServices.session().logout();
+      window.location.href = "/auth/login";
+    })();
+  };
+
+  const [msgLink, setMsgLink] = useState<string>("");
+  function goToMessagerie(): void {
     let messagerieLink = "";
     // FIXME This is the old-fashioned way of accessing preferences. Do not reproduce anymore (use ode-ts-client lib instead)
-    odeServices
-      .http()
+    http
       .get("/userbook/preference/zimbra")
       .then((data: { preference: string }) => {
         try {
@@ -139,86 +165,33 @@ export default function useHeader({
       });
 
     setMsgLink(messagerieLink);
-  }, [zimbraPreauth]);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        await refreshMails();
-      } catch (error) {
-        console.error(error);
-      }
-    })();
-    goToMessagerie();
-  }, [goToMessagerie, refreshMails]);
-
-  function redirectToSearch() {
-    if (inputRef.current) {
-      const value = inputRef.current.value;
-      window.location.href = `/searchengine#/${value}`;
-    }
   }
 
-  const toggleCollapsedNav = useCallback(() => {
-    setIsCollapsed(!isCollapsed);
-  }, [isCollapsed]);
-
-  const handleLogout = async () => {
-    await odeServices.session().logout();
-    window.location.href = "/auth/login";
+  return {
+    inputRef,
+    conversation,
+    zimbra,
+    community,
+    title,
+    bookmarkedApps,
+    appsRef,
+    isAppsHovered,
+    popoverAppsId,
+    searchRef,
+    isSearchHovered,
+    popoverSearchId,
+    messages,
+    userAvatar,
+    userName,
+    welcomeUser,
+    communityWorkflow,
+    conversationWorflow,
+    zimbraWorkflow,
+    searchWorkflow,
+    isCollapsed,
+    msgLink,
+    redirectToSearch,
+    toggleCollapsedNav,
+    handleLogout,
   };
-
-  return useMemo(
-    () => ({
-      inputRef,
-      conversation,
-      zimbra,
-      community,
-      title,
-      bookmarkedApps,
-      appsRef,
-      isAppsHovered,
-      popoverAppsId,
-      searchRef,
-      isSearchHovered,
-      popoverSearchId,
-      messages,
-      userAvatar,
-      userName,
-      welcomeUser,
-      communityWorkflow,
-      conversationWorflow,
-      zimbraWorkflow,
-      searchWorkflow,
-      isCollapsed,
-      msgLink,
-      redirectToSearch,
-      toggleCollapsedNav,
-      handleLogout,
-    }),
-    [
-      appsRef,
-      bookmarkedApps,
-      community,
-      communityWorkflow,
-      conversation,
-      conversationWorflow,
-      isAppsHovered,
-      isCollapsed,
-      isSearchHovered,
-      messages,
-      msgLink,
-      popoverAppsId,
-      popoverSearchId,
-      searchRef,
-      searchWorkflow,
-      title,
-      toggleCollapsedNav,
-      userAvatar,
-      userName,
-      welcomeUser,
-      zimbra,
-      zimbraWorkflow,
-    ],
-  );
 }

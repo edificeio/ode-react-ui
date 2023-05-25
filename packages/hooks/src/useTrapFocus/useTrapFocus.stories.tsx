@@ -1,7 +1,7 @@
 import { ComponentStory } from "@storybook/react";
 import { Lock, Mail } from "@ode-react-ui/icons";
-import { Button, FormControl, Input, Label } from "../../../components";
-import { useRef } from "react";
+import { Button, FormControl, Input, Label } from "@ode-react-ui/components";
+import { useEffect, useRef } from "react";
 import useTrapFocus from "./useTrapFocus";
 
 export default {
@@ -11,7 +11,9 @@ export default {
 const Template: ComponentStory<typeof HTMLDivElement> = () => {
   const divRef = useRef<any>();
 
-  useTrapFocus(divRef);
+  useEffect(() => {
+    useTrapFocus(divRef);
+  }, []);
 
   return (
     <div ref={divRef} className="border rounded-4 m-64 py-12 px-8">

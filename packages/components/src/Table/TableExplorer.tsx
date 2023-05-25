@@ -18,9 +18,7 @@ const TableExplorer = forwardRef(
   ({ children }: TableExplorerProps, ref: Ref<TableExplorerRef>) => {
     return (
       <>
-        <table ref={ref} className="table-explorer">
-          {children}
-        </table>
+        <table className="table-explorer">{children}</table>
       </>
     );
   },

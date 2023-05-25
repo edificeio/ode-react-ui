@@ -9,7 +9,7 @@ export default function useTitle(): string {
     if (!documentDefined) return;
 
     setTitle(document.title);
-  }, [documentDefined]);
+  }, []);
 
   return title;
 }
