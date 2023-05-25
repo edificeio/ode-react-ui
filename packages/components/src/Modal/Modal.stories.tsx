@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import { useModal } from "@ode-react-ui/hooks";
 // Import Swiper React components
