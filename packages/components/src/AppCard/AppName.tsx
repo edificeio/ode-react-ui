@@ -1,4 +1,4 @@
-import { Heading } from "../index";
+import { Heading } from "../Heading";
 import { useAppCard } from "./AppCardContext";
 
 const AppName = () => {
