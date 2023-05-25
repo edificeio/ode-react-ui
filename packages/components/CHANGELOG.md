@@ -1,5 +1,11 @@
 # @ode-react-ui/components
 
+## 2.1.0-dev.2
+
+### Minor Changes
+
+- [`f41d9a6`](https://github.com/opendigitaleducation/ode-react-ui/commit/f41d9a6d00243a3f5416c4074159f7bbf527486f) Thanks [@ccreusat](https://github.com/ccreusat)! - update help component
+
 ## 2.0.1-dev.1
 
 ### Patch Changes
