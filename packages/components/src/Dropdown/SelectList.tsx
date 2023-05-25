@@ -46,7 +46,7 @@ const SelectList = ({
   options,
   hideCheckbox,
   isMonoSelection,
-  onChange,
+  onChange = (model) => {},
   model = [],
 }: SelectListProps) => {
   const [localModel, setLocalModel] = useState(model);
@@ -67,13 +67,13 @@ const SelectList = ({
   };
 
   useEffect(() => {
-    onChange?.(localModel);
-  }, [localModel, onChange]);
+    onChange(localModel);
+  }, [localModel]);
 
   return (
     <>
       <div className="select-list">
-        {options?.map((option: OptionListItemType) => (
+        {options?.map((option: OptionListItemType, index: number) => (
           <div
             key={option.value}
             className={clsx(

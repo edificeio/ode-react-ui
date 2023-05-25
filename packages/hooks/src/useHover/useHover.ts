@@ -21,7 +21,7 @@ export default function useHover<T>(): [MutableRefObject<T>, boolean] {
         };
       }
     },
-    [], // Recall only if ref changes
+    [ref.current], // Recall only if ref changes
   );
   return [ref, value];
 }

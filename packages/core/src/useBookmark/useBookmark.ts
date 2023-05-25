@@ -1,11 +1,11 @@
-import { useOdeClient } from "../OdeClientProvider";
+import { IConfigurationFramework } from "ode-ts-client";
 
-export default function useBookmark() {
-  const { sessionQuery } = useOdeClient();
-
+export default function useBookmark(
+  configurationFramework: IConfigurationFramework,
+) {
   const set = new Set();
-  const bookmarkedApps = sessionQuery?.data?.bookmarkedApps.filter(
-    (el: { displayName: unknown }) => {
+  const bookmarkedApps = configurationFramework.User.bookmarkedApps.filter(
+    (el) => {
       const duplicate = set.has(el.displayName);
       set.add(el.displayName);
       return !duplicate;

@@ -100,6 +100,7 @@ const Card = forwardRef(
       isShared = false,
       isPublic = false,
       name = "Resource",
+      people = "23",
       resourceSrc = "",
       updatedAt = "2 days ago",
       userSrc = "",

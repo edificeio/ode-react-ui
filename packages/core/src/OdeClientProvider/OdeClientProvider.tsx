@@ -4,20 +4,25 @@ import {
   useMemo,
   useContext,
   useEffect,
-  useState,
+  // useState,
 } from "react";
 
 import { UseQueryResult } from "@tanstack/react-query";
 import {
   App,
+  IConfigurationFramework,
+  IExplorerFramework,
+  IHttp,
+  NotifyFrameworkFactory,
+  ISessionFramework,
   IUserInfo,
+  ISession,
   IUserDescription,
   IWebApp,
   UserProfile,
   IGetConf,
   IGetSession,
   IOdeTheme,
-  odeServices,
 } from "ode-ts-client";
 
 import { useConf } from "../useConf";
@@ -30,19 +35,31 @@ export interface OdeProviderParams {
   version?: string | null;
 }
 
+export interface FrameworkProps {
+  configurationFramework: IConfigurationFramework;
+  explorerFramework?: IExplorerFramework;
+  http: IHttp;
+  notifyFramework: NotifyFrameworkFactory;
+  sessionFramework: ISessionFramework;
+}
+
 export interface OdeClientProps {
   children: ReactNode;
+  framework: FrameworkProps;
   params: OdeProviderParams;
 }
 
 export interface ContextProps {
   appCode: App;
   applications: IWebApp[] | undefined;
+  configurationFramework: IConfigurationFramework;
   confQuery: UseQueryResult<IGetConf>;
   currentApp: IWebApp | undefined;
   currentLanguage: string | undefined;
+  http: IHttp;
   i18n: (key: string, params?: Record<string, any> | undefined) => string;
   init: boolean;
+  session: ISession;
   sessionQuery: UseQueryResult<IGetSession>;
   theme: IOdeTheme | undefined;
   user: IUserInfo | any;
@@ -52,7 +69,13 @@ export interface ContextProps {
 
 export const Context = createContext<ContextProps | null>(null!);
 
-export function OdeClientProvider({ children, params }: OdeClientProps) {
+export function OdeClientProvider({
+  children,
+  framework,
+  params,
+}: OdeClientProps) {
+  const { http, sessionFramework, configurationFramework } = framework;
+
   const appCode = params.app;
 
   const sessionQuery = useSession();
@@ -62,9 +85,12 @@ export function OdeClientProvider({ children, params }: OdeClientProps) {
 
   useEffect(() => {
     const link = document.getElementById("theme") as HTMLAnchorElement;
-    const favicon = document.getElementById("favicon") as HTMLAnchorElement;
     link.href = `${confQuery?.data?.theme?.bootstrapUrl}/theme.css` as string;
-    favicon.href =
+  }, [confQuery?.data]);
+
+  useEffect(() => {
+    const link = document.getElementById("favicon") as HTMLAnchorElement;
+    link.href =
       `${confQuery?.data?.theme?.basePath}/img/illustrations/favicon.ico` as string;
   }, [confQuery?.data]);
 
@@ -74,38 +100,25 @@ export function OdeClientProvider({ children, params }: OdeClientProps) {
       ?.setAttribute("lang", sessionQuery?.data?.currentLanguage || "fr");
   }, [sessionQuery?.data]);
 
-  const [, setForceUpdate] = useState(false);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        await odeServices
-          .idiom()
-          .getIdiom(sessionQuery?.data?.currentLanguage as string, appCode);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setForceUpdate(true);
-      }
-    })();
-  }, [appCode, sessionQuery?.data?.currentLanguage]);
-
   const values = useMemo(
     () => ({
       appCode,
       applications: confQuery?.data?.applications,
+      configurationFramework,
       confQuery,
       currentApp: confQuery?.data?.currentApp,
       currentLanguage: sessionQuery?.data?.currentLanguage,
-      i18n: odeServices.idiom().translate,
+      http,
+      i18n: configurationFramework.Platform.idiom.translate,
       init,
+      session: sessionFramework.session,
       sessionQuery,
       theme: confQuery?.data?.theme,
       user: sessionQuery?.data?.user,
       userDescription: sessionQuery?.data?.userDescription,
       userProfile: sessionQuery?.data?.userProfile,
     }),
-    [appCode, confQuery, init, sessionQuery],
+    [init],
   );
 
   return <Context.Provider value={values}>{children}</Context.Provider>;
