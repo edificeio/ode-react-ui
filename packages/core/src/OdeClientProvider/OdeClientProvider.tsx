@@ -4,7 +4,7 @@ import {
   useMemo,
   useContext,
   useEffect,
-  // useState,
+  useState,
 } from "react";
 
 import { UseQueryResult } from "@tanstack/react-query";
@@ -75,13 +75,31 @@ export function OdeClientProvider({
   params,
 }: OdeClientProps) {
   const { http, sessionFramework, configurationFramework } = framework;
+  const { app } = params;
 
   const appCode = params.app;
 
+  const [init, setInit] = useState<boolean>(false);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        await Promise.all([
+          sessionFramework.initialize(),
+          configurationFramework.initialize(null, null),
+        ]);
+
+        await configurationFramework.Platform.apps.initialize(app, true);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setInit(true);
+      }
+    })();
+  }, []);
+
   const sessionQuery = useSession();
   const confQuery = useConf({ appCode });
-
-  const init = confQuery?.isSuccess && sessionQuery?.isSuccess;
 
   useEffect(() => {
     const link = document.getElementById("theme") as HTMLAnchorElement;
