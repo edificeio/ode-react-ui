@@ -1,5 +1,11 @@
 # @ode-react-ui/hooks
 
+## 2.0.1-dev.1
+
+### Patch Changes
+
+- [#195](https://github.com/opendigitaleducation/ode-react-ui/pull/195) [`d44e525`](https://github.com/opendigitaleducation/ode-react-ui/commit/d44e5251d2ae3a3429a5828b7284620e2e17c4b1) Thanks [@clementcreusat](https://github.com/clementcreusat)! - fix useTrapFocus hook and components path inside stories files
+
 ## 2.0.1-dev.0
 
 ### Patch Changes
