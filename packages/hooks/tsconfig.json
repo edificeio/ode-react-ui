@@ -1,10 +1,5 @@
 {
   "extends": "../../tsconfig.json",
   "include": ["src"],
-  "exclude": ["node_modules", "dist"],
-  "compilerOptions": {
-    "paths": {
-      "@ode-react-ui/components": ["../../../components"]
-    }
-  }
+  "exclude": ["node_modules", "dist"]
 }

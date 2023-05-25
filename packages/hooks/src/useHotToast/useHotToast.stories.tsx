@@ -1,4 +1,5 @@
-import { Alert, Button } from "@ode-react-ui/components";
+import { Alert } from "../../../components/src/Alert";
+import { Button } from "../../../components/src/Button";
 import useHotToast from "./useHotToast";
 import { Toaster } from "react-hot-toast";
 // @ts-ignore
