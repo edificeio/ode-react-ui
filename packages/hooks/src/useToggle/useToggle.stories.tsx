@@ -1,6 +1,5 @@
 import useToggle from "./useToggle";
-import { Button } from "../../../components/src/Button";
-import { Heading } from "../../../components/src/Heading";
+import { Button, Heading } from "@ode-react-ui/components";
 
 export default {
   title: "Hooks/useToggle",

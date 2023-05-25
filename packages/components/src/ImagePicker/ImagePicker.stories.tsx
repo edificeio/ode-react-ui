@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import ImagePicker, { ImagePickerProps } from "./ImagePicker";
+import { ImagePicker } from "../index";
+import { ImagePickerProps } from "./ImagePicker";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

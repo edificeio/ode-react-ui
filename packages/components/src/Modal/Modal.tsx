@@ -81,9 +81,10 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
     const ariaDescriptionId = `aria_desc_${id}`;
 
     const modalRef = useClickOutside(onModalClose);
-    const trapRef = useTrapFocus();
 
     useKeyPress(onModalClose, ["Escape"]);
+
+    useTrapFocus(modalRef);
 
     useEffect(() => {
       if (isOpen) {
@@ -145,14 +146,7 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
                 style={style}
                 tabIndex={-1}
               >
-                <div
-                  id={`${id}_ref`}
-                  ref={(node) => {
-                    modalRef.current = node;
-                    trapRef.current = node;
-                  }}
-                  className={dialogClasses}
-                >
+                <div id={`${id}_ref`} ref={modalRef} className={dialogClasses}>
                   <div className="modal-content">{children}</div>
                 </div>
               </animated.div>
