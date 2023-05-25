@@ -1,5 +1,5 @@
 import useKeyPress from "./useKeyPress";
-import { Button } from "@ode-react-ui/components";
+import { Button } from "../../../components/src/Button";
 // @ts-ignore
 import docs from "./useKeyPress.docs.mdx";
 import { useState } from "react";
