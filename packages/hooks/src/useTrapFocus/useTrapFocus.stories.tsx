@@ -1,20 +1,19 @@
-import { ComponentStory } from "@storybook/react";
 import { Lock, Mail } from "@ode-react-ui/icons";
-import { Button, FormControl, Input, Label } from "../../../components";
-import { useRef } from "react";
+import { Button } from "../../../components/src/Button";
+import Label from "../../../components/src/Form/Label";
+import Input from "../../../components/src/Form/Input";
+import FormControl from "../../../components/src/Form/FormControl";
 import useTrapFocus from "./useTrapFocus";
 
 export default {
   title: "Hooks/useTrapFocus",
 };
 
-const Template: ComponentStory<typeof HTMLDivElement> = () => {
-  const divRef = useRef<any>();
-
-  useTrapFocus(divRef);
+const Template = () => {
+  const ref = useTrapFocus();
 
   return (
-    <div ref={divRef} className="border rounded-4 m-64 py-12 px-8">
+    <div ref={ref} className="border rounded-4 m-64 py-12 px-8">
       <h2 className="p-12">Trap Focus!</h2>
       <p className="p-12">
         Press Tab or Shift+Tab to cycle through elements focus
