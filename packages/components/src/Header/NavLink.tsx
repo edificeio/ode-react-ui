@@ -30,6 +30,7 @@ export function NavLink({
   link,
   className,
   children,
+  button,
   translate,
   ...restProps
 }: NavLinkProps<string>) {

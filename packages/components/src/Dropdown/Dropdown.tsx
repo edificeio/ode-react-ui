@@ -65,7 +65,7 @@ const Dropdown = ({ trigger, content }: DropdownProps) => {
       document.removeEventListener("mousedown", handleClickOutside, true);
       document.removeEventListener("touchstart", handleClickOutside, true);
     };
-  }, [popperElement, referenceElement]);
+  }, [popperElement]);
 
   return (
     <>

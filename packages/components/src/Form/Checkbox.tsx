@@ -55,7 +55,7 @@ const Checkbox = forwardRef(
           : (
               Math.floor(Math.random() * 999999999999) + 1000000000000
             ).toString(),
-      [restProps.id],
+      [],
     );
 
     const inputProps = {

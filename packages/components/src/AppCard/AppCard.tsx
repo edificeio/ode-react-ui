@@ -86,16 +86,7 @@ const Root: PolymorphicAppCard = forwardRef(
         code: getIconCode(app)!,
         bgCode: getBackgroundLightIconClass(app),
       }),
-      [
-        app,
-        displayName,
-        getBackgroundLightIconClass,
-        getIconCode,
-        headingStyle,
-        icon,
-        isHeading,
-        level,
-      ],
+      [],
     );
 
     const Component = as || "div";

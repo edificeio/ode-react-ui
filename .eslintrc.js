@@ -1,17 +1,20 @@
 module.exports = {
   env: {
     browser: true,
-    es2020: true,
+    es2021: true,
   },
+  parser: "@typescript-eslint/parser",
   extends: [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:jsx-a11y/recommended",
+    "standard-with-typescript",
+    "prettier",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
     "plugin:import/typescript",
+    "plugin:prettier/recommended",
+    "plugin:jsx-a11y/recommended",
   ],
-  plugins: ["react", "import", "jsx-a11y"],
-  parser: "@typescript-eslint/parser",
+  plugins: ["react", "jsx-a11y"],
   parserOptions: {
     ecmaFeatures: {
       jsx: false,
@@ -22,9 +25,15 @@ module.exports = {
   },
   rules: {
     "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
-    "@typescript-eslint/ban-ts-comment": "off",
-    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-unnecessary-type-assertion": "off",
+    "@typescript-eslint/prefer-nullish-coalescing": "off",
+    "@typescript-eslint/quotes": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "no-console": "off",
     "import/order": [
       "error",
       {
