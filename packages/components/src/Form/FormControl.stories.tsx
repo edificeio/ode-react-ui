@@ -1,3 +1,4 @@
+import React from "react";
 import { Mail } from "@ode-react-ui/icons";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
