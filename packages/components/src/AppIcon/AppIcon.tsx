@@ -109,29 +109,6 @@ const AppIcon = forwardRef(
       );
     }
 
-    if (!isIconURL) {
-      return (
-        <div
-          className={classes}
-          style={{ width: size + "px", height: size + "px" }}
-        >
-          <svg
-            ref={ref}
-            width={size}
-            height={size}
-            role="img"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <use
-              xlinkHref={`/assets/themes/ode-bootstrap/icons/apps.svg#${appCode}`}
-            />
-          </svg>
-        </div>
-      );
-    }
-
     return (
       <div
         className={classes}
