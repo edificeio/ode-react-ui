@@ -23,6 +23,9 @@ export default {
       ],
     },
   },
+  args: {
+    imageSrc: "illu-blog",
+  },
   parameters: {
     docs: {
       description: {

@@ -50,7 +50,7 @@ const Template = (args: any) => {
   const ref = useRef<AlertRef>(null);
   const [showButton, setShowButtonState] = useState(false);
 
-  const onClickButton = useCallback(() => {
+  const onClick = useCallback(() => {
     if (ref.current) {
       ref.current.show();
     }
@@ -59,7 +59,7 @@ const Template = (args: any) => {
   return (
     <div>
       {showButton && (
-        <Button type="button" onClick={onClickButton}>
+        <Button type="button" onClick={onClick}>
           Show Alert again
         </Button>
       )}

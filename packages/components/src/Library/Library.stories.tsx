@@ -19,43 +19,22 @@ export default {
     alt: "Découvrir la bibliothèque",
     url: "#",
   },
+  decorators: [
+    (Story) => (
+      <div style={{ width: "300px" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as Meta<typeof Library>;
 
 type Story = StoryObj<typeof Library>;
 
 export const LibraryOne: Story = {
-  render: (args: LibraryProps) => {
-    return (
-      <>
-        <div
-          className="p-16"
-          style={{
-            width: `300px`,
-          }}
-        >
-          <Library {...args} />
-        </div>
-      </>
-    );
-  },
+  render: (args: LibraryProps) => <Library {...args} />,
 };
 
 export const LibraryNeo: Story = {
-  render: (args: LibraryProps) => {
-    return (
-      <>
-        <div
-          className="p-16"
-          style={{
-            width: `300px`,
-          }}
-        >
-          <Library {...args} />
-        </div>
-      </>
-    );
-  },
-
   args: {
     src: "/assets/themes/ode-bootstrap/images/image-library-neo.svg",
   },

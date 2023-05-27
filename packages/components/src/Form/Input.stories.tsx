@@ -44,6 +44,8 @@ export default {
   },
   args: {
     disabled: false,
+    size: "md",
+    type: "text",
     placeholder: "Text Placeholder",
   },
 } as Meta<typeof Input>;
@@ -126,7 +128,7 @@ export const Large: Story = {
 };
 
 export const InputWithValue: Story = {
-  render: ({ ...args }) => {
+  render: (args) => {
     const inputRef: Ref<HTMLInputElement> = useRef(null);
 
     useEffect(() => {
@@ -158,7 +160,7 @@ export const InputWithValue: Story = {
 };
 
 export const InputFocused: Story = {
-  render: ({ ...args }) => {
+  render: (args) => {
     const inputRef: Ref<HTMLInputElement> = useRef(null);
 
     const handleFocus = () => {
@@ -196,7 +198,7 @@ export const InputFocused: Story = {
 };
 
 export const ValidStatus: Story = {
-  render: ({ ...args }) => {
+  render: (args) => {
     return (
       <FormControl id="example-4" status="valid">
         <Input
@@ -219,7 +221,7 @@ export const ValidStatus: Story = {
 };
 
 export const ValidStatusWithMessage: Story = {
-  render: ({ ...args }) => {
+  render: (args) => {
     return (
       <FormControl id="example-4" status="valid">
         <Input
@@ -243,7 +245,7 @@ export const ValidStatusWithMessage: Story = {
 };
 
 export const InvalidStatus: Story = {
-  render: ({ ...args }) => {
+  render: (args) => {
     return (
       <FormControl id="example-4" status="invalid">
         <Input
@@ -266,7 +268,7 @@ export const InvalidStatus: Story = {
 };
 
 export const InvalidStatusWithMessage: Story = {
-  render: ({ ...args }) => {
+  render: (args) => {
     return (
       <FormControl id="example-4" status="invalid">
         <Label>Label Text</Label>
@@ -291,7 +293,7 @@ export const InvalidStatusWithMessage: Story = {
 };
 
 export const StatusWithoutIcon: Story = {
-  render: ({ ...args }) => {
+  render: (args) => {
     return (
       <FormControl id="example-4" status="valid">
         <Input

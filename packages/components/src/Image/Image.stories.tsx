@@ -18,7 +18,6 @@ export default {
     src: "https://media.istockphoto.com/id/1322277517/fr/photo/herbe-sauvage-dans-les-montagnes-au-coucher-du-soleil.jpg?s=612x612&w=0&k=20&c=tQ19uZQLlIFy8J6QWMyOL6lPt3pdSHBSDFHoXr1K_g0=",
     alt: "beautiful landscape",
   },
-  argTypes: {},
 } as Meta<typeof Image>;
 
 type Story = StoryObj<typeof Image>;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { RefAttributes, useState } from "react";
 
 // Import Swiper React components
 import { Pagination } from "swiper";
@@ -28,7 +28,6 @@ import { OptionsType } from "../Form/Select";
 import { Heading } from "../Heading";
 import { ImagePicker } from "../ImagePicker";
 import Modal, { ModalProps } from "./Modal";
-import React from "react";
 import { useToggle } from "@ode-react-ui/hooks";
 
 export default {
@@ -39,6 +38,9 @@ export default {
     Subtitle: Modal.Subtitle,
     Body: Modal.Body,
     Footer: Modal.Footer,
+  },
+  args: {
+    id: "modal",
   },
   argTypes: {
     size: {
@@ -191,7 +193,71 @@ const Template = (args: ModalProps) => {
 };
 
 export const Base: Story = {
-  render: (args) => <Template {...args} />,
+  render: (args) => {
+    const [isOpen, toggle] = useToggle(false);
+
+    function handleOpenModal() {
+      toggle(true);
+    }
+
+    function handleCloseModal() {
+      toggle(false);
+    }
+    return (
+      <>
+        <Button
+          type="button"
+          variant="filled"
+          color="primary"
+          onClick={handleOpenModal}
+        >
+          Open Modal
+        </Button>
+        <Modal
+          {...args}
+          isOpen={isOpen}
+          onModalClose={handleCloseModal}
+          focusId="validateButtonId"
+        >
+          <Modal.Header onModalClose={handleCloseModal}>
+            Modal Header
+          </Modal.Header>
+          <Modal.Subtitle>Subtitle or description</Modal.Subtitle>
+          <Modal.Body>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rutrum
+              nunc et mollis varius. Donec quis imperdiet libero. Sed eleifend
+              euismod ipsum, et elementum enim ultricies sed. Nunc convallis
+              tempus viverra. Mauris faucibus dolor felis, ac consectetur purus
+              aliquet id. Orci varius natoque penatibus et magnis dis parturient
+              montes, nascetur ridiculus mus. Aliquam imperdiet neque non neque
+              bibendum, nec gravida sem lobortis. Cras mattis congue arcu,
+              dictum dictum velit fermentum eget.
+            </p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button
+              type="button"
+              color="tertiary"
+              variant="ghost"
+              onClick={handleCloseModal}
+            >
+              Cancel
+            </Button>
+            <Button
+              id="validateButtonId"
+              type="button"
+              color="primary"
+              variant="filled"
+              onClick={handleCloseModal}
+            >
+              Validate
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
+    );
+  },
   args: {
     id: "primaryModal",
     size: "lg",
@@ -199,28 +265,28 @@ export const Base: Story = {
   },
 };
 
-const TemplateMoveFile = (args: any) => {
-  const [isOpen, toggle] = useToggle(false);
+export const MoveFile = {
+  render: (args: any) => {
+    const [isOpen, toggle] = useToggle(false);
 
-  function handleOpenModal() {
-    toggle(true);
-  }
+    function handleOpenModal() {
+      toggle(true);
+    }
 
-  function handleCloseModal() {
-    toggle(false);
-  }
+    function handleCloseModal() {
+      toggle(false);
+    }
 
-  return (
-    <>
-      <Button
-        type="button"
-        variant="filled"
-        color="primary"
-        onClick={handleOpenModal}
-      >
-        Déplacer l'élément
-      </Button>
-      {isOpen && (
+    return (
+      <>
+        <Button
+          type="button"
+          variant="filled"
+          color="primary"
+          onClick={handleOpenModal}
+        >
+          Déplacer l'élément
+        </Button>
         <Modal {...args} isOpen={isOpen} onModalClose={handleCloseModal}>
           <Modal.Header onModalClose={handleCloseModal}>Déplacer</Modal.Header>
           <Modal.Subtitle>
@@ -264,41 +330,39 @@ const TemplateMoveFile = (args: any) => {
             </Button>
           </Modal.Footer>
         </Modal>
-      )}
-    </>
-  );
-};
-
-export const MoveFile = {
-  render: (args) => <TemplateMoveFile {...args} />,
+      </>
+    );
+  },
   args: {
     id: "moveFileModal",
     scrollable: true,
   },
 };
 
-const TemplateCreateFile = (args: any) => {
-  const [isOpen, toggle] = useToggle(false);
+export const CreateFile = {
+  render: (
+    args: JSX.IntrinsicAttributes & ModalProps & RefAttributes<HTMLDivElement>,
+  ) => {
+    const [isOpen, toggle] = useToggle(false);
 
-  function handleOpenModal() {
-    toggle(true);
-  }
+    function handleOpenModal() {
+      toggle(true);
+    }
 
-  function handleCloseModal() {
-    toggle(false);
-  }
+    function handleCloseModal() {
+      toggle(false);
+    }
 
-  return (
-    <>
-      <Button
-        type="button"
-        variant="filled"
-        color="primary"
-        onClick={handleOpenModal}
-      >
-        Création
-      </Button>
-      {isOpen && (
+    return (
+      <>
+        <Button
+          type="button"
+          variant="filled"
+          color="primary"
+          onClick={handleOpenModal}
+        >
+          Création
+        </Button>
         <Modal
           {...args}
           size="lg"
@@ -423,19 +487,16 @@ const TemplateCreateFile = (args: any) => {
             </Button>
           </Modal.Footer>
         </Modal>
-      )}
-    </>
-  );
-};
-
-export const CreateFile = {
-  render: (args) => <TemplateCreateFile {...args} />,
+      </>
+    );
+  },
   args: {
+    id: "createModal",
     scrollable: false,
   },
 };
 
-//Sample to adapt
+// Sample to adapt
 const sharingModelEdited: any = [
   {
     id: 0,
@@ -467,7 +528,7 @@ const sharingModelEdited: any = [
   },
 ];
 
-//Sample to adapt
+// Sample to adapt
 const actions = [
   {
     displayName: "read",
@@ -483,48 +544,48 @@ const actions = [
   },
 ];
 
-const TemplateShareFile = (args: any) => {
-  const [isOpen, toggle] = useToggle(false);
-  const [showBookmarkInput, toggleBookmarkInput] = useState(false);
-  const [radioPublicationValue, setRadioPublicationValue] =
-    useState<string>("now");
-  const [items, setItems] = useState<any>(sharingModelEdited);
+export const ShareFile = {
+  render: (args: any) => {
+    const [isOpen, toggle] = useToggle(false);
+    const [showBookmarkInput, toggleBookmarkInput] = useState(false);
+    const [radioPublicationValue, setRadioPublicationValue] =
+      useState<string>("now");
+    const [items, setItems] = useState<any>(sharingModelEdited);
 
-  function handleOpenModal() {
-    toggle(true);
-  }
+    function handleOpenModal() {
+      toggle(true);
+    }
 
-  function handleCloseModal() {
-    toggle(false);
-  }
+    function handleCloseModal() {
+      toggle(false);
+    }
 
-  const handleRadioPublicationChange = (event: any) => {
-    setRadioPublicationValue(event.target.value);
-  };
+    const handleRadioPublicationChange = (event: any) => {
+      setRadioPublicationValue(event.target.value);
+    };
 
-  const handleActionCheckbox = (item: any, actionName: string) => {
-    setItems((prevItems: any[]) => {
-      //item.actions[actionName] = !item.actions[actionName];
-      const newItems = [...prevItems];
-      const index = newItems.findIndex((x) => x.id == item.id);
-      newItems[index].actions[actionName] =
-        !newItems[index].actions[actionName];
+    const handleActionCheckbox = (item: any, actionName: string) => {
+      setItems((prevItems: any[]) => {
+        //item.actions[actionName] = !item.actions[actionName];
+        const newItems = [...prevItems];
+        const index = newItems.findIndex((x) => x.id == item.id);
+        newItems[index].actions[actionName] =
+          !newItems[index].actions[actionName];
 
-      return newItems;
-    });
-  };
+        return newItems;
+      });
+    };
 
-  return (
-    <>
-      <Button
-        type="button"
-        variant="filled"
-        color="primary"
-        onClick={handleOpenModal}
-      >
-        Share
-      </Button>
-      {isOpen && (
+    return (
+      <>
+        <Button
+          type="button"
+          variant="filled"
+          color="primary"
+          onClick={handleOpenModal}
+        >
+          Share
+        </Button>
         <Modal
           {...args}
           size="lg"
@@ -715,109 +776,107 @@ const TemplateShareFile = (args: any) => {
             </Button>
           </Modal.Footer>
         </Modal>
-      )}
-    </>
-  );
-};
-
-export const ShareFile = {
-  render: (args) => <TemplateShareFile {...args} />,
+      </>
+    );
+  },
   args: {
     scrollable: false,
   },
 };
 
-const TemplatePublishOnLibrary = (args: any) => {
-  const [isOpen, toggle] = useToggle(false);
+export const PublishOnLibrary = {
+  render: (
+    args: JSX.IntrinsicAttributes & ModalProps & RefAttributes<HTMLDivElement>,
+  ) => {
+    const [isOpen, toggle] = useToggle(false);
 
-  const [activityType, setActivityType] = useState();
-  const [subjectArea, setSubjectArea] = useState();
-  const [language, setLanguage] = useState();
-  const [ageMin, setAgeMin] = useState();
-  const [ageMax, setAgeMax] = useState();
+    const [activityType, setActivityType] = useState();
+    const [subjectArea, setSubjectArea] = useState();
+    const [language, setLanguage] = useState();
+    const [ageMin, setAgeMin] = useState();
+    const [ageMax, setAgeMax] = useState();
 
-  const activityTypesOptions: OptionsType[] = [
-    { value: "classroomActivity", label: "Activité en classe" },
-    { value: "groupActivity", label: "Activité en groupe" },
-    { value: "personalActivity", label: "Activité individuelle" },
-    { value: "homework", label: "Activité à la maison" },
-    { value: "exercize", label: "Exercice" },
-    { value: "learningPath", label: "Parcours pédagogique" },
-    { value: "courseElement", label: "Élément de cours" },
-  ];
+    const activityTypesOptions: OptionsType[] = [
+      { value: "classroomActivity", label: "Activité en classe" },
+      { value: "groupActivity", label: "Activité en groupe" },
+      { value: "personalActivity", label: "Activité individuelle" },
+      { value: "homework", label: "Activité à la maison" },
+      { value: "exercize", label: "Exercice" },
+      { value: "learningPath", label: "Parcours pédagogique" },
+      { value: "courseElement", label: "Élément de cours" },
+    ];
 
-  const languageOptions: OptionsType[] = [
-    { value: "german", label: "Allemand" },
-    { value: "english", label: "Anglais" },
-    { value: "arabian", label: "Arabe" },
-    { value: "spanish", label: "Espagnol" },
-    { value: "french", label: "Français" },
-    { value: "italian", label: "Italien" },
-    { value: "japanese", label: "Japonais" },
-    { value: "mandarinChinese", label: "Mandarin" },
-    { value: "portuguese", label: "Portuguais" },
-    { value: "russian", label: "Russe" },
-  ];
+    const languageOptions: OptionsType[] = [
+      { value: "german", label: "Allemand" },
+      { value: "english", label: "Anglais" },
+      { value: "arabian", label: "Arabe" },
+      { value: "spanish", label: "Espagnol" },
+      { value: "french", label: "Français" },
+      { value: "italian", label: "Italien" },
+      { value: "japanese", label: "Japonais" },
+      { value: "mandarinChinese", label: "Mandarin" },
+      { value: "portuguese", label: "Portuguais" },
+      { value: "russian", label: "Russe" },
+    ];
 
-  const subjectAreaOptions: OptionsType[] = [
-    { value: "artActivity", label: "Activités artistiques" },
-    { value: "readLearning", label: "Apprentissage de la lecture" },
-    { value: "chemistry", label: "Chimie" },
-    { value: "law", label: "Droit" },
-    { value: "worldDiscovery", label: "Découverte du monde" },
-    { value: "economy", label: "Economie" },
-    { value: "mediaEducation", label: "Education aux médias" },
-    { value: "musicEducation", label: "Education musicale" },
-    { value: "sportEducation", label: "Education physique et sportive" },
-    { value: "citizenshipEducation", label: "Enseignement civique" },
-    { value: "geography", label: "Géographie" },
-    { value: "history", label: "Histoire" },
-    { value: "artHistory", label: "Histoire des arts" },
-    { value: "ComputerScience", label: "Informatique" },
-    { value: "languages", label: "Langues" },
-    { value: "ancientLanguages", label: "Langues anciennes" },
-    { value: "literature", label: "Littérature" },
-    { value: "mathematics", label: "Mathématiques" },
-    { value: "vocationalGuidance", label: "Orientation" },
-    { value: "philosohppy", label: "Philosophie" },
-    { value: "physics", label: "Physique" },
-    { value: "politicalSscience", label: "Sciences politiques" },
-    { value: "sociology", label: "Sociologie" },
-    { value: "biology", label: "SVT - Biologie" },
-    { value: "geology", label: "SVT - Géologie" },
-    { value: "technology", label: "Technologie" },
-    { value: "german", label: "Allemand" },
-    { value: "english", label: "Anglais" },
-    { value: "arabian", label: "Arabe" },
-    { value: "spanish", label: "Espagnol" },
-    { value: "french", label: "Français" },
-    { value: "frensh", label: "Français" },
-    { value: "italian", label: "Italien" },
-    { value: "japanese", label: "Japonais" },
-    { value: "mandarinChinese", label: "Mandarin" },
-    { value: "portuguese", label: "Portuguais" },
-    { value: "russian", label: "Russe" },
-  ];
+    const subjectAreaOptions: OptionsType[] = [
+      { value: "artActivity", label: "Activités artistiques" },
+      { value: "readLearning", label: "Apprentissage de la lecture" },
+      { value: "chemistry", label: "Chimie" },
+      { value: "law", label: "Droit" },
+      { value: "worldDiscovery", label: "Découverte du monde" },
+      { value: "economy", label: "Economie" },
+      { value: "mediaEducation", label: "Education aux médias" },
+      { value: "musicEducation", label: "Education musicale" },
+      { value: "sportEducation", label: "Education physique et sportive" },
+      { value: "citizenshipEducation", label: "Enseignement civique" },
+      { value: "geography", label: "Géographie" },
+      { value: "history", label: "Histoire" },
+      { value: "artHistory", label: "Histoire des arts" },
+      { value: "ComputerScience", label: "Informatique" },
+      { value: "languages", label: "Langues" },
+      { value: "ancientLanguages", label: "Langues anciennes" },
+      { value: "literature", label: "Littérature" },
+      { value: "mathematics", label: "Mathématiques" },
+      { value: "vocationalGuidance", label: "Orientation" },
+      { value: "philosohppy", label: "Philosophie" },
+      { value: "physics", label: "Physique" },
+      { value: "politicalSscience", label: "Sciences politiques" },
+      { value: "sociology", label: "Sociologie" },
+      { value: "biology", label: "SVT - Biologie" },
+      { value: "geology", label: "SVT - Géologie" },
+      { value: "technology", label: "Technologie" },
+      { value: "german", label: "Allemand" },
+      { value: "english", label: "Anglais" },
+      { value: "arabian", label: "Arabe" },
+      { value: "spanish", label: "Espagnol" },
+      { value: "french", label: "Français" },
+      { value: "frensh", label: "Français" },
+      { value: "italian", label: "Italien" },
+      { value: "japanese", label: "Japonais" },
+      { value: "mandarinChinese", label: "Mandarin" },
+      { value: "portuguese", label: "Portuguais" },
+      { value: "russian", label: "Russe" },
+    ];
 
-  function handleOpenModal() {
-    toggle(true);
-  }
+    function handleOpenModal() {
+      toggle(true);
+    }
 
-  function handleCloseModal() {
-    toggle(false);
-  }
+    function handleCloseModal() {
+      toggle(false);
+    }
 
-  return (
-    <>
-      <Button
-        type="button"
-        variant="filled"
-        color="primary"
-        onClick={handleOpenModal}
-      >
-        Publier dans la bibliothèque
-      </Button>
-      {isOpen && (
+    return (
+      <>
+        <Button
+          type="button"
+          variant="filled"
+          color="primary"
+          onClick={handleOpenModal}
+        >
+          Publier dans la bibliothèque
+        </Button>
         <Modal
           {...args}
           size="lg"
@@ -1013,42 +1072,40 @@ const TemplatePublishOnLibrary = (args: any) => {
             </Button>
           </Modal.Footer>
         </Modal>
-      )}
-    </>
-  );
-};
-
-export const PublishOnLibrary = {
-  render: (args) => <TemplatePublishOnLibrary {...args} />,
+      </>
+    );
+  },
   args: {
     scrollable: false,
   },
 };
 
-const TemplateOnBoardingTrash = (args: any) => {
-  const [isOpen, toggle] = useToggle(false);
-  const [swiperInstance, setSwiperInstance] = useState<any>();
-  const [swiperProgress, setSwiperprogress] = useState<number>(0);
+export const OnBoardingTrash = {
+  render: (
+    args: JSX.IntrinsicAttributes & ModalProps & RefAttributes<HTMLDivElement>,
+  ) => {
+    const [isOpen, toggle] = useToggle(false);
+    const [swiperInstance, setSwiperInstance] = useState<any>();
+    const [swiperProgress, setSwiperprogress] = useState<number>(0);
 
-  function handleOpenModal() {
-    toggle(true);
-  }
+    function handleOpenModal() {
+      toggle(true);
+    }
 
-  function handleCloseModal() {
-    toggle(false);
-  }
+    function handleCloseModal() {
+      toggle(false);
+    }
 
-  return (
-    <>
-      <Button
-        type="button"
-        variant="filled"
-        color="primary"
-        onClick={handleOpenModal}
-      >
-        On Boarding recycle bin
-      </Button>
-      {isOpen && (
+    return (
+      <>
+        <Button
+          type="button"
+          variant="filled"
+          color="primary"
+          onClick={handleOpenModal}
+        >
+          On Boarding recycle bin
+        </Button>
         <Modal
           {...args}
           size="md"
@@ -1155,11 +1212,7 @@ const TemplateOnBoardingTrash = (args: any) => {
             )}
           </Modal.Footer>
         </Modal>
-      )}
-    </>
-  );
-};
-
-export const OnBoardingTrash = {
-  render: () => <TemplateOnBoardingTrash />,
+      </>
+    );
+  },
 };

@@ -9,9 +9,9 @@ export default {
 
 type Story = StoryObj<typeof Grid.Col>;
 
-export const Base = () => {
-  return (
-    <div>
+export const Base: Story = {
+  render: (args) => {
+    return (
       <Grid>
         <Grid.Col
           sm="1"
@@ -134,31 +134,29 @@ export const Base = () => {
           1
         </Grid.Col>
       </Grid>
-    </div>
-  );
+    );
+  },
 };
 
 export const Responsive: Story = {
-  render: () => {
+  render: (args) => {
     return (
-      <div>
-        <Grid>
-          <Grid.Col
-            sm="4"
-            style={{ backgroundColor: "#ebebeb", padding: ".8rem" }}
-          >
-            <p>Size of 4 columns for each breakpoint (small, medium, large)</p>
-          </Grid.Col>
-          <Grid.Col
-            sm="4"
-            md="6"
-            lg="8"
-            style={{ backgroundColor: "#ebebeb", padding: ".8rem" }}
-          >
-            <p>Size of 4 columns on Mobile, 6 on Tablet, 8 on Desktop</p>
-          </Grid.Col>
-        </Grid>
-      </div>
+      <Grid>
+        <Grid.Col
+          sm="4"
+          style={{ backgroundColor: "#ebebeb", padding: ".8rem" }}
+        >
+          <p>Size of 4 columns for each breakpoint (small, medium, large)</p>
+        </Grid.Col>
+        <Grid.Col
+          sm="4"
+          md="6"
+          lg="8"
+          style={{ backgroundColor: "#ebebeb", padding: ".8rem" }}
+        >
+          <p>Size of 4 columns on Mobile, 6 on Tablet, 8 on Desktop</p>
+        </Grid.Col>
+      </Grid>
     );
   },
 

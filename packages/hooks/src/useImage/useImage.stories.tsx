@@ -1,20 +1,25 @@
+import { Meta, StoryObj } from "@storybook/react";
 import useImage from "./useImage";
-// @ts-ignore
-import docs from "./useImage.docs.mdx";
+import docs from "./useImage.mdx";
 
-export default {
+const meta: Meta<typeof useImage> = {
   title: "Hooks/useImage",
   parameters: {
     docs: { page: docs },
   },
 };
 
-export const Example = () => {
-  const src = "";
-  const alt = "alternative text";
-  const placeholder =
-    "/assets/themes/ode-bootstrap/images/image-placeholder.png";
-  const { imgSrc, onError } = useImage({ src, placeholder });
+export default meta;
+type Story = StoryObj<typeof useImage>;
 
-  return <img alt={alt} onError={onError} src={imgSrc} />;
+export const Example: Story = {
+  render: (args) => {
+    const src = "";
+    const alt = "alternative text";
+    const placeholder =
+      "/assets/themes/ode-bootstrap/images/image-placeholder.png";
+    const { imgSrc, onError } = useImage({ src, placeholder });
+
+    return <img alt={alt} onError={onError} src={imgSrc} />;
+  },
 };

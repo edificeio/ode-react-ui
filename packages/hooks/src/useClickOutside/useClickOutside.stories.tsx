@@ -2,37 +2,42 @@ import { useState } from "react";
 
 import useClickOutside from "./useClickOutside";
 import { Button } from "../../../components/src/Button";
-// @ts-ignore
-import docs from "./useClickOutside.docs.mdx";
+import { Meta, StoryObj } from "@storybook/react";
+import docs from "./useClickOutside.mdx";
 
-export default {
+const meta: Meta<typeof useClickOutside> = {
   title: "Hooks/useClickOutside",
   parameters: {
     docs: { page: docs },
   },
 };
 
-export const Example = () => {
-  const [isOpen, setOpen] = useState<boolean>(true);
+export default meta;
+type Story = StoryObj<typeof useClickOutside>;
 
-  const ref = useClickOutside(() => setOpen(false));
+export const Example: Story = {
+  render: (args) => {
+    const [isOpen, setOpen] = useState<boolean>(true);
 
-  if (isOpen) {
+    const ref = useClickOutside(() => setOpen(false));
+
+    if (isOpen) {
+      return (
+        <Button ref={ref} type="button" color="primary" variant="filled">
+          Click outside of me
+        </Button>
+      );
+    }
+
     return (
-      <Button ref={ref} type="button" color="primary" variant="filled">
-        Click outside of me
+      <Button
+        type="button"
+        color="secondary"
+        variant="filled"
+        onClick={() => setOpen(true)}
+      >
+        Restart
       </Button>
     );
-  }
-
-  return (
-    <Button
-      type="button"
-      color="secondary"
-      variant="filled"
-      onClick={() => setOpen(true)}
-    >
-      Restart
-    </Button>
-  );
+  },
 };

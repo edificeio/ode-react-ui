@@ -11,13 +11,6 @@ import React from "react";
 export default {
   title: "Forms/Select",
   component: Select,
-  parameters: {
-    docs: {
-      source: {
-        type: "code",
-      },
-    },
-  },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } as Meta<typeof Select>;
 
@@ -63,55 +56,53 @@ const subjectAreaOptions: OptionsType[] = [
   { value: "russian", label: "Russe" },
 ];
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = () => {
-  const [value, setValue] = useState<string>();
-
-  return (
-    <div>
-      <FormControl id="subjectArea">
-        <Label>Discipline</Label>
-        <Select
-          placeholderOption="Sélectionnez une discipline"
-          options={subjectAreaOptions}
-          model={value}
-          onChange={(e) => setValue(e.target.value)}
-        />
-      </FormControl>
-      <div className="mt-16">Option séléctionnée : {value && value}</div>
-    </div>
-  );
-};
-
 export const Base: Story = {
-  render: Template,
+  render: (args) => {
+    const [value, setValue] = useState<string>();
+
+    return (
+      <div>
+        <FormControl id="subjectArea">
+          <Label>Discipline</Label>
+          <Select
+            placeholderOption="Sélectionnez une discipline"
+            options={subjectAreaOptions}
+            model={value}
+            onChange={(e) => setValue(e.target.value)}
+          />
+        </FormControl>
+        <div className="mt-16">Option séléctionnée : {value && value}</div>
+      </div>
+    );
+  },
 };
+
 type status = "invalid" | "valid";
 
-const WithStatusTemplate = () => {
-  const [value, setValue] = useState<status>("invalid");
-
-  const statusOptions: OptionsType[] = [
-    { label: "Invalid option", value: "invalid" },
-    { label: "Valid option", value: "valid" },
-  ];
-
-  return (
-    <div>
-      <FormControl id="subjectArea" status={value}>
-        <Label>Discipline {value === "invalid" ? "invalide" : "valide"}</Label>
-        <Select
-          options={statusOptions}
-          model={value}
-          onChange={(e) => {
-            setValue(e.target.value as status);
-          }}
-        />
-      </FormControl>
-    </div>
-  );
-};
-
 export const WithStatus: Story = {
-  render: WithStatusTemplate,
+  render: (args) => {
+    const [value, setValue] = useState<status>("invalid");
+
+    const statusOptions: OptionsType[] = [
+      { label: "Invalid option", value: "invalid" },
+      { label: "Valid option", value: "valid" },
+    ];
+
+    return (
+      <div>
+        <FormControl id="subjectArea" status={value}>
+          <Label>
+            Discipline {value === "invalid" ? "invalide" : "valide"}
+          </Label>
+          <Select
+            options={statusOptions}
+            model={value}
+            onChange={(e) => {
+              setValue(e.target.value as status);
+            }}
+          />
+        </FormControl>
+      </div>
+    );
+  },
 };
