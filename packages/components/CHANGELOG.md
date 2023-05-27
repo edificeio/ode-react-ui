@@ -1,5 +1,16 @@
 # @ode-react-ui/components
 
+## 2.1.0-dev.3
+
+### Patch Changes
+
+- [#197](https://github.com/opendigitaleducation/ode-react-ui/pull/197) [`6fe0c1e`](https://github.com/opendigitaleducation/ode-react-ui/commit/6fe0c1e718d31375aa6b3fe02e87768b87b988f6) Thanks [@Headan](https://github.com/Headan)! - Upgraded version StoryBook
+
+- Updated dependencies [[`6fe0c1e`](https://github.com/opendigitaleducation/ode-react-ui/commit/6fe0c1e718d31375aa6b3fe02e87768b87b988f6)]:
+  - @ode-react-ui/hooks@2.1.0-dev.3
+  - @ode-react-ui/icons@2.1.0-dev.3
+  - @ode-react-ui/core@2.1.0-dev.3
+
 ## 2.1.0-dev.2
 
 ### Minor Changes
