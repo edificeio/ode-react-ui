@@ -3,7 +3,6 @@ import { Meta, StoryObj } from "@storybook/react";
 import Loading, { LoadingProps } from "./Loading";
 
 import { Hourglass } from "@ode-react-ui/icons";
-import React from "react";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

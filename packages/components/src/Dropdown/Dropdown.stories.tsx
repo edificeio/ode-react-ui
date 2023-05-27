@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { Meta, StoryObj } from "@storybook/react";
 
+import { Base as SelectListStory } from "./SelectList.stories";
+
 import Dropdown from "./Dropdown";
 import DropdownTrigger from "./DropdownTrigger";
 import {
@@ -16,6 +18,14 @@ import React from "react";
 export default {
   title: "Components/Dropdown",
   component: Dropdown,
+  decorators: [
+    (Story) => (
+      <div style={{ height: "15em" }}>
+        {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
+        <Story />
+      </div>
+    ),
+  ],
 } as Meta<typeof Dropdown>;
 
 type Story = StoryObj<typeof Dropdown>;
@@ -38,61 +48,67 @@ const options: OptionListItemType[] = [
   },
 ];
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args: any) => {
-  const [listModel, setListModel] = useState<(string | number)[]>([]);
-
-  return (
-    <div>
-      <div className="d-flex justify-content-between ">
-        <Dropdown
-          trigger={
-            <DropdownTrigger
-              title="Dropdown toggle"
-              icon={<Filter width={20} />}
-              badgeContent={listModel.length > 0 ? listModel.length : undefined}
-            />
-          }
-          content={
-            <SelectList
-              options={options}
-              model={listModel}
-              onChange={(model) => setListModel(model)}
-            />
-          }
-        />
-
-        <Dropdown
-          trigger={
-            <DropdownTrigger
-              title="Dropdown toggle"
-              icon={<Filter width={20} />}
-            />
-          }
-          content={
-            <SelectList
-              options={options}
-              model={listModel}
-              onChange={(model) => setListModel(model)}
-              hideCheckbox
-            />
-          }
-        />
-      </div>
-      <div style={{ height: "200px" }}></div>
-    </div>
-  );
-};
-
 export const Base: Story = {
-  render: Template,
+  render: (args) => {
+    const [listModel, setListModel] = useState<(string | number)[]>([]);
+    return (
+      <Dropdown
+        trigger={
+          <DropdownTrigger
+            title="Dropdown toggle"
+            icon={<Filter width={20} />}
+            badgeContent={listModel.length > 0 ? listModel.length : undefined}
+          />
+        }
+        content={
+          <SelectList
+            options={options}
+            model={listModel}
+            onChange={(model) => setListModel(model)}
+          />
+        }
+      />
+    );
+  },
 };
 
-const GhostTemplate = (args: any) => {
-  const [listModel, setListModel] = useState<(string | number)[]>([]);
+export const HidingCheckbox: Story = {
+  render: (args) => {
+    const [listModel, setListModel] = useState<(string | number)[]>([]);
+    return (
+      <Dropdown
+        trigger={
+          <DropdownTrigger
+            title="Dropdown toggle"
+            icon={<Filter width={20} />}
+          />
+        }
+        content={
+          <SelectList
+            options={options}
+            model={listModel}
+            onChange={(model) => setListModel(model)}
+            hideCheckbox
+          />
+        }
+      />
+    );
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Checkboxes are hideable by adding `hideCheckbox` props to the `<SelectList/>` Component.",
+      },
+    },
+  },
+};
 
-  return (
-    <div>
+export const Ghost: Story = {
+  render: (args) => {
+    const [listModel, setListModel] = useState<(string | number)[]>([]);
+
+    return (
       <div className="d-flex justify-content-between ">
         <Dropdown
           trigger={
@@ -113,11 +129,14 @@ const GhostTemplate = (args: any) => {
           }
         />
       </div>
-      <div style={{ height: "200px" }}></div>
-    </div>
-  );
-};
-
-export const Ghost: Story = {
-  render: GhostTemplate,
+    );
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Change `variant` props to `ghost` in `<DropdownTrigger/> Component",
+      },
+    },
+  },
 };

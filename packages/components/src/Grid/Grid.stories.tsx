@@ -10,135 +10,137 @@ export default {
 
 type Story = StoryObj<typeof Grid>;
 
-export const Base = () => {
-  return (
-    <Grid>
-      <Grid.Col
-        sm="1"
-        style={{
-          backgroundColor: "#ebebeb",
-          padding: ".8rem",
-          minHeight: "10rem",
-        }}
-      >
-        1
-      </Grid.Col>
-      <Grid.Col
-        sm="1"
-        style={{
-          backgroundColor: "#ebebeb",
-          padding: ".8rem",
-          minHeight: "10rem",
-        }}
-      >
-        1
-      </Grid.Col>
-      <Grid.Col
-        sm="1"
-        style={{
-          backgroundColor: "#ebebeb",
-          padding: ".8rem",
-          minHeight: "10rem",
-        }}
-      >
-        1
-      </Grid.Col>
-      <Grid.Col
-        sm="1"
-        style={{
-          backgroundColor: "#ebebeb",
-          padding: ".8rem",
-          minHeight: "10rem",
-        }}
-      >
-        1
-      </Grid.Col>
-      <Grid.Col
-        sm="1"
-        style={{
-          backgroundColor: "#ebebeb",
-          padding: ".8rem",
-          minHeight: "10rem",
-        }}
-      >
-        1
-      </Grid.Col>
-      <Grid.Col
-        sm="1"
-        style={{
-          backgroundColor: "#ebebeb",
-          padding: ".8rem",
-          minHeight: "10rem",
-        }}
-      >
-        1
-      </Grid.Col>
-      <Grid.Col
-        sm="1"
-        style={{
-          backgroundColor: "#ebebeb",
-          padding: ".8rem",
-          minHeight: "10rem",
-        }}
-      >
-        1
-      </Grid.Col>
-      <Grid.Col
-        sm="1"
-        style={{
-          backgroundColor: "#ebebeb",
-          padding: ".8rem",
-          minHeight: "10rem",
-        }}
-      >
-        1
-      </Grid.Col>
-      <Grid.Col
-        sm="1"
-        style={{
-          backgroundColor: "#ebebeb",
-          padding: ".8rem",
-          minHeight: "10rem",
-        }}
-      >
-        1
-      </Grid.Col>
-      <Grid.Col
-        sm="1"
-        style={{
-          backgroundColor: "#ebebeb",
-          padding: ".8rem",
-          minHeight: "10rem",
-        }}
-      >
-        1
-      </Grid.Col>
-      <Grid.Col
-        sm="1"
-        style={{
-          backgroundColor: "#ebebeb",
-          padding: ".8rem",
-          minHeight: "10rem",
-        }}
-      >
-        1
-      </Grid.Col>
-      <Grid.Col
-        sm="1"
-        style={{
-          backgroundColor: "#ebebeb",
-          padding: ".8rem",
-          minHeight: "10rem",
-        }}
-      >
-        1
-      </Grid.Col>
-    </Grid>
-  );
+export const Base: Story = {
+  render: (args) => {
+    return (
+      <Grid>
+        <Grid.Col
+          sm="1"
+          style={{
+            backgroundColor: "#ebebeb",
+            padding: ".8rem",
+            minHeight: "10rem",
+          }}
+        >
+          1
+        </Grid.Col>
+        <Grid.Col
+          sm="1"
+          style={{
+            backgroundColor: "#ebebeb",
+            padding: ".8rem",
+            minHeight: "10rem",
+          }}
+        >
+          1
+        </Grid.Col>
+        <Grid.Col
+          sm="1"
+          style={{
+            backgroundColor: "#ebebeb",
+            padding: ".8rem",
+            minHeight: "10rem",
+          }}
+        >
+          1
+        </Grid.Col>
+        <Grid.Col
+          sm="1"
+          style={{
+            backgroundColor: "#ebebeb",
+            padding: ".8rem",
+            minHeight: "10rem",
+          }}
+        >
+          1
+        </Grid.Col>
+        <Grid.Col
+          sm="1"
+          style={{
+            backgroundColor: "#ebebeb",
+            padding: ".8rem",
+            minHeight: "10rem",
+          }}
+        >
+          1
+        </Grid.Col>
+        <Grid.Col
+          sm="1"
+          style={{
+            backgroundColor: "#ebebeb",
+            padding: ".8rem",
+            minHeight: "10rem",
+          }}
+        >
+          1
+        </Grid.Col>
+        <Grid.Col
+          sm="1"
+          style={{
+            backgroundColor: "#ebebeb",
+            padding: ".8rem",
+            minHeight: "10rem",
+          }}
+        >
+          1
+        </Grid.Col>
+        <Grid.Col
+          sm="1"
+          style={{
+            backgroundColor: "#ebebeb",
+            padding: ".8rem",
+            minHeight: "10rem",
+          }}
+        >
+          1
+        </Grid.Col>
+        <Grid.Col
+          sm="1"
+          style={{
+            backgroundColor: "#ebebeb",
+            padding: ".8rem",
+            minHeight: "10rem",
+          }}
+        >
+          1
+        </Grid.Col>
+        <Grid.Col
+          sm="1"
+          style={{
+            backgroundColor: "#ebebeb",
+            padding: ".8rem",
+            minHeight: "10rem",
+          }}
+        >
+          1
+        </Grid.Col>
+        <Grid.Col
+          sm="1"
+          style={{
+            backgroundColor: "#ebebeb",
+            padding: ".8rem",
+            minHeight: "10rem",
+          }}
+        >
+          1
+        </Grid.Col>
+        <Grid.Col
+          sm="1"
+          style={{
+            backgroundColor: "#ebebeb",
+            padding: ".8rem",
+            minHeight: "10rem",
+          }}
+        >
+          1
+        </Grid.Col>
+      </Grid>
+    );
+  },
 };
 
 export const Responsive: Story = {
-  render: () => {
+  render: (args) => {
     return (
       <Grid>
         <Grid.Col

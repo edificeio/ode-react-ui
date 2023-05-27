@@ -48,6 +48,10 @@ const Checkbox = forwardRef(
       ...(refCheckbox.current as HTMLInputElement),
     }));
 
+    useEffect(() => {
+      refCheckbox.current!.indeterminate = indeterminate;
+    }, [refCheckbox, indeterminate]);
+
     const id = useMemo(
       () =>
         restProps.id
@@ -69,10 +73,6 @@ const Checkbox = forwardRef(
         id,
       },
     };
-
-    useEffect(() => {
-      refCheckbox.current!.indeterminate = indeterminate;
-    }, [refCheckbox, indeterminate]);
 
     return (
       <div className="position-relative d-inline-block">

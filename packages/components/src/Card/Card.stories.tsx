@@ -64,7 +64,7 @@ export const CardWithImage: Story = {
 };
 
 export const Variant: Story = {
-  render: () => {
+  render: (args) => {
     return (
       <div className="d-flex align-items-center gap-16">
         <Card className="flex-fill" />
@@ -84,7 +84,7 @@ export const Variant: Story = {
 };
 
 export const LoadingStatus: Story = {
-  render: () => {
+  render: (args) => {
     return (
       <div className="d-flex align-items-center gap-16">
         <Card isLoading className="flex-fill" />
@@ -104,7 +104,7 @@ export const LoadingStatus: Story = {
 };
 
 export const SelectedState: Story = {
-  render: () => {
+  render: (args) => {
     return (
       <div className="d-flex align-items-center gap-16">
         <Card isSelected className="flex-fill" />
@@ -124,7 +124,7 @@ export const SelectedState: Story = {
 };
 
 export const TooltipShare: Story = {
-  render: () => {
+  render: (args) => {
     const message = "Tooltip Shared";
     return (
       <div className="d-flex align-items-center gap-16">
@@ -143,7 +143,7 @@ export const TooltipShare: Story = {
 };
 
 export const TooltipPublic: Story = {
-  render: () => {
+  render: (args) => {
     const message = "Tooltip Public";
     return (
       <div className="d-flex align-items-center gap-16">

@@ -1,4 +1,7 @@
-import { Canvas, Story } from "@storybook/addon-docs";
+import { Canvas, Meta } from "@storybook/blocks";
+import * as useHotToastStories from "./useHotToast.stories";
+
+<Meta />
 
 # useHotToast
 
@@ -8,9 +11,7 @@ import { Canvas, Story } from "@storybook/addon-docs";
 
 ## Example
 
-<Canvas>
-  <Story id="hooks-usehottoast--example" />
-</Canvas>
+<Canvas of={useHotToastStories.Example} />
 
 ## Hook usage
 

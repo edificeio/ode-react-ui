@@ -1,4 +1,4 @@
-import { Meta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import toast, { Toaster, resolveValue } from "react-hot-toast";
 import { Button } from "../Button";
 
@@ -20,124 +20,134 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } as Meta<typeof Toast>;
 
-export const Base = () => {
-  // Action to close the Toast
-  const { dismiss } = toast;
+type Story = StoryObj<typeof Toast>;
 
-  /**
-   * Optional options:
-   * https://react-hot-toast.com/docs/toaster
-   */
-  const toastOptions = {
-    position: "top-right",
-    reverseOrder: false,
-    gutter: 8,
-  };
+export const Base: Story = {
+  render: (args) => {
+    // Action to close the Toast
+    const { dismiss } = toast;
 
-  const displayToast = () => {
-    toast("This is a toast");
-  };
+    /**
+     * Optional options:
+     * https://react-hot-toast.com/docs/toaster
+     */
+    const toastOptions = {
+      position: "top-right",
+      reverseOrder: false,
+      gutter: 8,
+    };
 
-  return (
-    <>
-      <Button type="button" onClick={displayToast}>
-        Show Toast Component
-      </Button>
-      <Toast
-        Toaster={Toaster}
-        resolveValue={resolveValue}
-        dismiss={dismiss}
-        toastOptions={toastOptions}
-      />
-    </>
-  );
+    const displayToast = () => {
+      toast("This is a toast");
+    };
+
+    return (
+      <>
+        <Button type="button" onClick={displayToast}>
+          Show Toast Component
+        </Button>
+        <Toast
+          Toaster={Toaster}
+          resolveValue={resolveValue}
+          dismiss={dismiss}
+          toastOptions={toastOptions}
+        />
+      </>
+    );
+  },
 };
 
-export const Success = () => {
-  // Action to close Toast from react-hot-toast
-  const { dismiss } = toast;
+export const Success: Story = {
+  render: (args) => {
+    // Action to close Toast from react-hot-toast
+    const { dismiss } = toast;
 
-  // Optional options from react-hot-toast
-  const toastOptions = {
-    position: "top-right",
-    reverseOrder: false,
-    gutter: 8,
-  };
+    // Optional options from react-hot-toast
+    const toastOptions = {
+      position: "top-right",
+      reverseOrder: false,
+      gutter: 8,
+    };
 
-  const displayToast = () => {
-    toast.success("This is a success toast");
-  };
+    const displayToast = () => {
+      toast.success("This is a success toast");
+    };
 
-  return (
-    <>
-      <Button type="button" onClick={displayToast}>
-        Show Toast Component
-      </Button>
-      <Toast
-        Toaster={Toaster}
-        resolveValue={resolveValue}
-        dismiss={dismiss}
-        toastOptions={toastOptions}
-      />
-    </>
-  );
+    return (
+      <>
+        <Button type="button" onClick={displayToast}>
+          Show Toast Component
+        </Button>
+        <Toast
+          Toaster={Toaster}
+          resolveValue={resolveValue}
+          dismiss={dismiss}
+          toastOptions={toastOptions}
+        />
+      </>
+    );
+  },
 };
 
-export const Error = () => {
-  // Action to close Toast from react-hot-toast
-  const { dismiss } = toast;
+export const Error: Story = {
+  render: (args) => {
+    // Action to close Toast from react-hot-toast
+    const { dismiss } = toast;
 
-  // Optional options from react-hot-toast
-  const toastOptions = {
-    position: "top-right",
-    reverseOrder: false,
-    gutter: 8,
-  };
+    // Optional options from react-hot-toast
+    const toastOptions = {
+      position: "top-right",
+      reverseOrder: false,
+      gutter: 8,
+    };
 
-  const displayToast = () => {
-    toast.error("This is an error toast");
-  };
+    const displayToast = () => {
+      toast.error("This is an error toast");
+    };
 
-  return (
-    <>
-      <Button type="button" onClick={displayToast}>
-        Show Toast Component
-      </Button>
-      <Toast
-        Toaster={Toaster}
-        resolveValue={resolveValue}
-        dismiss={dismiss}
-        toastOptions={toastOptions}
-      />
-    </>
-  );
+    return (
+      <>
+        <Button type="button" onClick={displayToast}>
+          Show Toast Component
+        </Button>
+        <Toast
+          Toaster={Toaster}
+          resolveValue={resolveValue}
+          dismiss={dismiss}
+          toastOptions={toastOptions}
+        />
+      </>
+    );
+  },
 };
-export const Loading = () => {
-  // Action to close Toast from react-hot-toast
-  const { dismiss } = toast;
+export const Loading: Story = {
+  render: (args) => {
+    // Action to close Toast from react-hot-toast
+    const { dismiss } = toast;
 
-  // Optional options from react-hot-toast
-  const toastOptions = {
-    position: "top-right",
-    reverseOrder: false,
-    gutter: 8,
-  };
+    // Optional options from react-hot-toast
+    const toastOptions = {
+      position: "top-right",
+      reverseOrder: false,
+      gutter: 8,
+    };
 
-  const displayToast = () => {
-    toast.loading("This is a loading toast");
-  };
+    const displayToast = () => {
+      toast.loading("This is a loading toast");
+    };
 
-  return (
-    <>
-      <Button type="button" onClick={displayToast}>
-        Show Toast Component
-      </Button>
-      <Toast
-        Toaster={Toaster}
-        resolveValue={resolveValue}
-        dismiss={dismiss}
-        toastOptions={toastOptions}
-      />
-    </>
-  );
+    return (
+      <>
+        <Button type="button" onClick={displayToast}>
+          Show Toast Component
+        </Button>
+        <Toast
+          Toaster={Toaster}
+          resolveValue={resolveValue}
+          dismiss={dismiss}
+          toastOptions={toastOptions}
+        />
+      </>
+    );
+  },
 };

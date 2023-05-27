@@ -18,27 +18,24 @@ export default {
 
 type Story = StoryObj<typeof SelectList>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args: SelectListProps) => {
-  const [listModel, setListModel] = useState<(string | number)[]>([]);
-
-  return (
-    <>
-      <SelectList
-        options={args.options}
-        hideCheckbox={args.hideCheckbox}
-        model={listModel}
-        onChange={(model) => setListModel(model)}
-      />
-      <div className="my-32 p-8 bg-light">
-        Selected options : {listModel.map((item) => item + ", ")}
-      </div>
-    </>
-  );
-};
-
 export const Base: Story = {
-  render: Template,
+  render: (args: SelectListProps) => {
+    const [listModel, setListModel] = useState<(string | number)[]>([]);
+
+    return (
+      <div>
+        <SelectList
+          options={args.options}
+          hideCheckbox={args.hideCheckbox}
+          model={listModel}
+          onChange={(model) => setListModel(model)}
+        />
+        <div className="my-32 p-8 bg-light">
+          Selected options : {listModel.map((item) => item + ", ")}
+        </div>
+      </div>
+    );
+  },
 
   args: {
     options: [

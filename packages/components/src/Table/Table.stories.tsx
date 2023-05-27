@@ -118,13 +118,8 @@ export default {
       description: {
         component: "List view of resources.",
       },
-      source: {
-        type: "code",
-      },
     },
   },
-  argTypes: {},
-  args: {},
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } as Meta<typeof TableExplorer>;
 
@@ -227,5 +222,100 @@ const Template = (args: any) => {
 };
 
 export const Base: Story = {
-  render: Template,
+  render: (args) => {
+    const [selectedItems, setSelectedItems] = useState<string[]>([]);
+
+    const onSelectItem = (itemId: string) => {
+      setSelectedItems((currentSelection: string[]) => {
+        //state need to be immutable
+        const newSelection = [...currentSelection];
+        if (!newSelection.includes(itemId)) {
+          newSelection.push(itemId);
+        } else {
+          newSelection.splice(newSelection.indexOf(itemId), 1); //deleting
+        }
+        return newSelection;
+      });
+    };
+
+    const onSelectAllItems = (deselect: boolean) => {
+      setSelectedItems(() => {
+        return deselect ? [] : sampleData.map((item) => item.id);
+      });
+    };
+
+    return (
+      <div>
+        <TableExplorer>
+          <thead>
+            <tr>
+              <th>
+                <Checkbox
+                  checked={selectedItems.length === sampleData.length}
+                  indeterminate={
+                    0 < selectedItems.length &&
+                    selectedItems.length < sampleData.length
+                  }
+                  onChange={(e) => {
+                    onSelectAllItems(
+                      selectedItems.length === sampleData.length,
+                    );
+                  }}
+                />
+              </th>
+              <th>Nom de la ressource</th>
+              <th>Création</th>
+              <th>Auteur</th>
+              <th>Partage</th>
+              <th>Dernière modif</th>
+              <th>Rôle</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {sampleData.map((item: IRow) => (
+              <tr>
+                <td
+                  onClick={() => {
+                    //On peut simplifier la sélection en la placant sur la cellule ou la ligne
+                    onSelectItem(item.id);
+                  }}
+                >
+                  <Checkbox
+                    checked={selectedItems.includes(item.id)}
+                    onChange={() => {
+                      //Logique déplaçée sur la cellule td
+                      //onSelectItem(item.id);
+                    }}
+                  />
+                </td>
+                <td>
+                  <div className="d-flex gap-8 align-items-center">
+                    <Checklist width={20} height={20} /> <div>{item.name}</div>
+                  </div>
+                </td>
+                <td>{new Date(item.createdAt * 1000).toLocaleDateString()}</td>
+                <td className="text-blue">{item.creatorName}</td>
+                <td>
+                  <div className="d-flex align-items-center gap-4">
+                    {item.public && <Globe width="16" height="16" />}
+                    {item.shared && (
+                      <>
+                        <Users width="16" height="16" /> {item.numberOfShares}
+                      </>
+                    )}
+                    {!item.public && !item.shared && (
+                      <Lock width="16" height="16" />
+                    )}
+                  </div>
+                </td>
+                <td className="fst-italic text-gray-700">Il y a 2 heures</td>
+                <td className="fst-italic text-gray-700">{item.currentRole}</td>
+              </tr>
+            ))}
+          </tbody>
+        </TableExplorer>
+      </div>
+    );
+  },
 };
