@@ -3,7 +3,6 @@ export * from "./useHotToast";
 export * from "./useHover";
 export * from "./useImage";
 export * from "./useKeyPress";
-export * from "./useModal";
 export * from "./useTitle";
 export * from "./useToggle";
 export * from "./useDebounce";

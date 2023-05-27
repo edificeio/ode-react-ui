@@ -123,12 +123,10 @@ export const PassingData: Story = {
 export const ImageAsIcon: Story = {
   render: (args: BaseProps) => {
     return (
-      <div>
-        <AppCard app={args.app} isHeading headingStyle="h3" level="h1">
-          <AppIcon app={args.app} size="40" />
-          <AppCard.Name />
-        </AppCard>
-      </div>
+      <AppCard app={args.app} isHeading headingStyle="h3" level="h1">
+        <AppIcon app={args.app} size="40" />
+        <AppCard.Name />
+      </AppCard>
     );
   },
 

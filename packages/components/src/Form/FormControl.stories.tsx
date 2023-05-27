@@ -26,87 +26,101 @@ export default {
 
 type Story = StoryObj<typeof FormControl>;
 
-const Template = (args: FormControlProps) => (
-  <FormControl {...args}>
-    <Label>Email</Label>
-    <Input type="text" placeholder="Placeholder text" size="md" />
-  </FormControl>
-);
-
 export const Base: Story = {
-  render: Template,
+  render: (args) => {
+    return (
+      <FormControl {...args}>
+        <Label>Email</Label>
+        <Input type="text" placeholder="Placeholder text" size="md" />
+      </FormControl>
+    );
+  },
 };
 
-export const WithLabel = () => {
-  return (
-    <FormControl id="email-X23">
-      <Label>Email</Label>
-      <Input type="text" placeholder="Placeholder text" size="md" />
-    </FormControl>
-  );
+export const WithLabel: Story = {
+  render: (args) => {
+    return (
+      <FormControl id="email-X23">
+        <Label>Email</Label>
+        <Input type="text" placeholder="Placeholder text" size="md" />
+      </FormControl>
+    );
+  },
 };
 
-export const WithLabelAndIcon = () => {
-  return (
-    <FormControl id="email-7">
-      <Label leftIcon={<Mail />}>Email</Label>
-      <Input type="text" placeholder="Placeholder text" size="md" />
-    </FormControl>
-  );
+export const WithLabelAndIcon: Story = {
+  render: (args) => {
+    return (
+      <FormControl id="email-7">
+        <Label leftIcon={<Mail />}>Email</Label>
+        <Input type="text" placeholder="Placeholder text" size="md" />
+      </FormControl>
+    );
+  },
 };
 
-export const WithInformativeMessage = () => {
-  return (
-    <FormControl id="email" style={{ marginTop: "3px" }}>
-      <Label leftIcon={<Mail />}>Email</Label>
-      <Input type="text" placeholder="Placeholder text" size="md" />
-      <FormText>Informative Message</FormText>
-    </FormControl>
-  );
+export const WithInformativeMessage: Story = {
+  render: (args) => {
+    return (
+      <FormControl id="email" style={{ marginTop: "3px" }}>
+        <Label leftIcon={<Mail />}>Email</Label>
+        <Input type="text" placeholder="Placeholder text" size="md" />
+        <FormText>Informative Message</FormText>
+      </FormControl>
+    );
+  },
 };
 
-export const OptionalField = () => {
-  return (
-    <FormControl id="email-0" isOptional>
-      <Label leftIcon={<Mail />}>Email</Label>
-      <Input type="text" placeholder="Placeholder text" size="md" />
-    </FormControl>
-  );
+export const OptionalField: Story = {
+  render: (args) => {
+    return (
+      <FormControl id="email-0" isOptional>
+        <Label leftIcon={<Mail />}>Email</Label>
+        <Input type="text" placeholder="Placeholder text" size="md" />
+      </FormControl>
+    );
+  },
 };
 
-export const OptionalFieldCustomText = () => {
-  return (
-    <FormControl id="email-1" isOptional>
-      <Label leftIcon={<Mail />} optionalText="Not mandatory">
-        Email
-      </Label>
-      <Input type="text" placeholder="Placeholder text" size="md" />
-    </FormControl>
-  );
+export const OptionalFieldCustomText: Story = {
+  render: (args) => {
+    return (
+      <FormControl id="email-1" isOptional>
+        <Label leftIcon={<Mail />} optionalText="Not mandatory">
+          Email
+        </Label>
+        <Input type="text" placeholder="Placeholder text" size="md" />
+      </FormControl>
+    );
+  },
 };
 
-export const RequiredField = () => {
-  return (
-    <FormControl id="email-2" isRequired>
-      <Label leftIcon={<Mail />}>Email</Label>
-      <Input type="text" placeholder="Placeholder text" size="md" />
-    </FormControl>
-  );
+export const RequiredField: Story = {
+  render: (args) => {
+    return (
+      <FormControl id="email-2" isRequired>
+        <Label leftIcon={<Mail />}>Email</Label>
+        <Input type="text" placeholder="Placeholder text" size="md" />
+      </FormControl>
+    );
+  },
 };
 
-export const RequiredFieldCustomText = () => {
-  return (
-    <FormControl id="email-3" isRequired>
-      <Label leftIcon={<Mail />} requiredText="- Mandatory">
-        Email
-      </Label>
-      <Input type="text" placeholder="Placeholder text" size="md" />
-    </FormControl>
-  );
+export const RequiredFieldCustomText: Story = {
+  render: (args) => {
+    return (
+      <FormControl id="email-3" isRequired>
+        <Label leftIcon={<Mail />} requiredText="- Mandatory">
+          Email
+        </Label>
+        <Input type="text" placeholder="Placeholder text" size="md" />
+      </FormControl>
+    );
+  },
 };
 
 export const ReadOnlyStatus: Story = {
-  render: ({ ...args }) => {
+  render: (args) => {
     return (
       <FormControl id="example-5" isReadOnly>
         <Input type="text" size="md" placeholder={args.placeholder} />

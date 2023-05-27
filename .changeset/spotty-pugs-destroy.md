@@ -1,8 +1,8 @@
 ---
-"@ode-react-ui/components": minor
-"@ode-react-ui/hooks": minor
-"@ode-react-ui/icons": minor
-"@ode-react-ui/core": minor
+"@ode-react-ui/components": patch
+"@ode-react-ui/hooks": patch
+"@ode-react-ui/icons": patch
+"@ode-react-ui/core": patch
 ---
 
 Upgraded version StoryBook

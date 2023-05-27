@@ -1,15 +1,10 @@
-<<<<<<< HEAD
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import Avatar from "./Avatar";
-=======
 import { Meta, StoryObj } from "@storybook/react";
 
 import Avatar from "./Avatar";
 import React from "react";
->>>>>>> c7fc32c (chore(dep): upgraded version StoryBook)
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const meta: Meta<typeof Avatar> = {
   title: "Components/Avatar",
   component: Avatar,
   parameters: {
@@ -34,16 +29,17 @@ export default {
       control: { type: "inline-radio" },
     },
   },
-} as Meta<typeof Avatar>;
+};
 
+export default meta;
 type Story = StoryObj<typeof Avatar>;
 
 export const Base: Story = {
-  render: (args: any) => <Avatar {...args} />,
+  render: (args) => <Avatar {...args} />,
 };
 
 export const AvatarSizes: Story = {
-  render: () => {
+  render: (args) => {
     return (
       <div className="d-flex align-items-center gap-8">
         <Avatar size="xs" alt="alternative text" />
@@ -65,7 +61,7 @@ export const AvatarSizes: Story = {
 };
 
 export const AvatarShapes: Story = {
-  render: () => {
+  render: (args) => {
     return (
       <div className="d-flex align-items-center gap-8">
         <Avatar
@@ -101,18 +97,14 @@ export const AvatarShapes: Story = {
 };
 
 export const AvatarFallback: Story = {
-  render: () => {
-    return (
-      <div className="d-flex align-items-center gap-8">
-        <Avatar
-          src="/assets/themes/ode-bootstrap/images/no-avatar"
-          size="md"
-          variant="square"
-          alt="alternative text"
-        />
-      </div>
-    );
-  },
+  render: (args) => (
+    <Avatar
+      src="/assets/themes/ode-bootstrap/images/no-avatar"
+      size="md"
+      variant="square"
+      alt="alternative text"
+    />
+  ),
 
   parameters: {
     docs: {
@@ -125,15 +117,13 @@ export const AvatarFallback: Story = {
 };
 
 export const AvatarCustomFallback: Story = {
-  render: () => {
+  render: (args) => {
     return (
-      <div className="d-flex align-items-center gap-8">
-        <Avatar
-          size="md"
-          alt="alternative text"
-          imgPlaceholder="https://bit.ly/kent-c-dodds"
-        />
-      </div>
+      <Avatar
+        size="md"
+        alt="alternative text"
+        imgPlaceholder="https://bit.ly/kent-c-dodds"
+      />
     );
   },
 

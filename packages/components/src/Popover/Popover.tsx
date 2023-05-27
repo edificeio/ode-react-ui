@@ -44,7 +44,7 @@ export const PopoverBody = ({ children, className }: PopoverProps) => {
 };
 
 export const PopoverFooter = ({ children, className }: PopoverProps) => {
-  const classes = clsx("popover-footer", className);
+  const classes = clsx("popover-footer p-8", className);
   return <div className={classes}>{children}</div>;
 };
 

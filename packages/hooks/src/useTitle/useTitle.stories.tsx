@@ -1,21 +1,26 @@
 import useTitle from "./useTitle";
 import { Heading } from "../../../components/src/Heading";
-// @ts-ignore
-import docs from "./useTitle.docs.mdx";
+import docs from "./useTitle.mdx";
+import { Meta, StoryObj } from "@storybook/react";
 
-export default {
+const meta: Meta<typeof useTitle> = {
   title: "Hooks/useTitle",
   parameters: {
     docs: { page: docs },
   },
 };
 
-export const Example = () => {
-  const title = useTitle();
+export default meta;
+type Story = StoryObj<typeof useTitle>;
 
-  return (
-    <Heading level="h1" headingStyle="h3">
-      {title}
-    </Heading>
-  );
+export const Example: Story = {
+  render: (args) => {
+    const title = useTitle();
+
+    return (
+      <Heading level="h1" headingStyle="h3">
+        {title}
+      </Heading>
+    );
+  },
 };

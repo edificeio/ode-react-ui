@@ -51,16 +51,18 @@ export const Base: Story = {
   render: Template,
 };
 
-export const Large = () => {
-  return (
-    <FormControl id="large-search" className="input-group">
-      <FormControl.Input
-        type="search"
-        placeholder="Placeholder text"
-        size="lg"
-        noValidationIcon
-      />
-      <SearchButton type="submit" aria-label="search" icon={<Search />} />
-    </FormControl>
-  );
+export const Large: Story = {
+  render: (args) => {
+    return (
+      <FormControl id="large-search" className="input-group">
+        <FormControl.Input
+          type="search"
+          placeholder="Placeholder text"
+          size="lg"
+          noValidationIcon
+        />
+        <SearchButton type="submit" aria-label="search" icon={<Search />} />
+      </FormControl>
+    );
+  },
 };
