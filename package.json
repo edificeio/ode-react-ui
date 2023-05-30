@@ -12,6 +12,7 @@
   },
   "license": "AGPL-3.0",
   "author": "Open Digital Education",
+  "type": "module",
   "workspaces": [
     "packages/*",
     "docs"
