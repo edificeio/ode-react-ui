@@ -1,6 +1,6 @@
 import { Meta } from "@storybook/blocks";
 
-<Meta title="Packages/Components" />
+<Meta title="Introduction/Packages/Components" />
 
 # ODE React UI: Components
 
@@ -39,10 +39,10 @@ yarn format
 
 ### Component Folder
 
-*   Folder name always in PascalCase: `Button`
-*   Component file in PascalCase: `Button.tsx`
-*   Export types & interfaces inside Component file
-*   Stories file in PascalCase + `*.stories.tsx` : `Button.stories.tsx`
+- Folder name always in PascalCase: `Button`
+- Component file in PascalCase: `Button.tsx`
+- Export types & interfaces inside Component file
+- Stories file in PascalCase + `*.stories.tsx` : `Button.stories.tsx`
 
 ```bash
 src
@@ -52,8 +52,8 @@ src
     -- index.ts
 ```
 
-*   Re-export the Component inside his own `index` file: `index.ts`
-*   Export everything if Component has types & interfaces
+- Re-export the Component inside his own `index` file: `index.ts`
+- Export everything if Component has types & interfaces
 
 ```jsx
 export { default as Component } from "./Component";
@@ -62,7 +62,7 @@ export * from "./Component";
 
 ### Component Guideline
 
-*   Always document basic guideline of Component with JSDoc format. Used by Storybook to generate documentation.
+- Always document basic guideline of Component with JSDoc format. Used by Storybook to generate documentation.
 
 ```jsx
 /**
@@ -72,7 +72,7 @@ export * from "./Component";
 
 ### Interface description
 
-*   Always document typescript types and interface with JSDoc syntax. Used by Storybook to generate documentation.
+- Always document typescript types and interface with JSDoc syntax. Used by Storybook to generate documentation.
 
 ```jsx
 // Interface description (e.g: TreeViewProps.tsx)
@@ -102,8 +102,8 @@ export interface ButtonProps {
 
 ### Index file inside `src` folder
 
-*   Entry point of this React Library.
-*   Import your component inside `index.ts` file.
+- Entry point of this React Library.
+- Import your component inside `index.ts` file.
 
 ```jsx
 export * from "./Button";

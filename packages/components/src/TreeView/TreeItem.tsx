@@ -1,10 +1,3 @@
-/**
- * TreeItem Component
- *
- * @see Docs     Storybook Link
- * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/advanced/src/TreeViewCustom/TreeItem.tsx
- * @see WAI-ARIA https://www.w3.org/WAI/ARIA/apg/patterns/treeview/
- */
 import { useEffect, useState } from "react";
 
 import { Folder, RafterRight, RafterDown } from "@ode-react-ui/icons";

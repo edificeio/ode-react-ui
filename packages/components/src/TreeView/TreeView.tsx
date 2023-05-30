@@ -1,10 +1,3 @@
-/**
- * TreeView Component
- *
- * @see Docs     https://ode-react-ui.vercel.app/?path=/docs/components-advanced-treeview--base
- * @see Source   https://github.com/opendigitaleducation/ode-react-ui/blob/main/packages/advanced/src/TreeViewCustom/TreeViewCustom.tsx
- * @see WAI-ARIA https://www.w3.org/WAI/ARIA/apg/patterns/treeview/
- */
 import { forwardRef, useEffect, useState } from "react";
 
 import TreeItem from "./TreeItem";
