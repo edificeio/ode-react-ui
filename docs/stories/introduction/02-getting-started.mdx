@@ -12,11 +12,7 @@ import { Meta, Story } from "@storybook/blocks";
 yarn
 ```
 
-> Then, you need to build at least once every lib to use them (monorepo workspace)
-
-```bash
-yarn build
-```
+> A post-installation script will run to build all packages once.
 
 ## Dev
 
@@ -24,7 +20,7 @@ Any available commands during your development.
 
 ## Lint
 
-> Lint all libs from root folder
+> Lint all packages from root folder
 
 ```bash
 yarn lint
@@ -32,7 +28,7 @@ yarn lint
 
 ## Prettier
 
-> Prettier all libs from root folder
+> Prettier all packages from root folder
 
 ```bash
 yarn format
@@ -40,7 +36,7 @@ yarn format
 
 ## Clean
 
-> Clean all node\_modules and lock file.
+> Clean all node_modules and lock file.
 
 ```bash
 yarn clean
@@ -48,13 +44,13 @@ yarn clean
 
 ## Build
 
-> Build all libs from root folder
+> Build all packages from root folder
 
 ```bash
 yarn build
 ```
 
-***
+---
 
 ## Storybook
 
@@ -64,7 +60,7 @@ yarn build
 yarn docs
 ```
 
-***
+---
 
 ## [Turborepo](https://turborepo.org/)
 
@@ -74,13 +70,13 @@ Turborepo will cache `build`, `lint`, `fix` and `format` results. So if no chang
 
 ### Versioning and Publishing
 
-*   [Versioning and Publishing](https://turborepo.org/docs/handbook/publishing-packages/versioning-and-publishing)
+- [Versioning and Publishing](https://turborepo.org/docs/handbook/publishing-packages/versioning-and-publishing)
 
 ### Github Actions
 
-*   [Github Actions](https://turborepo.org/docs/ci/github-actions)
+- [Github Actions](https://turborepo.org/docs/ci/github-actions)
 
-***
+---
 
 ## License
 
