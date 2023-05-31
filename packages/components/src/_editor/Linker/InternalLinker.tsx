@@ -27,7 +27,7 @@ const InternalLinker = ({
   labels = {
     search: "Search",
   },
-  options = ["test1", "test2"],
+  options,
   onChange,
 }: InternalLinkerProps) => {
   const [model, setModel] = useState<InternalLink>({
@@ -43,7 +43,7 @@ const InternalLinker = ({
     //loadApplicationResources();
   };
 
-  useEffect(() => onChange?.(model), [model, onChange]);
+  useEffect(() => onChange?.(model), [model]);
 
   const focusRef = useRef<HTMLSelectElement>(null);
   // Auto-focus and auto-select content in the link input field.

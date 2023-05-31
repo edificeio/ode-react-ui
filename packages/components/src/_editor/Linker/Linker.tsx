@@ -2,33 +2,28 @@ import { ChangeEvent, useState } from "react";
 
 import clsx from "clsx";
 
+import { AppSearchResult, Link } from "../../_models/LinkerModel";
 import { Button } from "../../Button";
 import ExternalLinker from "./ExternalLinker";
 import InternalLinker, { InternalLink } from "./InternalLinker";
-
-/**
- * Definition of a link.
- */
-export type Link = {
-  url: string;
-  title: string;
-  target: "blank" | "self";
-};
 
 export type LinkerType = "search" | "external";
 
 export interface LinkerProps {
   /**
    * Link types the component allows to create :
-   * `internal`, `external`, [`internal`, `external`] (default)
+   * `search`, `external`, [`search`, `external`] (default)
    */
   types?: LinkerType | Array<LinkerType>;
+
+  /** Internal linker : list of available apps */
+  appPrefixes?: string[];
 
   /** Default tooltip value. */
   title?: string;
 
   /** Default link target. */
-  target?: "blank" | "self";
+  target: "_blank" | undefined;
 
   /** Translations */
   labels?: {
@@ -42,6 +37,8 @@ export interface LinkerProps {
     "linker.tooltip.placeholder"?: string;
     "linker.blank"?: string;
   };
+
+  onSearch?: (appPrefix: string, term: string) => Promise<AppSearchResult[]>;
 }
 
 const Linker = ({
@@ -54,7 +51,9 @@ const Linker = ({
   },
   types = ["search", "external"],
   title = "",
-  target = "self",
+  target,
+  appPrefixes, //TODO pass through a context ?
+  onSearch,
 }: LinkerProps) => {
   const [type, setType] = useState<LinkerType>(
     typeof types === "string" ? types : types[0],
@@ -63,22 +62,38 @@ const Linker = ({
   const handleClickInternal = () => setType("search");
   const handleClickExternal = () => setType("external");
 
+  const [searchResults, setSearchResults] = useState<AppSearchResult[]>([]);
+
   const [model, setModel] = useState<Link>({
     url: "",
     title: title,
     target: target,
   });
-  const isTargetBlank = () => model.target === "blank";
+  const isTargetBlank = () => model.target === "_blank";
 
   const handleTooltipChange = (event: ChangeEvent<HTMLInputElement>) => {
     setModel({ ...model, title: event.target.value });
   };
   const handleBlankChange = () => {
-    setModel({ ...model, target: isTargetBlank() ? "self" : "blank" });
+    // Switch between _blank and undefined
+    const newModel = { ...model };
+    if (isTargetBlank() && typeof newModel.target !== "undefined") {
+      delete newModel.target;
+    } else {
+      newModel.target = "_blank";
+    }
+    setModel(newModel);
   };
-  const handleInternalChange = (internal: InternalLink) => {
-    const url = /*TODO*/ internal.application;
-    setModel({ ...model, url });
+  const handleSearchChange = ({
+    application: appPrefix,
+    text: term,
+  }: InternalLink) => {
+    onSearch?.(appPrefix, term).then((res) => {
+      setSearchResults(res);
+    });
+  };
+  const handleInternalChange = ({ prefix: appPrefix, id }: AppSearchResult) => {
+    setModel({ ...model, appPrefix, id });
   };
   const handleExternalChange = (url: string) => {
     setModel({ ...model, url });
@@ -108,13 +123,27 @@ const Linker = ({
           </Button>
         </li>
       </ul>
-
+      Lien actuel : {JSON.stringify(model)}
       {isSearch() ? (
-        <InternalLinker labels={labels} onChange={handleInternalChange} />
+        <>
+          <InternalLinker
+            options={appPrefixes}
+            labels={labels}
+            onChange={handleSearchChange}
+          />
+          <ul>
+            {searchResults.map((res) => (
+              <li>
+                <button type="button" onClick={() => handleInternalChange(res)}>
+                  {res.prefix} id={res.id}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </>
       ) : (
         <ExternalLinker labels={labels} onChange={handleExternalChange} />
       )}
-
       <div>
         <label>
           {labels["linker.tooltip"]}
@@ -126,7 +155,6 @@ const Linker = ({
           />
         </label>
       </div>
-
       <div>
         <label>
           <input
