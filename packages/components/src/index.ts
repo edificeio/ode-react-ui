@@ -23,3 +23,5 @@ export * from "./Popover";
 export * from "./TreeView";
 export * from "./Tooltip";
 export * from "./VisuallyHidden";
+
+export * from "./editor/Linker";
