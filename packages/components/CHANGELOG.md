@@ -1,5 +1,11 @@
 # @ode-react-ui/components
 
+## 2.1.0-dev.5
+
+### Patch Changes
+
+- [`35038e1`](https://github.com/opendigitaleducation/ode-react-ui/commit/35038e1ea27e7ccb817ce6b459bcd56fe2623f7b) Thanks [@ccreusat](https://github.com/ccreusat)! - add restProps to Main component
+
 ## 2.1.0-dev.4
 
 ### Patch Changes
