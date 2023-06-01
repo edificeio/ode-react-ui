@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
+import { ComponentPropsWithoutRef, ReactNode } from "react";
 
 import clsx from "clsx";
 
-export interface MainProps {
+export interface MainProps extends ComponentPropsWithoutRef<"main"> {
   /**
    * App content
    */
@@ -13,9 +13,13 @@ export interface MainProps {
   className?: string;
 }
 
-export default function Main({ children, className }: MainProps) {
+export default function Main({ children, className, ...restProps }: MainProps) {
   const classes = clsx("container-fluid", className);
-  return <main className={classes}>{children}</main>;
+  return (
+    <main className={classes} {...restProps}>
+      {children}
+    </main>
+  );
 }
 
 Main.displayName = "Main";
