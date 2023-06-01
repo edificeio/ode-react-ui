@@ -7,7 +7,7 @@ import { Toaster } from "react-hot-toast";
 
 import { Header } from "../Header";
 
-const Layout = ({ children }: { children: ReactNode }) => {
+const Layout = ({ children, ...restProps }: { children: ReactNode }) => {
   const { is1d, basePath } = useTheme();
   return (
     <>
@@ -17,6 +17,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
           "rounded-4 border": is1d,
           "mt-24": is1d,
         })}
+        {...restProps}
       >
         {children}
       </Main>
