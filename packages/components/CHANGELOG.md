@@ -1,5 +1,13 @@
 # @ode-react-ui/components
 
+## 2.1.0-dev.4
+
+### Patch Changes
+
+- [#200](https://github.com/opendigitaleducation/ode-react-ui/pull/200) [`9f8d5d8`](https://github.com/opendigitaleducation/ode-react-ui/commit/9f8d5d8d36d4c1607855b34f9efdda4ecff8533a) Thanks [@github-actions](https://github.com/apps/github-actions)! - Fix looping when clicking on SelectList item
+
+- [`a25b651`](https://github.com/opendigitaleducation/ode-react-ui/commit/a25b65152317104f95f55aa08dc4e2e1bc5405a7) Thanks [@ccreusat](https://github.com/ccreusat)! - add restProps to layout to pass any addtional props
+
 ## 2.1.0-dev.3
 
 ### Patch Changes
