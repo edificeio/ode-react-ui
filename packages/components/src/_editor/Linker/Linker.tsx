@@ -38,7 +38,11 @@ export interface LinkerProps {
     "linker.blank"?: string;
   };
 
+  /** Plug here a service (explore/search) to look for resources having a prefix and a term. */
   onSearch?: (appPrefix: string, term: string) => Promise<AppSearchResult[]>;
+
+  /** Plug here a service (explore/open) to get the URL of the resource having a prefix and an id. */
+  onGenerateUrl?: (resource: AppSearchResult) => Promise<URL>;
 }
 
 const Linker = ({
@@ -54,6 +58,7 @@ const Linker = ({
   target,
   appPrefixes, //TODO pass through a context ?
   onSearch,
+  onGenerateUrl,
 }: LinkerProps) => {
   const [type, setType] = useState<LinkerType>(
     typeof types === "string" ? types : types[0],
@@ -68,6 +73,7 @@ const Linker = ({
     url: "",
     title: title,
     target: target,
+    appPrefix: appPrefixes?.[0],
   });
   const isTargetBlank = () => model.target === "_blank";
 
@@ -92,8 +98,14 @@ const Linker = ({
       setSearchResults(res);
     });
   };
-  const handleInternalChange = ({ prefix: appPrefix, id }: AppSearchResult) => {
-    setModel({ ...model, appPrefix, id });
+  // if( model.appPrefix ) {
+  //   handleSearchChange( {application: model.appPrefix, text: ''} );
+  // }
+  const handleInternalChange = (result: AppSearchResult) => {
+    setModel({ ...model, appPrefix: result.prefix, id: result.id });
+    onGenerateUrl?.(result).then((url) => {
+      setModel({ ...model, url: url.toString() });
+    });
   };
   const handleExternalChange = (url: string) => {
     setModel({ ...model, url });

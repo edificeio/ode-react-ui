@@ -11,25 +11,45 @@ export default {
   args: {
     appPrefixes: ["wiki", "blog", "actualites"],
     onSearch: (appPrefix: string, term: string): Promise<AppSearchResult[]> => {
-      function shuffle(arr: Array<any>) {
-        let currentIndex = arr.length,
-          randomIndex;
-        while (currentIndex > 0) {
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex--;
-          const item = arr.at(currentIndex);
-          arr[currentIndex] = arr[randomIndex];
-          arr[randomIndex] = item;
-        }
-        return arr;
-      }
       return Promise.resolve(
-        shuffle([
-          { id: "012", prefix: "blog" },
-          { id: "345", prefix: "wiki" },
-          { id: "678", prefix: "actualites" },
-        ]),
+        [
+          {
+            id: "123",
+            prefix: "blog",
+            subIds: { post: "14c0e7c2-2a07-43a6-b245-dcde2c4fb0d2" },
+          },
+          { id: "123", prefix: "blog", subIds: { post: "patati-patata" } },
+          { id: "456", prefix: "wiki", subIds: { page: "569" } },
+          { id: "789", prefix: "actualites" },
+        ].filter((val) => val.prefix === appPrefix),
       );
+    },
+    onGenerateUrl: ({ prefix, id, subIds }: AppSearchResult): Promise<URL> => {
+      switch (prefix) {
+        case "blog":
+          return Promise.resolve(
+            new URL(
+              `/${prefix}#/view/${id}/${subIds?.["post"]}`,
+              "https://example.com",
+            ),
+          );
+        case "wiki":
+          return Promise.resolve(
+            new URL(
+              `/${prefix}#/view/${id}/${subIds?.["page"]}`,
+              "https://example.com",
+            ),
+          );
+        case "actualites":
+          return Promise.resolve(
+            new URL(
+              "/actualites#/view/thread/678/info/769",
+              "https://example.com",
+            ),
+          );
+        default:
+          return Promise.reject("not.implemented");
+      }
     },
   },
 } as Meta<typeof Linker>;
