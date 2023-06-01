@@ -68,7 +68,7 @@ const SelectList = ({
 
   useEffect(() => {
     onChange?.(localModel);
-  }, [localModel, onChange]);
+  }, [localModel]);
 
   return (
     <>
