@@ -1,5 +1,11 @@
 # @ode-react-ui/components
 
+## 2.1.0-dev.6
+
+### Patch Changes
+
+- [`ec78bc4`](https://github.com/opendigitaleducation/ode-react-ui/commit/ec78bc437fc1587b4f29be7a02306a90f3abbce6) Thanks [@ccreusat](https://github.com/ccreusat)! - add types to layout component
+
 ## 2.1.0-dev.5
 
 ### Patch Changes
