@@ -179,7 +179,9 @@ const Linker = ({
       </div>
 
       <div className="mt-32">
-        <p><u>Données du lien</u> : <code>{JSON.stringify(model)}</code></p>
+        <p>
+          <u>Données du lien</u> : <code>{JSON.stringify(model)}</code>
+        </p>
       </div>
     </>
   );
