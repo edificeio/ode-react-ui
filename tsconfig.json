@@ -17,5 +17,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "template"]
 }

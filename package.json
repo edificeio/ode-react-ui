@@ -15,10 +15,11 @@
   "type": "module",
   "workspaces": [
     "packages/*",
-    "docs"
+    "docs",
+    "template"
   ],
   "scripts": {
-    "build": "turbo run build",
+    "build": "turbo run build --filter=!@ode-react-ui/template",
     "check:components": "package-check --cwd=packages/components",
     "check:core": "package-check --cwd=packages/core",
     "check:hooks": "package-check --cwd=packages/hooks",
@@ -27,10 +28,10 @@
     "docs": "storybook dev -p 6006",
     "docs:build": "storybook build --docs -o dist/ && cp -R packages/icons/assets/ dist/icons/",
     "docs:preview": "npx http-server ./dist",
-    "fix": "turbo run fix",
-    "format": "turbo run format",
+    "fix": "turbo run fix --filter=!@ode-react-ui/template",
+    "format": "turbo run format --filter=!@ode-react-ui/template",
     "postinstall": "yarn build",
-    "lint": "turbo run lint",
+    "lint": "turbo run lint --filter=!@ode-react-ui/template",
     "pre-commit": "yarn lint && yarn format",
     "prepare": "husky install",
     "publish-packages": "changeset version && changeset publish"
@@ -40,6 +41,7 @@
     "@changesets/cli": "2.26.0"
   },
   "devDependencies": {
+    "@turbo/gen": "1.9.7",
     "@skypack/package-check": "0.2.2",
     "@storybook/addon-a11y": "7.0.18",
     "@storybook/addon-essentials": "7.0.18",
@@ -67,7 +69,7 @@
     "react-dom": "18.2.0",
     "rollup-plugin-visualizer": "5.9.0",
     "storybook": "7.0.18",
-    "turbo": "1.9.4",
+    "turbo": "1.9.7",
     "typescript": "4.8.4",
     "vite": "4.3.4",
     "vite-plugin-dts": "2.3.0"
