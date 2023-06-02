@@ -113,7 +113,7 @@ const Linker = ({
 
   return (
     <>
-      <ul className="nav nav-pills justify-content-center">
+      <ul className="nav nav-pills justify-content-center mb-32">
         <li className="nav-item">
           <Button
             type="button"
@@ -135,7 +135,7 @@ const Linker = ({
           </Button>
         </li>
       </ul>
-      Lien actuel : {JSON.stringify(model)}
+
       {isSearch() ? (
         <>
           <InternalLinker
@@ -156,7 +156,7 @@ const Linker = ({
       ) : (
         <ExternalLinker labels={labels} onChange={handleExternalChange} />
       )}
-      <div>
+      <div className="mt-12">
         <label>
           {labels["linker.tooltip"]}
           <input
@@ -167,7 +167,7 @@ const Linker = ({
           />
         </label>
       </div>
-      <div>
+      <div className="mt-12">
         <label>
           <input
             type="checkbox"
@@ -176,6 +176,10 @@ const Linker = ({
           />
           &nbsp;{labels["linker.blank"]}
         </label>
+      </div>
+
+      <div className="mt-32">
+        <p><u>Données du lien</u> : <code>{JSON.stringify(model)}</code></p>
       </div>
     </>
   );
