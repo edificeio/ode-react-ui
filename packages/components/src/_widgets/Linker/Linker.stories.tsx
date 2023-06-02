@@ -6,7 +6,7 @@ import React from "react";
 import { AppSearchResult } from "../../_models/LinkerModel";
 
 export default {
-  title: "Editor/Linker",
+  title: "Widget/Linker",
   component: Linker,
   args: {
     appPrefixes: ["wiki", "blog", "actualites"],

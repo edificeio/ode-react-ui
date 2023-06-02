@@ -44,7 +44,10 @@
   },
   "dependencies": {
     "@popperjs/core": "2.11.8",
-    "html-react-parser": "^4.0.0"
+    "html-react-parser": "^4.0.0",
+    "@tiptap/pm": "^2.0.3",
+    "@tiptap/react": "^2.0.3",
+    "@tiptap/starter-kit": "^2.0.3"
   },
   "devDependencies": {
     "@ode-react-ui/core": "2.1.0-dev.12",
