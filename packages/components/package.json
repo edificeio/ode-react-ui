@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/components",
-  "version": "2.1.0-dev.6",
+  "version": "2.1.0-dev.7",
   "private": false,
   "description": "@ode-react-ui react components",
   "keywords": [
@@ -47,7 +47,7 @@
     "html-react-parser": "^3.0.15"
   },
   "devDependencies": {
-    "@ode-react-ui/core": "2.1.0-dev.3",
+    "@ode-react-ui/core": "2.1.0-dev.7",
     "@ode-react-ui/hooks": "2.1.0-dev.3",
     "@ode-react-ui/icons": "2.1.0-dev.3",
     "@react-spring/web": "9.7.0",
@@ -64,7 +64,7 @@
     "swiper": "9.0.4"
   },
   "peerDependencies": {
-    "@ode-react-ui/core": "2.1.0-dev.3",
+    "@ode-react-ui/core": "2.1.0-dev.7",
     "@ode-react-ui/hooks": "2.1.0-dev.3",
     "@ode-react-ui/icons": "2.1.0-dev.3",
     "@react-spring/web": "9.7.0",
