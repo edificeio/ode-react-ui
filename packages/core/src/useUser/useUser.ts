@@ -14,7 +14,7 @@ export default function useUser(): useUserProps {
   const { basePath } = useTheme();
 
   function avatarUrl(): string {
-    let avatar = userDescription?.photo;
+    let avatar = userDescription?.picture;
     if (!avatar || avatar === "no-avatar.jpg" || avatar === "no-avatar.svg") {
       avatar = `${basePath}/img/illustrations/no-avatar.svg`;
     }
