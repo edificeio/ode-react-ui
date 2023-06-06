@@ -59,7 +59,7 @@
   "peerDependencies": {
     "@ode-react-ui/hooks": "2.1.0-dev.3",
     "@ode-react-ui/icons": "2.1.0-dev.3",
-    "@tanstack/react-query": "4.29.5",
+    "@tanstack/react-query": "4.29.12",
     "clsx": "1.2.1",
     "ode-ts-client": "dev",
     "react": "18.2.0",
