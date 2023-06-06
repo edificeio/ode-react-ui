@@ -1,5 +1,11 @@
 # @ode-react-ui/components
 
+## 2.1.0-dev.8
+
+### Patch Changes
+
+- [`d70c08f`](https://github.com/opendigitaleducation/ode-react-ui/commit/d70c08f44c1196429f1ea5fcc3e0427cd325d983) Thanks [@ccreusat](https://github.com/ccreusat)! - fix imports
+
 ## 2.1.0-dev.7
 
 ### Patch Changes
