@@ -1,5 +1,16 @@
 # @ode-react-ui/components
 
+## 2.1.0-dev.9
+
+### Patch Changes
+
+- [`4c24054`](https://github.com/opendigitaleducation/ode-react-ui/commit/4c24054833b9a30c4ec0b16ff9a53348ed1da06e) Thanks [@ccreusat](https://github.com/ccreusat)! - update all deps
+
+- Updated dependencies [[`4c24054`](https://github.com/opendigitaleducation/ode-react-ui/commit/4c24054833b9a30c4ec0b16ff9a53348ed1da06e)]:
+  - @ode-react-ui/hooks@2.1.0-dev.9
+  - @ode-react-ui/icons@2.1.0-dev.9
+  - @ode-react-ui/core@2.1.0-dev.9
+
 ## 2.1.0-dev.8
 
 ### Patch Changes
