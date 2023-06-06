@@ -4,13 +4,13 @@ import { useOdeIcons } from "@ode-react-ui/core";
 import clsx from "clsx";
 import { IWebApp } from "ode-ts-client";
 
+import { Context } from "./AppCardContext";
+import AppName from "./AppName";
 import { HeadingProps } from "../Heading";
 import {
   PolymorphicComponentPropsWithRef,
   PolymorphicRef,
 } from "../utils/create-polymorphic-component";
-import { Context } from "./AppCardContext";
-import AppName from "./AppName";
 
 type AppHeadingProps = Pick<HeadingProps, "level" | "headingStyle">;
 
