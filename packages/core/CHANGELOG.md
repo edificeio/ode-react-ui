@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 2.1.0-dev.11
+
+### Patch Changes
+
+- [`3b33393`](https://github.com/opendigitaleducation/ode-react-ui/commit/3b333933bfa72936fc576dc5dc838b26f21150be) Thanks [@ccreusat](https://github.com/ccreusat)! - fix welcome user i18n
+
 ## 2.1.0-dev.10
 
 ### Patch Changes
