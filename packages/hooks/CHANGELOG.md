@@ -1,5 +1,11 @@
 # @ode-react-ui/hooks
 
+## 2.1.0-dev.9
+
+### Patch Changes
+
+- [`4c24054`](https://github.com/opendigitaleducation/ode-react-ui/commit/4c24054833b9a30c4ec0b16ff9a53348ed1da06e) Thanks [@ccreusat](https://github.com/ccreusat)! - update all deps
+
 ## 2.1.0-dev.3
 
 ### Patch Changes
