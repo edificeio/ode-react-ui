@@ -3,7 +3,7 @@ import { useCallback, useRef, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 
 import { Button } from "../Button";
-import Alert, { AlertProps, AlertRef } from "./Alert";
+import Alert, { AlertRef } from "./Alert";
 import React from "react";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

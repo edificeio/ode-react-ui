@@ -12,6 +12,7 @@ import { IUserInfo, odeServices } from "ode-ts-client";
 
 import { useBookmark } from "../useBookmark";
 import { useHasWorkflow } from "../useHasWorkflow";
+import { useI18n } from "../useI18n";
 
 export default function useHeader({
   user,
@@ -20,6 +21,7 @@ export default function useHeader({
   user: IUserInfo | undefined;
   avatar: string;
 }): any {
+  const { i18n } = useI18n();
   /**
    * All necessary refs
    */
@@ -57,7 +59,10 @@ export default function useHeader({
    */
   const userAvatar = avatar;
   const userName = user?.username;
-  const welcomeUser = `Bonjour ${user?.username}, bienvenue!`;
+  // const welcomeUser = `Bonjour ${user?.username}, bienvenue!`;
+  const welcomeUser = `${i18n("welcome.text.1")} ${user?.username} ${i18n(
+    "welcome.text.2",
+  )}`;
 
   /**
    * Get Bookmarked Apps

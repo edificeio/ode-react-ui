@@ -39,11 +39,5 @@ export default defineConfig({
       ],
     },
   },
-  plugins: [
-    react({
-      jsxRuntime: "classic",
-    }),
-    dts(),
-    visualizer(),
-  ],
+  plugins: [react(), dts(), visualizer()],
 });
