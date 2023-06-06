@@ -379,7 +379,7 @@ export default function Header({
                               type="submit"
                               size="sm"
                               onClick={redirectToSearch}
-                              aria-label={i18n("explorer.label.search")}
+                              aria-label={i18n("navbar.search")}
                             />
                           </NavSearch>
                         </Popover>
@@ -410,11 +410,12 @@ export default function Header({
                     <NavItem>
                       <button
                         className="nav-link btn logout"
+                        aria-labelledby="logout-label"
                         onClick={handleLogout}
                       >
                         <Disconnect className="icon logout" />
                       </button>
-                      <span className="nav-text">
+                      <span id="logout-label" className="nav-text">
                         {i18n("navbar.disconnect")}
                       </span>
                     </NavItem>
