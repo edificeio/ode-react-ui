@@ -25,6 +25,4 @@ export * from "./Tooltip";
 export * from "./VisuallyHidden";
 
 export * from "./_widgets/Linker";
-export * from "./_rte/Editor";
-export * from "./_rte/MenuBar";
-export * from "./_rte/Linker";
+export * from "./_rte/Demo";
