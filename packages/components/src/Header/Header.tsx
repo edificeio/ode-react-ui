@@ -26,8 +26,6 @@ import {
 import clsx from "clsx";
 import { odeServices } from "ode-ts-client";
 
-import { Help } from "../Help";
-import { useHelp } from "../Help/hooks/useHelp";
 import { Badge } from "./Badge";
 import { Navbar } from "./Navbar";
 import { NavBarNav } from "./NavbarNav";
@@ -35,6 +33,8 @@ import { NavItem } from "./NavItem";
 import { NavLink } from "./NavLink";
 import { NavSearch } from "./NavSearch";
 import { WidgetAppsBody, WidgetAppsFooter } from "./WidgetApps";
+import { Help } from "../Help";
+import { useHelp } from "../Help/hooks/useHelp";
 
 export interface HeaderProps {
   is1d?: boolean;

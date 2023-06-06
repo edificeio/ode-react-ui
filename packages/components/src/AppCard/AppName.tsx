@@ -1,5 +1,5 @@
-import { Heading } from "../Heading";
 import { useAppCard } from "./AppCardContext";
+import { Heading } from "../Heading";
 
 const AppName = () => {
   const { isHeading, level, headingStyle, displayName } = useAppCard();
