@@ -1,5 +1,11 @@
 # @ode-react-ui/icons
 
+## 2.1.0-dev.10
+
+### Patch Changes
+
+- [`79f87a8`](https://github.com/opendigitaleducation/ode-react-ui/commit/79f87a8a83f0148d54e4ed372681d28d7d927976) Thanks [@ccreusat](https://github.com/ccreusat)! - fix automatic jsx runtime
+
 ## 2.1.0-dev.9
 
 ### Patch Changes
