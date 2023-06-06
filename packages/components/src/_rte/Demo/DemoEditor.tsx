@@ -1,9 +1,8 @@
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 
+import { RteExtensionType } from "../_extensions";
 import DemoMenuBar from "./DemoMenuBar";
-
-export type RteExtensionType = "bold" | "highlight" | "linker";
 
 export interface DemoEditorProps {
   /**

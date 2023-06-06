@@ -1,9 +1,6 @@
-import { Editor } from "@tiptap/react";
+import { AbstractRteExtension } from "../AbstractRteExtension";
 
-import { RteExtension } from "..";
-
-export class BoldExtension implements RteExtension {
-  constructor(private editor: Editor) {}
+export default class BoldExtension extends AbstractRteExtension {
   async apply(): Promise<void> {
     this.editor.chain().focus().toggleBold().run();
   }
