@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { Editor } from "@tiptap/react";
+import clsx from "clsx";
 
 import { Modal, ModalProps } from "../../Modal";
 import { Popover, PopoverProps } from "../../Popover";
@@ -17,7 +18,12 @@ export interface DemoMenuBarProps {
 }
 
 /** Internal representation of the available extensions. */
-type ExtensionCatalog = { [type in RteExtensionType]?: RteExtension };
+type ExtensionCatalog = {
+  [type in RteExtensionType]?: {
+    extension: RteExtension;
+    isActive: () => boolean;
+  };
+};
 
 const DemoMenuBar = ({ editor, extensions }: DemoMenuBarProps) => {
   // Initialization function
@@ -27,13 +33,22 @@ const DemoMenuBar = ({ editor, extensions }: DemoMenuBarProps) => {
     list.forEach((type) => {
       switch (type) {
         case "bold":
-          exts[type] = new BoldExtension(editor);
+          exts[type] = {
+            extension: new BoldExtension(editor),
+            isActive: () => editor.isActive("bold"),
+          };
           break;
         case "italic":
-          exts[type] = new ItalicExtension(editor);
+          exts[type] = {
+            extension: new ItalicExtension(editor),
+            isActive: () => editor.isActive("italic"),
+          };
           break;
         case "linker":
-          exts[type] = new LinkerExtension(editor);
+          exts[type] = {
+            extension: new LinkerExtension(editor),
+            isActive: () => false, //TODO
+          };
           break;
         default:
           break;
@@ -63,11 +78,14 @@ const DemoMenuBar = ({ editor, extensions }: DemoMenuBarProps) => {
     children: <></>,
   });
 
+  const handleActive = (type: RteExtensionType) =>
+    exts[type]?.isActive?.() ? "active" : undefined;
+
   const handleActivatePlugin = async (
     type: RteExtensionType,
     button: HTMLButtonElement,
   ) => {
-    const ext = exts[type];
+    const ext = exts[type]?.extension;
     if (!ext) return;
     try {
       switch (ext.renderAs) {
@@ -105,6 +123,8 @@ const DemoMenuBar = ({ editor, extensions }: DemoMenuBarProps) => {
         {extensions.map((type) => (
           <button
             type="button"
+            data-bs-toggle="button"
+            className={clsx("btn btn-tertiary outline", handleActive(type))}
             onClick={(e) =>
               handleActivatePlugin(type, e.target as HTMLButtonElement)
             }

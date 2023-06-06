@@ -18,7 +18,7 @@ const defaultContent = `
   <p>Salut à tous ! Bienvenue dans la démonstration des extensions du RTE</p>
   <p>Ce contenu est modifiable.</p>
   <p>Clic les boutons (par là ⇖), et enjoy !</p>
-  <p>Clic sur ce lien pour 🏄 à <a href="https://www.yadusurf.com/Meteo-Surf-Report/La-Milady/1308">La Milady</a></p>
+  <p>Clic sur ce lien pour 🏄 à <a target="_blank" title="Ya du surf !" href="https://www.yadusurf.com/Meteo-Surf-Report/La-Milady/1308">La Milady</a></p>
 `;
 
 export const Base: Story = {
