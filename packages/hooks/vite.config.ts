@@ -27,11 +27,5 @@ export default defineConfig({
       external: [...Object.keys(peerDependencies)],
     },
   },
-  plugins: [
-    react({
-      jsxRuntime: "classic",
-    }),
-    dts(),
-    visualizer(),
-  ],
+  plugins: [react(), dts(), visualizer()],
 });
