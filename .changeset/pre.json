@@ -9,6 +9,7 @@
     "@ode-react-ui/template": "1.0.0"
   },
   "changesets": [
+    "afraid-plums-matter",
     "afraid-starfishes-judge",
     "fifty-pandas-hug",
     "heavy-dolphins-poke",
