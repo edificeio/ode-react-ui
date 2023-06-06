@@ -63,7 +63,7 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-storybook": "0.6.12",
     "husky": "8.0.3",
-    "ode-ts-client": "feat-explorer",
+    "ode-ts-client": "dev",
     "prettier": "2.8.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
