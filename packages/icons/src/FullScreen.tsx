@@ -1,4 +1,4 @@
-import { SVGProps } from "react";
+import type { SVGProps } from "react";
 interface SVGRProps {
   title?: string;
   titleId?: string;
@@ -9,21 +9,21 @@ const SvgFullScreen = ({
   ...props
 }: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
+    xmlns="http://www.w3.org/2000/svg"
     width="24"
     height="24"
-    viewBox="0 0 24 24"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
     aria-hidden="true"
     aria-labelledby={titleId}
     {...props}
   >
     {title ? <title id={titleId}>{title}</title> : null}
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M16.667 1a1 1 0 1 0 0 2h2.919l-6.293 6.293a1 1 0 0 0 1.414 1.414L21 4.414v2.92a1 1 0 1 0 2 0V2a1 1 0 0 0-1-1h-5.333ZM7.333 23a1 1 0 1 0 0-2H4.414l6.293-6.293a1 1 0 0 0-1.414-1.414L3 19.586v-2.92a1 1 0 1 0-2 0V22a1 1 0 0 0 1 1h5.333Z"
       fill="currentColor"
+      fillRule="evenodd"
+      d="M16.667 1a1 1 0 1 0 0 2h2.919l-6.293 6.293a1 1 0 0 0 1.414 1.414L21 4.414v2.92a1 1 0 1 0 2 0V2a1 1 0 0 0-1-1h-5.333ZM7.333 23a1 1 0 1 0 0-2H4.414l6.293-6.293a1 1 0 0 0-1.414-1.414L3 19.586v-2.92a1 1 0 1 0-2 0V22a1 1 0 0 0 1 1h5.333Z"
+      clipRule="evenodd"
     />
   </svg>
 );

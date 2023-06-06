@@ -1,4 +1,4 @@
-import { SVGProps } from "react";
+import type { SVGProps } from "react";
 interface SVGRProps {
   title?: string;
   titleId?: string;
@@ -9,21 +9,21 @@ const SvgDownload = ({
   ...props
 }: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
+    xmlns="http://www.w3.org/2000/svg"
     width="24"
     height="24"
-    viewBox="0 0 24 24"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
     aria-hidden="true"
     aria-labelledby={titleId}
     {...props}
   >
     {title ? <title id={titleId}>{title}</title> : null}
     <g
-      clipPath="url(#download_svg__a)"
-      fillRule="evenodd"
-      clipRule="evenodd"
       fill="currentColor"
+      fillRule="evenodd"
+      clipPath="url(#download_svg__a)"
+      clipRule="evenodd"
     >
       <path d="M7.293 16.293a1 1 0 0 1 1.414 0L12 19.586l3.293-3.293a1 1 0 0 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414Z" />
       <path d="M12 11a1 1 0 0 1 1 1v9a1 1 0 1 1-2 0v-9a1 1 0 0 1 1-1Z" />
