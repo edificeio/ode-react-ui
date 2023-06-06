@@ -60,9 +60,7 @@ export default function useHeader({
   const userAvatar = avatar;
   const userName = user?.username;
   // const welcomeUser = `Bonjour ${user?.username}, bienvenue!`;
-  const welcomeUser = `${i18n("welcome.text.1")} ${user?.username} ${i18n(
-    "welcome.text.2",
-  )}`;
+  const welcomeUser = `${i18n("welcome.text.1")} ${user?.username}`;
 
   /**
    * Get Bookmarked Apps
