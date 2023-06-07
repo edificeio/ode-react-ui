@@ -148,6 +148,11 @@ export default class LinkerExtension extends AbstractRteExtension {
       } else {
         this.renderedProps.title && delete this.renderedProps.title;
       }
+      if (ext?.href && !ext?.["data-app-prefix"]) {
+        this.renderedProps.url = ext.href;
+      } else {
+        this.renderedProps.url && delete this.renderedProps.url;
+      }
     });
   }
 

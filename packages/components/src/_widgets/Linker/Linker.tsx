@@ -19,6 +19,9 @@ export interface LinkerProps {
   /** Internal linker : list of available apps */
   appPrefixes?: string[];
 
+  /** Default (external) url value. */
+  url?: string;
+
   /** Default tooltip value. */
   title?: string;
 
@@ -54,15 +57,21 @@ const Linker = ({
     "linker.blank": "Open this link in a new tab",
   },
   types = ["search", "external"],
+  url,
   title = "",
   target,
   appPrefixes, //TODO pass through a context ?
   onSearch,
   onGenerateUrl,
 }: LinkerProps) => {
-  const [type, setType] = useState<LinkerType>(
-    typeof types === "string" ? types : types[0],
-  );
+  const [type, setType] = useState<LinkerType>(() => {
+    // Determine which tab is to be shown by default
+    if (typeof types === "string") return types;
+    if (typeof url === "string" && types.indexOf("external") !== -1) {
+      return "external";
+    }
+    return types[0];
+  });
   const isSearch = () => type === "search";
   const handleClickInternal = () => setType("search");
   const handleClickExternal = () => setType("external");
@@ -70,7 +79,7 @@ const Linker = ({
   const [searchResults, setSearchResults] = useState<AppSearchResult[]>([]);
 
   const [model, setModel] = useState<Link>({
-    url: "",
+    url: url ?? "",
     title: title,
     target: target,
     appPrefix: appPrefixes?.[0],
@@ -154,7 +163,11 @@ const Linker = ({
           </ul>
         </>
       ) : (
-        <ExternalLinker labels={labels} onChange={handleExternalChange} />
+        <ExternalLinker
+          url={url}
+          labels={labels}
+          onChange={handleExternalChange}
+        />
       )}
       <div className="mt-12">
         <label>
