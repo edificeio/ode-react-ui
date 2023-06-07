@@ -23,7 +23,7 @@ export interface LinkerProps {
   title?: string;
 
   /** Default link target. */
-  target: "_blank" | undefined;
+  target?: "_blank";
 
   /** Translations */
   labels?: {

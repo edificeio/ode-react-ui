@@ -47,7 +47,7 @@ const DemoMenuBar = ({ editor, extensions }: DemoMenuBarProps) => {
         case "linker":
           exts[type] = {
             extension: new LinkerExtension(editor),
-            isActive: () => false, //TODO
+            isActive: () => editor.isActive("link"), //TODO
           };
           break;
         default:
