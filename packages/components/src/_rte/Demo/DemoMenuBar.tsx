@@ -5,7 +5,11 @@ import clsx from "clsx";
 
 import { Modal, ModalProps } from "../../Modal";
 import { Popover, PopoverProps } from "../../Popover";
-import { RteExtension, RteExtensionType } from "../_extensions";
+import {
+  RteExtension,
+  RteRenderedExtension,
+  RteExtensionType,
+} from "../_extensions";
 import BoldExtension from "../_extensions/Bold/BoldExtension";
 import ItalicExtension from "../_extensions/Italic/ItalicExtension";
 import LinkerExtension from "../_extensions/Linker/LinkerExtension";
@@ -47,7 +51,7 @@ const DemoMenuBar = ({ editor, extensions }: DemoMenuBarProps) => {
         case "linker":
           exts[type] = {
             extension: new LinkerExtension(editor),
-            isActive: () => editor.isActive("link"), //TODO
+            isActive: () => editor.isActive("link"),
           };
           break;
         default:
@@ -81,39 +85,41 @@ const DemoMenuBar = ({ editor, extensions }: DemoMenuBarProps) => {
   const handleActive = (type: RteExtensionType) =>
     exts[type]?.isActive?.() ? "active" : undefined;
 
-  const handleActivatePlugin = async (
+  const handlePlugin = async (
     type: RteExtensionType,
     button: HTMLButtonElement,
   ) => {
     const ext = exts[type]?.extension;
     if (!ext) return;
-    try {
-      switch (ext.renderAs) {
+
+    if (Object.prototype.hasOwnProperty.call(ext, "renderAs")) {
+      const rendered = ext as RteRenderedExtension;
+      switch (rendered.renderAs) {
         case "modal":
           {
-            if (ext.preRender) await ext.preRender();
-            const defaultProps = Object.assign(
-              {},
-              ext.defaultRendererProps,
-              extModalProps,
-            );
+            if (rendered.preRender) await rendered.preRender();
             setModalProps({
-              ...defaultProps,
+              ...extModalProps,
               isOpen: true,
-              children: ext.render(),
+              children: rendered.render({
+                onCancel: async () => {
+                  alert("cancel");
+                },
+                onOk: async () => {
+                  alert("ok");
+                },
+              }),
             });
-            if (ext.postRender) await ext.postRender();
+            if (rendered.postRender) await rendered.postRender();
           }
           break;
 
         // TODO case "popover":
 
         default:
-          ext.apply();
+          console.log("Cannot render this !");
           break;
       }
-    } catch {
-      alert("Cannot apply this !");
     }
   };
 
@@ -125,9 +131,7 @@ const DemoMenuBar = ({ editor, extensions }: DemoMenuBarProps) => {
             type="button"
             data-bs-toggle="button"
             className={clsx("btn btn-tertiary outline", handleActive(type))}
-            onClick={(e) =>
-              handleActivatePlugin(type, e.target as HTMLButtonElement)
-            }
+            onClick={(e) => handlePlugin(type, e.target as HTMLButtonElement)}
           >
             {type}
           </button>

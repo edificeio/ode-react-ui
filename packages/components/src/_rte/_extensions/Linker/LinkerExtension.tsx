@@ -1,9 +1,11 @@
 import Link from "@tiptap/extension-link";
 
-import { RteRenderType } from "..";
+import { RteModalProps, RteRenderedExtension, RteRenderType } from "..";
 import { AppSearchResult } from "../../../_models";
 import { Linker, LinkerProps } from "../../../_widgets/Linker";
+import { Button } from "../../../Button";
 import { ModalProps } from "../../../Modal";
+import ModalFooter from "../../../Modal/ModalFooter";
 import { AbstractRteExtension } from "../AbstractRteExtension";
 
 //---------------------------------
@@ -72,14 +74,10 @@ export const TipTapLinker = Link.extend({
 //--------------------------------
 //------ React-related code ------
 //--------------------------------
-export interface LinkerExtensionProps extends LinkerProps {
-  /**
-   * Dummy
-   */
-  dummy?: string;
-}
-
-export default class LinkerExtension extends AbstractRteExtension {
+export default class LinkerExtension
+  extends AbstractRteExtension
+  implements RteRenderedExtension
+{
   private renderedProps: LinkerProps = {
     types: ["search", "external"],
     appPrefixes: ["blog", "wiki"], // TODO
@@ -125,13 +123,7 @@ export default class LinkerExtension extends AbstractRteExtension {
     this.editor.chain().focus().toggleBold().run();
   }
 
-  public get renderAs(): RteRenderType {
-    return "modal";
-  }
-
-  public readonly defaultRendererProps: Partial<ModalProps> = {
-    size: "xl",
-  };
+  public readonly renderAs: RteRenderType = "modal";
 
   public async preRender() {
     // Read metadata from the link placed under the cursor, if any, and adapt it to renderedProps.
@@ -156,7 +148,42 @@ export default class LinkerExtension extends AbstractRteExtension {
     });
   }
 
-  public render(): JSX.Element {
-    return <Linker {...this.renderedProps} />;
+  public render(props: RteModalProps): JSX.Element {
+    // Apply default values.
+    props.size = "xl";
+
+    const handleClick = (ok: boolean) => {
+      if (ok) {
+        // TODO Sanitize URL before validating it.
+        props.onOk();
+      } else {
+        props.onCancel();
+      }
+    };
+
+    return (
+      <>
+        <Linker {...this.renderedProps} />
+        <ModalFooter>
+          <Button
+            type="button"
+            color="tertiary"
+            variant="ghost"
+            onClick={(e) => handleClick(false)}
+          >
+            Cancel
+          </Button>
+          <Button
+            id="validateButtonId"
+            type="button"
+            color="primary"
+            variant="filled"
+            onClick={(e) => handleClick(true)}
+          >
+            OK
+          </Button>
+        </ModalFooter>
+      </>
+    );
   }
 }
