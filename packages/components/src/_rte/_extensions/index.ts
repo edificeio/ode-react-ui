@@ -26,13 +26,13 @@ export interface RteExtension {
 
 /** Any RTE extension that has an UI must implement this interface. */
 export interface RteRenderedExtension extends RteExtension {
-  readonly renderAs:RteRenderType;
+  readonly renderAs: RteRenderType;
 
   // The extension rendering workflow :
   /** Let the extension a way to prepare itself before being actually displayed. */
   preRender?: () => Promise<void>;
   /** Renders the extension. */
-  render( props?:RteModalProps|RtePopoverProps ): JSX.Element;
+  render(props?: RteModalProps | RtePopoverProps): JSX.Element;
   /** Let the extension a way to clean itself after being actually displayed. */
   postRender?: () => Promise<void>;
 }
