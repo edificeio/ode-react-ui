@@ -6,5 +6,5 @@ import { RteExtension } from ".";
 export abstract class AbstractRteExtension implements RteExtension {
   constructor(protected editor: Editor) {}
 
-  public abstract apply(): Promise<void>;
+  public abstract apply(): boolean;
 }

@@ -1,5 +1,3 @@
-import { ElementType } from "react";
-
 import { ModalProps } from "../../Modal";
 import { PopoverProps } from "../../Popover";
 
@@ -13,18 +11,18 @@ import { PopoverProps } from "../../Popover";
 /** Available extensions */
 export type RteExtensionType = "bold" | "italic" | "linker";
 
-/** Whether an extension should render as a visual component, or not at all. */
-export type RteRenderType = "none" | "popover" | "modal";
-
 // TODO create a TipTap context to share editor + tiptap (+their configuration) extensions with React components.
 
 /** Interface for all RTE extensions. */
 export interface RteExtension {
   /** Apply command on the embedded editor. */
-  apply(): Promise<void>;
+  apply(): boolean;
 }
 
-/** Any RTE extension that has an UI must implement this interface. */
+/** Where to render an RteRenderedExtension. */
+export type RteRenderType = "popover" | "modal";
+
+/** Any RTE extension that comes with an UI must implement this interface. */
 export interface RteRenderedExtension extends RteExtension {
   readonly renderAs: RteRenderType;
 
@@ -39,13 +37,13 @@ export interface RteRenderedExtension extends RteExtension {
 
 export type RteModalProps = Partial<ModalProps> & {
   /** Callback when the user validates the modal. */
-  onOk: () => Promise<void>;
+  onOk: () => void;
   /** Callback when the user closes the modal, without validating. */
-  onCancel: () => Promise<void>;
+  onCancel: () => void;
 };
 
 export type RtePopoverProps = Partial<PopoverProps> & {
   /** Callback when the user validates the modal. */
-  onOk: () => Promise<void>;
+  onOk: () => void;
   //TODO ...design and implement...
 };

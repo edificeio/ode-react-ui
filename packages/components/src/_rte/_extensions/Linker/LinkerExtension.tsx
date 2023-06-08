@@ -4,7 +4,6 @@ import { RteModalProps, RteRenderedExtension, RteRenderType } from "..";
 import { AppSearchResult } from "../../../_models";
 import { Linker, LinkerProps } from "../../../_widgets/Linker";
 import { Button } from "../../../Button";
-import { ModalProps } from "../../../Modal";
 import ModalFooter from "../../../Modal/ModalFooter";
 import { AbstractRteExtension } from "../AbstractRteExtension";
 
@@ -119,8 +118,8 @@ export default class LinkerExtension
     },
   };
 
-  async apply(): Promise<void> {
-    this.editor.chain().focus().toggleBold().run();
+  apply(): boolean {
+    return this.editor.chain().focus().toggleBold().run();
   }
 
   public readonly renderAs: RteRenderType = "modal";

@@ -77,13 +77,51 @@ const DemoMenuBar = ({ editor, extensions }: DemoMenuBarProps) => {
     id: "extModal",
     isOpen: false,
     onModalClose: () => {
-      setModalProps({ ...extModalProps, isOpen: false });
+      setModalProps({ ...extModalProps, isOpen: false, children: <></> });
     },
     children: <></>,
   });
 
   const handleActive = (type: RteExtensionType) =>
     exts[type]?.isActive?.() ? "active" : undefined;
+
+  const handleApply = (ext: RteExtension) => {
+    try {
+      ext.apply();
+    } catch (e) {
+      console.log("Cannot apply this extension !");
+    }
+  };
+  const handleRender = async (ext: RteRenderedExtension) => {
+    try {
+      switch (ext.renderAs) {
+        case "modal":
+          {
+            // The "modal" rendering flow
+            if (ext.preRender) await ext.preRender();
+            setModalProps({
+              ...extModalProps,
+              isOpen: true,
+              children: ext.render({
+                onCancel: extModalProps.onModalClose,
+                onOk: () => {
+                  handleApply(ext);
+                },
+              }),
+            });
+            if (ext.postRender) await ext.postRender();
+          }
+          break;
+
+        // TODO case "popover":
+
+        default:
+          throw "Unkowwn extension type";
+      }
+    } catch (e) {
+      console.log("Cannot render this extension !");
+    }
+  };
 
   const handlePlugin = async (
     type: RteExtensionType,
@@ -92,34 +130,10 @@ const DemoMenuBar = ({ editor, extensions }: DemoMenuBarProps) => {
     const ext = exts[type]?.extension;
     if (!ext) return;
 
-    if (Object.prototype.hasOwnProperty.call(ext, "renderAs")) {
-      const rendered = ext as RteRenderedExtension;
-      switch (rendered.renderAs) {
-        case "modal":
-          {
-            if (rendered.preRender) await rendered.preRender();
-            setModalProps({
-              ...extModalProps,
-              isOpen: true,
-              children: rendered.render({
-                onCancel: async () => {
-                  alert("cancel");
-                },
-                onOk: async () => {
-                  alert("ok");
-                },
-              }),
-            });
-            if (rendered.postRender) await rendered.postRender();
-          }
-          break;
-
-        // TODO case "popover":
-
-        default:
-          console.log("Cannot render this !");
-          break;
-      }
+    if (!Object.prototype.hasOwnProperty.call(ext, "renderAs")) {
+      return handleApply(ext);
+    } else {
+      return handleRender(ext as RteRenderedExtension);
     }
   };
 
