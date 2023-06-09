@@ -35,6 +35,13 @@ export interface RteRenderedExtension extends RteExtension {
   postRender?: () => Promise<void>;
 }
 
+/** Utility function to check if an object is implements the RteRenderedExtension interface. */
+export function instanceofRteRenderedExtension(
+  arg: any,
+): arg is RteRenderedExtension {
+  return arg && arg.renderAs && typeof arg.renderAs === "string";
+}
+
 export type RteModalProps = Partial<ModalProps> & {
   /** Callback when the user validates the modal. */
   onOk: () => void;

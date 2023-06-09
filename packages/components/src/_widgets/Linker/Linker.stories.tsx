@@ -1,9 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Button } from "../../Button";
 
 import Linker, { LinkerProps } from "./Linker";
-import React from "react";
-import { AppSearchResult } from "../../_models/LinkerModel";
+import { AppSearchResult } from "./LinkerModel";
 
 export default {
   title: "Widget/Linker",
@@ -24,7 +22,11 @@ export default {
         ].filter((val) => val.prefix === appPrefix),
       );
     },
-    onGenerateUrl: ({ prefix, id, subIds }: AppSearchResult): Promise<URL> => {
+    onSelectInternalResource: ({
+      prefix,
+      id,
+      subIds,
+    }: AppSearchResult): Promise<URL> => {
       switch (prefix) {
         case "blog":
           return Promise.resolve(

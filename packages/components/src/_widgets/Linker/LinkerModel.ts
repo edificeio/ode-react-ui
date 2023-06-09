@@ -1,8 +1,8 @@
 /**
  * Definition of a link.
  */
-export type Link = {
-  url: string;
+export type LinkerModel = {
+  href: string;
   title?: string;
   target: "_blank" | undefined;
   appPrefix?: string;

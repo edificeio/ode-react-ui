@@ -1,11 +1,11 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 
 import clsx from "clsx";
 
-import { AppSearchResult, Link } from "../../_models/LinkerModel";
 import { Button } from "../../Button";
 import ExternalLinker from "./ExternalLinker";
 import InternalLinker, { InternalLink } from "./InternalLinker";
+import { AppSearchResult, LinkerModel } from "./LinkerModel";
 
 export type LinkerType = "search" | "external";
 
@@ -45,7 +45,10 @@ export interface LinkerProps {
   onSearch?: (appPrefix: string, term: string) => Promise<AppSearchResult[]>;
 
   /** Plug here a service (explore/open) to get the URL of the resource having a prefix and an id. */
-  onGenerateUrl?: (resource: AppSearchResult) => Promise<URL>;
+  onSelectInternalResource?: (resource: AppSearchResult) => Promise<URL>;
+
+  /** Notify when the link changes */
+  onChange: (metadata: LinkerModel) => void;
 }
 
 const Linker = ({
@@ -57,12 +60,13 @@ const Linker = ({
     "linker.blank": "Open this link in a new tab",
   },
   types = ["search", "external"],
-  url,
-  title = "",
+  url = "",
+  title,
   target,
-  appPrefixes, //TODO pass through a context ?
+  appPrefixes,
   onSearch,
-  onGenerateUrl,
+  onSelectInternalResource,
+  onChange,
 }: LinkerProps) => {
   const [type, setType] = useState<LinkerType>(() => {
     // Determine which tab is to be shown by default
@@ -75,19 +79,24 @@ const Linker = ({
   const isSearch = () => type === "search";
   const handleClickInternal = () => setType("search");
   const handleClickExternal = () => setType("external");
+  const isTargetBlank = () => model.target === "_blank";
 
   const [searchResults, setSearchResults] = useState<AppSearchResult[]>([]);
 
-  const [model, setModel] = useState<Link>({
-    url: url ?? "",
-    title: title,
-    target: target,
-    appPrefix: appPrefixes?.[0],
+  const [model, setModel] = useState<LinkerModel>({
+    href: url,
+    title,
+    target,
   });
-  const isTargetBlank = () => model.target === "_blank";
+
+  useEffect(() => onChange?.(model), [model, onChange]);
 
   const handleTooltipChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setModel({ ...model, title: event.target.value });
+    const newModel: LinkerModel = { ...model, title: event.target.value };
+    if (newModel.title?.length === 0) {
+      delete newModel.title;
+    }
+    setModel(newModel);
   };
   const handleBlankChange = () => {
     // Switch between _blank and undefined
@@ -112,12 +121,12 @@ const Linker = ({
   // }
   const handleInternalChange = (result: AppSearchResult) => {
     setModel({ ...model, appPrefix: result.prefix, id: result.id });
-    onGenerateUrl?.(result).then((url) => {
-      setModel({ ...model, url: url.toString() });
+    onSelectInternalResource?.(result).then((url) => {
+      setModel({ ...model, href: url.toString() });
     });
   };
-  const handleExternalChange = (url: string) => {
-    setModel({ ...model, url });
+  const handleExternalChange = (href: string) => {
+    setModel({ ...model, href });
   };
 
   return (
@@ -193,7 +202,7 @@ const Linker = ({
 
       <div className="mt-32">
         <p>
-          <u>Données du lien</u> : <code>{JSON.stringify(model)}</code>
+          <u>[debug] Données du lien</u> : <code>{JSON.stringify(model)}</code>
         </p>
       </div>
     </>

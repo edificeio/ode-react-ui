@@ -1,74 +1,13 @@
-import Link from "@tiptap/extension-link";
-
 import { RteModalProps, RteRenderedExtension, RteRenderType } from "..";
-import { AppSearchResult } from "../../../_models";
 import { Linker, LinkerProps } from "../../../_widgets/Linker";
+import {
+  AppSearchResult,
+  LinkerModel,
+} from "../../../_widgets/Linker/LinkerModel";
 import { Button } from "../../../Button";
 import ModalFooter from "../../../Modal/ModalFooter";
 import { AbstractRteExtension } from "../AbstractRteExtension";
-
-//---------------------------------
-//------ TipTap-related code ------
-//---------------------------------
-/* Our own model of a link in a rich document. */
-type TipTapLinkerMetadata = {
-  href: string | null;
-  target: "_blank" | null;
-  title: string | null;
-  "data-id": string | null;
-  "data-app-prefix": string | null;
-};
-
-/**
- * Reproduces the legacy angularJs directive.
- * Link to internal resources may have an `title`, `data-id` and `data-app-prefix` attributes :
- * `<a href="/blog#/view/35fa4198-blog_id/5e654c71-article_id" data-app-prefix="blog" data-id="35fa4198-blog_id" target="_blank" title="Voir ce billet de blog" class="ng-scope">/blog#/view/35fa4198-57fe-45eb-94f4-a5e4defff305/5e654c71-1e61-4f84-86dc-6fcfaf33f513</a>`
- * We also have to sanitize values from `title`, so it is overriden too.
- */
-export const TipTapLinker = Link.extend({
-  /* Manage `title`, `data-id` and `data-app-prefix` attributes. */
-  addAttributes() {
-    return {
-      // Preserve attributes of parent extension...
-      ...this.parent?.(),
-      // ...then add or override the following :
-      //------------------
-      target: {
-        default: this.options.HTMLAttributes.target,
-        // Sanitize target value
-        parseHTML: (element) =>
-          element.getAttribute("target") !== "_blank" ? null : "_blank",
-        // renderHTML: (attributes) => ({
-        //   "target": attributes["target"],
-        // }),
-      },
-      title: {
-        default: null,
-        // Customize the HTML parsing, to load the initial content.
-        parseHTML: (element) => element.getAttribute("title"),
-        // renderHTML: (attributes) => ({
-        //   "title": attributes["title"],
-        // }),
-      },
-      //------------------
-      "data-id": {
-        default: null,
-        parseHTML: (element) => element.getAttribute("data-id"),
-        // renderHTML: (attributes) => ({
-        //   "data-id": attributes["data-id"],
-        // }),
-      },
-      //------------------
-      "data-app-prefix": {
-        default: null,
-        parseHTML: (element) => element.getAttribute("data-app-prefix"),
-        // renderHTML: (attributes) => ({
-        //   "data-app-prefix": attributes["data-app-prefix"],
-        // }),
-      },
-    };
-  },
-});
+import { TipTapLinkerMetadata } from "./TipTapLinker";
 
 //--------------------------------
 //------ React-related code ------
@@ -77,9 +16,9 @@ export default class LinkerExtension
   extends AbstractRteExtension
   implements RteRenderedExtension
 {
-  private renderedProps: LinkerProps = {
+  private linkerProps: LinkerProps = {
     types: ["search", "external"],
-    appPrefixes: ["blog", "wiki"], // TODO
+    appPrefixes: [],
 
     // TODO real fetch of this mocked data
     onSearch: (appPrefix: string, term: string): Promise<AppSearchResult[]> =>
@@ -96,7 +35,12 @@ export default class LinkerExtension
         ].filter((val) => val.prefix === appPrefix),
       ),
 
-    onGenerateUrl: ({ prefix, id, subIds }: AppSearchResult): Promise<URL> => {
+    // TODO real generation of this mocked data (agent action OPEN)
+    onSelectInternalResource: ({
+      prefix,
+      id,
+      subIds,
+    }: AppSearchResult): Promise<URL> => {
       switch (prefix) {
         case "blog":
           return Promise.resolve(
@@ -116,35 +60,70 @@ export default class LinkerExtension
           return Promise.reject("not.implemented");
       }
     },
+
+    onChange: (metadata: LinkerModel) => {
+      //debounce with rxjs ?
+      this.model = metadata;
+    },
   };
 
+  model?: LinkerModel;
+
   apply(): boolean {
-    return this.editor.chain().focus().toggleBold().run();
+    if (!this.model || !this.model.href) return false;
+
+    return this.editor
+      .chain()
+      .focus()
+      .setLinker({
+        href: this.model.href,
+        target: this.model.target ?? null,
+        title: this.model.title ?? null,
+        "data-app-prefix": this.model.appPrefix ?? null,
+        "data-id": this.model.id ?? null,
+      })
+      .run();
   }
 
   public readonly renderAs: RteRenderType = "modal";
 
   public async preRender() {
+    // On est ici dans les composants "avancés" ! Ils vont devoir pouvoir communiquer avec l'ENT.
+
+    this.linkerProps.appPrefixes = ["blog", "wiki"]; //await fetch('/resources-applications');
+
+    // TODO : utiliser un contexte React pour accéder aux traductions ?
+    /*
+    this.renderedProps.labels = {
+      "linker.address": "Address",
+      "linker.address.placeholder": ...,
+      "linker.blank: ",
+      "linker.external": ,
+      "linker.external.placeholder": ,
+      "linker.search": ,
+      "linker.tooltip": ,
+      "linker.tooltip.placeholder": ,
+    }
+    */
+
     // Read metadata from the link placed under the cursor, if any, and adapt it to renderedProps.
-    return Promise.resolve().then(() => {
-      // Check if currently selected node or mark is a link
-      const ext = this.editor.getAttributes("link") as TipTapLinkerMetadata;
-      if (ext?.target) {
-        this.renderedProps.target = ext.target;
-      } else {
-        this.renderedProps.target && delete this.renderedProps.target;
-      }
-      if (ext?.title) {
-        this.renderedProps.title = ext.title;
-      } else {
-        this.renderedProps.title && delete this.renderedProps.title;
-      }
-      if (ext?.href && !ext?.["data-app-prefix"]) {
-        this.renderedProps.url = ext.href;
-      } else {
-        this.renderedProps.url && delete this.renderedProps.url;
-      }
-    });
+    // Check if currently selected node or mark is a link
+    const ext = this.editor.getAttributes("linker") as TipTapLinkerMetadata;
+    if (ext?.target) {
+      this.linkerProps.target = ext.target;
+    } else {
+      this.linkerProps.target && delete this.linkerProps.target;
+    }
+    if (ext?.title) {
+      this.linkerProps.title = ext.title;
+    } else {
+      this.linkerProps.title && delete this.linkerProps.title;
+    }
+    if (ext?.href && !ext?.["data-app-prefix"]) {
+      this.linkerProps.url = ext.href;
+    } else {
+      this.linkerProps.url && delete this.linkerProps.url;
+    }
   }
 
   public render(props: RteModalProps): JSX.Element {
@@ -153,8 +132,10 @@ export default class LinkerExtension
 
     const handleClick = (ok: boolean) => {
       if (ok) {
-        // TODO Sanitize URL before validating it.
-        props.onOk();
+        // TODO sanitize URL before validating it.
+        if (this.model && this.model.href) {
+          props.onOk();
+        }
       } else {
         props.onCancel();
       }
@@ -162,7 +143,7 @@ export default class LinkerExtension
 
     return (
       <>
-        <Linker {...this.renderedProps} />
+        <Linker {...this.linkerProps} />
         <ModalFooter>
           <Button
             type="button"

@@ -2,7 +2,7 @@ import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 
 import { RteExtensionType } from "../_extensions";
-import { TipTapLinker } from "../_extensions/Linker/LinkerExtension";
+import { TipTapLinker } from "../_extensions/Linker/TipTapLinker";
 import DemoMenuBar from "./DemoMenuBar";
 
 export interface DemoEditorProps {
@@ -20,6 +20,10 @@ const DemoEditor = ({ content, extensions }: DemoEditorProps) => {
   const editor = useEditor({
     extensions: [StarterKit, TipTapLinker],
     content: content,
+  });
+
+  TipTapLinker.configure({
+    openOnClick: false,
   });
 
   return (

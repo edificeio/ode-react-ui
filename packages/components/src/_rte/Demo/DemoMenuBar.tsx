@@ -9,6 +9,7 @@ import {
   RteExtension,
   RteRenderedExtension,
   RteExtensionType,
+  instanceofRteRenderedExtension,
 } from "../_extensions";
 import BoldExtension from "../_extensions/Bold/BoldExtension";
 import ItalicExtension from "../_extensions/Italic/ItalicExtension";
@@ -38,7 +39,7 @@ const DemoMenuBar = ({ editor, extensions }: DemoMenuBarProps) => {
       switch (type) {
         case "bold":
           exts[type] = {
-            extension: new BoldExtension(editor),
+            extension: new BoldExtension(editor), // TODO optim de la RAM : instancier uniquement à l'usage ?
             isActive: () => editor.isActive("bold"),
           };
           break;
@@ -51,7 +52,7 @@ const DemoMenuBar = ({ editor, extensions }: DemoMenuBarProps) => {
         case "linker":
           exts[type] = {
             extension: new LinkerExtension(editor),
-            isActive: () => editor.isActive("link"),
+            isActive: () => editor.isActive("linker"),
           };
           break;
         default:
@@ -60,6 +61,15 @@ const DemoMenuBar = ({ editor, extensions }: DemoMenuBarProps) => {
     });
 
     return exts;
+  };
+
+  const modalDefaults = {
+    id: "extModal",
+    isOpen: false,
+    onModalClose: () => {
+      setModalProps({ ...extModalProps, isOpen: false, children: <></> });
+    },
+    children: <></>,
   };
 
   const [exts, setExtensions] = useState<ExtensionCatalog>(
@@ -73,26 +83,28 @@ const DemoMenuBar = ({ editor, extensions }: DemoMenuBarProps) => {
   });
 
   // Hook to render an extension in a modal
-  const [extModalProps, setModalProps] = useState<ModalProps>({
-    id: "extModal",
-    isOpen: false,
-    onModalClose: () => {
-      setModalProps({ ...extModalProps, isOpen: false, children: <></> });
-    },
-    children: <></>,
-  });
+  const [extModalProps, setModalProps] = useState<ModalProps>(modalDefaults);
 
-  const handleActive = (type: RteExtensionType) =>
-    exts[type]?.isActive?.() ? "active" : undefined;
-
-  const handleApply = (ext: RteExtension) => {
+  const doApply = (ext: RteExtension) => {
     try {
-      ext.apply();
+      if (ext.apply() && instanceofRteRenderedExtension(ext)) {
+        // Reset the renderer
+        switch (ext.renderAs) {
+          case "modal":
+            setModalProps(modalDefaults);
+            break;
+
+          // TODO case "popover":
+
+          default:
+            break;
+        }
+      }
     } catch (e) {
       console.log("Cannot apply this extension !");
     }
   };
-  const handleRender = async (ext: RteRenderedExtension) => {
+  const doRender = async (ext: RteRenderedExtension) => {
     try {
       switch (ext.renderAs) {
         case "modal":
@@ -105,7 +117,7 @@ const DemoMenuBar = ({ editor, extensions }: DemoMenuBarProps) => {
               children: ext.render({
                 onCancel: extModalProps.onModalClose,
                 onOk: () => {
-                  handleApply(ext);
+                  doApply(ext);
                 },
               }),
             });
@@ -123,6 +135,12 @@ const DemoMenuBar = ({ editor, extensions }: DemoMenuBarProps) => {
     }
   };
 
+  const getButtonClass = (type: RteExtensionType) =>
+    clsx(
+      "btn btn-tertiary outline",
+      exts[type]?.isActive?.() ? "active" : undefined,
+    );
+
   const handlePlugin = async (
     type: RteExtensionType,
     button: HTMLButtonElement,
@@ -131,9 +149,9 @@ const DemoMenuBar = ({ editor, extensions }: DemoMenuBarProps) => {
     if (!ext) return;
 
     if (!Object.prototype.hasOwnProperty.call(ext, "renderAs")) {
-      return handleApply(ext);
+      return doApply(ext);
     } else {
-      return handleRender(ext as RteRenderedExtension);
+      return doRender(ext as RteRenderedExtension);
     }
   };
 
@@ -144,7 +162,7 @@ const DemoMenuBar = ({ editor, extensions }: DemoMenuBarProps) => {
           <button
             type="button"
             data-bs-toggle="button"
-            className={clsx("btn btn-tertiary outline", handleActive(type))}
+            className={getButtonClass(type)}
             onClick={(e) => handlePlugin(type, e.target as HTMLButtonElement)}
           >
             {type}
