@@ -8,3 +8,4 @@ export * from "./useOdeIcons";
 export * from "./useSession";
 export * from "./useTheme";
 export * from "./useUser";
+export * from "./useXitiTrackPageLoad";
