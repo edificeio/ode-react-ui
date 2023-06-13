@@ -1,5 +1,13 @@
 # @ode-react-ui/core
 
+## 2.1.0-dev.12
+
+### Patch Changes
+
+- [#209](https://github.com/opendigitaleducation/ode-react-ui/pull/209) [`595696b`](https://github.com/opendigitaleducation/ode-react-ui/commit/595696b040307afa1ce1552e6d3a6d541500fd86) Thanks [@david-cc](https://github.com/david-cc)! - Add isAdml Hook
+
+- [#208](https://github.com/opendigitaleducation/ode-react-ui/pull/208) [`1044336`](https://github.com/opendigitaleducation/ode-react-ui/commit/1044336f285b258f9b010e4bd6ee4a9a50b0b78b) Thanks [@david-cc](https://github.com/david-cc)! - Add Xiti hook
+
 ## 2.1.0-dev.11
 
 ### Patch Changes
