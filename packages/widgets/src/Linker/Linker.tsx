@@ -1,8 +1,8 @@
 import { ChangeEvent, useEffect, useState } from "react";
 
+import { Button } from "@ode-react-ui/components";
 import clsx from "clsx";
 
-import { Button } from "../../Button";
 import ExternalLinker from "./ExternalLinker";
 import InternalLinker, { InternalLink } from "./InternalLinker";
 import { AppSearchResult, LinkerModel } from "./LinkerModel";

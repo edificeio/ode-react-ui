@@ -1,10 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import LinkerExtension, {
-  LinkerExtensionProps,
-} from "../_extensions/Linker/LinkerExtension";
-import { DemoEditor } from ".";
-import React from "react";
+import DemoEditor from "./DemoEditor";
+import LinkerExtension from "../extensions/Linker/LinkerExtension";
 
 export default {
   title: "Rich Text Editor/Demo",

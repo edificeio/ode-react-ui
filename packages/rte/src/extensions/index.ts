@@ -1,12 +1,11 @@
-import { ModalProps } from "../../Modal";
-import { PopoverProps } from "../../Popover";
-
 /* Liens utiles TipTap
 [GUIDE]  Customiser une extension :             https://tiptap.dev/guide/custom-extensions#name
 [API]    Contenu et paramétrage du StarterKit : https://tiptap.dev/api/extensions/starter-kit
 [API]    Liste des extensions :                 https://tiptap.dev/api/extensions
 [GITHUB] Code source des extensions :           https://github.com/ueberdosis/tiptap/tree/main/packages
 */
+
+import { ModalProps, PopoverProps } from "@ode-react-ui/components";
 
 /** Available extensions */
 export type RteExtensionType = "bold" | "italic" | "linker";

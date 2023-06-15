@@ -2,11 +2,12 @@ import { Meta, StoryObj } from "@storybook/react";
 
 import Linker, { LinkerProps } from "./Linker";
 import { AppSearchResult } from "./LinkerModel";
+import React from "react";
 
 export default {
-  title: "Widget/Linker",
+  title: "Widgets/Linker",
   component: Linker,
-  args: {
+  /* args: {
     appPrefixes: ["wiki", "blog", "actualites"],
     onSearch: (appPrefix: string, term: string): Promise<AppSearchResult[]> => {
       return Promise.resolve(
@@ -53,12 +54,11 @@ export default {
           return Promise.reject("not.implemented");
       }
     },
-  },
+  }, */
 } as Meta<typeof Linker>;
 
 type Story = StoryObj<typeof Linker>;
 
 export const Base: Story = {
   render: (args: LinkerProps) => <Linker {...args} />,
-  args: {},
 };

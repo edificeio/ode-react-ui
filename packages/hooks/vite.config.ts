@@ -12,7 +12,6 @@ export default defineConfig({
     minifyIdentifiers: false,
   },
   build: {
-    target: "esnext",
     lib: {
       entry: {
         index: resolve(__dirname, "src/index.ts"),
@@ -24,7 +23,7 @@ export default defineConfig({
         preserveModules: true,
         preserveModulesRoot: "src",
       },
-      external: [...Object.keys(peerDependencies)],
+      external: [...Object.keys(peerDependencies), "react/jsx-runtime"],
     },
   },
   plugins: [react(), dts(), visualizer()],

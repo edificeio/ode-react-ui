@@ -1,0 +1,73 @@
+{
+  "name": "@ode-react-ui/rte",
+  "version": "1.0.0",
+  "private": false,
+  "description": "",
+  "keywords": [
+    "react",
+    "frontend",
+    "opendigitaleducation"
+  ],
+  "homepage": "https://github.com/opendigitaleducation/ode-react-ui",
+  "bugs": {
+    "url": "https://github.com/opendigitaleducation/ode-react-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opendigitaleducation/ode-react-ui.git"
+  },
+  "license": "AGPL-3.0",
+  "author": "Open Digital Education",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "fix": "eslint --fix \"**/*.{ts,tsx}\"",
+    "format": "concurrently \"yarn:format:*\"",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "lint": "eslint \"**/*.{ts,tsx}\"",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@tiptap/extension-link": "^2.0.3",
+    "@tiptap/pm": "^2.0.3",
+    "@tiptap/react": "^2.0.3",
+    "@tiptap/starter-kit": "^2.0.3"
+  },
+  "devDependencies": {
+    "@ode-react-ui/components": "*",
+    "@ode-react-ui/widgets": "*",
+    "@types/node": "20.2.5",
+    "@types/react": "18.2.8",
+    "@types/react-dom": "18.2.4",
+    "clsx": "1.2.1",
+    "concurrently": "8.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hot-toast": "2.4.1"
+  },
+  "peerDependencies": {
+    "@ode-react-ui/widgets": "*",
+    "@ode-react-ui/components": "*",
+    "clsx": "1.2.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hot-toast": "2.4.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

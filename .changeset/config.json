@@ -11,7 +11,9 @@
       "@ode-react-ui/components",
       "@ode-react-ui/core",
       "@ode-react-ui/hooks",
-      "@ode-react-ui/icons"
+      "@ode-react-ui/icons",
+      "@ode-react-ui/rte",
+      "@ode-react-ui/widgets"
     ]
   ],
   "access": "public",

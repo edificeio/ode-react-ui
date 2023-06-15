@@ -8,16 +8,6 @@
     "dev": {
       "cache": false
     },
-    "deploy": {
-      "dependsOn": ["build", "lint", "fix"],
-      "outputs": []
-    },
-    "start-storybook": {
-      "cache": false
-    },
-    "build-storybook": {
-      "outputs": ["dist/**"]
-    },
     "fix": {
       "outputs": []
     },

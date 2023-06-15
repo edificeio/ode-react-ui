@@ -1,9 +1,12 @@
 import type { StorybookConfig } from "@storybook/react-vite";
+
 const config: StorybookConfig = {
   stories: [
     "../packages/core/src/**/*.stories.@(js|jsx|ts|tsx)",
     "../packages/components/src/**/*.stories.@(js|jsx|ts|tsx)",
     "../packages/hooks/src/**/*.stories.@(js|jsx|ts|tsx)",
+    "../packages/rte/src/**/*.stories.@(js|jsx|ts|tsx)",
+    "../packages/widgets/src/**/*.stories.@(js|jsx|ts|tsx)",
     "../docs/**/*.mdx",
   ],
   staticDirs: ["../public"],
@@ -18,8 +21,9 @@ const config: StorybookConfig = {
   },
   framework: {
     name: "@storybook/react-vite",
-    options: {},
+    options: { strictMode: false },
   },
+  features: { storyStoreV7: true },
   docs: {
     autodocs: true,
   },

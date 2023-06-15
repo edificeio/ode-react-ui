@@ -1,13 +1,14 @@
-import { RteModalProps, RteRenderedExtension, RteRenderType } from "..";
-import { Linker, LinkerProps } from "../../../_widgets/Linker";
+import { Button, Modal } from "@ode-react-ui/components";
 import {
   AppSearchResult,
+  Linker,
   LinkerModel,
-} from "../../../_widgets/Linker/LinkerModel";
-import { Button } from "../../../Button";
-import ModalFooter from "../../../Modal/ModalFooter";
-import { AbstractRteExtension } from "../AbstractRteExtension";
+  LinkerProps,
+} from "@ode-react-ui/widgets";
+
 import { TipTapLinkerMetadata } from "./TipTapLinker";
+import { RteModalProps, RteRenderedExtension, RteRenderType } from "..";
+import { AbstractRteExtension } from "../AbstractRteExtension";
 
 //--------------------------------
 //------ React-related code ------
@@ -144,25 +145,31 @@ export default class LinkerExtension
     return (
       <>
         <Linker {...this.linkerProps} />
-        <ModalFooter>
-          <Button
-            type="button"
-            color="tertiary"
-            variant="ghost"
-            onClick={(e) => handleClick(false)}
-          >
-            Cancel
-          </Button>
-          <Button
-            id="validateButtonId"
-            type="button"
-            color="primary"
-            variant="filled"
-            onClick={(e) => handleClick(true)}
-          >
-            OK
-          </Button>
-        </ModalFooter>
+        <Modal
+          isOpen
+          id="linker-extension"
+          onModalClose={() => console.log("close")}
+        >
+          <Modal.Footer>
+            <Button
+              type="button"
+              color="tertiary"
+              variant="ghost"
+              onClick={(e) => handleClick(false)}
+            >
+              Cancel
+            </Button>
+            <Button
+              id="validateButtonId"
+              type="button"
+              color="primary"
+              variant="filled"
+              onClick={(e) => handleClick(true)}
+            >
+              OK
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </>
     );
   }

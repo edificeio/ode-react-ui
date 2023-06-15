@@ -20,7 +20,8 @@ export default defineConfig({
     minifyIdentifiers: false,
   },
   build: {
-    target: "esnext",
+    minify: false,
+    target: "esnext", // use w/e here but don't set it too loose
     lib: {
       entry: {
         index: resolve(__dirname, "src/index.ts"),
@@ -35,6 +36,7 @@ export default defineConfig({
       external: [
         ...Object.keys(dependencies),
         ...Object.keys(peerDependencies),
+        "react/jsx-runtime",
         "@ode-react-ui/icons/nav",
       ],
     },

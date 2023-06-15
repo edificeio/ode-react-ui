@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 import { Filter, Plus, Settings } from "@ode-react-ui/icons";
-import DropdownTrigger, { DropdownTriggerProps } from "./DropdownTrigger";
+import DropdownTrigger from "./DropdownTrigger";
 import React from "react";
 
 export default {

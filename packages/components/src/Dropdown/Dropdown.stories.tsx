@@ -2,8 +2,6 @@ import { useState } from "react";
 
 import { Meta, StoryObj } from "@storybook/react";
 
-import { Base as SelectListStory } from "./SelectList.stories";
-
 import Dropdown from "./Dropdown";
 import DropdownTrigger from "./DropdownTrigger";
 import {

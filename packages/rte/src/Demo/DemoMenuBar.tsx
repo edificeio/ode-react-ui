@@ -1,19 +1,23 @@
 import { useState } from "react";
 
+import {
+  PopoverProps,
+  ModalProps,
+  Popover,
+  Modal,
+} from "@ode-react-ui/components";
 import { Editor } from "@tiptap/react";
 import clsx from "clsx";
 
-import { Modal, ModalProps } from "../../Modal";
-import { Popover, PopoverProps } from "../../Popover";
 import {
   RteExtension,
   RteRenderedExtension,
   RteExtensionType,
   instanceofRteRenderedExtension,
-} from "../_extensions";
-import BoldExtension from "../_extensions/Bold/BoldExtension";
-import ItalicExtension from "../_extensions/Italic/ItalicExtension";
-import LinkerExtension from "../_extensions/Linker/LinkerExtension";
+} from "../extensions";
+import BoldExtension from "../extensions/Bold/BoldExtension";
+import ItalicExtension from "../extensions/Italic/ItalicExtension";
+import LinkerExtension from "../extensions/Linker/LinkerExtension";
 
 export interface DemoMenuBarProps {
   /** Attach the bar to this rich text editor instance. */

@@ -1,0 +1,72 @@
+{
+  "name": "@ode-react-ui/widgets",
+  "version": "1.0.0",
+  "private": false,
+  "description": "@ode-react-ui react widgets",
+  "keywords": [
+    "react",
+    "frontend",
+    "widgets",
+    "ui"
+  ],
+  "homepage": "https://github.com/opendigitaleducation/ode-react-ui/tree/main/packages/widgets#readme",
+  "bugs": {
+    "url": "https://github.com/opendigitaleducation/ode-react-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opendigitaleducation/ode-react-ui.git"
+  },
+  "license": "AGPL-3.0",
+  "author": "Open Digital Education",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "fix": "eslint --fix \"**/*.{ts,tsx}\"",
+    "format": "concurrently \"yarn:format:*\"",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "lint": "eslint \"**/*.{ts,tsx}\"",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@ode-react-ui/components": "*",
+    "@ode-react-ui/core": "*",
+    "@ode-react-ui/hooks": "*",
+    "@ode-react-ui/icons": "*",
+    "@types/node": "20.2.5",
+    "@types/react": "18.2.8",
+    "@types/react-dom": "18.2.4",
+    "clsx": "1.2.1",
+    "concurrently": "8.1.0",
+    "ode-ts-client": "dev",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "peerDependencies": {
+    "@ode-react-ui/components": "*",
+    "@ode-react-ui/core": "*",
+    "@ode-react-ui/hooks": "*",
+    "@ode-react-ui/icons": "*",
+    "clsx": "1.2.1",
+    "ode-ts-client": "dev",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
