@@ -15,6 +15,8 @@ type OmittedProps = "children" | "leftIcon" | "rightIcon";
 
 export interface IconButtonProps extends Omit<ButtonProps, OmittedProps> {
   icon?: ReactNode;
+  disabledHover?: boolean;
+  backgroundColor?: string;
 }
 
 /**
@@ -23,18 +25,30 @@ export interface IconButtonProps extends Omit<ButtonProps, OmittedProps> {
 
 const IconButton = forwardRef(
   (
-    { icon, className, ...restProps }: IconButtonProps,
+    {
+      icon,
+      className,
+      disabledHover,
+      backgroundColor,
+      ...restProps
+    }: IconButtonProps,
     ref?: Ref<ButtonRef>,
   ) => {
     const buttonProps = {
       ...restProps,
       ...{
-        className: clsx("btn-icon btn-sm", className),
+        className: clsx(
+          "btn-icon btn-sm",
+          {
+            "disabled-hover": disabledHover,
+          },
+          className,
+        ),
       },
     };
 
     return (
-      <Button ref={ref} {...buttonProps}>
+      <Button ref={ref} {...buttonProps} style={{ backgroundColor }}>
         {icon}
       </Button>
     );

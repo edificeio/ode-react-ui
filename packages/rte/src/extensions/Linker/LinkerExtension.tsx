@@ -142,35 +142,6 @@ export default class LinkerExtension
       }
     };
 
-    return (
-      <>
-        <Linker {...this.linkerProps} />
-        <Modal
-          isOpen
-          id="linker-extension"
-          onModalClose={() => console.log("close")}
-        >
-          <Modal.Footer>
-            <Button
-              type="button"
-              color="tertiary"
-              variant="ghost"
-              onClick={(e) => handleClick(false)}
-            >
-              Cancel
-            </Button>
-            <Button
-              id="validateButtonId"
-              type="button"
-              color="primary"
-              variant="filled"
-              onClick={(e) => handleClick(true)}
-            >
-              OK
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </>
-    );
+    return <Linker {...this.linkerProps} />;
   }
 }

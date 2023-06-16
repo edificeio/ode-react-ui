@@ -4,3 +4,10 @@
   font-weight: 400;
   src: url(../themes/fonts/kg-june/KGJuneBug.ttf);
 }
+
+@font-face {
+  font-family: "OpenDyslexic";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../themes/fonts/dyslexic/OpenDyslexic.woff);
+}

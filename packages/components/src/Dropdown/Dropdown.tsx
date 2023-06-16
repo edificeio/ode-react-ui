@@ -1,5 +1,6 @@
 import React, { ReactElement, useEffect, useState } from "react";
 
+import { Placement } from "@popperjs/core";
 import { animated, useTransition } from "@react-spring/web";
 import clsx from "clsx";
 import { usePopper } from "react-popper";
@@ -15,9 +16,17 @@ export interface DropdownProps {
    * Element to be wrapped as Tooltip trigger
    */
   trigger: ReactElement<DropdownTriggerProps>;
+  /**
+   * Placement position of the dropdown
+   */
+  placement?: Placement;
 }
 
-const Dropdown = ({ trigger, content }: DropdownProps) => {
+const Dropdown = ({
+  trigger,
+  content,
+  placement = "top-start",
+}: DropdownProps) => {
   const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(
     null,
   );
@@ -26,7 +35,7 @@ const Dropdown = ({ trigger, content }: DropdownProps) => {
   );
 
   const { styles, attributes } = usePopper(referenceElement, popperElement, {
-    placement: "bottom-start",
+    placement,
     modifiers: [{ name: "offset", options: { offset: [0, 12] } }],
   });
 
