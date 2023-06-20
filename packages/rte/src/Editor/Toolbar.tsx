@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 
 import { IconButton } from "@ode-react-ui/components";
 import { Dropdown } from "@ode-react-ui/components";
@@ -35,14 +35,6 @@ export interface ToolbarProps {
   /** List of extensions to instanciate. */
   extensions?: Array<RteExtensionType>;
 }
-
-/** Internal representation of the available extensions. */
-/* type ExtensionCatalog = {
-  [type in RteExtensionType]?: {
-    extension: RteExtension;
-    isActive: () => boolean;
-  };
-}; */
 
 const typographies: OptionListItemType[] = [
   {
@@ -113,11 +105,9 @@ const emojis = [
   },
 ];
 
-const Toolbar = ({ editor, extensions }: ToolbarProps) => {
-  const [option, setOption] = useState<(string | number)[]>(
-    typographies[0].label,
-  );
-  const [size, setSize] = useState<(string | number)[]>([]);
+const Toolbar = ({ editor }: ToolbarProps) => {
+  const [option] = useState<string>(typographies[0].label);
+  const [size] = useState<(string | number)[]>([]);
 
   if (!editor) {
     return null;
@@ -139,30 +129,33 @@ const Toolbar = ({ editor, extensions }: ToolbarProps) => {
       >
         <IconButton
           aria-label="Add image"
+          backgroundColor="#E4F4FF"
+          className="btn-image"
+          color="tertiary"
+          disabledHover
           icon={<Image />}
           type="button"
-          className="btn-image"
-          variant="tertiary"
-          disabledHover
-          backgroundColor="#E4F4FF"
+          variant="ghost"
         />
         <IconButton
           aria-label="Add video"
+          backgroundColor="#FFEFE3"
+          className="btn-video"
+          color="tertiary"
+          disabledHover
           icon={<RecordVideo />}
           type="button"
-          className="btn-video"
-          variant="tertiary"
-          disabledHover
-          backgroundColor="#FFEFE3"
+          variant="ghost"
         />
         <IconButton
           aria-label="Add audio"
+          backgroundColor="#FAEBFF"
+          className="btn-audio"
+          disabledHover
           icon={<Mic />}
           type="button"
-          className="btn-audio"
-          variant="tertiary"
-          disabledHover
-          backgroundColor="#FAEBFF"
+          color="tertiary"
+          variant="ghost"
         />
       </div>
       <div
@@ -198,10 +191,10 @@ const Toolbar = ({ editor, extensions }: ToolbarProps) => {
             <IconButton
               aria-label="Select typo size"
               color="tertiary"
+              disabledHover
               icon={<TextSize />}
               type="button"
               variant="ghost"
-              disabledHover
             />
           }
           content={
@@ -563,9 +556,9 @@ const Toolbar = ({ editor, extensions }: ToolbarProps) => {
               {emojis.map((emoji) => (
                 <IconButton
                   aria-label="Select an emoji"
-                  key={emoji.value}
                   color="tertiary"
                   icon={emoji.label}
+                  key={emoji.value}
                   type="button"
                   variant="ghost"
                 />

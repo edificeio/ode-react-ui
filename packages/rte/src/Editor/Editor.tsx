@@ -26,7 +26,6 @@ const Editor = ({ content, extensions }: EditorProps) => {
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
-        // Configure an included extension
         heading: {
           levels: [1, 2],
         },

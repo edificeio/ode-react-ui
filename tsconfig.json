@@ -15,7 +15,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve"
+    "jsx": "react-jsx"
   },
   "exclude": ["node_modules", "template"]
 }
@@ -42,5 +42,6 @@
 //     "noFallthroughCasesInSwitch": true
 //   },
 //   "include": ["src"],
+//   "exclude": ["node_modules", "template"],
 //   "references": [{ "path": "./tsconfig.node.json" }]
 // }

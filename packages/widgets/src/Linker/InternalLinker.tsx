@@ -34,22 +34,26 @@ const InternalLinker = ({
     application: "",
     text: "",
   });
-  const handleAppChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    setModel({ ...model, application: event.target.value });
-    //loadApplicationResources();
-  };
-  const handleTextChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setModel({ ...model, text: event.target.value });
-    //loadApplicationResources();
-  };
+  const focusRef = useRef<HTMLSelectElement>(null);
 
   useEffect(() => onChange?.(model), [model]);
 
-  const focusRef = useRef<HTMLSelectElement>(null);
   // Auto-focus and auto-select content in the link input field.
   useEffect(() => {
     focusRef.current?.focus();
   }, []);
+
+  const handleAppChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    setModel((prevModel) => ({
+      ...prevModel,
+      application: event.target.value,
+    }));
+    //loadApplicationResources();
+  };
+  const handleTextChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setModel((prevModel) => ({ ...prevModel, text: event.target.value }));
+    //loadApplicationResources();
+  };
 
   return (
     <section>

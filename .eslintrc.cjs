@@ -62,7 +62,6 @@ module.exports = {
     "prettier.config.cjs",
     "public",
     "svgr.config.cjs",
-    "tsconfig.json",
     "vite.config.ts",
   ],
 };

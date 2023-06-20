@@ -142,6 +142,29 @@ export default class LinkerExtension
       }
     };
 
-    return <Linker {...this.linkerProps} />;
+    return (
+      <>
+        <Linker {...this.linkerProps} />
+        <Modal.Footer>
+          <Button
+            type="button"
+            color="tertiary"
+            variant="ghost"
+            onClick={(e) => handleClick(false)}
+          >
+            Cancel
+          </Button>
+          <Button
+            id="validateButtonId"
+            type="button"
+            color="primary"
+            variant="filled"
+            onClick={(e) => handleClick(true)}
+          >
+            OK
+          </Button>
+        </Modal.Footer>
+      </>
+    );
   }
 }

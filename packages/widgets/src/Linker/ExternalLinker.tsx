@@ -26,18 +26,18 @@ const ExternalLinker = ({
   onChange,
 }: ExternalLinkerProps) => {
   const [model, setModel] = useState<string>(url);
-  const handleLinkChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setModel(event.target.value);
-  };
+  const linkRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => onChange?.(model), [model]);
 
-  const linkRef = useRef<HTMLInputElement>(null);
   // Auto-focus and auto-select content in the link input field.
   useEffect(() => {
     linkRef.current?.focus();
     linkRef.current?.select();
   }, []);
+
+  const handleLinkChange = (event: ChangeEvent<HTMLInputElement>) =>
+    setModel(event.target.value);
 
   return (
     <section>

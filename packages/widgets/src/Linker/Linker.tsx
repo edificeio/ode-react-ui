@@ -112,21 +112,23 @@ const Linker = ({
     application: appPrefix,
     text: term,
   }: InternalLink) => {
-    onSearch?.(appPrefix, term).then((res) => {
-      setSearchResults(res);
-    });
+    onSearch?.(appPrefix, term).then((res) => setSearchResults(res));
   };
   // if( model.appPrefix ) {
   //   handleSearchChange( {application: model.appPrefix, text: ''} );
   // }
   const handleInternalChange = (result: AppSearchResult) => {
-    setModel({ ...model, appPrefix: result.prefix, id: result.id });
+    setModel((prevModel) => ({
+      ...prevModel,
+      appPrefix: result.prefix,
+      id: result.id,
+    }));
     onSelectInternalResource?.(result).then((url) => {
-      setModel({ ...model, href: url.toString() });
+      setModel((prevModel) => ({ ...prevModel, href: url.toString() }));
     });
   };
   const handleExternalChange = (href: string) => {
-    setModel({ ...model, href });
+    setModel((prevModel) => ({ ...prevModel, href }));
   };
 
   return (
@@ -163,7 +165,7 @@ const Linker = ({
           />
           <ul>
             {searchResults.map((res) => (
-              <li>
+              <li key={res.id}>
                 <button type="button" onClick={() => handleInternalChange(res)}>
                   {res.prefix} id={res.id}
                 </button>
@@ -172,11 +174,13 @@ const Linker = ({
           </ul>
         </>
       ) : (
-        <ExternalLinker
-          url={url}
-          labels={labels}
-          onChange={handleExternalChange}
-        />
+        <>
+          <ExternalLinker
+            url={url}
+            labels={labels}
+            onChange={handleExternalChange}
+          />
+        </>
       )}
       <div className="mt-12">
         <label>
