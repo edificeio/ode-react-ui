@@ -1,5 +1,16 @@
 # @ode-react-ui/components
 
+## 2.1.0-dev.13
+
+### Patch Changes
+
+- [`31d9bba`](https://github.com/opendigitaleducation/ode-react-ui/commit/31d9bbaa0b444b38c158d49e29c064b3aef7b229) Thanks [@ccreusat](https://github.com/ccreusat)! - yarn 3 and fix react-jsx runtime
+
+- Updated dependencies [[`31d9bba`](https://github.com/opendigitaleducation/ode-react-ui/commit/31d9bbaa0b444b38c158d49e29c064b3aef7b229)]:
+  - @ode-react-ui/hooks@2.1.0-dev.13
+  - @ode-react-ui/icons@2.1.0-dev.13
+  - @ode-react-ui/core@2.1.0-dev.13
+
 ## 2.1.0-dev.12
 
 ### Patch Changes
