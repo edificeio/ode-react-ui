@@ -36,6 +36,7 @@ export default defineConfig({
         ...Object.keys(dependencies),
         ...Object.keys(peerDependencies),
         "@ode-react-ui/icons/nav",
+        "react/jsx-runtime",
       ],
     },
   },

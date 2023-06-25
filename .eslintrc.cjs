@@ -57,12 +57,11 @@ module.exports = {
     "*.docs.mdx",
     "*.stories.tsx",
     "dist",
-    "template",
     "node_modules",
     "prettier.config.cjs",
     "public",
     "svgr.config.cjs",
-    "tsconfig.json",
+    "template",
     "vite.config.ts",
   ],
 };
