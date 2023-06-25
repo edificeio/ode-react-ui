@@ -24,7 +24,7 @@ export default defineConfig({
         preserveModules: true,
         preserveModulesRoot: "src",
       },
-      external: [...Object.keys(peerDependencies)],
+      external: [...Object.keys(peerDependencies), "react/jsx-runtime"],
     },
   },
   plugins: [react(), dts(), visualizer()],
