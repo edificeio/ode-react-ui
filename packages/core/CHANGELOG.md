@@ -1,5 +1,20 @@
 # @ode-react-ui/core
 
+## 2.1.0-dev.15
+
+### Patch Changes
+
+- [`f9c0531`](https://github.com/opendigitaleducation/ode-react-ui/commit/f9c053188f60c373427b3141c68461dedac54a5d) Thanks [@ccreusat](https://github.com/ccreusat)! - fixing previous issues
+
+- Updated dependencies [[`f9c0531`](https://github.com/opendigitaleducation/ode-react-ui/commit/f9c053188f60c373427b3141c68461dedac54a5d)]:
+  - @ode-react-ui/hooks@2.1.0-dev.15
+
+## 2.1.0-dev.14
+
+### Patch Changes
+
+- [#213](https://github.com/opendigitaleducation/ode-react-ui/pull/213) [`795ea33`](https://github.com/opendigitaleducation/ode-react-ui/commit/795ea33f1bebe45e4bde7da341ab0a7ecca8ef66) Thanks [@github-actions](https://github.com/apps/github-actions)! - fix packages version
+
 ## 2.1.0-dev.13
 
 ### Patch Changes

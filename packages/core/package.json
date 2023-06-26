@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/core",
-  "version": "2.1.0-dev.13",
+  "version": "2.1.0-dev.15",
   "description": "@ode-react-ui react core library",
   "keywords": [
     "react",
@@ -42,7 +42,7 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@ode-react-ui/hooks": "workspace:*",
+    "@ode-react-ui/hooks": "2.1.0-dev.15",
     "@tanstack/react-query": "4.29.12",
     "@types/node": "20.2.5",
     "@types/react": "18.2.8",
@@ -55,7 +55,7 @@
     "react-hot-toast": "2.4.1"
   },
   "peerDependencies": {
-    "@ode-react-ui/hooks": "workspace:*",
+    "@ode-react-ui/hooks": "2.1.0-dev.15",
     "@tanstack/react-query": "4.29.12",
     "clsx": "1.2.1",
     "ode-ts-client": "*",

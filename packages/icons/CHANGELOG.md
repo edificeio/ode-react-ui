@@ -1,5 +1,11 @@
 # @ode-react-ui/icons
 
+## 2.1.0-dev.15
+
+### Patch Changes
+
+- [`f9c0531`](https://github.com/opendigitaleducation/ode-react-ui/commit/f9c053188f60c373427b3141c68461dedac54a5d) Thanks [@ccreusat](https://github.com/ccreusat)! - fixing previous issues
+
 ## 2.1.0-dev.13
 
 ### Patch Changes
