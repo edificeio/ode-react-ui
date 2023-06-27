@@ -2695,7 +2695,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ode-react-ui/components@workspace:packages/components"
   dependencies:
-    "@ode-react-ui/core": 2.1.0-dev.13
+    "@ode-react-ui/core": 2.1.0-dev.14
     "@ode-react-ui/hooks": 2.1.0-dev.13
     "@ode-react-ui/icons": 2.1.0-dev.13
     "@popperjs/core": 2.11.8
@@ -2713,7 +2713,7 @@ __metadata:
     react-popper: 2.3.0
     swiper: 9.3.2
   peerDependencies:
-    "@ode-react-ui/core": 2.1.0-dev.13
+    "@ode-react-ui/core": 2.1.0-dev.14
     "@ode-react-ui/hooks": 2.1.0-dev.13
     "@ode-react-ui/icons": 2.1.0-dev.13
     "@react-spring/web": 9.7.2
@@ -2727,7 +2727,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ode-react-ui/core@2.1.0-dev.13, @ode-react-ui/core@workspace:packages/core":
+"@ode-react-ui/core@2.1.0-dev.14, @ode-react-ui/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@ode-react-ui/core@workspace:packages/core"
   dependencies:
