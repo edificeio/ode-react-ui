@@ -1,5 +1,16 @@
 # @ode-react-ui/components
 
+## 2.1.0-dev.14
+
+### Patch Changes
+
+- [#212](https://github.com/opendigitaleducation/ode-react-ui/pull/212) [`8533b79`](https://github.com/opendigitaleducation/ode-react-ui/commit/8533b79edcb328e967d43ef5ead9b445fb93d72d) Thanks [@Headan](https://github.com/Headan)! - add padding on card component
+
+- [#213](https://github.com/opendigitaleducation/ode-react-ui/pull/213) [`795ea33`](https://github.com/opendigitaleducation/ode-react-ui/commit/795ea33f1bebe45e4bde7da341ab0a7ecca8ef66) Thanks [@github-actions](https://github.com/apps/github-actions)! - fix packages version
+
+- Updated dependencies [[`795ea33`](https://github.com/opendigitaleducation/ode-react-ui/commit/795ea33f1bebe45e4bde7da341ab0a7ecca8ef66)]:
+  - @ode-react-ui/core@2.1.0-dev.14
+
 ## 2.1.0-dev.13
 
 ### Patch Changes

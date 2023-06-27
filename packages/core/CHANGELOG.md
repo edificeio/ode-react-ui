@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 2.1.0-dev.14
+
+### Patch Changes
+
+- [#213](https://github.com/opendigitaleducation/ode-react-ui/pull/213) [`795ea33`](https://github.com/opendigitaleducation/ode-react-ui/commit/795ea33f1bebe45e4bde7da341ab0a7ecca8ef66) Thanks [@github-actions](https://github.com/apps/github-actions)! - fix packages version
+
 ## 2.1.0-dev.13
 
 ### Patch Changes
