@@ -21,7 +21,7 @@ jobs:
           node-version: 16
 
       - name: Install Dependencies & Build
-        run: yarn
+        run: yarn install --production
 
       - name: Write NPM_TOKEN
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
