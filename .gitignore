@@ -29,5 +29,8 @@ dist-ssr
 # Editor directories and files
 .vscode/*
 
+# Tgz test files
 *.tgz
 
+# Yarn Cache
+.yarn/cache

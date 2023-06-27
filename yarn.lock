@@ -5,6 +5,13 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@aashutoshrathi/word-wrap@npm:^1.2.3":
+  version: 1.2.6
+  resolution: "@aashutoshrathi/word-wrap@npm:1.2.6"
+  checksum: ada901b9e7c680d190f1d012c84217ce0063d8f5c5a7725bb91ec3c5ed99bb7572680eb2d2938a531ccbaec39a95422fcd8a6b4a13110c7d98dd75402f66a0cd
+  languageName: node
+  linkType: hard
+
 "@ampproject/remapping@npm:^2.2.0":
   version: 2.2.1
   resolution: "@ampproject/remapping@npm:2.2.1"
@@ -2695,7 +2702,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ode-react-ui/components@workspace:packages/components"
   dependencies:
-    "@ode-react-ui/core": 2.1.0-dev.13
+    "@ode-react-ui/core": 2.1.0-dev.14
     "@ode-react-ui/hooks": 2.1.0-dev.13
     "@ode-react-ui/icons": 2.1.0-dev.13
     "@popperjs/core": 2.11.8
@@ -2713,7 +2720,7 @@ __metadata:
     react-popper: 2.3.0
     swiper: 9.3.2
   peerDependencies:
-    "@ode-react-ui/core": 2.1.0-dev.13
+    "@ode-react-ui/core": 2.1.0-dev.14
     "@ode-react-ui/hooks": 2.1.0-dev.13
     "@ode-react-ui/icons": 2.1.0-dev.13
     "@react-spring/web": 9.7.2
@@ -2722,12 +2729,11 @@ __metadata:
     react: 18.2.0
     react-dom: 18.2.0
     react-hot-toast: 2.4.1
-    react-popper: 2.3.0
     swiper: 9.3.2
   languageName: unknown
   linkType: soft
 
-"@ode-react-ui/core@2.1.0-dev.13, @ode-react-ui/core@workspace:packages/core":
+"@ode-react-ui/core@2.1.0-dev.14, @ode-react-ui/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@ode-react-ui/core@workspace:packages/core"
   dependencies:
@@ -3408,17 +3414,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/channel-postmessage@npm:7.0.23":
-  version: 7.0.23
-  resolution: "@storybook/channel-postmessage@npm:7.0.23"
+"@storybook/channel-postmessage@npm:7.0.24":
+  version: 7.0.24
+  resolution: "@storybook/channel-postmessage@npm:7.0.24"
   dependencies:
-    "@storybook/channels": 7.0.23
-    "@storybook/client-logger": 7.0.23
-    "@storybook/core-events": 7.0.23
+    "@storybook/channels": 7.0.24
+    "@storybook/client-logger": 7.0.24
+    "@storybook/core-events": 7.0.24
     "@storybook/global": ^5.0.0
     qs: ^6.10.0
     telejson: ^7.0.3
-  checksum: 6ecac4b7e778b4e015e3b645ca02b072242b6bc7d1638646459bc7dd022a51c8bd1c4ab8c2b206e67c1dc53f4d74eccc61b7b2c782bb7cd41f5690c0dd55466a
+  checksum: 950e52c80463ff84de4c2c94a4c01b9366af86f0f6094a4f84bbce806561c332a9fc63098e8ba4cc066626cb6954e7c04ba3071a2691ae7c5aaa8348c3cfa909
   languageName: node
   linkType: hard
 
@@ -3441,10 +3447,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/channels@npm:7.0.23":
-  version: 7.0.23
-  resolution: "@storybook/channels@npm:7.0.23"
-  checksum: 259074e34c8ed1052f790f7bafc7c2599a8e823fd9e8fc142c497f44bb3d08a415ee0974f02d971f4e2ca5a4d8e860675563352679cdd55bd1d4d37ee29fe038
+"@storybook/channels@npm:7.0.24":
+  version: 7.0.24
+  resolution: "@storybook/channels@npm:7.0.24"
+  checksum: 68f8fb9c0f59a21cf471aff0518aba0997e5691ca06c0d1d78a1578a9ecabce53b8d82b39a64f96d06669bfab68d99fe9d13fad6552f21df73e799e2170cd5b2
   languageName: node
   linkType: hard
 
@@ -3507,12 +3513,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/client-logger@npm:7.0.23, @storybook/client-logger@npm:^7.0.0-beta.0 || ^7.0.0-rc.0 || ^7.0.0":
-  version: 7.0.23
-  resolution: "@storybook/client-logger@npm:7.0.23"
+"@storybook/client-logger@npm:7.0.24, @storybook/client-logger@npm:^7.0.0-beta.0 || ^7.0.0-rc.0 || ^7.0.0":
+  version: 7.0.24
+  resolution: "@storybook/client-logger@npm:7.0.24"
   dependencies:
     "@storybook/global": ^5.0.0
-  checksum: ba63da80f0704bcaea55b43497880ff449b221ed2f799d2140d1d8e29b06533843619b902739ee432481af97d6566d5dcf4fbe25e54d721f07b6dc9ea4ad003d
+  checksum: fb71495535d3be50c6199b04caed286fd13de8d83e07fce5001bd4db247957b148f889c449074facfaa07fec39080de34d412985a0f4be6920cd5d34c3ce56fa
   languageName: node
   linkType: hard
 
@@ -3600,10 +3606,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/core-events@npm:7.0.23":
-  version: 7.0.23
-  resolution: "@storybook/core-events@npm:7.0.23"
-  checksum: 0a7e6bee982b32145942740136ec8c492082dfb2362e52531d9deaefadd8878da477328409709fc5e48c0066ea3941f73ff59bac32c7eb2c75cef0f9509a5052
+"@storybook/core-events@npm:7.0.24":
+  version: 7.0.24
+  resolution: "@storybook/core-events@npm:7.0.24"
+  checksum: 1bf563ed16551acf7caee56c5be5a47f67612b13ad1e97bb23cdd3f337a2fc82a0c0160421f02f254dba7d7bfc641c6aa36b534903ffca9afb2ec67c01870845
   languageName: node
   linkType: hard
 
@@ -3745,15 +3751,15 @@ __metadata:
   linkType: hard
 
 "@storybook/instrumenter@npm:^7.0.0-beta.0 || ^7.0.0-rc.0 || ^7.0.0":
-  version: 7.0.23
-  resolution: "@storybook/instrumenter@npm:7.0.23"
+  version: 7.0.24
+  resolution: "@storybook/instrumenter@npm:7.0.24"
   dependencies:
-    "@storybook/channels": 7.0.23
-    "@storybook/client-logger": 7.0.23
-    "@storybook/core-events": 7.0.23
+    "@storybook/channels": 7.0.24
+    "@storybook/client-logger": 7.0.24
+    "@storybook/core-events": 7.0.24
     "@storybook/global": ^5.0.0
-    "@storybook/preview-api": 7.0.23
-  checksum: d81e3b49b4120570b7493c31532275127330b7dc714da3138db28150594b58211343bfe4eb01874b0e53e9e02d091d017c4f2f34a22c024da1bb57d3c97163d2
+    "@storybook/preview-api": 7.0.24
+  checksum: af115fda2911920a9caf765ec0cf51a8d9f0aad647790acfba4154c21c6908be6655289545d6bb4a74b19045fc21d57149ee25166e271a4e766e1982b581541c
   languageName: node
   linkType: hard
 
@@ -3839,17 +3845,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/preview-api@npm:7.0.23":
-  version: 7.0.23
-  resolution: "@storybook/preview-api@npm:7.0.23"
+"@storybook/preview-api@npm:7.0.24":
+  version: 7.0.24
+  resolution: "@storybook/preview-api@npm:7.0.24"
   dependencies:
-    "@storybook/channel-postmessage": 7.0.23
-    "@storybook/channels": 7.0.23
-    "@storybook/client-logger": 7.0.23
-    "@storybook/core-events": 7.0.23
+    "@storybook/channel-postmessage": 7.0.24
+    "@storybook/channels": 7.0.24
+    "@storybook/client-logger": 7.0.24
+    "@storybook/core-events": 7.0.24
     "@storybook/csf": ^0.1.0
     "@storybook/global": ^5.0.0
-    "@storybook/types": 7.0.23
+    "@storybook/types": 7.0.24
     "@types/qs": ^6.9.5
     dequal: ^2.0.2
     lodash: ^4.17.21
@@ -3858,7 +3864,7 @@ __metadata:
     synchronous-promise: ^2.0.15
     ts-dedent: ^2.0.0
     util-deprecate: ^1.0.2
-  checksum: 0dc9b6b454ebfec09a6646cf738d616ab45864aef5a7cee59aa9dbb11a79650474d05fdd34461e269a68cf72f0961109c6bad6798c37617aea4efd362223b3ea
+  checksum: ce702286652794b6517b16671692c621a5c9c14364e98cfee795b9b3874d29cd3de82f349f414450897ae077f58784f750de3472707367924eb29f36f9231726
   languageName: node
   linkType: hard
 
@@ -4005,15 +4011,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/types@npm:7.0.23":
-  version: 7.0.23
-  resolution: "@storybook/types@npm:7.0.23"
+"@storybook/types@npm:7.0.24":
+  version: 7.0.24
+  resolution: "@storybook/types@npm:7.0.24"
   dependencies:
-    "@storybook/channels": 7.0.23
+    "@storybook/channels": 7.0.24
     "@types/babel__core": ^7.0.0
     "@types/express": ^4.7.0
-    file-system-cache: ^2.0.0
-  checksum: da8f65c0846aea047763bf83e5d941dbf63dbd472c2b8435cead6de5473e01c8bc8622d463fe2863dab054958bfbe4f53ceb307e3fdcf5417613874d50468433
+    file-system-cache: 2.3.0
+  checksum: 38bcd0c8a43760309281de433636c2d6ca4d59bfd99de62382afef8235b0a1dcf8fa9dae68263837962ee3a85cfd55f6e4e82adcba65cf07f48362f716c8cfec
   languageName: node
   linkType: hard
 
@@ -5895,9 +5901,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001503":
-  version: 1.0.30001508
-  resolution: "caniuse-lite@npm:1.0.30001508"
-  checksum: 0a083ed92194d87e608fc35cac65830a27900249729eb8a68e270f866f2c4f83396c2e54eb47b0ef71360682174dd74e2e68eac0b8d407d125611c7bc12488eb
+  version: 1.0.30001509
+  resolution: "caniuse-lite@npm:1.0.30001509"
+  checksum: b08a98bf884182741d015569173162e5dfb804da22a14cb18c052be6b5f04e32312ff849b31f787b85091d1b1dfd58b128d9878c96e3bb632a1a0a8761548407
   languageName: node
   linkType: hard
 
@@ -6927,9 +6933,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.431":
-  version: 1.4.441
-  resolution: "electron-to-chromium@npm:1.4.441"
-  checksum: 807a3659daf9ac376c3b7a2d19965e186a8c8a4b2498a911c96bc80f43701ec6e9268c382b4e3155ce0def4c9e35071de6a0506dd69b822bd9592ad8de71bc91
+  version: 1.4.442
+  resolution: "electron-to-chromium@npm:1.4.442"
+  checksum: 2905d01dc9b888ec2b3687801d130e868e951052d856727843e1ed22377e7887d472fd67854392c3944ea329865581a634e1e32e9c077dac63e1542fbc9847d2
   languageName: node
   linkType: hard
 
@@ -7737,13 +7743,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"file-system-cache@npm:^2.0.0":
-  version: 2.4.0
-  resolution: "file-system-cache@npm:2.4.0"
+"file-system-cache@npm:2.3.0":
+  version: 2.3.0
+  resolution: "file-system-cache@npm:2.3.0"
   dependencies:
     fs-extra: 11.1.1
     ramda: 0.29.0
-  checksum: 861bbdc65da4eff6371324cfd60061216328c604a19cab1e9e39e453ae483afedb9c3118c3ab2f6b7ab8a3d8e6deba68e26f41be5a8c6afd19fc15b7a70c03bd
+  checksum: 74afa2870a062500643d41e02d1fbd47a3f30100f9e153dec5233d59f05545f4c8ada6085629d624e043479ac28c0cafc31824f7b49a3f997efab8cc5d05bfee
+  languageName: node
+  linkType: hard
+
+"file-system-cache@npm:^2.0.0":
+  version: 2.4.1
+  resolution: "file-system-cache@npm:2.4.1"
+  dependencies:
+    fs-extra: 11.1.1
+    ramda: 0.29.0
+  checksum: f344f3b9ebc211a43950fe6f752173ea68a75a1aef7f4f3e6ac8e4e12ec7da51101178f0a22487601c51f3b0e58575a04131e8fca93e66db03e6e697360704bd
   languageName: node
   linkType: hard
 
@@ -7859,9 +7875,9 @@ __metadata:
   linkType: hard
 
 "flow-parser@npm:0.*":
-  version: 0.210.0
-  resolution: "flow-parser@npm:0.210.0"
-  checksum: e6883ce262fe6b8ccaa247f584190c83119c77cedd92c7ad12b015bcbd2c30db6f229b296e52008670ae14ec832bbf1a4fad9b31577a94cf010b9b008902991d
+  version: 0.210.1
+  resolution: "flow-parser@npm:0.210.1"
+  checksum: 220ff19326f722b0d2e6d8c23600ae424027dba1f969114ea60bae93ad81ea69299b728439e7a08e23af4422348b45c8a954857323ad258fc0187649afc29591
   languageName: node
   linkType: hard
 
@@ -8219,17 +8235,17 @@ __metadata:
   linkType: hard
 
 "glob@npm:^10.2.2":
-  version: 10.3.0
-  resolution: "glob@npm:10.3.0"
+  version: 10.3.1
+  resolution: "glob@npm:10.3.1"
   dependencies:
     foreground-child: ^3.1.0
     jackspeak: ^2.0.3
     minimatch: ^9.0.1
     minipass: ^5.0.0 || ^6.0.2
-    path-scurry: ^1.7.0
+    path-scurry: ^1.10.0
   bin:
     glob: dist/cjs/src/bin.js
-  checksum: 6fa4ac0a86ffec1c5715a2e6fbdd63e1e7f1c2c8f5db08cc3256cdfcb81093678e7c80a3d100b502a1b9d141369ecf87bc24fe2bcb72acec7b14626d358a4eb0
+  checksum: 19c8c2805658b1002fecf0722cd609a33153d756a0d5260676bd0e9c5e6ef889ec9cce6d3dac0411aa90bce8de3d14f25b6f5589a3292582cccbfeddd0e98cc4
   languageName: node
   linkType: hard
 
@@ -9762,10 +9778,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lru-cache@npm:^9.1.1":
-  version: 9.1.2
-  resolution: "lru-cache@npm:9.1.2"
-  checksum: d3415634be3908909081fc4c56371a8d562d9081eba70543d86871b978702fffd0e9e362b83921b27a29ae2b37b90f55675aad770a54ac83bb3e4de5049d4b15
+"lru-cache@npm:^9.1.1 || ^10.0.0":
+  version: 10.0.0
+  resolution: "lru-cache@npm:10.0.0"
+  checksum: 18f101675fe283bc09cda0ef1e3cc83781aeb8373b439f086f758d1d91b28730950db785999cd060d3c825a8571c03073e8c14512b6655af2188d623031baf50
   languageName: node
   linkType: hard
 
@@ -10637,16 +10653,16 @@ __metadata:
   linkType: hard
 
 "optionator@npm:^0.9.1":
-  version: 0.9.1
-  resolution: "optionator@npm:0.9.1"
+  version: 0.9.3
+  resolution: "optionator@npm:0.9.3"
   dependencies:
+    "@aashutoshrathi/word-wrap": ^1.2.3
     deep-is: ^0.1.3
     fast-levenshtein: ^2.0.6
     levn: ^0.4.1
     prelude-ls: ^1.2.1
     type-check: ^0.4.0
-    word-wrap: ^1.2.3
-  checksum: dbc6fa065604b24ea57d734261914e697bd73b69eff7f18e967e8912aa2a40a19a9f599a507fa805be6c13c24c4eae8c71306c239d517d42d4c041c942f508a0
+  checksum: 09281999441f2fe9c33a5eeab76700795365a061563d66b098923eb719251a42bdbe432790d35064d0816ead9296dbeb1ad51a733edf4167c96bd5d0882e428a
   languageName: node
   linkType: hard
 
@@ -10872,13 +10888,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path-scurry@npm:^1.7.0":
-  version: 1.9.2
-  resolution: "path-scurry@npm:1.9.2"
+"path-scurry@npm:^1.10.0":
+  version: 1.10.0
+  resolution: "path-scurry@npm:1.10.0"
   dependencies:
-    lru-cache: ^9.1.1
+    lru-cache: ^9.1.1 || ^10.0.0
     minipass: ^5.0.0 || ^6.0.2
-  checksum: 92888dfb68e285043c6d3291c8e971d5d2bc2f5082f4d7b5392896f34be47024c9d0a8b688dd7ae6d125acc424699195474927cb4f00049a9b1ec7c4256fa8e0
+  checksum: 3b66a4a6ab66e45755b577c966ecf0da92d3e068b3c992d8f69aa2cc908ef4eda9358253e9b4f86cad43d3ad810ec445be164105975f5cb3fdab68459c59dc6e
   languageName: node
   linkType: hard
 
@@ -13721,7 +13737,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"word-wrap@npm:^1.2.3, word-wrap@npm:~1.2.3":
+"word-wrap@npm:~1.2.3":
   version: 1.2.3
   resolution: "word-wrap@npm:1.2.3"
   checksum: 30b48f91fcf12106ed3186ae4fa86a6a1842416df425be7b60485de14bec665a54a68e4b5156647dec3a70f25e84d270ca8bc8cd23182ed095f5c7206a938c1f
