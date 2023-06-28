@@ -1,5 +1,36 @@
 # @ode-react-ui/core
 
+## 2.1.0
+
+### Patch Changes
+
+- [`4c24054`](https://github.com/opendigitaleducation/ode-react-ui/commit/4c24054833b9a30c4ec0b16ff9a53348ed1da06e) Thanks [@ccreusat](https://github.com/ccreusat)! - update all deps
+
+- [`79f87a8`](https://github.com/opendigitaleducation/ode-react-ui/commit/79f87a8a83f0148d54e4ed372681d28d7d927976) Thanks [@ccreusat](https://github.com/ccreusat)! - fix automatic jsx runtime
+
+- [`a1ba468`](https://github.com/opendigitaleducation/ode-react-ui/commit/a1ba4681b3db396360f74820ff2510ad3beb8dd3) Thanks [@ccreusat](https://github.com/ccreusat)! - fixing previous issues
+
+- [`1aafd1b`](https://github.com/opendigitaleducation/ode-react-ui/commit/1aafd1b30f9bd85ae4a45b73e2f58a5f5e01d2f8) Thanks [@ccreusat](https://github.com/ccreusat)! - pre enter dev
+
+- [`3b33393`](https://github.com/opendigitaleducation/ode-react-ui/commit/3b333933bfa72936fc576dc5dc838b26f21150be) Thanks [@ccreusat](https://github.com/ccreusat)! - fix welcome user i18n
+
+- [#195](https://github.com/opendigitaleducation/ode-react-ui/pull/195) [`66c9a83`](https://github.com/opendigitaleducation/ode-react-ui/commit/66c9a83272d7bbf87014b7dc40564b65887f84cc) Thanks [@clementcreusat](https://github.com/clementcreusat)! - refactor client provider to init conf, session and idiom
+
+- [`31d9bba`](https://github.com/opendigitaleducation/ode-react-ui/commit/31d9bbaa0b444b38c158d49e29c064b3aef7b229) Thanks [@ccreusat](https://github.com/ccreusat)! - yarn 3 and fix react-jsx runtime
+
+- [#209](https://github.com/opendigitaleducation/ode-react-ui/pull/209) [`595696b`](https://github.com/opendigitaleducation/ode-react-ui/commit/595696b040307afa1ce1552e6d3a6d541500fd86) Thanks [@david-cc](https://github.com/david-cc)! - Add isAdml Hook
+
+- [#197](https://github.com/opendigitaleducation/ode-react-ui/pull/197) [`6fe0c1e`](https://github.com/opendigitaleducation/ode-react-ui/commit/6fe0c1e718d31375aa6b3fe02e87768b87b988f6) Thanks [@Headan](https://github.com/Headan)! - Upgraded version StoryBook
+
+- [`279a9ff`](https://github.com/opendigitaleducation/ode-react-ui/commit/279a9ffbdec92b5250c1fef4ba1788cf326e197d) Thanks [@ccreusat](https://github.com/ccreusat)! - fix picture avatar
+
+- [#208](https://github.com/opendigitaleducation/ode-react-ui/pull/208) [`1044336`](https://github.com/opendigitaleducation/ode-react-ui/commit/1044336f285b258f9b010e4bd6ee4a9a50b0b78b) Thanks [@david-cc](https://github.com/david-cc)! - Add Xiti hook
+
+- [`a1ba468`](https://github.com/opendigitaleducation/ode-react-ui/commit/a1ba4681b3db396360f74820ff2510ad3beb8dd3) Thanks [@ccreusat](https://github.com/ccreusat)! - fix packages version
+
+- Updated dependencies [[`4c24054`](https://github.com/opendigitaleducation/ode-react-ui/commit/4c24054833b9a30c4ec0b16ff9a53348ed1da06e), [`d44e525`](https://github.com/opendigitaleducation/ode-react-ui/commit/d44e5251d2ae3a3429a5828b7284620e2e17c4b1), [`79f87a8`](https://github.com/opendigitaleducation/ode-react-ui/commit/79f87a8a83f0148d54e4ed372681d28d7d927976), [`a1ba468`](https://github.com/opendigitaleducation/ode-react-ui/commit/a1ba4681b3db396360f74820ff2510ad3beb8dd3), [`1aafd1b`](https://github.com/opendigitaleducation/ode-react-ui/commit/1aafd1b30f9bd85ae4a45b73e2f58a5f5e01d2f8), [`31d9bba`](https://github.com/opendigitaleducation/ode-react-ui/commit/31d9bbaa0b444b38c158d49e29c064b3aef7b229), [`6fe0c1e`](https://github.com/opendigitaleducation/ode-react-ui/commit/6fe0c1e718d31375aa6b3fe02e87768b87b988f6)]:
+  - @ode-react-ui/hooks@2.1.0
+
 ## 2.1.0-dev.15
 
 ### Patch Changes

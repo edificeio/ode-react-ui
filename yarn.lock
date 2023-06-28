@@ -2702,9 +2702,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ode-react-ui/components@workspace:packages/components"
   dependencies:
-    "@ode-react-ui/core": 2.1.0-dev.15
-    "@ode-react-ui/hooks": 2.1.0-dev.15
-    "@ode-react-ui/icons": 2.1.0-dev.15
+    "@ode-react-ui/core": 2.1.0
+    "@ode-react-ui/hooks": 2.1.0
+    "@ode-react-ui/icons": 2.1.0
     "@popperjs/core": 2.11.8
     "@react-spring/web": 9.7.2
     "@types/node": 20.2.5
@@ -2720,9 +2720,9 @@ __metadata:
     react-popper: 2.3.0
     swiper: 9.3.2
   peerDependencies:
-    "@ode-react-ui/core": 2.1.0-dev.15
-    "@ode-react-ui/hooks": 2.1.0-dev.15
-    "@ode-react-ui/icons": 2.1.0-dev.15
+    "@ode-react-ui/core": 2.1.0
+    "@ode-react-ui/hooks": 2.1.0
+    "@ode-react-ui/icons": 2.1.0
     "@react-spring/web": 9.7.2
     clsx: 1.2.1
     ode-ts-client: "*"
@@ -2733,11 +2733,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ode-react-ui/core@2.1.0-dev.15, @ode-react-ui/core@workspace:packages/core":
+"@ode-react-ui/core@2.1.0, @ode-react-ui/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@ode-react-ui/core@workspace:packages/core"
   dependencies:
-    "@ode-react-ui/hooks": 2.1.0-dev.15
+    "@ode-react-ui/hooks": 2.1.0
     "@tanstack/react-query": 4.29.12
     "@types/node": 20.2.5
     "@types/react": 18.2.8
@@ -2749,7 +2749,7 @@ __metadata:
     react-dom: 18.2.0
     react-hot-toast: 2.4.1
   peerDependencies:
-    "@ode-react-ui/hooks": 2.1.0-dev.15
+    "@ode-react-ui/hooks": 2.1.0
     "@tanstack/react-query": 4.29.12
     clsx: 1.2.1
     ode-ts-client: "*"
@@ -2759,7 +2759,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ode-react-ui/hooks@2.1.0-dev.15, @ode-react-ui/hooks@workspace:packages/hooks":
+"@ode-react-ui/hooks@2.1.0, @ode-react-ui/hooks@workspace:packages/hooks":
   version: 0.0.0-use.local
   resolution: "@ode-react-ui/hooks@workspace:packages/hooks"
   dependencies:
@@ -2779,7 +2779,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ode-react-ui/icons@2.1.0-dev.15, @ode-react-ui/icons@workspace:packages/icons":
+"@ode-react-ui/icons@2.1.0, @ode-react-ui/icons@workspace:packages/icons":
   version: 0.0.0-use.local
   resolution: "@ode-react-ui/icons@workspace:packages/icons"
   dependencies:
