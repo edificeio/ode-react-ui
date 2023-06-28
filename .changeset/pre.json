@@ -1,0 +1,12 @@
+{
+  "mode": "pre",
+  "tag": "dev",
+  "initialVersions": {
+    "@ode-react-ui/components": "2.1.0",
+    "@ode-react-ui/core": "2.1.0",
+    "@ode-react-ui/hooks": "2.1.0",
+    "@ode-react-ui/icons": "2.1.0",
+    "@ode-react-ui/template": "1.0.0"
+  },
+  "changesets": []
+}
