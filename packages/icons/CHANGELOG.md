@@ -1,5 +1,21 @@
 # @ode-react-ui/icons
 
+## 2.1.0
+
+### Patch Changes
+
+- [`4c24054`](https://github.com/opendigitaleducation/ode-react-ui/commit/4c24054833b9a30c4ec0b16ff9a53348ed1da06e) Thanks [@ccreusat](https://github.com/ccreusat)! - update all deps
+
+- [`79f87a8`](https://github.com/opendigitaleducation/ode-react-ui/commit/79f87a8a83f0148d54e4ed372681d28d7d927976) Thanks [@ccreusat](https://github.com/ccreusat)! - fix automatic jsx runtime
+
+- [`a1ba468`](https://github.com/opendigitaleducation/ode-react-ui/commit/a1ba4681b3db396360f74820ff2510ad3beb8dd3) Thanks [@ccreusat](https://github.com/ccreusat)! - fixing previous issues
+
+- [`1aafd1b`](https://github.com/opendigitaleducation/ode-react-ui/commit/1aafd1b30f9bd85ae4a45b73e2f58a5f5e01d2f8) Thanks [@ccreusat](https://github.com/ccreusat)! - pre enter dev
+
+- [`31d9bba`](https://github.com/opendigitaleducation/ode-react-ui/commit/31d9bbaa0b444b38c158d49e29c064b3aef7b229) Thanks [@ccreusat](https://github.com/ccreusat)! - yarn 3 and fix react-jsx runtime
+
+- [#197](https://github.com/opendigitaleducation/ode-react-ui/pull/197) [`6fe0c1e`](https://github.com/opendigitaleducation/ode-react-ui/commit/6fe0c1e718d31375aa6b3fe02e87768b87b988f6) Thanks [@Headan](https://github.com/Headan)! - Upgraded version StoryBook
+
 ## 2.1.0-dev.15
 
 ### Patch Changes
