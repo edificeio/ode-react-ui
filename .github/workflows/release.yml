@@ -21,7 +21,7 @@ jobs:
           node-version: 18
 
       - name: Install Dependencies & Build
-        run: yarn install
+        run: yarn install --no-immutable
 
       - name: Write NPM_TOKEN
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
