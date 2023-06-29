@@ -1,5 +1,11 @@
 # @ode-react-ui/hooks
 
+## 2.1.1-dev.0
+
+### Patch Changes
+
+- [`b24888a`](https://github.com/opendigitaleducation/ode-react-ui/commit/b24888a5db0245f612726faea4aa9addffe1d606) Thanks [@ccreusat](https://github.com/ccreusat)! - fix modal trapRef error and add xl props to Grid Comp.
+
 ## 2.1.0
 
 ### Patch Changes
