@@ -5317,7 +5317,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"array-includes@npm:^3.1.5, array-includes@npm:^3.1.6":
+"array-includes@npm:^3.1.6":
   version: 3.1.6
   resolution: "array-includes@npm:3.1.6"
   dependencies:
@@ -6933,9 +6933,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.431":
-  version: 1.4.442
-  resolution: "electron-to-chromium@npm:1.4.442"
-  checksum: 2905d01dc9b888ec2b3687801d130e868e951052d856727843e1ed22377e7887d472fd67854392c3944ea329865581a634e1e32e9c077dac63e1542fbc9847d2
+  version: 1.4.445
+  resolution: "electron-to-chromium@npm:1.4.445"
+  checksum: 6f42497e5a7d466fd3a4cf716f7c0c0c71b85d5bdc32cb8988ab969ae46aad1bad6fe267d6ab09877aa5769bf8db7b158a18b9bb67dd8a8a98565fc54cd45a3a
   languageName: node
   linkType: hard
 
@@ -9517,12 +9517,14 @@ __metadata:
   linkType: hard
 
 "jsx-ast-utils@npm:^2.4.1 || ^3.0.0, jsx-ast-utils@npm:^3.3.3":
-  version: 3.3.3
-  resolution: "jsx-ast-utils@npm:3.3.3"
+  version: 3.3.4
+  resolution: "jsx-ast-utils@npm:3.3.4"
   dependencies:
-    array-includes: ^3.1.5
-    object.assign: ^4.1.3
-  checksum: a2ed78cac49a0f0c4be8b1eafe3c5257a1411341d8e7f1ac740debae003de04e5f6372bfcfbd9d082e954ffd99aac85bcda85b7c6bc11609992483f4cdc0f745
+    array-includes: ^3.1.6
+    array.prototype.flat: ^1.3.1
+    object.assign: ^4.1.4
+    object.values: ^1.1.6
+  checksum: a6a00d324e38f0d47e04f973d79670248a663422a4dccdc02efd6f1caf1c00042fb0aafcff1023707c85dea6f013d435b90db67c1c6841bf345628f0a720d8b3
   languageName: node
   linkType: hard
 
@@ -10517,7 +10519,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"object.assign@npm:^4.1.3, object.assign@npm:^4.1.4":
+"object.assign@npm:^4.1.4":
   version: 4.1.4
   resolution: "object.assign@npm:4.1.4"
   dependencies:
@@ -10573,13 +10575,13 @@ __metadata:
   linkType: hard
 
 "ode-ts-client@npm:dev":
-  version: 1.1.4-dev.202306151708
-  resolution: "ode-ts-client@npm:1.1.4-dev.202306151708"
+  version: 1.1.4-dev.202306281620
+  resolution: "ode-ts-client@npm:1.1.4-dev.202306281620"
   dependencies:
     axios: 0.21.1
     core-js: 3.8.3
     rxjs: 7.3.0
-  checksum: 364ddd943325a8aa2a818e690ad49ef2a9dd4159677961bc302c262b1c56353112ad0942e45f8ad5cf9c064dedf8aa5527ad2957632aaa32e878d6e91c9bfb68
+  checksum: de794c2038c715fe4a727387cecf86aee03f6871c0492f51c99b52d720dd99aa64de76eaaa2a16b456a9bbead8595c8f389990583d09ef486dfa567ee470bf0e
   languageName: node
   linkType: hard
 

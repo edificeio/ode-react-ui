@@ -47,5 +47,7 @@ export default function useTrapFocus() {
     }
   }, []);
 
+  console.log("ref", { ref });
+
   return ref;
 }

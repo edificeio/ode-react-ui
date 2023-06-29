@@ -149,7 +149,7 @@ const Root = forwardRef<HTMLDivElement, ModalProps>(
                   id={`${id}_ref`}
                   ref={(node) => {
                     modalRef.current = node;
-                    trapRef.current = node;
+                    if (isOpen) trapRef.current = node;
                   }}
                   className={dialogClasses}
                 >
