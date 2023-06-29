@@ -74,8 +74,6 @@ export default function useHeader({
     workflows: { conversation, zimbra, community, search },
   } = useHasWorkflow();
 
-  /* console.log({ conversation, zimbra, community, search }); */
-
   const communityWorkflow = community.view;
   const searchWorkflow = search.view;
   const conversationWorflow = conversation.view;
