@@ -344,13 +344,12 @@ export default function Header({
                   >
                     {communityWorkflow && (
                       <NavItem>
-                        <NavLink
-                          link="/"
-                          className="dropdown-item"
-                          translate={i18n("navbar.community")}
-                        >
+                        <a href="/community" className="nav-link dropdown-item">
                           <Community className="icon community" />
-                        </NavLink>
+                          <span className="nav-text">
+                            {i18n("navbar.community")}
+                          </span>
+                        </a>
                       </NavItem>
                     )}
                     {searchWorkflow && (
