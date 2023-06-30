@@ -1,4 +1,4 @@
-# Open Digital Education React Icons Library
+# Edifice React Icons Library
 
 ![npm](https://img.shields.io/npm/v/@ode-react-ui/icons?style=flat-square)
 ![bundlephobia](https://img.shields.io/bundlephobia/min/@ode-react-ui/icons?style=flat-square)

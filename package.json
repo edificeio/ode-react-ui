@@ -1,7 +1,7 @@
 {
   "name": "root",
   "private": true,
-  "description": "Open Digital Education Frontend Library with ReactJS",
+  "description": "Edifice Frontend Library with ReactJS",
   "homepage": "https://github.com/opendigitaleducation/ode-react-ui#readme",
   "bugs": {
     "url": "https://github.com/opendigitaleducation/ode-react-ui/issues"
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/opendigitaleducation/ode-react-ui.git"
   },
   "license": "AGPL-3.0",
-  "author": "Open Digital Education",
+  "author": "Edifice",
   "type": "module",
   "workspaces": [
     "packages/*",

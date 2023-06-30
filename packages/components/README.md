@@ -1,4 +1,4 @@
-# Open Digital Education React Components
+# Edifice React Components
 
 ![npm](https://img.shields.io/npm/v/@ode-react-ui/components?style=flat-square)
 ![bundlephobia](https://img.shields.io/bundlephobia/min/@ode-react-ui/components?style=flat-square)

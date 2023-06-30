@@ -1,4 +1,4 @@
-# Open Digital Education React Hooks
+# Edifice React Hooks
 
 ![npm](https://img.shields.io/npm/v/@ode-react-ui/hooks?style=flat-square)
 ![bundlephobia](https://img.shields.io/bundlephobia/min/@ode-react-ui/hooks?style=flat-square)

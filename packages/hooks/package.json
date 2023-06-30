@@ -17,7 +17,7 @@
     "url": "git+https://github.com/opendigitaleducation/ode-react-ui.git"
   },
   "license": "AGPL-3.0",
-  "author": "Open Digital Education",
+  "author": "Edifice",
   "sideEffects": false,
   "type": "module",
   "exports": {

@@ -66,7 +66,7 @@ export const Base: Story = {
   args: {
     type: "text",
     size: "md",
-    placeholder: "Open Digital Education",
+    placeholder: "Edifice",
   },
 };
 
@@ -76,7 +76,7 @@ export const Small: Story = {
   args: {
     size: "sm",
     type: "text",
-    placeholder: "Open Digital Education",
+    placeholder: "Edifice",
   },
 
   parameters: {
@@ -95,7 +95,7 @@ export const Medium: Story = {
   args: {
     type: "text",
     size: "md",
-    placeholder: "Open Digital Education",
+    placeholder: "Edifice",
   },
 
   parameters: {
@@ -114,7 +114,7 @@ export const Large: Story = {
   args: {
     size: "lg",
     type: "text",
-    placeholder: "Open Digital Education",
+    placeholder: "Edifice",
   },
 
   parameters: {
@@ -323,6 +323,6 @@ export const DisabledStatus: Story = {
     disabled: true,
     size: "md",
     type: "text",
-    placeholder: "Open Digital Education",
+    placeholder: "Edifice",
   },
 };

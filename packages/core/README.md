@@ -1,4 +1,4 @@
-# Open Digital Education React Core
+# Edifice React Core
 
 ![npm](https://img.shields.io/npm/v/@ode-react-ui/core?style=flat-square)
 ![bundlephobia](https://img.shields.io/bundlephobia/min/@ode-react-ui/core?style=flat-square)
