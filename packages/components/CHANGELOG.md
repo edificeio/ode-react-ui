@@ -1,5 +1,15 @@
 # @ode-react-ui/components
 
+## 2.1.1-dev.1
+
+### Patch Changes
+
+- [`85c4aeb`](https://github.com/opendigitaleducation/ode-react-ui/commit/85c4aeb93f54678daf0aed168619cbe1dbb93cd3) Thanks [@ccreusat](https://github.com/ccreusat)! - fix community link
+
+- Updated dependencies [[`85c4aeb`](https://github.com/opendigitaleducation/ode-react-ui/commit/85c4aeb93f54678daf0aed168619cbe1dbb93cd3)]:
+  - @ode-react-ui/hooks@2.1.1-dev.1
+  - @ode-react-ui/core@2.1.1-dev.1
+
 ## 2.1.1-dev.0
 
 ### Patch Changes
