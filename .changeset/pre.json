@@ -9,6 +9,7 @@
     "@ode-react-ui/template": "1.0.0"
   },
   "changesets": [
-    "clever-windows-act"
+    "clever-windows-act",
+    "red-dragons-return"
   ]
 }
