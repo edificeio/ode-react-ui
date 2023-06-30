@@ -1,13 +1,13 @@
 # ODE React UI
 
-Open Digital Education Frontend Library with ReactJS
+Edifice Frontend Library with ReactJS
 
 ## What is inside?
 
 Ode React UI is a Monorepo containing:
 
-- [Advanced](./packages/advanced/README.md): Advanced Components Library (TreeView, Rich Editor, ...)
-- [Core](./packages/core/README.md): Core Components Library (Button, Header, ...)
+- [Components](./packages/advanced/README.md): Components Library (Button, Treeview, Card, ...)
+- [Core](./packages/core/README.md): Core Library (Provider, Logic hooks, ...)
 - [Hooks](./packages/hooks/README.md): Hooks Library
 - [Icons](./packages/icons/README.md): Icons Library
 - [Storybook](./apps/docs/README.md): Storybook documentation
@@ -81,12 +81,6 @@ yarn build
 
 ```bash
 yarn docs
-```
-
-> If you want to work inside a React Application, start the playground.
-
-```bash
-yarn playground
 ```
 
 ---

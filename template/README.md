@@ -1,4 +1,4 @@
-# Open Digital Education [NAME]
+# Edifice [NAME]
 
 ![npm](https://img.shields.io/npm/v/@ode-react-ui/name?style=flat-square)
 ![bundlephobia](https://img.shields.io/bundlephobia/min/@ode-react-ui/name?style=flat-square)

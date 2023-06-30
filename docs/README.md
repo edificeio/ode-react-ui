@@ -1,4 +1,4 @@
-# Open Digital Education Storybook
+# Edifice Storybook
 
 ## Getting Started
 
