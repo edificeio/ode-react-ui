@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/core",
-  "version": "2.1.1-dev.1",
+  "version": "2.1.1-dev.2",
   "description": "@ode-react-ui react core library",
   "keywords": [
     "react",
@@ -48,7 +48,7 @@
     "concurrently": "8.1.0"
   },
   "peerDependencies": {
-    "@ode-react-ui/hooks": "2.1.1-dev.1",
+    "@ode-react-ui/hooks": "2.1.1-dev.2",
     "@tanstack/react-query": "4.29.12",
     "clsx": "1.2.1",
     "ode-ts-client": "dev",
