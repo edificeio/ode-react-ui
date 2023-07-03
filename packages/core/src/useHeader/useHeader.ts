@@ -9,10 +9,10 @@ import {
 
 import { useTitle, useHover } from "@ode-react-ui/hooks";
 import { IUserInfo, odeServices } from "ode-ts-client";
+import { useTranslation } from "react-i18next";
 
 import { useBookmark } from "../useBookmark";
 import { useHasWorkflow } from "../useHasWorkflow";
-import { useI18n } from "../useI18n";
 
 export default function useHeader({
   user,
@@ -21,7 +21,7 @@ export default function useHeader({
   user: IUserInfo | undefined;
   avatar: string;
 }): any {
-  const { i18n } = useI18n();
+  const { t } = useTranslation();
   /**
    * All necessary refs
    */
@@ -59,8 +59,8 @@ export default function useHeader({
    */
   const userAvatar = avatar;
   const userName = user?.username;
-  // const welcomeUser = `Bonjour ${user?.username}, bienvenue!`;
-  const welcomeUser = `${i18n("welcome.text.1")} ${user?.username}`;
+
+  const welcomeUser = t("welcome", { username: user?.username });
 
   /**
    * Get Bookmarked Apps

@@ -4,7 +4,6 @@ import {
   useMemo,
   useContext,
   useEffect,
-  useState,
 } from "react";
 
 import { UseQueryResult } from "@tanstack/react-query";
@@ -17,7 +16,6 @@ import {
   IGetConf,
   IGetSession,
   IOdeTheme,
-  odeServices,
 } from "ode-ts-client";
 
 import { useConf } from "../useConf";
@@ -36,12 +34,12 @@ export interface OdeClientProps {
 }
 
 export interface ContextProps {
+  // i18n: (key: string, params?: Record<string, any> | undefined) => string;
   appCode: App;
   applications: IWebApp[] | undefined;
   confQuery: UseQueryResult<IGetConf>;
   currentApp: IWebApp | undefined;
   currentLanguage: string | undefined;
-  i18n: (key: string, params?: Record<string, any> | undefined) => string;
   init: boolean;
   sessionQuery: UseQueryResult<IGetSession>;
   theme: IOdeTheme | undefined;
@@ -50,7 +48,7 @@ export interface ContextProps {
   userProfile: UserProfile | undefined;
 }
 
-export const Context = createContext<ContextProps | null>(null!);
+export const OdeClientContext = createContext<ContextProps | null>(null!);
 
 export function OdeClientProvider({ children, params }: OdeClientProps) {
   const appCode = params.app;
@@ -74,7 +72,7 @@ export function OdeClientProvider({ children, params }: OdeClientProps) {
       ?.setAttribute("lang", sessionQuery?.data?.currentLanguage || "fr");
   }, [sessionQuery?.data]);
 
-  const [, setForceUpdate] = useState(false);
+  /* const [, setForceUpdate] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -88,7 +86,7 @@ export function OdeClientProvider({ children, params }: OdeClientProps) {
         setForceUpdate(true);
       }
     })();
-  }, [appCode, sessionQuery?.data?.currentLanguage]);
+  }, [appCode, sessionQuery?.data?.currentLanguage]); */
 
   const values = useMemo(
     () => ({
@@ -97,7 +95,7 @@ export function OdeClientProvider({ children, params }: OdeClientProps) {
       confQuery,
       currentApp: confQuery?.data?.currentApp,
       currentLanguage: sessionQuery?.data?.currentLanguage,
-      i18n: odeServices.idiom().translate,
+      // i18n: odeServices.idiom().translate,
       init,
       sessionQuery,
       theme: confQuery?.data?.theme,
@@ -108,11 +106,15 @@ export function OdeClientProvider({ children, params }: OdeClientProps) {
     [appCode, confQuery, init, sessionQuery],
   );
 
-  return <Context.Provider value={values}>{children}</Context.Provider>;
+  return (
+    <OdeClientContext.Provider value={values}>
+      {children}
+    </OdeClientContext.Provider>
+  );
 }
 
 export function useOdeClient() {
-  const context = useContext(Context);
+  const context = useContext(OdeClientContext);
 
   if (!context) {
     throw new Error(`Cannot be used outside of OdeClientProvider`);

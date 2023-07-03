@@ -7,7 +7,7 @@ import {
   PopoverFooter,
   Avatar,
 } from "@ode-react-ui/components";
-import { useI18n, useUser, useHeader } from "@ode-react-ui/core";
+import { useUser, useHeader } from "@ode-react-ui/core";
 import { RafterDown } from "@ode-react-ui/icons";
 import {
   Search,
@@ -24,7 +24,7 @@ import {
   NeoAssistance,
 } from "@ode-react-ui/icons/nav";
 import clsx from "clsx";
-import { odeServices } from "ode-ts-client";
+import { useTranslation } from "react-i18next";
 
 import { Badge } from "./Badge";
 import { Navbar } from "./Navbar";
@@ -45,8 +45,8 @@ export default function Header({
   is1d = false,
   src = "",
 }: HeaderProps): JSX.Element {
-  const { i18n } = useI18n();
   const { user, avatar } = useUser();
+  const { t } = useTranslation();
   const {
     inputRef,
     title,
@@ -113,14 +113,14 @@ export default function Header({
               <NavBarNav
                 className="gap-8"
                 aria-hidden="false"
-                aria-label={i18n("navbar.main.navigation")}
+                aria-label={t("navbar.main.navigation")}
               >
                 {conversationWorflow && (
                   <NavItem>
                     <a href="/conversation/conversation" className="nav-link">
                       <OneMessaging className="icon notification" />
                       {hasMessages && <Badge>{messages}</Badge>}
-                      <VisuallyHidden>{i18n("navbar.messages")}</VisuallyHidden>
+                      <VisuallyHidden>{t("navbar.messages")}</VisuallyHidden>
                     </a>
                   </NavItem>
                 )}
@@ -128,7 +128,7 @@ export default function Header({
                   <NavLink
                     link="/userbook/mon-compte"
                     className="dropdown-item"
-                    translate={i18n("navbar.myaccount")}
+                    translate={t("navbar.myaccount")}
                   >
                     <OneProfile className="icon user" />
                   </NavLink>
@@ -141,7 +141,7 @@ export default function Header({
                     }}
                   >
                     <Assistance className="icon help" />
-                    <VisuallyHidden>{i18n("navbar.help")}</VisuallyHidden>
+                    <VisuallyHidden>{t("navbar.help")}</VisuallyHidden>
                   </button>
 
                   <Help
@@ -155,7 +155,7 @@ export default function Header({
                 <NavItem>
                   <button className="nav-link" onClick={handleLogout}>
                     <Disconnect className="icon logout" />
-                    <VisuallyHidden>{i18n("navbar.disconnect")}</VisuallyHidden>
+                    <VisuallyHidden>{t("navbar.disconnect")}</VisuallyHidden>
                   </button>
                 </NavItem>
                 <NavItem className="d-md-none">
@@ -164,7 +164,7 @@ export default function Header({
                     type="button"
                     aria-controls="navbarCollapsed"
                     aria-expanded={!isCollapsed}
-                    aria-label={i18n("navbar.secondary.navigation")}
+                    aria-label={t("navbar.secondary.navigation")}
                     onClick={toggleCollapsedNav}
                   >
                     <RafterDown
@@ -179,7 +179,7 @@ export default function Header({
           </div>
           <Navbar
             className="no-2d navbar-secondary navbar-expand-md"
-            aria-label={i18n("navbar.secondary.navigation")}
+            aria-label={t("navbar.secondary.navigation")}
           >
             <div className="container-fluid">
               <div
@@ -191,7 +191,7 @@ export default function Header({
                 <Logo
                   is1d
                   src={`${src}/img/illustrations/logo.png`}
-                  translate={i18n("navbar.home")}
+                  translate={t("navbar.home")}
                 />
 
                 <NavBarNav className="gap-8">
@@ -199,9 +199,7 @@ export default function Header({
                     <a href="/timeline/timeline" className="button">
                       <NewRelease color="#fff" className="d-md-none" />
                       <span className="d-inline-block">
-                        {odeServices
-                          .idiom()
-                          .translate("portal.header.navigation.whatsnew")}
+                        {t("portal.header.navigation.whatsnew")}
                       </span>
                     </a>
                   </NavItem>
@@ -209,9 +207,7 @@ export default function Header({
                     <a href="/userbook/annuaire" className="button">
                       <Userbook color="#fff" className="d-md-none" />
                       <span className="d-inline-block">
-                        {odeServices
-                          .idiom()
-                          .translate("portal.header.navigation.classMembers")}
+                        {t("portal.header.navigation.classMembers")}
                       </span>
                     </a>
                   </NavItem>
@@ -219,9 +215,7 @@ export default function Header({
                     <a href="/welcome" className="button">
                       <MyApps color="#fff" className="d-md-none" />
                       <span className="d-inline-block">
-                        {odeServices
-                          .idiom()
-                          .translate("portal.header.navigation.myapps")}
+                        {t("portal.header.navigation.myapps")}
                       </span>
                     </a>
                   </NavItem>
@@ -242,10 +236,7 @@ export default function Header({
             </a>
             <ul className="navbar-nav">
               <NavItem>
-                <NavLink
-                  link="/timeline/timeline"
-                  translate={i18n("navbar.home")}
-                >
+                <NavLink link="/timeline/timeline" translate={t("navbar.home")}>
                   <Home color="#fff" />
                 </NavLink>
               </NavItem>
@@ -256,10 +247,7 @@ export default function Header({
                 aria-haspopup="true"
                 aria-expanded={isAppsHovered}
               >
-                <NavLink
-                  link="/welcome"
-                  translate={i18n("navbar.applications")}
-                >
+                <NavLink link="/welcome" translate={t("navbar.applications")}>
                   <MyApps color="#fff" />
                 </NavLink>
                 <Popover
@@ -280,7 +268,7 @@ export default function Header({
                   <NavLink
                     className="position-relative"
                     link="/conversation/conversation"
-                    translate={i18n("conversation")}
+                    translate={t("conversation")}
                   >
                     <NeoMessaging color="#fff" />
                     {hasMessages && <Badge>{messages}</Badge>}
@@ -292,7 +280,7 @@ export default function Header({
                   <NavLink
                     className="position-relative"
                     link={msgLink}
-                    translate={i18n("conversation")}
+                    translate={t("conversation")}
                   >
                     <NeoMessaging color="#fff" />
                     {hasMessages && <Badge>{messages}</Badge>}
@@ -307,7 +295,7 @@ export default function Header({
                   }}
                 >
                   <NeoAssistance color="#fff" />
-                  <VisuallyHidden>{i18n("support")}</VisuallyHidden>
+                  <VisuallyHidden>{t("support")}</VisuallyHidden>
                 </button>
 
                 <Help
@@ -325,8 +313,8 @@ export default function Header({
                     type="button"
                     aria-controls="dropdown-navbar"
                     aria-expanded={!isCollapsed}
-                    // TODO: add i18n key
-                    aria-label={i18n("navbar.open.menu")}
+                    // TODO: add t key
+                    aria-label={t("navbar.open.menu")}
                     onClick={toggleCollapsedNav}
                   >
                     <RafterDown
@@ -347,7 +335,7 @@ export default function Header({
                         <a href="/community" className="nav-link dropdown-item">
                           <Community className="icon community" />
                           <span className="nav-text">
-                            {i18n("navbar.community")}
+                            {t("navbar.community")}
                           </span>
                         </a>
                       </NavItem>
@@ -365,9 +353,7 @@ export default function Header({
                           className="nav-link dropdown-item"
                         >
                           <Search className="icon search" />
-                          <span className="nav-text">
-                            {i18n("navbar.search")}
-                          </span>
+                          <span className="nav-text">{t("navbar.search")}</span>
                         </a>
                         <Popover
                           id={popoverSearchId}
@@ -378,7 +364,7 @@ export default function Header({
                               type="submit"
                               size="sm"
                               onClick={redirectToSearch}
-                              aria-label={i18n("navbar.search")}
+                              aria-label={t("navbar.search")}
                             />
                           </NavSearch>
                         </Popover>
@@ -399,7 +385,7 @@ export default function Header({
                           height="32"
                         />
                         <span className="nav-text">
-                          {i18n("navbar.myaccount")}
+                          {t("navbar.myaccount")}
                         </span>
                       </a>
                     </NavItem>
@@ -415,7 +401,7 @@ export default function Header({
                         <Disconnect className="icon logout" />
                       </button>
                       <span id="logout-label" className="nav-text">
-                        {i18n("navbar.disconnect")}
+                        {t("navbar.disconnect")}
                       </span>
                     </NavItem>
                   </ul>

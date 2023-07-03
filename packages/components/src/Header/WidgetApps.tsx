@@ -1,16 +1,16 @@
 import { type ReactNode } from "react";
 
 import { AppIcon } from "@ode-react-ui/components";
-import { useI18n } from "@ode-react-ui/core";
 import { type IWebApp } from "ode-ts-client";
+import { useTranslation } from "react-i18next";
 
 export const WidgetAppsFooter = () => {
-  const { i18n } = useI18n();
+  const { t } = useTranslation();
   return (
     <div className="widget-footer">
       <div className="widget-footer-action">
         <a href="/welcome" className="link">
-          {i18n("plus")}
+          {t("plus")}
         </a>
       </div>
     </div>
@@ -22,12 +22,12 @@ export const WidgetAppsBody = ({
 }: {
   bookmarkedApps: IWebApp[];
 }) => {
-  const { i18n } = useI18n();
+  const { t } = useTranslation();
 
   return (
     <div className="widget-body d-flex flex-wrap">
       {!bookmarkedApps.length && (
-        <div className="text-dark">{i18n("navbar.myapps.more")}</div>
+        <div className="text-dark">{t("navbar.myapps.more")}</div>
       )}
       {bookmarkedApps.slice(0, 6).map((app, index) => {
         return (

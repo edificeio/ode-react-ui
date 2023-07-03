@@ -1,6 +1,6 @@
 import { Modal } from "@ode-react-ui/components";
-import { useOdeClient } from "@ode-react-ui/core";
 import { createPortal } from "react-dom";
+import { useTranslation } from "react-i18next";
 
 export interface HelpProps {
   isHelpOpen: boolean;
@@ -17,7 +17,7 @@ export default function Help({
   parsedContent,
   error,
 }: HelpProps): JSX.Element | null {
-  const { i18n } = useOdeClient();
+  const { t } = useTranslation();
 
   const handleHelpOpen = () => {
     setIsHelpOpen(false);
@@ -33,13 +33,13 @@ export default function Help({
           size="xl"
         >
           <Modal.Header onModalClose={handleHelpOpen}>
-            {i18n("navbar.help")}
+            {t("navbar.help")}
           </Modal.Header>
           <Modal.Subtitle>
-            {error ? i18n("help.notfound.title") : parsedHeadline}
+            {error ? t("help.notfound.title") : parsedHeadline}
           </Modal.Subtitle>
           <Modal.Body className={error ? "d-flex" : null}>
-            {error ? i18n("help.notfound.text") : parsedContent}
+            {error ? t("help.notfound.text") : parsedContent}
           </Modal.Body>
         </Modal>,
         document.getElementById("portal") as HTMLElement,

@@ -32,7 +32,7 @@ Many tools are already configured like:
 > ⚠️ Before starting any development, please read the [CONTRIBUTION](./CONTRIBUTING.md) GUIDE.
 
 ```bash
-yarn
+pnpm run install
 ```
 
 > The script build will be run as a pre-install script so you can use each library
@@ -46,7 +46,7 @@ Any available commands during your development.
 > Lint all libs from root folder
 
 ```bash
-yarn lint
+pnpm run lint
 ```
 
 ### Prettier
@@ -54,7 +54,7 @@ yarn lint
 > Prettier all libs from root folder
 
 ```bash
-yarn format
+pnpm run format
 ```
 
 ### Clean
@@ -62,7 +62,7 @@ yarn format
 > Clean all node_modules and lock file.
 
 ```bash
-yarn clean
+pnpm run clean
 ```
 
 ### Build
@@ -70,7 +70,7 @@ yarn clean
 > Build all libs from root folder
 
 ```bash
-yarn build
+pnpm run build
 ```
 
 ---
@@ -80,7 +80,7 @@ yarn build
 > Start Storybook on port 6006
 
 ```bash
-yarn docs
+pnpm run docs
 ```
 
 ---

@@ -38,11 +38,11 @@
     "*.d.ts"
   ],
   "scripts": {
-    "build": "yarn build:icons && yarn build:vite",
+    "build": "pnpm build:icons && pnpm build:vite",
     "build:icons": "svgr assets --config-file ./svgr.config.cjs",
     "build:vite": "vite build",
     "fix": "eslint --fix \"**/*.{ts,tsx}\"",
-    "format": "concurrently \"yarn:format:*\"",
+    "format": "concurrently \"pnpm:format:*\"",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
     "lint": "eslint \"**/*.{ts,tsx}\""

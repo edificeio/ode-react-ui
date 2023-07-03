@@ -13,26 +13,27 @@
   "license": "AGPL-3.0",
   "author": "Edifice",
   "type": "module",
-  "workspaces": [
-    "packages/*",
-    "docs",
-    "template"
-  ],
   "scripts": {
     "build": "turbo run build --filter=!@ode-react-ui/template",
     "check:components": "package-check --cwd=packages/components",
     "check:core": "package-check --cwd=packages/core",
     "check:hooks": "package-check --cwd=packages/hooks",
     "check:icons": "package-check --cwd=packages/icons",
-    "clean": "rm -rf */**/node_modules && rm -rf node_modules && rm -f yarn.lock && rm -rf */**/dist",
+    "clean": "rm -rf */**/node_modules && rm -rf node_modules && rm -f pnpm-lock.yaml && rm -rf */**/dist && rm -rf packages/**/.turbo",
+    "clean:dist": "rm -rf */**/dist",
+    "clean:lock": "rm -f pnpm-lock.yaml",
+    "clean:modules": "rm -rf */**/node_modules",
+    "clean:storybook": "rm -rf dist",
+    "clean:turbo": "rm -rf packages/**/.turbo",
     "docs": "storybook dev -p 6006",
     "docs:build": "storybook build --docs -o dist/ && cp -R packages/icons/assets/ dist/icons/",
     "docs:preview": "npx http-server ./dist",
     "fix": "turbo run fix --filter=!@ode-react-ui/template",
     "format": "turbo run format --filter=!@ode-react-ui/template",
-    "postinstall": "yarn build",
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "pnpm build",
     "lint": "turbo run lint --filter=!@ode-react-ui/template",
-    "pre-commit": "yarn lint && yarn format",
+    "pre-commit": "pnpm lint && pnpm format",
     "prepare": "husky install",
     "publish-packages": "changeset version && changeset publish"
   },
@@ -41,6 +42,7 @@
     "@changesets/cli": "2.26.1"
   },
   "devDependencies": {
+    "@ode-react-ui/icons": "2.1.0",
     "@skypack/package-check": "0.2.2",
     "@storybook/addon-a11y": "7.0.18",
     "@storybook/addon-essentials": "7.0.18",
@@ -63,7 +65,6 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-storybook": "0.6.12",
     "husky": "8.0.3",
-    "ode-ts-client": "dev",
     "prettier": "2.8.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -74,9 +75,9 @@
     "vite": "4.3.9",
     "vite-plugin-dts": "2.3.0"
   },
-  "packageManager": "yarn@3.6.0",
   "engines": {
-    "node": "18.x"
+    "node": "18.x",
+    "pnpm": "8.5.0"
   },
   "engineStrict": true
 }

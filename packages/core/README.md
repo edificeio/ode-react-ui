@@ -36,25 +36,25 @@ Some of them can be accessed directly with their custom hook:
 ### Build
 
 ```bash
-yarn build
+pnpm run build
 ```
 
 ### Lint
 
 ```bash
-yarn lint
+pnpm run lint
 ```
 
-If `yarn lint` shows issues, run this command to fix them.
+If `pnpm run lint` shows issues, run this command to fix them.
 
 ```bash
-yarn fix
+pnpm run fix
 ```
 
 ### Prettier
 
 ```bash
-yarn format
+pnpm run format
 ```
 
 ## Structure

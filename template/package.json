@@ -35,7 +35,7 @@
   "scripts": {
     "build": "vite build",
     "fix": "eslint --fix \"**/*.{ts,tsx}\"",
-    "format": "concurrently \"yarn:format:*\"",
+    "format": "concurrently \"pnpm:format:*\"",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
     "lint": "eslint \"**/*.{ts,tsx}\"",
