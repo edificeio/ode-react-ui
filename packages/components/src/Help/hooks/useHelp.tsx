@@ -3,13 +3,13 @@
 import { useState, useEffect } from "react";
 
 import { Button } from "@ode-react-ui/components";
-import { useOdeClient, useOdeTheme } from "@ode-react-ui/core";
+import { useOdeClient, useTheme } from "@ode-react-ui/core";
 import { BurgerMenu } from "@ode-react-ui/icons";
 import parse, { attributesToProps, domToReact } from "html-react-parser";
 
 export function useHelp() {
   const { appCode } = useOdeClient();
-  const { theme } = useOdeTheme();
+  const { theme } = useTheme();
 
   const [html, setHtml] = useState<string>("");
   const [visibility, setVisibility] = useState<boolean>(true);

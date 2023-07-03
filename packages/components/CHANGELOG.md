@@ -1,5 +1,11 @@
 # @ode-react-ui/components
 
+## 2.1.1-dev.3
+
+### Patch Changes
+
+- fix issue with theme provider
+
 ## 2.1.1-dev.2
 
 ### Patch Changes
