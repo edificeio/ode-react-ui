@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/blocks";
 import { Card } from "../components/Card";
-import * as SpacingsStories from './Spacings.stories';
+import * as SpacingsStories from "./Spacings.stories";
 
 <Meta title="Design Tokens/Spacings" />
 
@@ -14,8 +14,8 @@ import * as SpacingsStories from './Spacings.stories';
 
 # Spacings
 
-*   Spacings are based on the 4px Grid System (it can be divided and multiplied many times and result in whole numbers).
-*   Spacings are used for `margin`, `padding` and `gap` CSS utilities.
+- Spacings are based on the 4px Grid System (it can be divided and multiplied many times and result in whole numbers).
+- Spacings are used for `margin`, `padding` and `gap` CSS utilities.
 
 **Exception**: The 4px Grid System starts at 2px to handle smaller spacings for padding and margin.
 
@@ -94,13 +94,14 @@ import * as SpacingsStories from './Spacings.stories';
         onboarding, landing pages, etc.
       </td>
     </tr>
+
   </tbody>
 </table>
 
 ## SCSS
 
-*   SCSS variables are named using the values of the 4px Grid System.
-*   They can be used independently of `margin`, `padding` and `gap` CSS utilities.
+- SCSS variables are named using the values of the 4px Grid System.
+- They can be used independently of `margin`, `padding` and `gap` CSS utilities.
 
 <table>
   <thead>
@@ -271,6 +272,7 @@ import * as SpacingsStories from './Spacings.stories';
         </code>
       </td>
     </tr>
+
   </tbody>
 </table>
 
@@ -588,43 +590,58 @@ Changes margins of an element.
         </code>
       </td>
     </tr>
+
   </tbody>
 </table>
 
 ### Example
 
-<div class="card flex-row align-items-center gap-16">
+<div class="card flex-row align-items-center gap-16 py-16">
   <Card>
     <div style={{ margin: "2px" }}>.m-2</div>
   </Card>
 
-  <Card>
-    <div style={{ margin: "4px" }}>.m-4</div>
-  </Card>
+{" "}
 
-  <Card>
-    <div style={{ margin: "8px" }}>.m-8</div>
-  </Card>
+<Card>
+  <div style={{ margin: "4px" }}>.m-4</div>
+</Card>
 
-  <Card>
-    <div style={{ margin: "12px" }}>.m-12</div>
-  </Card>
+{" "}
 
-  <Card>
-    <div style={{ margin: "16px" }}>.m-16</div>
-  </Card>
+<Card>
+  <div style={{ margin: "8px" }}>.m-8</div>
+</Card>
 
-  <Card>
-    <div style={{ margin: "24px" }}>.m-24</div>
-  </Card>
+{" "}
 
-  <Card>
-    <div style={{ margin: "32px" }}>.m-32</div>
-  </Card>
+<Card>
+  <div style={{ margin: "12px" }}>.m-12</div>
+</Card>
 
-  <Card>
-    <div style={{ margin: "48px" }}>.m-48</div>
-  </Card>
+{" "}
+
+<Card>
+  <div style={{ margin: "16px" }}>.m-16</div>
+</Card>
+
+{" "}
+
+<Card>
+  <div style={{ margin: "24px" }}>.m-24</div>
+</Card>
+
+{" "}
+
+<Card>
+  <div style={{ margin: "32px" }}>.m-32</div>
+</Card>
+
+{" "}
+
+<Card>
+  <div style={{ margin: "48px" }}>.m-48</div>
+</Card>
 
   <Card>
     <div style={{ margin: "64px" }}>.m-64</div>
@@ -945,12 +962,13 @@ Changes paddings of an element.
         </code>
       </td>
     </tr>
+
   </tbody>
 </table>
 
 ### Example
 
-<div class="card flex-row align-items-center gap-16">
+<div class="card flex-row align-items-center gap-16 py-16">
   <Card style={{ padding: "2px" }}>.p-2</Card>
   <Card style={{ padding: "4px" }}>.p-4</Card>
   <Card style={{ padding: "8px" }}>.p-8</Card>
@@ -1016,6 +1034,7 @@ Changes distance between elements when using `display:grid` or `display:flex`.
         </code>
       </td>
     </tr>
+
   </tbody>
 </table>
 

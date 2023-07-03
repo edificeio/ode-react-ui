@@ -10,27 +10,27 @@ All shared Hooks between packages and React Apps.
 ### Build
 
 ```bash
-yarn build
+pnpm run build
 ```
 
 ### Lint
 
 ```bash
-yarn lint
+pnpm run lint
 ```
 
 Use Eslint configuration file from `config` workspace to check all files inside `src` folder.
 
 ```bash
-yarn fix
+pnpm run fix
 ```
 
-If `yarn lint` shows issues, run this command to fix them.
+If `pnpm run lint` shows issues, run this command to fix them.
 
 ### Prettier
 
 ```bash
-yarn format
+pnpm run format
 ```
 
 This command starts `format:check` + `format:write` using Prettier configuration file from `config` workspace.

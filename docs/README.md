@@ -23,7 +23,7 @@ For specific MDX documentation, you must write them inside `stories` folder from
 > Start Storybook on port 6006
 
 ```bash
-yarn docs
+pnpm run docs
 ```
 
 ### Build
@@ -31,13 +31,13 @@ yarn docs
 > Build storybook document to `dist/` folder
 
 ```bash
-yarn docs:build
+pnpm run docs:build
 ```
 
 ### Preview
 
 ```bash
-yarn docs:preview
+pnpm run docs:preview
 ```
 
 ⚠️ Don't change output folder. This is used to deploy to Vercel.

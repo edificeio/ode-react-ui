@@ -14,7 +14,7 @@ To add a new icon to the library:
 ### Build
 
 ```bash
-yarn build
+pnpm run build
 ```
 
 - Create all React Icons Components based on `*.svg` files from `assets` folder and import them all inside `index.tsx` file
@@ -22,19 +22,19 @@ yarn build
 ### Lint
 
 ```bash
-yarn lint
+pnpm run lint
 ```
 
 ```bash
-yarn fix
+pnpm run fix
 ```
 
-If `yarn lint` shows issues, run this command to fix them.
+If `pnpm run lint` shows issues, run this command to fix them.
 
 ### Prettier
 
 ```bash
-yarn format
+pnpm run format
 ```
 
 This command starts `format:check` + `format:write`

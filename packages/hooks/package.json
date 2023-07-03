@@ -34,9 +34,9 @@
   ],
   "scripts": {
     "prebuild": "rm -rf dist",
-    "build": "yarn run prebuild && vite build",
+    "build": "pnpm run prebuild && vite build",
     "fix": "eslint --fix \"**/*.{ts,tsx}\"",
-    "format": "concurrently \"yarn:format:*\"",
+    "format": "concurrently \"pnpm:format:*\"",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
     "lint": "eslint \"**/*.{ts,tsx}\""
@@ -45,11 +45,7 @@
     "@types/node": "20.2.5",
     "@types/react": "18.2.8",
     "@types/react-dom": "18.2.4",
-    "clsx": "1.2.1",
-    "concurrently": "8.1.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-hot-toast": "2.4.1"
+    "concurrently": "8.1.0"
   },
   "peerDependencies": {
     "clsx": "1.2.1",

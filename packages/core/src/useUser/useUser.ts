@@ -11,12 +11,12 @@ export interface useUserProps {
 
 export default function useUser(): useUserProps {
   const { user, userDescription, userProfile } = useOdeClient();
-  const { basePath } = useTheme();
+  const { theme } = useTheme();
 
   function avatarUrl(): string {
     let avatar = userDescription?.picture;
     if (!avatar || avatar === "no-avatar.jpg" || avatar === "no-avatar.svg") {
-      avatar = `${basePath}/img/illustrations/no-avatar.svg`;
+      avatar = `${theme?.basePath}/img/illustrations/no-avatar.svg`;
     }
     return avatar;
   }
