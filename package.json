@@ -42,7 +42,7 @@
     "@changesets/cli": "2.26.1"
   },
   "devDependencies": {
-    "@ode-react-ui/icons": "2.1.0",
+    "@ode-react-ui/icons": "workspace:*",
     "@skypack/package-check": "0.2.2",
     "@storybook/addon-a11y": "7.0.18",
     "@storybook/addon-essentials": "7.0.18",

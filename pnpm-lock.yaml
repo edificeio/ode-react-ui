@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -111,14 +115,14 @@ importers:
   packages/components:
     dependencies:
       '@ode-react-ui/core':
-        specifier: 2.1.1-dev.1
-        version: link:../core
+        specifier: 2.1.1-dev.2
+        version: 2.1.1-dev.2(@ode-react-ui/hooks@2.1.1-dev.2)(@tanstack/react-query@4.29.12)(clsx@1.2.1)(ode-ts-client@1.1.4-dev.202306281620)(react-dom@18.2.0)(react-hot-toast@2.4.1)(react-i18next@13.0.1)(react@18.2.0)
       '@ode-react-ui/hooks':
-        specifier: 2.1.1-dev.1
-        version: link:../hooks
+        specifier: 2.1.1-dev.2
+        version: 2.1.1-dev.2(clsx@1.2.1)(react-dom@18.2.0)(react-hot-toast@2.4.1)(react@18.2.0)
       '@ode-react-ui/icons':
-        specifier: 2.1.0
-        version: link:../icons
+        specifier: 2.1.1-dev.2
+        version: 2.1.1-dev.2(react-dom@18.2.0)(react@18.2.0)
       '@popperjs/core':
         specifier: 2.11.8
         version: 2.11.8
@@ -169,8 +173,8 @@ importers:
   packages/core:
     dependencies:
       '@ode-react-ui/hooks':
-        specifier: 2.1.1-dev.1
-        version: link:../hooks
+        specifier: 2.1.1-dev.2
+        version: 2.1.1-dev.2(clsx@1.2.1)(react-dom@18.2.0)(react-hot-toast@2.4.1)(react@18.2.0)
       '@tanstack/react-query':
         specifier: 4.29.12
         version: 4.29.12(react-dom@18.2.0)(react@18.2.0)
@@ -3389,6 +3393,52 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
+
+  /@ode-react-ui/core@2.1.1-dev.2(@ode-react-ui/hooks@2.1.1-dev.2)(@tanstack/react-query@4.29.12)(clsx@1.2.1)(ode-ts-client@1.1.4-dev.202306281620)(react-dom@18.2.0)(react-hot-toast@2.4.1)(react-i18next@13.0.1)(react@18.2.0):
+    resolution: {integrity: sha512-1ryo/lDkpaZ1cHwY0BHhEMZZyoRrchGem99t87XQkFIA5K3/FeHI80T/77yLHBf1NCQb4ATEUt/MV62yWuptfQ==}
+    peerDependencies:
+      '@ode-react-ui/hooks': 2.1.1-dev.2
+      '@tanstack/react-query': 4.29.12
+      clsx: 1.2.1
+      ode-ts-client: dev
+      react: 18.2.0
+      react-dom: 18.2.0
+      react-hot-toast: 2.4.1
+      react-i18next: 13.0.1
+    dependencies:
+      '@ode-react-ui/hooks': 2.1.1-dev.2(clsx@1.2.1)(react-dom@18.2.0)(react-hot-toast@2.4.1)(react@18.2.0)
+      '@tanstack/react-query': 4.29.12(react-dom@18.2.0)(react@18.2.0)
+      clsx: 1.2.1
+      ode-ts-client: 1.1.4-dev.202306281620
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-hot-toast: 2.4.1(csstype@3.1.2)(react-dom@18.2.0)(react@18.2.0)
+      react-i18next: 13.0.1(i18next@23.2.6)(react-dom@18.2.0)(react@18.2.0)
+    dev: false
+
+  /@ode-react-ui/hooks@2.1.1-dev.2(clsx@1.2.1)(react-dom@18.2.0)(react-hot-toast@2.4.1)(react@18.2.0):
+    resolution: {integrity: sha512-+cOC3ZsSZeetm2QyI0TRzJzMbKR8JBxbcd9sVCGUxV8Vs0e83PlBNkhPi1GeNL5NvcoouPv33Vt0R/Ao7AZh6g==}
+    peerDependencies:
+      clsx: 1.2.1
+      react: 18.2.0
+      react-dom: 18.2.0
+      react-hot-toast: 2.4.1
+    dependencies:
+      clsx: 1.2.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-hot-toast: 2.4.1(csstype@3.1.2)(react-dom@18.2.0)(react@18.2.0)
+    dev: false
+
+  /@ode-react-ui/icons@2.1.1-dev.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-t2cGFi38haY/NfJhkysSKZQiviYCHmn0p6xDdcgI6hC761PcswEqd+/QlPlsYxYrPcHcCk+2hPJayJyQe2ftzw==}
+    peerDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
 
   /@popperjs/core@2.11.8:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
