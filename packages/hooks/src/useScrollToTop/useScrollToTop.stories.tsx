@@ -11,9 +11,10 @@ type Story = StoryObj<typeof useScrollToTop>;
 
 export const Example: Story = {
   render: (args) => {
+    const scrollTotop = useScrollToTop();
     return (
       <>
-        <Button color="primary" variant="filled" onClick={useScrollToTop}>
+        <Button color="primary" variant="filled" onClick={scrollTotop}>
           Go to Top
         </Button>
       </>
