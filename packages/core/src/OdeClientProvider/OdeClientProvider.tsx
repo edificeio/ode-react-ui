@@ -64,6 +64,27 @@ export function OdeClientProvider({ children, params }: OdeClientProps) {
     link.href = `${confQuery?.data?.theme?.bootstrapUrl}/theme.css` as string;
     favicon.href =
       `${confQuery?.data?.theme?.basePath}/img/illustrations/favicon.ico` as string;
+
+    const attributes = [
+      {
+        data: "data-skin",
+        value: confQuery?.data?.theme?.skinName,
+      },
+      {
+        data: "data-theme",
+        value: confQuery?.data?.theme?.themeName,
+      },
+      {
+        data: "data-bootstrap",
+        value: confQuery?.data?.theme?.bootstrapVersion.split("-").at(-1),
+      },
+    ];
+
+    attributes.forEach((attribute) => {
+      return document
+        .querySelector("html")
+        ?.setAttribute(attribute.data, attribute.value as string);
+    });
   }, [confQuery?.data]);
 
   useEffect(() => {
