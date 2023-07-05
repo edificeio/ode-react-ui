@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/components",
-  "version": "2.1.1-dev.3",
+  "version": "2.1.1-dev.4",
   "description": "@ode-react-ui react components",
   "keywords": [
     "react",
@@ -54,8 +54,8 @@
     "concurrently": "8.1.0"
   },
   "peerDependencies": {
-    "@ode-react-ui/core": "2.1.1-dev.2",
-    "@ode-react-ui/hooks": "2.1.1-dev.2",
+    "@ode-react-ui/core": "2.1.1-dev.4",
+    "@ode-react-ui/hooks": "2.1.1-dev.4",
     "@ode-react-ui/icons": "2.1.1-dev.2",
     "@react-spring/web": "9.7.2",
     "clsx": "1.2.1",

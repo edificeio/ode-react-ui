@@ -1,5 +1,14 @@
 # @ode-react-ui/core
 
+## 2.1.1-dev.4
+
+### Patch Changes
+
+- [#220](https://github.com/opendigitaleducation/ode-react-ui/pull/220) [`2a146cf`](https://github.com/opendigitaleducation/ode-react-ui/commit/2a146cf7f6059b86d15aae8e3df9c7f0438dd7bd) Thanks [@github-actions](https://github.com/apps/github-actions)! - add data attributes for feature css framework
+
+- Updated dependencies [[`cd3c60a`](https://github.com/opendigitaleducation/ode-react-ui/commit/cd3c60a781b315b44159cbee5ff79770fdb42827)]:
+  - @ode-react-ui/hooks@2.1.1-dev.4
+
 ## 2.1.1-dev.2
 
 ### Patch Changes
