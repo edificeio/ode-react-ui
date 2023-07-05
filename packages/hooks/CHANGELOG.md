@@ -1,5 +1,11 @@
 # @ode-react-ui/hooks
 
+## 2.1.1-dev.4
+
+### Patch Changes
+
+- [#219](https://github.com/opendigitaleducation/ode-react-ui/pull/219) [`cd3c60a`](https://github.com/opendigitaleducation/ode-react-ui/commit/cd3c60a781b315b44159cbee5ff79770fdb42827) Thanks [@Headan](https://github.com/Headan)! - adding ScrollToTop hook
+
 ## 2.1.1-dev.2
 
 ### Patch Changes
