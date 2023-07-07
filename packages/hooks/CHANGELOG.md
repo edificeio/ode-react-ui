@@ -1,5 +1,11 @@
 # @ode-react-ui/hooks
 
+## 2.1.1-dev.5
+
+### Patch Changes
+
+- [#222](https://github.com/opendigitaleducation/ode-react-ui/pull/222) [`48424a1`](https://github.com/opendigitaleducation/ode-react-ui/commit/48424a14f32d197cc67f0a15317c6637f37b0bc7) Thanks [@Headan](https://github.com/Headan)! - add story mdx hook ScrollToTop
+
 ## 2.1.1-dev.4
 
 ### Patch Changes
