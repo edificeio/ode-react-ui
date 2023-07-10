@@ -10,6 +10,7 @@ interface ContextProps {
   isHeading?: boolean;
   level?: HeadingElement;
   bgCode: string;
+  resourceName: string;
 }
 
 export const Context = createContext<ContextProps | null>({
@@ -20,6 +21,7 @@ export const Context = createContext<ContextProps | null>({
   isHeading: false,
   level: "h1",
   bgCode: "",
+  resourceName: "",
 });
 
 export function useAppCard() {
