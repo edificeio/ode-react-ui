@@ -28,6 +28,7 @@ export default {
       display: false,
       displayName: "",
       isExternal: false,
+      resourceName: "",
     },
     level: "h1",
     headingStyle: "h3",
@@ -42,6 +43,7 @@ const Template = (args: BaseProps) => (
   <AppCard {...args}>
     <AppIcon app={args.app} size="40" />
     <AppCard.Name />
+    <AppCard.Resource />
   </AppCard>
 );
 
@@ -56,6 +58,7 @@ export const Base: Story = {
       display: false,
       displayName: "",
       isExternal: false,
+      resourceName: "",
     },
   },
 };
@@ -78,6 +81,7 @@ export const OnlyTitle: Story = {
       display: false,
       displayName: "",
       isExternal: false,
+      resourceName: "",
     },
   },
 
@@ -139,6 +143,7 @@ export const ImageAsIcon: Story = {
       display: false,
       displayName: "",
       isExternal: false,
+      resourceName: "",
     },
   },
 
@@ -222,6 +227,7 @@ export const UseAsALink: Story = {
       display: false,
       displayName: "",
       isExternal: false,
+      resourceName: "",
     };
     return (
       <AppCard
@@ -243,6 +249,39 @@ export const UseAsALink: Story = {
       description: {
         story:
           "By using the `as` props, you can override the default behaviour of this component. In some contexts, we need a link, so use `as='a'` and add an `href` prop.",
+      },
+    },
+  },
+};
+
+export const ResourceName: Story = {
+  render: (args: BaseProps) => {
+    return (
+      <AppCard app={args.app} isHeading headingStyle="h3" level="h1">
+        <AppIcon app={args.app} size="40" />
+        <AppCard.Name />
+        <AppCard.Resource />
+      </AppCard>
+    );
+  },
+
+  args: {
+    app: {
+      address: "/blog",
+      icon: "",
+      name: "Blog",
+      scope: [],
+      display: false,
+      displayName: "",
+      isExternal: false,
+      resourceName: "Resource",
+    },
+  },
+
+  parameters: {
+    docs: {
+      description: {
+        story: "When you access a resource and need to display its title",
       },
     },
   },
