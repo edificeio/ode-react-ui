@@ -17,6 +17,7 @@ type AppHeadingProps = Pick<HeadingProps, "level" | "headingStyle">;
 
 export type BaseProps = {
   /**
+   *
    * Pass all information about an app
    */
   app: IWebApp;
@@ -24,6 +25,10 @@ export type BaseProps = {
    * Use as title element (h1, h2)
    */
   isHeading?: boolean;
+  /**
+   * Pass resource Name
+   */
+  resourceName?: string;
   /**
    * Passing compounds components
    */
@@ -68,7 +73,7 @@ const Root: PolymorphicAppCard = forwardRef(
   ) => {
     const { getIconClass, getBackgroundLightIconClass, getIconCode } =
       useOdeIcons();
-    const { icon, resourceName } = app;
+    const { icon } = app;
     const displayName = app.displayName || "Application";
 
     const classes = clsx(
@@ -86,7 +91,6 @@ const Root: PolymorphicAppCard = forwardRef(
         headingStyle,
         code: getIconCode(app)!,
         bgCode: getBackgroundLightIconClass(app),
-        resourceName,
       }),
       [
         app,
@@ -97,7 +101,6 @@ const Root: PolymorphicAppCard = forwardRef(
         icon,
         isHeading,
         level,
-        resourceName,
       ],
     );
 
