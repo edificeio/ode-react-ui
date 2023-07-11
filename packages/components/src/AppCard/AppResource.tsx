@@ -1,19 +1,22 @@
-import { useTranslation } from "react-i18next";
-
 import { useAppCard } from "./AppCardContext";
 import { Heading } from "../Heading";
 
-const AppResource = () => {
-  const { isHeading, level, headingStyle, resourceName } = useAppCard();
-  const { t } = useTranslation();
+const AppResource = ({
+  resourceName,
+}: {
+  resourceName: string | undefined;
+}) => {
+  const { isHeading, level, headingStyle } = useAppCard();
 
-  return isHeading ? (
-    <Heading {...{ level, headingStyle }}>- {t(resourceName)}</Heading>
-  ) : (
-    <p>- {t(resourceName)}</p>
-  );
+  if (resourceName) {
+    return isHeading ? (
+      <Heading {...{ level, headingStyle }}>- {resourceName}</Heading>
+    ) : (
+      <p>- {resourceName}</p>
+    );
+  }
 };
 
-AppResource.resourceName = "AppCard.Resource";
+AppResource.displayName = "AppCard.Resource";
 
 export default AppResource;
