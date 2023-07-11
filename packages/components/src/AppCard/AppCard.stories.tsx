@@ -28,11 +28,11 @@ export default {
       display: false,
       displayName: "",
       isExternal: false,
-      resourceName: "",
     },
     level: "h1",
     headingStyle: "h3",
     isHeading: true,
+    resourceName: "",
     as: "div",
   },
 } as Meta<typeof AppCard>;
@@ -43,7 +43,7 @@ const Template = (args: BaseProps) => (
   <AppCard {...args}>
     <AppIcon app={args.app} size="40" />
     <AppCard.Name />
-    <AppCard.Resource />
+    <AppCard.Resource resourceName={args.resourceName} />
   </AppCard>
 );
 
@@ -58,7 +58,6 @@ export const Base: Story = {
       display: false,
       displayName: "",
       isExternal: false,
-      resourceName: "",
     },
   },
 };
@@ -81,7 +80,6 @@ export const OnlyTitle: Story = {
       display: false,
       displayName: "",
       isExternal: false,
-      resourceName: "",
     },
   },
 
@@ -143,7 +141,6 @@ export const ImageAsIcon: Story = {
       display: false,
       displayName: "",
       isExternal: false,
-      resourceName: "",
     },
   },
 
@@ -227,7 +224,6 @@ export const UseAsALink: Story = {
       display: false,
       displayName: "",
       isExternal: false,
-      resourceName: "",
     };
     return (
       <AppCard
@@ -260,7 +256,7 @@ export const ResourceName: Story = {
       <AppCard app={args.app} isHeading headingStyle="h3" level="h1">
         <AppIcon app={args.app} size="40" />
         <AppCard.Name />
-        <AppCard.Resource />
+        <AppCard.Resource resourceName={"Resource"} />
       </AppCard>
     );
   },
@@ -274,7 +270,6 @@ export const ResourceName: Story = {
       display: false,
       displayName: "",
       isExternal: false,
-      resourceName: "Resource",
     },
   },
 

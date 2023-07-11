@@ -11,6 +11,7 @@ export default {
     level: "h1",
     headingStyle: "h3",
     isHeading: true,
+    resourceName: "",
   },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } as Meta<typeof AppCard>;
@@ -22,6 +23,7 @@ const Template = (args: any) => (
   <AppCard {...args}>
     <AppIcon app={args.app} size="40" />
     <AppCard.Name />
+    <AppCard.Resource resourceName={args.resourceName} />
   </AppCard>
 );
 
@@ -36,7 +38,6 @@ export const ApplicationAccount: Story = {
       isExternal: false,
       name: "Account",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -53,7 +54,6 @@ export const ApplicationActualites: Story = {
       isExternal: false,
       name: "Actualites",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -70,7 +70,6 @@ export const ApplicationAdmin: Story = {
       isExternal: false,
       name: "Admin",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -87,7 +86,6 @@ export const ApplicationAdminPortal: Story = {
       isExternal: false,
       name: "Admin Portal",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -104,7 +102,6 @@ export const ApplicationArchive: Story = {
       isExternal: false,
       name: "Archive",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -121,7 +118,6 @@ export const ApplicationBlog: Story = {
       isExternal: false,
       name: "Blog",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -138,7 +134,6 @@ export const ApplicationCahierDeTexte: Story = {
       isExternal: false,
       name: "Cahier de texte",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -155,7 +150,6 @@ export const ApplicationCahierTexte: Story = {
       isExternal: false,
       name: "Cahier textes",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -172,7 +166,6 @@ export const ApplicationCalendar: Story = {
       isExternal: false,
       name: "Calendar",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -189,7 +182,6 @@ export const ApplicationCns: Story = {
       isExternal: false,
       name: "Cns",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -206,7 +198,6 @@ export const ApplicationCanalNumerique: Story = {
       isExternal: false,
       name: "Canal numérique",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -223,7 +214,6 @@ export const ApplicationCollaborativeEditor: Story = {
       isExternal: false,
       name: "Pad",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -240,7 +230,6 @@ export const ApplicationCollaborativeWall: Story = {
       isExternal: false,
       name: "Collaborative Wall",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -257,7 +246,6 @@ export const ApplicationCommunity: Story = {
       isExternal: false,
       name: "Community",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -274,7 +262,6 @@ export const ApplicationCompetences: Story = {
       isExternal: false,
       name: "Competences",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -291,7 +278,6 @@ export const ApplicationConversation: Story = {
       isExternal: false,
       name: "Conversation",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -308,7 +294,6 @@ export const ApplicationDirectory: Story = {
       isExternal: false,
       name: "Directory",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -325,7 +310,6 @@ export const ApplicationExercizer: Story = {
       isExternal: false,
       name: "Exercizer",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -342,7 +326,6 @@ export const ApplicationFormulaire: Story = {
       isExternal: false,
       name: "Form",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -359,7 +342,6 @@ export const ApplicationForum: Story = {
       isExternal: false,
       name: "Forum",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -376,7 +358,6 @@ export const ApplicationLibrary: Story = {
       isExternal: false,
       name: "Library",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -393,7 +374,6 @@ export const ApplicationMindmap: Story = {
       isExternal: false,
       name: "Mindmap",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -410,7 +390,6 @@ export const ApplicationNotes: Story = {
       isExternal: false,
       name: "Notes",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -427,7 +406,6 @@ export const ApplicationPoll: Story = {
       isExternal: false,
       name: "Poll",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -444,7 +422,6 @@ export const ApplicationPresences: Story = {
       isExternal: false,
       name: "Presences",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -461,7 +438,6 @@ export const ApplicationQwant: Story = {
       isExternal: false,
       name: "Qwant",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -478,7 +454,6 @@ export const ApplicationRack: Story = {
       isExternal: false,
       name: "Rack",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -495,7 +470,6 @@ export const ApplicationRbs: Story = {
       isExternal: false,
       name: "Rbs",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -512,7 +486,6 @@ export const ApplicationSchoolbook: Story = {
       isExternal: false,
       name: "Schoolbook",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -529,7 +502,6 @@ export const ApplicationScrapbook: Story = {
       isExternal: false,
       name: "Scrapbook",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -546,7 +518,6 @@ export const ApplicationSettingsClass: Story = {
       isExternal: false,
       name: "Settings Class",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -563,7 +534,6 @@ export const ApplicationSharebigfiles: Story = {
       isExternal: false,
       name: "Sharebigfiles",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -580,7 +550,6 @@ export const ApplicationStatistics: Story = {
       isExternal: false,
       name: "Statistics",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -597,7 +566,6 @@ export const ApplicationStats: Story = {
       isExternal: false,
       name: "Stats",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -614,7 +582,6 @@ export const ApplicationSupport: Story = {
       isExternal: false,
       name: "Support",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -631,7 +598,6 @@ export const ApplicationTimeline: Story = {
       isExternal: false,
       name: "Timeline",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -648,7 +614,6 @@ export const ApplicationTimelineGenerator: Story = {
       isExternal: false,
       name: "Timeline Generator",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -665,7 +630,6 @@ export const ApplicationUserbook: Story = {
       isExternal: false,
       name: "Userbook",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -682,7 +646,6 @@ export const ApplicationVideo: Story = {
       isExternal: false,
       name: "Video",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -699,7 +662,6 @@ export const ApplicationVisioconf: Story = {
       isExternal: false,
       name: "Visioconf",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -716,7 +678,6 @@ export const ApplicationWebWebsite: Story = {
       isExternal: false,
       name: "Website",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -733,7 +694,6 @@ export const ApplicationWiki: Story = {
       isExternal: false,
       name: "Wiki",
       scope: [],
-      resourceName: "",
     },
   },
 };
@@ -750,7 +710,6 @@ export const ApplicationWorkspace: Story = {
       isExternal: false,
       name: "Workspace",
       scope: [],
-      resourceName: "",
     },
   },
 };
