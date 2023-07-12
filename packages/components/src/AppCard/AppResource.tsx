@@ -14,6 +14,8 @@ const AppResource = ({
     ) : (
       <p>- {resourceName}</p>
     );
+  } else {
+    return <></>;
   }
 };
 

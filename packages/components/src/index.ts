@@ -1,6 +1,7 @@
 export * from "./ActionBar";
 export * from "./Alert";
 export * from "./AppCard";
+export * from "./AppHeader";
 export * from "./AppIcon";
 export * from "./Avatar";
 export * from "./Button";

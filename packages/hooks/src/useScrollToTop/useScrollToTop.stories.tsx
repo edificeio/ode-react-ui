@@ -21,7 +21,7 @@ export const Example: Story = {
         <Button color="primary" variant="filled" onClick={scrollTotop}>
           Go to Top
         </Button>
-        <div style={{height: 300}}></div>
+        <div style={{ height: 300 }}></div>
       </>
     );
   },
