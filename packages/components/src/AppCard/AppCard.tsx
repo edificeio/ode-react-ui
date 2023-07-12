@@ -26,10 +26,6 @@ export type BaseProps = {
    */
   isHeading?: boolean;
   /**
-   * Pass resource Name
-   */
-  resourceName?: string;
-  /**
    * Passing compounds components
    */
   children?: ReactNode;
