@@ -8,3 +8,4 @@ export * from "./useToggle";
 export * from "./useDebounce";
 export * from "./useTrapFocus";
 export * from "./useScrollToTop";
+export * from "./useDropzone";

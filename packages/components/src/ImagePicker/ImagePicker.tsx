@@ -8,6 +8,7 @@ import {
   useState,
 } from "react";
 
+import { useDropzone } from "@ode-react-ui/hooks";
 import { Delete, Edit } from "@ode-react-ui/icons";
 import clsx from "clsx";
 import { IWebApp } from "ode-ts-client";
@@ -68,13 +69,12 @@ const ImagePicker = forwardRef(
     }: ImagePickerProps,
     ref: Ref<HTMLInputElement>,
   ) => {
-    const inputRef = useRef<HTMLInputElement>(null);
+    const inputRef = useRef<HTMLInputElement | null>(null);
 
     const [preview, setPreview] = useState<Record<string, string>>({
       name: "",
       image: src || "",
     });
-    const [, setDragging] = useState<boolean>(false);
 
     const handleChange = (files?: FileList | null) => {
       setPreview({ ...preview, name: "", image: "" });
@@ -111,29 +111,12 @@ const ImagePicker = forwardRef(
       handleChange(event.target.files);
     };
 
-    const handleDragging = (event: DragEvent) => {
-      event.preventDefault();
-      event.stopPropagation();
-      setDragging(true);
-    };
-
-    const handleDragLeave = (event: DragEvent) => {
-      event.preventDefault();
-      event.stopPropagation();
-      setDragging(false);
-    };
-
-    const handleDrop = (event: DragEvent) => {
-      handleDragLeave(event);
-      const files = event.dataTransfer?.files;
-      handleChange(files);
-
-      if (inputRef.current && files) {
-        inputRef.current.files = files;
-      }
-    };
-
     const classes = clsx("image-input", className);
+
+    const { handleDragging, handleDragLeave, handleDrop } = useDropzone(
+      inputRef,
+      handleChange,
+    );
 
     return (
       <FormControl
