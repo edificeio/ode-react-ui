@@ -1,0 +1,47 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import * as useDropzoneStories from "./useDropzone.stories";
+
+<Meta />
+
+# useDropzone
+
+## Usage
+
+- Accept `ref` of target element
+- Handle Drag and Drop of a file
+
+## Example
+
+<Canvas of={useDropzoneStories.Example} />
+
+## Hook usage
+
+```jsx
+const { handleDragLeave, handleDragging, handleDrop } = useDropzone(
+  inputRef,
+  onChange,
+);
+
+<div
+  className="drop-zone"
+  onDragEnter={handleDragging}
+  onDragOver={handleDragging}
+  onDragLeave={handleDragLeave}
+  onDrop={handleDrop}
+>
+  <button onClick={() => inputRef?.current?.click()}>Parcourir</button>
+  <div className="drop-wrapper">
+    <span>
+      Glissez-déposez un fichier depuis votre appareil ou cliquez sur parcourir
+    </span>
+  </div>
+  <input
+    ref={inputRef}
+    type="file"
+    name="attachement-input"
+    id="attachement-input"
+    onChange={handleInputChange}
+    hidden
+  />
+</div>;
+```
