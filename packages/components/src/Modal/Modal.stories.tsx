@@ -1,7 +1,7 @@
 import { RefAttributes, useState } from "react";
 
 // Import Swiper React components
-import { Pagination } from "swiper";
+import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles

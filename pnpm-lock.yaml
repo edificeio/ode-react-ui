@@ -15,6 +15,9 @@ importers:
         specifier: 2.26.1
         version: 2.26.1
     devDependencies:
+      '@ode-react-ui/icons':
+        specifier: workspace:*
+        version: link:packages/icons
       '@skypack/package-check':
         specifier: 0.2.2
         version: 0.2.2
@@ -122,10 +125,10 @@ importers:
         version: 2.3.0(@popperjs/core@2.11.8)(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
       '@ode-react-ui/core':
-        specifier: 2.1.1-dev.5
+        specifier: 2.1.1-dev.6
         version: link:../core
       '@ode-react-ui/hooks':
-        specifier: 2.1.1-dev.5
+        specifier: 2.1.1-dev.6
         version: link:../hooks
       '@ode-react-ui/icons':
         specifier: 2.1.1-dev.2
@@ -170,7 +173,7 @@ importers:
   packages/core:
     devDependencies:
       '@ode-react-ui/hooks':
-        specifier: 2.1.1-dev.5
+        specifier: 2.1.1-dev.6
         version: link:../hooks
       '@tanstack/react-query':
         specifier: 4.29.12
