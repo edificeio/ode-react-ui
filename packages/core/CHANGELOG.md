@@ -1,5 +1,18 @@
 # @ode-react-ui/core
 
+## 2.1.1
+
+### Patch Changes
+
+- [#226](https://github.com/opendigitaleducation/ode-react-ui/pull/226) [`2a146cf`](https://github.com/opendigitaleducation/ode-react-ui/commit/2a146cf7f6059b86d15aae8e3df9c7f0438dd7bd) Thanks [@Headan](https://github.com/Headan)! - add data attributes for feature css framework
+
+- [#226](https://github.com/opendigitaleducation/ode-react-ui/pull/226) [`5588d1a`](https://github.com/opendigitaleducation/ode-react-ui/commit/5588d1acfecd0183e64e9559703c1d716d00409a) Thanks [@Headan](https://github.com/Headan)! - update
+
+- [#226](https://github.com/opendigitaleducation/ode-react-ui/pull/226) [`85c4aeb`](https://github.com/opendigitaleducation/ode-react-ui/commit/85c4aeb93f54678daf0aed168619cbe1dbb93cd3) Thanks [@Headan](https://github.com/Headan)! - fix community link
+
+- Updated dependencies [[`cd3c60a`](https://github.com/opendigitaleducation/ode-react-ui/commit/cd3c60a781b315b44159cbee5ff79770fdb42827), [`b24888a`](https://github.com/opendigitaleducation/ode-react-ui/commit/b24888a5db0245f612726faea4aa9addffe1d606), [`96e939b`](https://github.com/opendigitaleducation/ode-react-ui/commit/96e939b0f68025f27115f6607dd0f60b9f860b4b), [`5588d1a`](https://github.com/opendigitaleducation/ode-react-ui/commit/5588d1acfecd0183e64e9559703c1d716d00409a), [`48424a1`](https://github.com/opendigitaleducation/ode-react-ui/commit/48424a14f32d197cc67f0a15317c6637f37b0bc7), [`85c4aeb`](https://github.com/opendigitaleducation/ode-react-ui/commit/85c4aeb93f54678daf0aed168619cbe1dbb93cd3)]:
+  - @ode-react-ui/hooks@2.1.1
+
 ## 2.1.1-dev.6
 
 ### Patch Changes

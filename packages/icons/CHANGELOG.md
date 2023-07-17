@@ -1,5 +1,11 @@
 # @ode-react-ui/icons
 
+## 2.1.1
+
+### Patch Changes
+
+- [#226](https://github.com/opendigitaleducation/ode-react-ui/pull/226) [`5588d1a`](https://github.com/opendigitaleducation/ode-react-ui/commit/5588d1acfecd0183e64e9559703c1d716d00409a) Thanks [@Headan](https://github.com/Headan)! - update
+
 ## 2.1.1-dev.2
 
 ### Patch Changes

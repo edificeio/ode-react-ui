@@ -1,5 +1,21 @@
 # @ode-react-ui/hooks
 
+## 2.1.1
+
+### Patch Changes
+
+- [#219](https://github.com/opendigitaleducation/ode-react-ui/pull/219) [`cd3c60a`](https://github.com/opendigitaleducation/ode-react-ui/commit/cd3c60a781b315b44159cbee5ff79770fdb42827) Thanks [@Headan](https://github.com/Headan)! - adding ScrollToTop hook
+
+- [#226](https://github.com/opendigitaleducation/ode-react-ui/pull/226) [`b24888a`](https://github.com/opendigitaleducation/ode-react-ui/commit/b24888a5db0245f612726faea4aa9addffe1d606) Thanks [@Headan](https://github.com/Headan)! - fix modal trapRef error and add xl props to Grid Comp.
+
+- [`96e939b`](https://github.com/opendigitaleducation/ode-react-ui/commit/96e939b0f68025f27115f6607dd0f60b9f860b4b) Thanks [@ccreusat](https://github.com/ccreusat)! - add usedropzone hook
+
+- [#226](https://github.com/opendigitaleducation/ode-react-ui/pull/226) [`5588d1a`](https://github.com/opendigitaleducation/ode-react-ui/commit/5588d1acfecd0183e64e9559703c1d716d00409a) Thanks [@Headan](https://github.com/Headan)! - update
+
+- [#222](https://github.com/opendigitaleducation/ode-react-ui/pull/222) [`48424a1`](https://github.com/opendigitaleducation/ode-react-ui/commit/48424a14f32d197cc67f0a15317c6637f37b0bc7) Thanks [@Headan](https://github.com/Headan)! - add story mdx hook ScrollToTop
+
+- [#226](https://github.com/opendigitaleducation/ode-react-ui/pull/226) [`85c4aeb`](https://github.com/opendigitaleducation/ode-react-ui/commit/85c4aeb93f54678daf0aed168619cbe1dbb93cd3) Thanks [@Headan](https://github.com/Headan)! - fix community link
+
 ## 2.1.1-dev.6
 
 ### Patch Changes
