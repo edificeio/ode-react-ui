@@ -1,5 +1,17 @@
 # @ode-react-ui/components
 
+## 2.1.1-dev.6
+
+### Patch Changes
+
+- [#224](https://github.com/opendigitaleducation/ode-react-ui/pull/224) [`c6db57d`](https://github.com/opendigitaleducation/ode-react-ui/commit/c6db57dc9681b360418caf4fc25aede7030f583a) Thanks [@Headan](https://github.com/Headan)! - add new component Resource in AppCard
+
+- [`96e939b`](https://github.com/opendigitaleducation/ode-react-ui/commit/96e939b0f68025f27115f6607dd0f60b9f860b4b) Thanks [@ccreusat](https://github.com/ccreusat)! - add usedropzone hook
+
+- Updated dependencies [[`96e939b`](https://github.com/opendigitaleducation/ode-react-ui/commit/96e939b0f68025f27115f6607dd0f60b9f860b4b)]:
+  - @ode-react-ui/hooks@2.1.1-dev.6
+  - @ode-react-ui/core@2.1.1-dev.6
+
 ## 2.1.1-dev.5
 
 ### Patch Changes

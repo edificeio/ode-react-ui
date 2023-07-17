@@ -1,5 +1,11 @@
 # @ode-react-ui/hooks
 
+## 2.1.1-dev.6
+
+### Patch Changes
+
+- [`96e939b`](https://github.com/opendigitaleducation/ode-react-ui/commit/96e939b0f68025f27115f6607dd0f60b9f860b4b) Thanks [@ccreusat](https://github.com/ccreusat)! - add usedropzone hook
+
 ## 2.1.1-dev.5
 
 ### Patch Changes
