@@ -8,7 +8,7 @@ import React from "react";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/AppHeader",
+  title: "Layouts/AppHeader",
   component: AppHeader,
   subcomponents: {
     Icon: AppIcon,
@@ -36,18 +36,7 @@ export default {
 
 type Story = StoryObj<typeof AppHeader>;
 
-const Template = (args: BaseProps) => (
-  <AppHeader
-    app={args.app}
-    resourceName="Resource"
-    actions={
-      <>
-        <Button>Button 1</Button>
-        <Button>Button 2</Button>
-      </>
-    }
-  />
-);
+const Template = (args: BaseProps) => <AppHeader app={args.app} />;
 
 export const Base: Story = {
   render: Template,
@@ -59,6 +48,108 @@ export const Base: Story = {
       scope: [],
       display: false,
       displayName: "",
+      isExternal: false,
+    },
+  },
+};
+
+export const WithoutButtons: Story = {
+  render: (args: BaseProps) => {
+    return <AppHeader app={args.app} />;
+  },
+};
+
+export const WithButtons: Story = {
+  render: (args: BaseProps) => {
+    return (
+      <AppHeader
+        app={args.app}
+        actions={
+          <>
+            <Button>Button 1</Button>
+            <Button>Button 2</Button>
+          </>
+        }
+      />
+    );
+  },
+};
+
+export const WithoutResource: Story = {
+  render: (args: BaseProps) => {
+    return (
+      <AppHeader
+        app={args.app}
+        actions={
+          <>
+            <Button>Button 1</Button>
+            <Button>Button 2</Button>
+          </>
+        }
+      />
+    );
+  },
+};
+
+export const WithResource: Story = {
+  render: (args: BaseProps) => {
+    return (
+      <AppHeader
+        app={args.app}
+        resourceName="Resource"
+        actions={
+          <>
+            <Button>Button 1</Button>
+            <Button>Button 2</Button>
+          </>
+        }
+      />
+    );
+  },
+};
+
+export const WithLink: Story = {
+  render: (args: BaseProps) => {
+    return (
+      <AppHeader
+        app={args.app}
+        resourceName="Resource"
+        isLink={true}
+        actions={
+          <>
+            <Button>Button 1</Button>
+            <Button>Button 2</Button>
+          </>
+        }
+      />
+    );
+  },
+};
+
+export const WithApp: Story = {
+  render: (args: BaseProps) => {
+    return (
+      <AppHeader
+        app={args.app}
+        resourceName="Resource"
+        actions={
+          <>
+            <Button>Button 1</Button>
+            <Button>Button 2</Button>
+          </>
+        }
+      />
+    );
+  },
+
+  args: {
+    app: {
+      address: "/blog",
+      icon: "blog",
+      name: "Blog",
+      scope: [],
+      display: false,
+      displayName: "blog",
       isExternal: false,
     },
   },

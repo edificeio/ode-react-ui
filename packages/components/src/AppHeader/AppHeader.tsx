@@ -9,22 +9,27 @@ export interface AppHeaderProps {
   /**
    * Element to be wrapped as Tooltip trigger
    */
-  actions: React.ReactNode;
+  actions?: React.ReactNode;
   app: IWebApp;
-  resourceName: string;
+  resourceName?: string;
+  isLink?: boolean;
 }
 
-const AppHeader = ({ app, actions, resourceName }: AppHeaderProps) => {
+const AppHeader = ({ app, actions, resourceName, isLink }: AppHeaderProps) => {
   return (
     <div className="d-flex justify-content-between p-16 mx-n16 border-bottom">
       <AppCard app={app} isHeading headingStyle="h3" level="h1">
         <AppIcon app={app} size="40" />
-        <a href={app.address}>
+        {isLink ? (
+          <a href={app.address}>
+            <AppCard.Name />
+          </a>
+        ) : (
           <AppCard.Name />
-        </a>
+        )}
         <AppCard.Resource resourceName={resourceName} />
       </AppCard>
-      <div className="cell">{actions}</div>
+      {actions && <div className="cell">{actions}</div>}
     </div>
   );
 };

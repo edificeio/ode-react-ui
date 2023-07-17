@@ -4,7 +4,7 @@ import { Heading } from "../Heading";
 const AppResource = ({
   resourceName,
 }: {
-  resourceName: string | undefined;
+  resourceName?: string | undefined;
 }) => {
   const { isHeading, level, headingStyle } = useAppCard();
 
