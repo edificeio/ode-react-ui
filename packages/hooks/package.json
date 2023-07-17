@@ -1,6 +1,6 @@
 {
   "name": "@ode-react-ui/hooks",
-  "version": "2.1.1-dev.6",
+  "version": "2.1.1",
   "description": "@ode-react-ui react hooks library",
   "keywords": [
     "react",
