@@ -1,5 +1,11 @@
 # @ode-react-ui/components
 
+## 2.1.2-dev.0
+
+### Patch Changes
+
+- [#230](https://github.com/opendigitaleducation/ode-react-ui/pull/230) [`c712abc`](https://github.com/opendigitaleducation/ode-react-ui/commit/c712abc8ae036a1380ccd7b260612f3591eacc12) Thanks [@Headan](https://github.com/Headan)! - add AppHeader component with stories
+
 ## 2.1.1
 
 ### Patch Changes

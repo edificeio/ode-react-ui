@@ -8,5 +8,7 @@
     "@ode-react-ui/icons": "2.1.1",
     "@ode-react-ui/template": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "wet-jobs-invent"
+  ]
 }
