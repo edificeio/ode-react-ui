@@ -3,7 +3,7 @@ import Main, { MainProps } from "./Main";
 import React from "react";
 
 export default {
-  title: "Layouts/Main",
+  title: "Layout/Main",
   component: Main,
   args: {
     children: "This this the main content of the application.",

@@ -6,7 +6,6 @@ import { IWebApp } from "ode-ts-client";
 
 import { Context } from "./AppCardContext";
 import AppName from "./AppName";
-import AppResource from "./AppResource";
 import { HeadingProps } from "../Heading";
 import {
   PolymorphicComponentPropsWithRef,
@@ -114,7 +113,6 @@ const Root: PolymorphicAppCard = forwardRef(
 
 const AppCard = Object.assign(Root, {
   Name: AppName,
-  Resource: AppResource,
 });
 
 // @ts-expect-error

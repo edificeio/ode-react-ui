@@ -1,8 +1,9 @@
+import React from "react";
+
 import { Meta, StoryObj } from "@storybook/react";
 
-import { AppCard, BaseProps } from "../AppCard";
+import { AppCard, BaseProps } from ".";
 import { AppIcon } from "../AppIcon";
-import React from "react";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -32,7 +33,6 @@ export default {
     level: "h1",
     headingStyle: "h3",
     isHeading: true,
-    resourceName: "",
     as: "div",
   },
 } as Meta<typeof AppCard>;
@@ -43,7 +43,6 @@ const Template = (args: BaseProps) => (
   <AppCard {...args}>
     <AppIcon app={args.app} size="40" />
     <AppCard.Name />
-    <AppCard.Resource resourceName={args.resourceName} />
   </AppCard>
 );
 
@@ -245,38 +244,6 @@ export const UseAsALink: Story = {
       description: {
         story:
           "By using the `as` props, you can override the default behaviour of this component. In some contexts, we need a link, so use `as='a'` and add an `href` prop.",
-      },
-    },
-  },
-};
-
-export const ResourceName: Story = {
-  render: (args: BaseProps) => {
-    return (
-      <AppCard app={args.app} isHeading headingStyle="h3" level="h1">
-        <AppIcon app={args.app} size="40" />
-        <AppCard.Name />
-        <AppCard.Resource resourceName={"Resource"} />
-      </AppCard>
-    );
-  },
-
-  args: {
-    app: {
-      address: "/blog",
-      icon: "",
-      name: "Blog",
-      scope: [],
-      display: false,
-      displayName: "",
-      isExternal: false,
-    },
-  },
-
-  parameters: {
-    docs: {
-      description: {
-        story: "When you access a resource and need to display its title",
       },
     },
   },

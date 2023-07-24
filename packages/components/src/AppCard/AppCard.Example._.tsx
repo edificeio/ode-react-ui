@@ -1,7 +1,9 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { AppCard } from "../AppCard";
-import { AppIcon } from "../AppIcon";
 import React from "react";
+
+import { Meta, StoryObj } from "@storybook/react";
+
+import { AppCard } from ".";
+import { AppIcon } from "../AppIcon";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

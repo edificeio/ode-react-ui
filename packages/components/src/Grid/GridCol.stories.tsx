@@ -3,7 +3,7 @@ import { Grid } from "./Grid";
 import React from "react";
 
 export default {
-  title: "Layouts/Grid/Column",
+  title: "Layout/Grid/Column",
   component: Grid.Col,
 } as Meta<typeof Grid.Col>;
 
