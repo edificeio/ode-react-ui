@@ -1,5 +1,11 @@
 # @ode-react-ui/components
 
+## 2.1.2-dev.1
+
+### Patch Changes
+
+- [`cd02419`](https://github.com/opendigitaleducation/ode-react-ui/commit/cd02419ec9fee9bd7406e1c851fe0fa126a06742) Thanks [@ccreusat](https://github.com/ccreusat)! - add breadcrumb component as layout component
+
 ## 2.1.2-dev.0
 
 ### Patch Changes
