@@ -1,5 +1,11 @@
 # @ode-react-ui/components
 
+## 2.1.2-dev.3
+
+### Patch Changes
+
+- [`7f904d8`](https://github.com/opendigitaleducation/ode-react-ui/commit/7f904d8d0ab196f74cfa3990fa9a6ed3fbad5028) Thanks [@ccreusat](https://github.com/ccreusat)! - fix breadcrumb styles
+
 ## 2.1.2-dev.2
 
 ### Patch Changes

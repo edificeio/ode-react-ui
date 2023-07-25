@@ -9,6 +9,7 @@
     "@ode-react-ui/template": "1.0.0"
   },
   "changesets": [
+    "fluffy-mayflies-report",
     "proud-steaks-tan",
     "wet-jobs-invent",
     "young-glasses-smile"
