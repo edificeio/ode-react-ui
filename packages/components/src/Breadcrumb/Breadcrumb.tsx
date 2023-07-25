@@ -34,7 +34,7 @@ const Breadcrumb = forwardRef(
 
     return (
       <BreadcrumbNav app={app} ref={ref} className={classes}>
-        <BreadcrumbList>
+        <BreadcrumbList className="gap-12">
           {name ? (
             <>
               <BreadcrumbItem>
@@ -45,25 +45,17 @@ const Breadcrumb = forwardRef(
                     icon={<RafterLeft />}
                     aria-label={t(app?.displayName)}
                   />
+                  <AppIcon app={app} size="40" />
                 </a>
               </BreadcrumbItem>
-              <BreadcrumbItem
-                className="h3 d-flex align-items-center gap-12"
-                aria-current="page"
-              >
-                <AppIcon app={app} size="40" />
+              <BreadcrumbItem className="h3" aria-current="page">
                 <h1 className="h3">{name}</h1>
               </BreadcrumbItem>
             </>
           ) : (
-            <BreadcrumbItem>
-              <a
-                href={app?.address}
-                className="d-flex align-items-center gap-12 text-reset"
-              >
-                <AppIcon app={app} size="40" />
-                <h1 className="h3">{t(app?.displayName)}</h1>
-              </a>
+            <BreadcrumbItem className="gap-12">
+              <AppIcon app={app} size="40" />
+              <h1 className="h3">{t(app?.displayName)}</h1>
             </BreadcrumbItem>
           )}
         </BreadcrumbList>

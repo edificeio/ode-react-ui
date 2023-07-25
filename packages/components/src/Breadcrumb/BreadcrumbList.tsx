@@ -1,13 +1,29 @@
 import { forwardRef, ReactNode, Ref } from "react";
 
+import clsx from "clsx";
+
 export interface BreadcrumbListProps {
+  /**
+   * Breadcrumb LI
+   */
   children: ReactNode;
+  /**
+   * Optional class for styling purpose
+   */
+  className?: string;
 }
 
 const BreadcrumbList = forwardRef(
-  ({ children }: BreadcrumbListProps, ref: Ref<HTMLOListElement>) => {
+  (
+    { children, className }: BreadcrumbListProps,
+    ref: Ref<HTMLOListElement>,
+  ) => {
+    const classes = clsx(
+      "breadcrumb d-flex align-items-center mb-0",
+      className,
+    );
     return (
-      <ol ref={ref} className="breadcrumb d-flex align-items-center mb-0">
+      <ol ref={ref} className={classes}>
         {children}
       </ol>
     );
