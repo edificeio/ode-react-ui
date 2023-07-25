@@ -1,6 +1,5 @@
-import { forwardRef, ReactNode, Ref } from "react";
+import { forwardRef, Ref } from "react";
 
-import { useOdeIcons } from "@ode-react-ui/core";
 import { RafterLeft } from "@ode-react-ui/icons";
 import clsx from "clsx";
 import { IWebApp } from "ode-ts-client";
@@ -13,8 +12,17 @@ import { AppIcon } from "../AppIcon";
 import { IconButton } from "../Button";
 
 export interface BreadcrumbProps {
+  /**
+   * Pass all data about current application
+   */
   app: IWebApp;
+  /**
+   * Show name of the current resource
+   */
   name?: string;
+  /**
+   * Actions
+   */
   actions?: JSX.Element;
 }
 
@@ -22,8 +30,10 @@ const Breadcrumb = forwardRef(
   ({ app, name, actions }: BreadcrumbProps, ref: Ref<HTMLElement>) => {
     const { t } = useTranslation();
 
+    const classes = clsx(actions ? "justify-content-between" : "");
+
     return (
-      <BreadcrumbNav app={app} ref={ref} hasActions={!!actions}>
+      <BreadcrumbNav app={app} ref={ref} className={classes}>
         <BreadcrumbList>
           {name ? (
             <>
@@ -33,6 +43,7 @@ const Breadcrumb = forwardRef(
                     variant="ghost"
                     color="tertiary"
                     icon={<RafterLeft />}
+                    aria-label={t(app?.displayName)}
                   />
                 </a>
               </BreadcrumbItem>
