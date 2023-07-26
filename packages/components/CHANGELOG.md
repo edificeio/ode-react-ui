@@ -1,5 +1,13 @@
 # @ode-react-ui/components
 
+## 2.1.2-dev.4
+
+### Patch Changes
+
+- [`e275e44`](https://github.com/opendigitaleducation/ode-react-ui/commit/e275e4419e348ce6ff9f9b79c903708069656f81) Thanks [@ccreusat](https://github.com/ccreusat)! - fix double css class breadcrumb
+
+- [#235](https://github.com/opendigitaleducation/ode-react-ui/pull/235) [`95204e6`](https://github.com/opendigitaleducation/ode-react-ui/commit/95204e6a2d950a817da5beff94c35b5673c5c609) Thanks [@github-actions](https://github.com/apps/github-actions)! - update breadcrumb component
+
 ## 2.1.2-dev.3
 
 ### Patch Changes
