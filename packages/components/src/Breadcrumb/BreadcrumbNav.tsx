@@ -18,10 +18,6 @@ export interface BreadcrumbNavProps extends React.ComponentPropsWithRef<"nav"> {
    * Optional class for styling purpose
    */
   className?: string;
-  /**
-   * When no layout is used
-   */
-  isFullscreen?: boolean;
 }
 
 const BreadcrumbNav = forwardRef(
@@ -32,7 +28,6 @@ const BreadcrumbNav = forwardRef(
     const classes = clsx(
       "d-flex align-items-center mb-0 p-16 border-bottom bg-white",
       getIconClass(app),
-      { isFullScreen: "mx-n16" },
       className,
     );
 

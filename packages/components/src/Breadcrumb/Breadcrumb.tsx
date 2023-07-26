@@ -23,14 +23,24 @@ export interface BreadcrumbProps {
   /**
    * Actions
    */
-  actions?: JSX.Element;
+  render?: () => JSX.Element;
+  /**
+   * When no layout is used
+   */
+  isFullscreen?: boolean;
 }
 
 const Breadcrumb = forwardRef(
-  ({ app, name, actions }: BreadcrumbProps, ref: Ref<HTMLElement>) => {
+  (
+    { app, name, render, isFullscreen = false }: BreadcrumbProps,
+    ref: Ref<HTMLElement>,
+  ) => {
     const { t } = useTranslation();
 
-    const classes = clsx(actions ? "justify-content-between" : "");
+    const classes = clsx({
+      "justify-content-between": render,
+      "mx-n16": !isFullscreen,
+    });
 
     return (
       <BreadcrumbNav app={app} ref={ref} className={classes}>
@@ -59,8 +69,8 @@ const Breadcrumb = forwardRef(
             </BreadcrumbItem>
           )}
         </BreadcrumbList>
-        {actions ? (
-          <div className="d-flex align-items-center gap-8">{actions}</div>
+        {render ? (
+          <div className="d-flex align-items-center gap-8">{render()}</div>
         ) : null}
       </BreadcrumbNav>
     );
