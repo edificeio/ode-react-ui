@@ -38,7 +38,7 @@ const Breadcrumb = forwardRef(
           {name ? (
             <>
               <BreadcrumbItem>
-                <a href={app?.address}>
+                <a href={app?.address} className="d-flex">
                   <IconButton
                     variant="ghost"
                     color="tertiary"
