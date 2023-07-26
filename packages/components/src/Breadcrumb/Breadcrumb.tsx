@@ -63,7 +63,7 @@ const Breadcrumb = forwardRef(
               </BreadcrumbItem>
             </>
           ) : (
-            <BreadcrumbItem className="gap-12">
+            <BreadcrumbItem className="gap-12 d-flex align-items-center">
               <AppIcon app={app} size="40" />
               <h1 className="h3">{t(app?.displayName)}</h1>
             </BreadcrumbItem>
