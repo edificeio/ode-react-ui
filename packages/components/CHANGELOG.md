@@ -1,5 +1,11 @@
 # @ode-react-ui/components
 
+## 2.1.2-dev.6
+
+### Patch Changes
+
+- [`79cc9d1`](https://github.com/opendigitaleducation/ode-react-ui/commit/79cc9d1a88e731c99b0eac7967e17669f0fbec7d) Thanks [@ccreusat](https://github.com/ccreusat)! - fix item when no link on breadcrumb
+
 ## 2.1.2-dev.5
 
 ### Patch Changes
