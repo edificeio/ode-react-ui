@@ -68,15 +68,16 @@ export function OdeClientProvider({ children, params }: OdeClientProps) {
     const attributes = [
       {
         data: "data-skin",
-        value: confQuery?.data?.theme?.skinName,
+        value: confQuery?.data?.theme?.skinName ?? "",
       },
       {
         data: "data-theme",
-        value: confQuery?.data?.theme?.themeName,
+        value: confQuery?.data?.theme?.themeName ?? "",
       },
       {
-        data: "data-bootstrap",
-        value: confQuery?.data?.theme?.bootstrapVersion.split("-").at(-1),
+        data: "data-bootstraps",
+        value:
+          confQuery?.data?.theme?.bootstrapVersion?.split("-")?.at(-1) ?? "",
       },
     ];
 
@@ -85,7 +86,7 @@ export function OdeClientProvider({ children, params }: OdeClientProps) {
         .querySelector("html")
         ?.setAttribute(attribute.data, attribute.value as string);
     });
-  }, [confQuery?.data]);
+  }, [confQuery, confQuery?.data]);
 
   useEffect(() => {
     document
@@ -141,4 +142,20 @@ export function useOdeClient() {
     throw new Error(`Cannot be used outside of OdeClientProvider`);
   }
   return context;
+}
+if (!Array.prototype.at) {
+  Object.defineProperty(Array.prototype, "at", {
+    value: function (index: number) {
+      const length = this.length;
+      index = Number(index);
+      if (isNaN(index)) {
+        index = 0;
+      }
+      index = index < 0 ? Math.ceil(index) + length : Math.floor(index);
+      index = Math.min(Math.max(index, 0), length - 1);
+      return this[index];
+    },
+    writable: true,
+    configurable: true,
+  });
 }
