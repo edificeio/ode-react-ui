@@ -1,5 +1,11 @@
 # @ode-react-ui/components
 
+## 2.1.2-dev.7
+
+### Patch Changes
+
+- [`32a3b90`](https://github.com/opendigitaleducation/ode-react-ui/commit/32a3b908e87cfaef3b6d075c78febd1e3561a0b2) Thanks [@ccreusat](https://github.com/ccreusat)! - add missing appcard
+
 ## 2.1.2-dev.6
 
 ### Patch Changes
