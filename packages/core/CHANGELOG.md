@@ -1,5 +1,11 @@
 # @ode-react-ui/core
 
+## 2.1.3
+
+### Patch Changes
+
+- [`443c297`](https://github.com/opendigitaleducation/ode-react-ui/commit/443c297bbc131addaec217de2d18d20db49d2af9) Thanks [@ccreusat](https://github.com/ccreusat)! - update ode-react-ui
+
 ## 2.1.1
 
 ### Patch Changes
