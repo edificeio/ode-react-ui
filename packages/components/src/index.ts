@@ -1,4 +1,4 @@
-// export * from "./AppCard";
+export * from "./AppCard";
 export * from "./ActionBar";
 export * from "./Alert";
 export * from "./AppIcon";
